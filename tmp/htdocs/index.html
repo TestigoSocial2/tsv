@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testigo Social 2.0</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/tsv.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/waypoints.min.js"></script>
+    <script type="text/javascript" src="js/counterup.min.js"></script>
+    <script type="text/javascript" src="js/pixative.validator.js"></script>
+    <script type="text/javascript" src="js/chart.min.js"></script>
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <script type="text/javascript" src="js/tsv.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <!-- Top menu -->
+      <div id="top" class="row">
+        <div class="col-md-12">
+          <a href="index.html" class="logo"></a>
+
+          <ul>
+            <li><a href="#" class="active">¿Qué es TS 2.0?</a></li>
+            <li><a href="contracts.html">Contratos</a></li>
+            <li><a href="#">Indicadores</a></li>
+            <li><a href="notifications.html">Notificaciones</a></li>
+            <li><a href="#">Contrataciones Abiertas</a></li>
+            <div class="clear"></div>
+          </ul>
+
+          <div class="social">
+            <a href="#" class="tw"></a>
+            <a href="#" class="fb"></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero content -->
+      <div id="hero" class="row">
+        <div class="photo col-md-12" style="background-image:url('images/hero_photo_1.png')">
+          <div class="logo"></div>
+          <h2>El dinero público también es tu dinero</h2>
+        </div>
+      </div>
+
+      <!-- Highlights -->
+      <div id="facts" class="row inner-row">
+        <div class="col-md-4">
+          <p class="txt-centered">Número de <span class="txt-bold">procedimientos de contratación</span> registrados</p>
+          <p class="highlight txt-centered"><span id="totalContracts" class="counter">0</span></p>
+        </div>
+        <div class="col-md-4">
+          <p class="txt-centered"><span class="txt-bold">Presupuesto asignado</span> de las contrataciones registradas</p>
+          <p class="highlight txt-centered">$<span id="totalBudget" class="counter">0</span>m</p>
+        </div>
+        <div class="col-md-4">
+          <p class="txt-centered">Monto total <span class="txt-bold">contratado</span>a través de los procedimientos registrados</p>
+          <p class="highlight txt-centered">$<span id="totalAward" class="counter">0</span>m</p>
+        </div>
+      </div>
+
+      <!-- Main content carousel -->
+      <div id="highlights" class="row inner-row">
+        <div id="content-slides" class="col-md-12 carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#content-slides" data-slide-to="0" class="active"></li>
+            <li data-target="#content-slides" data-slide-to="1"></li>
+            <li data-target="#content-slides" data-slide-to="2"></li>
+            <li data-target="#content-slides" data-slide-to="3"></li>
+          </ol>
+
+          <!-- Content -->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <p class="info txt-centered">Entre el <span id="firstDate"></span> y el <span id="lastDate"></span>, se han adjudicado</p>
+              <h1>$<span id="totalAmount" class="counter">0</span> MXN</h1>
+              <p class="info txt-centered">para la construcción del <strong>Nuevo Aeropuerto Internacional de la Ciudad de México</strong>, a través de contratos públicos.</p>
+            </div>
+            <div class="item" data-section="direct">
+              <div class="chart">
+                <canvas class="dataChart" width="460" height="340"></canvas>
+              </div>
+              <div class="info">
+                <h2>Adjudicación Directa</h2>
+                <h3>$ <span class="amount">0</span> MXN</h3>
+                <p>Han sido adjudicados directamente mediante <span class="contracts">0</span> contratos.</p>
+                <p class="details">En una adjudicación directa se entrega un contrato a una persona o empresa sin realizar un concurso público y abierto.</p>
+              </div>
+            </div>
+            <div class="item" data-section="limited">
+              <div class="chart">
+                <canvas class="dataChart" width="460" height="340"></canvas>
+              </div>
+              <div class="info">
+                <h2>Invitación a cuado menos 3 personas</h2>
+                <h3>$ <span class="amount">0</span> MXN</h3>
+                <p>Han sido adjudicados por invitación a cuando menos tres personas, mediante <span class="contracts">0</span> contratos.</p>
+                <p class="details">En una invitación a cuando menos tres personas se entrega un contrato mediante un concurso en el que solo participan un número restringido de personas o empresas, seleccionadas por la dependencia gubernamental que realiza la contratación.</p>
+              </div>
+            </div>
+            <div class="item" data-section="public">
+              <div class="chart">
+                <canvas class="dataChart" width="460" height="340"></canvas>
+              </div>
+              <div class="info">
+                <h2>Licitación Pública</h2>
+                <h3>$ <span class="amount">0</span> MXN</h3>
+                <p>Han sido adjudicados por licitación pública, mediante <span class="contracts">0</span> contratos.</p>
+                <p class="details">En una licitación pública se entrega un contrato mediante un concurso que está abierto a cualquier persona o empresa. En México existen licitaciones públicas nacionales, internacionales bajo tratados de libre comercio e internacionales abiertas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main video -->
+      <div id="video" class="row inner-row">
+        <div class="col-md-12">
+          <div class="holder"></div>
+          <a class="yellow" href="#">Comienza a utilizar los datos</a>
+        </div>
+        <div class="col-md-4 item">
+          <a href="#">
+            <span class="btn-black">Contratos</span>
+            <p>Consulta la información completa de un contrato público en un solo lugar. Desde la planeación hasta la ejecución e implementación.</p>
+            <span class="icon contracts"></span>
+          </a>
+        </div>
+        <div class="col-md-4 item">
+          <a href="#">
+            <span class="btn-black">Indicadores</span>
+            <p>Revisa indicadores sobre el desempeño y los resultados del sistema de contrataciones de México.</p>
+            <span class="icon markers"></span>
+          </a>
+        </div>
+        <div class="col-md-4 item">
+          <a href="notifications.html">
+            <span class="btn-black">Notificaciones</span>
+            <p>Recibe notificaciones e información específica sobre los procesos de contratación que te interesan.</p>
+            <span class="icon notifications"></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom text -->
+      <div id="notice" class="row inner-row">
+        <div class="col-md-12">
+          <p>La apertura y la participación de la ciudadanía en las compras públicas puede traducirse en mejores bienes y servicios públicos para la ciudadanía, más oportunidades de negocio para emprendedores y empresas, y en mayor rendición de cuentas de los gobiernos.</p>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div id="bottom" class="row">
+        <div class="inner-row">
+          <div class="col-md-3">
+            <p>Una iniciativa de:</p>
+            <a href="#" class="tm"></a>
+          </div>
+          <div class="col-md-3">
+            <p>Con el apoyo de:</p>
+            <a href="#" class="uk"></a>
+          </div>
+          <div class="col-md-6">
+            <div class="social">
+              <a href="#" class="tw"></a>
+              <a href="#" class="fb"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      $('document').ready(function(){
+        TSV.init();
+      });
+    </script>
+  </body>
+</html>

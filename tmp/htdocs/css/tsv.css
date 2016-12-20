@@ -1,0 +1,333 @@
+.txt-upper {
+  text-transform: uppercase; }
+
+.txt-italic {
+  font-style: italic; }
+
+.txt-centered {
+  text-align: center; }
+
+.txt-bold {
+  font-weight: bold; }
+
+.bg-blue {
+  background-color: #d4fbfb; }
+
+.bg-yellow {
+  background-color: #f8c674; }
+
+.number-title {
+  font-weight: 400; }
+  .number-title span {
+    border: 2px solid #111;
+    border-radius: 40px;
+    margin-right: 6px;
+    padding: 0 10px; }
+
+.btn-black {
+  background-color: #111;
+  border-radius: 40px;
+  color: #fff;
+  padding: 10px 22px; }
+  .btn-black:hover {
+    color: #fff; }
+
+.inner-row {
+  margin: 0 auto;
+  width: 90%; }
+
+h4 {
+  font-weight: 300; }
+
+table.green tbody > tr:nth-of-type(odd) {
+  background-color: #d0f5dc; }
+table.blue tbody > tr:nth-of-type(odd) {
+  background-color: #d4fbfb; }
+
+#top {
+  padding: 8px 0; }
+  #top a.logo {
+    background: url("../images/top_logo.png") no-repeat top center;
+    background-size: contain;
+    display: block;
+    float: left;
+    height: 40px;
+    margin-top: 7px;
+    width: 84px; }
+  #top ul {
+    display: block;
+    float: left;
+    margin: 0 auto;
+    padding: 16px;
+    width: auto; }
+    #top ul div.clear {
+      clear: both; }
+    #top ul li {
+      border-right: 1px solid #333;
+      float: left;
+      list-style: none;
+      padding: 0 20px;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase; }
+      #top ul li a {
+        color: #333; }
+        #top ul li a.active {
+          color: #4990e2; }
+        #top ul li a:hover {
+          text-decoration: none; }
+  #top div.social {
+    float: right;
+    margin-top: 10px;
+    width: 100px; }
+    #top div.social a {
+      background-position: top center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      display: block;
+      float: left;
+      height: 34px;
+      margin-left: 10px;
+      width: 34px; }
+      #top div.social a.tw {
+        background-image: url("../images/top_tw.png"); }
+      #top div.social a.fb {
+        background-image: url("../images/top_fb.png"); }
+
+#hero div.photo {
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 400px; }
+#hero div.logo {
+  background: url("../images/logo.png") no-repeat center center;
+  background-size: contain;
+  height: 280px;
+  margin: 10px auto;
+  width: 640px; }
+#hero h2 {
+  color: #fff;
+  font-size: 3em;
+  font-weight: 300;
+  text-align: center; }
+
+#facts {
+  border-bottom: 1px solid #ccc;
+  padding: 4em 0 2em; }
+  #facts p.highlight {
+    font-size: 4em;
+    font-weight: bold; }
+
+#highlights {
+  border-bottom: 1px solid #ccc; }
+  #highlights ol.carousel-indicators {
+    bottom: 0; }
+    #highlights ol.carousel-indicators li {
+      border-color: #333; }
+      #highlights ol.carousel-indicators li.active {
+        background-color: #111; }
+  #highlights p.info {
+    background-color: #d0f5dc;
+    font-size: 2em;
+    margin: 20px 0;
+    padding: 20px 0;
+    text-align: center; }
+  #highlights h1 {
+    font-size: 5em;
+    font-weight: 300;
+    text-align: center; }
+  #highlights div.item {
+    height: 400px; }
+    #highlights div.item h2 {
+      font-weight: 300;
+      text-transform: uppercase; }
+    #highlights div.item div.chart {
+      border-right: 1px solid #ccc;
+      float: left;
+      height: 340px;
+      margin: 20px 0;
+      width: 50%; }
+    #highlights div.item div.info {
+      float: right;
+      width: 48%; }
+    #highlights div.item p {
+      font-size: 1.4em; }
+      #highlights div.item p.details {
+        color: #999;
+        font-size: .9em; }
+
+#video {
+  padding: 2em 0; }
+  #video div.col-md-12 {
+    margin-bottom: 60px;
+    text-align: center; }
+  #video div.holder {
+    background: url("../images/video_holder.png") no-repeat center center;
+    background-size: contain;
+    height: 390px;
+    margin-bottom: 40px; }
+  #video a {
+    color: #333;
+    text-decoration: none; }
+    #video a:hover {
+      text-decoration: none; }
+  #video a.yellow {
+    background-color: #f8c674;
+    border-radius: 40px;
+    color: #111;
+    margin: 0 auto;
+    padding: 16px 50px;
+    text-align: center;
+    text-decoration: none; }
+  #video span.btn-black {
+    padding: 16px 50px; }
+  #video div.item {
+    text-align: center; }
+    #video div.item p {
+      margin: 36px 0 12px; }
+    #video div.item span.icon {
+      background-position: top center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      display: block;
+      height: 120px;
+      margin: 0 auto;
+      width: 90px; }
+      #video div.item span.icon.markers {
+        background-image: url("../images/icon_markers.png"); }
+      #video div.item span.icon.contracts {
+        background-image: url("../images/icon_contracts.png"); }
+      #video div.item span.icon.notifications {
+        background-image: url("../images/icon_notifications.png"); }
+
+#notice {
+  border-top: 1px solid #ccc;
+  padding: 2em 0; }
+
+#bottom {
+  background-color: #111;
+  color: #fff;
+  padding: 2em 0; }
+  #bottom p {
+    font-size: 11px;
+    margin-bottom: 4px; }
+  #bottom a.tm {
+    background: url("../images/bottom_tm.png") no-repeat top left;
+    background-size: contain;
+    display: block;
+    height: 64px; }
+  #bottom a.uk {
+    background: url("../images/bottom_uk.png") no-repeat top left;
+    background-size: contain;
+    display: block;
+    height: 64px; }
+  #bottom ul {
+    float: right;
+    list-style: none;
+    padding: 0 20px; }
+    #bottom ul a {
+      color: #fff;
+      font-size: 11px; }
+  #bottom div.social {
+    float: right;
+    margin-top: 10px;
+    width: 100px; }
+    #bottom div.social a {
+      background-position: top center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      display: block;
+      float: left;
+      height: 34px;
+      margin-left: 10px;
+      width: 34px; }
+      #bottom div.social a.tw {
+        background-image: url("../images/bottom_tw.png"); }
+      #bottom div.social a.fb {
+        background-image: url("../images/bottom_fb.png"); }
+
+#setup div.row {
+  margin: 0 auto;
+  padding: 20px 0;
+  width: 90%; }
+#setup ul {
+  list-style: none;
+  padding: 0; }
+  #setup ul li {
+    cursor: pointer;
+    padding: 10px 0; }
+    #setup ul li span {
+      margin-right: 6px; }
+#setup input.validator-error {
+  border-color: #a94442;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
+#setup table td {
+  vertical-align: middle; }
+
+div.info {
+  padding: 20px 0; }
+  div.info h2 {
+    font-weight: 500;
+    margin-bottom: 20px; }
+
+div.agency-grid div.item {
+  border: 1px solid #4990e2;
+  cursor: pointer;
+  float: left;
+  height: 100px;
+  margin: 1%;
+  width: 31%; }
+  div.agency-grid div.item div.logo {
+    height: 70px;
+    position: relative;
+    width: 100%; }
+    div.agency-grid div.item div.logo img {
+      bottom: 0;
+      height: auto;
+      left: 0;
+      margin: auto;
+      max-height: 100%;
+      max-width: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: auto; }
+  div.agency-grid div.item span.label {
+    background-color: #4990e2;
+    border-radius: 0;
+    color: #fff;
+    display: block;
+    height: 28px;
+    padding: 10px 0;
+    text-align: center;
+    text-transform: uppercase; }
+  div.agency-grid div.item:hover, div.agency-grid div.item.selected {
+    border-color: #50e3c2; }
+    div.agency-grid div.item:hover span.label, div.agency-grid div.item.selected span.label {
+      background-color: #50e3c2; }
+
+div.project-grid div.item {
+  cursor: pointer; }
+  div.project-grid div.item h5 {
+    color: #4990e2;
+    font-weight: 300; }
+  div.project-grid div.item div.img {
+    width: 100%; }
+    div.project-grid div.item div.img img {
+      height: auto;
+      width: 100%; }
+  div.project-grid div.item span.label {
+    background-color: #4990e2;
+    border-radius: 0;
+    color: #fff;
+    display: block;
+    height: 28px;
+    margin-bottom: 6px;
+    padding: 10px 0;
+    text-align: center;
+    text-transform: uppercase; }
+  div.project-grid div.item p {
+    font-size: 11px; }
+  div.project-grid div.item:hover span.label, div.project-grid div.item.selected span.label {
+    background-color: #50e3c2; }
+
+/*# sourceMappingURL=tsv.css.map */
