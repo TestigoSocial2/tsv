@@ -27,7 +27,9 @@ import (
 	"net/http"
 	"os"
 	"path"
+	"time"
 
+	"github.com/Jeffail/gabs"
 	"github.com/bcessa/tsv/storage"
 	"github.com/gorilla/websocket"
 	"github.com/julienschmidt/httprouter"
@@ -35,6 +37,26 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
+
+type contracts struct {
+	Budget    float64 `json:"budget"`
+	Awarded   float64 `json:"awarded"`
+	Total     int     `json:"total"`
+	Active    int     `json:"active"`
+	Completed int     `json:"completed"`
+}
+
+// Stats ...
+type bucketStats struct {
+	FirstDate    time.Time `json:"firstDate"`
+	LastDate     time.Time `json:"lastDate"`
+	Contracts    contracts `json:"contracts"`
+	AssignMethod struct {
+		Direct  contracts `json:"direct"`
+		Limited contracts `json:"limited"`
+		Public  contracts `json:"public"`
+	} `json:"method"`
+}
 
 // serverCmd represents the serve command
 var serverCmd = &cobra.Command{
@@ -151,8 +173,104 @@ func stats(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	defer store.Close()
 
 	log.Printf("Calculating stats for: %s\n", ps.ByName("bucket"))
-	stats := store.GetStats(ps.ByName("bucket"))
-	res, _ := json.Marshal(stats)
+	// stats := store.GetStats(ps.ByName("bucket"))
+	// res, _ := json.Marshal(stats)
+	// fmt.Fprintf(w, string(res))
+
+	data := &bucketStats{}
+	data.FirstDate = time.Now()
+	data.LastDate = time.Date(2010, 1, 1, 0, 0, 0, 0, time.UTC)
+	c := make(chan *storage.Record)
+	go store.Cursor(ps.ByName("bucket"), c)
+loop:
+	for {
+		select {
+		case rec, ok := <-c:
+			if !ok {
+				break loop
+			}
+			val := rec.Value
+			r, err := gabs.ParseJSON(val)
+			if err == nil {
+				data.Contracts.Total++
+				releases, _ := r.Search("releases").Children()
+				for _, child := range releases {
+					// date
+					date, _ := child.Path("date").Data().(string)
+					t, err := time.Parse("2006-01-02T15:04:05.000Z", date)
+					if err == nil {
+						if t.Before(data.FirstDate) {
+							data.FirstDate = t
+						}
+						if t.After(data.LastDate) {
+							data.LastDate = t
+						}
+					}
+
+					// planning.budget.amount.amount
+					amount, ok := child.Path("planning.budget.amount.amount").Data().(float64)
+					if ok {
+						data.Contracts.Budget += amount
+					}
+
+					// tender.status
+					status, ok := child.Path("tender.status").Data().(string)
+					if ok {
+						switch status {
+						case "active":
+							data.Contracts.Active++
+						case "complete":
+							data.Contracts.Completed++
+						}
+					}
+
+					// contracts.value.amount
+					contracts, _ := child.Search("contracts").Children()
+					for _, contract := range contracts {
+						award, ok := contract.Path("value.amount").Data().(float64)
+						if ok {
+							data.Contracts.Awarded += award
+						}
+					}
+
+					// tender.numberOfTenderers
+					if child.ExistsP("tender.numberOfTenderers") {
+						participants, _ := child.Path("tender.numberOfTenderers").Data().(float64)
+						switch {
+						case (participants == 1):
+							data.AssignMethod.Direct.Total++
+							data.AssignMethod.Direct.Budget += amount
+							if status != "active" {
+								data.AssignMethod.Direct.Active++
+							} else {
+								data.AssignMethod.Direct.Completed++
+							}
+							break
+						case (participants >= 1 && participants <= 3):
+							data.AssignMethod.Limited.Total++
+							data.AssignMethod.Limited.Budget += amount
+							if status != "active" {
+								data.AssignMethod.Limited.Active++
+							} else {
+								data.AssignMethod.Limited.Completed++
+							}
+							break
+						default:
+							data.AssignMethod.Public.Total++
+							data.AssignMethod.Public.Budget += amount
+							if status != "active" {
+								data.AssignMethod.Public.Active++
+							} else {
+								data.AssignMethod.Public.Completed++
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	res, _ := json.Marshal(data)
 	fmt.Fprintf(w, string(res))
 }
 

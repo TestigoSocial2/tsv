@@ -2,7 +2,6 @@ package storage
 
 import (
 	"errors"
-	"time"
 
 	"github.com/bcessa/tsv/compressor"
 )
@@ -11,26 +10,6 @@ import (
 type Record struct {
 	Key   []byte
 	Value []byte
-}
-
-type contracts struct {
-	Budget    float64 `json:"budget"`
-	Awarded   float64 `json:"awarded"`
-	Total     int     `json:"total"`
-	Active    int     `json:"active"`
-	Completed int     `json:"completed"`
-}
-
-// Stats ...
-type Stats struct {
-	FirstDate    time.Time `json:firstDate`
-	LastDate     time.Time `json:lastDate`
-	Contracts    contracts `json:"contracts"`
-	AssignMethod struct {
-		Direct  contracts `json:"direct"`
-		Limited contracts `json:"limited"`
-		Public  contracts `json:"public"`
-	} `json:"method"`
 }
 
 // Provider defines the common interface for the underlaying
@@ -57,11 +36,8 @@ type Provider interface {
 	// GetHead return the top-most key/value pair on the chain
 	GetHead(bucket string) (key, val []byte)
 
-	// Return a BoltDB cursor; temporary fix
+	// Iterate the contents of a given bucket
 	Cursor(bucket string, s chan *Record)
-
-	// GetStats ...
-	GetStats(bucket string) (s *Stats)
 }
 
 // New is a constructor/setup method to easily create a storage instance

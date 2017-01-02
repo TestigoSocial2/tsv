@@ -5,7 +5,6 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Jeffail/gabs"
 	"github.com/bcessa/tsv/compressor"
 	"github.com/boltdb/bolt"
 )
@@ -79,100 +78,8 @@ func (storage *boltStorage) Cursor(bucket string, s chan *Record) {
 		}
 		return nil
 	})
+	close(s)
 	return
-}
-
-func (storage *boltStorage) GetStats(bucket string) (s *Stats) {
-	s = &Stats{}
-	s.FirstDate = time.Now()
-	s.LastDate = time.Date(2010, 1, 1, 0, 0, 0, 0, time.UTC)
-	storage.db.View(func(tx *bolt.Tx) error {
-		tx.WriteFlag = txWriteFlag
-		b := tx.Bucket([]byte(bucket))
-		c := b.Cursor()
-		for k, v := c.First(); k != nil; k, v = c.Next() {
-			val := storage.compressor.Decompress(v)
-			r, err := gabs.ParseJSON(val)
-			if err == nil {
-				s.Contracts.Total++
-				releases, _ := r.Search("releases").Children()
-				for _, child := range releases {
-					// date
-					date, _ := child.Path("date").Data().(string)
-					t, err := time.Parse("2006-01-02T15:04:05.000Z", date)
-					if err == nil {
-						if t.Before(s.FirstDate) {
-							s.FirstDate = t
-						}
-						if t.After(s.LastDate) {
-							s.LastDate = t
-						}
-					}
-
-					// planning.budget.amount.amount
-					amount, ok := child.Path("planning.budget.amount.amount").Data().(float64)
-					if ok {
-						s.Contracts.Budget += amount
-					}
-
-					// tender.status
-					status, ok := child.Path("tender.status").Data().(string)
-					if ok {
-						switch status {
-						case "active":
-							s.Contracts.Active++
-						case "complete":
-							s.Contracts.Completed++
-						}
-					}
-
-					// contracts.value.amount
-					contracts, _ := child.Search("contracts").Children()
-					for _, contract := range contracts {
-						award, ok := contract.Path("value.amount").Data().(float64)
-						if ok {
-							s.Contracts.Awarded += award
-						}
-					}
-
-					// tender.numberOfTenderers
-					if child.ExistsP("tender.numberOfTenderers") {
-						participants, _ := child.Path("tender.numberOfTenderers").Data().(float64)
-						switch {
-						case (participants == 1):
-							s.AssignMethod.Direct.Total++
-							s.AssignMethod.Direct.Budget += amount
-							if status != "active" {
-								s.AssignMethod.Direct.Active++
-							} else {
-								s.AssignMethod.Direct.Completed++
-							}
-							break
-						case (participants >= 1 && participants <= 3):
-							s.AssignMethod.Limited.Total++
-							s.AssignMethod.Limited.Budget += amount
-							if status != "active" {
-								s.AssignMethod.Limited.Active++
-							} else {
-								s.AssignMethod.Limited.Completed++
-							}
-							break
-						default:
-							s.AssignMethod.Public.Total++
-							s.AssignMethod.Public.Budget += amount
-							if status != "active" {
-								s.AssignMethod.Public.Active++
-							} else {
-								s.AssignMethod.Public.Completed++
-							}
-						}
-					}
-				}
-			}
-		}
-		return nil
-	})
-	return s
 }
 
 func (storage *boltStorage) Count(bucket string) (count uint64) {
