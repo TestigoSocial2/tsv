@@ -69,11 +69,13 @@ func (storage *boltStorage) Cursor(bucket string, s chan *Record) {
 	storage.db.View(func(tx *bolt.Tx) error {
 		tx.WriteFlag = txWriteFlag
 		b := tx.Bucket([]byte(bucket))
-		c := b.Cursor()
-		for k, v := c.First(); k != nil; k, v = c.Next() {
-			s <- &Record{
-				Key:   k,
-				Value: storage.compressor.Decompress(v),
+		if b != nil {
+			c := b.Cursor()
+			for k, v := c.First(); k != nil; k, v = c.Next() {
+				s <- &Record{
+					Key:   k,
+					Value: storage.compressor.Decompress(v),
+				}
 			}
 		}
 		return nil
