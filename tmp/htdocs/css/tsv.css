@@ -16,6 +16,14 @@
 .bg-yellow {
   background-color: #f8c674; }
 
+.bg-gray {
+  background-color: #eee; }
+
+.block-title {
+  background-color: #111;
+  color: #fff;
+  padding: 6px; }
+
 .number-title {
   font-weight: 400; }
   .number-title span {
@@ -28,9 +36,17 @@
   background-color: #111;
   border-radius: 40px;
   color: #fff;
+  cursor: pointer;
+  display: inline-block;
   padding: 10px 22px; }
   .btn-black:hover {
     color: #fff; }
+  .btn-black.active {
+    background-color: #4990e2; }
+  .btn-black.disabled {
+    cursor: not-allowed;
+    opacity: .75;
+    text-decoration: line-through; }
 
 .inner-row {
   margin: 0 auto;
@@ -43,6 +59,9 @@ table.green tbody > tr:nth-of-type(odd) {
   background-color: #d0f5dc; }
 table.blue tbody > tr:nth-of-type(odd) {
   background-color: #d4fbfb; }
+
+div.clear {
+  clear: both; }
 
 #top {
   padding: 8px 0; }
@@ -60,8 +79,6 @@ table.blue tbody > tr:nth-of-type(odd) {
     margin: 0 auto;
     padding: 16px;
     width: auto; }
-    #top ul div.clear {
-      clear: both; }
     #top ul li {
       border-right: 1px solid #333;
       float: left;
@@ -329,5 +346,72 @@ div.project-grid div.item {
     font-size: 11px; }
   div.project-grid div.item:hover span.label, div.project-grid div.item.selected span.label {
     background-color: #50e3c2; }
+
+table.latest-contracts h4 {
+  font-weight: bold; }
+table.latest-contracts p.lbl {
+  color: #999;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase; }
+
+div.item-cell {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 12px;
+  padding-top: 20px; }
+  div.item-cell span.index {
+    border: 2px solid #111;
+    border-radius: 40px;
+    color: #333;
+    font-size: 1.2em;
+    font-weight: 400;
+    margin-right: 6px;
+    padding: 4px 10px; }
+  div.item-cell p.lbl {
+    color: #999;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase; }
+  div.item-cell div.left {
+    float: left; }
+  div.item-cell div.right {
+    float: right; }
+
+div.contract-details h4 {
+  font-weight: 500; }
+div.contract-details p.lbl {
+  color: #999;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase; }
+div.contract-details div.border-bottom {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+  padding-bottom: 12px; }
+div.contract-details div.contract-header {
+  margin-bottom: 40px; }
+  div.contract-details div.contract-header h2.block-title {
+    margin-bottom: 0; }
+  div.contract-details div.contract-header div.bullets .btn-black {
+    background-color: #fff;
+    border: 2px solid #111;
+    border-radius: 40px;
+    color: #111;
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 22px; }
+    div.contract-details div.contract-header div.bullets .btn-black:hover {
+      color: inherit; }
+    div.contract-details div.contract-header div.bullets .btn-black.active {
+      background-color: #111;
+      color: #fff; }
+    div.contract-details div.contract-header div.bullets .btn-black.disabled {
+      cursor: not-allowed;
+      opacity: .75;
+      text-decoration: line-through; }
+div.contract-details div.contract-highlights div[class^="col-md-"] {
+  border-right: 1px solid #ccc; }
+  div.contract-details div.contract-highlights div[class^="col-md-"]:last-child {
+    border-right: none; }
 
 /*# sourceMappingURL=tsv.css.map */

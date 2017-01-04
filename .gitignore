@@ -3,4 +3,4 @@ vendor/**
 .sass-cache
 glide.lock
 tsv
-tsv.db
+tmp/tsv.db
