@@ -128,14 +128,19 @@ func profile(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	log.Printf("Store user profile: %s\n", up.User)
 	store.Write("profile", []byte(up.User), []byte(r.FormValue("profile")))
 
-	tw := twilio.New("AC07ca38e0d96366ab706981b6b661a3ff", "fecb164a077922442f4f67cc797e0d4c")
-	_, err = tw.SendMessage(&twilio.MessageOptions{
-		To:   fmt.Sprintf("+521%s", up.NotificationSMS),
-		From: "+14242964188",
-		Body: "Bienvenido a Testigo Social Virtual 2.0 a partir de este momento comenzaras a recibir notificaciones relevantes sobre los procesos de contratación pública de tu interes.",
-	})
-	if err != nil {
-		log.Println("SMS error:", err)
+	// Load SMS setup variables from ENV
+	twAccount := os.Getenv("TSV_TWILIO_ACCOUNT")
+	twToken := os.Getenv("TSV_TWILIO_TOKEN")
+	if twToken != "" {
+		tw := twilio.New(twAccount, twToken)
+		_, err = tw.SendMessage(&twilio.MessageOptions{
+			To:   fmt.Sprintf("+521%s", up.NotificationSMS),
+			From: "+14242964188",
+			Body: "Bienvenido a Testigo Social Virtual 2.0 a partir de este momento comenzaras a recibir notificaciones relevantes sobre los procesos de contratación pública de tu interes.",
+		})
+		if err != nil {
+			log.Println("SMS error:", err)
+		}
 	}
 	fmt.Fprintf(w, fmt.Sprintf("{\"ok\":true}"))
 }
