@@ -28,7 +28,7 @@ import (
 	"os"
 	"path"
 
-	"github.com/bcessa/tsv/stats"
+	"github.com/bcessa/tsv/data"
 	"github.com/bcessa/tsv/storage"
 	"github.com/gorilla/websocket"
 	"github.com/julienschmidt/httprouter"
@@ -85,32 +85,10 @@ func init() {
 	RootCmd.AddCommand(serverCmd)
 }
 
-// Utility method to get a storage interface
-func openStorage() (storage.Provider, error) {
-	conf := storage.DefaultConfig()
-	conf.Path = path.Join(viper.GetString("server.store"), "tsv.db")
-	return storage.New(conf)
-}
-
-// Basic user profile structure
-type userProfile struct {
-	User                     string   `json:"user"`
-	Password                 string   `json:"password"`
-	UserType                 string   `json:"userType"`
-	Age                      string   `json:"age"`
-	PostalCode               string   `json:"postalCode"`
-	SelectedAgencies         []string `json:"selectedAgencies"`
-	SelectedProjects         []string `json:"selectedProjects"`
-	NotificationEmail        string   `json:"notificationEmail"`
-	EnableEmailNotifications bool     `json:"enableEmailNotifications"`
-	NotificationSMS          string   `json:"notificationSMS"`
-	EnableSMSNotifications   bool     `json:"enableSMSNotifications"`
-}
-
 // Create or update a user profile
 func profile(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	// Open storage
-	store, err := openStorage()
+	store, err := data.OpenStorage()
 	if err != nil {
 		log.Println("Storage error:", err)
 		fmt.Fprintf(w, fmt.Sprintf("{\"error\":\"%s\"}", err.Error()))
@@ -118,7 +96,7 @@ func profile(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	}
 	defer store.Close()
 
-	up := userProfile{}
+	up := data.UserProfile{}
 	err = json.Unmarshal([]byte(r.FormValue("profile")), &up)
 	if err != nil {
 		log.Println("Decoding error:", err)
@@ -146,9 +124,9 @@ func profile(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 }
 
 // Calculate and return stats about the contracts on a specific storage bucket
-func bucketStats(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+func stats(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	// Open storage
-	store, err := openStorage()
+	store, err := data.OpenStorage()
 	if err != nil {
 		log.Println("Storage error:", err)
 		fmt.Fprintf(w, fmt.Sprintf("{\"error\":\"%s\"}", err.Error()))
@@ -157,7 +135,8 @@ func bucketStats(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	defer store.Close()
 
 	log.Printf("Calculating stats for: %s\n", ps.ByName("bucket"))
-	data := stats.NewOrganization()
+
+	org := data.NewOrganization()
 	c := make(chan *storage.Record)
 	go store.Cursor(ps.ByName("bucket"), c)
 
@@ -168,12 +147,25 @@ CURSOR:
 			if !ok {
 				break CURSOR
 			}
-			data.AddRecord(rec.Value)
+			org.AddRecord(rec.Value)
 		}
 	}
 
-	res, _ := json.Marshal(data)
+	res, _ := json.Marshal(org)
 	fmt.Fprintf(w, string(res))
+}
+
+// Data query
+func query(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	query := data.Query{}
+	err := json.Unmarshal([]byte(r.FormValue("query")), &query)
+	if err != nil {
+		log.Println("Decoding error:", err)
+		fmt.Fprintf(w, fmt.Sprintf("{\"error\":\"%s\"}", err.Error()))
+		return
+	}
+	query.Bucket = ps.ByName("bucket")
+	fmt.Fprintf(w, query.Run())
 }
 
 // Handle websockets
@@ -193,11 +185,15 @@ func ws(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 }
 
 func runServer(cmd *cobra.Command, args []string) error {
+	// Set storage config variable
+	os.Setenv("TSV_STORAGE", path.Join(viper.GetString("server.store"), "tsv.db"))
+
 	// Configure router
 	router := httprouter.New()
 	router.NotFound = http.FileServer(http.Dir(viper.GetString("server.docs")))
 	router.POST("/profile", profile)
-	router.GET("/stats/:bucket", bucketStats)
+	router.POST("/query/:bucket", query)
+	router.GET("/stats/:bucket", stats)
 	router.GET("/ws", ws)
 
 	log.Println("Handling requests on port:", viper.GetInt("server.port"))

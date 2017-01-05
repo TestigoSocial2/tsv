@@ -29,6 +29,11 @@ var TSV = {
     if( $('#highlights') ) {
       this.statsSetup();
     }
+
+    // Query setup
+    if( $('#queryForm') ) {
+      this.querySetup();
+    }
   },
 
   // Load main stats
@@ -243,6 +248,44 @@ var TSV = {
           },
           success: function( res ) {
             alert('Tu usuario ha quedado registrado exitosamente en Testigo Social Virtual 2.0');
+          }
+        })
+      }
+    });
+  },
+
+  // Contract query setup
+  querySetup: function() {
+    var ui = {}
+    ui.form = $('form#queryForm');
+    ui.bullets = ui.form.find('div.bullets span');
+    ui.bullets.on( 'click', function( e ) {
+      ui.bullets.removeClass( 'active' );
+      $( e.target ).addClass( 'active' );
+    });
+    ui.form.on( 'submit', function( e ) {
+      e.preventDefault();
+      var q = {
+        value: ui.form.find('input').val(),
+        filter: ui.bullets.filter('.active').data('filter')
+      }
+      if( q.value != "" ) {
+        // Dynamically set bucket used, default to 'gacm'
+        var url = '/query/gacm';
+        if( getParameter('bucket') ) {
+          url = '/query/' + getParameter('bucket');
+        }
+
+        // Submit query
+        $.ajax({
+          type: "POST",
+          url: url,
+          data: {
+            query: JSON.stringify(q)
+          },
+          success: function( res ) {
+            res = JSON.parse(res)
+            console.log( res );
           }
         })
       }
