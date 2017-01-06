@@ -267,7 +267,8 @@ var TSV = {
       e.preventDefault();
       var q = {
         value: ui.form.find('input').val(),
-        filter: ui.bullets.filter('.active').data('filter')
+        filter: ui.bullets.filter('.active').data('filter'),
+        limit: 20
       }
       if( q.value != "" ) {
         // Dynamically set bucket used, default to 'gacm'
