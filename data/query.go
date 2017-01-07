@@ -2,7 +2,6 @@ package data
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"strconv"
 	"strings"
@@ -20,12 +19,12 @@ type Query struct {
 }
 
 // Run the query and return results
-func (q *Query) Run() string {
+func (q *Query) Run() []map[string]interface{} {
 	// Open storage
 	store, err := OpenStorage()
 	if err != nil {
 		log.Println("Storage error:", err)
-		return ""
+		return nil
 	}
 	defer store.Close()
 
@@ -34,7 +33,8 @@ func (q *Query) Run() string {
 
 	// Iterate bucket
 	cursor := make(chan *storage.Record)
-	go store.Cursor(q.Bucket, cursor)
+	cancel := make(chan bool)
+	go store.Cursor(q.Bucket, cursor, cancel)
 	for rec := range cursor {
 		// Skip faulty records
 		r, err := gabs.ParseJSON(rec.Value)
@@ -106,8 +106,13 @@ func (q *Query) Run() string {
 				}
 			}
 		}
+
+		// Check query limit
+		if q.Limit > 0 && len(list) == q.Limit {
+			close(cancel)
+			break
+		}
 	}
 
-	res, _ := json.Marshal(list)
-	return fmt.Sprintf("%s", res)
+	return list
 }

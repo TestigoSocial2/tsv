@@ -137,7 +137,7 @@ func stats(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	log.Printf("Calculating stats for: %s\n", ps.ByName("bucket"))
 	org := data.NewOrganization()
 	cursor := make(chan *storage.Record)
-	go store.Cursor(ps.ByName("bucket"), cursor)
+	go store.Cursor(ps.ByName("bucket"), cursor, nil)
 	for rec := range cursor {
 		org.AddRecord(rec.Value)
 	}
@@ -158,7 +158,8 @@ func query(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	query.Bucket = ps.ByName("bucket")
 
 	log.Printf("Running query: %+v\n", query)
-	fmt.Fprintf(w, query.Run())
+	res, _ := json.Marshal(query.Run())
+	fmt.Fprintf(w, fmt.Sprintf("%s", res))
 }
 
 // Handle websockets

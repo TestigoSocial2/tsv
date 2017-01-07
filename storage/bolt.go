@@ -65,22 +65,32 @@ func (storage *boltStorage) Read(bucket string, key []byte) (val []byte) {
 	return val
 }
 
-func (storage *boltStorage) Cursor(bucket string, ch chan *Record) {
+func (storage *boltStorage) Cursor(bucket string, out chan<- *Record, cancel chan bool) {
 	storage.db.View(func(tx *bolt.Tx) error {
 		tx.WriteFlag = txWriteFlag
 		b := tx.Bucket([]byte(bucket))
 		if b != nil {
 			c := b.Cursor()
-			for k, v := c.First(); k != nil; k, v = c.Next() {
-				ch <- &Record{
-					Key:   k,
-					Value: storage.compressor.Decompress(v),
+			k, v := c.First()
+			for {
+				select {
+				case <-cancel:
+					return nil
+				default:
+					if k == nil {
+						return nil
+					}
+					out <- &Record{
+						Key:   k,
+						Value: storage.compressor.Decompress(v),
+					}
+					k, v = c.Next()
 				}
 			}
 		}
 		return nil
 	})
-	close(ch)
+	close(out)
 	return
 }
 

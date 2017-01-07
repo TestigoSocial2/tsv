@@ -37,7 +37,7 @@ type Provider interface {
 	GetHead(bucket string) (key, val []byte)
 
 	// Iterate the contents of a given bucket
-	Cursor(bucket string, s chan *Record)
+	Cursor(bucket string, out chan<- *Record, cancel chan bool)
 }
 
 // New is a constructor/setup method to easily create a storage instance
