@@ -70,9 +70,15 @@ func (q *Query) Run() []map[string]interface{} {
 					list = append(list, m)
 				}
 			case "procedureNumber":
-				// releases[].planning.budget.projectID
-				projectID, _ := release.Path("planning.budget.projectID").Data().(string)
-				if projectID == q.Value {
+				// releases[].tender.id
+				tenderID, _ := release.Path("tender.id").Data().(string)
+				if tenderID == q.Value {
+					list = append(list, m)
+				}
+			case "procedureType":
+				// releases[].tender.procurementMethod
+				pType, _ := release.Path("tender.procurementMethod").Data().(string)
+				if pType == q.Value {
 					list = append(list, m)
 				}
 			case "buyer":
