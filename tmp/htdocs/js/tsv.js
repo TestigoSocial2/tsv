@@ -259,9 +259,42 @@ var TSV = {
     var ui = {}
     ui.form = $('form#queryForm');
     ui.bullets = ui.form.find('div.bullets span');
+    ui.input = $( 'input#query' );
     ui.bullets.on( 'click', function( e ) {
       ui.bullets.removeClass( 'active' );
-      $( e.target ).addClass( 'active' );
+      var target = $( e.target );
+      target.addClass( 'active' );
+
+      switch (target.data( 'filter' )) {
+        case 'date':
+          if( ! target.data( 'pickerSetup' ) ) {
+            target.data( 'pickerSetup', true );
+            target.datepicker({
+              clearBtn: true,
+              assumeNearbyYear: true,
+              format: 'mm/dd/yyyy',
+              language: 'es',
+              maxViewMode: 2,
+              multidate: 2,
+              todayHighlight: true
+            }).on( 'hide', function( e ) {
+              e.dates.sort(function(a, b) {
+                return new Date(a).getTime() - new Date(b).getTime();
+              });
+              var lbl = moment(e.dates[0]).format('MMMM Do YYYY');
+              var val = moment(e.dates[0]).format('MM-DD-YYYY');
+              if( e.dates.length > 1 ) {
+                lbl += ' a ' + moment(e.dates[1]).format('MMMM Do YYYY')
+                val += '|' + moment(e.dates[1]).format('MM-DD-YYYY');
+              }
+              ui.input.data('value', val);
+              ui.input.val( lbl );
+              ui.input.focus();
+            });
+          }
+          target.datepicker( 'show' );
+          break;
+      }
     });
     ui.form.on( 'submit', function( e ) {
       e.preventDefault();

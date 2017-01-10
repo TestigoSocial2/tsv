@@ -11,6 +11,8 @@ $tsv-bg-gray: #eee;
 $tsv-yellow: #f8c674;
 $tsv-dark-red: #a94442;
 
+@import 'datepicker';
+
 .txt-upper {
   text-transform: uppercase;
 }
