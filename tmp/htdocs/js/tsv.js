@@ -294,6 +294,36 @@ var TSV = {
           }
           target.datepicker( 'show' );
           break;
+        case 'amount':
+          if( ! target.data( 'sliderSetup' ) ) {
+            target.data( 'sliderSetup', true );
+            target.popover({
+              html: true,
+              title: 'Seleccione el rango a utilizar como filtro (MXN)',
+              content: '<b>$0</b><input id="amountSlider" type="text" /><b>$100,000,000</b>',
+              placement: 'bottom',
+              trigger: 'focus'
+            }).on( 'shown.bs.popover', function() {
+              $("#amountSlider").slider({
+                step: 50000,
+                min: 0,
+                max: 100000000,
+                value: [20000000,80000000],
+                formatter: function( value ) {
+                  if( Array.isArray( value ) ) {
+                    var lbl = '$' + value[0].toLocaleString() + ' a ' + '$' + value[1].toLocaleString();
+                    return lbl;
+                  }
+                  return '';
+                }
+              }).on( 'slide', function( e ) {
+                ui.input.data('value', e.value.join('|'));
+                ui.input.val( '$' + e.value[0].toLocaleString() + ' a ' + '$' + e.value[1].toLocaleString() );
+              });
+            });
+          }
+          target.popover( 'toggle' );
+          break;
       }
     });
     ui.form.on( 'submit', function( e ) {
