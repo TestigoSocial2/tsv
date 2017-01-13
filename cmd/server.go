@@ -26,6 +26,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"os/signal"
 	"path"
 
 	"github.com/bcessa/tsv/data"
@@ -182,6 +183,10 @@ func runServer(cmd *cobra.Command, args []string) error {
 	// Set storage config variable
 	os.Setenv("TSV_STORAGE", path.Join(viper.GetString("server.store"), "tsv.db"))
 
+	// Subscribe to SIGINT signals
+	stopChan := make(chan os.Signal)
+	signal.Notify(stopChan, os.Interrupt)
+
 	// Configure router
 	router := httprouter.New()
 	router.NotFound = http.FileServer(http.Dir(viper.GetString("server.docs")))
@@ -190,10 +195,17 @@ func runServer(cmd *cobra.Command, args []string) error {
 	router.GET("/stats/:bucket", stats)
 	router.GET("/ws", ws)
 
+	// Start server
 	log.Println("Handling requests on port:", viper.GetInt("server.port"))
-	err := http.ListenAndServe(fmt.Sprintf(":%d", viper.GetInt("server.port")), router)
-	if err != nil {
-		return err
-	}
+	go func() {
+		addr := fmt.Sprintf(":%d", viper.GetInt("server.port"))
+		if err := http.ListenAndServe(addr, router); err != nil {
+			log.Printf("Connection error: %s\n", err)
+		}
+	}()
+
+	// Wait for SIGINT
+	<-stopChan
+	log.Println("Shutting down server")
 	return nil
 }
