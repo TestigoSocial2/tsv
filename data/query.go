@@ -5,9 +5,14 @@ import (
 	"log"
 	"strconv"
 	"strings"
+	"time"
+	"unicode"
 
 	"github.com/Jeffail/gabs"
 	"github.com/bcessa/tsv/storage"
+
+	"golang.org/x/text/transform"
+	"golang.org/x/text/unicode/norm"
 )
 
 // Query contract information
@@ -16,6 +21,11 @@ type Query struct {
 	Filter string `json:"filter"`
 	Bucket string `json:"bucket"`
 	Limit  int    `json:"limit"`
+}
+
+// Remove UNICODE diacritics
+func isMn(r rune) bool {
+	return unicode.Is(unicode.Mn, r) // Mn: nonspacing marks
 }
 
 // Run the query and return results
@@ -52,15 +62,32 @@ func (q *Query) Run() []map[string]interface{} {
 			switch q.Filter {
 			case "date":
 				// releases[].date
-				date, _ := release.Path("date").Data().(string)
-				if strings.Contains(date, q.Value) {
-					list = append(list, m)
+				dates := strings.Split(q.Value, "|")
+				if len(dates) > 1 {
+					startDate, _ := time.Parse("01-02-2006", dates[0])
+					endDate, _ := time.Parse("01-02-2006", dates[1])
+					date, _ := release.Path("date").Data().(string)
+					rdate, _ := time.Parse(time.RFC3339, date)
+					if rdate.After(startDate) && rdate.Before(endDate) {
+						list = append(list, m)
+					}
+				} else {
+					startDate, _ := time.Parse("01-02-2006", dates[0])
+					date, _ := release.Path("date").Data().(string)
+					rdate, _ := time.Parse(time.RFC3339, date)
+					sy, sm, sd := startDate.Date()
+					ry, rm, rd := rdate.Date()
+					if sy == ry && sm == rm && sd == rd {
+						list = append(list, m)
+					}
 				}
 			case "amount":
 				// releases[].planning.budget.amount.amount
+				barrier := strings.Split(q.Value, "|")
+				low, _ := strconv.Atoi(barrier[0])
+				high, _ := strconv.Atoi(barrier[1])
 				amount, _ := release.Path("planning.budget.amount.amount").Data().(float64)
-				qval, _ := strconv.ParseFloat(q.Value, 64)
-				if amount == qval {
+				if amount >= float64(low) && amount <= float64(high) {
 					list = append(list, m)
 				}
 			case "contractNumber":
@@ -86,17 +113,34 @@ func (q *Query) Run() []map[string]interface{} {
 				// releases[].buyer.identifier.legalName
 				buyerID, _ := release.Path("buyer.identifier.id").Data().(string)
 				buyerName, _ := release.Path("buyer.identifier.legalName").Data().(string)
-				if strings.Contains(buyerID, q.Value) || strings.Contains(buyerName, q.Value) {
+
+				// Normalize input and values
+				t := transform.Chain(norm.NFD, transform.RemoveFunc(isMn), norm.NFC)
+				qValue, _, _ := transform.String(t, q.Value)
+				qValue = strings.ToLower(qValue)
+				buyerID, _, _ = transform.String(t, buyerID)
+				buyerID = strings.ToLower(buyerID)
+				buyerName, _, _ = transform.String(t, buyerName)
+				buyerName = strings.ToLower(buyerName)
+
+				if strings.Contains(buyerID, qValue) || strings.Contains(buyerName, qValue) {
 					list = append(list, m)
 				}
 			case "provider":
+				// Normalize input value
+				t := transform.Chain(norm.NFD, transform.RemoveFunc(isMn), norm.NFC)
+				qValue, _, _ := transform.String(t, q.Value)
+				qValue = strings.ToLower(qValue)
+
 				awards, _ := release.Search("awards").Children()
 				for _, award := range awards {
 					// releases[].awards[].suppliers[].identifier.id
 					providerID := []string{}
 					json.Unmarshal([]byte(award.Path("suppliers.identifier.id").String()), &providerID)
 					for _, p := range providerID {
-						if strings.Contains(p, q.Value) {
+						p, _, _ = transform.String(t, p)
+						p = strings.ToLower(p)
+						if strings.Contains(p, qValue) {
 							list = append(list, m)
 						}
 					}
@@ -105,7 +149,9 @@ func (q *Query) Run() []map[string]interface{} {
 					providerName := []string{}
 					json.Unmarshal([]byte(award.Path("suppliers.name").String()), &providerName)
 					for _, p := range providerName {
-						if strings.Contains(p, q.Value) {
+						p, _, _ = transform.String(t, p)
+						p = strings.ToLower(p)
+						if strings.Contains(p, qValue) {
 							list = append(list, m)
 						}
 					}

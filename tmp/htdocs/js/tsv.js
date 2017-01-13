@@ -324,12 +324,15 @@ var TSV = {
           }
           target.popover( 'toggle' );
           break;
+        default:
+          ui.input.data('value', false);
+          break;
       }
     });
     ui.form.on( 'submit', function( e ) {
       e.preventDefault();
       var q = {
-        value: ui.form.find('input').val(),
+        value: ui.input.data('value') || ui.form.find('input').val(),
         filter: ui.bullets.filter('.active').data('filter'),
         limit: 20
       }
