@@ -41,7 +41,7 @@ var TSV = {
     var data = {}
     var charts = {}
     var ui = {
-      totalContracts: $('span#totalContracts'),
+      totalContracts: $('span.totalContracts'),
       totalBudget: $('span#totalBudget'),
       totalAward: $('span#totalAward'),
       totalAmount: $('span#totalAmount'),
