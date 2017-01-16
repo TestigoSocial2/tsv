@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testigo Social 2.0</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/tsv.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/waypoints.min.js"></script>
+    <script type="text/javascript" src="js/counterup.min.js"></script>
+    <script type="text/javascript" src="js/pixative.validator.js"></script>
+    <script type="text/javascript" src="js/chart.min.js"></script>
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <script type="text/javascript" src="js/tsv.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <!-- Hero photo -->
+      <div id="hero" class="row">
+        <div class="photo col-md-12" style="background-image:url('images/hero_photo_1.png')">
+          <div class="logo"></div>
+          <h2>El dinero público también es tu dinero</h2>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div id="facts" class="row inner-row">
+        <div class="col-md-12">
+          <p style="font-size: 2.4em;">Estamos analizando cómo se han gastado <strong style="background-color: #d0f5dc;">$43,332,164,993 MXN</strong> en <strong style="background-color: #d0f5dc;">227 contratos</strong> distintos, para diseñar una plataforma que transforme las <strong style="background-color: #d0f5dc;">compras públicas en México.</strong></p>
+          <hr>
+          <p style="font-size: 2em;">Registrate ahora para formar parte de esta comundiad.</p>
+          <p class="txt-italic">En operación a partir de 2017.</p>
+          <form id="preregister" class="form-inline">
+            <div class="input-group col-md-8">
+              <input type="text" class="form-control input-lg" name="email" placeholder="Correo electrónico">
+              <span class="input-group-btn">
+                <button class="btn btn-primary btn-lg" type="submit">Enviar</button>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div id="bottom" class="row">
+        <div class="inner-row">
+          <div class="col-md-3">
+            <p>Una iniciativa de:</p>
+            <a href="#" class="tm"></a>
+          </div>
+          <div class="col-md-3">
+            <p>Con el apoyo de:</p>
+            <a href="#" class="uk"></a>
+          </div>
+          <div class="col-md-6">
+            <div class="social">
+              <a href="https://www.twitter.com/testigo_social" class="tw"></a>
+              <a href="https://www.facebook.com/testigosocial" class="fb"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      $('document').ready(function(){
+        TSV.init();
+      });
+    </script>
+  </body>
+</html>

@@ -17,6 +17,8 @@ run:
 docker:
 	env GOOS=linux GOARCH=amd64 go build -v -o tsv
 	docker build -t tm/tsv .
+	docker save -o tsv.tar tm/tsv
+	gzip tsv.tar
 	rm tsv
 
 # Run as a docker container

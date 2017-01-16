@@ -163,6 +163,11 @@ func query(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	fmt.Fprintf(w, fmt.Sprintf("%s", res))
 }
 
+func preregister(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	log.Printf("Pre-register for: %+v\n", r.FormValue("email"))
+	fmt.Fprintf(w, fmt.Sprintf("ok"))
+}
+
 // Handle websockets
 func ws(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	c, err := wsu.Upgrade(w, r, nil)
@@ -192,6 +197,7 @@ func runServer(cmd *cobra.Command, args []string) error {
 	router.NotFound = http.FileServer(http.Dir(viper.GetString("server.docs")))
 	router.POST("/profile", profile)
 	router.POST("/query/:bucket", query)
+	router.POST("/preregister", preregister)
 	router.GET("/stats/:bucket", stats)
 	router.GET("/ws", ws)
 

@@ -20,6 +20,23 @@ var TSV = {
       $('#hero > div.photo').css( 'background-image', img );
     }
 
+    if( $('form#preregister') ) {
+      var form = $('form#preregister');
+      form.on( 'submit', function( e ) {
+        e.preventDefault();
+        $.ajax({
+          type: "POST",
+          url: 'preregister',
+          data: {
+            email: form.find('input').val()
+          },
+          success: function( res ) {
+            alert("Gracias por tu interés en Testigo Social 2.0. Pronto te informaremos cómo podrás participar en las compras públicas mediante esta nueva plataforma.");
+          }
+        });
+      });
+    }
+
     // Register form setup
     if( $('#setup') ) {
       this.registerSetup();
