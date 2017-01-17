@@ -163,9 +163,15 @@ func query(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	fmt.Fprintf(w, fmt.Sprintf("%s", res))
 }
 
+// Store pre-register email
 func preregister(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	log.Printf("Pre-register for: %+v\n", r.FormValue("email"))
-	fmt.Fprintf(w, fmt.Sprintf("ok"))
+	f, err := os.OpenFile("/data/pre-register", os.O_APPEND|os.O_WRONLY, 0600)
+	if err == nil {
+		f.WriteString(fmt.Sprintf("%s\n", r.FormValue("email")))
+	}
+	defer f.Close()
+	fmt.Fprintf(w, fmt.Sprintf("%s", "ok"))
 }
 
 // Handle websockets

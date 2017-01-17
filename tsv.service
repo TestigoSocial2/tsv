@@ -13,5 +13,6 @@ ExecStartPre=-/usr/bin/docker kill tsv
 ExecStartPre=-/usr/bin/docker rm tsv
 ExecStart=/usr/bin/docker run --name=tsv \
   -p 7788:7788 \
+  -v /home/core/pre-register:/data/pre-register \
   tm/tsv server -s /data -c /var/www/htdocs
 ExecStop=/usr/bin/docker stop tsv

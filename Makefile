@@ -23,4 +23,6 @@ docker:
 
 # Run as a docker container
 run-docker:
-	docker run -it -p 7788:7788 --rm tm/tsv server -s /data -c /var/www/htdocs
+	docker run -it -p 7788:7788 --rm \
+	-v /home/core/pre-register:/data/pre-register \
+	tm/tsv server -s /data -c /var/www/htdocs
