@@ -1,0 +1,19 @@
+[Unit]
+Description=Testigo Social Virtual 2.0 - Cache
+Documentation=https://github.com/bcessa/tsv
+Requires=tsv.service
+After=tsv.service
+
+[Service]
+Restart=always
+RestartSec=5
+TimeoutStartSec=0
+KillMode=none
+
+ExecStartPre=-/usr/bin/docker kill tsv-cache
+ExecStartPre=-/usr/bin/docker rm tsv-cache
+ExecStart=/usr/bin/docker run \
+  --name=tsv-cache \
+  --link tsv:backend \
+  -p 80:6081 mxabierto/varnish
+ExecStop=/usr/bin/docker stop tsv-cache
