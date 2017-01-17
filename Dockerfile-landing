@@ -1,0 +1,17 @@
+FROM scratch
+
+MAINTAINER bcessa <ben@datos.mx>
+
+ADD tmp/htdocs/css /var/www/htdocs/css
+ADD tmp/htdocs/images /var/www/htdocs/images
+ADD tmp/htdocs/js /var/www/htdocs/js
+ADD tmp/htdocs/favicon.ico /var/www/htdocs/favicon.ico
+ADD tmp/htdocs/landing.html /var/www/htdocs/index.html
+
+ADD tmp/tsv.db /data/tsv.db
+
+ADD tsv /
+
+EXPOSE 7788
+
+ENTRYPOINT ["/tsv", "server"]
