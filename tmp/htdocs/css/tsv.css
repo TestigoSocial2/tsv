@@ -529,6 +529,12 @@
 .txt-upper {
   text-transform: uppercase; }
 
+.txt-mono {
+  font-family: 'Overpass Mono', monospace; }
+
+.txt-sans {
+  font-family: 'Montserrat', sans-serif; }
+
 .txt-italic {
   font-style: italic; }
 
@@ -659,7 +665,7 @@ div.clear {
   border-bottom: 1px solid #ccc;
   padding: 4em 0 2em; }
   #facts p.highlight {
-    font-size: 4em;
+    font-size: 3em;
     font-weight: bold; }
 
 #highlights {

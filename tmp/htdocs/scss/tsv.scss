@@ -18,6 +18,14 @@ $tsv-dark-red: #a94442;
   text-transform: uppercase;
 }
 
+.txt-mono {
+  font-family: 'Overpass Mono', monospace;
+}
+
+.txt-sans {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .txt-italic {
   font-style: italic;
 }
@@ -206,7 +214,7 @@ div.clear {
   padding: 4em 0 2em;
 
   p.highlight {
-    font-size: 4em;
+    font-size: 3em;
     font-weight: bold;
   }
 }
