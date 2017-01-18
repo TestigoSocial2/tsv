@@ -553,6 +553,9 @@
 .bg-gray {
   background-color: #eee; }
 
+.bg-green {
+  background-color: #d0f5dc; }
+
 .block-title {
   background-color: #111;
   color: #fff;
@@ -947,5 +950,35 @@ div.contract-details div.contract-highlights div[class^="col-md-"] {
   border-right: 1px solid #ccc; }
   div.contract-details div.contract-highlights div[class^="col-md-"]:last-child {
     border-right: none; }
+
+div.chart-widget {
+  border: 1px solid #ccc;
+  margin-top: 20px; }
+  div.chart-widget h2 {
+    font-size: 20px;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 10px; }
+  div.chart-widget p {
+    padding: 10px; }
+  div.chart-widget canvas {
+    background-color: #f8c674;
+    margin: 10px 3%;
+    min-height: 340px;
+    width: 94%; }
+
+div.chart-main {
+  margin-bottom: 20px; }
+  div.chart-main div.sidebar {
+    border-right: 1px solid #eee;
+    padding-top: 20px; }
+    div.chart-main div.sidebar h4 {
+      font-weight: 500;
+      text-transform: uppercase; }
+  div.chart-main div.content canvas {
+    background-color: #f8c674;
+    margin: 10px 3%;
+    min-height: 440px;
+    width: 94%; }
 
 /*# sourceMappingURL=tsv.css.map */

@@ -21,23 +21,28 @@ var TSV = {
     }
 
     // Pre-register form setup
-    if( $('form#preregister') ) {
+    if( $('form#preregister').length ) {
       this.preRegisterSetup();
     }
 
     // Register form setup
-    if( $('#setup') ) {
+    if( $('form#setup').length ) {
       this.registerSetup();
     }
 
     // Display main stats
-    if( $('#highlights') ) {
+    if( $('#highlights').length ) {
       this.statsSetup();
     }
 
     // Query setup
-    if( $('#queryForm') ) {
+    if( $('form#queryForm').length ) {
       this.querySetup();
+    }
+
+    // Indicators filter setup
+    if( $('form#filterForm').length ) {
+      this.filterSetup();
     }
   },
 
@@ -385,6 +390,38 @@ var TSV = {
           }
         })
       }
+    });
+  },
+
+  // Indicators filter setup
+  filterSetup: function() {
+    var ui = {
+      btn: $('span#applyFilters'),
+      form: $('form#filterForm'),
+      amountSlider: $("#amountSlider")
+    }
+
+    // Configure amount slider
+    ui.amountSlider.slider({
+      step: 50000,
+      min: 0,
+      max: 100000000,
+      value: [20000000,80000000],
+      formatter: function( value ) {
+        if( Array.isArray( value ) ) {
+          var lbl = '$' + value[0].toLocaleString() + ' a ' + '$' + value[1].toLocaleString();
+          return lbl;
+        }
+        return '';
+      }
+    });
+
+    // Handle submit process
+    ui.btn.on( 'click', function() {
+      var data = {}
+      ui.form.serializeArray().forEach( function( el ) {
+        data[el.name] = el.value
+      });
     });
   }
 }

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testigo Social 2.0</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/tsv.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/waypoints.min.js"></script>
+    <script type="text/javascript" src="js/counterup.min.js"></script>
+    <script type="text/javascript" src="js/pixative.validator.js"></script>
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datepicker.es.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap-slider.min.js"></script>
+    <script type="text/javascript" src="js/tsv.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <!-- Top menu -->
+      <div id="top" class="row">
+        <div class="col-md-12">
+          <a href="index.html" class="logo"></a>
+
+          <ul>
+            <li><a href="index.html">¿Qué es TS 2.0?</a></li>
+            <li><a href="contracts.html">Contratos</a></li>
+            <li><a href="#" class="active">Indicadores</a></li>
+            <li><a href="notifications.html">Notificaciones</a></li>
+            <li><a href="#">Contrataciones Abiertas</a></li>
+            <div class="clear"></div>
+          </ul>
+
+          <div class="social">
+            <a href="https://www.twitter.com/testigo_social" class="tw"></a>
+            <a href="https://www.facebook.com/testigosocial" class="fb"></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section description -->
+      <div class="row info bg-green">
+        <div class="inner-row">
+          <h2>Indicadores</h2>
+          <p>Testigo Social 2.0 te puede hacer llegar datos e información específica sobre procedimientos contratación pública que están en marcha. Desde un aviso de inicio de un nuevo procedimiento hasta la liga para consultar un contrato. Completa la información correspondiente y comienza a recibir notificaciones.</p>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="inner-row">
+        <!-- Widgets -->
+        <div class="row">
+          <div class="col-md-6">
+            <div class="chart-widget">
+              <h2 class="block-title">Valor total contratado por tipo de procedimiento</h2>
+              <div class="bg-gray">
+                <p>La gráfica muestra el número de contratos que se encuentran en cada una de las 5 etapas de contratación</p>
+              </div>
+              <div class="chart">
+                <canvas></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="chart-widget">
+              <h2 class="block-title">Valor total contratado por tipo de procedimiento</h2>
+              <div class="bg-gray">
+                <p>La gráfica muestra el número de contratos que se encuentran en cada una de las 5 etapas de contratación</p>
+              </div>
+              <div class="chart">
+                <canvas></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Separator -->
+        <hr>
+
+        <!-- Main chart -->
+        <div class="row chart-main">
+          <div class="col-md-4 sidebar">
+            <form id="filterForm">
+              <h4>Filtros</h4>
+              <p>Selecciona los criterios que te sean más relevantes para ajustar el indicador.</p>
+              <hr>
+              <h4>Dependencias</h4>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="bucket" value="cdmx" checked>Ciudad de México
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="bucket" value="gacm">Grupo Aeroportuario
+                </label>
+              </div>
+              <hr>
+              <h4>Etapa del Procedimiento</h4>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="state" value="planning" checked>Planeación
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="state" value="tender">Licitación
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="state" value="award">Adjudicación
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="state" value="contract">Contratación
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="state" value="implementation">Implementación
+                </label>
+              </div>
+              <hr>
+              <h4>Monto</h4>
+              <b>$0</b><input id="amountSlider" name="amount" type="text" /><b>$100,000,000</b>
+              <hr>
+              <span id="applyFilters" class="btn-black active">Aplicar Filtros</span>
+            </form>
+          </div>
+          <div class="col-md-8 content">
+            <h2>Resultados de la Búsqueda</h2>
+            <div class="chart">
+              <canvas></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div id="bottom" class="row">
+        <div class="inner-row">
+          <div class="col-md-3">
+            <p>Una iniciativa de:</p>
+            <a href="#" class="tm"></a>
+          </div>
+          <div class="col-md-3">
+            <p>Con el apoyo de:</p>
+            <a href="#" class="uk"></a>
+          </div>
+          <div class="col-md-6">
+            <div class="social">
+              <a href="https://www.twitter.com/testigo_social" class="tw"></a>
+              <a href="https://www.facebook.com/testigosocial" class="fb"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      $('document').ready(function(){
+        TSV.init();
+      });
+    </script>
+  </body>
+</html>

@@ -50,6 +50,10 @@ $tsv-dark-red: #a94442;
   background-color: $tsv-bg-gray;
 }
 
+.bg-green {
+  background-color: $tsv-light-green;
+}
+
 .block-title {
   background-color: $tsv-black;
   color: $tsv-white;
@@ -656,6 +660,52 @@ div.contract-details {
       &:last-child {
         border-right: none;
       }
+    }
+  }
+}
+
+div.chart-widget {
+  border: 1px solid $tsv-light-gray;
+  margin-top: 20px;
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 10px;
+  }
+
+  p {
+    padding: 10px;
+  }
+
+  canvas {
+    background-color: $tsv-yellow;
+    margin: 10px 3%;
+    min-height: 340px;
+    width: 94%;
+  }
+}
+
+div.chart-main {
+  margin-bottom: 20px;
+
+  div.sidebar {
+    border-right: 1px solid $tsv-bg-gray;
+    padding-top: 20px;
+
+    h4 {
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+  }
+
+  div.content {
+    canvas {
+      background-color: $tsv-yellow;
+      margin: 10px 3%;
+      min-height: 440px;
+      width: 94%;
     }
   }
 }
