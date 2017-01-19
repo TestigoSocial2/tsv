@@ -56,7 +56,8 @@ var TSV = {
       totalAward: $('span#totalAward'),
       totalAmount: $('span#totalAmount'),
       firstDate: $('span#firstDate'),
-      lastDate: $('span#lastDate')
+      lastDate: $('span#lastDate'),
+      description: $('span#orgDescription')
     }
 
     // Dynamically set bucket used, default to 'gacm'
@@ -74,8 +75,9 @@ var TSV = {
       }
     }).done(function() {
       // Adjust labels
-      ui.firstDate.text( moment( data.FirstDate ).format('LL') );
-      ui.lastDate.text( moment( data.LastDate ).format('LL') );
+      ui.firstDate.text( moment( data.firstDate ).format('LL') );
+      ui.lastDate.text( moment( data.lastDate ).format('LL') );
+      ui.description.text( data.description );
       ui.totalContracts.text( data.contracts.total );
       ui.totalBudget.text((data.contracts.budget / 1000000).toLocaleString(undefined, {
         minimumFractionDigits: 1,
@@ -91,11 +93,11 @@ var TSV = {
       }));
 
       // Prepare chart data
-      var directP = ((data.method['direct'].budget * 100) / data.contracts.budget).toFixed(2);
-      var limitedP = ((data.method['limited'].budget * 100) / data.contracts.budget).toFixed(2);
-      var publicP = ((data.method['public'].budget * 100) / data.contracts.budget).toFixed(2);
+      var directP = ((data.method['limited'].budget * 100) / data.contracts.budget).toFixed(2);
+      var limitedP = ((data.method['selective'].budget * 100) / data.contracts.budget).toFixed(2);
+      var publicP = ((data.method['open'].budget * 100) / data.contracts.budget).toFixed(2);
       var charts = {
-        direct: {
+        limited: {
           c: false,
           data: {
             labels: [
@@ -110,7 +112,7 @@ var TSV = {
             ]
           }
         },
-        limited: {
+        selective: {
           c: false,
           data: {
             labels: [
@@ -126,7 +128,7 @@ var TSV = {
             ]
           }
         },
-        'public': {
+        open: {
           c: false,
           data: {
             labels: [

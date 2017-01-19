@@ -137,6 +137,14 @@ func stats(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 
 	log.Printf("Calculating stats for: %s\n", ps.ByName("bucket"))
 	org := data.NewOrganization()
+	org.Code = ps.ByName("bucket")
+	switch org.Code {
+	case "gacm":
+		org.Description = "Nuevo Aeropuerto Internacional de la Ciudad de México"
+	case "cdmx":
+		org.Description = "Contratación de Servicios y Obras de la Ciudad de México"
+	}
+
 	cursor := make(chan *storage.Record)
 	go store.Cursor(ps.ByName("bucket"), cursor, nil)
 	for rec := range cursor {

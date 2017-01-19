@@ -17,13 +17,15 @@ type contracts struct {
 
 // Organization represent the information summary of a specific organization
 type Organization struct {
+	Code         string    `json:"code"`
+	Description  string    `json:"description"`
 	FirstDate    time.Time `json:"firstDate"`
 	LastDate     time.Time `json:"lastDate"`
 	Contracts    contracts `json:"contracts"`
 	AssignMethod struct {
-		Direct  contracts `json:"direct"`
-		Limited contracts `json:"limited"`
-		Public  contracts `json:"public"`
+		Limited   contracts `json:"limited"`
+		Selective contracts `json:"selective"`
+		Open      contracts `json:"open"`
 	} `json:"method"`
 }
 
@@ -45,10 +47,10 @@ func (org *Organization) AddRecord(rec []byte) error {
 	activeState := "active"
 	org.Contracts.Total++
 	releases, _ := r.Search("releases").Children()
-	for _, child := range releases {
+	for _, release := range releases {
 		// date
-		date, _ := child.Path("date").Data().(string)
-		t, err := time.Parse("2006-01-02T15:04:05.000Z", date)
+		date, _ := release.Path("date").Data().(string)
+		t, err := time.Parse(time.RFC3339, date)
 		if err == nil {
 			if t.Before(org.FirstDate) {
 				org.FirstDate = t
@@ -59,13 +61,13 @@ func (org *Organization) AddRecord(rec []byte) error {
 		}
 
 		// planning.budget.amount.amount
-		amount, ok := child.Path("planning.budget.amount.amount").Data().(float64)
+		amount, ok := release.Path("planning.budget.amount.amount").Data().(float64)
 		if ok {
 			org.Contracts.Budget += amount
 		}
 
 		// tender.status
-		status, ok := child.Path("tender.status").Data().(string)
+		status, ok := release.Path("tender.status").Data().(string)
 		if ok {
 			switch status {
 			case activeState:
@@ -76,7 +78,7 @@ func (org *Organization) AddRecord(rec []byte) error {
 		}
 
 		// contracts.value.amount
-		contracts, _ := child.Search("contracts").Children()
+		contracts, _ := release.Search("contracts").Children()
 		for _, contract := range contracts {
 			award, ok := contract.Path("value.amount").Data().(float64)
 			if ok {
@@ -85,19 +87,10 @@ func (org *Organization) AddRecord(rec []byte) error {
 		}
 
 		// tender.numberOfTenderers
-		if child.ExistsP("tender.numberOfTenderers") {
-			participants, _ := child.Path("tender.numberOfTenderers").Data().(float64)
-			switch {
-			case (participants == 1):
-				org.AssignMethod.Direct.Total++
-				org.AssignMethod.Direct.Budget += amount
-				if status != activeState {
-					org.AssignMethod.Direct.Active++
-				} else {
-					org.AssignMethod.Direct.Completed++
-				}
-				break
-			case (participants >= 1 && participants <= 3):
+		if release.ExistsP("tender.procurementMethod") {
+			procurementMethod, _ := release.Path("tender.procurementMethod").Data().(string)
+			switch procurementMethod {
+			case "limited":
 				org.AssignMethod.Limited.Total++
 				org.AssignMethod.Limited.Budget += amount
 				if status != activeState {
@@ -106,13 +99,22 @@ func (org *Organization) AddRecord(rec []byte) error {
 					org.AssignMethod.Limited.Completed++
 				}
 				break
-			default:
-				org.AssignMethod.Public.Total++
-				org.AssignMethod.Public.Budget += amount
+			case "selective":
+				org.AssignMethod.Selective.Total++
+				org.AssignMethod.Selective.Budget += amount
 				if status != activeState {
-					org.AssignMethod.Public.Active++
+					org.AssignMethod.Selective.Active++
 				} else {
-					org.AssignMethod.Public.Completed++
+					org.AssignMethod.Selective.Completed++
+				}
+				break
+			case "open":
+				org.AssignMethod.Open.Total++
+				org.AssignMethod.Open.Budget += amount
+				if status != activeState {
+					org.AssignMethod.Open.Active++
+				} else {
+					org.AssignMethod.Open.Completed++
 				}
 			}
 		}
