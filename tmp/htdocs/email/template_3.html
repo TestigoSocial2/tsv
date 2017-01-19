@@ -1,523 +1,371 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta property="og:title" content="Testigo Social 2.0" />
+    <title>Testigo Social 2.0</title>
+    <style type="text/css">
+    /* Client-specific Styles */
+    #outlook a{padding:0;} /* Force Outlook to provide a "view in browser" button. */
+    body{width:100% !important;} .ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail to display emails at full width */
+    body{-webkit-text-size-adjust:none;} /* Prevent Webkit platforms from changing default text sizes. */
 
-        <!-- Facebook sharing information tags -->
-        <meta property="og:title" content="Email Template" />
+    /* Reset Styles */
+    body{margin:0; padding:0;}
+    img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;}
+    table td{border-collapse:collapse;}
+    #backgroundTable{height:100% !important; margin:0; padding:0; width:100% !important;}
 
-        <title>Testigo Social 2.0</title>
-		<style type="text/css">
-			/* Client-specific Styles */
-			#outlook a{padding:0;} /* Force Outlook to provide a "view in browser" button. */
-			body{width:100% !important;} .ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail to display emails at full width */
-			body{-webkit-text-size-adjust:none;} /* Prevent Webkit platforms from changing default text sizes. */
+    body, #backgroundTable{
+      background-color:#FAFAFA;
+    }
 
-			/* Reset Styles */
-			body{margin:0; padding:0;}
-			img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;}
-			table td{border-collapse:collapse;}
-			#backgroundTable{height:100% !important; margin:0; padding:0; width:100% !important;}
+    #templateContainer{
+      border: 1px solid #DDDDDD;
+    }
 
-			/* Template Styles */
+    h1, .h1{
+      color:#202020;
+      display:block;
+      font-family:Arial;
+      font-size:34px;
+      font-weight:bold;
+      line-height:100%;
+      margin-top:0;
+      margin-right:0;
+      margin-bottom:10px;
+      margin-left:0;
+      text-align:left;
+    }
 
-			/* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: COMMON PAGE ELEMENTS /\/\/\/\/\/\/\/\/\/\ */
+    h2, .h2{
+      color:#202020;
+      display:block;
+      font-family:Arial;
+      font-size:30px;
+      font-weight:bold;
+      line-height:100%;
+      margin-top:0;
+      margin-right:0;
+      margin-bottom:10px;
+      margin-left:0;
+      text-align:left;
+    }
 
-			/**
-			* @tab Page
-			* @section background color
-			* @tip Set the background color for your email. You may want to choose one that matches your company's branding.
-			* @theme page
-			*/
-			body, #backgroundTable{
-				/*@editable*/ background-color:#FAFAFA;
-			}
+    h3, .h3{
+      color:#202020;
+      display:block;
+      font-family:Arial;
+      font-size:26px;
+      font-weight:bold;
+      line-height:100%;
+      margin-top:0;
+      margin-right:0;
+      margin-bottom:10px;
+      margin-left:0;
+      text-align:left;
+    }
 
-			/**
-			* @tab Page
-			* @section email border
-			* @tip Set the border for your email.
-			*/
-			#templateContainer{
-				/*@editable*/ border: 1px solid #DDDDDD;
-			}
+    h4, .h4{
+      color:#202020;
+      display:block;
+      font-family:Arial;
+      font-size:22px;
+      font-weight:bold;
+      line-height:100%;
+      margin-top:0;
+      margin-right:0;
+      margin-bottom:10px;
+      margin-left:0;
+      text-align:left;
+    }
 
-			/**
-			* @tab Page
-			* @section heading 1
-			* @tip Set the styling for all first-level headings in your emails. These should be the largest of your headings.
-			* @style heading 1
-			*/
-			h1, .h1{
-				/*@editable*/ color:#202020;
-				display:block;
-				/*@editable*/ font-family:Arial;
-				/*@editable*/ font-size:34px;
-				/*@editable*/ font-weight:bold;
-				/*@editable*/ line-height:100%;
-				margin-top:0;
-				margin-right:0;
-				margin-bottom:10px;
-				margin-left:0;
-				/*@editable*/ text-align:left;
-			}
+    #templateHeader{
+      background-color:#FFFFFF;
+      border-bottom:0;
+    }
 
-			/**
-			* @tab Page
-			* @section heading 2
-			* @tip Set the styling for all second-level headings in your emails.
-			* @style heading 2
-			*/
-			h2, .h2{
-				/*@editable*/ color:#202020;
-				display:block;
-				/*@editable*/ font-family:Arial;
-				/*@editable*/ font-size:30px;
-				/*@editable*/ font-weight:bold;
-				/*@editable*/ line-height:100%;
-				margin-top:0;
-				margin-right:0;
-				margin-bottom:10px;
-				margin-left:0;
-				/*@editable*/ text-align:left;
-			}
+    .headerContent{
+      color:#202020;
+      font-family:Arial;
+      font-size:34px;
+      font-weight:bold;
+      line-height:100%;
+      padding:0;
+      text-align:center;
+      vertical-align:middle;
+    }
 
-			/**
-			* @tab Page
-			* @section heading 3
-			* @tip Set the styling for all third-level headings in your emails.
-			* @style heading 3
-			*/
-			h3, .h3{
-				/*@editable*/ color:#202020;
-				display:block;
-				/*@editable*/ font-family:Arial;
-				/*@editable*/ font-size:26px;
-				/*@editable*/ font-weight:bold;
-				/*@editable*/ line-height:100%;
-				margin-top:0;
-				margin-right:0;
-				margin-bottom:10px;
-				margin-left:0;
-				/*@editable*/ text-align:left;
-			}
+    /* Yahoo! Mail Override */
+    .headerContent a:link, .headerContent a:visited, .headerContent a .yshortcuts {
+      color:#336699;
+      font-weight:normal;
+      text-decoration:underline;
+    }
 
-			/**
-			* @tab Page
-			* @section heading 4
-			* @tip Set the styling for all fourth-level headings in your emails. These should be the smallest of your headings.
-			* @style heading 4
-			*/
-			h4, .h4{
-				/*@editable*/ color:#202020;
-				display:block;
-				/*@editable*/ font-family:Arial;
-				/*@editable*/ font-size:22px;
-				/*@editable*/ font-weight:bold;
-				/*@editable*/ line-height:100%;
-				margin-top:0;
-				margin-right:0;
-				margin-bottom:10px;
-				margin-left:0;
-				/*@editable*/ text-align:left;
-			}
+    #headerImage{
+      height:auto;
+      max-width:600px !important;
+    }
 
-			/* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: HEADER /\/\/\/\/\/\/\/\/\/\ */
+    #templateContainer, .bodyContent{
+      background-color:#FFFFFF;
+    }
 
-			/**
-			* @tab Header
-			* @section header style
-			* @tip Set the background color and border for your email's header area.
-			* @theme header
-			*/
-			#templateHeader{
-				/*@editable*/ background-color:#FFFFFF;
-				/*@editable*/ border-bottom:0;
-			}
+    .bodyContent div{
+      color:#505050;
+      font-family:Arial;
+      font-size:14px;
+      line-height:150%;
+      text-align:left;
+    }
 
-			/**
-			* @tab Header
-			* @section header text
-			* @tip Set the styling for your email's header text. Choose a size and color that is easy to read.
-			*/
-			.headerContent{
-				/*@editable*/ color:#202020;
-				/*@editable*/ font-family:Arial;
-				/*@editable*/ font-size:34px;
-				/*@editable*/ font-weight:bold;
-				/*@editable*/ line-height:100%;
-				/*@editable*/ padding:0;
-				/*@editable*/ text-align:center;
-				/*@editable*/ vertical-align:middle;
-			}
+    /* Yahoo! Mail Override */
+    .bodyContent div a:link, .bodyContent div a:visited, .bodyContent div a .yshortcuts {
+      color:#336699;
+      font-weight:normal;
+      text-decoration:underline;
+    }
 
-			/**
-			* @tab Header
-			* @section header link
-			* @tip Set the styling for your email's header links. Choose a color that helps them stand out from your text.
-			*/
-			.headerContent a:link, .headerContent a:visited, /* Yahoo! Mail Override */ .headerContent a .yshortcuts /* Yahoo! Mail Override */{
-				/*@editable*/ color:#336699;
-				/*@editable*/ font-weight:normal;
-				/*@editable*/ text-decoration:underline;
-			}
+    .templateDataTable{
+      background-color:#FFFFFF;
+      border:1px solid #DDDDDD;
+    }
 
-			#headerImage{
-				height:auto;
-				max-width:600px !important;
-			}
+    .dataTableHeading{
+      background-color:#222222;
+      color:#FFFFFF;
+      font-family:Helvetica;
+      font-size:14px;
+      font-weight:bold;
+      line-height:150%;
+      text-align:left;
+    }
 
-			/* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: MAIN BODY /\/\/\/\/\/\/\/\/\/\ */
+    /* Yahoo! Mail Override */
+    .dataTableHeading a:link, .dataTableHeading a:visited, .dataTableHeading a .yshortcuts {
+      color:#FFFFFF;
+      font-weight:bold;
+      text-decoration:underline;
+    }
 
-			/**
-			* @tab Body
-			* @section body style
-			* @tip Set the background color for your email's body area.
-			*/
-			#templateContainer, .bodyContent{
-				/*@editable*/ background-color:#FFFFFF;
-			}
+    .dataTableContent{
+      border-top:1px solid #DDDDDD;
+      border-bottom:0;
+      color:#202020;
+      font-family:Helvetica;
+      font-size:12px;
+      font-weight:bold;
+      line-height:150%;
+      text-align:left;
+    }
 
-			/**
-			* @tab Body
-			* @section body text
-			* @tip Set the styling for your email's main content text. Choose a size and color that is easy to read.
-			* @theme main
-			*/
-			.bodyContent div{
-				/*@editable*/ color:#505050;
-				/*@editable*/ font-family:Arial;
-				/*@editable*/ font-size:14px;
-				/*@editable*/ line-height:150%;
-				/*@editable*/ text-align:left;
-			}
+    /* Yahoo! Mail Override */
+    .dataTableContent a:link, .dataTableContent a:visited, .dataTableContent a .yshortcuts {
+      color:#202020;
+      font-weight:bold;
+      text-decoration:underline;
+    }
 
-			/**
-			* @tab Body
-			* @section body link
-			* @tip Set the styling for your email's main content links. Choose a color that helps them stand out from your text.
-			*/
-			.bodyContent div a:link, .bodyContent div a:visited, /* Yahoo! Mail Override */ .bodyContent div a .yshortcuts /* Yahoo! Mail Override */{
-				/*@editable*/ color:#336699;
-				/*@editable*/ font-weight:normal;
-				/*@editable*/ text-decoration:underline;
-			}
+    .templateButton{
+      -moz-border-radius:3px;
+      -webkit-border-radius:3px;
+      background-color:#336699;
+      border:0;
+      border-collapse:separate !important;
+      border-radius:3px;
+    }
 
-			/**
-			* @tab Body
-			* @section data table style
-			* @tip Set the background color and border for your email's data table.
-			*/
-			.templateDataTable{
-				/*@editable*/ background-color:#FFFFFF;
-				/*@editable*/ border:1px solid #DDDDDD;
-			}
+    /* Yahoo! Mail Override */
+    .templateButton, .templateButton a:link, .templateButton a:visited, .templateButton a .yshortcuts {
+      color:#FFFFFF;
+      font-family:Arial;
+      font-size:15px;
+      font-weight:bold;
+      letter-spacing:-.5px;
+      line-height:100%;
+      text-align:center;
+      text-decoration:none;
+    }
 
-			/**
-			* @tab Body
-			* @section data table heading text
-			* @tip Set the styling for your email's data table text. Choose a size and color that is easy to read.
-			*/
-			.dataTableHeading{
-				/*@editable*/ background-color:#222222;
-				/*@editable*/ color:#FFFFFF;
-				/*@editable*/ font-family:Helvetica;
-				/*@editable*/ font-size:14px;
-				/*@editable*/ font-weight:bold;
-				/*@editable*/ line-height:150%;
-				/*@editable*/ text-align:left;
-			}
+    .bodyContent img{
+      display:inline;
+      height:auto;
+    }
 
-			/**
-			* @tab Body
-			* @section data table heading link
-			* @tip Set the styling for your email's data table links. Choose a color that helps them stand out from your text.
-			*/
-			.dataTableHeading a:link, .dataTableHeading a:visited, /* Yahoo! Mail Override */ .dataTableHeading a .yshortcuts /* Yahoo! Mail Override */{
-				/*@editable*/ color:#FFFFFF;
-				/*@editable*/ font-weight:bold;
-				/*@editable*/ text-decoration:underline;
-			}
+    #templateFooter{
+      background-color:#FFFFFF;
+      border-top:0;
+    }
 
-			/**
-			* @tab Body
-			* @section data table text
-			* @tip Set the styling for your email's data table text. Choose a size and color that is easy to read.
-			*/
-			.dataTableContent{
-				/*@editable*/ border-top:1px solid #DDDDDD;
-				/*@editable*/ border-bottom:0;
-				/*@editable*/ color:#202020;
-				/*@editable*/ font-family:Helvetica;
-				/*@editable*/ font-size:12px;
-				/*@editable*/ font-weight:bold;
-				/*@editable*/ line-height:150%;
-				/*@editable*/ text-align:left;
-			}
+    .footerContent div{
+      color:#707070;
+      font-family:Arial;
+      font-size:12px;
+      line-height:125%;
+      text-align:center;
+    }
 
-			/**
-			* @tab Body
-			* @section data table link
-			* @tip Set the styling for your email's data table links. Choose a color that helps them stand out from your text.
-			*/
-			.dataTableContent a:link, .dataTableContent a:visited, /* Yahoo! Mail Override */ .dataTableContent a .yshortcuts /* Yahoo! Mail Override */{
-				/*@editable*/ color:#202020;
-				/*@editable*/ font-weight:bold;
-				/*@editable*/ text-decoration:underline;
-			}
+    /* Yahoo! Mail Override */
+    .footerContent div a:link, .footerContent div a:visited, .footerContent div a .yshortcuts {
+      color:#336699;
+      font-weight:normal;
+      text-decoration:underline;
+    }
 
-			/**
-			* @tab Body
-			* @section button style
-			* @tip Set the styling for your email's button. Choose a style that draws attention.
-			*/
-			.templateButton{
-				-moz-border-radius:3px;
-				-webkit-border-radius:3px;
-				/*@editable*/ background-color:#336699;
-				/*@editable*/ border:0;
-				border-collapse:separate !important;
-				border-radius:3px;
-			}
+    .footerContent img{
+      display:inline;
+    }
 
-			/**
-			* @tab Body
-			* @section button style
-			* @tip Set the styling for your email's button. Choose a style that draws attention.
-			*/
-			.templateButton, .templateButton a:link, .templateButton a:visited, /* Yahoo! Mail Override */ .templateButton a .yshortcuts /* Yahoo! Mail Override */{
-				/*@editable*/ color:#FFFFFF;
-				/*@editable*/ font-family:Arial;
-				/*@editable*/ font-size:15px;
-				/*@editable*/ font-weight:bold;
-				/*@editable*/ letter-spacing:-.5px;
-				/*@editable*/ line-height:100%;
-				text-align:center;
-				text-decoration:none;
-			}
+    #utility{
+      background-color:#FFFFFF;
+      border:0;
+    }
 
-			.bodyContent img{
-				display:inline;
-				height:auto;
-			}
+    #utility div{
+      text-align:center;
+    }
 
-			/* /\/\/\/\/\/\/\/\/\/\ STANDARD STYLING: FOOTER /\/\/\/\/\/\/\/\/\/\ */
-
-			/**
-			* @tab Footer
-			* @section footer style
-			* @tip Set the background color and top border for your email's footer area.
-			* @theme footer
-			*/
-			#templateFooter{
-				/*@editable*/ background-color:#FFFFFF;
-				/*@editable*/ border-top:0;
-			}
-
-			/**
-			* @tab Footer
-			* @section footer text
-			* @tip Set the styling for your email's footer text. Choose a size and color that is easy to read.
-			* @theme footer
-			*/
-			.footerContent div{
-				/*@editable*/ color:#707070;
-				/*@editable*/ font-family:Arial;
-				/*@editable*/ font-size:12px;
-				/*@editable*/ line-height:125%;
-				/*@editable*/ text-align:center;
-			}
-
-			/**
-			* @tab Footer
-			* @section footer link
-			* @tip Set the styling for your email's footer links. Choose a color that helps them stand out from your text.
-			*/
-			.footerContent div a:link, .footerContent div a:visited, /* Yahoo! Mail Override */ .footerContent div a .yshortcuts /* Yahoo! Mail Override */{
-				/*@editable*/ color:#336699;
-				/*@editable*/ font-weight:normal;
-				/*@editable*/ text-decoration:underline;
-			}
-
-			.footerContent img{
-				display:inline;
-			}
-
-			/**
-			* @tab Footer
-			* @section utility bar style
-			* @tip Set the background color and border for your email's footer utility bar.
-			* @theme footer
-			*/
-			#utility{
-				/*@editable*/ background-color:#FFFFFF;
-				/*@editable*/ border:0;
-			}
-
-			/**
-			* @tab Footer
-			* @section utility bar style
-			* @tip Set the background color and border for your email's footer utility bar.
-			*/
-			#utility div{
-				/*@editable*/ text-align:center;
-			}
-
-			#monkeyRewards img{
-				max-width:190px;
-			}
+    #monkeyRewards img{
+      max-width:190px;
+    }
 		</style>
 	</head>
-    <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
-    	<center>
-        	<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="backgroundTable">
-            	<tr>
-                	<td align="center" valign="top" style="padding-top:20px;">
-                    	<table border="0" cellpadding="0" cellspacing="0" width="600" id="templateContainer">
-                        	<tr>
-                            	<td align="center" valign="top">
-                                    <!-- // Begin Template Header \\ -->
-                                	<table border="0" cellpadding="0" cellspacing="0" width="600" id="templateHeader">
-                                        <tr>
-                                            <td class="headerContent">
-
-                                            	<!-- // Begin Module: Standard Header Image \\ -->
-                                            	<img src="http://placehold.it/600x200" style="max-width:600px;" id="headerImage campaign-icon" mc:label="header_image" mc:edit="header_image" mc:allowdesigner mc:allowtext />
-                                            	<!-- // End Module: Standard Header Image \\ -->
-
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <!-- // End Template Header \\ -->
-                                </td>
-                            </tr>
-                        	<tr>
-                            	<td align="center" valign="top">
-                                    <!-- // Begin Template Body \\ -->
-                                	<table border="0" cellpadding="0" cellspacing="0" width="600" id="templateBody">
-                                    	<tr>
-                                            <td valign="top">
-
-                                                <!-- // Begin Module: Standard Content \\ -->
-                                                <table border="0" cellpadding="20" cellspacing="0" width="100%">
-                                                    <tr>
-                                                        <td valign="top" class="bodyContent">
-                                                            <div mc:edit="std_content00">
-                                                                <!-- <h1 class="h1">Heading 1</h1> -->
-                                                                <strong>Content Start Here:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                                            </div>
-														</td>
-                                                    </tr>
-                                                    <tr>
-                                                    	<td valign="top" style="padding-top:0; padding-bottom:0;">
-                                                          <table border="0" cellpadding="10" cellspacing="0" width="100%" class="templateDataTable">
-                                                              <tr>
-                                                                  <th scope="col" valign="top" width="25%" class="dataTableHeading" mc:edit="data_table_heading00">
-                                                                    FECHA
-                                                                  </th>
-                                                                  <th scope="col" valign="top" width="25%" class="dataTableHeading" mc:edit="data_table_heading01">
-                                                                    VALOR
-                                                                  </th>
-                                                                  <th scope="col" valign="top" width="50%" class="dataTableHeading" mc:edit="data_table_heading02">
-                                                                    DESCRIPCION
-                                                                  </th>
-                                                              </tr>
-                                                              <tr mc:repeatable>
-                                                                  <td valign="top" class="dataTableContent" mc:edit="data_table_content00">
-                                                                    SEP 25, 2015
-                                                                  </td>
-                                                                  <td valign="top" class="dataTableContent" mc:edit="data_table_content01">
-                                                                    2,760
-                                                                  </td>
-                                                                  <td valign="top" class="dataTableContent" mc:edit="data_table_content02">
-                                                                    Alguna descripción del proceso de contratación va aquí
-                                                                  </td>
-                                                              </tr>
-                                                              <tr mc:repeatable>
-                                                                  <td valign="top" class="dataTableContent" mc:edit="data_table_content00">
-                                                                    OCT 12, 2016
-                                                                  </td>
-                                                                  <td valign="top" class="dataTableContent" mc:edit="data_table_content01">
-                                                                    1,980
-                                                                  </td>
-                                                                  <td valign="top" class="dataTableContent" mc:edit="data_table_content02">
-                                                                    Una entrada mas en la tabla como muestra representativa
-                                                                  </td>
-                                                              </tr>
-                                                          </table>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td valign="top" class="bodyContent">
-                                                            <div mc:edit="std_content01">
-                                                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea <a href="">commodo consequat</a>. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                                            </div>
-														</td>
-                                                    </tr>
-                                                    <tr>
-                                                    	<td align="center" valign="top" style="padding-top:0;">
-                                                        	<table border="0" cellpadding="15" cellspacing="0" class="templateButton">
-                                                            	<tr>
-                                                                	<td valign="middle" class="templateButtonContent">
-                                                                    	<div mc:edit="std_content02">
-                                                                        	<a href="http://www.testigosocial.mx/" target="_blank">Visitar Testigo Social</a>
-                                                                        </div>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                                <!-- // End Module: Standard Content \\ -->
-
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <!-- // End Template Body \\ -->
-                                </td>
-                            </tr>
-                        	<tr>
-                            	<td align="center" valign="top">
-                                    <!-- // Begin Template Footer \\ -->
-                                	<table border="0" cellpadding="10" cellspacing="0" width="600" id="templateFooter">
-                                    	<tr>
-                                        	<td valign="top" class="footerContent">
-
-                                                <!-- // Begin Module: Transactional Footer \\ -->
-                                                <table border="0" cellpadding="10" cellspacing="0" width="100%">
-                                                    <tr>
-                                                        <td valign="top">
-                                                            <div mc:edit="std_footer">
-                                                              <strong>Transparencia Mexicana AC</strong>
-                                                              <br />
-                                                              Dulce Olivia 73<br />
-                                                              Colonia Villa Coyoacán, Delegación Coyoacán<br />
-                                                              CP 04000<br />
-                                                              México, Ciudad de México
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td valign="middle" id="utility">
-                                                            <div mc:edit="std_utility">
-                                                                &nbsp;<a href="https://www.twitter.com/testigo_social" target="_blank">Twitter</a> | <a href="https://www.facebook.com/testigosocial">Facebook</a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </table>
-                                                <!-- // End Module: Transactional Footer \\ -->
-
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <!-- // End Template Footer \\ -->
-                                </td>
-                            </tr>
+  <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+    <center>
+      <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="backgroundTable">
+        <tr>
+          <td align="center" valign="top" style="padding-top:20px;">
+            <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateContainer">
+              <tr>
+                <td align="center" valign="top">
+                  <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateHeader">
+                    <tr>
+                      <td class="headerContent">
+                        <img src="https://s3.amazonaws.com/tm.org.mx/tsv/email_header_03.png" style="max-width:600px;" id="headerImage campaign-icon" mc:label="header_image" mc:edit="header_image" mc:allowdesigner mc:allowtext />
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td align="center" valign="top">
+                  <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateBody">
+                    <tr>
+                      <td valign="top">
+                        <table border="0" cellpadding="20" cellspacing="0" width="100%">
+                          <tr>
+                            <td valign="top" class="bodyContent">
+                              <div mc:edit="std_content00">
+                                <h2 class="h2">{{title}}</h2>
+                                {{content}}
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td valign="top" style="padding-top:0; padding-bottom:0;">
+                              <table border="0" cellpadding="10" cellspacing="0" width="100%" class="templateDataTable">
+                                <tr>
+                                  <th scope="col" valign="top" width="25%" class="dataTableHeading" mc:edit="data_table_heading00">
+                                    FECHA
+                                  </th>
+                                  <th scope="col" valign="top" width="25%" class="dataTableHeading" mc:edit="data_table_heading01">
+                                    VALOR
+                                  </th>
+                                  <th scope="col" valign="top" width="50%" class="dataTableHeading" mc:edit="data_table_heading02">
+                                    DESCRIPCION
+                                  </th>
+                                </tr>
+                                <tr mc:repeatable>
+                                  <td valign="top" class="dataTableContent" mc:edit="data_table_content00">
+                                    {{item.date}}
+                                  </td>
+                                  <td valign="top" class="dataTableContent" mc:edit="data_table_content01">
+                                    {{item.amount}}
+                                  </td>
+                                  <td valign="top" class="dataTableContent" mc:edit="data_table_content02">
+                                    {{item.description}}
+                                  </td>
+                                </tr>
+                                <tr mc:repeatable>
+                                  <td valign="top" class="dataTableContent" mc:edit="data_table_content00">
+                                    {{item.date}}
+                                  </td>
+                                  <td valign="top" class="dataTableContent" mc:edit="data_table_content01">
+                                    {{item.amount}}
+                                  </td>
+                                  <td valign="top" class="dataTableContent" mc:edit="data_table_content02">
+                                    {{item.description}}
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td align="center" valign="top" style="padding-top:0;">
+                              <br />
+                              <table border="0" cellpadding="15" cellspacing="0" class="templateButton">
+                                <tr>
+                                  <td valign="middle" class="templateButtonContent">
+                                    <div mc:edit="std_content02">
+                                      <a href="http://www.testigosocial.mx/" target="_blank">Visitar Testigo Social</a>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
                         </table>
-                        <br />
-                    </td>
-                </tr>
+                        <!-- // End Module: Standard Content \\ -->
+
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- // End Template Body \\ -->
+                </td>
+              </tr>
+              <tr>
+                <td align="center" valign="top">
+                  <!-- // Begin Template Footer \\ -->
+                  <table border="0" cellpadding="10" cellspacing="0" width="600" id="templateFooter">
+                    <tr>
+                      <td valign="top" class="footerContent">
+
+                        <!-- // Begin Module: Transactional Footer \\ -->
+                        <table border="0" cellpadding="10" cellspacing="0" width="100%">
+                          <tr>
+                            <td valign="top">
+                              <div mc:edit="std_footer">
+                                <strong>Transparencia Mexicana AC</strong>
+                                <br />
+                                Dulce Olivia 73<br />
+                                Colonia Villa Coyoacán, Delegación Coyoacán<br />
+                                CP 04000<br />
+                                México, Ciudad de México
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td valign="middle" id="utility">
+                              <div mc:edit="std_utility">
+                                &nbsp;<a href="https://www.twitter.com/testigo_social" target="_blank">Twitter</a> | <a href="https://www.facebook.com/testigosocial">Facebook</a>
+                              </div>
+                            </td>
+                          </tr>
+                        </table>
+                        <!-- // End Module: Transactional Footer \\ -->
+
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- // End Template Footer \\ -->
+                </td>
+              </tr>
             </table>
-        </center>
-    </body>
+            <br />
+          </td>
+        </tr>
+      </table>
+    </center>
+  </body>
 </html>
