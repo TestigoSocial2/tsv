@@ -5,3 +5,4 @@ glide.lock
 tsv
 tsv.tar.gz
 tmp/tsv.db
+node_modules

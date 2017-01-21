@@ -1,0 +1,17 @@
+{
+  "name": "tsv",
+  "version": "0.1.0",
+  "description": "Testigo Social Virtual 2.0",
+  "main": "index.js",
+  "author": "Ben Cessa <ben@pixative.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "browserify -t [ babelify --presets [ react ] ] src/index.js -o build/index.js"
+  },
+  "dependencies": {
+    "babel-preset-react": "^6.22.0",
+    "babelify": "^7.3.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  }
+}
