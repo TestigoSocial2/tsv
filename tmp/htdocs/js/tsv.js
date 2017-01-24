@@ -35,11 +35,6 @@ var TSV = {
       this.statsSetup();
     }
 
-    // Query setup
-    if( $('form#queryForm').length ) {
-      this.querySetup();
-    }
-
     // Indicators filter setup
     if( $('form#filterForm').length ) {
       this.filterSetup();
@@ -286,111 +281,6 @@ var TSV = {
         });
       } else {
         alert("La dirección proporcionada no es una dirección de correo electrónico valida, favor de verificar!");
-      }
-    });
-  },
-
-  // Contract query setup
-  querySetup: function() {
-    var ui = {}
-    ui.form = $('form#queryForm');
-    ui.bullets = ui.form.find('div.bullets span');
-    ui.input = $( 'input#query' );
-    ui.bullets.on( 'click', function( e ) {
-      ui.bullets.removeClass( 'active' );
-      var target = $( e.target );
-      target.addClass( 'active' );
-
-      switch (target.data( 'filter' )) {
-        case 'date':
-          if( ! target.data( 'pickerSetup' ) ) {
-            target.data( 'pickerSetup', true );
-            target.datepicker({
-              clearBtn: true,
-              assumeNearbyYear: true,
-              format: 'mm/dd/yyyy',
-              language: 'es',
-              maxViewMode: 2,
-              multidate: 2,
-              todayHighlight: true
-            }).on( 'hide', function( e ) {
-              e.dates.sort(function(a, b) {
-                return new Date(a).getTime() - new Date(b).getTime();
-              });
-              var lbl = moment(e.dates[0]).format('MMMM Do YYYY');
-              var val = moment(e.dates[0]).format('MM-DD-YYYY');
-              if( e.dates.length > 1 ) {
-                lbl += ' a ' + moment(e.dates[1]).format('MMMM Do YYYY')
-                val += '|' + moment(e.dates[1]).format('MM-DD-YYYY');
-              }
-              ui.input.data('value', val);
-              ui.input.val( lbl );
-              ui.input.focus();
-            });
-          }
-          target.datepicker( 'show' );
-          break;
-        case 'amount':
-          if( ! target.data( 'sliderSetup' ) ) {
-            target.data( 'sliderSetup', true );
-            target.popover({
-              html: true,
-              title: 'Seleccione el rango a utilizar como filtro (MXN)',
-              content: '<b>$0</b><input id="amountSlider" type="text" /><b>$100,000,000</b>',
-              placement: 'bottom',
-              trigger: 'focus'
-            }).on( 'shown.bs.popover', function() {
-              $("#amountSlider").slider({
-                step: 50000,
-                min: 0,
-                max: 100000000,
-                value: [20000000,80000000],
-                formatter: function( value ) {
-                  if( Array.isArray( value ) ) {
-                    var lbl = '$' + value[0].toLocaleString() + ' a ' + '$' + value[1].toLocaleString();
-                    return lbl;
-                  }
-                  return '';
-                }
-              }).on( 'slide', function( e ) {
-                ui.input.data('value', e.value.join('|'));
-                ui.input.val( '$' + e.value[0].toLocaleString() + ' a ' + '$' + e.value[1].toLocaleString() );
-              });
-            });
-          }
-          target.popover( 'toggle' );
-          break;
-        default:
-          ui.input.data('value', false);
-          break;
-      }
-    });
-    ui.form.on( 'submit', function( e ) {
-      e.preventDefault();
-      var q = {
-        value: ui.input.data('value') || ui.form.find('input').val(),
-        filter: ui.bullets.filter('.active').data('filter'),
-        limit: 20
-      }
-      if( q.value != "" ) {
-        // Dynamically set bucket used, default to 'gacm'
-        var url = '/query/gacm';
-        if( getParameter('bucket') ) {
-          url = '/query/' + getParameter('bucket');
-        }
-
-        // Submit query
-        $.ajax({
-          type: "POST",
-          url: url,
-          data: {
-            query: JSON.stringify(q)
-          },
-          success: function( res ) {
-            res = JSON.parse(res)
-            console.log( res );
-          }
-        })
       }
     });
   },

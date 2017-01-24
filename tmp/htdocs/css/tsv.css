@@ -817,6 +817,16 @@ div.clear {
 #setup table td {
   vertical-align: middle; }
 
+#queryForm button.btn-primary {
+  background-color: #4990e2;
+  padding: 6px 30px; }
+#queryForm div.bullets {
+  margin: 14px 0; }
+  #queryForm div.bullets span {
+    margin: 0 4px; }
+    #queryForm div.bullets span:first-child {
+      margin-left: 0; }
+
 div.info {
   padding: 20px 0; }
   div.info h2 {
@@ -915,7 +925,8 @@ div.item-cell {
     float: right; }
 
 div.contract-details h4 {
-  font-weight: 500; }
+  font-weight: 500;
+  word-break: break-all; }
 div.contract-details p.lbl {
   color: #999;
   font-size: 12px;
@@ -936,6 +947,7 @@ div.contract-details div.contract-header {
     color: #111;
     cursor: pointer;
     display: inline-block;
+    margin: 0 4px;
     padding: 10px 22px; }
     div.contract-details div.contract-header div.bullets .btn-black:hover {
       color: inherit; }

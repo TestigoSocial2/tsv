@@ -454,6 +454,25 @@ div.clear {
   }
 }
 
+#queryForm {
+  button.btn-primary {
+    background-color: $tsv-blue;
+    padding: 6px 30px;
+  }
+
+  div.bullets {
+    margin: 14px 0;
+
+    span {
+      margin: 0 4px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
 div.info {
   padding: 20px 0;
 
@@ -603,6 +622,7 @@ div.item-cell {
 div.contract-details {
   h4 {
     font-weight: 500;
+    word-break: break-all;
   }
 
   p.lbl {
@@ -633,6 +653,7 @@ div.contract-details {
         color: $tsv-black;
         cursor: pointer;
         display: inline-block;
+        margin: 0 4px;
         padding: 10px 22px;
 
         &:hover {
