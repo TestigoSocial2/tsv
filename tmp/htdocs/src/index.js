@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Section from './Contracts.jsx';
+import Contracts from './contracts/Section.jsx';
 
 ReactDOM.render(
-  <Section />,
+  <Contracts />,
   document.getElementById('root')
 );
