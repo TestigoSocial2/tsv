@@ -21547,8 +21547,6 @@ var Section = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Section.__proto__ || Object.getPrototypeOf(Section)).call(this, props));
 
     _this.runQuery = _this.runQuery.bind(_this);
-    _this.showDetails = _this.showDetails.bind(_this);
-    _this.hideDetails = _this.hideDetails.bind(_this);
     _this.state = {
       items: [],
       details: null
@@ -21556,45 +21554,35 @@ var Section = function (_React$Component) {
     return _this;
   }
 
+  // Submit query and update component state with results
+
+
   _createClass(Section, [{
     key: 'runQuery',
     value: function runQuery(query) {
+      var _this2 = this;
+
       var url = '/query/gacm';
       if ((0, _helpers.getParameter)('bucket')) {
         url = '/query/' + (0, _helpers.getParameter)('bucket');
       }
 
-      // Submit query and update component state with results
       $.ajax({
         type: "POST",
         url: url,
         data: {
           query: JSON.stringify(query)
         },
-        success: function (res) {
-          this.setState({
-            items: JSON.parse(res)
-          });
-        }.bind(this)
-      });
-    }
-  }, {
-    key: 'showDetails',
-    value: function showDetails(contract) {
-      this.setState({
-        details: contract
-      });
-    }
-  }, {
-    key: 'hideDetails',
-    value: function hideDetails() {
-      this.setState({
-        details: null
+        success: function success(res) {
+          return _this2.setState({ items: JSON.parse(res) });
+        }
       });
     }
   }, {
     key: 'render',
     value: function render() {
+      var _this3 = this;
+
       if (!this.state.details) {
         return _react2.default.createElement(
           'div',
@@ -21604,7 +21592,9 @@ var Section = function (_React$Component) {
             color: 'blue',
             content: 'Consulta cada contrato que est\xE1 registrado en Testigo Social 2.0. Podr\xE1s encontrar informaci\xF3n para cada una de las etapas del procedimiento de contrataci\xF3n, desde su planeaci\xF3n hasta su implementaci\xF3n.' }),
           _react2.default.createElement(_SearchBar2.default, { onSubmit: this.runQuery }),
-          _react2.default.createElement(_SearchResults2.default, { items: this.state.items, onSelection: this.showDetails })
+          _react2.default.createElement(_SearchResults2.default, { items: this.state.items, onSelection: function onSelection(c) {
+              return _this3.setState({ details: c });
+            } })
         );
       } else {
         return _react2.default.createElement(
@@ -21614,7 +21604,9 @@ var Section = function (_React$Component) {
             title: 'Contratos',
             color: 'blue',
             content: 'En esta secci\xF3n podr\xE1s visualizar la informaci\xF3n completa y agregada de un contrato, desde su planeaci\xF3n hasta su implementaci\xF3n. Como base se utiliza el Est\xE1ndar de Datos para las Contrataciones Abiertas.' }),
-          _react2.default.createElement(_Details2.default, { contract: this.state.details, onClose: this.hideDetails })
+          _react2.default.createElement(_Details2.default, { contract: this.state.details, onClose: function onClose() {
+              return _this3.setState({ details: null });
+            } })
         );
       }
     }
