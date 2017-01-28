@@ -956,7 +956,7 @@ div.contract-details div.contract-header {
       color: #fff; }
     div.contract-details div.contract-header div.bullets .btn-black.disabled {
       cursor: not-allowed;
-      opacity: .75;
+      opacity: .50;
       text-decoration: line-through; }
 div.contract-details div.contract-highlights div[class^="col-md-"] {
   border-right: 1px solid #ccc; }

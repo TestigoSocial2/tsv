@@ -10,8 +10,14 @@ class Details extends React.Component {
   componentDidMount() {
     let bullets = $('div.contract-header div.bullets a');
     bullets.on( 'click', function( e ) {
-      bullets.removeClass('active');
-      $(e.target).addClass('active');
+      e.preventDefault();
+      let target = $(e.target);
+
+      if( !target.hasClass('disabled') ) {
+        target.tab('show');
+        bullets.removeClass('active');
+        target.addClass('active');
+      }
     });
   }
 
@@ -28,17 +34,25 @@ class Details extends React.Component {
         <div className="row contract-header">
           <div className="col-md-12">
             <div>
+              {/* Title */}
               <div className="bg-gray">
                 <h2 className="block-title">{release.tender.title}</h2>
                 <h3>{formatAmount( release.tender.value.amount || 0 )}</h3>
                 <p>{release.tender.description}</p>
               </div>
+
+              {/* Section tabs */}
               <div className="bullets">
-                <a href="#planning" aria-controls="planning" data-toggle="tab" className="btn-black active">Planeación</a>
-                <a href="#tender" aria-controls="tender" data-toggle="tab" className="btn-black">Licitación</a>
-                <a href="#award" data-toggle="tab" className="btn-black">Adjudicación</a>
-                <a href="#contract" data-toggle="tab" className="btn-black">Contratación</a>
-                <a href="#implementation" data-toggle="tab" className="btn-black disabled" disabled="disabled">Implementación</a>
+                <a href="#planning"
+                  className={release.planning ? 'btn-black' : 'btn-black disabled'}>Planeación</a>
+                <a href="#tender"
+                  className={release.tender ? 'btn-black' : 'btn-black disabled'}>Licitación</a>
+                <a href="#award"
+                  className={release.awards ? 'btn-black' : 'btn-black disabled'}>Adjudicación</a>
+                <a href="#contract"
+                  className={release.contracts ? 'btn-black' : 'btn-black disabled'}>Contratación</a>
+                <a href="#implementation"
+                  className={release.implementation ? 'btn-black' : 'btn-black disabled'}>Implementación</a>
                 <a onClick={this.onClose}>Volver al listado de Resultados</a>
               </div>
             </div>
@@ -305,9 +319,7 @@ class Details extends React.Component {
           </div>
 
           {/* Implementation */}
-          <div role="tabpanel" className="tab-pane fade" id="implementation">
-            <h4><i>Sin información que mostrar por el momento...</i></h4>
-          </div>
+          <div role="tabpanel" className="tab-pane fade" id="implementation"></div>
         </div>
       </div>
     );
