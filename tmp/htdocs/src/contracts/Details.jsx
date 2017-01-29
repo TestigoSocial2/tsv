@@ -44,7 +44,7 @@ class Details extends React.Component {
               {/* Section tabs */}
               <div className="bullets">
                 <a href="#planning"
-                  className={release.planning ? 'btn-black' : 'btn-black disabled'}>Planeación</a>
+                  className={release.planning ? 'btn-black active' : 'btn-black disabled'}>Planeación</a>
                 <a href="#tender"
                   className={release.tender ? 'btn-black' : 'btn-black disabled'}>Licitación</a>
                 <a href="#award"

@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 // Helper method to retrieve a GET variable
 function getParameter(name, url) {
   if (!url) {
