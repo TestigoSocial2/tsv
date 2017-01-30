@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Contracts from './contracts/Section.jsx';
+import Contracts from './Section.jsx';
 
 ReactDOM.render(
   <Contracts />,

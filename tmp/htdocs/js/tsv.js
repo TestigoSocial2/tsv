@@ -8,10 +8,6 @@ var TSV = {
       keyboard: false,
       pause: "hover",
     });
-    $('.counter').counterUp({
-      delay: 25,
-      time: 2500
-    });
     moment.locale('es');
 
     // Set random hero image
@@ -54,6 +50,11 @@ var TSV = {
       lastDate: $('span#lastDate'),
       description: $('span#orgDescription')
     }
+
+    $('.counter').counterUp({
+      delay: 25,
+      time: 2500
+    });
 
     // Dynamically set bucket used, default to 'gacm'
     var url = '/stats/gacm';

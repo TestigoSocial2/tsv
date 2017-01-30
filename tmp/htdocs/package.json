@@ -2,11 +2,10 @@
   "name": "tsv",
   "version": "0.1.0",
   "description": "Testigo Social Virtual 2.0",
-  "main": "index.js",
   "author": "Ben Cessa <ben@pixative.com>",
   "license": "MIT",
   "scripts": {
-    "build": "NODE_ENV=production browserify -t [babelify] src/index.js -o build/index.js"
+    "build": "NODE_ENV=production browserify -t [babelify] src/contracts/index.js -o build/contracts.js"
   },
   "dependencies": {
     "babel-loader": "^6.2.10",

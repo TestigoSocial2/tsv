@@ -25320,7 +25320,7 @@ var Details = function (_React$Component) {
 
 exports.default = Details;
 
-},{"../helpers.js":184,"react":177}],179:[function(require,module,exports){
+},{"../helpers.js":185,"react":177}],179:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25781,7 +25781,7 @@ var Section = function (_React$Component) {
 
 exports.default = Section;
 
-},{"../general.jsx":183,"../helpers.js":184,"./Details.jsx":178,"./SearchBar.jsx":179,"./SearchResults.jsx":180,"./TableItem.jsx":182,"react":177}],182:[function(require,module,exports){
+},{"../general.jsx":184,"../helpers.js":185,"./Details.jsx":178,"./SearchBar.jsx":179,"./SearchResults.jsx":180,"./TableItem.jsx":182,"react":177}],182:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25899,7 +25899,26 @@ var TableItem = function (_React$Component) {
 
 exports.default = TableItem;
 
-},{"../helpers.js":184,"react":177}],183:[function(require,module,exports){
+},{"../helpers.js":185,"react":177}],183:[function(require,module,exports){
+'use strict';
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _Section = require('./Section.jsx');
+
+var _Section2 = _interopRequireDefault(_Section);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_reactDom2.default.render(_react2.default.createElement(_Section2.default, null), document.getElementById('root'));
+
+},{"./Section.jsx":181,"react":177,"react-dom":26}],184:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25960,7 +25979,7 @@ var Description = function (_React$Component) {
 
 exports.Description = Description;
 
-},{"react":177}],184:[function(require,module,exports){
+},{"react":177}],185:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26005,26 +26024,7 @@ exports.getParameter = getParameter;
 exports.formatAmount = formatAmount;
 exports.formatDate = formatDate;
 
-},{"moment":24}],185:[function(require,module,exports){
-'use strict';
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = require('react-dom');
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _Section = require('./contracts/Section.jsx');
-
-var _Section2 = _interopRequireDefault(_Section);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_reactDom2.default.render(_react2.default.createElement(_Section2.default, null), document.getElementById('root'));
-
-},{"./contracts/Section.jsx":181,"react":177,"react-dom":26}],186:[function(require,module,exports){
+},{"moment":24}],186:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -26206,4 +26206,4 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}]},{},[185]);
+},{}]},{},[183]);
