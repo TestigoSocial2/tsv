@@ -15,6 +15,27 @@ import (
 	"golang.org/x/text/unicode/norm"
 )
 
+// IndicatorsQuery returns relevant statistics on a bucket
+type IndicatorsQuery struct {
+	Bucket string `json:"bucket"`
+	State  string `json:"state"`
+	Amount [2]int `json:"amount"`
+}
+
+// IndicatorsEntry represents a single statistic value item
+type IndicatorsEntry struct {
+	Count  int     `json:"count"`
+	Amount float64 `json:"amount"`
+}
+
+// IndicatorsQueryResult defines the results returned on statistics queries
+type IndicatorsQueryResult struct {
+	Years     map[string]*IndicatorsEntry `json:"years"`
+	Limited   IndicatorsEntry             `json:"limited"`
+	Selective IndicatorsEntry             `json:"selective"`
+	Open      IndicatorsEntry             `json:"open"`
+}
+
 // Query contract information
 type Query struct {
 	Value  string `json:"value"`
@@ -167,4 +188,68 @@ func (q *Query) Run() []map[string]interface{} {
 	}
 
 	return list
+}
+
+// Run the indicators query and return results
+func (q *IndicatorsQuery) Run() *IndicatorsQueryResult {
+	// Open storage
+	store, err := OpenStorage()
+	if err != nil {
+		log.Println("Storage error:", err)
+		return nil
+	}
+	defer store.Close()
+
+	// Result holder
+	res := &IndicatorsQueryResult{}
+	res.Years = make(map[string]*IndicatorsEntry)
+
+	// Iterate bucket
+	cursor := make(chan *storage.Record)
+	cancel := make(chan bool)
+	go store.Cursor(q.Bucket, cursor, cancel)
+	for rec := range cursor {
+		// Skip faulty records
+		r, err := gabs.ParseJSON(rec.Value)
+		if err != nil {
+			continue
+		}
+
+		// Inspect contract releases
+		releases, _ := r.Search("releases").Children()
+		for _, release := range releases {
+			amount, _ := release.Path("planning.budget.amount.amount").Data().(float64)
+
+			// Filter by amount range
+			if amount >= float64(q.Amount[0]) && amount <= float64(q.Amount[1]) {
+				date, _ := release.Path("date").Data().(string)
+				rdate, _ := time.Parse(time.RFC3339, date)
+
+				_, ok := res.Years[strconv.Itoa(rdate.Year())]
+				if ok {
+					res.Years[strconv.Itoa(rdate.Year())].Count++
+					res.Years[strconv.Itoa(rdate.Year())].Amount += amount
+				} else {
+					res.Years[strconv.Itoa(rdate.Year())] = &IndicatorsEntry{
+						Count:  1,
+						Amount: amount}
+				}
+
+				pType, _ := release.Path("tender.procurementMethod").Data().(string)
+				switch pType {
+				case "selective":
+					res.Selective.Count++
+					res.Selective.Amount += amount
+				case "limited":
+					res.Limited.Count++
+					res.Limited.Amount += amount
+				case "open":
+					res.Open.Count++
+					res.Open.Amount += amount
+				}
+			}
+		}
+	}
+
+	return res
 }

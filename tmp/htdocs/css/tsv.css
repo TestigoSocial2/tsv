@@ -985,7 +985,6 @@ div.chart-widget {
   div.chart-widget p {
     padding: 10px; }
   div.chart-widget canvas {
-    background-color: #f8c674;
     margin: 10px 3%;
     min-height: 340px;
     width: 94%; }

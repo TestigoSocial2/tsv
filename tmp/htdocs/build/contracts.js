@@ -25419,11 +25419,12 @@ var SearchBar = function (_React$Component) {
             }
             return '';
           }
-        }).on('slide', function (e) {
+        }).on('change', function (e) {
+          var val = e.value.newValue;
           this.setState({
-            value: e.value.join('|')
+            value: val.join('|')
           });
-          this.ui.input.val('$' + e.value[0].toLocaleString() + ' a ' + '$' + e.value[1].toLocaleString());
+          this.ui.input.val('$' + val[0].toLocaleString() + ' a ' + '$' + val[1].toLocaleString());
         }.bind(this));
       }.bind(this));
 

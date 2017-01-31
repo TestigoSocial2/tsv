@@ -155,7 +155,7 @@ func stats(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	fmt.Fprintf(w, string(res))
 }
 
-// Data query
+// Contracts list query
 func query(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	query := data.Query{}
 	err := json.Unmarshal([]byte(r.FormValue("query")), &query)
@@ -167,6 +167,21 @@ func query(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	query.Bucket = ps.ByName("bucket")
 
 	log.Printf("Running query: %+v\n", query)
+	res, _ := json.Marshal(query.Run())
+	fmt.Fprintf(w, fmt.Sprintf("%s", res))
+}
+
+// Statistics query
+func indicators(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+	query := data.IndicatorsQuery{}
+	err := json.Unmarshal([]byte(r.FormValue("query")), &query)
+	if err != nil {
+		log.Println("Decoding error:", err)
+		fmt.Fprintf(w, fmt.Sprintf("{\"error\":\"%s\"}", err.Error()))
+		return
+	}
+
+	log.Printf("Running indicators query: %+v\n", query)
 	res, _ := json.Marshal(query.Run())
 	fmt.Fprintf(w, fmt.Sprintf("%s", res))
 }
@@ -211,6 +226,7 @@ func runServer(cmd *cobra.Command, args []string) error {
 	router.NotFound = http.FileServer(http.Dir(viper.GetString("server.docs")))
 	router.POST("/profile", profile)
 	router.POST("/query/:bucket", query)
+	router.POST("/indicators", indicators)
 	router.POST("/preregister", preregister)
 	router.GET("/stats/:bucket", stats)
 	router.GET("/ws", ws)
