@@ -51,10 +51,10 @@ var TSV = {
       description: $('span#orgDescription')
     }
 
-    $('.counter').counterUp({
-      delay: 25,
-      time: 2500
-    });
+    // $('.counter').counterUp({
+    //   delay: 25,
+    //   time: 2500
+    // });
 
     // Dynamically set bucket used, default to 'gacm'
     var url = '/stats/gacm';
