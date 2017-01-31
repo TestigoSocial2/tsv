@@ -4,7 +4,7 @@ var TSV = {
     // Plugins
     $('[data-toggle="tooltip"]').tooltip()
     $('.carousel').carousel({
-      interval: 4000,
+      interval: 8000,
       keyboard: false,
       pause: "hover",
     });
@@ -283,38 +283,6 @@ var TSV = {
       } else {
         alert("La dirección proporcionada no es una dirección de correo electrónico valida, favor de verificar!");
       }
-    });
-  },
-
-  // Indicators filter setup
-  filterSetup: function() {
-    var ui = {
-      btn: $('span#applyFilters'),
-      form: $('form#filterForm'),
-      amountSlider: $("#amountSlider")
-    }
-
-    // Configure amount slider
-    ui.amountSlider.slider({
-      step: 50000,
-      min: 0,
-      max: 100000000,
-      value: [20000000,80000000],
-      formatter: function( value ) {
-        if( Array.isArray( value ) ) {
-          var lbl = '$' + value[0].toLocaleString() + ' a ' + '$' + value[1].toLocaleString();
-          return lbl;
-        }
-        return '';
-      }
-    });
-
-    // Handle submit process
-    ui.btn.on( 'click', function() {
-      var data = {}
-      ui.form.serializeArray().forEach( function( el ) {
-        data[el.name] = el.value
-      });
     });
   }
 }
