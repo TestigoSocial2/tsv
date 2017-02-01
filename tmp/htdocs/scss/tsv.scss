@@ -2,11 +2,13 @@ $tsv-black: #111;
 $tsv-white: #fff;
 $tsv-gray: #333;
 $tsv-blue: #4990e2;
+$tsv-purple: #c3a9f5;
 $tsv-bright-green: #50e3c2;
 $tsv-mid-gray: #999;
 $tsv-light-blue: #d4fbfb;
 $tsv-light-green: #d0f5dc;
 $tsv-light-gray: #ccc;
+$tsv-light-purple: #f5f0fe;
 $tsv-bg-gray: #eee;
 $tsv-yellow: #f8c674;
 $tsv-dark-red: #a94442;
@@ -61,6 +63,10 @@ body {
 
 .bg-green {
   background-color: $tsv-light-green;
+}
+
+.bg-purple {
+  background-color: $tsv-light-purple;
 }
 
 .block-title {
