@@ -319,7 +319,37 @@ class Details extends React.Component {
           </div>
 
           {/* Implementation */}
-          <div role="tabpanel" className="tab-pane fade" id="implementation"></div>
+          <div role="tabpanel" className="tab-pane fade" id="implementation">
+            <div className="row contract-highlights border-bottom">
+              <div className="col-md-4">
+                <p className="lbl">Realización del Pago</p>
+                <h4>{'?'}</h4>
+              </div>
+              <div className="col-md-4">
+                <p className="lbl">Emisión del Pago</p>
+                <h4>{'?'}</h4>
+              </div>
+              <div className="col-md-4">
+                <p className="lbl">Ficha de Transacción</p>
+                <h4>{'?'}</h4>
+              </div>
+            </div>
+            
+            <div className="row contract-highlights border-bottom">
+              <div className="col-md-4">
+                <p className="lbl">Monto y Moneda</p>
+                <h4>{'?'}</h4>
+              </div>
+              <div className="col-md-4">
+                <p className="lbl">Identificador de Organización</p>
+                <h4>{'?'}</h4>
+              </div>
+              <div className="col-md-4">
+                <p className="lbl">Nombre de Organización</p>
+                <h4>{'?'}</h4>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );

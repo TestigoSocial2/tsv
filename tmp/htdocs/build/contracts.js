@@ -25309,7 +25309,102 @@ var Details = function (_React$Component) {
               )
             )
           ),
-          _react2.default.createElement('div', { role: 'tabpanel', className: 'tab-pane fade', id: 'implementation' })
+          _react2.default.createElement(
+            'div',
+            { role: 'tabpanel', className: 'tab-pane fade', id: 'implementation' },
+            _react2.default.createElement(
+              'div',
+              { className: 'row contract-highlights border-bottom' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Realizaci\xF3n del Pago'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  '?'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Emisi\xF3n del Pago'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  '?'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Ficha de Transacci\xF3n'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  '?'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'row contract-highlights border-bottom' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Monto y Moneda'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  '?'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Identificador de Organizaci\xF3n'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  '?'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Nombre de Organizaci\xF3n'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  '?'
+                )
+              )
+            )
+          )
         )
       );
     }
@@ -25419,12 +25514,11 @@ var SearchBar = function (_React$Component) {
             }
             return '';
           }
-        }).on('change', function (e) {
-          var val = e.value.newValue;
+        }).on('slide', function (e) {
           this.setState({
-            value: val.join('|')
+            value: e.value.join('|')
           });
-          this.ui.input.val('$' + val[0].toLocaleString() + ' a ' + '$' + val[1].toLocaleString());
+          this.ui.input.val('$' + e.value[0].toLocaleString() + ' a ' + '$' + e.value[1].toLocaleString());
         }.bind(this));
       }.bind(this));
 
