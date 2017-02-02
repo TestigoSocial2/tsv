@@ -22,7 +22,7 @@ var TSV = {
     }
 
     // Register form setup
-    if( $('form#setup').length ) {
+    if( $('form#registerForm').length ) {
       this.registerSetup();
     }
 

@@ -30,10 +30,10 @@ import (
 	"path"
 
 	"github.com/bcessa/tsv/data"
+	"github.com/bcessa/tsv/notifications"
 	"github.com/bcessa/tsv/storage"
 	"github.com/gorilla/websocket"
 	"github.com/julienschmidt/httprouter"
-	"github.com/mxabierto/go-twilio"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -107,20 +107,37 @@ func profile(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	log.Printf("Store user profile: %s\n", up.User)
 	store.Write("profile", []byte(up.User), []byte(r.FormValue("profile")))
 
-	// Load SMS setup variables from ENV
-	twAccount := os.Getenv("TSV_TWILIO_ACCOUNT")
-	twToken := os.Getenv("TSV_TWILIO_TOKEN")
-	if twToken != "" {
-		tw := twilio.New(twAccount, twToken)
-		_, err = tw.SendMessage(&twilio.MessageOptions{
-			To:   fmt.Sprintf("+521%s", up.NotificationSMS),
-			From: "+14242964188",
-			Body: "Bienvenido a Testigo Social Virtual 2.0 a partir de este momento comenzaras a recibir notificaciones relevantes sobre los procesos de contratación pública de tu interes.",
+	// Dispatch SMS notification
+	if up.EnableSMSNotifications {
+		smsID, err := notifications.SendSMS(&notifications.SMSOptions{
+			To:      fmt.Sprintf("+52%s", up.NotificationSMS),
+			Sender:  "TS2",
+			Message: "Bienvenido a Testigo Social Virtual 2.0 a partir de este momento comenzaras a recibir notificaciones relevantes",
 		})
 		if err != nil {
 			log.Println("SMS error:", err)
 		}
+		log.Println("SMS notifications dipatched with ID:", smsID)
 	}
+
+	// Dispatch email notification
+	if up.EnableEmailNotifications {
+		content, _ := notifications.PrepareContent(notifications.TSVEmailTemplate, map[string]interface{}{
+			"Title":   "¡Gracias por tu interés!",
+			"Content": "Bienvenido a Testigo Social Virtual 2.0 a partir de este momento comenzaras a recibir notificaciones relevantes sobre los procesos de contratación pública de tu interes.",
+		})
+		emailID, err := notifications.SendEmail(&notifications.EmailOptions{
+			To:      up.NotificationEmail,
+			From:    "notificaciones@testigosocial.mx",
+			Subject: "TS 2.0",
+			Body:    content,
+		})
+		if err != nil {
+			log.Println("Email error:", err)
+		}
+		log.Println("Email notifications dipatched with ID:", emailID)
+	}
+
 	fmt.Fprintf(w, fmt.Sprintf("{\"ok\":true}"))
 }
 

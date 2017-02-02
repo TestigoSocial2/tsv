@@ -1,6 +1,5 @@
 package: github.com/bcessa/tsv
 import:
-- package: github.com/mxabierto/go-twilio
 - package: github.com/julienschmidt/httprouter
 - package: github.com/gorilla/websocket
   version: v1.0.0
