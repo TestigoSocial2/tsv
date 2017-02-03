@@ -36103,35 +36103,55 @@ var ChartWidget = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (ChartWidget.__proto__ || Object.getPrototypeOf(ChartWidget)).call(this, props));
 
-    _this.chart = null;
+    _this.chart = false;
     return _this;
   }
 
   _createClass(ChartWidget, [{
-    key: 'render',
-    value: function render() {
-      if (this.props.data.hasOwnProperty('limited')) {
-        // Build chart
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      if (!this.chart) {
         this.chart = new _chart2.default(document.getElementById(this.props.id), {
           type: "pie",
-          data: this.props.reducer(this.props.data),
           options: {
             responsive: true,
             responsiveAnimationDuration: 500,
             padding: 10
           }
         });
+        this.forceUpdate();
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.chart.destroy();
+      this.chart = null;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      // Update existing chart when there's data available
+      if (this.chart && Object.keys(this.props.data).length > 0) {
+        var newData = this.props.reducer(this.props.data);
+        this.chart.data.datasets = newData.datasets;
+        this.chart.data.labels = newData.labels;
+        this.chart.update();
       }
 
       return _react2.default.createElement(
         'div',
         { className: 'chart-widget' },
-        _react2.default.createElement(
+        this.props.title && _react2.default.createElement(
           'h2',
-          { className: 'block-title' },
+          { className: 'block-title', onClick: function onClick() {
+              return _this2.props.onSelection(_this2.props.reducer);
+            } },
           this.props.title
         ),
-        _react2.default.createElement(
+        this.props.description && _react2.default.createElement(
           'div',
           { className: 'bg-gray' },
           _react2.default.createElement(
@@ -36170,9 +36190,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _chart = require('chart.js');
+var _ChartWidget = require('./ChartWidget.jsx');
 
-var _chart2 = _interopRequireDefault(_chart);
+var _ChartWidget2 = _interopRequireDefault(_ChartWidget);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36184,23 +36204,30 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var DataInspector = function (_React$Component) {
-  _inherits(DataInspector, _React$Component);
+var Details = function (_React$Component) {
+  _inherits(Details, _React$Component);
 
-  function DataInspector(props) {
-    _classCallCheck(this, DataInspector);
+  function Details(props) {
+    _classCallCheck(this, Details);
 
-    var _this = _possibleConstructorReturn(this, (DataInspector.__proto__ || Object.getPrototypeOf(DataInspector)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Details.__proto__ || Object.getPrototypeOf(Details)).call(this, props));
 
+    _this.close = _this.close.bind(_this);
     _this.onChange = _this.onChange.bind(_this);
     _this.applyFilters = _this.applyFilters.bind(_this);
     _this.state = {
-      filters: props.defaultFilters
+      filters: props.filters
     };
     return _this;
   }
 
-  _createClass(DataInspector, [{
+  _createClass(Details, [{
+    key: 'close',
+    value: function close(e) {
+      e.preventDefault();
+      this.props.onClose();
+    }
+  }, {
     key: 'onChange',
     value: function onChange(e) {
       var name = e.target.name;
@@ -36219,7 +36246,7 @@ var DataInspector = function (_React$Component) {
         step: 50000,
         min: 0,
         max: 500000000,
-        value: [20000000, 80000000],
+        value: this.state.filters.amount,
         formatter: function formatter(value) {
           if (Array.isArray(value)) {
             var lbl = '$' + value[0].toLocaleString() + ' a ' + '$' + value[1].toLocaleString();
@@ -36371,24 +36398,34 @@ var DataInspector = function (_React$Component) {
           _react2.default.createElement(
             'h2',
             null,
-            'Resultados de la B\xFAsqueda'
+            _react2.default.createElement(
+              'button',
+              { onClick: this.close, type: 'button', 'class': 'close', 'data-dismiss': 'modal', 'aria-label': 'Close' },
+              _react2.default.createElement(
+                'span',
+                { 'aria-hidden': 'true' },
+                '\xD7'
+              )
+            ),
+            '  Detalles del Indicador'
           ),
-          _react2.default.createElement(
-            'div',
-            { className: 'chart' },
-            _react2.default.createElement('canvas', null)
-          )
+          _react2.default.createElement(_ChartWidget2.default, {
+            id: 'indicatorDetails',
+            data: this.props.data,
+            reducer: this.props.reducer,
+            width: '680',
+            height: '440' })
         )
       );
     }
   }]);
 
-  return DataInspector;
+  return Details;
 }(_react2.default.Component);
 
-exports.default = DataInspector;
+exports.default = Details;
 
-},{"chart.js":1,"react":222}],226:[function(require,module,exports){
+},{"./ChartWidget.jsx":224,"react":222}],226:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -36407,9 +36444,9 @@ var _ChartWidget = require('./ChartWidget.jsx');
 
 var _ChartWidget2 = _interopRequireDefault(_ChartWidget);
 
-var _DataInspector = require('./DataInspector.jsx');
+var _Details = require('./Details.jsx');
 
-var _DataInspector2 = _interopRequireDefault(_DataInspector);
+var _Details2 = _interopRequireDefault(_Details);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36439,7 +36476,6 @@ function procedureTypeData(data) {
 }
 
 function publishYearData(data) {
-  console.log(data);
   var i = 0;
   var chartData = {
     labels: [],
@@ -36467,14 +36503,17 @@ var Section = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Section.__proto__ || Object.getPrototypeOf(Section)).call(this, props));
 
+    _this.showDetails = _this.showDetails.bind(_this);
+    _this.closeDetails = _this.closeDetails.bind(_this);
     _this.applyFilters = _this.applyFilters.bind(_this);
-    _this.defaultFilters = {
-      bucket: "gacm",
-      state: "planning",
-      amount: [20000000, 80000000]
-    };
     _this.state = {
-      data: {}
+      selected: null,
+      data: {},
+      filters: {
+        bucket: "gacm",
+        state: "planning",
+        amount: [20000000, 80000000]
+      }
     };
     return _this;
   }
@@ -36482,19 +36521,30 @@ var Section = function (_React$Component) {
   _createClass(Section, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.applyFilters(this.defaultFilters);
+      this.applyFilters(this.state.filters);
     }
   }, {
     key: 'applyFilters',
     value: function applyFilters(filters) {
-      this.runQuery(this.defaultFilters);
+      this.runQuery(filters);
+    }
+  }, {
+    key: 'showDetails',
+    value: function showDetails(reducer) {
+      var newState = Object.assign({}, this.state, { selected: reducer });
+      this.setState(newState);
+    }
+  }, {
+    key: 'closeDetails',
+    value: function closeDetails() {
+      var newState = Object.assign({}, this.state, { selected: null });
+      this.setState(newState);
     }
   }, {
     key: 'runQuery',
     value: function runQuery(filters) {
       var _this2 = this;
 
-      // success: (res) => this.setState({ items: JSON.parse( res ) })
       $.ajax({
         type: "POST",
         url: "/indicators",
@@ -36509,6 +36559,46 @@ var Section = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var content = null;
+      if (this.state.selected) {
+        content = _react2.default.createElement(_Details2.default, {
+          filters: this.state.filters,
+          data: this.state.data,
+          reducer: this.state.selected,
+          onSubmit: this.applyFilters,
+          onClose: this.closeDetails });
+      } else {
+        content = _react2.default.createElement(
+          'div',
+          { className: 'row' },
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-6' },
+            _react2.default.createElement(_ChartWidget2.default, {
+              id: 'procedureType',
+              title: 'Tipo de Procedimiento',
+              data: this.state.data,
+              reducer: procedureTypeData,
+              onSelection: this.showDetails,
+              width: '500',
+              height: '340',
+              description: 'La gr\xE1fica muestra la relaci\xF3n de contratos que se adjudicar\xF3n de acuerdo a los distintos mecanismos establecidos.' })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-6' },
+            _react2.default.createElement(_ChartWidget2.default, {
+              id: 'publishYear',
+              title: 'A\xF1o de Publicaci\xF3n',
+              data: this.state.data,
+              reducer: publishYearData,
+              onSelection: this.showDetails,
+              width: '500',
+              height: '340',
+              description: 'La gr\xE1fica muestra la relaci\xF3n de los contratos registrados de acuerdo a su a\xF1o de publicaci\xF3n.' })
+          )
+        );
+      }
       return _react2.default.createElement(
         'div',
         null,
@@ -36519,36 +36609,8 @@ var Section = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'inner-row' },
-          _react2.default.createElement(
-            'div',
-            { className: 'row' },
-            _react2.default.createElement(
-              'div',
-              { className: 'col-md-6' },
-              _react2.default.createElement(_ChartWidget2.default, {
-                id: 'procedureType',
-                title: 'Tipo de Procedimiento',
-                data: this.state.data,
-                reducer: procedureTypeData,
-                width: '500',
-                height: '340',
-                description: 'La gr\xE1fica muestra la relaci\xF3n de contratos que se adjudicar\xF3n de acuerdo a los distintos mecanismos establecidos.' })
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'col-md-6' },
-              _react2.default.createElement(_ChartWidget2.default, {
-                id: 'publishYear',
-                title: 'A\xF1o de Publicaci\xF3n',
-                data: this.state.data,
-                reducer: publishYearData,
-                width: '500',
-                height: '340',
-                description: 'La gr\xE1fica muestra la relaci\xF3n de los contratos registrados de acuerdo a su a\xF1o de publicaci\xF3n.' })
-            )
-          ),
-          _react2.default.createElement('hr', null),
-          _react2.default.createElement(_DataInspector2.default, { defaultFilters: this.defaultFilters, onSubmit: this.applyFilters })
+          content,
+          _react2.default.createElement('hr', null)
         )
       );
     }
@@ -36559,7 +36621,7 @@ var Section = function (_React$Component) {
 
 exports.default = Section;
 
-},{"../general.jsx":223,"./ChartWidget.jsx":224,"./DataInspector.jsx":225,"react":222}],227:[function(require,module,exports){
+},{"../general.jsx":223,"./ChartWidget.jsx":224,"./Details.jsx":225,"react":222}],227:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');

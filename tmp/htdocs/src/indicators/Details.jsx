@@ -1,14 +1,20 @@
 import React from 'react';
-import Chart from 'chart.js'
+import ChartWidget from './ChartWidget.jsx';
 
-class DataInspector extends React.Component {
+class Details extends React.Component {
   constructor(props) {
     super(props);
+    this.close = this.close.bind(this);
     this.onChange = this.onChange.bind(this);
     this.applyFilters = this.applyFilters.bind(this);
     this.state = {
-      filters: props.defaultFilters
+      filters: props.filters
     };
+  }
+
+  close(e) {
+    e.preventDefault();
+    this.props.onClose();
   }
 
   onChange(e) {
@@ -25,7 +31,7 @@ class DataInspector extends React.Component {
       step: 50000,
       min: 0,
       max: 500000000,
-      value: [20000000,80000000],
+      value: this.state.filters.amount,
       formatter: function( value ) {
         if( Array.isArray( value ) ) {
           var lbl = '$' + value[0].toLocaleString() + ' a ' + '$' + value[1].toLocaleString();
@@ -96,14 +102,20 @@ class DataInspector extends React.Component {
           </form>
         </div>
         <div className="col-md-8 content">
-          <h2>Resultados de la Búsqueda</h2>
-          <div className="chart">
-            <canvas></canvas>
-          </div>
+          <h2>
+            <button onClick={this.close} type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>  Detalles del Indicador
+          </h2>
+
+          <ChartWidget
+            id="indicatorDetails"
+            data={this.props.data}
+            reducer={this.props.reducer}
+            width="680"
+            height="440" />
         </div>
       </div>
     );
   }
 }
 
-export default DataInspector;
+export default Details;

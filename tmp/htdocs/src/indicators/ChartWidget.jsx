@@ -4,29 +4,54 @@ import Chart from 'chart.js'
 class ChartWidget extends React.Component {
   constructor(props) {
     super(props);
-    this.chart = null;
+    this.chart = false;
   }
 
-  render() {
-    if( this.props.data.hasOwnProperty('limited') ) {
-      // Build chart
+  componentDidMount() {
+    if( ! this.chart ) {
       this.chart = new Chart( document.getElementById(this.props.id), {
         type: "pie",
-        data: this.props.reducer(this.props.data),
         options: {
           responsive: true,
           responsiveAnimationDuration: 500,
           padding: 10
         }
       });
+      this.forceUpdate();
+    }
+  }
+
+  componentWillUnmount() {
+    this.chart.destroy();
+    this.chart = null;
+  }
+
+  render() {
+    // Update existing chart when there's data available
+    if( this.chart && Object.keys(this.props.data).length > 0 ) {
+      let newData = this.props.reducer(this.props.data);
+      this.chart.data.datasets = newData.datasets;
+      this.chart.data.labels = newData.labels;
+      this.chart.update();
     }
 
     return (
       <div className="chart-widget">
-        <h2 className="block-title">{this.props.title}</h2>
-        <div className="bg-gray">
-          <p>{this.props.description}</p>
-        </div>
+        {/* Set title if any */}
+        {this.props.title &&
+          <h2 className="block-title" onClick={() => this.props.onSelection(this.props.reducer)}>
+            {this.props.title}
+          </h2>
+        }
+
+        {/* Set description if any */}
+        {this.props.description &&
+          <div className="bg-gray">
+            <p>{this.props.description}</p>
+          </div>
+        }
+
+        {/* Chart canvas */}
         <div className="chart">
           <canvas id={this.props.id}
             className="dataChart"

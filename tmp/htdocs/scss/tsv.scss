@@ -493,6 +493,12 @@ div.clear {
   }
 }
 
+#glossaryContents {
+  td {
+    cursor: pointer;
+  }
+}
+
 div.info {
   padding: 20px 0;
 
@@ -710,6 +716,7 @@ div.chart-widget {
   margin-top: 20px;
 
   h2 {
+    cursor: pointer;
     font-size: 20px;
     margin-bottom: 0;
     margin-top: 0;
@@ -743,7 +750,6 @@ div.chart-main {
 
   div.content {
     canvas {
-      background-color: $tsv-yellow;
       margin: 10px 3%;
       min-height: 440px;
       width: 94%;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Description } from '../general.jsx';
 import ChartWidget from './ChartWidget.jsx';
-import DataInspector from './DataInspector.jsx';
+import Details from './Details.jsx';
 
 function procedureTypeData( data ) {
   // Calculate chart total and %
@@ -29,7 +29,6 @@ function procedureTypeData( data ) {
 }
 
 function publishYearData( data ) {
-  console.log( data );
   let i = 0;
   let chartData = {
     labels: [],
@@ -52,27 +51,39 @@ function publishYearData( data ) {
 class Section extends React.Component {
   constructor(props) {
     super(props);
+    this.showDetails = this.showDetails.bind(this);
+    this.closeDetails = this.closeDetails.bind(this);
     this.applyFilters = this.applyFilters.bind(this);
-    this.defaultFilters = {
-      bucket: "gacm",
-      state: "planning",
-      amount: [20000000,80000000]
-    };
     this.state = {
-      data: {}
+      selected: null,
+      data: {},
+      filters: {
+        bucket: "gacm",
+        state: "planning",
+        amount: [20000000,80000000]
+      }
     };
   }
 
   componentDidMount() {
-    this.applyFilters(this.defaultFilters);
+    this.applyFilters(this.state.filters);
   }
 
   applyFilters(filters) {
-    this.runQuery(this.defaultFilters);
+    this.runQuery(filters);
+  }
+
+  showDetails(reducer) {
+    let newState = Object.assign({}, this.state, {selected:reducer});
+    this.setState(newState);
+  }
+
+  closeDetails() {
+    let newState = Object.assign({}, this.state, {selected: null});
+    this.setState(newState);
   }
 
   runQuery(filters) {
-    // success: (res) => this.setState({ items: JSON.parse( res ) })
     $.ajax({
       type: "POST",
       url: "/indicators",
@@ -84,6 +95,44 @@ class Section extends React.Component {
   }
 
   render() {
+    let content = null;
+    if(this.state.selected) {
+      content = (
+        <Details
+          filters={this.state.filters}
+          data={this.state.data}
+          reducer={this.state.selected}
+          onSubmit={this.applyFilters}
+          onClose={this.closeDetails} />
+      );
+    } else {
+      content = (
+        <div className="row">
+          <div className="col-md-6">
+            <ChartWidget
+              id="procedureType"
+              title="Tipo de Procedimiento"
+              data={this.state.data}
+              reducer={procedureTypeData}
+              onSelection={this.showDetails}
+              width="500"
+              height="340"
+              description="La gráfica muestra la relación de contratos que se adjudicarón de acuerdo a los distintos mecanismos establecidos." />
+          </div>
+          <div className="col-md-6">
+            <ChartWidget
+              id="publishYear"
+              title="Año de Publicación"
+              data={this.state.data}
+              reducer={publishYearData}
+              onSelection={this.showDetails}
+              width="500"
+              height="340"
+              description="La gráfica muestra la relación de los contratos registrados de acuerdo a su año de publicación." />
+          </div>
+        </div>
+      );
+    }
     return (
       <div>
         <Description
@@ -93,35 +142,10 @@ class Section extends React.Component {
 
         {/* Content */}
         <div className="inner-row">
-          {/* Widgets */}
-          <div className="row">
-            <div className="col-md-6">
-              <ChartWidget
-                id="procedureType"
-                title="Tipo de Procedimiento"
-                data={this.state.data}
-                reducer={procedureTypeData}
-                width="500"
-                height="340"
-                description="La gráfica muestra la relación de contratos que se adjudicarón de acuerdo a los distintos mecanismos establecidos." />
-            </div>
-            <div className="col-md-6">
-              <ChartWidget
-                id="publishYear"
-                title="Año de Publicación"
-                data={this.state.data}
-                reducer={publishYearData}
-                width="500"
-                height="340"
-                description="La gráfica muestra la relación de los contratos registrados de acuerdo a su año de publicación." />
-            </div>
-          </div>
+          {content}
 
           {/* Separator */}
           <hr />
-
-          {/* Main data inspector */}
-          <DataInspector defaultFilters={this.defaultFilters} onSubmit={this.applyFilters}  />
         </div>
       </div>
     );
