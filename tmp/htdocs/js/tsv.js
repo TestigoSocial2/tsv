@@ -2,7 +2,7 @@ var TSV = {
   // Basic setup
   init: function() {
     // Plugins
-    $('[data-toggle="tooltip"]').tooltip()
+    $('[data-toggle="tooltip"]').tooltip();
     $('.carousel').carousel({
       interval: 8000,
       keyboard: false,
@@ -16,11 +16,6 @@ var TSV = {
       $('#hero > div.photo').css( 'background-image', img );
     }
 
-    // Pre-register form setup
-    if( $('form#preregister').length ) {
-      this.preRegisterSetup();
-    }
-
     // Register form setup
     if( $('form#registerForm').length ) {
       this.registerSetup();
@@ -29,11 +24,6 @@ var TSV = {
     // Display main stats
     if( $('#highlights').length ) {
       this.statsSetup();
-    }
-
-    // Indicators filter setup
-    if( $('form#filterForm').length ) {
-      this.filterSetup();
     }
   },
 
@@ -261,30 +251,6 @@ var TSV = {
       }
     });
   },
-
-  // Pre-register process
-  preRegisterSetup: function() {
-    var regx = /^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$/;
-    var form = $('form#preregister');
-    form.on( 'submit', function( e ) {
-      e.preventDefault();
-      var email = form.find('input').val();
-      if( regx.test(email) ) {
-        $.ajax({
-          type: "POST",
-          url: 'preregister',
-          data: {
-            email: email
-          },
-          success: function( res ) {
-            alert("Gracias por tu interés en Testigo Social 2.0. Pronto te informaremos cómo podrás participar en las compras públicas mediante esta nueva plataforma.");
-          }
-        });
-      } else {
-        alert("La dirección proporcionada no es una dirección de correo electrónico valida, favor de verificar!");
-      }
-    });
-  }
 }
 
 // Helper method to retrieve a GET variable

@@ -10,12 +10,6 @@
     <link rel="stylesheet" href="css/tsv.css">
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/waypoints.min.js"></script>
-    <script type="text/javascript" src="js/counterup.min.js"></script>
-    <script type="text/javascript" src="js/pixative.validator.js"></script>
-    <script type="text/javascript" src="js/chart.min.js"></script>
-    <script type="text/javascript" src="js/moment.min.js"></script>
-    <script type="text/javascript" src="js/tsv.js"></script>
   </head>
   <body>
     <div class="container-fluid">
@@ -67,7 +61,26 @@
     </div>
     <script type="text/javascript">
       $('document').ready(function(){
-        TSV.init();
+        var regx = /^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$/;
+        var form = $('form#preregister');
+        form.on( 'submit', function( e ) {
+          e.preventDefault();
+          var email = form.find('input').val();
+          if( regx.test(email) ) {
+            $.ajax({
+              type: "POST",
+              url: 'preregister',
+              data: {
+                email: email
+              },
+              success: function( res ) {
+                alert("Gracias por tu interés en Testigo Social 2.0. Pronto te informaremos cómo podrás participar en las compras públicas mediante esta nueva plataforma.");
+              }
+            });
+          } else {
+            alert("La dirección proporcionada no es una dirección de correo electrónico valida, favor de verificar!");
+          }
+        });
       });
     </script>
   </body>
