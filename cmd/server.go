@@ -221,13 +221,21 @@ func ws(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 		log.Println("ws:", err)
 		return
 	}
-	defer c.Close()
-	messageType, p, err := c.ReadMessage()
 
-	if err != nil {
-		// TODO - Inspect and handle message type and content
-		c.WriteMessage(messageType, p)
-	}
+	go func(c *websocket.Conn) {
+		for {
+			mType, data, err := c.ReadMessage()
+			if err != nil {
+				// Close connection upon request or error
+				c.Close()
+				return
+			}
+
+			// TODO - Handle messages
+			log.Printf("message: %+v - %+v", mType, data)
+			c.WriteMessage(mType, data)
+		}
+	}(c)
 }
 
 func runServer(cmd *cobra.Command, args []string) error {

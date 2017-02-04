@@ -86,7 +86,7 @@ func (org *Organization) AddRecord(rec []byte) error {
 			}
 		}
 
-		// tender.numberOfTenderers
+		// tender.procurementMethod
 		if release.ExistsP("tender.procurementMethod") {
 			procurementMethod, _ := release.Path("tender.procurementMethod").Data().(string)
 			switch procurementMethod {
