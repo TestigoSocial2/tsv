@@ -1,10 +1,10 @@
 import React from 'react';
-import { getParameter } from '../helpers.js';
-import { Description } from '../general.jsx';
+import Description from '../Description.jsx';
 import TableItem from './TableItem.jsx';
 import SearchResults from './SearchResults.jsx';
 import SearchBar from './SearchBar.jsx';
 import Details from './Details.jsx';
+import { getParameter } from '../helpers.js';
 
 class Section extends React.Component {
   constructor(props) {

@@ -718,6 +718,11 @@ div.clear {
       #highlights div.item p.details {
         color: #999;
         font-size: .9em; }
+  #highlights span.bg-green {
+    line-height: 1.8em;
+    padding: 10px; }
+    #highlights span.bg-green strong {
+      font-size: 1.5em; }
 
 #video {
   padding: 2em 0; }

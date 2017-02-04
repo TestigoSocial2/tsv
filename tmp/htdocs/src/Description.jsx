@@ -14,6 +14,4 @@ class Description extends React.Component {
   }
 }
 
-export {
-  Description
-}
+export default Description;
