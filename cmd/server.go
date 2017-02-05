@@ -252,6 +252,19 @@ func ws(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	}(c)
 }
 
+// Facebook messenger webhooks
+func fb(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+	w.Header().Add("Strict-Transport-Security", "max-age=63072000; includeSubDomains")
+	mode := r.FormValue("hub.mode")
+	token := r.FormValue("hub.verify_token")
+	if mode == "subscribe" && token == os.Getenv("TSV_FB_VERIFY_TOKEN") {
+		fmt.Fprintf(w, fmt.Sprintf("%s", r.FormValue("hub.challenge")))
+		return
+	}
+
+	fmt.Fprintf(w, fmt.Sprintf("%s - %s", mode, "INVALID_VERIFICATION_TOKEN"))
+}
+
 func runServer(cmd *cobra.Command, args []string) error {
 	// Set storage config variable
 	os.Setenv("TSV_STORAGE", path.Join(viper.GetString("server.store"), "tsv.db"))
@@ -269,6 +282,7 @@ func runServer(cmd *cobra.Command, args []string) error {
 	router.POST("/preregister", preregister)
 	router.GET("/stats/:bucket", stats)
 	router.GET("/ws", ws)
+	router.GET("/fb", fb)
 
 	// Start server
 	log.Println("Handling requests on port:", viper.GetInt("server.port"))
