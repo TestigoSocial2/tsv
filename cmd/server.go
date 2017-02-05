@@ -55,9 +55,11 @@ var wsu = websocket.Upgrader{
 // Setup
 func init() {
 	var (
-		serverPort  int
-		serverDocs  string
-		serverStore string
+		serverPort    int
+		serverDocs    string
+		serverStore   string
+		serverSSLCert string
+		serverSSLKey  string
 	)
 	viper.SetDefault("server.port", 7788)
 	viper.SetDefault("server.docs", "htdocs")
@@ -80,9 +82,21 @@ func init() {
 		"s",
 		os.TempDir(),
 		"Full path to use as data store location")
+	serverCmd.Flags().StringVar(
+		&serverSSLCert,
+		"cert",
+		"",
+		"SSL certificate to enable HTTPS")
+	serverCmd.Flags().StringVar(
+		&serverSSLKey,
+		"priv-key",
+		"",
+		"SSL certificate's private key")
 	viper.BindPFlag("server.port", serverCmd.Flags().Lookup("port"))
 	viper.BindPFlag("server.docs", serverCmd.Flags().Lookup("htdocs"))
 	viper.BindPFlag("server.store", serverCmd.Flags().Lookup("store"))
+	viper.BindPFlag("server.cert", serverCmd.Flags().Lookup("cert"))
+	viper.BindPFlag("server.priv", serverCmd.Flags().Lookup("priv-key"))
 	RootCmd.AddCommand(serverCmd)
 }
 
@@ -259,9 +273,19 @@ func runServer(cmd *cobra.Command, args []string) error {
 	// Start server
 	log.Println("Handling requests on port:", viper.GetInt("server.port"))
 	go func() {
+		cert := viper.GetString("server.cert")
+		priv := viper.GetString("server.priv")
 		addr := fmt.Sprintf(":%d", viper.GetInt("server.port"))
-		if err := http.ListenAndServe(addr, router); err != nil {
-			log.Printf("Connection error: %s\n", err)
+		if cert != "" && priv != "" {
+			// Secure HTTPS server
+			if err := http.ListenAndServeTLS(addr, cert, priv, router); err != nil {
+				log.Printf("HTTPS server error: %s\n", err)
+			}
+		} else {
+			// Standard HTTP server
+			if err := http.ListenAndServe(addr, router); err != nil {
+				log.Printf("HTTP server error: %s\n", err)
+			}
 		}
 	}()
 
