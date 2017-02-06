@@ -1,5 +1,5 @@
 import React from 'react';
-import Description from '../Description.jsx';
+import Description from '../base/Description.jsx';
 import Form from './Form.jsx';
 
 class Section extends React.Component {

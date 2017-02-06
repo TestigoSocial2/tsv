@@ -23099,7 +23099,7 @@ var ReactChildReconciler = {
 
 module.exports = ReactChildReconciler;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":113,"./ReactReconciler":163,"./instantiateReactComponent":207,"./shouldUpdateReactComponent":215,"./traverseAllChildren":216,"_process":293,"fbjs/lib/warning":68,"react/lib/ReactComponentTreeHook":257}],118:[function(require,module,exports){
+},{"./KeyEscapeUtils":113,"./ReactReconciler":163,"./instantiateReactComponent":207,"./shouldUpdateReactComponent":215,"./traverseAllChildren":216,"_process":295,"fbjs/lib/warning":68,"react/lib/ReactComponentTreeHook":257}],118:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -32666,7 +32666,7 @@ function checkReactTypeSpec(typeSpecs, values, location, componentName, element,
 
 module.exports = checkReactTypeSpec;
 }).call(this,require('_process'))
-},{"./ReactPropTypeLocationNames":160,"./ReactPropTypesSecret":161,"./reactProdInvariant":211,"_process":293,"fbjs/lib/invariant":61,"fbjs/lib/warning":68,"react/lib/ReactComponentTreeHook":257}],191:[function(require,module,exports){
+},{"./ReactPropTypeLocationNames":160,"./ReactPropTypesSecret":161,"./reactProdInvariant":211,"_process":295,"fbjs/lib/invariant":61,"fbjs/lib/warning":68,"react/lib/ReactComponentTreeHook":257}],191:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33038,7 +33038,7 @@ function flattenChildren(children, selfDebugID) {
 
 module.exports = flattenChildren;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":113,"./traverseAllChildren":216,"_process":293,"fbjs/lib/warning":68,"react/lib/ReactComponentTreeHook":257}],196:[function(require,module,exports){
+},{"./KeyEscapeUtils":113,"./traverseAllChildren":216,"_process":295,"fbjs/lib/warning":68,"react/lib/ReactComponentTreeHook":257}],196:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -40505,7 +40505,7 @@ function checkReactTypeSpec(typeSpecs, values, location, componentName, element,
 
 module.exports = checkReactTypeSpec;
 }).call(this,require('_process'))
-},{"./ReactComponentTreeHook":257,"./ReactPropTypeLocationNames":264,"./ReactPropTypesSecret":266,"./reactProdInvariant":273,"_process":293,"fbjs/lib/invariant":61,"fbjs/lib/warning":68}],271:[function(require,module,exports){
+},{"./ReactComponentTreeHook":257,"./ReactPropTypeLocationNames":264,"./ReactPropTypesSecret":266,"./reactProdInvariant":273,"_process":295,"fbjs/lib/invariant":61,"fbjs/lib/warning":68}],271:[function(require,module,exports){
 arguments[4][202][0].apply(exports,arguments)
 },{"dup":202}],272:[function(require,module,exports){
 /**
@@ -40811,6 +40811,71 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Menu = require('./base/Menu.jsx');
+
+var _Menu2 = _interopRequireDefault(_Menu);
+
+var _Footer = require('./base/Footer.jsx');
+
+var _Footer2 = _interopRequireDefault(_Footer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Main = function (_React$Component) {
+  _inherits(Main, _React$Component);
+
+  function Main() {
+    _classCallCheck(this, Main);
+
+    return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).apply(this, arguments));
+  }
+
+  _createClass(Main, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      $('[data-toggle="tooltip"]').tooltip();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'container-fluid' },
+        _react2.default.createElement(_Menu2.default, null),
+        _react2.default.createElement(
+          'div',
+          { id: 'route' },
+          this.props.children
+        ),
+        _react2.default.createElement(_Footer2.default, null)
+      );
+    }
+  }]);
+
+  return Main;
+}(_react2.default.Component);
+
+exports.default = Main;
+
+},{"./base/Footer.jsx":280,"./base/Menu.jsx":281,"react":275}],279:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -40858,7 +40923,86 @@ var Description = function (_React$Component) {
 
 exports.default = Description;
 
-},{"react":275}],279:[function(require,module,exports){
+},{"react":275}],280:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Footer = function (_React$Component) {
+  _inherits(Footer, _React$Component);
+
+  function Footer() {
+    _classCallCheck(this, Footer);
+
+    return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
+  }
+
+  _createClass(Footer, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { id: "bottom", className: "row" },
+        _react2.default.createElement(
+          "div",
+          { className: "inner-row" },
+          _react2.default.createElement(
+            "div",
+            { className: "col-md-3" },
+            _react2.default.createElement(
+              "p",
+              null,
+              "Una iniciativa de:"
+            ),
+            _react2.default.createElement("a", { href: "http://www.tm.org.mx", target: "_blank", className: "tm" })
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "col-md-3" },
+            _react2.default.createElement(
+              "p",
+              null,
+              "Con el apoyo de:"
+            ),
+            _react2.default.createElement("a", { href: "https://www.gov.uk/government/world/organisations/british-embassy-mexico-city.es-419", target: "_blank", className: "uk" })
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "col-md-6" },
+            _react2.default.createElement(
+              "div",
+              { className: "social" },
+              _react2.default.createElement("a", { href: "https://www.twitter.com/testigo_social", className: "tw" }),
+              _react2.default.createElement("a", { href: "https://www.facebook.com/testigosocial", className: "fb" })
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Footer;
+}(_react2.default.Component);
+
+exports.default = Footer;
+
+},{"react":275}],281:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40881,144 +41025,92 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Main = function (_React$Component) {
-  _inherits(Main, _React$Component);
+var Menu = function (_React$Component) {
+  _inherits(Menu, _React$Component);
 
-  function Main() {
-    _classCallCheck(this, Main);
+  function Menu() {
+    _classCallCheck(this, Menu);
 
-    return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).apply(this, arguments));
   }
 
-  _createClass(Main, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      $('[data-toggle="tooltip"]').tooltip();
-    }
-  }, {
+  _createClass(Menu, [{
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'container-fluid' },
+        { id: 'top', className: 'row' },
         _react2.default.createElement(
           'div',
-          { id: 'top', className: 'row' },
+          { className: 'col-md-12' },
+          _react2.default.createElement('a', { href: 'index.html', className: 'logo' }),
           _react2.default.createElement(
-            'div',
-            { className: 'col-md-12' },
-            _react2.default.createElement('a', { href: 'index.html', className: 'logo' }),
+            'ul',
+            null,
+            _react2.default.createElement('div', { className: 'clear' }),
             _react2.default.createElement(
-              'ul',
+              'li',
               null,
-              _react2.default.createElement('div', { className: 'clear' }),
               _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement(
-                  _reactRouter.Link,
-                  { to: '/' },
-                  '\xBFQu\xE9 es TS 2.0?'
-                )
-              ),
-              _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement(
-                  _reactRouter.Link,
-                  { to: '/contracts' },
-                  'Contratos'
-                )
-              ),
-              _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement(
-                  _reactRouter.Link,
-                  { to: '/indicators' },
-                  'Indicadores'
-                )
-              ),
-              _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement(
-                  _reactRouter.Link,
-                  { to: '/register' },
-                  'Notificaciones'
-                )
-              ),
-              _react2.default.createElement(
-                'li',
-                null,
-                _react2.default.createElement(
-                  'a',
-                  { href: 'http://www.tm.org.mx', target: '_blank' },
-                  'Contrataciones Abiertas'
-                )
+                _reactRouter.Link,
+                { to: '/' },
+                '\xBFQu\xE9 es TS 2.0?'
               )
             ),
             _react2.default.createElement(
-              'div',
-              { className: 'social' },
-              _react2.default.createElement('a', { href: 'https://www.twitter.com/testigo_social', className: 'tw' }),
-              _react2.default.createElement('a', { href: 'https://www.facebook.com/testigosocial', className: 'fb' })
+              'li',
+              null,
+              _react2.default.createElement(
+                _reactRouter.Link,
+                { to: '/contracts' },
+                'Contratos'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(
+                _reactRouter.Link,
+                { to: '/indicators' },
+                'Indicadores'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(
+                _reactRouter.Link,
+                { to: '/register' },
+                'Notificaciones'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(
+                'a',
+                { href: 'http://www.tm.org.mx', target: '_blank' },
+                'Contrataciones Abiertas'
+              )
             )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { id: 'route' },
-          this.props.children
-        ),
-        _react2.default.createElement(
-          'div',
-          { id: 'bottom', className: 'row' },
+          ),
           _react2.default.createElement(
             'div',
-            { className: 'inner-row' },
-            _react2.default.createElement(
-              'div',
-              { className: 'col-md-3' },
-              _react2.default.createElement(
-                'p',
-                null,
-                'Una iniciativa de:'
-              ),
-              _react2.default.createElement('a', { href: 'http://www.tm.org.mx', target: '_blank', className: 'tm' })
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'col-md-3' },
-              _react2.default.createElement(
-                'p',
-                null,
-                'Con el apoyo de:'
-              ),
-              _react2.default.createElement('a', { href: 'https://www.gov.uk/government/world/organisations/british-embassy-mexico-city.es-419', target: '_blank', className: 'uk' })
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'col-md-6' },
-              _react2.default.createElement(
-                'div',
-                { className: 'social' },
-                _react2.default.createElement('a', { href: 'https://www.twitter.com/testigo_social', className: 'tw' }),
-                _react2.default.createElement('a', { href: 'https://www.facebook.com/testigosocial', className: 'fb' })
-              )
-            )
+            { className: 'social' },
+            _react2.default.createElement('a', { href: 'https://www.twitter.com/testigo_social', className: 'tw' }),
+            _react2.default.createElement('a', { href: 'https://www.facebook.com/testigosocial', className: 'fb' })
           )
         )
       );
     }
   }]);
 
-  return Main;
+  return Menu;
 }(_react2.default.Component);
 
-exports.default = Main;
+exports.default = Menu;
 
-},{"react":275,"react-router":244}],280:[function(require,module,exports){
+},{"react":275,"react-router":244}],282:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41968,7 +42060,7 @@ var Details = function (_React$Component) {
 
 exports.default = Details;
 
-},{"../helpers.js":285,"react":275}],281:[function(require,module,exports){
+},{"../helpers.js":287,"react":275}],283:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -42200,7 +42292,7 @@ var SearchBar = function (_React$Component) {
 
 exports.default = SearchBar;
 
-},{"moment":88,"react":275}],282:[function(require,module,exports){
+},{"moment":88,"react":275}],284:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -42309,7 +42401,7 @@ var SearchResults = function (_React$Component) {
 
 exports.default = SearchResults;
 
-},{"./TableItem.jsx":284,"react":275}],283:[function(require,module,exports){
+},{"./TableItem.jsx":286,"react":275}],285:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -42322,7 +42414,7 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Description = require('../Description.jsx');
+var _Description = require('../base/Description.jsx');
 
 var _Description2 = _interopRequireDefault(_Description);
 
@@ -42431,7 +42523,7 @@ var Section = function (_React$Component) {
 
 exports.default = Section;
 
-},{"../Description.jsx":278,"../helpers.js":285,"./Details.jsx":280,"./SearchBar.jsx":281,"./SearchResults.jsx":282,"./TableItem.jsx":284,"react":275}],284:[function(require,module,exports){
+},{"../base/Description.jsx":279,"../helpers.js":287,"./Details.jsx":282,"./SearchBar.jsx":283,"./SearchResults.jsx":284,"./TableItem.jsx":286,"react":275}],286:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -42549,7 +42641,7 @@ var TableItem = function (_React$Component) {
 
 exports.default = TableItem;
 
-},{"../helpers.js":285,"react":275}],285:[function(require,module,exports){
+},{"../helpers.js":287,"react":275}],287:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -42594,7 +42686,7 @@ exports.getParameter = getParameter;
 exports.formatAmount = formatAmount;
 exports.formatDate = formatDate;
 
-},{"moment":88}],286:[function(require,module,exports){
+},{"moment":88}],288:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -43195,7 +43287,7 @@ var Home = function (_React$Component) {
 
 exports.default = Home;
 
-},{"../helpers.js":285,"chart.js":1,"moment":88,"react":275,"react-router":244}],287:[function(require,module,exports){
+},{"../helpers.js":287,"chart.js":1,"moment":88,"react":275,"react-router":244}],289:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -43245,7 +43337,7 @@ _reactDom2.default.render(_react2.default.createElement(
 
 // Import top-level components
 
-},{"./Main.jsx":279,"./contracts/Section.jsx":283,"./home/Section.jsx":286,"./indicators/Section.jsx":290,"./register/Section.jsx":292,"react":275,"react-dom":91,"react-router":244}],288:[function(require,module,exports){
+},{"./Main.jsx":278,"./contracts/Section.jsx":285,"./home/Section.jsx":288,"./indicators/Section.jsx":292,"./register/Section.jsx":294,"react":275,"react-dom":91,"react-router":244}],290:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -43352,7 +43444,7 @@ var ChartWidget = function (_React$Component) {
 
 exports.default = ChartWidget;
 
-},{"chart.js":1,"react":275}],289:[function(require,module,exports){
+},{"chart.js":1,"react":275}],291:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -43600,7 +43692,7 @@ var Details = function (_React$Component) {
 
 exports.default = Details;
 
-},{"./ChartWidget.jsx":288,"react":275}],290:[function(require,module,exports){
+},{"./ChartWidget.jsx":290,"react":275}],292:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -43613,7 +43705,7 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Description = require('../Description.jsx');
+var _Description = require('../base/Description.jsx');
 
 var _Description2 = _interopRequireDefault(_Description);
 
@@ -43798,7 +43890,7 @@ var Section = function (_React$Component) {
 
 exports.default = Section;
 
-},{"../Description.jsx":278,"./ChartWidget.jsx":288,"./Details.jsx":289,"react":275}],291:[function(require,module,exports){
+},{"../base/Description.jsx":279,"./ChartWidget.jsx":290,"./Details.jsx":291,"react":275}],293:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -44856,7 +44948,7 @@ var Form = function (_React$Component) {
 
 exports.default = Form;
 
-},{"react":275}],292:[function(require,module,exports){
+},{"react":275}],294:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -44869,7 +44961,7 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Description = require('../Description.jsx');
+var _Description = require('../base/Description.jsx');
 
 var _Description2 = _interopRequireDefault(_Description);
 
@@ -44928,7 +45020,7 @@ var Section = function (_React$Component) {
 
 exports.default = Section;
 
-},{"../Description.jsx":278,"./Form.jsx":291,"react":275}],293:[function(require,module,exports){
+},{"../base/Description.jsx":279,"./Form.jsx":293,"react":275}],295:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -45110,4 +45202,4 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}]},{},[287]);
+},{}]},{},[289]);

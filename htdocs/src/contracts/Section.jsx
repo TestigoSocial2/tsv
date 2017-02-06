@@ -1,5 +1,5 @@
 import React from 'react';
-import Description from '../Description.jsx';
+import Description from '../base/Description.jsx';
 import TableItem from './TableItem.jsx';
 import SearchResults from './SearchResults.jsx';
 import SearchBar from './SearchBar.jsx';
