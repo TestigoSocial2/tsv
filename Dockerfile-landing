@@ -2,13 +2,11 @@ FROM scratch
 
 MAINTAINER bcessa <ben@datos.mx>
 
-ADD htdocs/css /var/www/htdocs/css
-ADD htdocs/images /var/www/htdocs/images
-ADD htdocs/js /var/www/htdocs/js
-ADD htdocs/favicon.ico /var/www/htdocs/favicon.ico
-ADD htdocs/landing.html /var/www/htdocs/index.html
+ADD htdocs /var/www/htdocs
 
 ADD htdocs/tsv.db /data/tsv.db
+
+ADD htdocs/landing.html /var/www/htdocs/index.html
 
 ADD tsv /
 

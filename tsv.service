@@ -1,6 +1,6 @@
 [Unit]
 Description=Testigo Social Virtual 2.0
-Documentation=https://github.com/bcessa/tsv
+Documentation=https://github.com/transparenciamx/tsv
 Requires=docker.service
 After=docker.service
 
@@ -11,6 +11,7 @@ TimeoutStartSec=0
 KillMode=none
 ExecStartPre=-/usr/bin/docker kill tsv
 ExecStartPre=-/usr/bin/docker rm tsv
+ExecStartPre=-/usr/bin/touch /var/run/tsv-pre-register
 ExecStart=/usr/bin/docker run --name=tsv \
   -v /var/run/tsv-pre-register:/data/pre-register \
   tm/tsv server -s /data -c /var/www/htdocs
