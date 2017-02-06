@@ -3,6 +3,6 @@ vendor/**
 .sass-cache
 glide.lock
 tsv
+tsv.db
 tsv.tar.gz
-tmp/tsv.db
 node_modules

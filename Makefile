@@ -11,7 +11,7 @@ clean:
 
 # Run as a native CLI
 run:
-	./tsv server -s tmp/ -c tmp/htdocs
+	./tsv server
 
 # Build server for Linux and pack it with the contents
 docker:

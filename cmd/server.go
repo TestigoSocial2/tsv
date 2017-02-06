@@ -28,6 +28,7 @@ import (
 	"os"
 	"os/signal"
 	"path"
+	"path/filepath"
 
 	"github.com/bcessa/tsv/data"
 	"github.com/bcessa/tsv/notifications"
@@ -63,7 +64,9 @@ func init() {
 	)
 	viper.SetDefault("server.port", 7788)
 	viper.SetDefault("server.docs", "htdocs")
-	viper.SetDefault("server.store", os.TempDir())
+	viper.SetDefault("server.store", "htdocs")
+	viper.SetDefault("server.cert", "")
+	viper.SetDefault("server.priv", "")
 	serverCmd.Flags().IntVarP(
 		&serverPort,
 		"port",
@@ -80,7 +83,7 @@ func init() {
 		&serverStore,
 		"store",
 		"s",
-		os.TempDir(),
+		"htdocs",
 		"Full path to use as data store location")
 	serverCmd.Flags().StringVar(
 		&serverSSLCert,
@@ -267,7 +270,11 @@ func fb(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 
 func runServer(cmd *cobra.Command, args []string) error {
 	// Set storage config variable
-	os.Setenv("TSV_STORAGE", path.Join(viper.GetString("server.store"), "tsv.db"))
+	sp, err := filepath.Abs(path.Join(viper.GetString("server.store"), "tsv.db"))
+	if err != nil {
+		return err
+	}
+	os.Setenv("TSV_STORAGE", sp)
 
 	// Subscribe to SIGINT signals
 	stopChan := make(chan os.Signal)
