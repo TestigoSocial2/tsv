@@ -23,11 +23,11 @@ docker:
 
 # Landing page build
 landing:
-	env GOOS=linux GOARCH=amd64 go build -v -o tsv
-	docker build -f Dockerfile-landing -t tm/tsv .
-	docker save -o tsv.tar tm/tsv
-	gzip tsv.tar
-	rm tsv
+	mv htdocs/index.html htdocs/backup.up
+	mv htdocs/landing.html htdocs/index.html
+	make docker
+	mv htdocs/index.html htdocs/landing.html
+	mv htdocs/backup.up htdocs/index.html
 
 # Run as a docker container
 run-docker:
