@@ -3,7 +3,7 @@ package storage
 import (
 	"errors"
 
-	"github.com/bcessa/tsv/compressor"
+	"github.com/transparenciamx/tsv/compressor"
 )
 
 // Record represents a basic record definition

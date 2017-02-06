@@ -1,4 +1,4 @@
-// Copyright © 2016 Transparencia Mexicana AC. <ben@datos.mx>
+// Copyright © 2016 Transparencia Mexicana AC. <ben@pixative.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -30,9 +30,9 @@ import (
 	"path"
 	"path/filepath"
 
-	"github.com/bcessa/tsv/data"
-	"github.com/bcessa/tsv/notifications"
-	"github.com/bcessa/tsv/storage"
+	"github.com/transparenciamx/tsv/data"
+	"github.com/transparenciamx/tsv/notifications"
+	"github.com/transparenciamx/tsv/storage"
 	"github.com/gorilla/websocket"
 	"github.com/julienschmidt/httprouter"
 	"github.com/spf13/cobra"

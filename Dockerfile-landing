@@ -1,6 +1,6 @@
 FROM scratch
 
-MAINTAINER bcessa <ben@datos.mx>
+MAINTAINER bcessa <ben@pixative.com>
 
 ADD htdocs /var/www/htdocs
 

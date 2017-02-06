@@ -1,4 +1,4 @@
-// Copyright © 2016 Transparencia Mexicana AC. <ben@datos.mx>
+// Copyright © 2016 Transparencia Mexicana AC. <ben@pixative.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -27,7 +27,7 @@ import (
 	"path"
 	"strings"
 
-	"github.com/bcessa/tsv/storage"
+	"github.com/transparenciamx/tsv/storage"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )

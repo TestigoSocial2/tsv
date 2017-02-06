@@ -1,4 +1,4 @@
-package: github.com/bcessa/tsv
+package: github.com/transparenciamx/tsv
 import:
 - package: github.com/julienschmidt/httprouter
 - package: github.com/gorilla/websocket

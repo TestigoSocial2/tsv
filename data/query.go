@@ -9,7 +9,7 @@ import (
 	"unicode"
 
 	"github.com/Jeffail/gabs"
-	"github.com/bcessa/tsv/storage"
+	"github.com/transparenciamx/tsv/storage"
 
 	"golang.org/x/text/transform"
 	"golang.org/x/text/unicode/norm"

@@ -20,7 +20,7 @@
 
 package main
 
-import "github.com/bcessa/tsv/cmd"
+import "github.com/transparenciamx/tsv/cmd"
 
 func main() {
 	cmd.Execute()
