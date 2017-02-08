@@ -14,5 +14,8 @@ ExecStartPre=-/usr/bin/docker rm tsv
 ExecStartPre=-/usr/bin/touch /var/run/tsv-pre-register
 ExecStart=/usr/bin/docker run --name=tsv \
   -v /var/run/tsv-pre-register:/data/pre-register \
+  -e AWS_ACCESS_KEY_ID=... \
+  -e AWS_SECRET_ACCESS_KEY=... \
+  -e AWS_REGION=us-east-1 \
   tm/tsv server -s /data -c /var/www/htdocs
 ExecStop=/usr/bin/docker stop tsv
