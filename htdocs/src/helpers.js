@@ -1,4 +1,5 @@
 import moment from 'moment';
+import 'moment/locale/es';
 
 // Helper method to retrieve a GET variable
 function getParameter(name, url) {

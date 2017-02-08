@@ -1,8 +1,7 @@
 import React from 'react';
-import moment from 'moment';
 import Chart from 'chart.js'
 import {Link} from 'react-router';
-import { getParameter } from '../helpers.js';
+import { getParameter, formatDate } from '../helpers.js';
 
 class Home extends React.Component {
   constructor(props) {
@@ -10,7 +9,6 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    moment.locale('es');
     let url = '/stats/gacm';
     let data = {};
     let charts = {};
@@ -49,8 +47,8 @@ class Home extends React.Component {
       }
     }).done(function() {
       // Adjust labels
-      ui.firstDate.text( moment( data.firstDate ).format('LL') );
-      ui.lastDate.text( moment( data.lastDate ).format('LL') );
+      ui.firstDate.text( formatDate( data.firstDate, 'LL' ) );
+      ui.lastDate.text( formatDate( data.lastDate, 'LL' ) );
       ui.description.text( data.description );
       ui.totalContracts.text( data.contracts.total );
       ui.totalBudget.text((data.contracts.budget / 1000000).toLocaleString(undefined, {

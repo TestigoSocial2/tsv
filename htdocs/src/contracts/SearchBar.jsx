@@ -1,5 +1,5 @@
-import moment from 'moment';
 import React from 'react';
+import { formatDate } from '../helpers.js';
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -30,11 +30,11 @@ class SearchBar extends React.Component {
       e.dates.sort(function(a, b) {
         return new Date(a).getTime() - new Date(b).getTime();
       });
-      let lbl = moment(e.dates[0]).format('MMMM Do YYYY');
-      let val = moment(e.dates[0]).format('MM-DD-YYYY');
+      let lbl = formatDate(e.dates[0], 'MMMM Do YYYY');
+      let val = formatDate(e.dates[0], 'MM-DD-YYYY');
       if( e.dates.length > 1 ) {
-        lbl += ' a ' + moment(e.dates[1]).format('MMMM Do YYYY')
-        val += '|' + moment(e.dates[1]).format('MM-DD-YYYY');
+        lbl += ' a ' + formatDate(e.dates[1], 'MMMM Do YYYY')
+        val += '|' + formatDate(e.dates[1], 'MM-DD-YYYY');
       }
 
       // Update state
