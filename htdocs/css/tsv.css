@@ -529,6 +529,8 @@
 html {
   min-height: 100%;
   position: relative; }
+  html * {
+    font-family: 'montserrat'; }
 
 body {
   margin-bottom: 120px; }

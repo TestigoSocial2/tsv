@@ -19,6 +19,10 @@ $tsv-dark-red: #a94442;
 html {
   min-height: 100%;
   position: relative;
+
+  * {
+    font-family: 'montserrat';
+  }
 }
 
 body {
