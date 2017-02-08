@@ -780,19 +780,24 @@ div.clear {
   padding-top: 30px;
   position: absolute;
   width: 100%; }
-  #bottom p {
-    font-size: 11px;
-    margin-bottom: 4px; }
-  #bottom a.tm {
-    background: url("../images/bottom_tm.png") no-repeat top left;
-    background-size: contain;
-    display: block;
-    height: 45px; }
-  #bottom a.uk {
-    background: url("../images/bottom_uk.png") no-repeat top left;
-    background-size: contain;
-    display: block;
-    height: 45px; }
+  #bottom div.logo {
+    float: left;
+    margin-right: 30px;
+    width: 30%; }
+    #bottom div.logo p {
+      font-size: 11px;
+      margin-bottom: 4px; }
+    #bottom div.logo a.tm {
+      background: url("../images/bottom_tm.png") no-repeat top left;
+      background-size: contain;
+      display: block;
+      height: 45px;
+      margin-top: 20px; }
+    #bottom div.logo a.uk {
+      background: url("../images/bottom_uk.png") no-repeat top left;
+      background-size: contain;
+      display: block;
+      height: 65px; }
   #bottom ul {
     float: right;
     list-style: none;

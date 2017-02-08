@@ -40964,23 +40964,27 @@ var Footer = function (_React$Component) {
           { className: "inner-row" },
           _react2.default.createElement(
             "div",
-            { className: "col-md-3" },
+            { className: "col-md-6" },
             _react2.default.createElement(
-              "p",
-              null,
-              "Una iniciativa de:"
+              "div",
+              { className: "logo" },
+              _react2.default.createElement(
+                "p",
+                null,
+                "Una iniciativa de:"
+              ),
+              _react2.default.createElement("a", { href: "http://www.tm.org.mx", target: "_blank", className: "tm" })
             ),
-            _react2.default.createElement("a", { href: "http://www.tm.org.mx", target: "_blank", className: "tm" })
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "col-md-3" },
             _react2.default.createElement(
-              "p",
-              null,
-              "Con el apoyo de:"
-            ),
-            _react2.default.createElement("a", { href: "https://www.gov.uk/government/world/organisations/british-embassy-mexico-city.es-419", target: "_blank", className: "uk" })
+              "div",
+              { className: "logo" },
+              _react2.default.createElement(
+                "p",
+                null,
+                "Con el apoyo de:"
+              ),
+              _react2.default.createElement("a", { href: "https://www.gov.uk/government/world/organisations/british-embassy-mexico-city.es-419", target: "_blank", className: "uk" })
+            )
           ),
           _react2.default.createElement(
             "div",

@@ -392,23 +392,30 @@ div.clear {
   position: absolute;
   width: 100%;
 
-  p {
-    font-size: 11px;
-    margin-bottom: 4px;
-  }
+  div.logo {
+    float: left;
+    margin-right: 30px;
+    width: 30%;
 
-  a.tm {
-    background: url('../images/bottom_tm.png') no-repeat top left;
-    background-size: contain;
-    display: block;
-    height: 45px;
-  }
+    p {
+      font-size: 11px;
+      margin-bottom: 4px;
+    }
 
-  a.uk {
-    background: url('../images/bottom_uk.png') no-repeat top left;
-    background-size: contain;
-    display: block;
-    height: 45px;
+    a.tm {
+      background: url('../images/bottom_tm.png') no-repeat top left;
+      background-size: contain;
+      display: block;
+      height: 45px;
+      margin-top: 20px;
+    }
+
+    a.uk {
+      background: url('../images/bottom_uk.png') no-repeat top left;
+      background-size: contain;
+      display: block;
+      height: 65px;
+    }
   }
 
   ul {

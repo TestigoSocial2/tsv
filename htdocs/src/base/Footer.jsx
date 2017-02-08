@@ -5,13 +5,15 @@ class Footer extends React.Component {
     return(
       <div id="bottom" className="row">
         <div className="inner-row">
-          <div className="col-md-3">
-            <p>Una iniciativa de:</p>
-            <a href="http://www.tm.org.mx" target="_blank" className="tm"></a>
-          </div>
-          <div className="col-md-3">
-            <p>Con el apoyo de:</p>
-            <a href="https://www.gov.uk/government/world/organisations/british-embassy-mexico-city.es-419" target="_blank" className="uk"></a>
+          <div className="col-md-6">
+            <div className="logo">
+              <p>Una iniciativa de:</p>
+              <a href="http://www.tm.org.mx" target="_blank" className="tm"></a>
+            </div>
+            <div className="logo">
+              <p>Con el apoyo de:</p>
+              <a href="https://www.gov.uk/government/world/organisations/british-embassy-mexico-city.es-419" target="_blank" className="uk"></a>
+            </div>
           </div>
           <div className="col-md-6">
             <div className="social">
