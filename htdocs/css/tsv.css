@@ -604,8 +604,12 @@ body {
 h4 {
   font-weight: 300; }
 
+table.green tbody > tr td {
+  border-top: 0; }
 table.green tbody > tr:nth-of-type(odd) {
   background-color: #d0f5dc; }
+table.blue tbody > tr td {
+  border-top: 0; }
 table.blue tbody > tr:nth-of-type(odd) {
   background-color: #d4fbfb; }
 

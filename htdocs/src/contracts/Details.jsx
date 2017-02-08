@@ -1,5 +1,9 @@
 import React from 'react';
-import { formatAmount, formatDate } from '../helpers.js';
+import {
+  formatAmount,
+  formatDate,
+  codeList
+} from '../helpers.js';
 
 class Details extends React.Component {
   constructor(props) {
@@ -88,7 +92,7 @@ class Details extends React.Component {
             <div className="row contract-highlights border-bottom">
               <div className="col-md-4">
                 <p className="lbl">¿Proyecto Plurianual?</p>
-                <h4>{'?'}</h4>
+                <h4>{'No disponible'}</h4>
               </div>
               <div className="col-md-4">
                 <p className="lbl">Proyecto Presupuestario</p>
@@ -137,7 +141,7 @@ class Details extends React.Component {
             <div className="row contract-highlights border-bottom">
               <div className="col-md-4">
                 <p className="lbl">Estatus de la Licitación</p>
-                <h4>{release.tender.status}</h4>
+                <h4>{codeList('tender.status', release.tender.status)}</h4>
               </div>
               <div className="col-md-4">
                 <p className="lbl">Valor Máximo</p>
@@ -145,7 +149,7 @@ class Details extends React.Component {
               </div>
               <div className="col-md-4">
                 <p className="lbl">Método por el que se realiza</p>
-                <h4>{release.tender.procurementMethod}</h4>
+                <h4>{codeList('tender.procurementMethod', release.tender.procurementMethod)}</h4>
               </div>
             </div>
 
@@ -158,7 +162,7 @@ class Details extends React.Component {
               </div>
               <div className="col-md-4">
                 <p className="lbl">Forma del Proceso</p>
-                <h4>{'?'}</h4>
+                <h4>{'No disponible'}</h4>
               </div>
               <div className="col-md-4">
                 <p className="lbl">Criterio de Adjudicación</p>
@@ -169,22 +173,22 @@ class Details extends React.Component {
             <div className="row contract-highlights border-bottom">
               <div className="col-md-4">
                 <p className="lbl">Periodo de Recepción de Propuestas</p>
-                <h4>{'?'}</h4>
+                <h4>{'No disponible'}</h4>
               </div>
               <div className="col-md-4">
                 <p className="lbl">Periodo de Aclaraciones</p>
-                <h4>{'?'}</h4>
+                <h4>{'No disponible'}</h4>
               </div>
               <div className="col-md-4">
                 <p className="lbl">Aclaraciones</p>
-                <h4>{'?'}</h4>
+                <h4>{'No disponible'}</h4>
               </div>
             </div>
 
             <div className="row contract-highlights border-bottom">
               <div className="col-md-4">
                 <p className="lbl">Testigo Social</p>
-                <h4>{'?'}</h4>
+                <h4>{'No disponible'}</h4>
               </div>
               <div className="col-md-8">
                 <p className="lbl">Criterio de Elegibilidad</p>
@@ -213,7 +217,7 @@ class Details extends React.Component {
             <div className="row contract-highlights border-bottom">
               <div className="col-md-8">
                 <p className="lbl">Título de la Adjudicación</p>
-                <h4>{'?'}</h4>
+                <h4>{'No disponible'}</h4>
               </div>
               <div className="col-md-4">
                 <p className="lbl">Identificador de la Adjudicación</p>
@@ -224,18 +228,18 @@ class Details extends React.Component {
             <div className="row contract-highlights border-bottom">
               <div className="col-md-4">
                 <p className="lbl">Estatus</p>
-                <h4>{release.awards[0].status}</h4>
+                <h4>{codeList('award.status', release.awards[0].status)}</h4>
               </div>
               <div className="col-md-8">
                 <p className="lbl">Descripción de la Adjudicación</p>
-                <p className="txt-bold">{'?'}</p>
+                <p className="txt-bold">{'No disponible'}</p>
               </div>
             </div>
 
             <div className="row contract-highlights border-bottom">
               <div className="col-md-4">
                 <p className="lbl">Fecha</p>
-                <h4>{'?'}</h4>
+                <h4>{'No disponible'}</h4>
               </div>
               <div className="col-md-4">
                 <p className="lbl">Valor y Moneda</p>
@@ -243,14 +247,14 @@ class Details extends React.Component {
               </div>
               <div className="col-md-4">
                 <p className="lbl">No. de Inconformidades Recibidas</p>
-                <h4>{'?'}</h4>
+                <h4>{'No disponible'}</h4>
               </div>
             </div>
 
             <div className="row contract-highlights border-bottom">
               <div className="col-md-4">
                 <p className="lbl">No. de Inconformidades Rechazadas</p>
-                <h4>{'?'}</h4>
+                <h4>{'No disponible'}</h4>
               </div>
               <div className="col-md-4">
                 <p className="lbl">Identificador de Proveedor</p>
@@ -279,11 +283,11 @@ class Details extends React.Component {
             <div className="row contract-highlights border-bottom">
               <div className="col-md-8">
                 <p className="lbl">Descripción del Contrato</p>
-                <p className="txt-bold">{'?'}</p>
+                <p className="txt-bold">{'No disponible'}</p>
               </div>
               <div className="col-md-4">
                 <p className="lbl">Estatus</p>
-                <h4>{release.contracts[0].status}</h4>
+                <h4>{codeList('contract.status', release.contracts[0].status)}</h4>
               </div>
             </div>
 
@@ -313,7 +317,7 @@ class Details extends React.Component {
             <div className="row contract-highlights border-bottom">
               <div className="col-md-12">
                 <p className="lbl">¿SE MODIFICÓ EL CONTRATO?</p>
-                <h4>{'?'}</h4>
+                <h4>{'No disponible'}</h4>
               </div>
             </div>
           </div>
@@ -323,30 +327,30 @@ class Details extends React.Component {
             <div className="row contract-highlights border-bottom">
               <div className="col-md-4">
                 <p className="lbl">Realización del Pago</p>
-                <h4>{'?'}</h4>
+                <h4>{'No disponible'}</h4>
               </div>
               <div className="col-md-4">
                 <p className="lbl">Emisión del Pago</p>
-                <h4>{'?'}</h4>
+                <h4>{'No disponible'}</h4>
               </div>
               <div className="col-md-4">
                 <p className="lbl">Ficha de Transacción</p>
-                <h4>{'?'}</h4>
+                <h4>{'No disponible'}</h4>
               </div>
             </div>
-            
+
             <div className="row contract-highlights border-bottom">
               <div className="col-md-4">
                 <p className="lbl">Monto y Moneda</p>
-                <h4>{'?'}</h4>
+                <h4>{'No disponible'}</h4>
               </div>
               <div className="col-md-4">
                 <p className="lbl">Identificador de Organización</p>
-                <h4>{'?'}</h4>
+                <h4>{'No disponible'}</h4>
               </div>
               <div className="col-md-4">
                 <p className="lbl">Nombre de Organización</p>
-                <h4>{'?'}</h4>
+                <h4>{'No disponible'}</h4>
               </div>
             </div>
           </div>

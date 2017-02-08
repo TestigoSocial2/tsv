@@ -41414,7 +41414,7 @@ var Details = function (_React$Component) {
                 _react2.default.createElement(
                   'h4',
                   null,
-                  '?'
+                  'No disponible'
                 )
               ),
               _react2.default.createElement(
@@ -41546,7 +41546,7 @@ var Details = function (_React$Component) {
                 _react2.default.createElement(
                   'h4',
                   null,
-                  release.tender.status
+                  (0, _helpers.codeList)('tender.status', release.tender.status)
                 )
               ),
               _react2.default.createElement(
@@ -41574,7 +41574,7 @@ var Details = function (_React$Component) {
                 _react2.default.createElement(
                   'h4',
                   null,
-                  release.tender.procurementMethod
+                  (0, _helpers.codeList)('tender.procurementMethod', release.tender.procurementMethod)
                 )
               )
             ),
@@ -41606,7 +41606,7 @@ var Details = function (_React$Component) {
                 _react2.default.createElement(
                   'h4',
                   null,
-                  '?'
+                  'No disponible'
                 )
               ),
               _react2.default.createElement(
@@ -41638,7 +41638,7 @@ var Details = function (_React$Component) {
                 _react2.default.createElement(
                   'h4',
                   null,
-                  '?'
+                  'No disponible'
                 )
               ),
               _react2.default.createElement(
@@ -41652,7 +41652,7 @@ var Details = function (_React$Component) {
                 _react2.default.createElement(
                   'h4',
                   null,
-                  '?'
+                  'No disponible'
                 )
               ),
               _react2.default.createElement(
@@ -41666,7 +41666,7 @@ var Details = function (_React$Component) {
                 _react2.default.createElement(
                   'h4',
                   null,
-                  '?'
+                  'No disponible'
                 )
               )
             ),
@@ -41684,7 +41684,7 @@ var Details = function (_React$Component) {
                 _react2.default.createElement(
                   'h4',
                   null,
-                  '?'
+                  'No disponible'
                 )
               ),
               _react2.default.createElement(
@@ -41766,7 +41766,7 @@ var Details = function (_React$Component) {
                 _react2.default.createElement(
                   'h4',
                   null,
-                  '?'
+                  'No disponible'
                 )
               ),
               _react2.default.createElement(
@@ -41798,7 +41798,7 @@ var Details = function (_React$Component) {
                 _react2.default.createElement(
                   'h4',
                   null,
-                  release.awards[0].status
+                  (0, _helpers.codeList)('award.status', release.awards[0].status)
                 )
               ),
               _react2.default.createElement(
@@ -41812,7 +41812,7 @@ var Details = function (_React$Component) {
                 _react2.default.createElement(
                   'p',
                   { className: 'txt-bold' },
-                  '?'
+                  'No disponible'
                 )
               )
             ),
@@ -41830,7 +41830,7 @@ var Details = function (_React$Component) {
                 _react2.default.createElement(
                   'h4',
                   null,
-                  '?'
+                  'No disponible'
                 )
               ),
               _react2.default.createElement(
@@ -41858,7 +41858,7 @@ var Details = function (_React$Component) {
                 _react2.default.createElement(
                   'h4',
                   null,
-                  '?'
+                  'No disponible'
                 )
               )
             ),
@@ -41876,7 +41876,7 @@ var Details = function (_React$Component) {
                 _react2.default.createElement(
                   'h4',
                   null,
-                  '?'
+                  'No disponible'
                 )
               ),
               _react2.default.createElement(
@@ -41958,7 +41958,7 @@ var Details = function (_React$Component) {
                 _react2.default.createElement(
                   'p',
                   { className: 'txt-bold' },
-                  '?'
+                  'No disponible'
                 )
               ),
               _react2.default.createElement(
@@ -41972,7 +41972,7 @@ var Details = function (_React$Component) {
                 _react2.default.createElement(
                   'h4',
                   null,
-                  release.contracts[0].status
+                  (0, _helpers.codeList)('contract.status', release.contracts[0].status)
                 )
               )
             ),
@@ -42036,7 +42036,7 @@ var Details = function (_React$Component) {
                 _react2.default.createElement(
                   'h4',
                   null,
-                  '?'
+                  'No disponible'
                 )
               )
             )
@@ -42058,7 +42058,7 @@ var Details = function (_React$Component) {
                 _react2.default.createElement(
                   'h4',
                   null,
-                  '?'
+                  'No disponible'
                 )
               ),
               _react2.default.createElement(
@@ -42072,7 +42072,7 @@ var Details = function (_React$Component) {
                 _react2.default.createElement(
                   'h4',
                   null,
-                  '?'
+                  'No disponible'
                 )
               ),
               _react2.default.createElement(
@@ -42086,7 +42086,7 @@ var Details = function (_React$Component) {
                 _react2.default.createElement(
                   'h4',
                   null,
-                  '?'
+                  'No disponible'
                 )
               )
             ),
@@ -42104,7 +42104,7 @@ var Details = function (_React$Component) {
                 _react2.default.createElement(
                   'h4',
                   null,
-                  '?'
+                  'No disponible'
                 )
               ),
               _react2.default.createElement(
@@ -42118,7 +42118,7 @@ var Details = function (_React$Component) {
                 _react2.default.createElement(
                   'h4',
                   null,
-                  '?'
+                  'No disponible'
                 )
               ),
               _react2.default.createElement(
@@ -42132,7 +42132,7 @@ var Details = function (_React$Component) {
                 _react2.default.createElement(
                   'h4',
                   null,
-                  '?'
+                  'No disponible'
                 )
               )
             )
@@ -42732,7 +42732,7 @@ exports.default = TableItem;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.formatDate = exports.formatAmount = exports.getParameter = undefined;
+exports.codeList = exports.formatDate = exports.formatAmount = exports.getParameter = undefined;
 
 var _moment = require('moment');
 
@@ -42769,9 +42769,57 @@ function formatDate(date, format) {
   return (0, _moment2.default)(date).format(format);
 }
 
+// Expand code list values based on the official documentation
+// http://standard.open-contracting.org/latest/en/schema/codelists
+function codeList(list, val) {
+  var table = {};
+  switch (list) {
+    case 'tender.status':
+      // http://standard.open-contracting.org/latest/en/schema/codelists/#tender-status
+      table = {
+        'planned': 'Planeada',
+        'active': 'Activa',
+        'cancelled': 'Cancelada',
+        'unsuccessful': 'No exitosa',
+        'complete': 'Cerrada'
+      };
+      break;
+    case 'tender.procurementMethod':
+      // http://standard.open-contracting.org/latest/en/schema/codelists/#method
+      table = {
+        'open': 'Licitación Pública',
+        'selective': 'Invitación a 3 proveedores',
+        'limited': 'Asignación Directa'
+      };
+      break;
+    case 'award.status':
+      // http://standard.open-contracting.org/latest/en/schema/codelists/#award-status
+      table = {
+        'pending': 'Pendiente',
+        'active': 'Activa',
+        'cancelled': 'Cancelada',
+        'unsuccessful': 'No exitosa'
+      };
+      break;
+    case 'contract.status':
+      // http://standard.open-contracting.org/latest/en/schema/codelists/#contract-status
+      table = {
+        'pending': 'Pendiente',
+        'active': 'Activo',
+        'cancelled': 'Cancelado',
+        'terminated': 'Finalizado'
+      };
+      break;
+    default:
+      return 'Invalid list';
+  }
+  return table[val];
+}
+
 exports.getParameter = getParameter;
 exports.formatAmount = formatAmount;
 exports.formatDate = formatDate;
+exports.codeList = codeList;
 
 },{"moment":89,"moment/locale/es":88}],289:[function(require,module,exports){
 'use strict';

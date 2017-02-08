@@ -28,8 +28,56 @@ function formatDate( date, format ) {
   return moment(date).format( format );
 }
 
+// Expand code list values based on the official documentation
+// http://standard.open-contracting.org/latest/en/schema/codelists
+function codeList(list, val) {
+  let table = {};
+  switch (list) {
+    case 'tender.status':
+      // http://standard.open-contracting.org/latest/en/schema/codelists/#tender-status
+      table = {
+        'planned':      'Planeada',
+        'active':       'Activa',
+        'cancelled':    'Cancelada',
+        'unsuccessful': 'No exitosa',
+        'complete':     'Cerrada'
+      }
+      break;
+    case 'tender.procurementMethod':
+      // http://standard.open-contracting.org/latest/en/schema/codelists/#method
+      table = {
+        'open':      'Licitación Pública',
+        'selective': 'Invitación a 3 proveedores',
+        'limited':   'Asignación Directa'
+      }
+      break;
+    case 'award.status':
+      // http://standard.open-contracting.org/latest/en/schema/codelists/#award-status
+      table = {
+        'pending':      'Pendiente',
+        'active':       'Activa',
+        'cancelled':    'Cancelada',
+        'unsuccessful': 'No exitosa'
+      }
+      break;
+    case 'contract.status':
+      // http://standard.open-contracting.org/latest/en/schema/codelists/#contract-status
+      table = {
+        'pending':    'Pendiente',
+        'active':     'Activo',
+        'cancelled':  'Cancelado',
+        'terminated': 'Finalizado'
+      }
+      break;
+    default:
+      return 'Invalid list';
+  }
+  return table[val];
+}
+
 export {
   getParameter,
   formatAmount,
-  formatDate
+  formatDate,
+  codeList
 }

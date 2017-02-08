@@ -124,14 +124,26 @@ h4 {
 
 table {
   &.green {
-    tbody > tr:nth-of-type(odd) {
-      background-color: $tsv-light-green;
+    tbody > tr {
+      td {
+        border-top: 0;
+      }
+
+      &:nth-of-type(odd) {
+        background-color: $tsv-light-green;
+      }
     }
   }
 
   &.blue {
-    tbody > tr:nth-of-type(odd) {
-      background-color: $tsv-light-blue;
+    tbody > tr {
+      td {
+        border-top: 0;
+      }
+
+      &:nth-of-type(odd) {
+        background-color: $tsv-light-blue;
+      }
     }
   }
 }
