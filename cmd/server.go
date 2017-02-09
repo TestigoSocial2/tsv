@@ -21,6 +21,7 @@
 package cmd
 
 import (
+	"crypto/tls"
 	"encoding/json"
 	"fmt"
 	"log"
@@ -29,14 +30,15 @@ import (
 	"os/signal"
 	"path"
 	"path/filepath"
+	"strings"
 
-	"github.com/transparenciamx/tsv/data"
-	"github.com/transparenciamx/tsv/notifications"
-	"github.com/transparenciamx/tsv/storage"
 	"github.com/gorilla/websocket"
 	"github.com/julienschmidt/httprouter"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
+	"github.com/transparenciamx/tsv/data"
+	"github.com/transparenciamx/tsv/notifications"
+	"github.com/transparenciamx/tsv/storage"
 )
 
 // serverCmd represents the serve command
@@ -56,23 +58,37 @@ var wsu = websocket.Upgrader{
 // Setup
 func init() {
 	var (
-		serverPort    int
-		serverDocs    string
-		serverStore   string
-		serverSSLCert string
-		serverSSLKey  string
+		serverPortHTTP     int
+		serverPortHTTPS    int
+		serverRedirectHTTP bool
+		serverDocs         string
+		serverStore        string
+		serverSSLCert      string
+		serverSSLKey       string
 	)
-	viper.SetDefault("server.port", 7788)
+	viper.SetDefault("server.port.http", 7788)
+	viper.SetDefault("server.port.https", 7789)
+	viper.SetDefault("server.redirect.http", true)
 	viper.SetDefault("server.docs", "htdocs")
 	viper.SetDefault("server.store", "htdocs")
 	viper.SetDefault("server.cert", "")
 	viper.SetDefault("server.priv", "")
-	serverCmd.Flags().IntVarP(
-		&serverPort,
-		"port",
-		"p",
+
+	serverCmd.Flags().IntVar(
+		&serverPortHTTP,
+		"http-port",
 		7788,
-		"TCP port to use for server/client communications")
+		"HTTP port to use for server/client communications")
+	serverCmd.Flags().IntVar(
+		&serverPortHTTPS,
+		"https-port",
+		7789,
+		"HTTPS port to use for secure server/client communications")
+	serverCmd.Flags().BoolVar(
+		&serverRedirectHTTP,
+		"redirect-http",
+		true,
+		"Redirect all HTTP traffic if a secure channel is available")
 	serverCmd.Flags().StringVarP(
 		&serverDocs,
 		"htdocs",
@@ -95,7 +111,9 @@ func init() {
 		"priv-key",
 		"",
 		"SSL certificate's private key")
-	viper.BindPFlag("server.port", serverCmd.Flags().Lookup("port"))
+	viper.BindPFlag("server.port.http", serverCmd.Flags().Lookup("http-port"))
+	viper.BindPFlag("server.port.https", serverCmd.Flags().Lookup("https-port"))
+	viper.BindPFlag("server.redirect.http", serverCmd.Flags().Lookup("redirect-http"))
 	viper.BindPFlag("server.docs", serverCmd.Flags().Lookup("htdocs"))
 	viper.BindPFlag("server.store", serverCmd.Flags().Lookup("store"))
 	viper.BindPFlag("server.cert", serverCmd.Flags().Lookup("cert"))
@@ -268,6 +286,18 @@ func fb(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	fmt.Fprintf(w, fmt.Sprintf("%s - %s", mode, "INVALID_VERIFICATION_TOKEN"))
 }
 
+// Redirect HTTP to HTTPS
+func redirect(w http.ResponseWriter, req *http.Request) {
+	host := strings.Split(req.Host, ":")[0]
+	target := "https://" + host + req.URL.Path
+	if len(req.URL.RawQuery) > 0 {
+		target += "?" + req.URL.RawQuery
+	}
+	log.Printf("redirect to: %s", target)
+	http.Redirect(w, req, target, http.StatusTemporaryRedirect)
+	// http.Redirect(w, req, "https://192.168.111.101"+req.RequestURI, http.StatusMovedPermanently)
+}
+
 func runServer(cmd *cobra.Command, args []string) error {
 	// Set storage config variable
 	sp, err := filepath.Abs(path.Join(viper.GetString("server.store"), "tsv.db"))
@@ -292,18 +322,43 @@ func runServer(cmd *cobra.Command, args []string) error {
 	router.GET("/fb", fb)
 
 	// Start server
-	log.Println("Handling requests on port:", viper.GetInt("server.port"))
 	go func() {
 		cert := viper.GetString("server.cert")
 		priv := viper.GetString("server.priv")
-		addr := fmt.Sprintf(":%d", viper.GetInt("server.port"))
+		addr := fmt.Sprintf(":%d", viper.GetInt("server.port.http"))
 		if cert != "" && priv != "" {
 			// Secure HTTPS server
-			if err := http.ListenAndServeTLS(addr, cert, priv, router); err != nil {
+			secureAddr := fmt.Sprintf(":%d", viper.GetInt("server.port.https"))
+			srv := &http.Server{
+				Addr:    secureAddr,
+				Handler: router,
+				TLSConfig: &tls.Config{
+					MinVersion:               tls.VersionTLS12,
+					CurvePreferences:         []tls.CurveID{tls.CurveP521, tls.CurveP384, tls.CurveP256},
+					PreferServerCipherSuites: true,
+					CipherSuites: []uint16{
+						tls.TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,
+						tls.TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA,
+						tls.TLS_RSA_WITH_AES_256_GCM_SHA384,
+						tls.TLS_RSA_WITH_AES_256_CBC_SHA,
+					},
+				},
+				TLSNextProto: make(map[string]func(*http.Server, *tls.Conn, http.Handler), 0),
+			}
+
+			// Start a basic HTTP server that will redirect all requests to the HTTPS location,
+			// if required
+			if viper.GetBool("server.redirect.http") {
+				go http.ListenAndServe(addr, http.HandlerFunc(redirect))
+			}
+
+			log.Println("Handling secure requests on:", secureAddr)
+			if err := srv.ListenAndServeTLS(cert, priv); err != nil {
 				log.Printf("HTTPS server error: %s\n", err)
 			}
 		} else {
 			// Standard HTTP server
+			log.Println("Handling requests on:", addr)
 			if err := http.ListenAndServe(addr, router); err != nil {
 				log.Printf("HTTP server error: %s\n", err)
 			}

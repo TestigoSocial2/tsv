@@ -10,6 +10,6 @@ ADD htdocs/tsv.db /data/tsv.db
 
 ADD tsv /
 
-EXPOSE 7788
+EXPOSE 7788 7789
 
 ENTRYPOINT ["/tsv", "server"]
