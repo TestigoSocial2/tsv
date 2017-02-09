@@ -5,11 +5,7 @@ class Details extends React.Component {
   constructor(props) {
     super(props);
     this.close = this.close.bind(this);
-    this.onChange = this.onChange.bind(this);
     this.applyFilters = this.applyFilters.bind(this);
-    this.state = {
-      filters: props.filters
-    };
   }
 
   close(e) {
@@ -17,21 +13,21 @@ class Details extends React.Component {
     this.props.onClose();
   }
 
-  onChange(e) {
-    let name = e.target.name;
-    this.setState({
-      filters: Object.assign(this.state.filters, {[name]: e.target.value})
-    });
-  }
-
   componentDidMount() {
+    // Set form reference and populate filter values
+    this.form = $('form#filterForm');
+    for( let k in this.props.filters ) {
+      let selector = 'input[type="radio"][name="'+k+'"][value="'+this.props.filters[k]+'"]';
+      this.form.find(selector).prop("checked",true);
+    }
+
     // Setup slider
     let amountSlider = $("#amountSlider");
     amountSlider.slider({
       step: 50000,
       min: 0,
       max: 500000000,
-      value: this.state.filters.amount,
+      value: this.props.filters.amount,
       formatter: function( value ) {
         if( Array.isArray( value ) ) {
           var lbl = '$' + value[0].toLocaleString() + ' a ' + '$' + value[1].toLocaleString();
@@ -39,13 +35,18 @@ class Details extends React.Component {
         }
         return '';
       }
-    }).on('change', (e) => (
-      this.setState({ filters: Object.assign(this.state.filters, {amount:e.value.newValue}) })
-    ));
+    });
   }
 
   applyFilters() {
-    this.props.onSubmit(this.state.filters);
+    let data = {}
+    this.form.serializeArray().forEach(function(el) {
+      data[el.name] = el.value;
+    });
+    data.amount = data.amount.split(',');
+    data.amount[0] = parseInt(data.amount[0]);
+    data.amount[1] = parseInt(data.amount[1]);
+    this.props.onSubmit(data);
   }
 
   render() {
@@ -59,39 +60,39 @@ class Details extends React.Component {
             <h4>Dependencias</h4>
             <div className="radio">
               <label>
-                <input type="radio" name="bucket" value="gacm" onChange={this.onChange} checked={this.state.filters.bucket == 'gacm'} />Grupo Aeroportuario
+                <input type="radio" name="bucket" value="gacm" />Grupo Aeroportuario
               </label>
             </div>
             <div className="radio">
               <label>
-                <input type="radio" name="bucket" value="cdmx" onChange={this.onChange} checked={this.state.filters.bucket == 'cdmx'} />Ciudad de México
+                <input type="radio" name="bucket" value="cdmx" />Ciudad de México
               </label>
             </div>
             <hr />
             <h4>Etapa del Procedimiento</h4>
             <div className="radio">
               <label>
-                <input type="radio" name="state" value="planning" onChange={this.onChange} checked={this.state.filters.state == 'planning'} />Planeación
+                <input type="radio" name="state" value="planning" />Planeación
               </label>
             </div>
             <div className="radio">
               <label>
-                <input type="radio" name="state" value="tender" onChange={this.onChange} checked={this.state.filters.state == 'tender'} />Licitación
+                <input type="radio" name="state" value="tender" />Licitación
               </label>
             </div>
             <div className="radio">
               <label>
-                <input type="radio" name="state" value="award" onChange={this.onChange} checked={this.state.filters.state == 'award'} />Adjudicación
+                <input type="radio" name="state" value="award" />Adjudicación
               </label>
             </div>
             <div className="radio">
               <label>
-                <input type="radio" name="state" value="contract" onChange={this.onChange} checked={this.state.filters.state == 'contract'} />Contratación
+                <input type="radio" name="state" value="contract" />Contratación
               </label>
             </div>
             <div className="radio">
               <label>
-                <input type="radio" name="state" value="implementation" onChange={this.onChange} checked={this.state.filters.state == 'implementation'} />Implementación
+                <input type="radio" name="state" value="implementation" />Implementación
               </label>
             </div>
             <hr />

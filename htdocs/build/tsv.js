@@ -43872,8 +43872,6 @@ var _ChartWidget2 = _interopRequireDefault(_ChartWidget);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -43889,11 +43887,7 @@ var Details = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Details.__proto__ || Object.getPrototypeOf(Details)).call(this, props));
 
     _this.close = _this.close.bind(_this);
-    _this.onChange = _this.onChange.bind(_this);
     _this.applyFilters = _this.applyFilters.bind(_this);
-    _this.state = {
-      filters: props.filters
-    };
     return _this;
   }
 
@@ -43904,17 +43898,14 @@ var Details = function (_React$Component) {
       this.props.onClose();
     }
   }, {
-    key: 'onChange',
-    value: function onChange(e) {
-      var name = e.target.name;
-      this.setState({
-        filters: Object.assign(this.state.filters, _defineProperty({}, name, e.target.value))
-      });
-    }
-  }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var _this2 = this;
+      // Set form reference and populate filter values
+      this.form = $('form#filterForm');
+      for (var k in this.props.filters) {
+        var selector = 'input[type="radio"][name="' + k + '"][value="' + this.props.filters[k] + '"]';
+        this.form.find(selector).prop("checked", true);
+      }
 
       // Setup slider
       var amountSlider = $("#amountSlider");
@@ -43922,7 +43913,7 @@ var Details = function (_React$Component) {
         step: 50000,
         min: 0,
         max: 500000000,
-        value: this.state.filters.amount,
+        value: this.props.filters.amount,
         formatter: function formatter(value) {
           if (Array.isArray(value)) {
             var lbl = '$' + value[0].toLocaleString() + ' a ' + '$' + value[1].toLocaleString();
@@ -43930,14 +43921,19 @@ var Details = function (_React$Component) {
           }
           return '';
         }
-      }).on('change', function (e) {
-        return _this2.setState({ filters: Object.assign(_this2.state.filters, { amount: e.value.newValue }) });
       });
     }
   }, {
     key: 'applyFilters',
     value: function applyFilters() {
-      this.props.onSubmit(this.state.filters);
+      var data = {};
+      this.form.serializeArray().forEach(function (el) {
+        data[el.name] = el.value;
+      });
+      data.amount = data.amount.split(',');
+      data.amount[0] = parseInt(data.amount[0]);
+      data.amount[1] = parseInt(data.amount[1]);
+      this.props.onSubmit(data);
     }
   }, {
     key: 'render',
@@ -43973,7 +43969,7 @@ var Details = function (_React$Component) {
               _react2.default.createElement(
                 'label',
                 null,
-                _react2.default.createElement('input', { type: 'radio', name: 'bucket', value: 'gacm', onChange: this.onChange, checked: this.state.filters.bucket == 'gacm' }),
+                _react2.default.createElement('input', { type: 'radio', name: 'bucket', value: 'gacm' }),
                 'Grupo Aeroportuario'
               )
             ),
@@ -43983,7 +43979,7 @@ var Details = function (_React$Component) {
               _react2.default.createElement(
                 'label',
                 null,
-                _react2.default.createElement('input', { type: 'radio', name: 'bucket', value: 'cdmx', onChange: this.onChange, checked: this.state.filters.bucket == 'cdmx' }),
+                _react2.default.createElement('input', { type: 'radio', name: 'bucket', value: 'cdmx' }),
                 'Ciudad de M\xE9xico'
               )
             ),
@@ -43999,7 +43995,7 @@ var Details = function (_React$Component) {
               _react2.default.createElement(
                 'label',
                 null,
-                _react2.default.createElement('input', { type: 'radio', name: 'state', value: 'planning', onChange: this.onChange, checked: this.state.filters.state == 'planning' }),
+                _react2.default.createElement('input', { type: 'radio', name: 'state', value: 'planning' }),
                 'Planeaci\xF3n'
               )
             ),
@@ -44009,7 +44005,7 @@ var Details = function (_React$Component) {
               _react2.default.createElement(
                 'label',
                 null,
-                _react2.default.createElement('input', { type: 'radio', name: 'state', value: 'tender', onChange: this.onChange, checked: this.state.filters.state == 'tender' }),
+                _react2.default.createElement('input', { type: 'radio', name: 'state', value: 'tender' }),
                 'Licitaci\xF3n'
               )
             ),
@@ -44019,7 +44015,7 @@ var Details = function (_React$Component) {
               _react2.default.createElement(
                 'label',
                 null,
-                _react2.default.createElement('input', { type: 'radio', name: 'state', value: 'award', onChange: this.onChange, checked: this.state.filters.state == 'award' }),
+                _react2.default.createElement('input', { type: 'radio', name: 'state', value: 'award' }),
                 'Adjudicaci\xF3n'
               )
             ),
@@ -44029,7 +44025,7 @@ var Details = function (_React$Component) {
               _react2.default.createElement(
                 'label',
                 null,
-                _react2.default.createElement('input', { type: 'radio', name: 'state', value: 'contract', onChange: this.onChange, checked: this.state.filters.state == 'contract' }),
+                _react2.default.createElement('input', { type: 'radio', name: 'state', value: 'contract' }),
                 'Contrataci\xF3n'
               )
             ),
@@ -44039,7 +44035,7 @@ var Details = function (_React$Component) {
               _react2.default.createElement(
                 'label',
                 null,
-                _react2.default.createElement('input', { type: 'radio', name: 'state', value: 'implementation', onChange: this.onChange, checked: this.state.filters.state == 'implementation' }),
+                _react2.default.createElement('input', { type: 'radio', name: 'state', value: 'implementation' }),
                 'Implementaci\xF3n'
               )
             ),
@@ -44230,7 +44226,10 @@ var Section = function (_React$Component) {
           query: JSON.stringify(filters)
         },
         success: function success(res) {
-          return _this2.setState({ data: JSON.parse(res) });
+          var newState = Object.assign({}, _this2.state);
+          newState.filters = filters;
+          newState.data = JSON.parse(res);
+          _this2.setState(newState);
         }
       });
     }

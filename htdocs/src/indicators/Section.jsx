@@ -90,7 +90,12 @@ class Section extends React.Component {
       data: {
         query: JSON.stringify(filters)
       },
-      success: (res) => this.setState({data: JSON.parse( res )})
+      success: (res) => {
+        let newState = Object.assign({}, this.state);
+        newState.filters = filters;
+        newState.data = JSON.parse( res );
+        this.setState(newState);
+      }
     });
   }
 
