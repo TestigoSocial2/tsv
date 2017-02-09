@@ -1,6 +1,7 @@
 import React from 'react';
 import Menu from './base/Menu.jsx';
 import Footer from './base/Footer.jsx';
+import PrivacyNotice from './base/PrivacyNotice.jsx';
 
 class Main extends React.Component {
   componentDidMount() {
@@ -20,6 +21,9 @@ class Main extends React.Component {
 
         {/* Footer */}
         <Footer />
+
+        {/* Privacy Notice */}
+        <PrivacyNotice />
       </div>
     );
   }

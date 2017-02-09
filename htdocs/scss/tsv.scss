@@ -445,27 +445,39 @@ div.clear {
     }
   }
 
-  div.social {
-    float: right;
-    margin-top: 10px;
-    width: 100px;
+  div.links {
+    text-align: right;
 
-    a {
-      background-position: top center;
-      background-repeat: no-repeat;
-      background-size: contain;
-      display: block;
-      float: left;
-      height: 34px;
-      margin-left: 10px;
-      width: 34px;
+    span {
+      cursor: pointer;
+      display: inline-block;
+      margin: 54px -15px 0 0;
+      text-decoration: underline;
+    }
 
-      &.tw {
-        background-image: url('../images/bottom_tw.png');
-      }
+    div.social {
+      margin-top: 10px;
+      position: absolute;
+      right: 0;
+      width: 100px;
 
-      &.fb {
-        background-image: url('../images/bottom_fb.png');
+      a {
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: block;
+        float: right;
+        height: 34px;
+        margin-left: 10px;
+        width: 34px;
+
+        &.tw {
+          background-image: url('../images/bottom_tw.png');
+        }
+
+        &.fb {
+          background-image: url('../images/bottom_fb.png');
+        }
       }
     }
   }
@@ -476,6 +488,10 @@ div.clear {
     margin: 0 auto;
     padding: 20px 0;
     width: 90%;
+  }
+
+  button.btn-black {
+    margin: 20px 0 30px;
   }
 
   ul {

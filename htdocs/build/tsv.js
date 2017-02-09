@@ -23182,7 +23182,7 @@ var ReactChildReconciler = {
 
 module.exports = ReactChildReconciler;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":114,"./ReactReconciler":164,"./instantiateReactComponent":208,"./shouldUpdateReactComponent":216,"./traverseAllChildren":217,"_process":296,"fbjs/lib/warning":68,"react/lib/ReactComponentTreeHook":258}],119:[function(require,module,exports){
+},{"./KeyEscapeUtils":114,"./ReactReconciler":164,"./instantiateReactComponent":208,"./shouldUpdateReactComponent":216,"./traverseAllChildren":217,"_process":297,"fbjs/lib/warning":68,"react/lib/ReactComponentTreeHook":258}],119:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -32749,7 +32749,7 @@ function checkReactTypeSpec(typeSpecs, values, location, componentName, element,
 
 module.exports = checkReactTypeSpec;
 }).call(this,require('_process'))
-},{"./ReactPropTypeLocationNames":161,"./ReactPropTypesSecret":162,"./reactProdInvariant":212,"_process":296,"fbjs/lib/invariant":61,"fbjs/lib/warning":68,"react/lib/ReactComponentTreeHook":258}],192:[function(require,module,exports){
+},{"./ReactPropTypeLocationNames":161,"./ReactPropTypesSecret":162,"./reactProdInvariant":212,"_process":297,"fbjs/lib/invariant":61,"fbjs/lib/warning":68,"react/lib/ReactComponentTreeHook":258}],192:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33121,7 +33121,7 @@ function flattenChildren(children, selfDebugID) {
 
 module.exports = flattenChildren;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":114,"./traverseAllChildren":217,"_process":296,"fbjs/lib/warning":68,"react/lib/ReactComponentTreeHook":258}],197:[function(require,module,exports){
+},{"./KeyEscapeUtils":114,"./traverseAllChildren":217,"_process":297,"fbjs/lib/warning":68,"react/lib/ReactComponentTreeHook":258}],197:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -40588,7 +40588,7 @@ function checkReactTypeSpec(typeSpecs, values, location, componentName, element,
 
 module.exports = checkReactTypeSpec;
 }).call(this,require('_process'))
-},{"./ReactComponentTreeHook":258,"./ReactPropTypeLocationNames":265,"./ReactPropTypesSecret":267,"./reactProdInvariant":274,"_process":296,"fbjs/lib/invariant":61,"fbjs/lib/warning":68}],272:[function(require,module,exports){
+},{"./ReactComponentTreeHook":258,"./ReactPropTypeLocationNames":265,"./ReactPropTypesSecret":267,"./reactProdInvariant":274,"_process":297,"fbjs/lib/invariant":61,"fbjs/lib/warning":68}],272:[function(require,module,exports){
 arguments[4][203][0].apply(exports,arguments)
 },{"dup":203}],273:[function(require,module,exports){
 /**
@@ -40902,6 +40902,10 @@ var _Footer = require('./base/Footer.jsx');
 
 var _Footer2 = _interopRequireDefault(_Footer);
 
+var _PrivacyNotice = require('./base/PrivacyNotice.jsx');
+
+var _PrivacyNotice2 = _interopRequireDefault(_PrivacyNotice);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -40936,7 +40940,8 @@ var Main = function (_React$Component) {
           { id: 'route' },
           this.props.children
         ),
-        _react2.default.createElement(_Footer2.default, null)
+        _react2.default.createElement(_Footer2.default, null),
+        _react2.default.createElement(_PrivacyNotice2.default, null)
       );
     }
   }]);
@@ -40946,7 +40951,7 @@ var Main = function (_React$Component) {
 
 exports.default = Main;
 
-},{"./base/Footer.jsx":281,"./base/Menu.jsx":282,"react":276}],280:[function(require,module,exports){
+},{"./base/Footer.jsx":281,"./base/Menu.jsx":282,"./base/PrivacyNotice.jsx":283,"react":276}],280:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41071,12 +41076,18 @@ var Footer = function (_React$Component) {
           ),
           _react2.default.createElement(
             "div",
-            { className: "col-md-6" },
+            { className: "col-md-6 links" },
             _react2.default.createElement(
               "div",
               { className: "social" },
               _react2.default.createElement("a", { href: "https://www.twitter.com/testigo_social", className: "tw" }),
-              _react2.default.createElement("a", { href: "https://www.facebook.com/testigosocial", className: "fb" })
+              _react2.default.createElement("a", { href: "https://www.facebook.com/testigosocial", className: "fb" }),
+              _react2.default.createElement("div", { className: "clear" })
+            ),
+            _react2.default.createElement(
+              "span",
+              { "data-toggle": "modal", "data-target": "#privacyNotice" },
+              "Aviso de Privacidad"
             )
           )
         )
@@ -41198,6 +41209,274 @@ var Menu = function (_React$Component) {
 exports.default = Menu;
 
 },{"react":276,"react-router":245}],283:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var PrivacyNotice = function (_React$Component) {
+  _inherits(PrivacyNotice, _React$Component);
+
+  function PrivacyNotice() {
+    _classCallCheck(this, PrivacyNotice);
+
+    return _possibleConstructorReturn(this, (PrivacyNotice.__proto__ || Object.getPrototypeOf(PrivacyNotice)).apply(this, arguments));
+  }
+
+  _createClass(PrivacyNotice, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { className: "modal fade", id: "privacyNotice", tabindex: "-1", role: "dialog" },
+        _react2.default.createElement(
+          "div",
+          { className: "modal-dialog modal-lg", role: "document" },
+          _react2.default.createElement(
+            "div",
+            { className: "modal-content" },
+            _react2.default.createElement(
+              "div",
+              { className: "modal-header" },
+              _react2.default.createElement(
+                "h4",
+                { className: "modal-title" },
+                "Aviso de Privacidad"
+              )
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "modal-body" },
+              _react2.default.createElement(
+                "h1",
+                null,
+                "Testigo Social"
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "En cumplimiento de la Ley Federal de Protecci\xF3n de Datos Personales en Posesi\xF3n de Particulares (en lo sucesivo la \u201CLey\u201D), publicada el 5 de julio de 2010 en el Diario Oficial de la Federaci\xF3n, Transparencia Mexicana, A.C.  publica el siguiente aviso de privacidad."
+              ),
+              _react2.default.createElement(
+                "h4",
+                null,
+                "I. RESPONSABLE"
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "Transparencia Mexicana, A.C. con domicilio en Dulce Olivia, no. 73, colonia Villa Coyoac\xE1n, delegaci\xF3n Coyoac\xE1n, C.P. 04000, M\xE9xico, Distrito Federal. Para mayor informaci\xF3n consultar www.tm.org.mx con t\xE9lefonos 52-[55] 56594714, 56594095 / 56599991"
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "Como Responsable se se\xF1ala a la propia persona moral (Transparencia Mexicana, A. C.). Para cualquier aclaraci\xF3n o contacto: contacto@testigosocial.mx en atenci\xF3n al Lic. Rafael Garc\xEDa Aceves."
+              ),
+              _react2.default.createElement(
+                "h4",
+                null,
+                "II. DEFINICIONES"
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "Para efectos del presente aviso de privacidad se entender\xE1 por:"
+              ),
+              _react2.default.createElement(
+                "ol",
+                null,
+                _react2.default.createElement(
+                  "li",
+                  null,
+                  _react2.default.createElement(
+                    "strong",
+                    null,
+                    "Usuario: "
+                  ),
+                  "Toda persona f\xEDsica que utilice la herramienta interactiva que se presenta en el portal y que proporciona alg\xFAn tipo de dato. El Usuario podr\xE1 acceder al portal las veces que considere necesario y consultar en dicho sitio el Aviso de Privacidad del sitio www.testigosocial.mx. Al hacer uso del portal, el Usuario acepta plenamente el presente Aviso de Privacidad vigente al momento en que se realice el acceso, mismo que ha sido elaborado de conformidad con el marco normativo vigente."
+                ),
+                _react2.default.createElement(
+                  "li",
+                  null,
+                  _react2.default.createElement(
+                    "strong",
+                    null,
+                    "Titular: "
+                  ),
+                  "Toda persona f\xEDsica que proporcione los datos que se detallan m\xE1s adelante y que otorga expresamente el consentimiento para que los datos personales sean tratados conforme a lo se\xF1alado en el presente Aviso de Privacidad. Al hacer uso del portal, el Titular acepta plenamente el presente Aviso de Privacidad vigente al momento en que se realice el acceso y se otorgue el consentimiento, mismo que ha sido elaborado de conformidad con el marco normativo vigente. En particular, el Titular se obliga a no proporcionar al Responsable ning\xFAn Dato relativo a origen racial o \xE9tnico, estado de salud presente y futuro, informaci\xF3n gen\xE9tica, creencias religiosas, filos\xF3ficas y morales, afiliaci\xF3n sindical, opiniones pol\xEDticas o preferencia sexual."
+                ),
+                _react2.default.createElement(
+                  "li",
+                  null,
+                  _react2.default.createElement(
+                    "strong",
+                    null,
+                    "Datos Personales: "
+                  ),
+                  "Informaci\xF3n solicitada para el registro de usuario de la plataforma www.testigosocial.mx, correo electr\xF3nico, contrase\xF1a, tipo de usuario, edad, pa\xEDs al que pertenece y c\xF3digo postal."
+                )
+              ),
+              _react2.default.createElement(
+                "h4",
+                null,
+                "III. OBJETIVO Y FINALIDADES DEL TRATAMIENTO DE DATOS"
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "El portal www.testigosocial.mx es una herramienta para el monitoreo de las compras p\xFAblicas en M\xE9xico. Cuya finalidad es informar a distintos usuarios sobre la forma en la que compra su gobierno."
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "Los datos personales que recabamos de usted, los utilizaremos para las siguientes finalidades que son necesarias para el servicio de testigo social 2.0:"
+              ),
+              _react2.default.createElement(
+                "ol",
+                null,
+                _react2.default.createElement(
+                  "li",
+                  null,
+                  "La informaci\xF3n solicitada al Usuario (correo electr\xF3nico, tipo de usuario, pa\xEDs, c\xF3digo postal) ser\xE1 utilizada para fines de que recibir notificaciones v\xEDa correo electr\xF3nico, mensajes de texto, Facebook, Twitter."
+                ),
+                _react2.default.createElement(
+                  "li",
+                  null,
+                  "La informaci\xF3n solicitada sobre edad, pa\xEDs al que el usuario pertenece, c\xF3digo postal y tipo de usuario ser\xE1 utilizada con fines estad\xEDsticos de consulta, registro de reportes sobre usuarios que consultan el sitio, mejoramiento del contenido del sitio, para la integraci\xF3n a redes sociales como Facebook y Twitter, para la geolocalizaci\xF3n del Titular que permita presentar propuestas basadas en una ubicaci\xF3n geogr\xE1fica y contenido relevante al Usuario."
+                )
+              ),
+              _react2.default.createElement(
+                "h4",
+                null,
+                "IV. MEDIOS DE USO Y/O DIVULGACI\xD3N DE LOS DATOS"
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "Para el manejo de datos personales del Titular o Usuario, Transparencia Mexicana se compromete a proteger la privacidad de los Usuarios y Titulares del portal de conformidad con los elementos t\xE9cnicos de seguridad con los que cuenta de acuerdo al Aviso de Privacidad, as\xED como a la legislaci\xF3n que regula el tratamiento de datos personales."
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "De igual manera, Transparencia Mexicana se reserva el derecho de impedir el acceso de los Usuarios y/o Titulares al portal por violar el Aviso de Privacidad."
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "Los contenidos del portal, tales como texto, gr\xE1ficos, im\xE1genes, logos, marcas, iconos de bot\xF3n, obras audiovisuales, literarias, bases de datos y cualquier otro contenido informaci\xF3n y material, todo lo cual se entender\xE1 como el \u201Ccontenido\u201D o los \u201Ccontenidos\u201D, est\xE1n protegidos por la legislaci\xF3n en materia de propiedad industrial e intelectual. El uso no autorizado del contenido puede implicar la violaci\xF3n de la legislaci\xF3n sobre propiedad intelectual o industrial y eso no ser\xE1 limitativo de otras leyes aplicables en materia civil, penal, etc."
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "Transparencia Mexicana A.C., es responsable de administrar el sitio www.testigosocia.mx Sin embargo, el alcance de la red es mucho m\xE1s amplio, por lo que es importante delimintar los alcances de las responsabilidades del administrador del sitio: "
+              ),
+              _react2.default.createElement(
+                "ol",
+                null,
+                _react2.default.createElement(
+                  "li",
+                  null,
+                  "El contenido del portal puede contener imprecisiones o errores tipogr\xE1ficos."
+                ),
+                _react2.default.createElement(
+                  "li",
+                  null,
+                  "Transparencia Mexicana no puede garantizar que el portal funcione libre de errores o que el sitio web y su servidor est\xE9n libres de los virus inform\xE1ticos u otros mecanismos lesivos. Si por el uso del sitio web el Titular o Usuario tiene que acudir al servicio t\xE9cnico o reponer el equipo o datos, Transparencia Mexicana no ser\xE1 responsable ni obligado hacia los Titulares o Usuarios de realizar o no tales actividades de control."
+                ),
+                _react2.default.createElement(
+                  "li",
+                  null,
+                  "El portal contiene v\xEDnculos a otros sitios de la web. Estos v\xEDnculos se brindan \xFAnicamente para comodidad del Titular y no significan un respaldo a los contenidos de estos sitios web. Transparencia Mexicana no es responsable del contenido de los sitios web vinculados de terceros y no hace ninguna afirmaci\xF3n ni garant\xEDa relativa al contenido o su exactitud en estos sitios web de terceros. Si Usted decide acceder a sitios web de terceras partes vinculados, lo hace bajo su propio riesgo."
+                ),
+                _react2.default.createElement(
+                  "li",
+                  null,
+                  "Transparencia Mexicana adoptar\xE1 las medidas o procedimientos t\xE9cnicos oportunos para suprimir o inutilizar aquellos enlaces de los que tenga un conocimiento efectivo de que la actividad o informaci\xF3n a la que remiten o recomiendan es il\xEDcita o lesiona bienes o derechos de terceros susceptibles de indemnizaci\xF3n."
+                ),
+                _react2.default.createElement(
+                  "li",
+                  null,
+                  "Transparencia Mexicana no es responsable de las pol\xEDticas o pr\xE1cticas sobre privacidad de otros sitios web con los que usted elija enlazarse desde testigosocial.mx Se recomienda revisar las pol\xEDticas de privacidad de esos otros sitios web para que pueda ponerse al corriente de c\xF3mo obtienen, recopilan, usan y comparten sus datos. El Aviso de Privacidad se aplica exclusivamente a la Informaci\xF3n que Transparencia Mexicana obtenga en este sitio web, sin que sea aplicable a informaci\xF3n que se obtenga de alguna otra fuente otro modo."
+                )
+              ),
+              _react2.default.createElement(
+                "h4",
+                null,
+                "V. MEDIOS PARA EJERCER LOS DERECHOS DE ACCESO, RECTIFICACI\xD3N, CANCELACI\xD3N U OPOSICI\xD3N AL USO DE DATOS"
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "Es relevante recordarle que usted cuenta con los derechos conocidos como ARCO, respecto a sus datos personales. Esto es, tiene derecho en todo momento a conocer cu\xE1les son los datos personales que Transparencia Mexicana A.C. tiene en su poder, su uso y condiciones; aunado a ello, puede solicitar la correcci\xF3n de su informaci\xF3n cuando se encuentre desactualizada, sea inexacta o incompleta; o, en su caso, a su eliminaci\xF3n de nuestra base de datos. Asimismo, podr\xE1 oponerse a su uso para fines espec\xEDficos."
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "La solicitud realizada respecto a los derechos ARCO, deber\xE1 hacerse al correo electr\xF3nico contacto@testigosocial.mx mediante el cual se le dar\xE1 el tr\xE1mite correspondiente. Para cualquier duda o aclaraci\xF3n, puede comunicarse al tel\xE9fono 5659 9996. En caso de querer revocar el consentimiento que en este acto nos proporciona para el uso de sus datos personales, podr\xE1 hacerlo de forma directa con la persona responsable mencionada. En este \xFAltimo caso, es preciso mencionar que Transparencia Mexicana se ver\xE1 impedido para enviarle avisos personales acerca de las actualizaciones o renovaciones relacionadas con el presente Aviso de Privacidad; sin embargo, podr\xE1 acceder a ellos mediante la p\xE1gina web."
+              ),
+              _react2.default.createElement(
+                "h5",
+                null,
+                "Derechos ARCO"
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "El titular o su representante legal debidamente acreditado podr\xE1n limitar el uso o divulgaci\xF3n de sus datos personales; y podr\xE1 ejercer, cuando procedan, los derechos de acceso, rectificaci\xF3n, cancelaci\xF3n u oposici\xF3n que la Ley prev\xE9 mediante solicitud presentada a Transparencia Mexicana, A.C., en su calidad de Responsable."
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "La solicitud de acceso, rectificaci\xF3n, cancelaci\xF3n u oposici\xF3n deber\xE1 contener la petici\xF3n expresa de acceso, rectificaci\xF3n, cancelaci\xF3n y oposici\xF3n. Deber\xE1 ser presentada por escrito en el domicilio legal o en la direcci\xF3n de correo electr\xF3nico se\xF1alada en este aviso."
+              ),
+              _react2.default.createElement(
+                "h4",
+                null,
+                "VI. TRANSFERENCIA DE DATOS PERSONALES"
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "El manejo, uso y tratamiento de datos se realizar\xE1 de conformidad con el presente Aviso de Privacidad, incluyendo el uso en redes sociales."
+              ),
+              _react2.default.createElement(
+                "h4",
+                null,
+                "VII. MODIFICACIONES AL AVISO DE PRIVACIDAD"
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "Cualquier modificaci\xF3n al presente aviso le ser\xE1 notificado por el Responsable a trav\xE9s de cualquiera de los siguientes medios: un mensaje v\xEDa correo electr\xF3nico o un mensaje dado a conocer en la p\xE1gina www.testigosocial.mx"
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return PrivacyNotice;
+}(_react2.default.Component);
+
+exports.default = PrivacyNotice;
+
+},{"react":276}],284:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -42147,7 +42426,7 @@ var Details = function (_React$Component) {
 
 exports.default = Details;
 
-},{"../helpers.js":288,"react":276}],284:[function(require,module,exports){
+},{"../helpers.js":289,"react":276}],285:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -42377,7 +42656,7 @@ var SearchBar = function (_React$Component) {
 
 exports.default = SearchBar;
 
-},{"../helpers.js":288,"react":276}],285:[function(require,module,exports){
+},{"../helpers.js":289,"react":276}],286:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -42486,7 +42765,7 @@ var SearchResults = function (_React$Component) {
 
 exports.default = SearchResults;
 
-},{"./TableItem.jsx":287,"react":276}],286:[function(require,module,exports){
+},{"./TableItem.jsx":288,"react":276}],287:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -42608,7 +42887,7 @@ var Section = function (_React$Component) {
 
 exports.default = Section;
 
-},{"../base/Description.jsx":280,"../helpers.js":288,"./Details.jsx":283,"./SearchBar.jsx":284,"./SearchResults.jsx":285,"./TableItem.jsx":287,"react":276}],287:[function(require,module,exports){
+},{"../base/Description.jsx":280,"../helpers.js":289,"./Details.jsx":284,"./SearchBar.jsx":285,"./SearchResults.jsx":286,"./TableItem.jsx":288,"react":276}],288:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -42726,7 +43005,7 @@ var TableItem = function (_React$Component) {
 
 exports.default = TableItem;
 
-},{"../helpers.js":288,"react":276}],288:[function(require,module,exports){
+},{"../helpers.js":289,"react":276}],289:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -42821,7 +43100,7 @@ exports.formatAmount = formatAmount;
 exports.formatDate = formatDate;
 exports.codeList = codeList;
 
-},{"moment":89,"moment/locale/es":88}],289:[function(require,module,exports){
+},{"moment":89,"moment/locale/es":88}],290:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -43417,7 +43696,7 @@ var Home = function (_React$Component) {
 
 exports.default = Home;
 
-},{"../helpers.js":288,"chart.js":1,"react":276,"react-router":245}],290:[function(require,module,exports){
+},{"../helpers.js":289,"chart.js":1,"react":276,"react-router":245}],291:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -43467,7 +43746,7 @@ _reactDom2.default.render(_react2.default.createElement(
 
 // Import top-level components
 
-},{"./Main.jsx":279,"./contracts/Section.jsx":286,"./home/Section.jsx":289,"./indicators/Section.jsx":293,"./register/Section.jsx":295,"react":276,"react-dom":92,"react-router":245}],291:[function(require,module,exports){
+},{"./Main.jsx":279,"./contracts/Section.jsx":287,"./home/Section.jsx":290,"./indicators/Section.jsx":294,"./register/Section.jsx":296,"react":276,"react-dom":92,"react-router":245}],292:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -43574,7 +43853,7 @@ var ChartWidget = function (_React$Component) {
 
 exports.default = ChartWidget;
 
-},{"chart.js":1,"react":276}],292:[function(require,module,exports){
+},{"chart.js":1,"react":276}],293:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -43822,7 +44101,7 @@ var Details = function (_React$Component) {
 
 exports.default = Details;
 
-},{"./ChartWidget.jsx":291,"react":276}],293:[function(require,module,exports){
+},{"./ChartWidget.jsx":292,"react":276}],294:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -44020,7 +44299,7 @@ var Section = function (_React$Component) {
 
 exports.default = Section;
 
-},{"../base/Description.jsx":280,"./ChartWidget.jsx":291,"./Details.jsx":292,"react":276}],294:[function(require,module,exports){
+},{"../base/Description.jsx":280,"./ChartWidget.jsx":292,"./Details.jsx":293,"react":276}],295:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -45062,9 +45341,29 @@ var Form = function (_React$Component) {
                 )
               ),
               _react2.default.createElement(
+                'p',
+                null,
+                'Consulta nuestro aviso de privacidad ',
+                _react2.default.createElement(
+                  'a',
+                  { href: '#', 'data-toggle': 'modal', 'data-target': '#privacyNotice' },
+                  'aqu\xED.'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'checkbox' },
+                _react2.default.createElement(
+                  'label',
+                  null,
+                  _react2.default.createElement('input', { id: 'acceptPrivacyTerms', type: 'checkbox', checked: 'checked' }),
+                  ' Acepto las politicas de privacidad'
+                )
+              ),
+              _react2.default.createElement(
                 'button',
-                { type: 'submit', className: 'btn btn-black' },
-                'Comenzar a recibir notificaciones'
+                { type: 'submit', className: 'btn btn-black btn-lg' },
+                'Comienza a recibir notificaciones'
               )
             )
           )
@@ -45078,7 +45377,7 @@ var Form = function (_React$Component) {
 
 exports.default = Form;
 
-},{"react":276}],295:[function(require,module,exports){
+},{"react":276}],296:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -45150,7 +45449,7 @@ var Section = function (_React$Component) {
 
 exports.default = Section;
 
-},{"../base/Description.jsx":280,"./Form.jsx":294,"react":276}],296:[function(require,module,exports){
+},{"../base/Description.jsx":280,"./Form.jsx":295,"react":276}],297:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -45332,4 +45631,4 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}]},{},[290]);
+},{}]},{},[291]);

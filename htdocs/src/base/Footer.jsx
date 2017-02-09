@@ -15,11 +15,13 @@ class Footer extends React.Component {
               <a href="https://www.gov.uk/government/world/organisations/british-embassy-mexico-city.es-419" target="_blank" className="uk"></a>
             </div>
           </div>
-          <div className="col-md-6">
+          <div className="col-md-6 links">
             <div className="social">
               <a href="https://www.twitter.com/testigo_social" className="tw"></a>
               <a href="https://www.facebook.com/testigosocial" className="fb"></a>
+              <div className="clear"></div>
             </div>
+            <span data-toggle="modal" data-target="#privacyNotice">Aviso de Privacidad</span>
           </div>
         </div>
       </div>

@@ -811,28 +811,38 @@ div.clear {
     #bottom ul a {
       color: #fff;
       font-size: 11px; }
-  #bottom div.social {
-    float: right;
-    margin-top: 10px;
-    width: 100px; }
-    #bottom div.social a {
-      background-position: top center;
-      background-repeat: no-repeat;
-      background-size: contain;
-      display: block;
-      float: left;
-      height: 34px;
-      margin-left: 10px;
-      width: 34px; }
-      #bottom div.social a.tw {
-        background-image: url("../images/bottom_tw.png"); }
-      #bottom div.social a.fb {
-        background-image: url("../images/bottom_fb.png"); }
+  #bottom div.links {
+    text-align: right; }
+    #bottom div.links span {
+      cursor: pointer;
+      display: inline-block;
+      margin: 54px -15px 0 0;
+      text-decoration: underline; }
+    #bottom div.links div.social {
+      margin-top: 10px;
+      position: absolute;
+      right: 0;
+      width: 100px; }
+      #bottom div.links div.social a {
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: block;
+        float: right;
+        height: 34px;
+        margin-left: 10px;
+        width: 34px; }
+        #bottom div.links div.social a.tw {
+          background-image: url("../images/bottom_tw.png"); }
+        #bottom div.links div.social a.fb {
+          background-image: url("../images/bottom_fb.png"); }
 
 #setup div.row {
   margin: 0 auto;
   padding: 20px 0;
   width: 90%; }
+#setup button.btn-black {
+  margin: 20px 0 30px; }
 #setup ul {
   list-style: none;
   padding: 0; }

@@ -360,7 +360,15 @@ class Form extends React.Component {
                   </tr>
                 </tbody>
               </table>
-              <button type="submit" className="btn btn-black">Comenzar a recibir notificaciones</button>
+              <p>
+                Consulta nuestro aviso de privacidad <a href="#" data-toggle="modal" data-target="#privacyNotice">aquí.</a>
+              </p>
+              <div className="checkbox">
+                <label>
+                  <input id="acceptPrivacyTerms" type="checkbox" checked="checked" /> Acepto las politicas de privacidad
+                </label>
+              </div>
+              <button type="submit" className="btn btn-black btn-lg">Comienza a recibir notificaciones</button>
             </div>
           </div>
         </form>
