@@ -34,6 +34,7 @@ import (
 
 	"github.com/gorilla/websocket"
 	"github.com/julienschmidt/httprouter"
+	"github.com/ranveerkunal/memfs"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"github.com/transparenciamx/tsv/data"
@@ -239,7 +240,7 @@ func indicators(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 }
 
 // Store pre-register email
-func preregister(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+func preregister(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	log.Printf("Pre-register for: %+v\n", r.FormValue("email"))
 	f, err := os.OpenFile("/data/pre-register", os.O_APPEND|os.O_WRONLY, 0600)
 	if err == nil {
@@ -295,7 +296,6 @@ func redirect(w http.ResponseWriter, req *http.Request) {
 	}
 	log.Printf("redirect to: %s", target)
 	http.Redirect(w, req, target, http.StatusTemporaryRedirect)
-	// http.Redirect(w, req, "https://192.168.111.101"+req.RequestURI, http.StatusMovedPermanently)
 }
 
 func runServer(cmd *cobra.Command, args []string) error {
@@ -310,9 +310,15 @@ func runServer(cmd *cobra.Command, args []string) error {
 	stopChan := make(chan os.Signal)
 	signal.Notify(stopChan, os.Interrupt)
 
+	// Create in-memory cache filesystem for static files
+	cacheFS, err := memfs.New(viper.GetString("server.docs"))
+	if err != nil {
+		log.Fatalf("Cache filesystem error: %+v", err)
+	}
+
 	// Configure router
 	router := httprouter.New()
-	router.NotFound = http.FileServer(http.Dir(viper.GetString("server.docs")))
+	router.NotFound = http.FileServer(cacheFS)
 	router.POST("/profile", profile)
 	router.POST("/query/:bucket", query)
 	router.POST("/indicators", indicators)

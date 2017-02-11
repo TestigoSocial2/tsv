@@ -1,4 +1,4571 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Menu = require('./base/Menu.jsx');
+
+var _Menu2 = _interopRequireDefault(_Menu);
+
+var _Footer = require('./base/Footer.jsx');
+
+var _Footer2 = _interopRequireDefault(_Footer);
+
+var _PrivacyNotice = require('./base/PrivacyNotice.jsx');
+
+var _PrivacyNotice2 = _interopRequireDefault(_PrivacyNotice);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Main = function (_React$Component) {
+  _inherits(Main, _React$Component);
+
+  function Main() {
+    _classCallCheck(this, Main);
+
+    return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).apply(this, arguments));
+  }
+
+  _createClass(Main, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      $('[data-toggle="tooltip"]').tooltip();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'container-fluid' },
+        _react2.default.createElement(_Menu2.default, null),
+        _react2.default.createElement(
+          'div',
+          { id: 'route' },
+          this.props.children
+        ),
+        _react2.default.createElement(_Footer2.default, null),
+        _react2.default.createElement(_PrivacyNotice2.default, null)
+      );
+    }
+  }]);
+
+  return Main;
+}(_react2.default.Component);
+
+exports.default = Main;
+
+},{"./base/Footer.jsx":3,"./base/Menu.jsx":4,"./base/PrivacyNotice.jsx":5,"react":294}],2:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// Section description block
+var Description = function (_React$Component) {
+  _inherits(Description, _React$Component);
+
+  function Description() {
+    _classCallCheck(this, Description);
+
+    return _possibleConstructorReturn(this, (Description.__proto__ || Object.getPrototypeOf(Description)).apply(this, arguments));
+  }
+
+  _createClass(Description, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'row info bg-' + this.props.color },
+        _react2.default.createElement(
+          'div',
+          { className: 'inner-row' },
+          _react2.default.createElement(
+            'h2',
+            null,
+            this.props.title
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            this.props.content
+          )
+        )
+      );
+    }
+  }]);
+
+  return Description;
+}(_react2.default.Component);
+
+exports.default = Description;
+
+},{"react":294}],3:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Footer = function (_React$Component) {
+  _inherits(Footer, _React$Component);
+
+  function Footer() {
+    _classCallCheck(this, Footer);
+
+    return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
+  }
+
+  _createClass(Footer, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { id: "bottom", className: "row" },
+        _react2.default.createElement(
+          "div",
+          { className: "inner-row" },
+          _react2.default.createElement(
+            "div",
+            { className: "col-md-6" },
+            _react2.default.createElement(
+              "div",
+              { className: "logo" },
+              _react2.default.createElement(
+                "p",
+                null,
+                "Una iniciativa de:"
+              ),
+              _react2.default.createElement("a", { href: "http://www.tm.org.mx", target: "_blank", className: "tm" })
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "logo" },
+              _react2.default.createElement(
+                "p",
+                null,
+                "Con el apoyo de:"
+              ),
+              _react2.default.createElement("a", { href: "https://www.gov.uk/government/world/organisations/british-embassy-mexico-city.es-419", target: "_blank", className: "uk" })
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "col-md-6 links" },
+            _react2.default.createElement(
+              "div",
+              { className: "social" },
+              _react2.default.createElement("a", { href: "https://www.twitter.com/testigo_social", className: "tw" }),
+              _react2.default.createElement("a", { href: "https://www.facebook.com/testigosocial", className: "fb" }),
+              _react2.default.createElement("div", { className: "clear" })
+            ),
+            _react2.default.createElement(
+              "span",
+              { "data-toggle": "modal", "data-target": "#privacyNotice" },
+              "Aviso de Privacidad"
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Footer;
+}(_react2.default.Component);
+
+exports.default = Footer;
+
+},{"react":294}],4:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouter = require('react-router');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Menu = function (_React$Component) {
+  _inherits(Menu, _React$Component);
+
+  function Menu() {
+    _classCallCheck(this, Menu);
+
+    return _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).apply(this, arguments));
+  }
+
+  _createClass(Menu, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { id: 'top', className: 'row' },
+        _react2.default.createElement(
+          'div',
+          { className: 'col-md-12' },
+          _react2.default.createElement('a', { href: 'index.html', className: 'logo' }),
+          _react2.default.createElement(
+            'ul',
+            null,
+            _react2.default.createElement('div', { className: 'clear' }),
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(
+                _reactRouter.Link,
+                { to: '/' },
+                '\xBFQu\xE9 es TS 2.0?'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(
+                _reactRouter.Link,
+                { to: '/contracts' },
+                'Contratos'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(
+                _reactRouter.Link,
+                { to: '/indicators' },
+                'Indicadores'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(
+                _reactRouter.Link,
+                { to: '/register' },
+                'Notificaciones'
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(
+                'a',
+                { href: 'http://www.tm.org.mx', target: '_blank' },
+                'Contrataciones Abiertas'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'social' },
+            _react2.default.createElement('a', { href: 'https://www.twitter.com/testigo_social', className: 'tw' }),
+            _react2.default.createElement('a', { href: 'https://www.facebook.com/testigosocial', className: 'fb' })
+          )
+        )
+      );
+    }
+  }]);
+
+  return Menu;
+}(_react2.default.Component);
+
+exports.default = Menu;
+
+},{"react":294,"react-router":263}],5:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var PrivacyNotice = function (_React$Component) {
+  _inherits(PrivacyNotice, _React$Component);
+
+  function PrivacyNotice() {
+    _classCallCheck(this, PrivacyNotice);
+
+    return _possibleConstructorReturn(this, (PrivacyNotice.__proto__ || Object.getPrototypeOf(PrivacyNotice)).apply(this, arguments));
+  }
+
+  _createClass(PrivacyNotice, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { className: "modal fade", id: "privacyNotice", tabindex: "-1", role: "dialog" },
+        _react2.default.createElement(
+          "div",
+          { className: "modal-dialog modal-lg", role: "document" },
+          _react2.default.createElement(
+            "div",
+            { className: "modal-content" },
+            _react2.default.createElement(
+              "div",
+              { className: "modal-header" },
+              _react2.default.createElement(
+                "h4",
+                { className: "modal-title" },
+                "Aviso de Privacidad"
+              )
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "modal-body" },
+              _react2.default.createElement(
+                "h1",
+                null,
+                "Testigo Social"
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "En cumplimiento de la Ley Federal de Protecci\xF3n de Datos Personales en Posesi\xF3n de Particulares (en lo sucesivo la \u201CLey\u201D), publicada el 5 de julio de 2010 en el Diario Oficial de la Federaci\xF3n, Transparencia Mexicana, A.C.  publica el siguiente aviso de privacidad."
+              ),
+              _react2.default.createElement(
+                "h4",
+                null,
+                "I. RESPONSABLE"
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "Transparencia Mexicana, A.C. con domicilio en Dulce Olivia, no. 73, colonia Villa Coyoac\xE1n, delegaci\xF3n Coyoac\xE1n, C.P. 04000, M\xE9xico, Distrito Federal. Para mayor informaci\xF3n consultar www.tm.org.mx con t\xE9lefonos 52-[55] 56594714, 56594095 / 56599991"
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "Como Responsable se se\xF1ala a la propia persona moral (Transparencia Mexicana, A. C.). Para cualquier aclaraci\xF3n o contacto: contacto@testigosocial.mx en atenci\xF3n al Lic. Rafael Garc\xEDa Aceves."
+              ),
+              _react2.default.createElement(
+                "h4",
+                null,
+                "II. DEFINICIONES"
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "Para efectos del presente aviso de privacidad se entender\xE1 por:"
+              ),
+              _react2.default.createElement(
+                "ol",
+                null,
+                _react2.default.createElement(
+                  "li",
+                  null,
+                  _react2.default.createElement(
+                    "strong",
+                    null,
+                    "Usuario: "
+                  ),
+                  "Toda persona f\xEDsica que utilice la herramienta interactiva que se presenta en el portal y que proporciona alg\xFAn tipo de dato. El Usuario podr\xE1 acceder al portal las veces que considere necesario y consultar en dicho sitio el Aviso de Privacidad del sitio www.testigosocial.mx. Al hacer uso del portal, el Usuario acepta plenamente el presente Aviso de Privacidad vigente al momento en que se realice el acceso, mismo que ha sido elaborado de conformidad con el marco normativo vigente."
+                ),
+                _react2.default.createElement(
+                  "li",
+                  null,
+                  _react2.default.createElement(
+                    "strong",
+                    null,
+                    "Titular: "
+                  ),
+                  "Toda persona f\xEDsica que proporcione los datos que se detallan m\xE1s adelante y que otorga expresamente el consentimiento para que los datos personales sean tratados conforme a lo se\xF1alado en el presente Aviso de Privacidad. Al hacer uso del portal, el Titular acepta plenamente el presente Aviso de Privacidad vigente al momento en que se realice el acceso y se otorgue el consentimiento, mismo que ha sido elaborado de conformidad con el marco normativo vigente. En particular, el Titular se obliga a no proporcionar al Responsable ning\xFAn Dato relativo a origen racial o \xE9tnico, estado de salud presente y futuro, informaci\xF3n gen\xE9tica, creencias religiosas, filos\xF3ficas y morales, afiliaci\xF3n sindical, opiniones pol\xEDticas o preferencia sexual."
+                ),
+                _react2.default.createElement(
+                  "li",
+                  null,
+                  _react2.default.createElement(
+                    "strong",
+                    null,
+                    "Datos Personales: "
+                  ),
+                  "Informaci\xF3n solicitada para el registro de usuario de la plataforma www.testigosocial.mx, correo electr\xF3nico, contrase\xF1a, tipo de usuario, edad, pa\xEDs al que pertenece y c\xF3digo postal."
+                )
+              ),
+              _react2.default.createElement(
+                "h4",
+                null,
+                "III. OBJETIVO Y FINALIDADES DEL TRATAMIENTO DE DATOS"
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "El portal www.testigosocial.mx es una herramienta para el monitoreo de las compras p\xFAblicas en M\xE9xico. Cuya finalidad es informar a distintos usuarios sobre la forma en la que compra su gobierno."
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "Los datos personales que recabamos de usted, los utilizaremos para las siguientes finalidades que son necesarias para el servicio de testigo social 2.0:"
+              ),
+              _react2.default.createElement(
+                "ol",
+                null,
+                _react2.default.createElement(
+                  "li",
+                  null,
+                  "La informaci\xF3n solicitada al Usuario (correo electr\xF3nico, tipo de usuario, pa\xEDs, c\xF3digo postal) ser\xE1 utilizada para fines de que recibir notificaciones v\xEDa correo electr\xF3nico, mensajes de texto, Facebook, Twitter."
+                ),
+                _react2.default.createElement(
+                  "li",
+                  null,
+                  "La informaci\xF3n solicitada sobre edad, pa\xEDs al que el usuario pertenece, c\xF3digo postal y tipo de usuario ser\xE1 utilizada con fines estad\xEDsticos de consulta, registro de reportes sobre usuarios que consultan el sitio, mejoramiento del contenido del sitio, para la integraci\xF3n a redes sociales como Facebook y Twitter, para la geolocalizaci\xF3n del Titular que permita presentar propuestas basadas en una ubicaci\xF3n geogr\xE1fica y contenido relevante al Usuario."
+                )
+              ),
+              _react2.default.createElement(
+                "h4",
+                null,
+                "IV. MEDIOS DE USO Y/O DIVULGACI\xD3N DE LOS DATOS"
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "Para el manejo de datos personales del Titular o Usuario, Transparencia Mexicana se compromete a proteger la privacidad de los Usuarios y Titulares del portal de conformidad con los elementos t\xE9cnicos de seguridad con los que cuenta de acuerdo al Aviso de Privacidad, as\xED como a la legislaci\xF3n que regula el tratamiento de datos personales."
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "De igual manera, Transparencia Mexicana se reserva el derecho de impedir el acceso de los Usuarios y/o Titulares al portal por violar el Aviso de Privacidad."
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "Los contenidos del portal, tales como texto, gr\xE1ficos, im\xE1genes, logos, marcas, iconos de bot\xF3n, obras audiovisuales, literarias, bases de datos y cualquier otro contenido informaci\xF3n y material, todo lo cual se entender\xE1 como el \u201Ccontenido\u201D o los \u201Ccontenidos\u201D, est\xE1n protegidos por la legislaci\xF3n en materia de propiedad industrial e intelectual. El uso no autorizado del contenido puede implicar la violaci\xF3n de la legislaci\xF3n sobre propiedad intelectual o industrial y eso no ser\xE1 limitativo de otras leyes aplicables en materia civil, penal, etc."
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "Transparencia Mexicana A.C., es responsable de administrar el sitio www.testigosocia.mx Sin embargo, el alcance de la red es mucho m\xE1s amplio, por lo que es importante delimintar los alcances de las responsabilidades del administrador del sitio: "
+              ),
+              _react2.default.createElement(
+                "ol",
+                null,
+                _react2.default.createElement(
+                  "li",
+                  null,
+                  "El contenido del portal puede contener imprecisiones o errores tipogr\xE1ficos."
+                ),
+                _react2.default.createElement(
+                  "li",
+                  null,
+                  "Transparencia Mexicana no puede garantizar que el portal funcione libre de errores o que el sitio web y su servidor est\xE9n libres de los virus inform\xE1ticos u otros mecanismos lesivos. Si por el uso del sitio web el Titular o Usuario tiene que acudir al servicio t\xE9cnico o reponer el equipo o datos, Transparencia Mexicana no ser\xE1 responsable ni obligado hacia los Titulares o Usuarios de realizar o no tales actividades de control."
+                ),
+                _react2.default.createElement(
+                  "li",
+                  null,
+                  "El portal contiene v\xEDnculos a otros sitios de la web. Estos v\xEDnculos se brindan \xFAnicamente para comodidad del Titular y no significan un respaldo a los contenidos de estos sitios web. Transparencia Mexicana no es responsable del contenido de los sitios web vinculados de terceros y no hace ninguna afirmaci\xF3n ni garant\xEDa relativa al contenido o su exactitud en estos sitios web de terceros. Si Usted decide acceder a sitios web de terceras partes vinculados, lo hace bajo su propio riesgo."
+                ),
+                _react2.default.createElement(
+                  "li",
+                  null,
+                  "Transparencia Mexicana adoptar\xE1 las medidas o procedimientos t\xE9cnicos oportunos para suprimir o inutilizar aquellos enlaces de los que tenga un conocimiento efectivo de que la actividad o informaci\xF3n a la que remiten o recomiendan es il\xEDcita o lesiona bienes o derechos de terceros susceptibles de indemnizaci\xF3n."
+                ),
+                _react2.default.createElement(
+                  "li",
+                  null,
+                  "Transparencia Mexicana no es responsable de las pol\xEDticas o pr\xE1cticas sobre privacidad de otros sitios web con los que usted elija enlazarse desde testigosocial.mx Se recomienda revisar las pol\xEDticas de privacidad de esos otros sitios web para que pueda ponerse al corriente de c\xF3mo obtienen, recopilan, usan y comparten sus datos. El Aviso de Privacidad se aplica exclusivamente a la Informaci\xF3n que Transparencia Mexicana obtenga en este sitio web, sin que sea aplicable a informaci\xF3n que se obtenga de alguna otra fuente otro modo."
+                )
+              ),
+              _react2.default.createElement(
+                "h4",
+                null,
+                "V. MEDIOS PARA EJERCER LOS DERECHOS DE ACCESO, RECTIFICACI\xD3N, CANCELACI\xD3N U OPOSICI\xD3N AL USO DE DATOS"
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "Es relevante recordarle que usted cuenta con los derechos conocidos como ARCO, respecto a sus datos personales. Esto es, tiene derecho en todo momento a conocer cu\xE1les son los datos personales que Transparencia Mexicana A.C. tiene en su poder, su uso y condiciones; aunado a ello, puede solicitar la correcci\xF3n de su informaci\xF3n cuando se encuentre desactualizada, sea inexacta o incompleta; o, en su caso, a su eliminaci\xF3n de nuestra base de datos. Asimismo, podr\xE1 oponerse a su uso para fines espec\xEDficos."
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "La solicitud realizada respecto a los derechos ARCO, deber\xE1 hacerse al correo electr\xF3nico contacto@testigosocial.mx mediante el cual se le dar\xE1 el tr\xE1mite correspondiente. Para cualquier duda o aclaraci\xF3n, puede comunicarse al tel\xE9fono 5659 9996. En caso de querer revocar el consentimiento que en este acto nos proporciona para el uso de sus datos personales, podr\xE1 hacerlo de forma directa con la persona responsable mencionada. En este \xFAltimo caso, es preciso mencionar que Transparencia Mexicana se ver\xE1 impedido para enviarle avisos personales acerca de las actualizaciones o renovaciones relacionadas con el presente Aviso de Privacidad; sin embargo, podr\xE1 acceder a ellos mediante la p\xE1gina web."
+              ),
+              _react2.default.createElement(
+                "h5",
+                null,
+                "Derechos ARCO"
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "El titular o su representante legal debidamente acreditado podr\xE1n limitar el uso o divulgaci\xF3n de sus datos personales; y podr\xE1 ejercer, cuando procedan, los derechos de acceso, rectificaci\xF3n, cancelaci\xF3n u oposici\xF3n que la Ley prev\xE9 mediante solicitud presentada a Transparencia Mexicana, A.C., en su calidad de Responsable."
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "La solicitud de acceso, rectificaci\xF3n, cancelaci\xF3n u oposici\xF3n deber\xE1 contener la petici\xF3n expresa de acceso, rectificaci\xF3n, cancelaci\xF3n y oposici\xF3n. Deber\xE1 ser presentada por escrito en el domicilio legal o en la direcci\xF3n de correo electr\xF3nico se\xF1alada en este aviso."
+              ),
+              _react2.default.createElement(
+                "h4",
+                null,
+                "VI. TRANSFERENCIA DE DATOS PERSONALES"
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "El manejo, uso y tratamiento de datos se realizar\xE1 de conformidad con el presente Aviso de Privacidad, incluyendo el uso en redes sociales."
+              ),
+              _react2.default.createElement(
+                "h4",
+                null,
+                "VII. MODIFICACIONES AL AVISO DE PRIVACIDAD"
+              ),
+              _react2.default.createElement(
+                "p",
+                null,
+                "Cualquier modificaci\xF3n al presente aviso le ser\xE1 notificado por el Responsable a trav\xE9s de cualquiera de los siguientes medios: un mensaje v\xEDa correo electr\xF3nico o un mensaje dado a conocer en la p\xE1gina www.testigosocial.mx"
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return PrivacyNotice;
+}(_react2.default.Component);
+
+exports.default = PrivacyNotice;
+
+},{"react":294}],6:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _helpers = require('../helpers.js');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Details = function (_React$Component) {
+  _inherits(Details, _React$Component);
+
+  function Details(props) {
+    _classCallCheck(this, Details);
+
+    var _this = _possibleConstructorReturn(this, (Details.__proto__ || Object.getPrototypeOf(Details)).call(this, props));
+
+    _this.onClose = _this.onClose.bind(_this);
+    return _this;
+  }
+
+  _createClass(Details, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var bullets = $('div.contract-header div.bullets a');
+      bullets.on('click', function (e) {
+        e.preventDefault();
+        var target = $(e.target);
+
+        if (!target.hasClass('disabled')) {
+          target.tab('show');
+          bullets.removeClass('active');
+          target.addClass('active');
+        }
+      });
+    }
+  }, {
+    key: 'onClose',
+    value: function onClose(e) {
+      e.preventDefault();
+      this.props.onClose();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var release = this.props.contract.releases[0];
+      return _react2.default.createElement(
+        'div',
+        { className: 'inner-row contract-details' },
+        _react2.default.createElement(
+          'div',
+          { className: 'row contract-header' },
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-12' },
+            _react2.default.createElement(
+              'div',
+              null,
+              _react2.default.createElement(
+                'div',
+                { className: 'bg-gray' },
+                _react2.default.createElement(
+                  'h2',
+                  { className: 'block-title' },
+                  release.tender.title
+                ),
+                _react2.default.createElement(
+                  'h3',
+                  null,
+                  (0, _helpers.formatAmount)(release.tender.value.amount || 0)
+                ),
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  release.tender.description
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'bullets' },
+                _react2.default.createElement(
+                  'a',
+                  { href: '#planning',
+                    className: release.planning ? 'btn-black active' : 'btn-black disabled' },
+                  'Planeaci\xF3n'
+                ),
+                _react2.default.createElement(
+                  'a',
+                  { href: '#tender',
+                    className: release.tender ? 'btn-black' : 'btn-black disabled' },
+                  'Licitaci\xF3n'
+                ),
+                _react2.default.createElement(
+                  'a',
+                  { href: '#award',
+                    className: release.awards ? 'btn-black' : 'btn-black disabled' },
+                  'Adjudicaci\xF3n'
+                ),
+                _react2.default.createElement(
+                  'a',
+                  { href: '#contract',
+                    className: release.contracts ? 'btn-black' : 'btn-black disabled' },
+                  'Contrataci\xF3n'
+                ),
+                _react2.default.createElement(
+                  'a',
+                  { href: '#implementation',
+                    className: release.implementation ? 'btn-black' : 'btn-black disabled' },
+                  'Implementaci\xF3n'
+                ),
+                _react2.default.createElement(
+                  'a',
+                  { onClick: this.onClose },
+                  'Volver al listado de Resultados'
+                )
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'tab-content' },
+          _react2.default.createElement(
+            'div',
+            { role: 'tabpanel', className: 'tab-pane active fade in', id: 'planning' },
+            _react2.default.createElement(
+              'div',
+              { className: 'row contract-highlights border-bottom' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Fuente Presupuestaria'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  release.planning.budget.source
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Identificador del Presupuesto'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  release.planning.budget.id
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Monto Asignado'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  (0, _helpers.formatAmount)(release.planning.budget.amount.amount || 0)
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'row border-bottom' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-12' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Fundamento'
+                ),
+                _react2.default.createElement(
+                  'p',
+                  { className: 'txt-bold' },
+                  release.planning.budget.description
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'row contract-highlights border-bottom' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  '\xBFProyecto Plurianual?'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  'No disponible'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Proyecto Presupuestario'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  release.planning.budget.project
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Identificador'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  this.props.contract.releases[0].planning.budget.projectID
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'row border-bottom' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-12' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Enlace a la informaci\xF3n presupuestaria'
+                ),
+                _react2.default.createElement(
+                  'a',
+                  { href: this.props.contract.releases[0].planning.budget.uri },
+                  this.props.contract.releases[0].planning.budget.uri
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { role: 'tabpanel', className: 'tab-pane fade', id: 'tender' },
+            _react2.default.createElement(
+              'div',
+              { className: 'row contract-highlights border-bottom' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-8' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'T\xEDtulo de la Licitaci\xF3n'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  release.tender.title
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Identificador de la Licitaci\xF3n'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  release.tender.id
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'row contract-highlights border-bottom' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Tipo de Contrataci\xF3n'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  release.tender.metodoDeAdquisicion
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-8' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Descripci\xF3n de la Licitaci\xF3n'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  release.tender.description
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'row contract-highlights border-bottom' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Estatus de la Licitaci\xF3n'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  (0, _helpers.codeList)('tender.status', release.tender.status)
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Valor M\xE1ximo'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  (0, _helpers.formatAmount)(release.tender.value.amount || 0)
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'M\xE9todo por el que se realiza'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  (0, _helpers.codeList)('tender.procurementMethod', release.tender.procurementMethod)
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'row contract-highlights border-bottom' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'C\xE1racter del Proceso'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  release.tender.submissionMethod ? release.tender.submissionMethod.join(',') : '-'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Forma del Proceso'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  'No disponible'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Criterio de Adjudicaci\xF3n'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  release.tender.procurementMethodRationale
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'row contract-highlights border-bottom' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Periodo de Recepci\xF3n de Propuestas'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  'No disponible'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Periodo de Aclaraciones'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  'No disponible'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Aclaraciones'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  'No disponible'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'row contract-highlights border-bottom' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Testigo Social'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  'No disponible'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-8' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Criterio de Elegibilidad'
+                ),
+                _react2.default.createElement(
+                  'p',
+                  { className: 'txt-bold' },
+                  release.tender.awardCriteria
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'row contract-highlights border-bottom' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'No. de Propuestas Recibidas'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  release.tender.numberOfTenderers
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Fecha de Adjudicaci\xF3n'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  (0, _helpers.formatDate)(release.date, 'DD/MM/YYYY')
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Identificador de Entidad'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  this.props.contract.publisher.uid
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { role: 'tabpanel', className: 'tab-pane fade', id: 'award' },
+            _react2.default.createElement(
+              'div',
+              { className: 'row contract-highlights border-bottom' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-8' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'T\xEDtulo de la Adjudicaci\xF3n'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  'No disponible'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Identificador de la Adjudicaci\xF3n'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  release.awards[0].id
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'row contract-highlights border-bottom' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Estatus'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  (0, _helpers.codeList)('award.status', release.awards[0].status)
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-8' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Descripci\xF3n de la Adjudicaci\xF3n'
+                ),
+                _react2.default.createElement(
+                  'p',
+                  { className: 'txt-bold' },
+                  'No disponible'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'row contract-highlights border-bottom' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Fecha'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  'No disponible'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Valor y Moneda'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  (0, _helpers.formatAmount)(release.awards[0].value.amount)
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'No. de Inconformidades Recibidas'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  'No disponible'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'row contract-highlights border-bottom' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'No. de Inconformidades Rechazadas'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  'No disponible'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Identificador de Proveedor'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  release.awards[0].suppliers[0].identifier.id
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Nombre de Proveedor'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  release.awards[0].suppliers[0].identifier.legalName
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { role: 'tabpanel', className: 'tab-pane fade', id: 'contract' },
+            _react2.default.createElement(
+              'div',
+              { className: 'row contract-highlights border-bottom' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Identificador del Contrato'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  release.contracts[0].id
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-8' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'T\xEDtulo del Contrato'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  release.contracts[0].title
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'row contract-highlights border-bottom' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-8' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Descripci\xF3n del Contrato'
+                ),
+                _react2.default.createElement(
+                  'p',
+                  { className: 'txt-bold' },
+                  'No disponible'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Estatus'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  (0, _helpers.codeList)('contract.status', release.contracts[0].status)
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'row contract-highlights border-bottom' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Periodo'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  release.contracts[0].period ? (0, _helpers.formatDate)(release.contracts[0].period.startDate, 'DD/MM/YYYY') + ' - ' + (0, _helpers.formatDate)(release.contracts[0].period.endDate, 'DD/MM/YYYY') : '-'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Valor y Moneda'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  (0, _helpers.formatAmount)(release.contracts[0].value.amount)
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Fecha de Firma del Contrato'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  (0, _helpers.formatDate)(release.contracts[0].dateSigned, 'DD/MM/YYYY')
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'row contract-highlights border-bottom' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-12' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  '\xBFSE MODIFIC\xD3 EL CONTRATO?'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  'No disponible'
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { role: 'tabpanel', className: 'tab-pane fade', id: 'implementation' },
+            _react2.default.createElement(
+              'div',
+              { className: 'row contract-highlights border-bottom' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Realizaci\xF3n del Pago'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  'No disponible'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Emisi\xF3n del Pago'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  'No disponible'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Ficha de Transacci\xF3n'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  'No disponible'
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'row contract-highlights border-bottom' },
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Monto y Moneda'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  'No disponible'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Identificador de Organizaci\xF3n'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  'No disponible'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-4' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'lbl' },
+                  'Nombre de Organizaci\xF3n'
+                ),
+                _react2.default.createElement(
+                  'h4',
+                  null,
+                  'No disponible'
+                )
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Details;
+}(_react2.default.Component);
+
+exports.default = Details;
+
+},{"../helpers.js":11,"react":294}],7:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _helpers = require('../helpers.js');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var SearchBar = function (_React$Component) {
+  _inherits(SearchBar, _React$Component);
+
+  function SearchBar(props) {
+    _classCallCheck(this, SearchBar);
+
+    var _this = _possibleConstructorReturn(this, (SearchBar.__proto__ || Object.getPrototypeOf(SearchBar)).call(this, props));
+
+    _this.state = {
+      filter: null,
+      value: null,
+      limit: 30
+    };
+    return _this;
+  }
+
+  _createClass(SearchBar, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.ui = {};
+      this.ui.form = $('form#queryForm');
+      this.ui.bullets = this.ui.form.find('div.bullets span');
+      this.ui.input = this.ui.form.find('input#query');
+
+      // Setup calendar
+      this.ui.form.find("span[data-filter='date']").datepicker({
+        clearBtn: true,
+        assumeNearbyYear: true,
+        format: 'mm/dd/yyyy',
+        language: 'es',
+        maxViewMode: 2,
+        multidate: 2,
+        todayHighlight: true
+      }).on('hide', function (e) {
+        e.dates.sort(function (a, b) {
+          return new Date(a).getTime() - new Date(b).getTime();
+        });
+        var lbl = (0, _helpers.formatDate)(e.dates[0], 'MMMM Do YYYY');
+        var val = (0, _helpers.formatDate)(e.dates[0], 'MM-DD-YYYY');
+        if (e.dates.length > 1) {
+          lbl += ' a ' + (0, _helpers.formatDate)(e.dates[1], 'MMMM Do YYYY');
+          val += '|' + (0, _helpers.formatDate)(e.dates[1], 'MM-DD-YYYY');
+        }
+
+        // Update state
+        this.setState({
+          value: val
+        });
+
+        // Update UI
+        this.ui.input.val(lbl);
+        this.ui.input.focus();
+      }.bind(this));
+
+      // Setup slider
+      this.ui.form.find("span[data-filter='amount']").popover({
+        html: true,
+        title: 'Seleccione el rango a utilizar como filtro (MXN)',
+        content: '<b>$0</b><input id="amountSlider" type="text" /><b>$100,000,000</b>',
+        placement: 'bottom',
+        trigger: 'focus'
+      }).on('shown.bs.popover', function () {
+        $("#amountSlider").slider({
+          step: 50000,
+          min: 0,
+          max: 100000000,
+          value: [20000000, 80000000],
+          formatter: function formatter(value) {
+            if (Array.isArray(value)) {
+              var lbl = '$' + value[0].toLocaleString() + ' a ' + '$' + value[1].toLocaleString();
+              return lbl;
+            }
+            return '';
+          }
+        }).on('slide', function (e) {
+          this.setState({
+            value: e.value.join('|')
+          });
+          this.ui.input.val('$' + e.value[0].toLocaleString() + ' a ' + '$' + e.value[1].toLocaleString());
+        }.bind(this));
+      }.bind(this));
+
+      // Update state when filter value changes
+      this.ui.input.on('keyup', function () {
+        this.setState({
+          value: this.ui.input.val()
+        });
+      }.bind(this));
+
+      // Handle filter selection
+      this.ui.bullets.on('click', function (e) {
+        // Toggle active
+        var target = $(e.target);
+        this.ui.bullets.removeClass('active');
+        target.addClass('active');
+
+        // Update state
+        this.setState({
+          filter: target.data('filter')
+        });
+
+        switch (target.data('filter')) {
+          case 'date':
+            target.datepicker('show');
+            break;
+          case 'amount':
+            target.popover('toggle');
+            break;
+        }
+      }.bind(this));
+
+      // Handle form submit
+      this.ui.form.on('submit', function (e) {
+        e.preventDefault();
+        this.props.onSubmit(this.state);
+      }.bind(this));
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'inner-row' },
+        _react2.default.createElement(
+          'div',
+          { className: 'row' },
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-12' },
+            _react2.default.createElement(
+              'h2',
+              null,
+              'Buscador de Contratos'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Encuentra contratos o procedimientos de contrataci\xF3n registrados en Testigo Social 2.0 haciendo uso de los distintos filtros de b\xFAsqueda disponibles.'
+            ),
+            _react2.default.createElement(
+              'form',
+              { id: 'queryForm' },
+              _react2.default.createElement(
+                'div',
+                { className: 'input-group' },
+                _react2.default.createElement('input', { type: 'text', className: 'form-control', id: 'query', name: 'query', placeholder: 'Buscar...' }),
+                _react2.default.createElement(
+                  'span',
+                  { className: 'input-group-btn' },
+                  _react2.default.createElement(
+                    'button',
+                    { className: 'btn btn-primary', type: 'submit' },
+                    'Buscar'
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'bullets' },
+                _react2.default.createElement(
+                  'span',
+                  { className: 'btn-black active', 'data-filter': 'date' },
+                  'Fecha'
+                ),
+                _react2.default.createElement(
+                  'span',
+                  { className: 'btn-black', 'data-filter': 'amount' },
+                  'Monto'
+                ),
+                _react2.default.createElement(
+                  'span',
+                  { className: 'btn-black', 'data-filter': 'buyer' },
+                  'Comprador'
+                ),
+                _react2.default.createElement(
+                  'span',
+                  { className: 'btn-black', 'data-filter': 'provider' },
+                  'Proveedor'
+                ),
+                _react2.default.createElement(
+                  'span',
+                  { className: 'btn-black', 'data-filter': 'procedureType' },
+                  'Tipo de Procedimiento'
+                ),
+                _react2.default.createElement(
+                  'span',
+                  { className: 'btn-black', 'data-filter': 'procedureNumber' },
+                  'No. de Procedimiento'
+                ),
+                _react2.default.createElement(
+                  'span',
+                  { className: 'btn-black', 'data-filter': 'contractNumber' },
+                  'No. de Contrato'
+                )
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return SearchBar;
+}(_react2.default.Component);
+
+exports.default = SearchBar;
+
+},{"../helpers.js":11,"react":294}],8:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _TableItem = require('./TableItem.jsx');
+
+var _TableItem2 = _interopRequireDefault(_TableItem);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var SearchResults = function (_React$Component) {
+  _inherits(SearchResults, _React$Component);
+
+  function SearchResults(props) {
+    _classCallCheck(this, SearchResults);
+
+    var _this = _possibleConstructorReturn(this, (SearchResults.__proto__ || Object.getPrototypeOf(SearchResults)).call(this, props));
+
+    _this.itemSelected = _this.itemSelected.bind(_this);
+    return _this;
+  }
+
+  _createClass(SearchResults, [{
+    key: 'itemSelected',
+    value: function itemSelected(contract) {
+      this.props.onSelection(contract);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var content = _react2.default.createElement(
+        'tr',
+        null,
+        _react2.default.createElement(
+          'td',
+          null,
+          _react2.default.createElement(
+            'h4',
+            null,
+            _react2.default.createElement(
+              'i',
+              null,
+              'Sin resultados que mostrar...'
+            )
+          )
+        )
+      );
+      if (this.props.items.length > 0) {
+        content = this.props.items.map(function (contract) {
+          return _react2.default.createElement(_TableItem2.default, { onClick: _this2.itemSelected, key: contract.releases[0].id, contract: contract });
+        });
+      }
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'inner-row' },
+        _react2.default.createElement(
+          'div',
+          { className: 'row' },
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-12' },
+            _react2.default.createElement(
+              'h2',
+              null,
+              'Resultados de la busqueda'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Estos son los procedimientos de contrataci\xF3n registrados en Testigo Social 2.0 que satisfacen los creiterios de selecci\xF3n proporcionados'
+            ),
+            _react2.default.createElement(
+              'table',
+              { className: 'table table-striped latest-contracts' },
+              _react2.default.createElement(
+                'tbody',
+                null,
+                content
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return SearchResults;
+}(_react2.default.Component);
+
+exports.default = SearchResults;
+
+},{"./TableItem.jsx":10,"react":294}],9:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Description = require('../base/Description.jsx');
+
+var _Description2 = _interopRequireDefault(_Description);
+
+var _TableItem = require('./TableItem.jsx');
+
+var _TableItem2 = _interopRequireDefault(_TableItem);
+
+var _SearchResults = require('./SearchResults.jsx');
+
+var _SearchResults2 = _interopRequireDefault(_SearchResults);
+
+var _SearchBar = require('./SearchBar.jsx');
+
+var _SearchBar2 = _interopRequireDefault(_SearchBar);
+
+var _Details = require('./Details.jsx');
+
+var _Details2 = _interopRequireDefault(_Details);
+
+var _helpers = require('../helpers.js');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Section = function (_React$Component) {
+  _inherits(Section, _React$Component);
+
+  function Section(props) {
+    _classCallCheck(this, Section);
+
+    var _this = _possibleConstructorReturn(this, (Section.__proto__ || Object.getPrototypeOf(Section)).call(this, props));
+
+    _this.runQuery = _this.runQuery.bind(_this);
+    _this.state = {
+      items: [],
+      details: null
+    };
+    return _this;
+  }
+
+  // Submit query and update component state with results
+
+
+  _createClass(Section, [{
+    key: 'runQuery',
+    value: function runQuery(query) {
+      var _this2 = this;
+
+      var url = '/query/gacm';
+      if ((0, _helpers.getParameter)('bucket')) {
+        url = '/query/' + (0, _helpers.getParameter)('bucket');
+      }
+
+      $.ajax({
+        type: "POST",
+        url: url,
+        data: {
+          query: JSON.stringify(query)
+        },
+        success: function success(res) {
+          return _this2.setState({ items: JSON.parse(res) });
+        }
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this3 = this;
+
+      if (!this.state.details) {
+        return _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(_Description2.default, {
+            title: 'Contratos',
+            color: 'blue',
+            content: 'Consulta cada contrato que est\xE1 registrado en Testigo Social 2.0. Podr\xE1s encontrar informaci\xF3n para cada una de las etapas del procedimiento de contrataci\xF3n, desde su planeaci\xF3n hasta su implementaci\xF3n.' }),
+          _react2.default.createElement(_SearchBar2.default, { onSubmit: this.runQuery }),
+          _react2.default.createElement(_SearchResults2.default, { items: this.state.items, onSelection: function onSelection(c) {
+              return _this3.setState({ details: c });
+            } })
+        );
+      } else {
+        return _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(_Description2.default, {
+            title: 'Contratos',
+            color: 'blue',
+            content: 'En esta secci\xF3n podr\xE1s visualizar la informaci\xF3n completa y agregada de un contrato, desde su planeaci\xF3n hasta su implementaci\xF3n. Como base se utiliza el Est\xE1ndar de Datos para las Contrataciones Abiertas.' }),
+          _react2.default.createElement(_Details2.default, { contract: this.state.details, onClose: function onClose() {
+              return _this3.setState({ details: null });
+            } })
+        );
+      }
+    }
+  }]);
+
+  return Section;
+}(_react2.default.Component);
+
+exports.default = Section;
+
+},{"../base/Description.jsx":2,"../helpers.js":11,"./Details.jsx":6,"./SearchBar.jsx":7,"./SearchResults.jsx":8,"./TableItem.jsx":10,"react":294}],10:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _helpers = require('../helpers.js');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var TableItem = function (_React$Component) {
+  _inherits(TableItem, _React$Component);
+
+  function TableItem(props) {
+    _classCallCheck(this, TableItem);
+
+    var _this = _possibleConstructorReturn(this, (TableItem.__proto__ || Object.getPrototypeOf(TableItem)).call(this, props));
+
+    _this.handleClick = _this.handleClick.bind(_this);
+    return _this;
+  }
+
+  _createClass(TableItem, [{
+    key: 'handleClick',
+    value: function handleClick(e) {
+      e.preventDefault();
+      this.props.onClick(this.props.contract);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var release = this.props.contract.releases[0];
+      return _react2.default.createElement(
+        'tr',
+        null,
+        _react2.default.createElement(
+          'td',
+          { width: '50%' },
+          _react2.default.createElement(
+            'p',
+            { className: 'lbl' },
+            release.tender.id
+          ),
+          _react2.default.createElement(
+            'a',
+            { onClick: this.handleClick },
+            release.tender.description
+          )
+        ),
+        _react2.default.createElement(
+          'td',
+          null,
+          _react2.default.createElement(
+            'p',
+            { className: 'lbl' },
+            'Monto'
+          ),
+          _react2.default.createElement(
+            'h4',
+            null,
+            (0, _helpers.formatAmount)(release.tender.value.amount || 0)
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'lbl' },
+            'Proveedor'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            release.awards[0].suppliers[0].name
+          )
+        ),
+        _react2.default.createElement(
+          'td',
+          null,
+          _react2.default.createElement(
+            'p',
+            { className: 'lbl' },
+            'Comprador'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            release.buyer.name
+          )
+        ),
+        _react2.default.createElement(
+          'td',
+          { width: '15%' },
+          _react2.default.createElement(
+            'a',
+            { className: 'btn-black active', onClick: this.handleClick },
+            'Ver Contrato'
+          )
+        )
+      );
+    }
+  }]);
+
+  return TableItem;
+}(_react2.default.Component);
+
+exports.default = TableItem;
+
+},{"../helpers.js":11,"react":294}],11:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.codeList = exports.formatDate = exports.formatAmount = exports.getParameter = undefined;
+
+var _moment = require('moment');
+
+var _moment2 = _interopRequireDefault(_moment);
+
+require('moment/locale/es');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// Helper method to retrieve a GET variable
+function getParameter(name, url) {
+  if (!url) {
+    url = window.location.href;
+  }
+  name = name.replace(/[\[\]]/g, "\\$&");
+  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+      results = regex.exec(url);
+  if (!results) return false;
+  if (!results[2]) return false;
+  return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+// Format a given value to a currency string
+function formatAmount(val) {
+  return '$' + val.toLocaleString(undefined, {
+    useGrouping: true,
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+}
+
+// Pretty print date values
+function formatDate(date, format) {
+  return (0, _moment2.default)(date).format(format);
+}
+
+// Expand code list values based on the official documentation
+// http://standard.open-contracting.org/latest/en/schema/codelists
+function codeList(list, val) {
+  var table = {};
+  switch (list) {
+    case 'tender.status':
+      // http://standard.open-contracting.org/latest/en/schema/codelists/#tender-status
+      table = {
+        'planned': 'Planeada',
+        'active': 'Activa',
+        'cancelled': 'Cancelada',
+        'unsuccessful': 'No exitosa',
+        'complete': 'Cerrada'
+      };
+      break;
+    case 'tender.procurementMethod':
+      // http://standard.open-contracting.org/latest/en/schema/codelists/#method
+      table = {
+        'open': 'Licitación Pública',
+        'selective': 'Invitación a 3 proveedores',
+        'limited': 'Asignación Directa'
+      };
+      break;
+    case 'award.status':
+      // http://standard.open-contracting.org/latest/en/schema/codelists/#award-status
+      table = {
+        'pending': 'Pendiente',
+        'active': 'Activa',
+        'cancelled': 'Cancelada',
+        'unsuccessful': 'No exitosa'
+      };
+      break;
+    case 'contract.status':
+      // http://standard.open-contracting.org/latest/en/schema/codelists/#contract-status
+      table = {
+        'pending': 'Pendiente',
+        'active': 'Activo',
+        'cancelled': 'Cancelado',
+        'terminated': 'Finalizado'
+      };
+      break;
+    default:
+      return 'Invalid list';
+  }
+  return table[val];
+}
+
+exports.getParameter = getParameter;
+exports.formatAmount = formatAmount;
+exports.formatDate = formatDate;
+exports.codeList = codeList;
+
+},{"moment":107,"moment/locale/es":106}],12:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _chart = require('chart.js');
+
+var _chart2 = _interopRequireDefault(_chart);
+
+var _reactRouter = require('react-router');
+
+var _helpers = require('../helpers.js');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Home = function (_React$Component) {
+  _inherits(Home, _React$Component);
+
+  function Home(props) {
+    _classCallCheck(this, Home);
+
+    return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
+  }
+
+  _createClass(Home, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var url = '/stats/gacm';
+      var data = {};
+      var charts = {};
+      var ui = {
+        totalContracts: $('span.totalContracts'),
+        totalBudget: $('span#totalBudget'),
+        totalAward: $('span#totalAward'),
+        totalAmount: $('span#totalAmount'),
+        firstDate: $('span#firstDate'),
+        lastDate: $('span#lastDate'),
+        description: $('span#orgDescription')
+      };
+
+      // Random hero photo
+      var img = "url('images/hero_photo_" + (Math.floor(Math.random() * 4) + 1) + ".png')";
+      $('#hero > div.photo').css('background-image', img);
+
+      // Slider
+      $('.carousel').carousel({
+        interval: 8000,
+        keyboard: false,
+        pause: "hover"
+      });
+
+      // Dynamically set bucket used, default to 'gacm'
+      if ((0, _helpers.getParameter)('bucket')) {
+        url = '/stats/' + (0, _helpers.getParameter)('bucket');
+      }
+
+      // Load stats
+      $.ajax({
+        type: "GET",
+        url: url,
+        success: function success(res) {
+          data = JSON.parse(res);
+        }
+      }).done(function () {
+        // Adjust labels
+        ui.firstDate.text((0, _helpers.formatDate)(data.firstDate, 'LL'));
+        ui.lastDate.text((0, _helpers.formatDate)(data.lastDate, 'LL'));
+        ui.description.text(data.description);
+        ui.totalContracts.text(data.contracts.total);
+        ui.totalBudget.text((data.contracts.budget / 1000000).toLocaleString(undefined, {
+          minimumFractionDigits: 1,
+          maximumFractionDigits: 1
+        }));
+        ui.totalAward.text((data.contracts.awarded / 1000000).toLocaleString(undefined, {
+          minimumFractionDigits: 1,
+          maximumFractionDigits: 1
+        }));
+        ui.totalAmount.text(data.contracts.budget.toLocaleString(undefined, {
+          minimumFractionDigits: 1,
+          maximumFractionDigits: 1
+        }));
+
+        // Prepare chart data
+        var directP = (data.method['limited'].budget * 100 / data.contracts.budget).toFixed(2);
+        var limitedP = (data.method['selective'].budget * 100 / data.contracts.budget).toFixed(2);
+        var publicP = (data.method['open'].budget * 100 / data.contracts.budget).toFixed(2);
+        var charts = {
+          limited: {
+            c: false,
+            data: {
+              labels: ['Adjudicación Directa (%)', 'Total Contratado (%)'],
+              datasets: [{
+                data: [directP, (100 - directP).toFixed(2)],
+                backgroundColor: ["#CCB3FF", "#EEEEEE"]
+              }]
+            }
+          },
+          selective: {
+            c: false,
+            data: {
+              labels: ['Adjudicación Directa (%)', 'Invitación a cuando menos 3 personas (%)', 'Total Contratado (%)'],
+              datasets: [{
+                data: [directP, limitedP, (100 - (Number(directP) + Number(limitedP))).toFixed(2)],
+                backgroundColor: ["#CCB3FF", "#FF6384", "#EEEEEE"]
+              }]
+            }
+          },
+          open: {
+            c: false,
+            data: {
+              labels: ['Adjudicación Directa (%)', 'Invitación a cuando menos 3 personas (%)', 'Licitación Pública (%)'],
+              datasets: [{
+                data: [directP, limitedP, publicP],
+                backgroundColor: ["#CCB3FF", "#FF6384", "#7DE7CF"]
+              }]
+            }
+          }
+        };
+
+        // Configure data slider
+        var slides = $('#content-slides');
+        slides.on('slid.bs.carousel', function () {
+          var active = slides.find('div.active');
+          var method = active.data('section');
+          if (method) {
+            active.find('span.contracts').text(data.method[method].total);
+            active.find('span.amount').text(data.method[method].budget.toLocaleString({
+              useGrouping: true
+            }));
+
+            if (!charts[method].c) {
+              charts[method].c = new _chart2.default(active.find('canvas'), {
+                type: "pie",
+                data: charts[method].data,
+                options: {
+                  responsive: true,
+                  responsiveAnimationDuration: 500,
+                  padding: 10
+                }
+              });
+            }
+          }
+        });
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'div',
+          { id: 'hero', className: 'row' },
+          _react2.default.createElement(
+            'div',
+            { className: 'photo col-md-12' },
+            _react2.default.createElement('div', { className: 'logo' }),
+            _react2.default.createElement(
+              'h2',
+              null,
+              'El dinero p\xFAblico tambi\xE9n es tu dinero'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { id: 'facts', className: 'row inner-row' },
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-4' },
+            _react2.default.createElement(
+              'p',
+              { className: 'txt-centered' },
+              'N\xFAmero de ',
+              _react2.default.createElement(
+                'span',
+                { className: 'txt-bold' },
+                'procedimientos de contrataci\xF3n'
+              ),
+              ' registrados'
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'highlight txt-centered txt-mono' },
+              _react2.default.createElement(
+                'span',
+                { className: 'counter totalContracts' },
+                '0'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-4' },
+            _react2.default.createElement(
+              'p',
+              { className: 'txt-centered' },
+              _react2.default.createElement(
+                'span',
+                { className: 'txt-bold' },
+                'Presupuesto asignado'
+              ),
+              ' de las contrataciones registradas'
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'highlight txt-centered txt-mono' },
+              '$',
+              _react2.default.createElement(
+                'span',
+                { id: 'totalBudget', className: 'counter' },
+                '0'
+              ),
+              'M'
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-4' },
+            _react2.default.createElement(
+              'p',
+              { className: 'txt-centered' },
+              'Monto total ',
+              _react2.default.createElement(
+                'span',
+                { className: 'txt-bold' },
+                'contratado'
+              ),
+              'a trav\xE9s de los procedimientos registrados'
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'highlight txt-centered txt-mono' },
+              '$',
+              _react2.default.createElement(
+                'span',
+                { id: 'totalAward', className: 'counter' },
+                '0'
+              ),
+              'M'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { id: 'highlights', className: 'row inner-row' },
+          _react2.default.createElement(
+            'div',
+            { id: 'content-slides', className: 'col-md-12 carousel slide', 'data-ride': 'carousel' },
+            _react2.default.createElement(
+              'ol',
+              { className: 'carousel-indicators' },
+              _react2.default.createElement('li', { 'data-target': '#content-slides', 'data-slide-to': '0', className: 'active' }),
+              _react2.default.createElement('li', { 'data-target': '#content-slides', 'data-slide-to': '1' }),
+              _react2.default.createElement('li', { 'data-target': '#content-slides', 'data-slide-to': '2' }),
+              _react2.default.createElement('li', { 'data-target': '#content-slides', 'data-slide-to': '3' })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'carousel-inner', role: 'listbox' },
+              _react2.default.createElement(
+                'div',
+                { className: 'item active' },
+                _react2.default.createElement(
+                  'p',
+                  { className: 'info' },
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'bg-green' },
+                    'Entre el ',
+                    _react2.default.createElement('span', { id: 'firstDate' }),
+                    ' y el ',
+                    _react2.default.createElement('span', { id: 'lastDate' }),
+                    ', se han adjudicado'
+                  )
+                ),
+                _react2.default.createElement(
+                  'h1',
+                  { className: 'txt-mono' },
+                  '$',
+                  _react2.default.createElement(
+                    'span',
+                    { id: 'totalAmount', className: 'counter' },
+                    '0'
+                  ),
+                  ' MXN'
+                ),
+                _react2.default.createElement(
+                  'p',
+                  { className: 'info' },
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'bg-green' },
+                    'para ',
+                    _react2.default.createElement(
+                      'strong',
+                      null,
+                      _react2.default.createElement('span', { id: 'orgDescription' })
+                    ),
+                    ', mediante ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'counter totalContracts' },
+                      '0'
+                    ),
+                    ' contratos.'
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'item', 'data-section': 'limited' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'chart' },
+                  _react2.default.createElement('canvas', { className: 'dataChart', width: '460', height: '320' })
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'info' },
+                  _react2.default.createElement(
+                    'h2',
+                    null,
+                    'Adjudicaci\xF3n Directa'
+                  ),
+                  _react2.default.createElement(
+                    'h3',
+                    null,
+                    '$ ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'amount' },
+                      '0'
+                    ),
+                    ' MXN'
+                  ),
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    'Han sido adjudicados directamente mediante ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'contracts' },
+                      '0'
+                    ),
+                    ' contratos.'
+                  ),
+                  _react2.default.createElement(
+                    'p',
+                    { className: 'details' },
+                    'En una adjudicaci\xF3n directa se entrega un contrato a una persona o empresa sin realizar un concurso p\xFAblico y abierto.'
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'item', 'data-section': 'selective' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'chart' },
+                  _react2.default.createElement('canvas', { className: 'dataChart', width: '460', height: '320' })
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'info' },
+                  _react2.default.createElement(
+                    'h2',
+                    null,
+                    'Invitaci\xF3n a cuado menos 3 personas'
+                  ),
+                  _react2.default.createElement(
+                    'h3',
+                    null,
+                    '$ ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'amount' },
+                      '0'
+                    ),
+                    ' MXN'
+                  ),
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    'Han sido adjudicados por invitaci\xF3n a cuando menos tres personas, mediante ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'contracts' },
+                      '0'
+                    ),
+                    ' contratos.'
+                  ),
+                  _react2.default.createElement(
+                    'p',
+                    { className: 'details' },
+                    'En una invitaci\xF3n a cuando menos tres personas se entrega un contrato mediante un concurso en el que solo participan un n\xFAmero restringido de personas o empresas, seleccionadas por la dependencia gubernamental que realiza la contrataci\xF3n.'
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'item', 'data-section': 'open' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'chart' },
+                  _react2.default.createElement('canvas', { className: 'dataChart', width: '460', height: '320' })
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'info' },
+                  _react2.default.createElement(
+                    'h2',
+                    null,
+                    'Licitaci\xF3n P\xFAblica'
+                  ),
+                  _react2.default.createElement(
+                    'h3',
+                    null,
+                    '$ ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'amount' },
+                      '0'
+                    ),
+                    ' MXN'
+                  ),
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    'Han sido adjudicados por licitaci\xF3n p\xFAblica, mediante ',
+                    _react2.default.createElement(
+                      'span',
+                      { className: 'contracts' },
+                      '0'
+                    ),
+                    ' contratos.'
+                  ),
+                  _react2.default.createElement(
+                    'p',
+                    { className: 'details' },
+                    'En una licitaci\xF3n p\xFAblica se entrega un contrato mediante un concurso que est\xE1 abierto a cualquier persona o empresa. En M\xE9xico existen licitaciones p\xFAblicas nacionales, internacionales bajo tratados de libre comercio e internacionales abiertas.'
+                  )
+                )
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { id: 'video', className: 'row inner-row' },
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-12' },
+            _react2.default.createElement('div', { className: 'holder' })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-4 item' },
+            _react2.default.createElement(
+              _reactRouter.Link,
+              { to: '/contracts' },
+              _react2.default.createElement(
+                'span',
+                { className: 'btn-black txt-upper' },
+                'Contratos'
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'Consulta la informaci\xF3n alrededor de una ',
+                _react2.default.createElement(
+                  'strong',
+                  null,
+                  'contrataci\xF3n p\xFAblica'
+                ),
+                ', desde su planeaci\xF3n hasta su ejecuci\xF3n y pago'
+              ),
+              _react2.default.createElement('span', { className: 'icon contracts' })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-4 item' },
+            _react2.default.createElement(
+              _reactRouter.Link,
+              { to: '/indicators' },
+              _react2.default.createElement(
+                'span',
+                { className: 'btn-black txt-upper' },
+                'Indicadores'
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'Revisa ',
+                _react2.default.createElement(
+                  'strong',
+                  null,
+                  'estad\xEDsticas'
+                ),
+                ' sobre el sistema de contrataciones de M\xE9xico y analiza c\xF3mo est\xE1 funcionando'
+              ),
+              _react2.default.createElement('span', { className: 'icon markers' })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-4 item' },
+            _react2.default.createElement(
+              _reactRouter.Link,
+              { to: '/register' },
+              _react2.default.createElement(
+                'span',
+                { className: 'btn-black txt-upper' },
+                'Notificaciones'
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'Recibe ',
+                _react2.default.createElement(
+                  'strong',
+                  null,
+                  'alertas e informaci\xF3n'
+                ),
+                ' oportuna sobre lo que ocurre en los procedimientos de contrataci\xF3n que te interesan'
+              ),
+              _react2.default.createElement('span', { className: 'icon notifications' })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-12' },
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('br', null),
+            _react2.default.createElement(
+              'span',
+              { className: 'btn-black' },
+              'Comienza a monitorear c\xF3mo se gasta tu dinero con TS 2.0'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'row info bg-blue' },
+          _react2.default.createElement(
+            'div',
+            { className: 'inner-row' },
+            _react2.default.createElement(
+              'p',
+              null,
+              'La apertura y la participaci\xF3n de la ciudadan\xEDa en las compras p\xFAblicas se traduce en mejores bienes y servicios p\xFAblicos para las ',
+              _react2.default.createElement(
+                'strong',
+                null,
+                'comunidades'
+              ),
+              ', m\xE1s oportunidades de negocio para emprendedores y ',
+              _react2.default.createElement(
+                'strong',
+                null,
+                'empresas'
+              ),
+              ' y una mayor rendici\xF3n de cuentas de los ',
+              _react2.default.createElement(
+                'strong',
+                null,
+                'gobiernos.'
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Home;
+}(_react2.default.Component);
+
+exports.default = Home;
+
+},{"../helpers.js":11,"chart.js":19,"react":294,"react-router":263}],13:[function(require,module,exports){
+'use strict';
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _reactRouter = require('react-router');
+
+var _Main = require('./Main.jsx');
+
+var _Main2 = _interopRequireDefault(_Main);
+
+var _Section = require('./home/Section.jsx');
+
+var _Section2 = _interopRequireDefault(_Section);
+
+var _Section3 = require('./contracts/Section.jsx');
+
+var _Section4 = _interopRequireDefault(_Section3);
+
+var _Section5 = require('./indicators/Section.jsx');
+
+var _Section6 = _interopRequireDefault(_Section5);
+
+var _Section7 = require('./register/Section.jsx');
+
+var _Section8 = _interopRequireDefault(_Section7);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_reactDom2.default.render(_react2.default.createElement(
+  _reactRouter.Router,
+  { history: _reactRouter.browserHistory },
+  _react2.default.createElement(
+    _reactRouter.Route,
+    { component: _Main2.default },
+    _react2.default.createElement(_reactRouter.Route, { path: '/', component: _Section2.default }),
+    _react2.default.createElement(_reactRouter.Route, { path: '/contracts', component: _Section4.default }),
+    _react2.default.createElement(_reactRouter.Route, { path: '/indicators', component: _Section6.default }),
+    _react2.default.createElement(_reactRouter.Route, { path: '/register', component: _Section8.default })
+  )
+), document.getElementById('root'));
+
+// Import top-level components
+
+},{"./Main.jsx":1,"./contracts/Section.jsx":9,"./home/Section.jsx":12,"./indicators/Section.jsx":16,"./register/Section.jsx":18,"react":294,"react-dom":110,"react-router":263}],14:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _chart = require('chart.js');
+
+var _chart2 = _interopRequireDefault(_chart);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ChartWidget = function (_React$Component) {
+  _inherits(ChartWidget, _React$Component);
+
+  function ChartWidget(props) {
+    _classCallCheck(this, ChartWidget);
+
+    var _this = _possibleConstructorReturn(this, (ChartWidget.__proto__ || Object.getPrototypeOf(ChartWidget)).call(this, props));
+
+    _this.chart = false;
+    return _this;
+  }
+
+  _createClass(ChartWidget, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      if (!this.chart) {
+        this.chart = new _chart2.default(document.getElementById(this.props.id), {
+          type: "pie",
+          options: {
+            responsive: true,
+            responsiveAnimationDuration: 500,
+            padding: 10
+          }
+        });
+        this.forceUpdate();
+      }
+    }
+  }, {
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.chart.destroy();
+      this.chart = null;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      // Update existing chart when there's data available
+      if (this.chart && Object.keys(this.props.data).length > 0) {
+        var newData = this.props.reducer(this.props.data);
+        this.chart.data.datasets = newData.datasets;
+        this.chart.data.labels = newData.labels;
+        this.chart.update();
+      }
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'chart-widget' },
+        this.props.title && _react2.default.createElement(
+          'h2',
+          { className: 'block-title', onClick: function onClick() {
+              return _this2.props.onSelection(_this2.props.reducer);
+            } },
+          this.props.title
+        ),
+        this.props.description && _react2.default.createElement(
+          'div',
+          { className: 'bg-gray' },
+          _react2.default.createElement(
+            'p',
+            null,
+            this.props.description
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'chart' },
+          _react2.default.createElement('canvas', { id: this.props.id,
+            className: 'dataChart',
+            height: this.props.height,
+            width: this.props.width })
+        )
+      );
+    }
+  }]);
+
+  return ChartWidget;
+}(_react2.default.Component);
+
+exports.default = ChartWidget;
+
+},{"chart.js":19,"react":294}],15:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ChartWidget = require('./ChartWidget.jsx');
+
+var _ChartWidget2 = _interopRequireDefault(_ChartWidget);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Details = function (_React$Component) {
+  _inherits(Details, _React$Component);
+
+  function Details(props) {
+    _classCallCheck(this, Details);
+
+    var _this = _possibleConstructorReturn(this, (Details.__proto__ || Object.getPrototypeOf(Details)).call(this, props));
+
+    _this.close = _this.close.bind(_this);
+    _this.applyFilters = _this.applyFilters.bind(_this);
+    return _this;
+  }
+
+  _createClass(Details, [{
+    key: 'close',
+    value: function close(e) {
+      e.preventDefault();
+      this.props.onClose();
+    }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      // Set form reference and populate filter values
+      this.form = $('form#filterForm');
+      for (var k in this.props.filters) {
+        var selector = 'input[type="radio"][name="' + k + '"][value="' + this.props.filters[k] + '"]';
+        this.form.find(selector).prop("checked", true);
+      }
+
+      // Setup slider
+      var amountSlider = $("#amountSlider");
+      amountSlider.slider({
+        step: 50000,
+        min: 0,
+        max: 500000000,
+        value: this.props.filters.amount,
+        formatter: function formatter(value) {
+          if (Array.isArray(value)) {
+            var lbl = '$' + value[0].toLocaleString() + ' a ' + '$' + value[1].toLocaleString();
+            return lbl;
+          }
+          return '';
+        }
+      });
+    }
+  }, {
+    key: 'applyFilters',
+    value: function applyFilters() {
+      var data = {};
+      this.form.serializeArray().forEach(function (el) {
+        data[el.name] = el.value;
+      });
+      data.amount = data.amount.split(',');
+      data.amount[0] = parseInt(data.amount[0]);
+      data.amount[1] = parseInt(data.amount[1]);
+      this.props.onSubmit(data);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'row chart-main' },
+        _react2.default.createElement(
+          'div',
+          { className: 'col-md-4 sidebar' },
+          _react2.default.createElement(
+            'form',
+            { id: 'filterForm' },
+            _react2.default.createElement(
+              'h4',
+              null,
+              'Filtros'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'Selecciona los criterios que te sean m\xE1s relevantes para ajustar el indicador.'
+            ),
+            _react2.default.createElement('hr', null),
+            _react2.default.createElement(
+              'h4',
+              null,
+              'Dependencias'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'radio' },
+              _react2.default.createElement(
+                'label',
+                null,
+                _react2.default.createElement('input', { type: 'radio', name: 'bucket', value: 'gacm' }),
+                'Grupo Aeroportuario'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'radio' },
+              _react2.default.createElement(
+                'label',
+                null,
+                _react2.default.createElement('input', { type: 'radio', name: 'bucket', value: 'cdmx' }),
+                'Ciudad de M\xE9xico'
+              )
+            ),
+            _react2.default.createElement('hr', null),
+            _react2.default.createElement(
+              'h4',
+              null,
+              'Etapa del Procedimiento'
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'radio' },
+              _react2.default.createElement(
+                'label',
+                null,
+                _react2.default.createElement('input', { type: 'radio', name: 'state', value: 'planning' }),
+                'Planeaci\xF3n'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'radio' },
+              _react2.default.createElement(
+                'label',
+                null,
+                _react2.default.createElement('input', { type: 'radio', name: 'state', value: 'tender' }),
+                'Licitaci\xF3n'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'radio' },
+              _react2.default.createElement(
+                'label',
+                null,
+                _react2.default.createElement('input', { type: 'radio', name: 'state', value: 'award' }),
+                'Adjudicaci\xF3n'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'radio' },
+              _react2.default.createElement(
+                'label',
+                null,
+                _react2.default.createElement('input', { type: 'radio', name: 'state', value: 'contract' }),
+                'Contrataci\xF3n'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'radio' },
+              _react2.default.createElement(
+                'label',
+                null,
+                _react2.default.createElement('input', { type: 'radio', name: 'state', value: 'implementation' }),
+                'Implementaci\xF3n'
+              )
+            ),
+            _react2.default.createElement('hr', null),
+            _react2.default.createElement(
+              'h4',
+              null,
+              'Monto'
+            ),
+            _react2.default.createElement(
+              'b',
+              null,
+              '$0'
+            ),
+            _react2.default.createElement('input', { id: 'amountSlider', name: 'amount', type: 'text' }),
+            _react2.default.createElement(
+              'b',
+              null,
+              '$500,000,000'
+            ),
+            _react2.default.createElement('hr', null),
+            _react2.default.createElement(
+              'span',
+              { className: 'btn-black active', onClick: this.applyFilters },
+              'Aplicar Filtros'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'col-md-8 content' },
+          _react2.default.createElement(
+            'h2',
+            null,
+            _react2.default.createElement(
+              'button',
+              { onClick: this.close, type: 'button', 'class': 'close', 'data-dismiss': 'modal', 'aria-label': 'Close' },
+              _react2.default.createElement(
+                'span',
+                { 'aria-hidden': 'true' },
+                '\xD7'
+              )
+            ),
+            '  Detalles del Indicador'
+          ),
+          _react2.default.createElement(_ChartWidget2.default, {
+            id: 'indicatorDetails',
+            data: this.props.data,
+            reducer: this.props.reducer,
+            width: '680',
+            height: '440' })
+        )
+      );
+    }
+  }]);
+
+  return Details;
+}(_react2.default.Component);
+
+exports.default = Details;
+
+},{"./ChartWidget.jsx":14,"react":294}],16:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Description = require('../base/Description.jsx');
+
+var _Description2 = _interopRequireDefault(_Description);
+
+var _ChartWidget = require('./ChartWidget.jsx');
+
+var _ChartWidget2 = _interopRequireDefault(_ChartWidget);
+
+var _Details = require('./Details.jsx');
+
+var _Details2 = _interopRequireDefault(_Details);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function procedureTypeData(data) {
+  // Calculate chart total and %
+  var total = data.limited.count + data.open.count + data.selective.count;
+  var directP = (data.limited.count * 100 / total).toFixed(2);
+  var limitedP = (data.selective.count * 100 / total).toFixed(2);
+  var publicP = (data.open.count * 100 / total).toFixed(2);
+
+  // Assamble chart data
+  var chartData = {
+    labels: ['Adjudicación Directa (%)', 'Invitación a cuando menos 3 personas (%)', 'Licitación Pública (%)'],
+    datasets: [{
+      data: [directP, limitedP, publicP],
+      backgroundColor: ["#CCB3FF", "#FF6384", "#EEEEEE"]
+    }]
+  };
+
+  return chartData;
+}
+
+function publishYearData(data) {
+  var i = 0;
+  var chartData = {
+    labels: [],
+    datasets: [{
+      data: [],
+      backgroundColor: []
+    }]
+  };
+  var colors = ["#CCB3FF", "#FF6384", "#EEEEEE"];
+  for (var y in data.years) {
+    chartData.labels.push(y);
+    chartData.datasets[0].data.push(data.years[y].count);
+    chartData.datasets[0].backgroundColor.push(colors[i]);
+    i++;
+  }
+
+  return chartData;
+}
+
+var Section = function (_React$Component) {
+  _inherits(Section, _React$Component);
+
+  function Section(props) {
+    _classCallCheck(this, Section);
+
+    var _this = _possibleConstructorReturn(this, (Section.__proto__ || Object.getPrototypeOf(Section)).call(this, props));
+
+    _this.showDetails = _this.showDetails.bind(_this);
+    _this.closeDetails = _this.closeDetails.bind(_this);
+    _this.applyFilters = _this.applyFilters.bind(_this);
+    _this.state = {
+      selected: null,
+      data: {},
+      filters: {
+        bucket: "gacm",
+        state: "planning",
+        amount: [20000000, 80000000]
+      }
+    };
+    return _this;
+  }
+
+  _createClass(Section, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.applyFilters(this.state.filters);
+    }
+  }, {
+    key: 'applyFilters',
+    value: function applyFilters(filters) {
+      this.runQuery(filters);
+    }
+  }, {
+    key: 'showDetails',
+    value: function showDetails(reducer) {
+      var newState = Object.assign({}, this.state, { selected: reducer });
+      this.setState(newState);
+    }
+  }, {
+    key: 'closeDetails',
+    value: function closeDetails() {
+      var newState = Object.assign({}, this.state, { selected: null });
+      this.setState(newState);
+    }
+  }, {
+    key: 'runQuery',
+    value: function runQuery(filters) {
+      var _this2 = this;
+
+      $.ajax({
+        type: "POST",
+        url: "/indicators",
+        data: {
+          query: JSON.stringify(filters)
+        },
+        success: function success(res) {
+          var newState = Object.assign({}, _this2.state);
+          newState.filters = filters;
+          newState.data = JSON.parse(res);
+          _this2.setState(newState);
+        }
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var content = null;
+      if (this.state.selected) {
+        content = _react2.default.createElement(_Details2.default, {
+          filters: this.state.filters,
+          data: this.state.data,
+          reducer: this.state.selected,
+          onSubmit: this.applyFilters,
+          onClose: this.closeDetails });
+      } else {
+        content = _react2.default.createElement(
+          'div',
+          { className: 'row' },
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-6' },
+            _react2.default.createElement(_ChartWidget2.default, {
+              id: 'procedureType',
+              title: 'Tipo de Procedimiento',
+              data: this.state.data,
+              reducer: procedureTypeData,
+              onSelection: this.showDetails,
+              width: '500',
+              height: '340',
+              description: 'La gr\xE1fica muestra la relaci\xF3n de contratos que se adjudicar\xF3n de acuerdo a los distintos mecanismos establecidos.' })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-6' },
+            _react2.default.createElement(_ChartWidget2.default, {
+              id: 'publishYear',
+              title: 'A\xF1o de Publicaci\xF3n',
+              data: this.state.data,
+              reducer: publishYearData,
+              onSelection: this.showDetails,
+              width: '500',
+              height: '340',
+              description: 'La gr\xE1fica muestra la relaci\xF3n de los contratos registrados de acuerdo a su a\xF1o de publicaci\xF3n.' })
+          )
+        );
+      }
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(_Description2.default, {
+          title: 'Indicadores',
+          color: 'green',
+          content: 'Testigo Social 2.0 te puede hacer llegar datos e informaci\xF3n espec\xEDfica sobre procedimientos contrataci\xF3n p\xFAblica que est\xE1n en marcha. Desde un aviso de inicio de un nuevo procedimiento hasta la liga para consultar un contrato. Completa la informaci\xF3n correspondiente y comienza a recibir notificaciones.' }),
+        _react2.default.createElement(
+          'div',
+          { className: 'inner-row' },
+          content,
+          _react2.default.createElement('hr', null)
+        )
+      );
+    }
+  }]);
+
+  return Section;
+}(_react2.default.Component);
+
+exports.default = Section;
+
+},{"../base/Description.jsx":2,"./ChartWidget.jsx":14,"./Details.jsx":15,"react":294}],17:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Form = function (_React$Component) {
+  _inherits(Form, _React$Component);
+
+  function Form(props) {
+    _classCallCheck(this, Form);
+
+    return _possibleConstructorReturn(this, (Form.__proto__ || Object.getPrototypeOf(Form)).call(this, props));
+  }
+
+  _createClass(Form, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var agencies = $('div.agency-grid div.item');
+      var selectedAgencies = $('div.agency-grid input#selectedAgencies');
+      agencies.click(function () {
+        // Toggle state
+        var a = $(this);
+        var lbl = a.find('span.label');
+        a.toggleClass('selected');
+        if (lbl.text().toLowerCase() == 'seguir') {
+          lbl.text('siguiendo');
+        } else {
+          lbl.text('seguir');
+        }
+
+        // Adjust result
+        var res = [];
+        agencies.each(function (i, v) {
+          if ($(v).hasClass('selected')) {
+            res.push($(v).data('value'));
+          }
+        });
+        selectedAgencies.val(JSON.stringify(res));
+      });
+
+      var projects = $('div.project-grid div.item');
+      var selectedProjects = $('div.project-grid input#selectedProjects');
+      projects.click(function () {
+        // Toggle state
+        var p = $(this);
+        var lbl = p.find('span.label');
+        p.toggleClass('selected');
+        if (lbl.text().toLowerCase() == 'seguir') {
+          lbl.text('siguiendo');
+        } else {
+          lbl.text('seguir');
+        }
+
+        // Adjust result
+        var res = [];
+        projects.each(function (i, v) {
+          if ($(v).hasClass('selected')) {
+            res.push($(v).data('value'));
+          }
+        });
+        selectedProjects.val(JSON.stringify(res));
+      });
+
+      var form = $('form#registerForm');
+      form.pixativeFormValidator({
+        msgHolder: 'title',
+        errorMessages: {
+          required: 'El campo es requerido',
+          minlength: 'El valor proporcionado debe ser de al menos %s caracteres',
+          maxlength: 'El valor proporcionado debe ser de máximo %s caracteres',
+          email: 'El valor porporcionado no parece ser una dirección de correo valida',
+          integer: 'El valor proporcionado debe ser un número',
+          phone: 'El valor porporcionado no parece ser un número telefonico valido'
+        },
+        onError: function onError() {
+          $('.validator-error').tooltip('destroy');
+          $('.validator-error').tooltip();
+        },
+        onSuccess: function onSuccess() {
+          // Prepare data
+          var data = {};
+          form.serializeArray().forEach(function (el) {
+            if (el.value == 'on') {
+              el.value = true;
+            }
+            if (el.value == 'off') {
+              el.value = false;
+            }
+            data[el.name] = el.value;
+          });
+          data.selectedAgencies = JSON.parse(data.selectedAgencies);
+          data.selectedProjects = JSON.parse(data.selectedProjects);
+          _this2.props.onSubmit(data);
+        }
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { id: 'setup' },
+        _react2.default.createElement(
+          'form',
+          { id: 'registerForm' },
+          _react2.default.createElement(
+            'div',
+            { className: 'row' },
+            _react2.default.createElement(
+              'div',
+              { className: 'col-md-3' },
+              _react2.default.createElement(
+                'h2',
+                { className: 'number-title' },
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  '1'
+                ),
+                'Registro'
+              ),
+              _react2.default.createElement(
+                'p',
+                { className: 'txt-italic' },
+                'Completa la siguiente informaci\xF3n'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'col-md-9' },
+              _react2.default.createElement(
+                'table',
+                { className: 'table table-striped green' },
+                _react2.default.createElement(
+                  'tbody',
+                  null,
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'txt-upper col-md-2' },
+                      _react2.default.createElement(
+                        'label',
+                        null,
+                        'Correo Electr\xF3nico'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'col-md-4' },
+                      _react2.default.createElement('input', { type: 'email',
+                        className: 'form-control',
+                        id: 'user',
+                        name: 'user',
+                        placeholder: 'Email',
+                        'data-validator-required': 'true',
+                        'data-validator-email': 'true' })
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'txt-italic' },
+                      'La cuenta de correo electr\xF3nico registrada ser\xE1 tu nombre de usuario'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'txt-upper col-md-2' },
+                      _react2.default.createElement(
+                        'label',
+                        null,
+                        'Contrase\xF1a'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'col-md-4' },
+                      _react2.default.createElement('input', { type: 'password',
+                        className: 'form-control',
+                        id: 'password',
+                        name: 'password',
+                        placeholder: 'Contrase\xF1a',
+                        'data-validator-required': 'true',
+                        'data-validator-minlength': '6' })
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'txt-italic' },
+                      'La contrase\xF1a deber\xE1 tener una extensi\xF3n de al menos 6 caracteres y contener al menos un n\xFAmero'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'txt-upper col-md-2' },
+                      _react2.default.createElement(
+                        'label',
+                        null,
+                        'Tipo de Usuario'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'col-md-4' },
+                      _react2.default.createElement(
+                        'select',
+                        { id: 'userType', name: 'userType', className: 'form-control', 'data-validator-required': 'true' },
+                        _react2.default.createElement(
+                          'option',
+                          { value: '-', disabled: 'disaled' },
+                          'Selecciona una de las siguientes opciones'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: 'public' },
+                          'Ciudadano'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: 'legal' },
+                          'Legislador'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: 'gov' },
+                          'Funcionario P\xFAblico'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: 'media' },
+                          'Periodista'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: 'startup' },
+                          'Emprendedor'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: 'business' },
+                          'Empresario'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: 'other' },
+                          'Otro'
+                        )
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'txt-italic' },
+                      'Selecciona una de las siguientes opciones'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'txt-upper col-md-2' },
+                      _react2.default.createElement(
+                        'label',
+                        null,
+                        'Edad'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'col-md-4' },
+                      _react2.default.createElement(
+                        'select',
+                        { id: 'age', name: 'age', className: 'form-control', 'data-validator-required': 'true' },
+                        _react2.default.createElement(
+                          'option',
+                          { value: '15' },
+                          '15'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '16' },
+                          '16'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '17' },
+                          '17'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '18' },
+                          '18'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '19' },
+                          '19'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '20' },
+                          '20'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '21' },
+                          '21'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '22' },
+                          '22'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '23' },
+                          '23'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '24' },
+                          '24'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '25' },
+                          '25'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '26' },
+                          '26'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '27' },
+                          '27'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '28' },
+                          '28'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '29' },
+                          '29'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '30' },
+                          '30'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '31' },
+                          '31'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '32' },
+                          '32'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '33' },
+                          '33'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '34' },
+                          '34'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '35' },
+                          '35'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '36' },
+                          '36'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '37' },
+                          '37'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '38' },
+                          '38'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '39' },
+                          '39'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '40' },
+                          '40'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '41' },
+                          '41'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '42' },
+                          '42'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '43' },
+                          '43'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '44' },
+                          '44'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '45' },
+                          '45'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '46' },
+                          '46'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '47' },
+                          '47'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '48' },
+                          '48'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '49' },
+                          '49'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '50' },
+                          '50'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '51' },
+                          '51'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '52' },
+                          '52'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '53' },
+                          '53'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '54' },
+                          '54'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '55' },
+                          '55'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '56' },
+                          '56'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '57' },
+                          '57'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '58' },
+                          '58'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '59' },
+                          '59'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '60' },
+                          '60'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '61' },
+                          '61'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '62' },
+                          '62'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '63' },
+                          '63'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '64' },
+                          '64'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '65' },
+                          '65'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '66' },
+                          '66'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '67' },
+                          '67'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '68' },
+                          '68'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '69' },
+                          '69'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '70' },
+                          '70'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '71' },
+                          '71'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '72' },
+                          '72'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '73' },
+                          '73'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '74' },
+                          '74'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '75' },
+                          '75'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '76' },
+                          '76'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '77' },
+                          '77'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '78' },
+                          '78'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '79' },
+                          '79'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '80' },
+                          '80'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '81' },
+                          '81'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '82' },
+                          '82'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '83' },
+                          '83'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '84' },
+                          '84'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '85' },
+                          '85'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '86' },
+                          '86'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '87' },
+                          '87'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '88' },
+                          '88'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '89' },
+                          '89'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '90' },
+                          '90'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '91' },
+                          '91'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '92' },
+                          '92'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '93' },
+                          '93'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '94' },
+                          '94'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '95' },
+                          '95'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '96' },
+                          '96'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '97' },
+                          '97'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '98' },
+                          '98'
+                        ),
+                        _react2.default.createElement(
+                          'option',
+                          { value: '99' },
+                          '99'
+                        )
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'txt-italic' },
+                      'Selecciona tu edad (solo aplica para periodista, emprendedor, legislador, funcionario p\xFAblico, ciudadano)'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'txt-upper col-md-2' },
+                      _react2.default.createElement(
+                        'label',
+                        null,
+                        'C\xF3digo Postal'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'col-md-4' },
+                      _react2.default.createElement('input', { type: 'text',
+                        className: 'form-control',
+                        id: 'postalCode',
+                        name: 'postalCode',
+                        'data-validator-required': 'true',
+                        'data-validator-integer': 'true' })
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'txt-italic' },
+                      'Introduce tu c\xF3digo postal'
+                    )
+                  )
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'row' },
+            _react2.default.createElement(
+              'div',
+              { className: 'col-md-3' },
+              _react2.default.createElement(
+                'h2',
+                { className: 'number-title' },
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  '2'
+                ),
+                'Proyectos'
+              ),
+              _react2.default.createElement(
+                'p',
+                { className: 'txt-italic' },
+                'Selecciona las agencias, proyectos o sectores que te interesan'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'row' },
+              _react2.default.createElement(
+                'div',
+                { className: 'agency-grid col-md-4' },
+                _react2.default.createElement(
+                  'h4',
+                  { className: 'txt-upper' },
+                  'Agencias'
+                ),
+                _react2.default.createElement('input', { type: 'text', id: 'selectedAgencies', name: 'selectedAgencies', value: '[]', className: 'hidden' }),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'item', 'data-value': 'cdmx' },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'logo' },
+                    _react2.default.createElement('img', { src: 'https://twitter.com/gobcdmx/profile_image?size=original' })
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'label' },
+                    'Seguir'
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'item', 'data-value': 'a2' },
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'logo' },
+                    _react2.default.createElement('img', { src: 'https://twitter.com/nvoaeropuertomx/profile_image?size=original' })
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'label' },
+                    'Seguir'
+                  )
+                ),
+                _react2.default.createElement('div', { className: 'clear' })
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'project-grid col-md-3' },
+                _react2.default.createElement(
+                  'h4',
+                  { className: 'txt-upper' },
+                  'Proyectos'
+                ),
+                _react2.default.createElement('input', { type: 'text', id: 'selectedProjects', name: 'selectedProjects', value: '[]', className: 'hidden' }),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'item', 'data-value': 'p1' },
+                  _react2.default.createElement(
+                    'h5',
+                    null,
+                    'NAICM'
+                  ),
+                  _react2.default.createElement(
+                    'div',
+                    { className: 'img' },
+                    _react2.default.createElement('img', { src: 'https://twitter.com/nvoaeropuertomx/profile_image?size=original' })
+                  ),
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'label' },
+                    'Seguir'
+                  ),
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    'Construcci\xF3n del nuevo aeropuerto internacional de la ciduad de M\xE9xico.'
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'col-md-2' },
+                _react2.default.createElement(
+                  'h4',
+                  { className: 'txt-upper' },
+                  'Sectores'
+                ),
+                _react2.default.createElement(
+                  'ul',
+                  null,
+                  _react2.default.createElement(
+                    'li',
+                    null,
+                    _react2.default.createElement('span', { className: 'glyphicon glyphicon-home', 'aria-hidden': 'true' }),
+                    'Infraestructura'
+                  )
+                )
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'row' },
+            _react2.default.createElement(
+              'div',
+              { className: 'col-md-3' },
+              _react2.default.createElement(
+                'h2',
+                { className: 'number-title' },
+                _react2.default.createElement(
+                  'span',
+                  null,
+                  '3'
+                ),
+                'Contacto'
+              ),
+              _react2.default.createElement(
+                'p',
+                { className: 'txt-italic' },
+                'Selecciona los canales por los que Testigo Social 2.0 puede enviarte notificaciones e informaci\xF3n.'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'col-md-9' },
+              _react2.default.createElement(
+                'table',
+                { className: 'table table-striped blue' },
+                _react2.default.createElement(
+                  'tbody',
+                  null,
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'txt-upper col-md-2' },
+                      _react2.default.createElement(
+                        'label',
+                        null,
+                        'Correo Electr\xF3nico'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'col-md-4' },
+                      _react2.default.createElement('input', { type: 'email',
+                        className: 'form-control',
+                        id: 'notificationEmail',
+                        name: 'notificationEmail',
+                        'data-validator-email': 'true' })
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      _react2.default.createElement('input', { id: 'enableEmailNotifications',
+                        name: 'enableEmailNotifications',
+                        type: 'checkbox',
+                        checked: 'checked' })
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'txt-italic' },
+                      'Quiero recibir notificaciones a trav\xE9s de un correo electr\xF3nico'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'txt-upper col-md-2' },
+                      _react2.default.createElement(
+                        'label',
+                        null,
+                        'SMS'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'col-md-4' },
+                      _react2.default.createElement('input', { type: 'text',
+                        className: 'form-control',
+                        id: 'notificationSMS',
+                        name: 'notificationSMS',
+                        'data-validator-integer': 'true',
+                        'data-validator-minlength': '10',
+                        'data-validator-maxlength': '10' })
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      _react2.default.createElement('input', { id: 'enableSMSNotifications',
+                        name: 'enableSMSNotifications',
+                        type: 'checkbox',
+                        checked: 'checked' })
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'txt-italic' },
+                      'Quiero recibir notificaciones a trav\xE9s de mensajes a un n\xFAmero celular (sin costo)'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'txt-upper col-md-2' },
+                      _react2.default.createElement(
+                        'label',
+                        null,
+                        'Facebook'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'col-md-4' },
+                      _react2.default.createElement('input', { disabled: 'disabled', type: 'text', className: 'form-control', id: 'notificationFB' })
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      _react2.default.createElement('input', { disabled: 'disabled', id: 'enableFB', type: 'checkbox' })
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'txt-italic' },
+                      'Quiero recibir notificaciones e informaci\xF3n a trav\xE9s mensajes en Facebook Messenger'
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'txt-upper col-md-2' },
+                      _react2.default.createElement(
+                        'label',
+                        null,
+                        'Twitter'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'col-md-4' },
+                      _react2.default.createElement('input', { disabled: 'disabled', type: 'text', className: 'form-control', id: 'notificationTW' })
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      _react2.default.createElement('input', { disabled: 'disabled', id: 'enableTW', type: 'checkbox' })
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'txt-italic' },
+                      'Quiero recibir notificaciones a trav\xE9s de mensajes directos y notificaciones en Twitter'
+                    )
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'p',
+                null,
+                'Consulta nuestro aviso de privacidad ',
+                _react2.default.createElement(
+                  'a',
+                  { href: '#', 'data-toggle': 'modal', 'data-target': '#privacyNotice' },
+                  'aqu\xED.'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'checkbox' },
+                _react2.default.createElement(
+                  'label',
+                  null,
+                  _react2.default.createElement('input', { id: 'acceptPrivacyTerms', type: 'checkbox', checked: 'checked' }),
+                  ' Acepto las politicas de privacidad'
+                )
+              ),
+              _react2.default.createElement(
+                'button',
+                { type: 'submit', className: 'btn btn-black btn-lg' },
+                'Comienza a recibir notificaciones'
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Form;
+}(_react2.default.Component);
+
+exports.default = Form;
+
+},{"react":294}],18:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Description = require('../base/Description.jsx');
+
+var _Description2 = _interopRequireDefault(_Description);
+
+var _Form = require('./Form.jsx');
+
+var _Form2 = _interopRequireDefault(_Form);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Section = function (_React$Component) {
+  _inherits(Section, _React$Component);
+
+  function Section(props) {
+    _classCallCheck(this, Section);
+
+    return _possibleConstructorReturn(this, (Section.__proto__ || Object.getPrototypeOf(Section)).call(this, props));
+  }
+
+  _createClass(Section, [{
+    key: 'processRegister',
+    value: function processRegister(data) {
+      $.ajax({
+        type: "POST",
+        url: '/profile',
+        data: {
+          profile: JSON.stringify(data)
+        },
+        success: function success(res) {
+          alert('Tu usuario ha quedado registrado exitosamente en Testigo Social Virtual 2.0');
+        }
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(_Description2.default, {
+          title: 'Notificaciones',
+          color: 'yellow',
+          content: 'Testigo Social 2.0 te puede hacer llegar datos e informaci\xF3n espec\xEDfica sobre procedimientos de contrataci\xF3n p\xFAblica que est\xE1n en marcha. Desde un aviso de inicio de un nuevo procedimiento hasta la liga para consultar un contrato. Completa la informaci\xF3n correspondiente y comienza a recibir notificaciones.' }),
+        _react2.default.createElement(_Form2.default, { onSubmit: this.processRegister })
+      );
+    }
+  }]);
+
+  return Section;
+}(_react2.default.Component);
+
+exports.default = Section;
+
+},{"../base/Description.jsx":2,"./Form.jsx":17,"react":294}],19:[function(require,module,exports){
 /**
  * @namespace Chart
  */
@@ -51,7 +4618,7 @@ require('./charts/Chart.Scatter')(Chart);
 
 window.Chart = module.exports = Chart;
 
-},{"./charts/Chart.Bar":2,"./charts/Chart.Bubble":3,"./charts/Chart.Doughnut":4,"./charts/Chart.Line":5,"./charts/Chart.PolarArea":6,"./charts/Chart.Radar":7,"./charts/Chart.Scatter":8,"./controllers/controller.bar":9,"./controllers/controller.bubble":10,"./controllers/controller.doughnut":11,"./controllers/controller.line":12,"./controllers/controller.polarArea":13,"./controllers/controller.radar":14,"./core/core.animation":15,"./core/core.canvasHelpers":16,"./core/core.controller":17,"./core/core.datasetController":18,"./core/core.element":19,"./core/core.helpers":20,"./core/core.interaction":21,"./core/core.js":22,"./core/core.layoutService":23,"./core/core.legend":24,"./core/core.plugin.js":25,"./core/core.scale":26,"./core/core.scaleService":27,"./core/core.ticks.js":28,"./core/core.title":29,"./core/core.tooltip":30,"./elements/element.arc":31,"./elements/element.line":32,"./elements/element.point":33,"./elements/element.rectangle":34,"./scales/scale.category":35,"./scales/scale.linear":36,"./scales/scale.linearbase.js":37,"./scales/scale.logarithmic":38,"./scales/scale.radialLinear":39,"./scales/scale.time":40}],2:[function(require,module,exports){
+},{"./charts/Chart.Bar":20,"./charts/Chart.Bubble":21,"./charts/Chart.Doughnut":22,"./charts/Chart.Line":23,"./charts/Chart.PolarArea":24,"./charts/Chart.Radar":25,"./charts/Chart.Scatter":26,"./controllers/controller.bar":27,"./controllers/controller.bubble":28,"./controllers/controller.doughnut":29,"./controllers/controller.line":30,"./controllers/controller.polarArea":31,"./controllers/controller.radar":32,"./core/core.animation":33,"./core/core.canvasHelpers":34,"./core/core.controller":35,"./core/core.datasetController":36,"./core/core.element":37,"./core/core.helpers":38,"./core/core.interaction":39,"./core/core.js":40,"./core/core.layoutService":41,"./core/core.legend":42,"./core/core.plugin.js":43,"./core/core.scale":44,"./core/core.scaleService":45,"./core/core.ticks.js":46,"./core/core.title":47,"./core/core.tooltip":48,"./elements/element.arc":49,"./elements/element.line":50,"./elements/element.point":51,"./elements/element.rectangle":52,"./scales/scale.category":53,"./scales/scale.linear":54,"./scales/scale.linearbase.js":55,"./scales/scale.logarithmic":56,"./scales/scale.radialLinear":57,"./scales/scale.time":58}],20:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -64,7 +4631,7 @@ module.exports = function(Chart) {
 
 };
 
-},{}],3:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -76,7 +4643,7 @@ module.exports = function(Chart) {
 
 };
 
-},{}],4:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -89,7 +4656,7 @@ module.exports = function(Chart) {
 
 };
 
-},{}],5:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -102,7 +4669,7 @@ module.exports = function(Chart) {
 
 };
 
-},{}],6:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -115,7 +4682,7 @@ module.exports = function(Chart) {
 
 };
 
-},{}],7:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -128,7 +4695,7 @@ module.exports = function(Chart) {
 
 };
 
-},{}],8:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -177,7 +4744,7 @@ module.exports = function(Chart) {
 
 };
 
-},{}],9:[function(require,module,exports){
+},{}],27:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -729,7 +5296,7 @@ module.exports = function(Chart) {
 	});
 };
 
-},{}],10:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -853,7 +5420,7 @@ module.exports = function(Chart) {
 	});
 };
 
-},{}],11:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -1158,7 +5725,7 @@ module.exports = function(Chart) {
 	});
 };
 
-},{}],12:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -1497,7 +6064,7 @@ module.exports = function(Chart) {
 	});
 };
 
-},{}],13:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -1714,7 +6281,7 @@ module.exports = function(Chart) {
 	});
 };
 
-},{}],14:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -1897,7 +6464,7 @@ module.exports = function(Chart) {
 	});
 };
 
-},{}],15:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 /* global window: false */
 'use strict';
 
@@ -2038,7 +6605,7 @@ module.exports = function(Chart) {
 	};
 };
 
-},{}],16:[function(require,module,exports){
+},{}],34:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -2144,7 +6711,7 @@ module.exports = function(Chart) {
 	};
 };
 
-},{}],17:[function(require,module,exports){
+},{}],35:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -2949,7 +7516,7 @@ module.exports = function(Chart) {
 	});
 };
 
-},{}],18:[function(require,module,exports){
+},{}],36:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -3260,7 +7827,7 @@ module.exports = function(Chart) {
 	Chart.DatasetController.extend = helpers.inherits;
 };
 
-},{}],19:[function(require,module,exports){
+},{}],37:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -3358,7 +7925,7 @@ module.exports = function(Chart) {
 
 };
 
-},{}],20:[function(require,module,exports){
+},{}],38:[function(require,module,exports){
 /* global window: false */
 /* global document: false */
 'use strict';
@@ -4416,7 +8983,7 @@ module.exports = function(Chart) {
 	};
 };
 
-},{"chartjs-color":42}],21:[function(require,module,exports){
+},{"chartjs-color":60}],39:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -4713,7 +9280,7 @@ module.exports = function(Chart) {
 	};
 };
 
-},{}],22:[function(require,module,exports){
+},{}],40:[function(require,module,exports){
 'use strict';
 
 module.exports = function() {
@@ -4771,7 +9338,7 @@ module.exports = function() {
 	return Chart;
 };
 
-},{}],23:[function(require,module,exports){
+},{}],41:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -5112,7 +9679,7 @@ module.exports = function(Chart) {
 	};
 };
 
-},{}],24:[function(require,module,exports){
+},{}],42:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -5613,7 +10180,7 @@ module.exports = function(Chart) {
 	});
 };
 
-},{}],25:[function(require,module,exports){
+},{}],43:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -5744,7 +10311,7 @@ module.exports = function(Chart) {
 	Chart.pluginService = Chart.plugins;
 };
 
-},{}],26:[function(require,module,exports){
+},{}],44:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -6497,7 +11064,7 @@ module.exports = function(Chart) {
 	});
 };
 
-},{}],27:[function(require,module,exports){
+},{}],45:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -6539,7 +11106,7 @@ module.exports = function(Chart) {
 	};
 };
 
-},{}],28:[function(require,module,exports){
+},{}],46:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -6743,7 +11310,7 @@ module.exports = function(Chart) {
 	};
 };
 
-},{}],29:[function(require,module,exports){
+},{}],47:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -6952,7 +11519,7 @@ module.exports = function(Chart) {
 	});
 };
 
-},{}],30:[function(require,module,exports){
+},{}],48:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -7831,7 +12398,7 @@ module.exports = function(Chart) {
 	};
 };
 
-},{}],31:[function(require,module,exports){
+},{}],49:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -7937,7 +12504,7 @@ module.exports = function(Chart) {
 	});
 };
 
-},{}],32:[function(require,module,exports){
+},{}],50:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -8123,7 +12690,7 @@ module.exports = function(Chart) {
 	});
 };
 
-},{}],33:[function(require,module,exports){
+},{}],51:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -8203,7 +12770,7 @@ module.exports = function(Chart) {
 	});
 };
 
-},{}],34:[function(require,module,exports){
+},{}],52:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -8381,7 +12948,7 @@ module.exports = function(Chart) {
 
 };
 
-},{}],35:[function(require,module,exports){
+},{}],53:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -8512,7 +13079,7 @@ module.exports = function(Chart) {
 
 };
 
-},{}],36:[function(require,module,exports){
+},{}],54:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -8682,7 +13249,7 @@ module.exports = function(Chart) {
 
 };
 
-},{}],37:[function(require,module,exports){
+},{}],55:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -8782,7 +13349,7 @@ module.exports = function(Chart) {
 	});
 };
 
-},{}],38:[function(require,module,exports){
+},{}],56:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -9010,7 +13577,7 @@ module.exports = function(Chart) {
 
 };
 
-},{}],39:[function(require,module,exports){
+},{}],57:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -9428,7 +13995,7 @@ module.exports = function(Chart) {
 
 };
 
-},{}],40:[function(require,module,exports){
+},{}],58:[function(require,module,exports){
 /* global window: false */
 'use strict';
 
@@ -9890,7 +14457,7 @@ module.exports = function(Chart) {
 
 };
 
-},{"moment":89}],41:[function(require,module,exports){
+},{"moment":107}],59:[function(require,module,exports){
 /* MIT license */
 var colorNames = require('color-name');
 
@@ -10113,7 +14680,7 @@ for (var name in colorNames) {
    reverseNames[colorNames[name]] = name;
 }
 
-},{"color-name":45}],42:[function(require,module,exports){
+},{"color-name":63}],60:[function(require,module,exports){
 /* MIT license */
 var convert = require('color-convert');
 var string = require('chartjs-color-string');
@@ -10598,7 +15165,7 @@ if (typeof window !== 'undefined') {
 
 module.exports = Color;
 
-},{"chartjs-color-string":41,"color-convert":44}],43:[function(require,module,exports){
+},{"chartjs-color-string":59,"color-convert":62}],61:[function(require,module,exports){
 /* MIT license */
 
 module.exports = {
@@ -11298,7 +15865,7 @@ for (var key in cssKeywords) {
   reverseKeywords[JSON.stringify(cssKeywords[key])] = key;
 }
 
-},{}],44:[function(require,module,exports){
+},{}],62:[function(require,module,exports){
 var conversions = require("./conversions");
 
 var convert = function() {
@@ -11391,7 +15958,7 @@ Converter.prototype.getValues = function(space) {
 });
 
 module.exports = convert;
-},{"./conversions":43}],45:[function(require,module,exports){
+},{"./conversions":61}],63:[function(require,module,exports){
 module.exports = {
 	"aliceblue": [240, 248, 255],
 	"antiquewhite": [250, 235, 215],
@@ -11542,7 +16109,7 @@ module.exports = {
 	"yellow": [255, 255, 0],
 	"yellowgreen": [154, 205, 50]
 };
-},{}],46:[function(require,module,exports){
+},{}],64:[function(require,module,exports){
 'use strict';
 
 /**
@@ -11626,7 +16193,7 @@ var EventListener = {
 };
 
 module.exports = EventListener;
-},{"./emptyFunction":53}],47:[function(require,module,exports){
+},{"./emptyFunction":71}],65:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -11662,7 +16229,7 @@ var ExecutionEnvironment = {
 };
 
 module.exports = ExecutionEnvironment;
-},{}],48:[function(require,module,exports){
+},{}],66:[function(require,module,exports){
 "use strict";
 
 /**
@@ -11694,7 +16261,7 @@ function camelize(string) {
 }
 
 module.exports = camelize;
-},{}],49:[function(require,module,exports){
+},{}],67:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -11734,7 +16301,7 @@ function camelizeStyleName(string) {
 }
 
 module.exports = camelizeStyleName;
-},{"./camelize":48}],50:[function(require,module,exports){
+},{"./camelize":66}],68:[function(require,module,exports){
 'use strict';
 
 /**
@@ -11774,7 +16341,7 @@ function containsNode(outerNode, innerNode) {
 }
 
 module.exports = containsNode;
-},{"./isTextNode":63}],51:[function(require,module,exports){
+},{"./isTextNode":81}],69:[function(require,module,exports){
 'use strict';
 
 /**
@@ -11901,7 +16468,7 @@ function createArrayFromMixed(obj) {
 }
 
 module.exports = createArrayFromMixed;
-},{"./invariant":61}],52:[function(require,module,exports){
+},{"./invariant":79}],70:[function(require,module,exports){
 'use strict';
 
 /**
@@ -11985,7 +16552,7 @@ function createNodesFromMarkup(markup, handleScript) {
 }
 
 module.exports = createNodesFromMarkup;
-},{"./ExecutionEnvironment":47,"./createArrayFromMixed":51,"./getMarkupWrap":57,"./invariant":61}],53:[function(require,module,exports){
+},{"./ExecutionEnvironment":65,"./createArrayFromMixed":69,"./getMarkupWrap":75,"./invariant":79}],71:[function(require,module,exports){
 "use strict";
 
 /**
@@ -12024,7 +16591,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-},{}],54:[function(require,module,exports){
+},{}],72:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -12044,7 +16611,7 @@ if ("production" !== 'production') {
 }
 
 module.exports = emptyObject;
-},{}],55:[function(require,module,exports){
+},{}],73:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -12071,7 +16638,7 @@ function focusNode(node) {
 }
 
 module.exports = focusNode;
-},{}],56:[function(require,module,exports){
+},{}],74:[function(require,module,exports){
 'use strict';
 
 /**
@@ -12106,7 +16673,7 @@ function getActiveElement() /*?DOMElement*/{
 }
 
 module.exports = getActiveElement;
-},{}],57:[function(require,module,exports){
+},{}],75:[function(require,module,exports){
 'use strict';
 
 /**
@@ -12201,7 +16768,7 @@ function getMarkupWrap(nodeName) {
 }
 
 module.exports = getMarkupWrap;
-},{"./ExecutionEnvironment":47,"./invariant":61}],58:[function(require,module,exports){
+},{"./ExecutionEnvironment":65,"./invariant":79}],76:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -12240,7 +16807,7 @@ function getUnboundedScrollPosition(scrollable) {
 }
 
 module.exports = getUnboundedScrollPosition;
-},{}],59:[function(require,module,exports){
+},{}],77:[function(require,module,exports){
 'use strict';
 
 /**
@@ -12273,7 +16840,7 @@ function hyphenate(string) {
 }
 
 module.exports = hyphenate;
-},{}],60:[function(require,module,exports){
+},{}],78:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -12312,7 +16879,7 @@ function hyphenateStyleName(string) {
 }
 
 module.exports = hyphenateStyleName;
-},{"./hyphenate":59}],61:[function(require,module,exports){
+},{"./hyphenate":77}],79:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -12368,7 +16935,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 }
 
 module.exports = invariant;
-},{}],62:[function(require,module,exports){
+},{}],80:[function(require,module,exports){
 'use strict';
 
 /**
@@ -12391,7 +16958,7 @@ function isNode(object) {
 }
 
 module.exports = isNode;
-},{}],63:[function(require,module,exports){
+},{}],81:[function(require,module,exports){
 'use strict';
 
 /**
@@ -12416,7 +16983,7 @@ function isTextNode(object) {
 }
 
 module.exports = isTextNode;
-},{"./isNode":62}],64:[function(require,module,exports){
+},{"./isNode":80}],82:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -12446,7 +17013,7 @@ function memoizeStringOnly(callback) {
 }
 
 module.exports = memoizeStringOnly;
-},{}],65:[function(require,module,exports){
+},{}],83:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -12469,7 +17036,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = performance || {};
-},{"./ExecutionEnvironment":47}],66:[function(require,module,exports){
+},{"./ExecutionEnvironment":65}],84:[function(require,module,exports){
 'use strict';
 
 /**
@@ -12503,7 +17070,7 @@ if (performance.now) {
 }
 
 module.exports = performanceNow;
-},{"./performance":65}],67:[function(require,module,exports){
+},{"./performance":83}],85:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -12571,7 +17138,7 @@ function shallowEqual(objA, objB) {
 }
 
 module.exports = shallowEqual;
-},{}],68:[function(require,module,exports){
+},{}],86:[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -12638,7 +17205,7 @@ if ("production" !== 'production') {
 }
 
 module.exports = warning;
-},{"./emptyFunction":53}],69:[function(require,module,exports){
+},{"./emptyFunction":71}],87:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -12661,7 +17228,7 @@ var REPLACE = exports.REPLACE = 'REPLACE';
  * for more information.
  */
 var POP = exports.POP = 'POP';
-},{}],70:[function(require,module,exports){
+},{}],88:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -12718,7 +17285,7 @@ var loopAsync = exports.loopAsync = function loopAsync(turns, work, callback) {
 
   next();
 };
-},{}],71:[function(require,module,exports){
+},{}],89:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -12817,7 +17384,7 @@ var replaceLocation = exports.replaceLocation = function replaceLocation(locatio
 var go = exports.go = function go(n) {
   if (n) window.history.go(n);
 };
-},{"./DOMStateStorage":72,"./DOMUtils":73,"./ExecutionEnvironment":74,"./LocationUtils":76,"./PathUtils":77}],72:[function(require,module,exports){
+},{"./DOMStateStorage":90,"./DOMUtils":91,"./ExecutionEnvironment":92,"./LocationUtils":94,"./PathUtils":95}],90:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -12903,7 +17470,7 @@ var readState = exports.readState = function readState(key) {
 
   return undefined;
 };
-},{"warning":278}],73:[function(require,module,exports){
+},{"warning":296}],91:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -12944,12 +17511,12 @@ var supportsGoWithoutReloadUsingHash = exports.supportsGoWithoutReloadUsingHash 
 var supportsPopstateOnHashchange = exports.supportsPopstateOnHashchange = function supportsPopstateOnHashchange() {
   return window.navigator.userAgent.indexOf('Trident') === -1;
 };
-},{}],74:[function(require,module,exports){
+},{}],92:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
 var canUseDOM = exports.canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
-},{}],75:[function(require,module,exports){
+},{}],93:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -13086,7 +17653,7 @@ var replaceLocation = exports.replaceLocation = function replaceLocation(locatio
     if (getHashPath() !== path) replaceHashPath(path);
   });
 };
-},{"./BrowserProtocol":71,"./DOMStateStorage":72,"./DOMUtils":73,"./LocationUtils":76,"./PathUtils":77,"warning":278}],76:[function(require,module,exports){
+},{"./BrowserProtocol":89,"./DOMStateStorage":90,"./DOMUtils":91,"./LocationUtils":94,"./PathUtils":95,"warning":296}],94:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -13179,7 +17746,7 @@ var locationsAreEqual = exports.locationsAreEqual = function locationsAreEqual(a
   // a.action === b.action && // Different action !== location change.
   a.pathname === b.pathname && a.search === b.search && a.hash === b.hash && statesAreEqual(a.state, b.state);
 };
-},{"./Actions":69,"./PathUtils":77,"invariant":87,"warning":278}],77:[function(require,module,exports){
+},{"./Actions":87,"./PathUtils":95,"invariant":105,"warning":296}],95:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -13281,7 +17848,7 @@ var createPath = exports.createPath = function createPath(location) {
 
   return path;
 };
-},{"warning":278}],78:[function(require,module,exports){
+},{"warning":296}],96:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -13319,7 +17886,7 @@ var replaceLocation = exports.replaceLocation = function replaceLocation(locatio
   window.location.replace((0, _PathUtils.createPath)(location));
   return false; // Don't update location
 };
-},{"./BrowserProtocol":71,"./LocationUtils":76,"./PathUtils":77}],79:[function(require,module,exports){
+},{"./BrowserProtocol":89,"./LocationUtils":94,"./PathUtils":95}],97:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -13413,7 +17980,7 @@ var createBrowserHistory = function createBrowserHistory() {
 };
 
 exports.default = createBrowserHistory;
-},{"./BrowserProtocol":71,"./DOMUtils":73,"./ExecutionEnvironment":74,"./RefreshProtocol":78,"./createHistory":81,"invariant":87}],80:[function(require,module,exports){
+},{"./BrowserProtocol":89,"./DOMUtils":91,"./ExecutionEnvironment":92,"./RefreshProtocol":96,"./createHistory":99,"invariant":105}],98:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -13561,7 +18128,7 @@ var createHashHistory = function createHashHistory() {
 };
 
 exports.default = createHashHistory;
-},{"./DOMUtils":73,"./ExecutionEnvironment":74,"./HashProtocol":75,"./createHistory":81,"invariant":87,"warning":278}],81:[function(require,module,exports){
+},{"./DOMUtils":91,"./ExecutionEnvironment":92,"./HashProtocol":93,"./createHistory":99,"invariant":105,"warning":296}],99:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -13738,7 +18305,7 @@ var createHistory = function createHistory() {
 };
 
 exports.default = createHistory;
-},{"./Actions":69,"./AsyncUtils":70,"./LocationUtils":76,"./PathUtils":77,"./runTransitionHook":83}],82:[function(require,module,exports){
+},{"./Actions":87,"./AsyncUtils":88,"./LocationUtils":94,"./PathUtils":95,"./runTransitionHook":101}],100:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -13879,7 +18446,7 @@ var createMemoryHistory = function createMemoryHistory() {
 };
 
 exports.default = createMemoryHistory;
-},{"./Actions":69,"./LocationUtils":76,"./PathUtils":77,"./createHistory":81,"invariant":87,"warning":278}],83:[function(require,module,exports){
+},{"./Actions":87,"./LocationUtils":94,"./PathUtils":95,"./createHistory":99,"invariant":105,"warning":296}],101:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -13903,7 +18470,7 @@ var runTransitionHook = function runTransitionHook(hook, location, callback) {
 };
 
 exports.default = runTransitionHook;
-},{"warning":278}],84:[function(require,module,exports){
+},{"warning":296}],102:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -14013,7 +18580,7 @@ var useBasename = function useBasename(createHistory) {
 };
 
 exports.default = useBasename;
-},{"./PathUtils":77,"./runTransitionHook":83}],85:[function(require,module,exports){
+},{"./PathUtils":95,"./runTransitionHook":101}],103:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -14135,7 +18702,7 @@ var useQueries = function useQueries(createHistory) {
 };
 
 exports.default = useQueries;
-},{"./LocationUtils":76,"./PathUtils":77,"./runTransitionHook":83,"query-string":91}],86:[function(require,module,exports){
+},{"./LocationUtils":94,"./PathUtils":95,"./runTransitionHook":101,"query-string":109}],104:[function(require,module,exports){
 /**
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
@@ -14187,7 +18754,7 @@ module.exports = function hoistNonReactStatics(targetComponent, sourceComponent,
     return targetComponent;
 };
 
-},{}],87:[function(require,module,exports){
+},{}],105:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -14240,7 +18807,7 @@ var invariant = function(condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 
-},{}],88:[function(require,module,exports){
+},{}],106:[function(require,module,exports){
 //! moment.js locale configuration
 //! locale : Spanish [es]
 //! author : Julio Napurí : https://github.com/julionc
@@ -14323,7 +18890,7 @@ return es;
 
 })));
 
-},{"../moment":89}],89:[function(require,module,exports){
+},{"../moment":107}],107:[function(require,module,exports){
 //! moment.js
 //! version : 2.17.1
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
@@ -18626,7 +23193,7 @@ return hooks;
 
 })));
 
-},{}],90:[function(require,module,exports){
+},{}],108:[function(require,module,exports){
 /*
 object-assign
 (c) Sindre Sorhus
@@ -18718,7 +23285,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-},{}],91:[function(require,module,exports){
+},{}],109:[function(require,module,exports){
 'use strict';
 var strictUriEncode = require('strict-uri-encode');
 var objectAssign = require('object-assign');
@@ -18923,12 +23490,12 @@ exports.stringify = function (obj, opts) {
 	}).join('&') : '';
 };
 
-},{"object-assign":90,"strict-uri-encode":277}],92:[function(require,module,exports){
+},{"object-assign":108,"strict-uri-encode":295}],110:[function(require,module,exports){
 'use strict';
 
 module.exports = require('./lib/ReactDOM');
 
-},{"./lib/ReactDOM":122}],93:[function(require,module,exports){
+},{"./lib/ReactDOM":140}],111:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19002,7 +23569,7 @@ var ARIADOMPropertyConfig = {
 };
 
 module.exports = ARIADOMPropertyConfig;
-},{}],94:[function(require,module,exports){
+},{}],112:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19026,7 +23593,7 @@ var AutoFocusUtils = {
 };
 
 module.exports = AutoFocusUtils;
-},{"./ReactDOMComponentTree":125,"fbjs/lib/focusNode":55}],95:[function(require,module,exports){
+},{"./ReactDOMComponentTree":143,"fbjs/lib/focusNode":73}],113:[function(require,module,exports){
 /**
  * Copyright 2013-present Facebook, Inc.
  * All rights reserved.
@@ -19411,7 +23978,7 @@ var BeforeInputEventPlugin = {
 };
 
 module.exports = BeforeInputEventPlugin;
-},{"./EventPropagators":111,"./FallbackCompositionState":112,"./SyntheticCompositionEvent":176,"./SyntheticInputEvent":180,"fbjs/lib/ExecutionEnvironment":47}],96:[function(require,module,exports){
+},{"./EventPropagators":129,"./FallbackCompositionState":130,"./SyntheticCompositionEvent":194,"./SyntheticInputEvent":198,"fbjs/lib/ExecutionEnvironment":65}],114:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19559,7 +24126,7 @@ var CSSProperty = {
 };
 
 module.exports = CSSProperty;
-},{}],97:[function(require,module,exports){
+},{}],115:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19768,7 +24335,7 @@ var CSSPropertyOperations = {
 };
 
 module.exports = CSSPropertyOperations;
-},{"./CSSProperty":96,"./ReactInstrumentation":154,"./dangerousStyleValue":193,"fbjs/lib/ExecutionEnvironment":47,"fbjs/lib/camelizeStyleName":49,"fbjs/lib/hyphenateStyleName":60,"fbjs/lib/memoizeStringOnly":64,"fbjs/lib/warning":68}],98:[function(require,module,exports){
+},{"./CSSProperty":114,"./ReactInstrumentation":172,"./dangerousStyleValue":211,"fbjs/lib/ExecutionEnvironment":65,"fbjs/lib/camelizeStyleName":67,"fbjs/lib/hyphenateStyleName":78,"fbjs/lib/memoizeStringOnly":82,"fbjs/lib/warning":86}],116:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -19887,7 +24454,7 @@ var CallbackQueue = function () {
 }();
 
 module.exports = PooledClass.addPoolingTo(CallbackQueue);
-},{"./PooledClass":116,"./reactProdInvariant":212,"fbjs/lib/invariant":61}],99:[function(require,module,exports){
+},{"./PooledClass":134,"./reactProdInvariant":230,"fbjs/lib/invariant":79}],117:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -20208,7 +24775,7 @@ var ChangeEventPlugin = {
 };
 
 module.exports = ChangeEventPlugin;
-},{"./EventPluginHub":108,"./EventPropagators":111,"./ReactDOMComponentTree":125,"./ReactUpdates":169,"./SyntheticEvent":178,"./getEventTarget":201,"./isEventSupported":209,"./isTextInputElement":210,"fbjs/lib/ExecutionEnvironment":47}],100:[function(require,module,exports){
+},{"./EventPluginHub":126,"./EventPropagators":129,"./ReactDOMComponentTree":143,"./ReactUpdates":187,"./SyntheticEvent":196,"./getEventTarget":219,"./isEventSupported":227,"./isTextInputElement":228,"fbjs/lib/ExecutionEnvironment":65}],118:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -20433,7 +25000,7 @@ var DOMChildrenOperations = {
 };
 
 module.exports = DOMChildrenOperations;
-},{"./DOMLazyTree":101,"./Danger":105,"./ReactDOMComponentTree":125,"./ReactInstrumentation":154,"./createMicrosoftUnsafeLocalFunction":192,"./setInnerHTML":214,"./setTextContent":215}],101:[function(require,module,exports){
+},{"./DOMLazyTree":119,"./Danger":123,"./ReactDOMComponentTree":143,"./ReactInstrumentation":172,"./createMicrosoftUnsafeLocalFunction":210,"./setInnerHTML":232,"./setTextContent":233}],119:[function(require,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -20551,7 +25118,7 @@ DOMLazyTree.queueHTML = queueHTML;
 DOMLazyTree.queueText = queueText;
 
 module.exports = DOMLazyTree;
-},{"./DOMNamespaces":102,"./createMicrosoftUnsafeLocalFunction":192,"./setInnerHTML":214,"./setTextContent":215}],102:[function(require,module,exports){
+},{"./DOMNamespaces":120,"./createMicrosoftUnsafeLocalFunction":210,"./setInnerHTML":232,"./setTextContent":233}],120:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -20571,7 +25138,7 @@ var DOMNamespaces = {
 };
 
 module.exports = DOMNamespaces;
-},{}],103:[function(require,module,exports){
+},{}],121:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -20781,7 +25348,7 @@ var DOMProperty = {
 };
 
 module.exports = DOMProperty;
-},{"./reactProdInvariant":212,"fbjs/lib/invariant":61}],104:[function(require,module,exports){
+},{"./reactProdInvariant":230,"fbjs/lib/invariant":79}],122:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -21018,7 +25585,7 @@ var DOMPropertyOperations = {
 };
 
 module.exports = DOMPropertyOperations;
-},{"./DOMProperty":103,"./ReactDOMComponentTree":125,"./ReactInstrumentation":154,"./quoteAttributeValueForBrowser":211,"fbjs/lib/warning":68}],105:[function(require,module,exports){
+},{"./DOMProperty":121,"./ReactDOMComponentTree":143,"./ReactInstrumentation":172,"./quoteAttributeValueForBrowser":229,"fbjs/lib/warning":86}],123:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -21066,7 +25633,7 @@ var Danger = {
 };
 
 module.exports = Danger;
-},{"./DOMLazyTree":101,"./reactProdInvariant":212,"fbjs/lib/ExecutionEnvironment":47,"fbjs/lib/createNodesFromMarkup":52,"fbjs/lib/emptyFunction":53,"fbjs/lib/invariant":61}],106:[function(require,module,exports){
+},{"./DOMLazyTree":119,"./reactProdInvariant":230,"fbjs/lib/ExecutionEnvironment":65,"fbjs/lib/createNodesFromMarkup":70,"fbjs/lib/emptyFunction":71,"fbjs/lib/invariant":79}],124:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -21092,7 +25659,7 @@ module.exports = Danger;
 var DefaultEventPluginOrder = ['ResponderEventPlugin', 'SimpleEventPlugin', 'TapEventPlugin', 'EnterLeaveEventPlugin', 'ChangeEventPlugin', 'SelectEventPlugin', 'BeforeInputEventPlugin'];
 
 module.exports = DefaultEventPluginOrder;
-},{}],107:[function(require,module,exports){
+},{}],125:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -21192,7 +25759,7 @@ var EnterLeaveEventPlugin = {
 };
 
 module.exports = EnterLeaveEventPlugin;
-},{"./EventPropagators":111,"./ReactDOMComponentTree":125,"./SyntheticMouseEvent":182}],108:[function(require,module,exports){
+},{"./EventPropagators":129,"./ReactDOMComponentTree":143,"./SyntheticMouseEvent":200}],126:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -21470,7 +26037,7 @@ var EventPluginHub = {
 };
 
 module.exports = EventPluginHub;
-},{"./EventPluginRegistry":109,"./EventPluginUtils":110,"./ReactErrorUtils":145,"./accumulateInto":189,"./forEachAccumulated":197,"./reactProdInvariant":212,"fbjs/lib/invariant":61}],109:[function(require,module,exports){
+},{"./EventPluginRegistry":127,"./EventPluginUtils":128,"./ReactErrorUtils":163,"./accumulateInto":207,"./forEachAccumulated":215,"./reactProdInvariant":230,"fbjs/lib/invariant":79}],127:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -21725,7 +26292,7 @@ var EventPluginRegistry = {
 };
 
 module.exports = EventPluginRegistry;
-},{"./reactProdInvariant":212,"fbjs/lib/invariant":61}],110:[function(require,module,exports){
+},{"./reactProdInvariant":230,"fbjs/lib/invariant":79}],128:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -21951,7 +26518,7 @@ var EventPluginUtils = {
 };
 
 module.exports = EventPluginUtils;
-},{"./ReactErrorUtils":145,"./reactProdInvariant":212,"fbjs/lib/invariant":61,"fbjs/lib/warning":68}],111:[function(require,module,exports){
+},{"./ReactErrorUtils":163,"./reactProdInvariant":230,"fbjs/lib/invariant":79,"fbjs/lib/warning":86}],129:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -22085,7 +26652,7 @@ var EventPropagators = {
 };
 
 module.exports = EventPropagators;
-},{"./EventPluginHub":108,"./EventPluginUtils":110,"./accumulateInto":189,"./forEachAccumulated":197,"fbjs/lib/warning":68}],112:[function(require,module,exports){
+},{"./EventPluginHub":126,"./EventPluginUtils":128,"./accumulateInto":207,"./forEachAccumulated":215,"fbjs/lib/warning":86}],130:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -22180,7 +26747,7 @@ _assign(FallbackCompositionState.prototype, {
 PooledClass.addPoolingTo(FallbackCompositionState);
 
 module.exports = FallbackCompositionState;
-},{"./PooledClass":116,"./getTextContentAccessor":206,"object-assign":90}],113:[function(require,module,exports){
+},{"./PooledClass":134,"./getTextContentAccessor":224,"object-assign":108}],131:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -22392,7 +26959,7 @@ var HTMLDOMPropertyConfig = {
 };
 
 module.exports = HTMLDOMPropertyConfig;
-},{"./DOMProperty":103}],114:[function(require,module,exports){
+},{"./DOMProperty":121}],132:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -22451,7 +27018,7 @@ var KeyEscapeUtils = {
 };
 
 module.exports = KeyEscapeUtils;
-},{}],115:[function(require,module,exports){
+},{}],133:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -22586,7 +27153,7 @@ var LinkedValueUtils = {
 };
 
 module.exports = LinkedValueUtils;
-},{"./ReactPropTypesSecret":162,"./reactProdInvariant":212,"fbjs/lib/invariant":61,"fbjs/lib/warning":68,"react/lib/React":254}],116:[function(require,module,exports){
+},{"./ReactPropTypesSecret":180,"./reactProdInvariant":230,"fbjs/lib/invariant":79,"fbjs/lib/warning":86,"react/lib/React":272}],134:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -22698,7 +27265,7 @@ var PooledClass = {
 };
 
 module.exports = PooledClass;
-},{"./reactProdInvariant":212,"fbjs/lib/invariant":61}],117:[function(require,module,exports){
+},{"./reactProdInvariant":230,"fbjs/lib/invariant":79}],135:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -23026,7 +27593,7 @@ var ReactBrowserEventEmitter = _assign({}, ReactEventEmitterMixin, {
 });
 
 module.exports = ReactBrowserEventEmitter;
-},{"./EventPluginRegistry":109,"./ReactEventEmitterMixin":146,"./ViewportMetrics":188,"./getVendorPrefixedEventName":207,"./isEventSupported":209,"object-assign":90}],118:[function(require,module,exports){
+},{"./EventPluginRegistry":127,"./ReactEventEmitterMixin":164,"./ViewportMetrics":206,"./getVendorPrefixedEventName":225,"./isEventSupported":227,"object-assign":108}],136:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -23182,7 +27749,7 @@ var ReactChildReconciler = {
 
 module.exports = ReactChildReconciler;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":114,"./ReactReconciler":164,"./instantiateReactComponent":208,"./shouldUpdateReactComponent":216,"./traverseAllChildren":217,"_process":297,"fbjs/lib/warning":68,"react/lib/ReactComponentTreeHook":258}],119:[function(require,module,exports){
+},{"./KeyEscapeUtils":132,"./ReactReconciler":182,"./instantiateReactComponent":226,"./shouldUpdateReactComponent":234,"./traverseAllChildren":235,"_process":297,"fbjs/lib/warning":86,"react/lib/ReactComponentTreeHook":276}],137:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -23212,7 +27779,7 @@ var ReactComponentBrowserEnvironment = {
 };
 
 module.exports = ReactComponentBrowserEnvironment;
-},{"./DOMChildrenOperations":100,"./ReactDOMIDOperations":129}],120:[function(require,module,exports){
+},{"./DOMChildrenOperations":118,"./ReactDOMIDOperations":147}],138:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -23258,7 +27825,7 @@ var ReactComponentEnvironment = {
 };
 
 module.exports = ReactComponentEnvironment;
-},{"./reactProdInvariant":212,"fbjs/lib/invariant":61}],121:[function(require,module,exports){
+},{"./reactProdInvariant":230,"fbjs/lib/invariant":79}],139:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -24160,7 +28727,7 @@ var ReactCompositeComponent = {
 };
 
 module.exports = ReactCompositeComponent;
-},{"./ReactComponentEnvironment":120,"./ReactErrorUtils":145,"./ReactInstanceMap":153,"./ReactInstrumentation":154,"./ReactNodeTypes":159,"./ReactReconciler":164,"./checkReactTypeSpec":191,"./reactProdInvariant":212,"./shouldUpdateReactComponent":216,"fbjs/lib/emptyObject":54,"fbjs/lib/invariant":61,"fbjs/lib/shallowEqual":67,"fbjs/lib/warning":68,"object-assign":90,"react/lib/React":254,"react/lib/ReactCurrentOwner":259}],122:[function(require,module,exports){
+},{"./ReactComponentEnvironment":138,"./ReactErrorUtils":163,"./ReactInstanceMap":171,"./ReactInstrumentation":172,"./ReactNodeTypes":177,"./ReactReconciler":182,"./checkReactTypeSpec":209,"./reactProdInvariant":230,"./shouldUpdateReactComponent":234,"fbjs/lib/emptyObject":72,"fbjs/lib/invariant":79,"fbjs/lib/shallowEqual":85,"fbjs/lib/warning":86,"object-assign":108,"react/lib/React":272,"react/lib/ReactCurrentOwner":277}],140:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -24271,7 +28838,7 @@ if ("production" !== 'production') {
 }
 
 module.exports = ReactDOM;
-},{"./ReactDOMComponentTree":125,"./ReactDOMInvalidARIAHook":131,"./ReactDOMNullInputValuePropHook":132,"./ReactDOMUnknownPropertyHook":139,"./ReactDefaultInjection":142,"./ReactInstrumentation":154,"./ReactMount":157,"./ReactReconciler":164,"./ReactUpdates":169,"./ReactVersion":170,"./findDOMNode":195,"./getHostComponentFromComposite":202,"./renderSubtreeIntoContainer":213,"fbjs/lib/ExecutionEnvironment":47,"fbjs/lib/warning":68}],123:[function(require,module,exports){
+},{"./ReactDOMComponentTree":143,"./ReactDOMInvalidARIAHook":149,"./ReactDOMNullInputValuePropHook":150,"./ReactDOMUnknownPropertyHook":157,"./ReactDefaultInjection":160,"./ReactInstrumentation":172,"./ReactMount":175,"./ReactReconciler":182,"./ReactUpdates":187,"./ReactVersion":188,"./findDOMNode":213,"./getHostComponentFromComposite":220,"./renderSubtreeIntoContainer":231,"fbjs/lib/ExecutionEnvironment":65,"fbjs/lib/warning":86}],141:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -25272,7 +29839,7 @@ ReactDOMComponent.Mixin = {
 _assign(ReactDOMComponent.prototype, ReactDOMComponent.Mixin, ReactMultiChild.Mixin);
 
 module.exports = ReactDOMComponent;
-},{"./AutoFocusUtils":94,"./CSSPropertyOperations":97,"./DOMLazyTree":101,"./DOMNamespaces":102,"./DOMProperty":103,"./DOMPropertyOperations":104,"./EventPluginHub":108,"./EventPluginRegistry":109,"./ReactBrowserEventEmitter":117,"./ReactDOMComponentFlags":124,"./ReactDOMComponentTree":125,"./ReactDOMInput":130,"./ReactDOMOption":133,"./ReactDOMSelect":134,"./ReactDOMTextarea":137,"./ReactInstrumentation":154,"./ReactMultiChild":158,"./ReactServerRenderingTransaction":166,"./escapeTextContentForBrowser":194,"./isEventSupported":209,"./reactProdInvariant":212,"./validateDOMNesting":218,"fbjs/lib/emptyFunction":53,"fbjs/lib/invariant":61,"fbjs/lib/shallowEqual":67,"fbjs/lib/warning":68,"object-assign":90}],124:[function(require,module,exports){
+},{"./AutoFocusUtils":112,"./CSSPropertyOperations":115,"./DOMLazyTree":119,"./DOMNamespaces":120,"./DOMProperty":121,"./DOMPropertyOperations":122,"./EventPluginHub":126,"./EventPluginRegistry":127,"./ReactBrowserEventEmitter":135,"./ReactDOMComponentFlags":142,"./ReactDOMComponentTree":143,"./ReactDOMInput":148,"./ReactDOMOption":151,"./ReactDOMSelect":152,"./ReactDOMTextarea":155,"./ReactInstrumentation":172,"./ReactMultiChild":176,"./ReactServerRenderingTransaction":184,"./escapeTextContentForBrowser":212,"./isEventSupported":227,"./reactProdInvariant":230,"./validateDOMNesting":236,"fbjs/lib/emptyFunction":71,"fbjs/lib/invariant":79,"fbjs/lib/shallowEqual":85,"fbjs/lib/warning":86,"object-assign":108}],142:[function(require,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -25290,7 +29857,7 @@ var ReactDOMComponentFlags = {
 };
 
 module.exports = ReactDOMComponentFlags;
-},{}],125:[function(require,module,exports){
+},{}],143:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -25485,7 +30052,7 @@ var ReactDOMComponentTree = {
 };
 
 module.exports = ReactDOMComponentTree;
-},{"./DOMProperty":103,"./ReactDOMComponentFlags":124,"./reactProdInvariant":212,"fbjs/lib/invariant":61}],126:[function(require,module,exports){
+},{"./DOMProperty":121,"./ReactDOMComponentFlags":142,"./reactProdInvariant":230,"fbjs/lib/invariant":79}],144:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -25518,7 +30085,7 @@ function ReactDOMContainerInfo(topLevelWrapper, node) {
 }
 
 module.exports = ReactDOMContainerInfo;
-},{"./validateDOMNesting":218}],127:[function(require,module,exports){
+},{"./validateDOMNesting":236}],145:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -25578,7 +30145,7 @@ _assign(ReactDOMEmptyComponent.prototype, {
 });
 
 module.exports = ReactDOMEmptyComponent;
-},{"./DOMLazyTree":101,"./ReactDOMComponentTree":125,"object-assign":90}],128:[function(require,module,exports){
+},{"./DOMLazyTree":119,"./ReactDOMComponentTree":143,"object-assign":108}],146:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -25597,7 +30164,7 @@ var ReactDOMFeatureFlags = {
 };
 
 module.exports = ReactDOMFeatureFlags;
-},{}],129:[function(require,module,exports){
+},{}],147:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -25631,7 +30198,7 @@ var ReactDOMIDOperations = {
 };
 
 module.exports = ReactDOMIDOperations;
-},{"./DOMChildrenOperations":100,"./ReactDOMComponentTree":125}],130:[function(require,module,exports){
+},{"./DOMChildrenOperations":118,"./ReactDOMComponentTree":143}],148:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -25909,7 +30476,7 @@ function _handleChange(event) {
 }
 
 module.exports = ReactDOMInput;
-},{"./DOMPropertyOperations":104,"./LinkedValueUtils":115,"./ReactDOMComponentTree":125,"./ReactUpdates":169,"./reactProdInvariant":212,"fbjs/lib/invariant":61,"fbjs/lib/warning":68,"object-assign":90}],131:[function(require,module,exports){
+},{"./DOMPropertyOperations":122,"./LinkedValueUtils":133,"./ReactDOMComponentTree":143,"./ReactUpdates":187,"./reactProdInvariant":230,"fbjs/lib/invariant":79,"fbjs/lib/warning":86,"object-assign":108}],149:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -26002,7 +30569,7 @@ var ReactDOMInvalidARIAHook = {
 };
 
 module.exports = ReactDOMInvalidARIAHook;
-},{"./DOMProperty":103,"fbjs/lib/warning":68,"react/lib/ReactComponentTreeHook":258}],132:[function(require,module,exports){
+},{"./DOMProperty":121,"fbjs/lib/warning":86,"react/lib/ReactComponentTreeHook":276}],150:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -26045,7 +30612,7 @@ var ReactDOMNullInputValuePropHook = {
 };
 
 module.exports = ReactDOMNullInputValuePropHook;
-},{"fbjs/lib/warning":68,"react/lib/ReactComponentTreeHook":258}],133:[function(require,module,exports){
+},{"fbjs/lib/warning":86,"react/lib/ReactComponentTreeHook":276}],151:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -26168,7 +30735,7 @@ var ReactDOMOption = {
 };
 
 module.exports = ReactDOMOption;
-},{"./ReactDOMComponentTree":125,"./ReactDOMSelect":134,"fbjs/lib/warning":68,"object-assign":90,"react/lib/React":254}],134:[function(require,module,exports){
+},{"./ReactDOMComponentTree":143,"./ReactDOMSelect":152,"fbjs/lib/warning":86,"object-assign":108,"react/lib/React":272}],152:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -26368,7 +30935,7 @@ function _handleChange(event) {
 }
 
 module.exports = ReactDOMSelect;
-},{"./LinkedValueUtils":115,"./ReactDOMComponentTree":125,"./ReactUpdates":169,"fbjs/lib/warning":68,"object-assign":90}],135:[function(require,module,exports){
+},{"./LinkedValueUtils":133,"./ReactDOMComponentTree":143,"./ReactUpdates":187,"fbjs/lib/warning":86,"object-assign":108}],153:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -26580,7 +31147,7 @@ var ReactDOMSelection = {
 };
 
 module.exports = ReactDOMSelection;
-},{"./getNodeForCharacterOffset":205,"./getTextContentAccessor":206,"fbjs/lib/ExecutionEnvironment":47}],136:[function(require,module,exports){
+},{"./getNodeForCharacterOffset":223,"./getTextContentAccessor":224,"fbjs/lib/ExecutionEnvironment":65}],154:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -26744,7 +31311,7 @@ _assign(ReactDOMTextComponent.prototype, {
 });
 
 module.exports = ReactDOMTextComponent;
-},{"./DOMChildrenOperations":100,"./DOMLazyTree":101,"./ReactDOMComponentTree":125,"./escapeTextContentForBrowser":194,"./reactProdInvariant":212,"./validateDOMNesting":218,"fbjs/lib/invariant":61,"object-assign":90}],137:[function(require,module,exports){
+},{"./DOMChildrenOperations":118,"./DOMLazyTree":119,"./ReactDOMComponentTree":143,"./escapeTextContentForBrowser":212,"./reactProdInvariant":230,"./validateDOMNesting":236,"fbjs/lib/invariant":79,"object-assign":108}],155:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -26904,7 +31471,7 @@ function _handleChange(event) {
 }
 
 module.exports = ReactDOMTextarea;
-},{"./LinkedValueUtils":115,"./ReactDOMComponentTree":125,"./ReactUpdates":169,"./reactProdInvariant":212,"fbjs/lib/invariant":61,"fbjs/lib/warning":68,"object-assign":90}],138:[function(require,module,exports){
+},{"./LinkedValueUtils":133,"./ReactDOMComponentTree":143,"./ReactUpdates":187,"./reactProdInvariant":230,"fbjs/lib/invariant":79,"fbjs/lib/warning":86,"object-assign":108}],156:[function(require,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -27040,7 +31607,7 @@ module.exports = {
   traverseTwoPhase: traverseTwoPhase,
   traverseEnterLeave: traverseEnterLeave
 };
-},{"./reactProdInvariant":212,"fbjs/lib/invariant":61}],139:[function(require,module,exports){
+},{"./reactProdInvariant":230,"fbjs/lib/invariant":79}],157:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -27152,7 +31719,7 @@ var ReactDOMUnknownPropertyHook = {
 };
 
 module.exports = ReactDOMUnknownPropertyHook;
-},{"./DOMProperty":103,"./EventPluginRegistry":109,"fbjs/lib/warning":68,"react/lib/ReactComponentTreeHook":258}],140:[function(require,module,exports){
+},{"./DOMProperty":121,"./EventPluginRegistry":127,"fbjs/lib/warning":86,"react/lib/ReactComponentTreeHook":276}],158:[function(require,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -27513,7 +32080,7 @@ if (/[?&]react_perf\b/.test(url)) {
 }
 
 module.exports = ReactDebugTool;
-},{"./ReactHostOperationHistoryHook":150,"./ReactInvalidSetStateWarningHook":155,"fbjs/lib/ExecutionEnvironment":47,"fbjs/lib/performanceNow":66,"fbjs/lib/warning":68,"react/lib/ReactComponentTreeHook":258}],141:[function(require,module,exports){
+},{"./ReactHostOperationHistoryHook":168,"./ReactInvalidSetStateWarningHook":173,"fbjs/lib/ExecutionEnvironment":65,"fbjs/lib/performanceNow":84,"fbjs/lib/warning":86,"react/lib/ReactComponentTreeHook":276}],159:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -27581,7 +32148,7 @@ var ReactDefaultBatchingStrategy = {
 };
 
 module.exports = ReactDefaultBatchingStrategy;
-},{"./ReactUpdates":169,"./Transaction":187,"fbjs/lib/emptyFunction":53,"object-assign":90}],142:[function(require,module,exports){
+},{"./ReactUpdates":187,"./Transaction":205,"fbjs/lib/emptyFunction":71,"object-assign":108}],160:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -27667,7 +32234,7 @@ function inject() {
 module.exports = {
   inject: inject
 };
-},{"./ARIADOMPropertyConfig":93,"./BeforeInputEventPlugin":95,"./ChangeEventPlugin":99,"./DefaultEventPluginOrder":106,"./EnterLeaveEventPlugin":107,"./HTMLDOMPropertyConfig":113,"./ReactComponentBrowserEnvironment":119,"./ReactDOMComponent":123,"./ReactDOMComponentTree":125,"./ReactDOMEmptyComponent":127,"./ReactDOMTextComponent":136,"./ReactDOMTreeTraversal":138,"./ReactDefaultBatchingStrategy":141,"./ReactEventListener":147,"./ReactInjection":151,"./ReactReconcileTransaction":163,"./SVGDOMPropertyConfig":171,"./SelectEventPlugin":172,"./SimpleEventPlugin":173}],143:[function(require,module,exports){
+},{"./ARIADOMPropertyConfig":111,"./BeforeInputEventPlugin":113,"./ChangeEventPlugin":117,"./DefaultEventPluginOrder":124,"./EnterLeaveEventPlugin":125,"./HTMLDOMPropertyConfig":131,"./ReactComponentBrowserEnvironment":137,"./ReactDOMComponent":141,"./ReactDOMComponentTree":143,"./ReactDOMEmptyComponent":145,"./ReactDOMTextComponent":154,"./ReactDOMTreeTraversal":156,"./ReactDefaultBatchingStrategy":159,"./ReactEventListener":165,"./ReactInjection":169,"./ReactReconcileTransaction":181,"./SVGDOMPropertyConfig":189,"./SelectEventPlugin":190,"./SimpleEventPlugin":191}],161:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -27687,7 +32254,7 @@ module.exports = {
 var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol['for'] && Symbol['for']('react.element') || 0xeac7;
 
 module.exports = REACT_ELEMENT_TYPE;
-},{}],144:[function(require,module,exports){
+},{}],162:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -27717,7 +32284,7 @@ var ReactEmptyComponent = {
 ReactEmptyComponent.injection = ReactEmptyComponentInjection;
 
 module.exports = ReactEmptyComponent;
-},{}],145:[function(require,module,exports){
+},{}],163:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -27794,7 +32361,7 @@ if ("production" !== 'production') {
 }
 
 module.exports = ReactErrorUtils;
-},{}],146:[function(require,module,exports){
+},{}],164:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -27827,7 +32394,7 @@ var ReactEventEmitterMixin = {
 };
 
 module.exports = ReactEventEmitterMixin;
-},{"./EventPluginHub":108}],147:[function(require,module,exports){
+},{"./EventPluginHub":126}],165:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -27982,7 +32549,7 @@ var ReactEventListener = {
 };
 
 module.exports = ReactEventListener;
-},{"./PooledClass":116,"./ReactDOMComponentTree":125,"./ReactUpdates":169,"./getEventTarget":201,"fbjs/lib/EventListener":46,"fbjs/lib/ExecutionEnvironment":47,"fbjs/lib/getUnboundedScrollPosition":58,"object-assign":90}],148:[function(require,module,exports){
+},{"./PooledClass":134,"./ReactDOMComponentTree":143,"./ReactUpdates":187,"./getEventTarget":219,"fbjs/lib/EventListener":64,"fbjs/lib/ExecutionEnvironment":65,"fbjs/lib/getUnboundedScrollPosition":76,"object-assign":108}],166:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -28004,7 +32571,7 @@ var ReactFeatureFlags = {
 };
 
 module.exports = ReactFeatureFlags;
-},{}],149:[function(require,module,exports){
+},{}],167:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -28072,7 +32639,7 @@ var ReactHostComponent = {
 };
 
 module.exports = ReactHostComponent;
-},{"./reactProdInvariant":212,"fbjs/lib/invariant":61}],150:[function(require,module,exports){
+},{"./reactProdInvariant":230,"fbjs/lib/invariant":79}],168:[function(require,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -28106,7 +32673,7 @@ var ReactHostOperationHistoryHook = {
 };
 
 module.exports = ReactHostOperationHistoryHook;
-},{}],151:[function(require,module,exports){
+},{}],169:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -28140,7 +32707,7 @@ var ReactInjection = {
 };
 
 module.exports = ReactInjection;
-},{"./DOMProperty":103,"./EventPluginHub":108,"./EventPluginUtils":110,"./ReactBrowserEventEmitter":117,"./ReactComponentEnvironment":120,"./ReactEmptyComponent":144,"./ReactHostComponent":149,"./ReactUpdates":169}],152:[function(require,module,exports){
+},{"./DOMProperty":121,"./EventPluginHub":126,"./EventPluginUtils":128,"./ReactBrowserEventEmitter":135,"./ReactComponentEnvironment":138,"./ReactEmptyComponent":162,"./ReactHostComponent":167,"./ReactUpdates":187}],170:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -28264,7 +32831,7 @@ var ReactInputSelection = {
 };
 
 module.exports = ReactInputSelection;
-},{"./ReactDOMSelection":135,"fbjs/lib/containsNode":50,"fbjs/lib/focusNode":55,"fbjs/lib/getActiveElement":56}],153:[function(require,module,exports){
+},{"./ReactDOMSelection":153,"fbjs/lib/containsNode":68,"fbjs/lib/focusNode":73,"fbjs/lib/getActiveElement":74}],171:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -28312,7 +32879,7 @@ var ReactInstanceMap = {
 };
 
 module.exports = ReactInstanceMap;
-},{}],154:[function(require,module,exports){
+},{}],172:[function(require,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -28336,7 +32903,7 @@ if ("production" !== 'production') {
 }
 
 module.exports = { debugTool: debugTool };
-},{"./ReactDebugTool":140}],155:[function(require,module,exports){
+},{"./ReactDebugTool":158}],173:[function(require,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -28373,7 +32940,7 @@ var ReactInvalidSetStateWarningHook = {
 };
 
 module.exports = ReactInvalidSetStateWarningHook;
-},{"fbjs/lib/warning":68}],156:[function(require,module,exports){
+},{"fbjs/lib/warning":86}],174:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -28423,7 +32990,7 @@ var ReactMarkupChecksum = {
 };
 
 module.exports = ReactMarkupChecksum;
-},{"./adler32":190}],157:[function(require,module,exports){
+},{"./adler32":208}],175:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -28961,7 +33528,7 @@ var ReactMount = {
 };
 
 module.exports = ReactMount;
-},{"./DOMLazyTree":101,"./DOMProperty":103,"./ReactBrowserEventEmitter":117,"./ReactDOMComponentTree":125,"./ReactDOMContainerInfo":126,"./ReactDOMFeatureFlags":128,"./ReactFeatureFlags":148,"./ReactInstanceMap":153,"./ReactInstrumentation":154,"./ReactMarkupChecksum":156,"./ReactReconciler":164,"./ReactUpdateQueue":168,"./ReactUpdates":169,"./instantiateReactComponent":208,"./reactProdInvariant":212,"./setInnerHTML":214,"./shouldUpdateReactComponent":216,"fbjs/lib/emptyObject":54,"fbjs/lib/invariant":61,"fbjs/lib/warning":68,"react/lib/React":254,"react/lib/ReactCurrentOwner":259}],158:[function(require,module,exports){
+},{"./DOMLazyTree":119,"./DOMProperty":121,"./ReactBrowserEventEmitter":135,"./ReactDOMComponentTree":143,"./ReactDOMContainerInfo":144,"./ReactDOMFeatureFlags":146,"./ReactFeatureFlags":166,"./ReactInstanceMap":171,"./ReactInstrumentation":172,"./ReactMarkupChecksum":174,"./ReactReconciler":182,"./ReactUpdateQueue":186,"./ReactUpdates":187,"./instantiateReactComponent":226,"./reactProdInvariant":230,"./setInnerHTML":232,"./shouldUpdateReactComponent":234,"fbjs/lib/emptyObject":72,"fbjs/lib/invariant":79,"fbjs/lib/warning":86,"react/lib/React":272,"react/lib/ReactCurrentOwner":277}],176:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -29411,7 +33978,7 @@ var ReactMultiChild = {
 };
 
 module.exports = ReactMultiChild;
-},{"./ReactChildReconciler":118,"./ReactComponentEnvironment":120,"./ReactInstanceMap":153,"./ReactInstrumentation":154,"./ReactReconciler":164,"./flattenChildren":196,"./reactProdInvariant":212,"fbjs/lib/emptyFunction":53,"fbjs/lib/invariant":61,"react/lib/ReactCurrentOwner":259}],159:[function(require,module,exports){
+},{"./ReactChildReconciler":136,"./ReactComponentEnvironment":138,"./ReactInstanceMap":171,"./ReactInstrumentation":172,"./ReactReconciler":182,"./flattenChildren":214,"./reactProdInvariant":230,"fbjs/lib/emptyFunction":71,"fbjs/lib/invariant":79,"react/lib/ReactCurrentOwner":277}],177:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -29451,7 +34018,7 @@ var ReactNodeTypes = {
 };
 
 module.exports = ReactNodeTypes;
-},{"./reactProdInvariant":212,"fbjs/lib/invariant":61,"react/lib/React":254}],160:[function(require,module,exports){
+},{"./reactProdInvariant":230,"fbjs/lib/invariant":79,"react/lib/React":272}],178:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -29545,7 +34112,7 @@ var ReactOwner = {
 };
 
 module.exports = ReactOwner;
-},{"./reactProdInvariant":212,"fbjs/lib/invariant":61}],161:[function(require,module,exports){
+},{"./reactProdInvariant":230,"fbjs/lib/invariant":79}],179:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -29570,7 +34137,7 @@ if ("production" !== 'production') {
 }
 
 module.exports = ReactPropTypeLocationNames;
-},{}],162:[function(require,module,exports){
+},{}],180:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -29587,7 +34154,7 @@ module.exports = ReactPropTypeLocationNames;
 var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
-},{}],163:[function(require,module,exports){
+},{}],181:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -29765,7 +34332,7 @@ _assign(ReactReconcileTransaction.prototype, Transaction, Mixin);
 PooledClass.addPoolingTo(ReactReconcileTransaction);
 
 module.exports = ReactReconcileTransaction;
-},{"./CallbackQueue":98,"./PooledClass":116,"./ReactBrowserEventEmitter":117,"./ReactInputSelection":152,"./ReactInstrumentation":154,"./ReactUpdateQueue":168,"./Transaction":187,"object-assign":90}],164:[function(require,module,exports){
+},{"./CallbackQueue":116,"./PooledClass":134,"./ReactBrowserEventEmitter":135,"./ReactInputSelection":170,"./ReactInstrumentation":172,"./ReactUpdateQueue":186,"./Transaction":205,"object-assign":108}],182:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -29933,7 +34500,7 @@ var ReactReconciler = {
 };
 
 module.exports = ReactReconciler;
-},{"./ReactInstrumentation":154,"./ReactRef":165,"fbjs/lib/warning":68}],165:[function(require,module,exports){
+},{"./ReactInstrumentation":172,"./ReactRef":183,"fbjs/lib/warning":86}],183:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -30022,7 +34589,7 @@ ReactRef.detachRefs = function (instance, element) {
 };
 
 module.exports = ReactRef;
-},{"./ReactOwner":160}],166:[function(require,module,exports){
+},{"./ReactOwner":178}],184:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -30112,7 +34679,7 @@ _assign(ReactServerRenderingTransaction.prototype, Transaction, Mixin);
 PooledClass.addPoolingTo(ReactServerRenderingTransaction);
 
 module.exports = ReactServerRenderingTransaction;
-},{"./PooledClass":116,"./ReactInstrumentation":154,"./ReactServerUpdateQueue":167,"./Transaction":187,"object-assign":90}],167:[function(require,module,exports){
+},{"./PooledClass":134,"./ReactInstrumentation":172,"./ReactServerUpdateQueue":185,"./Transaction":205,"object-assign":108}],185:[function(require,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -30251,7 +34818,7 @@ var ReactServerUpdateQueue = function () {
 }();
 
 module.exports = ReactServerUpdateQueue;
-},{"./ReactUpdateQueue":168,"fbjs/lib/warning":68}],168:[function(require,module,exports){
+},{"./ReactUpdateQueue":186,"fbjs/lib/warning":86}],186:[function(require,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -30477,7 +35044,7 @@ var ReactUpdateQueue = {
 };
 
 module.exports = ReactUpdateQueue;
-},{"./ReactInstanceMap":153,"./ReactInstrumentation":154,"./ReactUpdates":169,"./reactProdInvariant":212,"fbjs/lib/invariant":61,"fbjs/lib/warning":68,"react/lib/ReactCurrentOwner":259}],169:[function(require,module,exports){
+},{"./ReactInstanceMap":171,"./ReactInstrumentation":172,"./ReactUpdates":187,"./reactProdInvariant":230,"fbjs/lib/invariant":79,"fbjs/lib/warning":86,"react/lib/ReactCurrentOwner":277}],187:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -30728,7 +35295,7 @@ var ReactUpdates = {
 };
 
 module.exports = ReactUpdates;
-},{"./CallbackQueue":98,"./PooledClass":116,"./ReactFeatureFlags":148,"./ReactReconciler":164,"./Transaction":187,"./reactProdInvariant":212,"fbjs/lib/invariant":61,"object-assign":90}],170:[function(require,module,exports){
+},{"./CallbackQueue":116,"./PooledClass":134,"./ReactFeatureFlags":166,"./ReactReconciler":182,"./Transaction":205,"./reactProdInvariant":230,"fbjs/lib/invariant":79,"object-assign":108}],188:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -30742,7 +35309,7 @@ module.exports = ReactUpdates;
 'use strict';
 
 module.exports = '15.4.2';
-},{}],171:[function(require,module,exports){
+},{}],189:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -31044,7 +35611,7 @@ Object.keys(ATTRS).forEach(function (key) {
 });
 
 module.exports = SVGDOMPropertyConfig;
-},{}],172:[function(require,module,exports){
+},{}],190:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -31235,7 +35802,7 @@ var SelectEventPlugin = {
 };
 
 module.exports = SelectEventPlugin;
-},{"./EventPropagators":111,"./ReactDOMComponentTree":125,"./ReactInputSelection":152,"./SyntheticEvent":178,"./isTextInputElement":210,"fbjs/lib/ExecutionEnvironment":47,"fbjs/lib/getActiveElement":56,"fbjs/lib/shallowEqual":67}],173:[function(require,module,exports){
+},{"./EventPropagators":129,"./ReactDOMComponentTree":143,"./ReactInputSelection":170,"./SyntheticEvent":196,"./isTextInputElement":228,"fbjs/lib/ExecutionEnvironment":65,"fbjs/lib/getActiveElement":74,"fbjs/lib/shallowEqual":85}],191:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -31463,7 +36030,7 @@ var SimpleEventPlugin = {
 };
 
 module.exports = SimpleEventPlugin;
-},{"./EventPropagators":111,"./ReactDOMComponentTree":125,"./SyntheticAnimationEvent":174,"./SyntheticClipboardEvent":175,"./SyntheticDragEvent":177,"./SyntheticEvent":178,"./SyntheticFocusEvent":179,"./SyntheticKeyboardEvent":181,"./SyntheticMouseEvent":182,"./SyntheticTouchEvent":183,"./SyntheticTransitionEvent":184,"./SyntheticUIEvent":185,"./SyntheticWheelEvent":186,"./getEventCharCode":198,"./reactProdInvariant":212,"fbjs/lib/EventListener":46,"fbjs/lib/emptyFunction":53,"fbjs/lib/invariant":61}],174:[function(require,module,exports){
+},{"./EventPropagators":129,"./ReactDOMComponentTree":143,"./SyntheticAnimationEvent":192,"./SyntheticClipboardEvent":193,"./SyntheticDragEvent":195,"./SyntheticEvent":196,"./SyntheticFocusEvent":197,"./SyntheticKeyboardEvent":199,"./SyntheticMouseEvent":200,"./SyntheticTouchEvent":201,"./SyntheticTransitionEvent":202,"./SyntheticUIEvent":203,"./SyntheticWheelEvent":204,"./getEventCharCode":216,"./reactProdInvariant":230,"fbjs/lib/EventListener":64,"fbjs/lib/emptyFunction":71,"fbjs/lib/invariant":79}],192:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -31502,7 +36069,7 @@ function SyntheticAnimationEvent(dispatchConfig, dispatchMarker, nativeEvent, na
 SyntheticEvent.augmentClass(SyntheticAnimationEvent, AnimationEventInterface);
 
 module.exports = SyntheticAnimationEvent;
-},{"./SyntheticEvent":178}],175:[function(require,module,exports){
+},{"./SyntheticEvent":196}],193:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -31540,7 +36107,7 @@ function SyntheticClipboardEvent(dispatchConfig, dispatchMarker, nativeEvent, na
 SyntheticEvent.augmentClass(SyntheticClipboardEvent, ClipboardEventInterface);
 
 module.exports = SyntheticClipboardEvent;
-},{"./SyntheticEvent":178}],176:[function(require,module,exports){
+},{"./SyntheticEvent":196}],194:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -31576,7 +36143,7 @@ function SyntheticCompositionEvent(dispatchConfig, dispatchMarker, nativeEvent, 
 SyntheticEvent.augmentClass(SyntheticCompositionEvent, CompositionEventInterface);
 
 module.exports = SyntheticCompositionEvent;
-},{"./SyntheticEvent":178}],177:[function(require,module,exports){
+},{"./SyntheticEvent":196}],195:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -31612,7 +36179,7 @@ function SyntheticDragEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeE
 SyntheticMouseEvent.augmentClass(SyntheticDragEvent, DragEventInterface);
 
 module.exports = SyntheticDragEvent;
-},{"./SyntheticMouseEvent":182}],178:[function(require,module,exports){
+},{"./SyntheticMouseEvent":200}],196:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -31880,7 +36447,7 @@ function getPooledWarningPropertyDefinition(propName, getVal) {
     "production" !== 'production' ? warning(warningCondition, 'This synthetic event is reused for performance reasons. If you\'re seeing this, ' + 'you\'re %s `%s` on a released/nullified synthetic event. %s. ' + 'If you must keep the original synthetic event around, use event.persist(). ' + 'See https://fb.me/react-event-pooling for more information.', action, propName, result) : void 0;
   }
 }
-},{"./PooledClass":116,"fbjs/lib/emptyFunction":53,"fbjs/lib/warning":68,"object-assign":90}],179:[function(require,module,exports){
+},{"./PooledClass":134,"fbjs/lib/emptyFunction":71,"fbjs/lib/warning":86,"object-assign":108}],197:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -31916,7 +36483,7 @@ function SyntheticFocusEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticFocusEvent, FocusEventInterface);
 
 module.exports = SyntheticFocusEvent;
-},{"./SyntheticUIEvent":185}],180:[function(require,module,exports){
+},{"./SyntheticUIEvent":203}],198:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -31953,7 +36520,7 @@ function SyntheticInputEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticEvent.augmentClass(SyntheticInputEvent, InputEventInterface);
 
 module.exports = SyntheticInputEvent;
-},{"./SyntheticEvent":178}],181:[function(require,module,exports){
+},{"./SyntheticEvent":196}],199:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -32037,7 +36604,7 @@ function SyntheticKeyboardEvent(dispatchConfig, dispatchMarker, nativeEvent, nat
 SyntheticUIEvent.augmentClass(SyntheticKeyboardEvent, KeyboardEventInterface);
 
 module.exports = SyntheticKeyboardEvent;
-},{"./SyntheticUIEvent":185,"./getEventCharCode":198,"./getEventKey":199,"./getEventModifierState":200}],182:[function(require,module,exports){
+},{"./SyntheticUIEvent":203,"./getEventCharCode":216,"./getEventKey":217,"./getEventModifierState":218}],200:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -32109,7 +36676,7 @@ function SyntheticMouseEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticMouseEvent, MouseEventInterface);
 
 module.exports = SyntheticMouseEvent;
-},{"./SyntheticUIEvent":185,"./ViewportMetrics":188,"./getEventModifierState":200}],183:[function(require,module,exports){
+},{"./SyntheticUIEvent":203,"./ViewportMetrics":206,"./getEventModifierState":218}],201:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -32154,7 +36721,7 @@ function SyntheticTouchEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticTouchEvent, TouchEventInterface);
 
 module.exports = SyntheticTouchEvent;
-},{"./SyntheticUIEvent":185,"./getEventModifierState":200}],184:[function(require,module,exports){
+},{"./SyntheticUIEvent":203,"./getEventModifierState":218}],202:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -32193,7 +36760,7 @@ function SyntheticTransitionEvent(dispatchConfig, dispatchMarker, nativeEvent, n
 SyntheticEvent.augmentClass(SyntheticTransitionEvent, TransitionEventInterface);
 
 module.exports = SyntheticTransitionEvent;
-},{"./SyntheticEvent":178}],185:[function(require,module,exports){
+},{"./SyntheticEvent":196}],203:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -32252,7 +36819,7 @@ function SyntheticUIEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEve
 SyntheticEvent.augmentClass(SyntheticUIEvent, UIEventInterface);
 
 module.exports = SyntheticUIEvent;
-},{"./SyntheticEvent":178,"./getEventTarget":201}],186:[function(require,module,exports){
+},{"./SyntheticEvent":196,"./getEventTarget":219}],204:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -32306,7 +36873,7 @@ function SyntheticWheelEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticMouseEvent.augmentClass(SyntheticWheelEvent, WheelEventInterface);
 
 module.exports = SyntheticWheelEvent;
-},{"./SyntheticMouseEvent":182}],187:[function(require,module,exports){
+},{"./SyntheticMouseEvent":200}],205:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -32531,7 +37098,7 @@ var TransactionImpl = {
 };
 
 module.exports = TransactionImpl;
-},{"./reactProdInvariant":212,"fbjs/lib/invariant":61}],188:[function(require,module,exports){
+},{"./reactProdInvariant":230,"fbjs/lib/invariant":79}],206:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -32558,7 +37125,7 @@ var ViewportMetrics = {
 };
 
 module.exports = ViewportMetrics;
-},{}],189:[function(require,module,exports){
+},{}],207:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -32616,7 +37183,7 @@ function accumulateInto(current, next) {
 }
 
 module.exports = accumulateInto;
-},{"./reactProdInvariant":212,"fbjs/lib/invariant":61}],190:[function(require,module,exports){
+},{"./reactProdInvariant":230,"fbjs/lib/invariant":79}],208:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -32660,7 +37227,7 @@ function adler32(data) {
 }
 
 module.exports = adler32;
-},{}],191:[function(require,module,exports){
+},{}],209:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -32749,7 +37316,7 @@ function checkReactTypeSpec(typeSpecs, values, location, componentName, element,
 
 module.exports = checkReactTypeSpec;
 }).call(this,require('_process'))
-},{"./ReactPropTypeLocationNames":161,"./ReactPropTypesSecret":162,"./reactProdInvariant":212,"_process":297,"fbjs/lib/invariant":61,"fbjs/lib/warning":68,"react/lib/ReactComponentTreeHook":258}],192:[function(require,module,exports){
+},{"./ReactPropTypeLocationNames":179,"./ReactPropTypesSecret":180,"./reactProdInvariant":230,"_process":297,"fbjs/lib/invariant":79,"fbjs/lib/warning":86,"react/lib/ReactComponentTreeHook":276}],210:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -32781,7 +37348,7 @@ var createMicrosoftUnsafeLocalFunction = function (func) {
 };
 
 module.exports = createMicrosoftUnsafeLocalFunction;
-},{}],193:[function(require,module,exports){
+},{}],211:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -32860,7 +37427,7 @@ function dangerousStyleValue(name, value, component) {
 }
 
 module.exports = dangerousStyleValue;
-},{"./CSSProperty":96,"fbjs/lib/warning":68}],194:[function(require,module,exports){
+},{"./CSSProperty":114,"fbjs/lib/warning":86}],212:[function(require,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -32983,7 +37550,7 @@ function escapeTextContentForBrowser(text) {
 }
 
 module.exports = escapeTextContentForBrowser;
-},{}],195:[function(require,module,exports){
+},{}],213:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33043,7 +37610,7 @@ function findDOMNode(componentOrElement) {
 }
 
 module.exports = findDOMNode;
-},{"./ReactDOMComponentTree":125,"./ReactInstanceMap":153,"./getHostComponentFromComposite":202,"./reactProdInvariant":212,"fbjs/lib/invariant":61,"fbjs/lib/warning":68,"react/lib/ReactCurrentOwner":259}],196:[function(require,module,exports){
+},{"./ReactDOMComponentTree":143,"./ReactInstanceMap":171,"./getHostComponentFromComposite":220,"./reactProdInvariant":230,"fbjs/lib/invariant":79,"fbjs/lib/warning":86,"react/lib/ReactCurrentOwner":277}],214:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -33121,7 +37688,7 @@ function flattenChildren(children, selfDebugID) {
 
 module.exports = flattenChildren;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":114,"./traverseAllChildren":217,"_process":297,"fbjs/lib/warning":68,"react/lib/ReactComponentTreeHook":258}],197:[function(require,module,exports){
+},{"./KeyEscapeUtils":132,"./traverseAllChildren":235,"_process":297,"fbjs/lib/warning":86,"react/lib/ReactComponentTreeHook":276}],215:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33152,7 +37719,7 @@ function forEachAccumulated(arr, cb, scope) {
 }
 
 module.exports = forEachAccumulated;
-},{}],198:[function(require,module,exports){
+},{}],216:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33202,7 +37769,7 @@ function getEventCharCode(nativeEvent) {
 }
 
 module.exports = getEventCharCode;
-},{}],199:[function(require,module,exports){
+},{}],217:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33304,7 +37871,7 @@ function getEventKey(nativeEvent) {
 }
 
 module.exports = getEventKey;
-},{"./getEventCharCode":198}],200:[function(require,module,exports){
+},{"./getEventCharCode":216}],218:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33347,7 +37914,7 @@ function getEventModifierState(nativeEvent) {
 }
 
 module.exports = getEventModifierState;
-},{}],201:[function(require,module,exports){
+},{}],219:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33382,7 +37949,7 @@ function getEventTarget(nativeEvent) {
 }
 
 module.exports = getEventTarget;
-},{}],202:[function(require,module,exports){
+},{}],220:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33412,7 +37979,7 @@ function getHostComponentFromComposite(inst) {
 }
 
 module.exports = getHostComponentFromComposite;
-},{"./ReactNodeTypes":159}],203:[function(require,module,exports){
+},{"./ReactNodeTypes":177}],221:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33453,7 +38020,7 @@ function getIteratorFn(maybeIterable) {
 }
 
 module.exports = getIteratorFn;
-},{}],204:[function(require,module,exports){
+},{}],222:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33474,7 +38041,7 @@ function getNextDebugID() {
 }
 
 module.exports = getNextDebugID;
-},{}],205:[function(require,module,exports){
+},{}],223:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33548,7 +38115,7 @@ function getNodeForCharacterOffset(root, offset) {
 }
 
 module.exports = getNodeForCharacterOffset;
-},{}],206:[function(require,module,exports){
+},{}],224:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33581,7 +38148,7 @@ function getTextContentAccessor() {
 }
 
 module.exports = getTextContentAccessor;
-},{"fbjs/lib/ExecutionEnvironment":47}],207:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":65}],225:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33682,7 +38249,7 @@ function getVendorPrefixedEventName(eventName) {
 }
 
 module.exports = getVendorPrefixedEventName;
-},{"fbjs/lib/ExecutionEnvironment":47}],208:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":65}],226:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33810,7 +38377,7 @@ function instantiateReactComponent(node, shouldHaveDebugID) {
 }
 
 module.exports = instantiateReactComponent;
-},{"./ReactCompositeComponent":121,"./ReactEmptyComponent":144,"./ReactHostComponent":149,"./getNextDebugID":204,"./reactProdInvariant":212,"fbjs/lib/invariant":61,"fbjs/lib/warning":68,"object-assign":90}],209:[function(require,module,exports){
+},{"./ReactCompositeComponent":139,"./ReactEmptyComponent":162,"./ReactHostComponent":167,"./getNextDebugID":222,"./reactProdInvariant":230,"fbjs/lib/invariant":79,"fbjs/lib/warning":86,"object-assign":108}],227:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33870,7 +38437,7 @@ function isEventSupported(eventNameSuffix, capture) {
 }
 
 module.exports = isEventSupported;
-},{"fbjs/lib/ExecutionEnvironment":47}],210:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":65}],228:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33921,7 +38488,7 @@ function isTextInputElement(elem) {
 }
 
 module.exports = isTextInputElement;
-},{}],211:[function(require,module,exports){
+},{}],229:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33947,7 +38514,7 @@ function quoteAttributeValueForBrowser(value) {
 }
 
 module.exports = quoteAttributeValueForBrowser;
-},{"./escapeTextContentForBrowser":194}],212:[function(require,module,exports){
+},{"./escapeTextContentForBrowser":212}],230:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33986,7 +38553,7 @@ function reactProdInvariant(code) {
 }
 
 module.exports = reactProdInvariant;
-},{}],213:[function(require,module,exports){
+},{}],231:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -34002,7 +38569,7 @@ module.exports = reactProdInvariant;
 var ReactMount = require('./ReactMount');
 
 module.exports = ReactMount.renderSubtreeIntoContainer;
-},{"./ReactMount":157}],214:[function(require,module,exports){
+},{"./ReactMount":175}],232:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -34100,7 +38667,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = setInnerHTML;
-},{"./DOMNamespaces":102,"./createMicrosoftUnsafeLocalFunction":192,"fbjs/lib/ExecutionEnvironment":47}],215:[function(require,module,exports){
+},{"./DOMNamespaces":120,"./createMicrosoftUnsafeLocalFunction":210,"fbjs/lib/ExecutionEnvironment":65}],233:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -34152,7 +38719,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = setTextContent;
-},{"./escapeTextContentForBrowser":194,"./setInnerHTML":214,"fbjs/lib/ExecutionEnvironment":47}],216:[function(require,module,exports){
+},{"./escapeTextContentForBrowser":212,"./setInnerHTML":232,"fbjs/lib/ExecutionEnvironment":65}],234:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -34194,7 +38761,7 @@ function shouldUpdateReactComponent(prevElement, nextElement) {
 }
 
 module.exports = shouldUpdateReactComponent;
-},{}],217:[function(require,module,exports){
+},{}],235:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -34370,7 +38937,7 @@ function traverseAllChildren(children, callback, traverseContext) {
 }
 
 module.exports = traverseAllChildren;
-},{"./KeyEscapeUtils":114,"./ReactElementSymbol":143,"./getIteratorFn":203,"./reactProdInvariant":212,"fbjs/lib/invariant":61,"fbjs/lib/warning":68,"react/lib/ReactCurrentOwner":259}],218:[function(require,module,exports){
+},{"./KeyEscapeUtils":132,"./ReactElementSymbol":161,"./getIteratorFn":221,"./reactProdInvariant":230,"fbjs/lib/invariant":79,"fbjs/lib/warning":86,"react/lib/ReactCurrentOwner":277}],236:[function(require,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -34752,7 +39319,7 @@ if ("production" !== 'production') {
 }
 
 module.exports = validateDOMNesting;
-},{"fbjs/lib/emptyFunction":53,"fbjs/lib/warning":68,"object-assign":90}],219:[function(require,module,exports){
+},{"fbjs/lib/emptyFunction":71,"fbjs/lib/warning":86,"object-assign":108}],237:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -34841,7 +39408,7 @@ function mapAsync(array, work, callback) {
     });
   });
 }
-},{}],220:[function(require,module,exports){
+},{}],238:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -34963,7 +39530,7 @@ function ContextSubscriber(name) {
     }
   }, _ref4;
 }
-},{"react":276}],221:[function(require,module,exports){
+},{"react":294}],239:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -34992,7 +39559,7 @@ var IndexLink = _react2.default.createClass({
 
 exports.default = IndexLink;
 module.exports = exports['default'];
-},{"./Link":225,"react":276}],222:[function(require,module,exports){
+},{"./Link":243,"react":294}],240:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -35057,7 +39624,7 @@ var IndexRedirect = _react2.default.createClass({
 
 exports.default = IndexRedirect;
 module.exports = exports['default'];
-},{"./InternalPropTypes":224,"./Redirect":229,"./routerWarning":249,"invariant":87,"react":276}],223:[function(require,module,exports){
+},{"./InternalPropTypes":242,"./Redirect":247,"./routerWarning":267,"invariant":105,"react":294}],241:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -35119,7 +39686,7 @@ var IndexRoute = _react2.default.createClass({
 
 exports.default = IndexRoute;
 module.exports = exports['default'];
-},{"./InternalPropTypes":224,"./RouteUtils":231,"./routerWarning":249,"invariant":87,"react":276}],224:[function(require,module,exports){
+},{"./InternalPropTypes":242,"./RouteUtils":249,"./routerWarning":267,"invariant":105,"react":294}],242:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -35152,7 +39719,7 @@ var component = exports.component = oneOfType([func, string]);
 var components = exports.components = oneOfType([component, object]);
 var route = exports.route = oneOfType([object, element]);
 var routes = exports.routes = oneOfType([route, arrayOf(route)]);
-},{"react":276}],225:[function(require,module,exports){
+},{"react":294}],243:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -35311,7 +39878,7 @@ var Link = _react2.default.createClass({
 
 exports.default = Link;
 module.exports = exports['default'];
-},{"./ContextUtils":220,"./PropTypes":228,"invariant":87,"react":276}],226:[function(require,module,exports){
+},{"./ContextUtils":238,"./PropTypes":246,"invariant":105,"react":294}],244:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -35556,7 +40123,7 @@ function formatPattern(pattern, params) {
 
   return pathname.replace(/\/+/g, '/');
 }
-},{"invariant":87}],227:[function(require,module,exports){
+},{"invariant":105}],245:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -35564,7 +40131,7 @@ exports.isPromise = isPromise;
 function isPromise(obj) {
   return obj && typeof obj.then === 'function';
 }
-},{}],228:[function(require,module,exports){
+},{}],246:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -35593,7 +40160,7 @@ var locationShape = exports.locationShape = shape({
   action: string.isRequired,
   key: string
 });
-},{"react":276}],229:[function(require,module,exports){
+},{"react":294}],247:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -35697,7 +40264,7 @@ var Redirect = _react2.default.createClass({
 
 exports.default = Redirect;
 module.exports = exports['default'];
-},{"./InternalPropTypes":224,"./PatternUtils":226,"./RouteUtils":231,"invariant":87,"react":276}],230:[function(require,module,exports){
+},{"./InternalPropTypes":242,"./PatternUtils":244,"./RouteUtils":249,"invariant":105,"react":294}],248:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -35756,7 +40323,7 @@ var Route = _react2.default.createClass({
 
 exports.default = Route;
 module.exports = exports['default'];
-},{"./InternalPropTypes":224,"./RouteUtils":231,"invariant":87,"react":276}],231:[function(require,module,exports){
+},{"./InternalPropTypes":242,"./RouteUtils":249,"invariant":105,"react":294}],249:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -35850,7 +40417,7 @@ function createRoutes(routes) {
 
   return routes;
 }
-},{"react":276}],232:[function(require,module,exports){
+},{"react":294}],250:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -36026,7 +40593,7 @@ var Router = _react2.default.createClass({
 
 exports.default = Router;
 module.exports = exports['default'];
-},{"./InternalPropTypes":224,"./RouteUtils":231,"./RouterContext":233,"./RouterUtils":234,"./createTransitionManager":241,"./routerWarning":249,"invariant":87,"react":276}],233:[function(require,module,exports){
+},{"./InternalPropTypes":242,"./RouteUtils":249,"./RouterContext":251,"./RouterUtils":252,"./createTransitionManager":259,"./routerWarning":267,"invariant":105,"react":294}],251:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -36160,7 +40727,7 @@ var RouterContext = _react2.default.createClass({
 
 exports.default = RouterContext;
 module.exports = exports['default'];
-},{"./ContextUtils":220,"./RouteUtils":231,"./getRouteParams":243,"invariant":87,"react":276}],234:[function(require,module,exports){
+},{"./ContextUtils":238,"./RouteUtils":249,"./getRouteParams":261,"invariant":105,"react":294}],252:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -36189,7 +40756,7 @@ function assignRouterState(router, _ref) {
 
   return router;
 }
-},{}],235:[function(require,module,exports){
+},{}],253:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -36345,7 +40912,7 @@ function runLeaveHooks(routes, prevState) {
     if (routes[i].onLeave) routes[i].onLeave.call(routes[i], prevState);
   }
 }
-},{"./AsyncUtils":219}],236:[function(require,module,exports){
+},{"./AsyncUtils":237}],254:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -36403,7 +40970,7 @@ exports.default = function () {
 };
 
 module.exports = exports['default'];
-},{"./RouterContext":233,"./routerWarning":249,"react":276}],237:[function(require,module,exports){
+},{"./RouterContext":251,"./routerWarning":267,"react":294}],255:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -36420,7 +40987,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = (0, _createRouterHistory2.default)(_createBrowserHistory2.default);
 module.exports = exports['default'];
-},{"./createRouterHistory":240,"history/lib/createBrowserHistory":79}],238:[function(require,module,exports){
+},{"./createRouterHistory":258,"history/lib/createBrowserHistory":97}],256:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -36498,7 +41065,7 @@ function computeChangedRoutes(prevState, nextState) {
 
 exports.default = computeChangedRoutes;
 module.exports = exports['default'];
-},{"./PatternUtils":226}],239:[function(require,module,exports){
+},{"./PatternUtils":244}],257:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -36530,7 +41097,7 @@ function createMemoryHistory(options) {
   return history;
 }
 module.exports = exports['default'];
-},{"history/lib/createMemoryHistory":82,"history/lib/useBasename":84,"history/lib/useQueries":85}],240:[function(require,module,exports){
+},{"history/lib/createMemoryHistory":100,"history/lib/useBasename":102,"history/lib/useQueries":103}],258:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -36550,7 +41117,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
 
 module.exports = exports['default'];
-},{"./useRouterHistory":250}],241:[function(require,module,exports){
+},{"./useRouterHistory":268}],259:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -36826,7 +41393,7 @@ function createTransitionManager(history, routes) {
   };
 }
 module.exports = exports['default'];
-},{"./TransitionUtils":235,"./computeChangedRoutes":238,"./getComponents":242,"./isActive":246,"./matchRoutes":248,"./routerWarning":249}],242:[function(require,module,exports){
+},{"./TransitionUtils":253,"./computeChangedRoutes":256,"./getComponents":260,"./isActive":264,"./matchRoutes":266,"./routerWarning":267}],260:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -36867,7 +41434,7 @@ function getComponents(nextState, callback) {
 
 exports.default = getComponents;
 module.exports = exports['default'];
-},{"./AsyncUtils":219,"./PromiseUtils":227}],243:[function(require,module,exports){
+},{"./AsyncUtils":237,"./PromiseUtils":245}],261:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -36894,7 +41461,7 @@ function getRouteParams(route, params) {
 
 exports.default = getRouteParams;
 module.exports = exports['default'];
-},{"./PatternUtils":226}],244:[function(require,module,exports){
+},{"./PatternUtils":244}],262:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -36911,7 +41478,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = (0, _createRouterHistory2.default)(_createHashHistory2.default);
 module.exports = exports['default'];
-},{"./createRouterHistory":240,"history/lib/createHashHistory":80}],245:[function(require,module,exports){
+},{"./createRouterHistory":258,"history/lib/createHashHistory":98}],263:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -37037,7 +41604,7 @@ exports.applyRouterMiddleware = _applyRouterMiddleware3.default;
 exports.browserHistory = _browserHistory3.default;
 exports.hashHistory = _hashHistory3.default;
 exports.createMemoryHistory = _createMemoryHistory3.default;
-},{"./IndexLink":221,"./IndexRedirect":222,"./IndexRoute":223,"./Link":225,"./PatternUtils":226,"./PropTypes":228,"./Redirect":229,"./Route":230,"./RouteUtils":231,"./Router":232,"./RouterContext":233,"./applyRouterMiddleware":236,"./browserHistory":237,"./createMemoryHistory":239,"./hashHistory":244,"./match":247,"./useRouterHistory":250,"./withRouter":251}],246:[function(require,module,exports){
+},{"./IndexLink":239,"./IndexRedirect":240,"./IndexRoute":241,"./Link":243,"./PatternUtils":244,"./PropTypes":246,"./Redirect":247,"./Route":248,"./RouteUtils":249,"./Router":250,"./RouterContext":251,"./applyRouterMiddleware":254,"./browserHistory":255,"./createMemoryHistory":257,"./hashHistory":262,"./match":265,"./useRouterHistory":268,"./withRouter":269}],264:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -37190,7 +41757,7 @@ function isActive(_ref, indexOnly, currentLocation, routes, params) {
   return queryIsActive(query, currentLocation.query);
 }
 module.exports = exports['default'];
-},{"./PatternUtils":226}],247:[function(require,module,exports){
+},{"./PatternUtils":244}],265:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -37263,7 +41830,7 @@ function match(_ref, callback) {
 
 exports.default = match;
 module.exports = exports['default'];
-},{"./RouteUtils":231,"./RouterUtils":234,"./createMemoryHistory":239,"./createTransitionManager":241,"history/lib/Actions":69,"invariant":87}],248:[function(require,module,exports){
+},{"./RouteUtils":249,"./RouterUtils":252,"./createMemoryHistory":257,"./createTransitionManager":259,"history/lib/Actions":87,"invariant":105}],266:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -37527,7 +42094,7 @@ function matchRoutes(routes, location, callback, remainingPathname) {
   }, callback);
 }
 module.exports = exports['default'];
-},{"./AsyncUtils":219,"./PatternUtils":226,"./PromiseUtils":227,"./RouteUtils":231,"./routerWarning":249}],249:[function(require,module,exports){
+},{"./AsyncUtils":237,"./PatternUtils":244,"./PromiseUtils":245,"./RouteUtils":249,"./routerWarning":267}],267:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -37564,7 +42131,7 @@ function routerWarning(falseToWarn, message) {
 function _resetWarned() {
   warned = {};
 }
-},{"warning":278}],250:[function(require,module,exports){
+},{"warning":296}],268:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -37587,7 +42154,7 @@ function useRouterHistory(createHistory) {
   };
 }
 module.exports = exports['default'];
-},{"history/lib/useBasename":84,"history/lib/useQueries":85}],251:[function(require,module,exports){
+},{"history/lib/useBasename":102,"history/lib/useQueries":103}],269:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -37664,11 +42231,11 @@ function withRouter(WrappedComponent, options) {
   return (0, _hoistNonReactStatics2.default)(WithRouter, WrappedComponent);
 }
 module.exports = exports['default'];
-},{"./ContextUtils":220,"./PropTypes":228,"hoist-non-react-statics":86,"invariant":87,"react":276}],252:[function(require,module,exports){
-arguments[4][114][0].apply(exports,arguments)
-},{"dup":114}],253:[function(require,module,exports){
-arguments[4][116][0].apply(exports,arguments)
-},{"./reactProdInvariant":274,"dup":116,"fbjs/lib/invariant":61}],254:[function(require,module,exports){
+},{"./ContextUtils":238,"./PropTypes":246,"hoist-non-react-statics":104,"invariant":105,"react":294}],270:[function(require,module,exports){
+arguments[4][132][0].apply(exports,arguments)
+},{"dup":132}],271:[function(require,module,exports){
+arguments[4][134][0].apply(exports,arguments)
+},{"./reactProdInvariant":292,"dup":134,"fbjs/lib/invariant":79}],272:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -37757,7 +42324,7 @@ var React = {
 };
 
 module.exports = React;
-},{"./ReactChildren":255,"./ReactClass":256,"./ReactComponent":257,"./ReactDOMFactories":260,"./ReactElement":261,"./ReactElementValidator":263,"./ReactPropTypes":266,"./ReactPureComponent":268,"./ReactVersion":269,"./onlyChild":273,"fbjs/lib/warning":68,"object-assign":90}],255:[function(require,module,exports){
+},{"./ReactChildren":273,"./ReactClass":274,"./ReactComponent":275,"./ReactDOMFactories":278,"./ReactElement":279,"./ReactElementValidator":281,"./ReactPropTypes":284,"./ReactPureComponent":286,"./ReactVersion":287,"./onlyChild":291,"fbjs/lib/warning":86,"object-assign":108}],273:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -37948,7 +42515,7 @@ var ReactChildren = {
 };
 
 module.exports = ReactChildren;
-},{"./PooledClass":253,"./ReactElement":261,"./traverseAllChildren":275,"fbjs/lib/emptyFunction":53}],256:[function(require,module,exports){
+},{"./PooledClass":271,"./ReactElement":279,"./traverseAllChildren":293,"fbjs/lib/emptyFunction":71}],274:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -38665,7 +43232,7 @@ var ReactClass = {
 };
 
 module.exports = ReactClass;
-},{"./ReactComponent":257,"./ReactElement":261,"./ReactNoopUpdateQueue":264,"./ReactPropTypeLocationNames":265,"./reactProdInvariant":274,"fbjs/lib/emptyObject":54,"fbjs/lib/invariant":61,"fbjs/lib/warning":68,"object-assign":90}],257:[function(require,module,exports){
+},{"./ReactComponent":275,"./ReactElement":279,"./ReactNoopUpdateQueue":282,"./ReactPropTypeLocationNames":283,"./reactProdInvariant":292,"fbjs/lib/emptyObject":72,"fbjs/lib/invariant":79,"fbjs/lib/warning":86,"object-assign":108}],275:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -38783,7 +43350,7 @@ if ("production" !== 'production') {
 }
 
 module.exports = ReactComponent;
-},{"./ReactNoopUpdateQueue":264,"./canDefineProperty":270,"./reactProdInvariant":274,"fbjs/lib/emptyObject":54,"fbjs/lib/invariant":61,"fbjs/lib/warning":68}],258:[function(require,module,exports){
+},{"./ReactNoopUpdateQueue":282,"./canDefineProperty":288,"./reactProdInvariant":292,"fbjs/lib/emptyObject":72,"fbjs/lib/invariant":79,"fbjs/lib/warning":86}],276:[function(require,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -39117,7 +43684,7 @@ var ReactComponentTreeHook = {
 };
 
 module.exports = ReactComponentTreeHook;
-},{"./ReactCurrentOwner":259,"./reactProdInvariant":274,"fbjs/lib/invariant":61,"fbjs/lib/warning":68}],259:[function(require,module,exports){
+},{"./ReactCurrentOwner":277,"./reactProdInvariant":292,"fbjs/lib/invariant":79,"fbjs/lib/warning":86}],277:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -39148,7 +43715,7 @@ var ReactCurrentOwner = {
 };
 
 module.exports = ReactCurrentOwner;
-},{}],260:[function(require,module,exports){
+},{}],278:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -39318,7 +43885,7 @@ var ReactDOMFactories = {
 };
 
 module.exports = ReactDOMFactories;
-},{"./ReactElement":261,"./ReactElementValidator":263}],261:[function(require,module,exports){
+},{"./ReactElement":279,"./ReactElementValidator":281}],279:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -39659,9 +44226,9 @@ ReactElement.isValidElement = function (object) {
 };
 
 module.exports = ReactElement;
-},{"./ReactCurrentOwner":259,"./ReactElementSymbol":262,"./canDefineProperty":270,"fbjs/lib/warning":68,"object-assign":90}],262:[function(require,module,exports){
-arguments[4][143][0].apply(exports,arguments)
-},{"dup":143}],263:[function(require,module,exports){
+},{"./ReactCurrentOwner":277,"./ReactElementSymbol":280,"./canDefineProperty":288,"fbjs/lib/warning":86,"object-assign":108}],280:[function(require,module,exports){
+arguments[4][161][0].apply(exports,arguments)
+},{"dup":161}],281:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -39895,7 +44462,7 @@ var ReactElementValidator = {
 };
 
 module.exports = ReactElementValidator;
-},{"./ReactComponentTreeHook":258,"./ReactCurrentOwner":259,"./ReactElement":261,"./canDefineProperty":270,"./checkReactTypeSpec":271,"./getIteratorFn":272,"fbjs/lib/warning":68}],264:[function(require,module,exports){
+},{"./ReactComponentTreeHook":276,"./ReactCurrentOwner":277,"./ReactElement":279,"./canDefineProperty":288,"./checkReactTypeSpec":289,"./getIteratorFn":290,"fbjs/lib/warning":86}],282:[function(require,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -39991,9 +44558,9 @@ var ReactNoopUpdateQueue = {
 };
 
 module.exports = ReactNoopUpdateQueue;
-},{"fbjs/lib/warning":68}],265:[function(require,module,exports){
-arguments[4][161][0].apply(exports,arguments)
-},{"dup":161}],266:[function(require,module,exports){
+},{"fbjs/lib/warning":86}],283:[function(require,module,exports){
+arguments[4][179][0].apply(exports,arguments)
+},{"dup":179}],284:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -40427,9 +44994,9 @@ function getClassName(propValue) {
 }
 
 module.exports = ReactPropTypes;
-},{"./ReactElement":261,"./ReactPropTypeLocationNames":265,"./ReactPropTypesSecret":267,"./getIteratorFn":272,"fbjs/lib/emptyFunction":53,"fbjs/lib/warning":68}],267:[function(require,module,exports){
-arguments[4][162][0].apply(exports,arguments)
-},{"dup":162}],268:[function(require,module,exports){
+},{"./ReactElement":279,"./ReactPropTypeLocationNames":283,"./ReactPropTypesSecret":285,"./getIteratorFn":290,"fbjs/lib/emptyFunction":71,"fbjs/lib/warning":86}],285:[function(require,module,exports){
+arguments[4][180][0].apply(exports,arguments)
+},{"dup":180}],286:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -40471,9 +45038,9 @@ _assign(ReactPureComponent.prototype, ReactComponent.prototype);
 ReactPureComponent.prototype.isPureReactComponent = true;
 
 module.exports = ReactPureComponent;
-},{"./ReactComponent":257,"./ReactNoopUpdateQueue":264,"fbjs/lib/emptyObject":54,"object-assign":90}],269:[function(require,module,exports){
-arguments[4][170][0].apply(exports,arguments)
-},{"dup":170}],270:[function(require,module,exports){
+},{"./ReactComponent":275,"./ReactNoopUpdateQueue":282,"fbjs/lib/emptyObject":72,"object-assign":108}],287:[function(require,module,exports){
+arguments[4][188][0].apply(exports,arguments)
+},{"dup":188}],288:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -40499,7 +45066,7 @@ if ("production" !== 'production') {
 }
 
 module.exports = canDefineProperty;
-},{}],271:[function(require,module,exports){
+},{}],289:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -40588,9 +45155,9 @@ function checkReactTypeSpec(typeSpecs, values, location, componentName, element,
 
 module.exports = checkReactTypeSpec;
 }).call(this,require('_process'))
-},{"./ReactComponentTreeHook":258,"./ReactPropTypeLocationNames":265,"./ReactPropTypesSecret":267,"./reactProdInvariant":274,"_process":297,"fbjs/lib/invariant":61,"fbjs/lib/warning":68}],272:[function(require,module,exports){
-arguments[4][203][0].apply(exports,arguments)
-},{"dup":203}],273:[function(require,module,exports){
+},{"./ReactComponentTreeHook":276,"./ReactPropTypeLocationNames":283,"./ReactPropTypesSecret":285,"./reactProdInvariant":292,"_process":297,"fbjs/lib/invariant":79,"fbjs/lib/warning":86}],290:[function(require,module,exports){
+arguments[4][221][0].apply(exports,arguments)
+},{"dup":221}],291:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -40628,9 +45195,9 @@ function onlyChild(children) {
 }
 
 module.exports = onlyChild;
-},{"./ReactElement":261,"./reactProdInvariant":274,"fbjs/lib/invariant":61}],274:[function(require,module,exports){
-arguments[4][212][0].apply(exports,arguments)
-},{"dup":212}],275:[function(require,module,exports){
+},{"./ReactElement":279,"./reactProdInvariant":292,"fbjs/lib/invariant":79}],292:[function(require,module,exports){
+arguments[4][230][0].apply(exports,arguments)
+},{"dup":230}],293:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -40806,12 +45373,12 @@ function traverseAllChildren(children, callback, traverseContext) {
 }
 
 module.exports = traverseAllChildren;
-},{"./KeyEscapeUtils":252,"./ReactCurrentOwner":259,"./ReactElementSymbol":262,"./getIteratorFn":272,"./reactProdInvariant":274,"fbjs/lib/invariant":61,"fbjs/lib/warning":68}],276:[function(require,module,exports){
+},{"./KeyEscapeUtils":270,"./ReactCurrentOwner":277,"./ReactElementSymbol":280,"./getIteratorFn":290,"./reactProdInvariant":292,"fbjs/lib/invariant":79,"fbjs/lib/warning":86}],294:[function(require,module,exports){
 'use strict';
 
 module.exports = require('./lib/React');
 
-},{"./lib/React":254}],277:[function(require,module,exports){
+},{"./lib/React":272}],295:[function(require,module,exports){
 'use strict';
 module.exports = function (str) {
 	return encodeURIComponent(str).replace(/[!'()*]/g, function (c) {
@@ -40819,7 +45386,7 @@ module.exports = function (str) {
 	});
 };
 
-},{}],278:[function(require,module,exports){
+},{}],296:[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -40881,4574 +45448,7 @@ if ("production" !== 'production') {
 
 module.exports = warning;
 
-},{}],279:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _Menu = require('./base/Menu.jsx');
-
-var _Menu2 = _interopRequireDefault(_Menu);
-
-var _Footer = require('./base/Footer.jsx');
-
-var _Footer2 = _interopRequireDefault(_Footer);
-
-var _PrivacyNotice = require('./base/PrivacyNotice.jsx');
-
-var _PrivacyNotice2 = _interopRequireDefault(_PrivacyNotice);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Main = function (_React$Component) {
-  _inherits(Main, _React$Component);
-
-  function Main() {
-    _classCallCheck(this, Main);
-
-    return _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).apply(this, arguments));
-  }
-
-  _createClass(Main, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      $('[data-toggle="tooltip"]').tooltip();
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { className: 'container-fluid' },
-        _react2.default.createElement(_Menu2.default, null),
-        _react2.default.createElement(
-          'div',
-          { id: 'route' },
-          this.props.children
-        ),
-        _react2.default.createElement(_Footer2.default, null),
-        _react2.default.createElement(_PrivacyNotice2.default, null)
-      );
-    }
-  }]);
-
-  return Main;
-}(_react2.default.Component);
-
-exports.default = Main;
-
-},{"./base/Footer.jsx":281,"./base/Menu.jsx":282,"./base/PrivacyNotice.jsx":283,"react":276}],280:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// Section description block
-var Description = function (_React$Component) {
-  _inherits(Description, _React$Component);
-
-  function Description() {
-    _classCallCheck(this, Description);
-
-    return _possibleConstructorReturn(this, (Description.__proto__ || Object.getPrototypeOf(Description)).apply(this, arguments));
-  }
-
-  _createClass(Description, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { className: 'row info bg-' + this.props.color },
-        _react2.default.createElement(
-          'div',
-          { className: 'inner-row' },
-          _react2.default.createElement(
-            'h2',
-            null,
-            this.props.title
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            this.props.content
-          )
-        )
-      );
-    }
-  }]);
-
-  return Description;
-}(_react2.default.Component);
-
-exports.default = Description;
-
-},{"react":276}],281:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require("react");
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Footer = function (_React$Component) {
-  _inherits(Footer, _React$Component);
-
-  function Footer() {
-    _classCallCheck(this, Footer);
-
-    return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
-  }
-
-  _createClass(Footer, [{
-    key: "render",
-    value: function render() {
-      return _react2.default.createElement(
-        "div",
-        { id: "bottom", className: "row" },
-        _react2.default.createElement(
-          "div",
-          { className: "inner-row" },
-          _react2.default.createElement(
-            "div",
-            { className: "col-md-6" },
-            _react2.default.createElement(
-              "div",
-              { className: "logo" },
-              _react2.default.createElement(
-                "p",
-                null,
-                "Una iniciativa de:"
-              ),
-              _react2.default.createElement("a", { href: "http://www.tm.org.mx", target: "_blank", className: "tm" })
-            ),
-            _react2.default.createElement(
-              "div",
-              { className: "logo" },
-              _react2.default.createElement(
-                "p",
-                null,
-                "Con el apoyo de:"
-              ),
-              _react2.default.createElement("a", { href: "https://www.gov.uk/government/world/organisations/british-embassy-mexico-city.es-419", target: "_blank", className: "uk" })
-            )
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "col-md-6 links" },
-            _react2.default.createElement(
-              "div",
-              { className: "social" },
-              _react2.default.createElement("a", { href: "https://www.twitter.com/testigo_social", className: "tw" }),
-              _react2.default.createElement("a", { href: "https://www.facebook.com/testigosocial", className: "fb" }),
-              _react2.default.createElement("div", { className: "clear" })
-            ),
-            _react2.default.createElement(
-              "span",
-              { "data-toggle": "modal", "data-target": "#privacyNotice" },
-              "Aviso de Privacidad"
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return Footer;
-}(_react2.default.Component);
-
-exports.default = Footer;
-
-},{"react":276}],282:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouter = require('react-router');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Menu = function (_React$Component) {
-  _inherits(Menu, _React$Component);
-
-  function Menu() {
-    _classCallCheck(this, Menu);
-
-    return _possibleConstructorReturn(this, (Menu.__proto__ || Object.getPrototypeOf(Menu)).apply(this, arguments));
-  }
-
-  _createClass(Menu, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { id: 'top', className: 'row' },
-        _react2.default.createElement(
-          'div',
-          { className: 'col-md-12' },
-          _react2.default.createElement('a', { href: 'index.html', className: 'logo' }),
-          _react2.default.createElement(
-            'ul',
-            null,
-            _react2.default.createElement('div', { className: 'clear' }),
-            _react2.default.createElement(
-              'li',
-              null,
-              _react2.default.createElement(
-                _reactRouter.Link,
-                { to: '/' },
-                '\xBFQu\xE9 es TS 2.0?'
-              )
-            ),
-            _react2.default.createElement(
-              'li',
-              null,
-              _react2.default.createElement(
-                _reactRouter.Link,
-                { to: '/contracts' },
-                'Contratos'
-              )
-            ),
-            _react2.default.createElement(
-              'li',
-              null,
-              _react2.default.createElement(
-                _reactRouter.Link,
-                { to: '/indicators' },
-                'Indicadores'
-              )
-            ),
-            _react2.default.createElement(
-              'li',
-              null,
-              _react2.default.createElement(
-                _reactRouter.Link,
-                { to: '/register' },
-                'Notificaciones'
-              )
-            ),
-            _react2.default.createElement(
-              'li',
-              null,
-              _react2.default.createElement(
-                'a',
-                { href: 'http://www.tm.org.mx', target: '_blank' },
-                'Contrataciones Abiertas'
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'social' },
-            _react2.default.createElement('a', { href: 'https://www.twitter.com/testigo_social', className: 'tw' }),
-            _react2.default.createElement('a', { href: 'https://www.facebook.com/testigosocial', className: 'fb' })
-          )
-        )
-      );
-    }
-  }]);
-
-  return Menu;
-}(_react2.default.Component);
-
-exports.default = Menu;
-
-},{"react":276,"react-router":245}],283:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require("react");
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var PrivacyNotice = function (_React$Component) {
-  _inherits(PrivacyNotice, _React$Component);
-
-  function PrivacyNotice() {
-    _classCallCheck(this, PrivacyNotice);
-
-    return _possibleConstructorReturn(this, (PrivacyNotice.__proto__ || Object.getPrototypeOf(PrivacyNotice)).apply(this, arguments));
-  }
-
-  _createClass(PrivacyNotice, [{
-    key: "render",
-    value: function render() {
-      return _react2.default.createElement(
-        "div",
-        { className: "modal fade", id: "privacyNotice", tabindex: "-1", role: "dialog" },
-        _react2.default.createElement(
-          "div",
-          { className: "modal-dialog modal-lg", role: "document" },
-          _react2.default.createElement(
-            "div",
-            { className: "modal-content" },
-            _react2.default.createElement(
-              "div",
-              { className: "modal-header" },
-              _react2.default.createElement(
-                "h4",
-                { className: "modal-title" },
-                "Aviso de Privacidad"
-              )
-            ),
-            _react2.default.createElement(
-              "div",
-              { className: "modal-body" },
-              _react2.default.createElement(
-                "h1",
-                null,
-                "Testigo Social"
-              ),
-              _react2.default.createElement(
-                "p",
-                null,
-                "En cumplimiento de la Ley Federal de Protecci\xF3n de Datos Personales en Posesi\xF3n de Particulares (en lo sucesivo la \u201CLey\u201D), publicada el 5 de julio de 2010 en el Diario Oficial de la Federaci\xF3n, Transparencia Mexicana, A.C.  publica el siguiente aviso de privacidad."
-              ),
-              _react2.default.createElement(
-                "h4",
-                null,
-                "I. RESPONSABLE"
-              ),
-              _react2.default.createElement(
-                "p",
-                null,
-                "Transparencia Mexicana, A.C. con domicilio en Dulce Olivia, no. 73, colonia Villa Coyoac\xE1n, delegaci\xF3n Coyoac\xE1n, C.P. 04000, M\xE9xico, Distrito Federal. Para mayor informaci\xF3n consultar www.tm.org.mx con t\xE9lefonos 52-[55] 56594714, 56594095 / 56599991"
-              ),
-              _react2.default.createElement(
-                "p",
-                null,
-                "Como Responsable se se\xF1ala a la propia persona moral (Transparencia Mexicana, A. C.). Para cualquier aclaraci\xF3n o contacto: contacto@testigosocial.mx en atenci\xF3n al Lic. Rafael Garc\xEDa Aceves."
-              ),
-              _react2.default.createElement(
-                "h4",
-                null,
-                "II. DEFINICIONES"
-              ),
-              _react2.default.createElement(
-                "p",
-                null,
-                "Para efectos del presente aviso de privacidad se entender\xE1 por:"
-              ),
-              _react2.default.createElement(
-                "ol",
-                null,
-                _react2.default.createElement(
-                  "li",
-                  null,
-                  _react2.default.createElement(
-                    "strong",
-                    null,
-                    "Usuario: "
-                  ),
-                  "Toda persona f\xEDsica que utilice la herramienta interactiva que se presenta en el portal y que proporciona alg\xFAn tipo de dato. El Usuario podr\xE1 acceder al portal las veces que considere necesario y consultar en dicho sitio el Aviso de Privacidad del sitio www.testigosocial.mx. Al hacer uso del portal, el Usuario acepta plenamente el presente Aviso de Privacidad vigente al momento en que se realice el acceso, mismo que ha sido elaborado de conformidad con el marco normativo vigente."
-                ),
-                _react2.default.createElement(
-                  "li",
-                  null,
-                  _react2.default.createElement(
-                    "strong",
-                    null,
-                    "Titular: "
-                  ),
-                  "Toda persona f\xEDsica que proporcione los datos que se detallan m\xE1s adelante y que otorga expresamente el consentimiento para que los datos personales sean tratados conforme a lo se\xF1alado en el presente Aviso de Privacidad. Al hacer uso del portal, el Titular acepta plenamente el presente Aviso de Privacidad vigente al momento en que se realice el acceso y se otorgue el consentimiento, mismo que ha sido elaborado de conformidad con el marco normativo vigente. En particular, el Titular se obliga a no proporcionar al Responsable ning\xFAn Dato relativo a origen racial o \xE9tnico, estado de salud presente y futuro, informaci\xF3n gen\xE9tica, creencias religiosas, filos\xF3ficas y morales, afiliaci\xF3n sindical, opiniones pol\xEDticas o preferencia sexual."
-                ),
-                _react2.default.createElement(
-                  "li",
-                  null,
-                  _react2.default.createElement(
-                    "strong",
-                    null,
-                    "Datos Personales: "
-                  ),
-                  "Informaci\xF3n solicitada para el registro de usuario de la plataforma www.testigosocial.mx, correo electr\xF3nico, contrase\xF1a, tipo de usuario, edad, pa\xEDs al que pertenece y c\xF3digo postal."
-                )
-              ),
-              _react2.default.createElement(
-                "h4",
-                null,
-                "III. OBJETIVO Y FINALIDADES DEL TRATAMIENTO DE DATOS"
-              ),
-              _react2.default.createElement(
-                "p",
-                null,
-                "El portal www.testigosocial.mx es una herramienta para el monitoreo de las compras p\xFAblicas en M\xE9xico. Cuya finalidad es informar a distintos usuarios sobre la forma en la que compra su gobierno."
-              ),
-              _react2.default.createElement(
-                "p",
-                null,
-                "Los datos personales que recabamos de usted, los utilizaremos para las siguientes finalidades que son necesarias para el servicio de testigo social 2.0:"
-              ),
-              _react2.default.createElement(
-                "ol",
-                null,
-                _react2.default.createElement(
-                  "li",
-                  null,
-                  "La informaci\xF3n solicitada al Usuario (correo electr\xF3nico, tipo de usuario, pa\xEDs, c\xF3digo postal) ser\xE1 utilizada para fines de que recibir notificaciones v\xEDa correo electr\xF3nico, mensajes de texto, Facebook, Twitter."
-                ),
-                _react2.default.createElement(
-                  "li",
-                  null,
-                  "La informaci\xF3n solicitada sobre edad, pa\xEDs al que el usuario pertenece, c\xF3digo postal y tipo de usuario ser\xE1 utilizada con fines estad\xEDsticos de consulta, registro de reportes sobre usuarios que consultan el sitio, mejoramiento del contenido del sitio, para la integraci\xF3n a redes sociales como Facebook y Twitter, para la geolocalizaci\xF3n del Titular que permita presentar propuestas basadas en una ubicaci\xF3n geogr\xE1fica y contenido relevante al Usuario."
-                )
-              ),
-              _react2.default.createElement(
-                "h4",
-                null,
-                "IV. MEDIOS DE USO Y/O DIVULGACI\xD3N DE LOS DATOS"
-              ),
-              _react2.default.createElement(
-                "p",
-                null,
-                "Para el manejo de datos personales del Titular o Usuario, Transparencia Mexicana se compromete a proteger la privacidad de los Usuarios y Titulares del portal de conformidad con los elementos t\xE9cnicos de seguridad con los que cuenta de acuerdo al Aviso de Privacidad, as\xED como a la legislaci\xF3n que regula el tratamiento de datos personales."
-              ),
-              _react2.default.createElement(
-                "p",
-                null,
-                "De igual manera, Transparencia Mexicana se reserva el derecho de impedir el acceso de los Usuarios y/o Titulares al portal por violar el Aviso de Privacidad."
-              ),
-              _react2.default.createElement(
-                "p",
-                null,
-                "Los contenidos del portal, tales como texto, gr\xE1ficos, im\xE1genes, logos, marcas, iconos de bot\xF3n, obras audiovisuales, literarias, bases de datos y cualquier otro contenido informaci\xF3n y material, todo lo cual se entender\xE1 como el \u201Ccontenido\u201D o los \u201Ccontenidos\u201D, est\xE1n protegidos por la legislaci\xF3n en materia de propiedad industrial e intelectual. El uso no autorizado del contenido puede implicar la violaci\xF3n de la legislaci\xF3n sobre propiedad intelectual o industrial y eso no ser\xE1 limitativo de otras leyes aplicables en materia civil, penal, etc."
-              ),
-              _react2.default.createElement(
-                "p",
-                null,
-                "Transparencia Mexicana A.C., es responsable de administrar el sitio www.testigosocia.mx Sin embargo, el alcance de la red es mucho m\xE1s amplio, por lo que es importante delimintar los alcances de las responsabilidades del administrador del sitio: "
-              ),
-              _react2.default.createElement(
-                "ol",
-                null,
-                _react2.default.createElement(
-                  "li",
-                  null,
-                  "El contenido del portal puede contener imprecisiones o errores tipogr\xE1ficos."
-                ),
-                _react2.default.createElement(
-                  "li",
-                  null,
-                  "Transparencia Mexicana no puede garantizar que el portal funcione libre de errores o que el sitio web y su servidor est\xE9n libres de los virus inform\xE1ticos u otros mecanismos lesivos. Si por el uso del sitio web el Titular o Usuario tiene que acudir al servicio t\xE9cnico o reponer el equipo o datos, Transparencia Mexicana no ser\xE1 responsable ni obligado hacia los Titulares o Usuarios de realizar o no tales actividades de control."
-                ),
-                _react2.default.createElement(
-                  "li",
-                  null,
-                  "El portal contiene v\xEDnculos a otros sitios de la web. Estos v\xEDnculos se brindan \xFAnicamente para comodidad del Titular y no significan un respaldo a los contenidos de estos sitios web. Transparencia Mexicana no es responsable del contenido de los sitios web vinculados de terceros y no hace ninguna afirmaci\xF3n ni garant\xEDa relativa al contenido o su exactitud en estos sitios web de terceros. Si Usted decide acceder a sitios web de terceras partes vinculados, lo hace bajo su propio riesgo."
-                ),
-                _react2.default.createElement(
-                  "li",
-                  null,
-                  "Transparencia Mexicana adoptar\xE1 las medidas o procedimientos t\xE9cnicos oportunos para suprimir o inutilizar aquellos enlaces de los que tenga un conocimiento efectivo de que la actividad o informaci\xF3n a la que remiten o recomiendan es il\xEDcita o lesiona bienes o derechos de terceros susceptibles de indemnizaci\xF3n."
-                ),
-                _react2.default.createElement(
-                  "li",
-                  null,
-                  "Transparencia Mexicana no es responsable de las pol\xEDticas o pr\xE1cticas sobre privacidad de otros sitios web con los que usted elija enlazarse desde testigosocial.mx Se recomienda revisar las pol\xEDticas de privacidad de esos otros sitios web para que pueda ponerse al corriente de c\xF3mo obtienen, recopilan, usan y comparten sus datos. El Aviso de Privacidad se aplica exclusivamente a la Informaci\xF3n que Transparencia Mexicana obtenga en este sitio web, sin que sea aplicable a informaci\xF3n que se obtenga de alguna otra fuente otro modo."
-                )
-              ),
-              _react2.default.createElement(
-                "h4",
-                null,
-                "V. MEDIOS PARA EJERCER LOS DERECHOS DE ACCESO, RECTIFICACI\xD3N, CANCELACI\xD3N U OPOSICI\xD3N AL USO DE DATOS"
-              ),
-              _react2.default.createElement(
-                "p",
-                null,
-                "Es relevante recordarle que usted cuenta con los derechos conocidos como ARCO, respecto a sus datos personales. Esto es, tiene derecho en todo momento a conocer cu\xE1les son los datos personales que Transparencia Mexicana A.C. tiene en su poder, su uso y condiciones; aunado a ello, puede solicitar la correcci\xF3n de su informaci\xF3n cuando se encuentre desactualizada, sea inexacta o incompleta; o, en su caso, a su eliminaci\xF3n de nuestra base de datos. Asimismo, podr\xE1 oponerse a su uso para fines espec\xEDficos."
-              ),
-              _react2.default.createElement(
-                "p",
-                null,
-                "La solicitud realizada respecto a los derechos ARCO, deber\xE1 hacerse al correo electr\xF3nico contacto@testigosocial.mx mediante el cual se le dar\xE1 el tr\xE1mite correspondiente. Para cualquier duda o aclaraci\xF3n, puede comunicarse al tel\xE9fono 5659 9996. En caso de querer revocar el consentimiento que en este acto nos proporciona para el uso de sus datos personales, podr\xE1 hacerlo de forma directa con la persona responsable mencionada. En este \xFAltimo caso, es preciso mencionar que Transparencia Mexicana se ver\xE1 impedido para enviarle avisos personales acerca de las actualizaciones o renovaciones relacionadas con el presente Aviso de Privacidad; sin embargo, podr\xE1 acceder a ellos mediante la p\xE1gina web."
-              ),
-              _react2.default.createElement(
-                "h5",
-                null,
-                "Derechos ARCO"
-              ),
-              _react2.default.createElement(
-                "p",
-                null,
-                "El titular o su representante legal debidamente acreditado podr\xE1n limitar el uso o divulgaci\xF3n de sus datos personales; y podr\xE1 ejercer, cuando procedan, los derechos de acceso, rectificaci\xF3n, cancelaci\xF3n u oposici\xF3n que la Ley prev\xE9 mediante solicitud presentada a Transparencia Mexicana, A.C., en su calidad de Responsable."
-              ),
-              _react2.default.createElement(
-                "p",
-                null,
-                "La solicitud de acceso, rectificaci\xF3n, cancelaci\xF3n u oposici\xF3n deber\xE1 contener la petici\xF3n expresa de acceso, rectificaci\xF3n, cancelaci\xF3n y oposici\xF3n. Deber\xE1 ser presentada por escrito en el domicilio legal o en la direcci\xF3n de correo electr\xF3nico se\xF1alada en este aviso."
-              ),
-              _react2.default.createElement(
-                "h4",
-                null,
-                "VI. TRANSFERENCIA DE DATOS PERSONALES"
-              ),
-              _react2.default.createElement(
-                "p",
-                null,
-                "El manejo, uso y tratamiento de datos se realizar\xE1 de conformidad con el presente Aviso de Privacidad, incluyendo el uso en redes sociales."
-              ),
-              _react2.default.createElement(
-                "h4",
-                null,
-                "VII. MODIFICACIONES AL AVISO DE PRIVACIDAD"
-              ),
-              _react2.default.createElement(
-                "p",
-                null,
-                "Cualquier modificaci\xF3n al presente aviso le ser\xE1 notificado por el Responsable a trav\xE9s de cualquiera de los siguientes medios: un mensaje v\xEDa correo electr\xF3nico o un mensaje dado a conocer en la p\xE1gina www.testigosocial.mx"
-              )
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return PrivacyNotice;
-}(_react2.default.Component);
-
-exports.default = PrivacyNotice;
-
-},{"react":276}],284:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _helpers = require('../helpers.js');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Details = function (_React$Component) {
-  _inherits(Details, _React$Component);
-
-  function Details(props) {
-    _classCallCheck(this, Details);
-
-    var _this = _possibleConstructorReturn(this, (Details.__proto__ || Object.getPrototypeOf(Details)).call(this, props));
-
-    _this.onClose = _this.onClose.bind(_this);
-    return _this;
-  }
-
-  _createClass(Details, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var bullets = $('div.contract-header div.bullets a');
-      bullets.on('click', function (e) {
-        e.preventDefault();
-        var target = $(e.target);
-
-        if (!target.hasClass('disabled')) {
-          target.tab('show');
-          bullets.removeClass('active');
-          target.addClass('active');
-        }
-      });
-    }
-  }, {
-    key: 'onClose',
-    value: function onClose(e) {
-      e.preventDefault();
-      this.props.onClose();
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var release = this.props.contract.releases[0];
-      return _react2.default.createElement(
-        'div',
-        { className: 'inner-row contract-details' },
-        _react2.default.createElement(
-          'div',
-          { className: 'row contract-header' },
-          _react2.default.createElement(
-            'div',
-            { className: 'col-md-12' },
-            _react2.default.createElement(
-              'div',
-              null,
-              _react2.default.createElement(
-                'div',
-                { className: 'bg-gray' },
-                _react2.default.createElement(
-                  'h2',
-                  { className: 'block-title' },
-                  release.tender.title
-                ),
-                _react2.default.createElement(
-                  'h3',
-                  null,
-                  (0, _helpers.formatAmount)(release.tender.value.amount || 0)
-                ),
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  release.tender.description
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'bullets' },
-                _react2.default.createElement(
-                  'a',
-                  { href: '#planning',
-                    className: release.planning ? 'btn-black active' : 'btn-black disabled' },
-                  'Planeaci\xF3n'
-                ),
-                _react2.default.createElement(
-                  'a',
-                  { href: '#tender',
-                    className: release.tender ? 'btn-black' : 'btn-black disabled' },
-                  'Licitaci\xF3n'
-                ),
-                _react2.default.createElement(
-                  'a',
-                  { href: '#award',
-                    className: release.awards ? 'btn-black' : 'btn-black disabled' },
-                  'Adjudicaci\xF3n'
-                ),
-                _react2.default.createElement(
-                  'a',
-                  { href: '#contract',
-                    className: release.contracts ? 'btn-black' : 'btn-black disabled' },
-                  'Contrataci\xF3n'
-                ),
-                _react2.default.createElement(
-                  'a',
-                  { href: '#implementation',
-                    className: release.implementation ? 'btn-black' : 'btn-black disabled' },
-                  'Implementaci\xF3n'
-                ),
-                _react2.default.createElement(
-                  'a',
-                  { onClick: this.onClose },
-                  'Volver al listado de Resultados'
-                )
-              )
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'tab-content' },
-          _react2.default.createElement(
-            'div',
-            { role: 'tabpanel', className: 'tab-pane active fade in', id: 'planning' },
-            _react2.default.createElement(
-              'div',
-              { className: 'row contract-highlights border-bottom' },
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Fuente Presupuestaria'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  release.planning.budget.source
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Identificador del Presupuesto'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  release.planning.budget.id
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Monto Asignado'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  (0, _helpers.formatAmount)(release.planning.budget.amount.amount || 0)
-                )
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'row border-bottom' },
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-12' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Fundamento'
-                ),
-                _react2.default.createElement(
-                  'p',
-                  { className: 'txt-bold' },
-                  release.planning.budget.description
-                )
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'row contract-highlights border-bottom' },
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  '\xBFProyecto Plurianual?'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  'No disponible'
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Proyecto Presupuestario'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  release.planning.budget.project
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Identificador'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  this.props.contract.releases[0].planning.budget.projectID
-                )
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'row border-bottom' },
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-12' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Enlace a la informaci\xF3n presupuestaria'
-                ),
-                _react2.default.createElement(
-                  'a',
-                  { href: this.props.contract.releases[0].planning.budget.uri },
-                  this.props.contract.releases[0].planning.budget.uri
-                )
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { role: 'tabpanel', className: 'tab-pane fade', id: 'tender' },
-            _react2.default.createElement(
-              'div',
-              { className: 'row contract-highlights border-bottom' },
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-8' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'T\xEDtulo de la Licitaci\xF3n'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  release.tender.title
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Identificador de la Licitaci\xF3n'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  release.tender.id
-                )
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'row contract-highlights border-bottom' },
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Tipo de Contrataci\xF3n'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  release.tender.metodoDeAdquisicion
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-8' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Descripci\xF3n de la Licitaci\xF3n'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  release.tender.description
-                )
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'row contract-highlights border-bottom' },
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Estatus de la Licitaci\xF3n'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  (0, _helpers.codeList)('tender.status', release.tender.status)
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Valor M\xE1ximo'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  (0, _helpers.formatAmount)(release.tender.value.amount || 0)
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'M\xE9todo por el que se realiza'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  (0, _helpers.codeList)('tender.procurementMethod', release.tender.procurementMethod)
-                )
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'row contract-highlights border-bottom' },
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'C\xE1racter del Proceso'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  release.tender.submissionMethod ? release.tender.submissionMethod.join(',') : '-'
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Forma del Proceso'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  'No disponible'
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Criterio de Adjudicaci\xF3n'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  release.tender.procurementMethodRationale
-                )
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'row contract-highlights border-bottom' },
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Periodo de Recepci\xF3n de Propuestas'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  'No disponible'
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Periodo de Aclaraciones'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  'No disponible'
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Aclaraciones'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  'No disponible'
-                )
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'row contract-highlights border-bottom' },
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Testigo Social'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  'No disponible'
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-8' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Criterio de Elegibilidad'
-                ),
-                _react2.default.createElement(
-                  'p',
-                  { className: 'txt-bold' },
-                  release.tender.awardCriteria
-                )
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'row contract-highlights border-bottom' },
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'No. de Propuestas Recibidas'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  release.tender.numberOfTenderers
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Fecha de Adjudicaci\xF3n'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  (0, _helpers.formatDate)(release.date, 'DD/MM/YYYY')
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Identificador de Entidad'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  this.props.contract.publisher.uid
-                )
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { role: 'tabpanel', className: 'tab-pane fade', id: 'award' },
-            _react2.default.createElement(
-              'div',
-              { className: 'row contract-highlights border-bottom' },
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-8' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'T\xEDtulo de la Adjudicaci\xF3n'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  'No disponible'
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Identificador de la Adjudicaci\xF3n'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  release.awards[0].id
-                )
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'row contract-highlights border-bottom' },
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Estatus'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  (0, _helpers.codeList)('award.status', release.awards[0].status)
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-8' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Descripci\xF3n de la Adjudicaci\xF3n'
-                ),
-                _react2.default.createElement(
-                  'p',
-                  { className: 'txt-bold' },
-                  'No disponible'
-                )
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'row contract-highlights border-bottom' },
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Fecha'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  'No disponible'
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Valor y Moneda'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  (0, _helpers.formatAmount)(release.awards[0].value.amount)
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'No. de Inconformidades Recibidas'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  'No disponible'
-                )
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'row contract-highlights border-bottom' },
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'No. de Inconformidades Rechazadas'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  'No disponible'
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Identificador de Proveedor'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  release.awards[0].suppliers[0].identifier.id
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Nombre de Proveedor'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  release.awards[0].suppliers[0].identifier.legalName
-                )
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { role: 'tabpanel', className: 'tab-pane fade', id: 'contract' },
-            _react2.default.createElement(
-              'div',
-              { className: 'row contract-highlights border-bottom' },
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Identificador del Contrato'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  release.contracts[0].id
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-8' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'T\xEDtulo del Contrato'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  release.contracts[0].title
-                )
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'row contract-highlights border-bottom' },
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-8' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Descripci\xF3n del Contrato'
-                ),
-                _react2.default.createElement(
-                  'p',
-                  { className: 'txt-bold' },
-                  'No disponible'
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Estatus'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  (0, _helpers.codeList)('contract.status', release.contracts[0].status)
-                )
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'row contract-highlights border-bottom' },
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Periodo'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  release.contracts[0].period ? (0, _helpers.formatDate)(release.contracts[0].period.startDate, 'DD/MM/YYYY') + ' - ' + (0, _helpers.formatDate)(release.contracts[0].period.endDate, 'DD/MM/YYYY') : '-'
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Valor y Moneda'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  (0, _helpers.formatAmount)(release.contracts[0].value.amount)
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Fecha de Firma del Contrato'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  (0, _helpers.formatDate)(release.contracts[0].dateSigned, 'DD/MM/YYYY')
-                )
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'row contract-highlights border-bottom' },
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-12' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  '\xBFSE MODIFIC\xD3 EL CONTRATO?'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  'No disponible'
-                )
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { role: 'tabpanel', className: 'tab-pane fade', id: 'implementation' },
-            _react2.default.createElement(
-              'div',
-              { className: 'row contract-highlights border-bottom' },
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Realizaci\xF3n del Pago'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  'No disponible'
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Emisi\xF3n del Pago'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  'No disponible'
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Ficha de Transacci\xF3n'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  'No disponible'
-                )
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'row contract-highlights border-bottom' },
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Monto y Moneda'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  'No disponible'
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Identificador de Organizaci\xF3n'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  'No disponible'
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-4' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'lbl' },
-                  'Nombre de Organizaci\xF3n'
-                ),
-                _react2.default.createElement(
-                  'h4',
-                  null,
-                  'No disponible'
-                )
-              )
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return Details;
-}(_react2.default.Component);
-
-exports.default = Details;
-
-},{"../helpers.js":289,"react":276}],285:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _helpers = require('../helpers.js');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var SearchBar = function (_React$Component) {
-  _inherits(SearchBar, _React$Component);
-
-  function SearchBar(props) {
-    _classCallCheck(this, SearchBar);
-
-    var _this = _possibleConstructorReturn(this, (SearchBar.__proto__ || Object.getPrototypeOf(SearchBar)).call(this, props));
-
-    _this.state = {
-      filter: null,
-      value: null,
-      limit: 30
-    };
-    return _this;
-  }
-
-  _createClass(SearchBar, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.ui = {};
-      this.ui.form = $('form#queryForm');
-      this.ui.bullets = this.ui.form.find('div.bullets span');
-      this.ui.input = this.ui.form.find('input#query');
-
-      // Setup calendar
-      this.ui.form.find("span[data-filter='date']").datepicker({
-        clearBtn: true,
-        assumeNearbyYear: true,
-        format: 'mm/dd/yyyy',
-        language: 'es',
-        maxViewMode: 2,
-        multidate: 2,
-        todayHighlight: true
-      }).on('hide', function (e) {
-        e.dates.sort(function (a, b) {
-          return new Date(a).getTime() - new Date(b).getTime();
-        });
-        var lbl = (0, _helpers.formatDate)(e.dates[0], 'MMMM Do YYYY');
-        var val = (0, _helpers.formatDate)(e.dates[0], 'MM-DD-YYYY');
-        if (e.dates.length > 1) {
-          lbl += ' a ' + (0, _helpers.formatDate)(e.dates[1], 'MMMM Do YYYY');
-          val += '|' + (0, _helpers.formatDate)(e.dates[1], 'MM-DD-YYYY');
-        }
-
-        // Update state
-        this.setState({
-          value: val
-        });
-
-        // Update UI
-        this.ui.input.val(lbl);
-        this.ui.input.focus();
-      }.bind(this));
-
-      // Setup slider
-      this.ui.form.find("span[data-filter='amount']").popover({
-        html: true,
-        title: 'Seleccione el rango a utilizar como filtro (MXN)',
-        content: '<b>$0</b><input id="amountSlider" type="text" /><b>$100,000,000</b>',
-        placement: 'bottom',
-        trigger: 'focus'
-      }).on('shown.bs.popover', function () {
-        $("#amountSlider").slider({
-          step: 50000,
-          min: 0,
-          max: 100000000,
-          value: [20000000, 80000000],
-          formatter: function formatter(value) {
-            if (Array.isArray(value)) {
-              var lbl = '$' + value[0].toLocaleString() + ' a ' + '$' + value[1].toLocaleString();
-              return lbl;
-            }
-            return '';
-          }
-        }).on('slide', function (e) {
-          this.setState({
-            value: e.value.join('|')
-          });
-          this.ui.input.val('$' + e.value[0].toLocaleString() + ' a ' + '$' + e.value[1].toLocaleString());
-        }.bind(this));
-      }.bind(this));
-
-      // Update state when filter value changes
-      this.ui.input.on('keyup', function () {
-        this.setState({
-          value: this.ui.input.val()
-        });
-      }.bind(this));
-
-      // Handle filter selection
-      this.ui.bullets.on('click', function (e) {
-        // Toggle active
-        var target = $(e.target);
-        this.ui.bullets.removeClass('active');
-        target.addClass('active');
-
-        // Update state
-        this.setState({
-          filter: target.data('filter')
-        });
-
-        switch (target.data('filter')) {
-          case 'date':
-            target.datepicker('show');
-            break;
-          case 'amount':
-            target.popover('toggle');
-            break;
-        }
-      }.bind(this));
-
-      // Handle form submit
-      this.ui.form.on('submit', function (e) {
-        e.preventDefault();
-        this.props.onSubmit(this.state);
-      }.bind(this));
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { className: 'inner-row' },
-        _react2.default.createElement(
-          'div',
-          { className: 'row' },
-          _react2.default.createElement(
-            'div',
-            { className: 'col-md-12' },
-            _react2.default.createElement(
-              'h2',
-              null,
-              'Buscador de Contratos'
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Encuentra contratos o procedimientos de contrataci\xF3n registrados en Testigo Social 2.0 haciendo uso de los distintos filtros de b\xFAsqueda disponibles.'
-            ),
-            _react2.default.createElement(
-              'form',
-              { id: 'queryForm' },
-              _react2.default.createElement(
-                'div',
-                { className: 'input-group' },
-                _react2.default.createElement('input', { type: 'text', className: 'form-control', id: 'query', name: 'query', placeholder: 'Buscar...' }),
-                _react2.default.createElement(
-                  'span',
-                  { className: 'input-group-btn' },
-                  _react2.default.createElement(
-                    'button',
-                    { className: 'btn btn-primary', type: 'submit' },
-                    'Buscar'
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'bullets' },
-                _react2.default.createElement(
-                  'span',
-                  { className: 'btn-black active', 'data-filter': 'date' },
-                  'Fecha'
-                ),
-                _react2.default.createElement(
-                  'span',
-                  { className: 'btn-black', 'data-filter': 'amount' },
-                  'Monto'
-                ),
-                _react2.default.createElement(
-                  'span',
-                  { className: 'btn-black', 'data-filter': 'buyer' },
-                  'Comprador'
-                ),
-                _react2.default.createElement(
-                  'span',
-                  { className: 'btn-black', 'data-filter': 'provider' },
-                  'Proveedor'
-                ),
-                _react2.default.createElement(
-                  'span',
-                  { className: 'btn-black', 'data-filter': 'procedureType' },
-                  'Tipo de Procedimiento'
-                ),
-                _react2.default.createElement(
-                  'span',
-                  { className: 'btn-black', 'data-filter': 'procedureNumber' },
-                  'No. de Procedimiento'
-                ),
-                _react2.default.createElement(
-                  'span',
-                  { className: 'btn-black', 'data-filter': 'contractNumber' },
-                  'No. de Contrato'
-                )
-              )
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return SearchBar;
-}(_react2.default.Component);
-
-exports.default = SearchBar;
-
-},{"../helpers.js":289,"react":276}],286:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _TableItem = require('./TableItem.jsx');
-
-var _TableItem2 = _interopRequireDefault(_TableItem);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var SearchResults = function (_React$Component) {
-  _inherits(SearchResults, _React$Component);
-
-  function SearchResults(props) {
-    _classCallCheck(this, SearchResults);
-
-    var _this = _possibleConstructorReturn(this, (SearchResults.__proto__ || Object.getPrototypeOf(SearchResults)).call(this, props));
-
-    _this.itemSelected = _this.itemSelected.bind(_this);
-    return _this;
-  }
-
-  _createClass(SearchResults, [{
-    key: 'itemSelected',
-    value: function itemSelected(contract) {
-      this.props.onSelection(contract);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      var content = _react2.default.createElement(
-        'tr',
-        null,
-        _react2.default.createElement(
-          'td',
-          null,
-          _react2.default.createElement(
-            'h4',
-            null,
-            _react2.default.createElement(
-              'i',
-              null,
-              'Sin resultados que mostrar...'
-            )
-          )
-        )
-      );
-      if (this.props.items.length > 0) {
-        content = this.props.items.map(function (contract) {
-          return _react2.default.createElement(_TableItem2.default, { onClick: _this2.itemSelected, key: contract.releases[0].id, contract: contract });
-        });
-      }
-
-      return _react2.default.createElement(
-        'div',
-        { className: 'inner-row' },
-        _react2.default.createElement(
-          'div',
-          { className: 'row' },
-          _react2.default.createElement(
-            'div',
-            { className: 'col-md-12' },
-            _react2.default.createElement(
-              'h2',
-              null,
-              'Resultados de la busqueda'
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Estos son los procedimientos de contrataci\xF3n registrados en Testigo Social 2.0 que satisfacen los creiterios de selecci\xF3n proporcionados'
-            ),
-            _react2.default.createElement(
-              'table',
-              { className: 'table table-striped latest-contracts' },
-              _react2.default.createElement(
-                'tbody',
-                null,
-                content
-              )
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return SearchResults;
-}(_react2.default.Component);
-
-exports.default = SearchResults;
-
-},{"./TableItem.jsx":288,"react":276}],287:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _Description = require('../base/Description.jsx');
-
-var _Description2 = _interopRequireDefault(_Description);
-
-var _TableItem = require('./TableItem.jsx');
-
-var _TableItem2 = _interopRequireDefault(_TableItem);
-
-var _SearchResults = require('./SearchResults.jsx');
-
-var _SearchResults2 = _interopRequireDefault(_SearchResults);
-
-var _SearchBar = require('./SearchBar.jsx');
-
-var _SearchBar2 = _interopRequireDefault(_SearchBar);
-
-var _Details = require('./Details.jsx');
-
-var _Details2 = _interopRequireDefault(_Details);
-
-var _helpers = require('../helpers.js');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Section = function (_React$Component) {
-  _inherits(Section, _React$Component);
-
-  function Section(props) {
-    _classCallCheck(this, Section);
-
-    var _this = _possibleConstructorReturn(this, (Section.__proto__ || Object.getPrototypeOf(Section)).call(this, props));
-
-    _this.runQuery = _this.runQuery.bind(_this);
-    _this.state = {
-      items: [],
-      details: null
-    };
-    return _this;
-  }
-
-  // Submit query and update component state with results
-
-
-  _createClass(Section, [{
-    key: 'runQuery',
-    value: function runQuery(query) {
-      var _this2 = this;
-
-      var url = '/query/gacm';
-      if ((0, _helpers.getParameter)('bucket')) {
-        url = '/query/' + (0, _helpers.getParameter)('bucket');
-      }
-
-      $.ajax({
-        type: "POST",
-        url: url,
-        data: {
-          query: JSON.stringify(query)
-        },
-        success: function success(res) {
-          return _this2.setState({ items: JSON.parse(res) });
-        }
-      });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this3 = this;
-
-      if (!this.state.details) {
-        return _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(_Description2.default, {
-            title: 'Contratos',
-            color: 'blue',
-            content: 'Consulta cada contrato que est\xE1 registrado en Testigo Social 2.0. Podr\xE1s encontrar informaci\xF3n para cada una de las etapas del procedimiento de contrataci\xF3n, desde su planeaci\xF3n hasta su implementaci\xF3n.' }),
-          _react2.default.createElement(_SearchBar2.default, { onSubmit: this.runQuery }),
-          _react2.default.createElement(_SearchResults2.default, { items: this.state.items, onSelection: function onSelection(c) {
-              return _this3.setState({ details: c });
-            } })
-        );
-      } else {
-        return _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(_Description2.default, {
-            title: 'Contratos',
-            color: 'blue',
-            content: 'En esta secci\xF3n podr\xE1s visualizar la informaci\xF3n completa y agregada de un contrato, desde su planeaci\xF3n hasta su implementaci\xF3n. Como base se utiliza el Est\xE1ndar de Datos para las Contrataciones Abiertas.' }),
-          _react2.default.createElement(_Details2.default, { contract: this.state.details, onClose: function onClose() {
-              return _this3.setState({ details: null });
-            } })
-        );
-      }
-    }
-  }]);
-
-  return Section;
-}(_react2.default.Component);
-
-exports.default = Section;
-
-},{"../base/Description.jsx":280,"../helpers.js":289,"./Details.jsx":284,"./SearchBar.jsx":285,"./SearchResults.jsx":286,"./TableItem.jsx":288,"react":276}],288:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _helpers = require('../helpers.js');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var TableItem = function (_React$Component) {
-  _inherits(TableItem, _React$Component);
-
-  function TableItem(props) {
-    _classCallCheck(this, TableItem);
-
-    var _this = _possibleConstructorReturn(this, (TableItem.__proto__ || Object.getPrototypeOf(TableItem)).call(this, props));
-
-    _this.handleClick = _this.handleClick.bind(_this);
-    return _this;
-  }
-
-  _createClass(TableItem, [{
-    key: 'handleClick',
-    value: function handleClick(e) {
-      e.preventDefault();
-      this.props.onClick(this.props.contract);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var release = this.props.contract.releases[0];
-      return _react2.default.createElement(
-        'tr',
-        null,
-        _react2.default.createElement(
-          'td',
-          { width: '50%' },
-          _react2.default.createElement(
-            'p',
-            { className: 'lbl' },
-            release.tender.id
-          ),
-          _react2.default.createElement(
-            'a',
-            { onClick: this.handleClick },
-            release.tender.description
-          )
-        ),
-        _react2.default.createElement(
-          'td',
-          null,
-          _react2.default.createElement(
-            'p',
-            { className: 'lbl' },
-            'Monto'
-          ),
-          _react2.default.createElement(
-            'h4',
-            null,
-            (0, _helpers.formatAmount)(release.tender.value.amount || 0)
-          ),
-          _react2.default.createElement(
-            'p',
-            { className: 'lbl' },
-            'Proveedor'
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            release.awards[0].suppliers[0].name
-          )
-        ),
-        _react2.default.createElement(
-          'td',
-          null,
-          _react2.default.createElement(
-            'p',
-            { className: 'lbl' },
-            'Comprador'
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            release.buyer.name
-          )
-        ),
-        _react2.default.createElement(
-          'td',
-          { width: '15%' },
-          _react2.default.createElement(
-            'a',
-            { className: 'btn-black active', onClick: this.handleClick },
-            'Ver Contrato'
-          )
-        )
-      );
-    }
-  }]);
-
-  return TableItem;
-}(_react2.default.Component);
-
-exports.default = TableItem;
-
-},{"../helpers.js":289,"react":276}],289:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.codeList = exports.formatDate = exports.formatAmount = exports.getParameter = undefined;
-
-var _moment = require('moment');
-
-var _moment2 = _interopRequireDefault(_moment);
-
-require('moment/locale/es');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// Helper method to retrieve a GET variable
-function getParameter(name, url) {
-  if (!url) {
-    url = window.location.href;
-  }
-  name = name.replace(/[\[\]]/g, "\\$&");
-  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-      results = regex.exec(url);
-  if (!results) return false;
-  if (!results[2]) return false;
-  return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
-
-// Format a given value to a currency string
-function formatAmount(val) {
-  return '$' + val.toLocaleString(undefined, {
-    useGrouping: true,
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
-  });
-}
-
-// Pretty print date values
-function formatDate(date, format) {
-  return (0, _moment2.default)(date).format(format);
-}
-
-// Expand code list values based on the official documentation
-// http://standard.open-contracting.org/latest/en/schema/codelists
-function codeList(list, val) {
-  var table = {};
-  switch (list) {
-    case 'tender.status':
-      // http://standard.open-contracting.org/latest/en/schema/codelists/#tender-status
-      table = {
-        'planned': 'Planeada',
-        'active': 'Activa',
-        'cancelled': 'Cancelada',
-        'unsuccessful': 'No exitosa',
-        'complete': 'Cerrada'
-      };
-      break;
-    case 'tender.procurementMethod':
-      // http://standard.open-contracting.org/latest/en/schema/codelists/#method
-      table = {
-        'open': 'Licitación Pública',
-        'selective': 'Invitación a 3 proveedores',
-        'limited': 'Asignación Directa'
-      };
-      break;
-    case 'award.status':
-      // http://standard.open-contracting.org/latest/en/schema/codelists/#award-status
-      table = {
-        'pending': 'Pendiente',
-        'active': 'Activa',
-        'cancelled': 'Cancelada',
-        'unsuccessful': 'No exitosa'
-      };
-      break;
-    case 'contract.status':
-      // http://standard.open-contracting.org/latest/en/schema/codelists/#contract-status
-      table = {
-        'pending': 'Pendiente',
-        'active': 'Activo',
-        'cancelled': 'Cancelado',
-        'terminated': 'Finalizado'
-      };
-      break;
-    default:
-      return 'Invalid list';
-  }
-  return table[val];
-}
-
-exports.getParameter = getParameter;
-exports.formatAmount = formatAmount;
-exports.formatDate = formatDate;
-exports.codeList = codeList;
-
-},{"moment":89,"moment/locale/es":88}],290:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _chart = require('chart.js');
-
-var _chart2 = _interopRequireDefault(_chart);
-
-var _reactRouter = require('react-router');
-
-var _helpers = require('../helpers.js');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Home = function (_React$Component) {
-  _inherits(Home, _React$Component);
-
-  function Home(props) {
-    _classCallCheck(this, Home);
-
-    return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
-  }
-
-  _createClass(Home, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var url = '/stats/gacm';
-      var data = {};
-      var charts = {};
-      var ui = {
-        totalContracts: $('span.totalContracts'),
-        totalBudget: $('span#totalBudget'),
-        totalAward: $('span#totalAward'),
-        totalAmount: $('span#totalAmount'),
-        firstDate: $('span#firstDate'),
-        lastDate: $('span#lastDate'),
-        description: $('span#orgDescription')
-      };
-
-      // Random hero photo
-      var img = "url('images/hero_photo_" + (Math.floor(Math.random() * 4) + 1) + ".png')";
-      $('#hero > div.photo').css('background-image', img);
-
-      // Slider
-      $('.carousel').carousel({
-        interval: 8000,
-        keyboard: false,
-        pause: "hover"
-      });
-
-      // Dynamically set bucket used, default to 'gacm'
-      if ((0, _helpers.getParameter)('bucket')) {
-        url = '/stats/' + (0, _helpers.getParameter)('bucket');
-      }
-
-      // Load stats
-      $.ajax({
-        type: "GET",
-        url: url,
-        success: function success(res) {
-          data = JSON.parse(res);
-        }
-      }).done(function () {
-        // Adjust labels
-        ui.firstDate.text((0, _helpers.formatDate)(data.firstDate, 'LL'));
-        ui.lastDate.text((0, _helpers.formatDate)(data.lastDate, 'LL'));
-        ui.description.text(data.description);
-        ui.totalContracts.text(data.contracts.total);
-        ui.totalBudget.text((data.contracts.budget / 1000000).toLocaleString(undefined, {
-          minimumFractionDigits: 1,
-          maximumFractionDigits: 1
-        }));
-        ui.totalAward.text((data.contracts.awarded / 1000000).toLocaleString(undefined, {
-          minimumFractionDigits: 1,
-          maximumFractionDigits: 1
-        }));
-        ui.totalAmount.text(data.contracts.budget.toLocaleString(undefined, {
-          minimumFractionDigits: 1,
-          maximumFractionDigits: 1
-        }));
-
-        // Prepare chart data
-        var directP = (data.method['limited'].budget * 100 / data.contracts.budget).toFixed(2);
-        var limitedP = (data.method['selective'].budget * 100 / data.contracts.budget).toFixed(2);
-        var publicP = (data.method['open'].budget * 100 / data.contracts.budget).toFixed(2);
-        var charts = {
-          limited: {
-            c: false,
-            data: {
-              labels: ['Adjudicación Directa (%)', 'Total Contratado (%)'],
-              datasets: [{
-                data: [directP, (100 - directP).toFixed(2)],
-                backgroundColor: ["#CCB3FF", "#EEEEEE"]
-              }]
-            }
-          },
-          selective: {
-            c: false,
-            data: {
-              labels: ['Adjudicación Directa (%)', 'Invitación a cuando menos 3 personas (%)', 'Total Contratado (%)'],
-              datasets: [{
-                data: [directP, limitedP, (100 - (Number(directP) + Number(limitedP))).toFixed(2)],
-                backgroundColor: ["#CCB3FF", "#FF6384", "#EEEEEE"]
-              }]
-            }
-          },
-          open: {
-            c: false,
-            data: {
-              labels: ['Adjudicación Directa (%)', 'Invitación a cuando menos 3 personas (%)', 'Licitación Pública (%)'],
-              datasets: [{
-                data: [directP, limitedP, publicP],
-                backgroundColor: ["#CCB3FF", "#FF6384", "#7DE7CF"]
-              }]
-            }
-          }
-        };
-
-        // Configure data slider
-        var slides = $('#content-slides');
-        slides.on('slid.bs.carousel', function () {
-          var active = slides.find('div.active');
-          var method = active.data('section');
-          if (method) {
-            active.find('span.contracts').text(data.method[method].total);
-            active.find('span.amount').text(data.method[method].budget.toLocaleString({
-              useGrouping: true
-            }));
-
-            if (!charts[method].c) {
-              charts[method].c = new _chart2.default(active.find('canvas'), {
-                type: "pie",
-                data: charts[method].data,
-                options: {
-                  responsive: true,
-                  responsiveAnimationDuration: 500,
-                  padding: 10
-                }
-              });
-            }
-          }
-        });
-      });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'div',
-          { id: 'hero', className: 'row' },
-          _react2.default.createElement(
-            'div',
-            { className: 'photo col-md-12' },
-            _react2.default.createElement('div', { className: 'logo' }),
-            _react2.default.createElement(
-              'h2',
-              null,
-              'El dinero p\xFAblico tambi\xE9n es tu dinero'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { id: 'facts', className: 'row inner-row' },
-          _react2.default.createElement(
-            'div',
-            { className: 'col-md-4' },
-            _react2.default.createElement(
-              'p',
-              { className: 'txt-centered' },
-              'N\xFAmero de ',
-              _react2.default.createElement(
-                'span',
-                { className: 'txt-bold' },
-                'procedimientos de contrataci\xF3n'
-              ),
-              ' registrados'
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'highlight txt-centered txt-mono' },
-              _react2.default.createElement(
-                'span',
-                { className: 'counter totalContracts' },
-                '0'
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'col-md-4' },
-            _react2.default.createElement(
-              'p',
-              { className: 'txt-centered' },
-              _react2.default.createElement(
-                'span',
-                { className: 'txt-bold' },
-                'Presupuesto asignado'
-              ),
-              ' de las contrataciones registradas'
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'highlight txt-centered txt-mono' },
-              '$',
-              _react2.default.createElement(
-                'span',
-                { id: 'totalBudget', className: 'counter' },
-                '0'
-              ),
-              'M'
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'col-md-4' },
-            _react2.default.createElement(
-              'p',
-              { className: 'txt-centered' },
-              'Monto total ',
-              _react2.default.createElement(
-                'span',
-                { className: 'txt-bold' },
-                'contratado'
-              ),
-              'a trav\xE9s de los procedimientos registrados'
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'highlight txt-centered txt-mono' },
-              '$',
-              _react2.default.createElement(
-                'span',
-                { id: 'totalAward', className: 'counter' },
-                '0'
-              ),
-              'M'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { id: 'highlights', className: 'row inner-row' },
-          _react2.default.createElement(
-            'div',
-            { id: 'content-slides', className: 'col-md-12 carousel slide', 'data-ride': 'carousel' },
-            _react2.default.createElement(
-              'ol',
-              { className: 'carousel-indicators' },
-              _react2.default.createElement('li', { 'data-target': '#content-slides', 'data-slide-to': '0', className: 'active' }),
-              _react2.default.createElement('li', { 'data-target': '#content-slides', 'data-slide-to': '1' }),
-              _react2.default.createElement('li', { 'data-target': '#content-slides', 'data-slide-to': '2' }),
-              _react2.default.createElement('li', { 'data-target': '#content-slides', 'data-slide-to': '3' })
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'carousel-inner', role: 'listbox' },
-              _react2.default.createElement(
-                'div',
-                { className: 'item active' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'info' },
-                  _react2.default.createElement(
-                    'span',
-                    { className: 'bg-green' },
-                    'Entre el ',
-                    _react2.default.createElement('span', { id: 'firstDate' }),
-                    ' y el ',
-                    _react2.default.createElement('span', { id: 'lastDate' }),
-                    ', se han adjudicado'
-                  )
-                ),
-                _react2.default.createElement(
-                  'h1',
-                  { className: 'txt-mono' },
-                  '$',
-                  _react2.default.createElement(
-                    'span',
-                    { id: 'totalAmount', className: 'counter' },
-                    '0'
-                  ),
-                  ' MXN'
-                ),
-                _react2.default.createElement(
-                  'p',
-                  { className: 'info' },
-                  _react2.default.createElement(
-                    'span',
-                    { className: 'bg-green' },
-                    'para ',
-                    _react2.default.createElement(
-                      'strong',
-                      null,
-                      _react2.default.createElement('span', { id: 'orgDescription' })
-                    ),
-                    ', mediante ',
-                    _react2.default.createElement(
-                      'span',
-                      { className: 'counter totalContracts' },
-                      '0'
-                    ),
-                    ' contratos.'
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'item', 'data-section': 'limited' },
-                _react2.default.createElement(
-                  'div',
-                  { className: 'chart' },
-                  _react2.default.createElement('canvas', { className: 'dataChart', width: '460', height: '320' })
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'info' },
-                  _react2.default.createElement(
-                    'h2',
-                    null,
-                    'Adjudicaci\xF3n Directa'
-                  ),
-                  _react2.default.createElement(
-                    'h3',
-                    null,
-                    '$ ',
-                    _react2.default.createElement(
-                      'span',
-                      { className: 'amount' },
-                      '0'
-                    ),
-                    ' MXN'
-                  ),
-                  _react2.default.createElement(
-                    'p',
-                    null,
-                    'Han sido adjudicados directamente mediante ',
-                    _react2.default.createElement(
-                      'span',
-                      { className: 'contracts' },
-                      '0'
-                    ),
-                    ' contratos.'
-                  ),
-                  _react2.default.createElement(
-                    'p',
-                    { className: 'details' },
-                    'En una adjudicaci\xF3n directa se entrega un contrato a una persona o empresa sin realizar un concurso p\xFAblico y abierto.'
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'item', 'data-section': 'selective' },
-                _react2.default.createElement(
-                  'div',
-                  { className: 'chart' },
-                  _react2.default.createElement('canvas', { className: 'dataChart', width: '460', height: '320' })
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'info' },
-                  _react2.default.createElement(
-                    'h2',
-                    null,
-                    'Invitaci\xF3n a cuado menos 3 personas'
-                  ),
-                  _react2.default.createElement(
-                    'h3',
-                    null,
-                    '$ ',
-                    _react2.default.createElement(
-                      'span',
-                      { className: 'amount' },
-                      '0'
-                    ),
-                    ' MXN'
-                  ),
-                  _react2.default.createElement(
-                    'p',
-                    null,
-                    'Han sido adjudicados por invitaci\xF3n a cuando menos tres personas, mediante ',
-                    _react2.default.createElement(
-                      'span',
-                      { className: 'contracts' },
-                      '0'
-                    ),
-                    ' contratos.'
-                  ),
-                  _react2.default.createElement(
-                    'p',
-                    { className: 'details' },
-                    'En una invitaci\xF3n a cuando menos tres personas se entrega un contrato mediante un concurso en el que solo participan un n\xFAmero restringido de personas o empresas, seleccionadas por la dependencia gubernamental que realiza la contrataci\xF3n.'
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'item', 'data-section': 'open' },
-                _react2.default.createElement(
-                  'div',
-                  { className: 'chart' },
-                  _react2.default.createElement('canvas', { className: 'dataChart', width: '460', height: '320' })
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'info' },
-                  _react2.default.createElement(
-                    'h2',
-                    null,
-                    'Licitaci\xF3n P\xFAblica'
-                  ),
-                  _react2.default.createElement(
-                    'h3',
-                    null,
-                    '$ ',
-                    _react2.default.createElement(
-                      'span',
-                      { className: 'amount' },
-                      '0'
-                    ),
-                    ' MXN'
-                  ),
-                  _react2.default.createElement(
-                    'p',
-                    null,
-                    'Han sido adjudicados por licitaci\xF3n p\xFAblica, mediante ',
-                    _react2.default.createElement(
-                      'span',
-                      { className: 'contracts' },
-                      '0'
-                    ),
-                    ' contratos.'
-                  ),
-                  _react2.default.createElement(
-                    'p',
-                    { className: 'details' },
-                    'En una licitaci\xF3n p\xFAblica se entrega un contrato mediante un concurso que est\xE1 abierto a cualquier persona o empresa. En M\xE9xico existen licitaciones p\xFAblicas nacionales, internacionales bajo tratados de libre comercio e internacionales abiertas.'
-                  )
-                )
-              )
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { id: 'video', className: 'row inner-row' },
-          _react2.default.createElement(
-            'div',
-            { className: 'col-md-12' },
-            _react2.default.createElement('div', { className: 'holder' })
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'col-md-4 item' },
-            _react2.default.createElement(
-              _reactRouter.Link,
-              { to: '/contracts' },
-              _react2.default.createElement(
-                'span',
-                { className: 'btn-black txt-upper' },
-                'Contratos'
-              ),
-              _react2.default.createElement(
-                'p',
-                null,
-                'Consulta la informaci\xF3n alrededor de una ',
-                _react2.default.createElement(
-                  'strong',
-                  null,
-                  'contrataci\xF3n p\xFAblica'
-                ),
-                ', desde su planeaci\xF3n hasta su ejecuci\xF3n y pago'
-              ),
-              _react2.default.createElement('span', { className: 'icon contracts' })
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'col-md-4 item' },
-            _react2.default.createElement(
-              _reactRouter.Link,
-              { to: '/indicators' },
-              _react2.default.createElement(
-                'span',
-                { className: 'btn-black txt-upper' },
-                'Indicadores'
-              ),
-              _react2.default.createElement(
-                'p',
-                null,
-                'Revisa ',
-                _react2.default.createElement(
-                  'strong',
-                  null,
-                  'estad\xEDsticas'
-                ),
-                ' sobre el sistema de contrataciones de M\xE9xico y analiza c\xF3mo est\xE1 funcionando'
-              ),
-              _react2.default.createElement('span', { className: 'icon markers' })
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'col-md-4 item' },
-            _react2.default.createElement(
-              _reactRouter.Link,
-              { to: '/register' },
-              _react2.default.createElement(
-                'span',
-                { className: 'btn-black txt-upper' },
-                'Notificaciones'
-              ),
-              _react2.default.createElement(
-                'p',
-                null,
-                'Recibe ',
-                _react2.default.createElement(
-                  'strong',
-                  null,
-                  'alertas e informaci\xF3n'
-                ),
-                ' oportuna sobre lo que ocurre en los procedimientos de contrataci\xF3n que te interesan'
-              ),
-              _react2.default.createElement('span', { className: 'icon notifications' })
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'col-md-12' },
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null),
-            _react2.default.createElement(
-              'span',
-              { className: 'btn-black' },
-              'Comienza a monitorear c\xF3mo se gasta tu dinero con TS 2.0'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'row info bg-blue' },
-          _react2.default.createElement(
-            'div',
-            { className: 'inner-row' },
-            _react2.default.createElement(
-              'p',
-              null,
-              'La apertura y la participaci\xF3n de la ciudadan\xEDa en las compras p\xFAblicas se traduce en mejores bienes y servicios p\xFAblicos para las ',
-              _react2.default.createElement(
-                'strong',
-                null,
-                'comunidades'
-              ),
-              ', m\xE1s oportunidades de negocio para emprendedores y ',
-              _react2.default.createElement(
-                'strong',
-                null,
-                'empresas'
-              ),
-              ' y una mayor rendici\xF3n de cuentas de los ',
-              _react2.default.createElement(
-                'strong',
-                null,
-                'gobiernos.'
-              )
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return Home;
-}(_react2.default.Component);
-
-exports.default = Home;
-
-},{"../helpers.js":289,"chart.js":1,"react":276,"react-router":245}],291:[function(require,module,exports){
-'use strict';
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = require('react-dom');
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _reactRouter = require('react-router');
-
-var _Main = require('./Main.jsx');
-
-var _Main2 = _interopRequireDefault(_Main);
-
-var _Section = require('./home/Section.jsx');
-
-var _Section2 = _interopRequireDefault(_Section);
-
-var _Section3 = require('./contracts/Section.jsx');
-
-var _Section4 = _interopRequireDefault(_Section3);
-
-var _Section5 = require('./indicators/Section.jsx');
-
-var _Section6 = _interopRequireDefault(_Section5);
-
-var _Section7 = require('./register/Section.jsx');
-
-var _Section8 = _interopRequireDefault(_Section7);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_reactDom2.default.render(_react2.default.createElement(
-  _reactRouter.Router,
-  { history: _reactRouter.browserHistory },
-  _react2.default.createElement(
-    _reactRouter.Route,
-    { component: _Main2.default },
-    _react2.default.createElement(_reactRouter.Route, { path: '/', component: _Section2.default }),
-    _react2.default.createElement(_reactRouter.Route, { path: '/contracts', component: _Section4.default }),
-    _react2.default.createElement(_reactRouter.Route, { path: '/indicators', component: _Section6.default }),
-    _react2.default.createElement(_reactRouter.Route, { path: '/register', component: _Section8.default })
-  )
-), document.getElementById('root'));
-
-// Import top-level components
-
-},{"./Main.jsx":279,"./contracts/Section.jsx":287,"./home/Section.jsx":290,"./indicators/Section.jsx":294,"./register/Section.jsx":296,"react":276,"react-dom":92,"react-router":245}],292:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _chart = require('chart.js');
-
-var _chart2 = _interopRequireDefault(_chart);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var ChartWidget = function (_React$Component) {
-  _inherits(ChartWidget, _React$Component);
-
-  function ChartWidget(props) {
-    _classCallCheck(this, ChartWidget);
-
-    var _this = _possibleConstructorReturn(this, (ChartWidget.__proto__ || Object.getPrototypeOf(ChartWidget)).call(this, props));
-
-    _this.chart = false;
-    return _this;
-  }
-
-  _createClass(ChartWidget, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      if (!this.chart) {
-        this.chart = new _chart2.default(document.getElementById(this.props.id), {
-          type: "pie",
-          options: {
-            responsive: true,
-            responsiveAnimationDuration: 500,
-            padding: 10
-          }
-        });
-        this.forceUpdate();
-      }
-    }
-  }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      this.chart.destroy();
-      this.chart = null;
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      // Update existing chart when there's data available
-      if (this.chart && Object.keys(this.props.data).length > 0) {
-        var newData = this.props.reducer(this.props.data);
-        this.chart.data.datasets = newData.datasets;
-        this.chart.data.labels = newData.labels;
-        this.chart.update();
-      }
-
-      return _react2.default.createElement(
-        'div',
-        { className: 'chart-widget' },
-        this.props.title && _react2.default.createElement(
-          'h2',
-          { className: 'block-title', onClick: function onClick() {
-              return _this2.props.onSelection(_this2.props.reducer);
-            } },
-          this.props.title
-        ),
-        this.props.description && _react2.default.createElement(
-          'div',
-          { className: 'bg-gray' },
-          _react2.default.createElement(
-            'p',
-            null,
-            this.props.description
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'chart' },
-          _react2.default.createElement('canvas', { id: this.props.id,
-            className: 'dataChart',
-            height: this.props.height,
-            width: this.props.width })
-        )
-      );
-    }
-  }]);
-
-  return ChartWidget;
-}(_react2.default.Component);
-
-exports.default = ChartWidget;
-
-},{"chart.js":1,"react":276}],293:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _ChartWidget = require('./ChartWidget.jsx');
-
-var _ChartWidget2 = _interopRequireDefault(_ChartWidget);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Details = function (_React$Component) {
-  _inherits(Details, _React$Component);
-
-  function Details(props) {
-    _classCallCheck(this, Details);
-
-    var _this = _possibleConstructorReturn(this, (Details.__proto__ || Object.getPrototypeOf(Details)).call(this, props));
-
-    _this.close = _this.close.bind(_this);
-    _this.applyFilters = _this.applyFilters.bind(_this);
-    return _this;
-  }
-
-  _createClass(Details, [{
-    key: 'close',
-    value: function close(e) {
-      e.preventDefault();
-      this.props.onClose();
-    }
-  }, {
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      // Set form reference and populate filter values
-      this.form = $('form#filterForm');
-      for (var k in this.props.filters) {
-        var selector = 'input[type="radio"][name="' + k + '"][value="' + this.props.filters[k] + '"]';
-        this.form.find(selector).prop("checked", true);
-      }
-
-      // Setup slider
-      var amountSlider = $("#amountSlider");
-      amountSlider.slider({
-        step: 50000,
-        min: 0,
-        max: 500000000,
-        value: this.props.filters.amount,
-        formatter: function formatter(value) {
-          if (Array.isArray(value)) {
-            var lbl = '$' + value[0].toLocaleString() + ' a ' + '$' + value[1].toLocaleString();
-            return lbl;
-          }
-          return '';
-        }
-      });
-    }
-  }, {
-    key: 'applyFilters',
-    value: function applyFilters() {
-      var data = {};
-      this.form.serializeArray().forEach(function (el) {
-        data[el.name] = el.value;
-      });
-      data.amount = data.amount.split(',');
-      data.amount[0] = parseInt(data.amount[0]);
-      data.amount[1] = parseInt(data.amount[1]);
-      this.props.onSubmit(data);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { className: 'row chart-main' },
-        _react2.default.createElement(
-          'div',
-          { className: 'col-md-4 sidebar' },
-          _react2.default.createElement(
-            'form',
-            { id: 'filterForm' },
-            _react2.default.createElement(
-              'h4',
-              null,
-              'Filtros'
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Selecciona los criterios que te sean m\xE1s relevantes para ajustar el indicador.'
-            ),
-            _react2.default.createElement('hr', null),
-            _react2.default.createElement(
-              'h4',
-              null,
-              'Dependencias'
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'radio' },
-              _react2.default.createElement(
-                'label',
-                null,
-                _react2.default.createElement('input', { type: 'radio', name: 'bucket', value: 'gacm' }),
-                'Grupo Aeroportuario'
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'radio' },
-              _react2.default.createElement(
-                'label',
-                null,
-                _react2.default.createElement('input', { type: 'radio', name: 'bucket', value: 'cdmx' }),
-                'Ciudad de M\xE9xico'
-              )
-            ),
-            _react2.default.createElement('hr', null),
-            _react2.default.createElement(
-              'h4',
-              null,
-              'Etapa del Procedimiento'
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'radio' },
-              _react2.default.createElement(
-                'label',
-                null,
-                _react2.default.createElement('input', { type: 'radio', name: 'state', value: 'planning' }),
-                'Planeaci\xF3n'
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'radio' },
-              _react2.default.createElement(
-                'label',
-                null,
-                _react2.default.createElement('input', { type: 'radio', name: 'state', value: 'tender' }),
-                'Licitaci\xF3n'
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'radio' },
-              _react2.default.createElement(
-                'label',
-                null,
-                _react2.default.createElement('input', { type: 'radio', name: 'state', value: 'award' }),
-                'Adjudicaci\xF3n'
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'radio' },
-              _react2.default.createElement(
-                'label',
-                null,
-                _react2.default.createElement('input', { type: 'radio', name: 'state', value: 'contract' }),
-                'Contrataci\xF3n'
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'radio' },
-              _react2.default.createElement(
-                'label',
-                null,
-                _react2.default.createElement('input', { type: 'radio', name: 'state', value: 'implementation' }),
-                'Implementaci\xF3n'
-              )
-            ),
-            _react2.default.createElement('hr', null),
-            _react2.default.createElement(
-              'h4',
-              null,
-              'Monto'
-            ),
-            _react2.default.createElement(
-              'b',
-              null,
-              '$0'
-            ),
-            _react2.default.createElement('input', { id: 'amountSlider', name: 'amount', type: 'text' }),
-            _react2.default.createElement(
-              'b',
-              null,
-              '$500,000,000'
-            ),
-            _react2.default.createElement('hr', null),
-            _react2.default.createElement(
-              'span',
-              { className: 'btn-black active', onClick: this.applyFilters },
-              'Aplicar Filtros'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'col-md-8 content' },
-          _react2.default.createElement(
-            'h2',
-            null,
-            _react2.default.createElement(
-              'button',
-              { onClick: this.close, type: 'button', 'class': 'close', 'data-dismiss': 'modal', 'aria-label': 'Close' },
-              _react2.default.createElement(
-                'span',
-                { 'aria-hidden': 'true' },
-                '\xD7'
-              )
-            ),
-            '  Detalles del Indicador'
-          ),
-          _react2.default.createElement(_ChartWidget2.default, {
-            id: 'indicatorDetails',
-            data: this.props.data,
-            reducer: this.props.reducer,
-            width: '680',
-            height: '440' })
-        )
-      );
-    }
-  }]);
-
-  return Details;
-}(_react2.default.Component);
-
-exports.default = Details;
-
-},{"./ChartWidget.jsx":292,"react":276}],294:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _Description = require('../base/Description.jsx');
-
-var _Description2 = _interopRequireDefault(_Description);
-
-var _ChartWidget = require('./ChartWidget.jsx');
-
-var _ChartWidget2 = _interopRequireDefault(_ChartWidget);
-
-var _Details = require('./Details.jsx');
-
-var _Details2 = _interopRequireDefault(_Details);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-function procedureTypeData(data) {
-  // Calculate chart total and %
-  var total = data.limited.count + data.open.count + data.selective.count;
-  var directP = (data.limited.count * 100 / total).toFixed(2);
-  var limitedP = (data.selective.count * 100 / total).toFixed(2);
-  var publicP = (data.open.count * 100 / total).toFixed(2);
-
-  // Assamble chart data
-  var chartData = {
-    labels: ['Adjudicación Directa (%)', 'Invitación a cuando menos 3 personas (%)', 'Licitación Pública (%)'],
-    datasets: [{
-      data: [directP, limitedP, publicP],
-      backgroundColor: ["#CCB3FF", "#FF6384", "#EEEEEE"]
-    }]
-  };
-
-  return chartData;
-}
-
-function publishYearData(data) {
-  var i = 0;
-  var chartData = {
-    labels: [],
-    datasets: [{
-      data: [],
-      backgroundColor: []
-    }]
-  };
-  var colors = ["#CCB3FF", "#FF6384", "#EEEEEE"];
-  for (var y in data.years) {
-    chartData.labels.push(y);
-    chartData.datasets[0].data.push(data.years[y].count);
-    chartData.datasets[0].backgroundColor.push(colors[i]);
-    i++;
-  }
-
-  return chartData;
-}
-
-var Section = function (_React$Component) {
-  _inherits(Section, _React$Component);
-
-  function Section(props) {
-    _classCallCheck(this, Section);
-
-    var _this = _possibleConstructorReturn(this, (Section.__proto__ || Object.getPrototypeOf(Section)).call(this, props));
-
-    _this.showDetails = _this.showDetails.bind(_this);
-    _this.closeDetails = _this.closeDetails.bind(_this);
-    _this.applyFilters = _this.applyFilters.bind(_this);
-    _this.state = {
-      selected: null,
-      data: {},
-      filters: {
-        bucket: "gacm",
-        state: "planning",
-        amount: [20000000, 80000000]
-      }
-    };
-    return _this;
-  }
-
-  _createClass(Section, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.applyFilters(this.state.filters);
-    }
-  }, {
-    key: 'applyFilters',
-    value: function applyFilters(filters) {
-      this.runQuery(filters);
-    }
-  }, {
-    key: 'showDetails',
-    value: function showDetails(reducer) {
-      var newState = Object.assign({}, this.state, { selected: reducer });
-      this.setState(newState);
-    }
-  }, {
-    key: 'closeDetails',
-    value: function closeDetails() {
-      var newState = Object.assign({}, this.state, { selected: null });
-      this.setState(newState);
-    }
-  }, {
-    key: 'runQuery',
-    value: function runQuery(filters) {
-      var _this2 = this;
-
-      $.ajax({
-        type: "POST",
-        url: "/indicators",
-        data: {
-          query: JSON.stringify(filters)
-        },
-        success: function success(res) {
-          var newState = Object.assign({}, _this2.state);
-          newState.filters = filters;
-          newState.data = JSON.parse(res);
-          _this2.setState(newState);
-        }
-      });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var content = null;
-      if (this.state.selected) {
-        content = _react2.default.createElement(_Details2.default, {
-          filters: this.state.filters,
-          data: this.state.data,
-          reducer: this.state.selected,
-          onSubmit: this.applyFilters,
-          onClose: this.closeDetails });
-      } else {
-        content = _react2.default.createElement(
-          'div',
-          { className: 'row' },
-          _react2.default.createElement(
-            'div',
-            { className: 'col-md-6' },
-            _react2.default.createElement(_ChartWidget2.default, {
-              id: 'procedureType',
-              title: 'Tipo de Procedimiento',
-              data: this.state.data,
-              reducer: procedureTypeData,
-              onSelection: this.showDetails,
-              width: '500',
-              height: '340',
-              description: 'La gr\xE1fica muestra la relaci\xF3n de contratos que se adjudicar\xF3n de acuerdo a los distintos mecanismos establecidos.' })
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'col-md-6' },
-            _react2.default.createElement(_ChartWidget2.default, {
-              id: 'publishYear',
-              title: 'A\xF1o de Publicaci\xF3n',
-              data: this.state.data,
-              reducer: publishYearData,
-              onSelection: this.showDetails,
-              width: '500',
-              height: '340',
-              description: 'La gr\xE1fica muestra la relaci\xF3n de los contratos registrados de acuerdo a su a\xF1o de publicaci\xF3n.' })
-          )
-        );
-      }
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(_Description2.default, {
-          title: 'Indicadores',
-          color: 'green',
-          content: 'Testigo Social 2.0 te puede hacer llegar datos e informaci\xF3n espec\xEDfica sobre procedimientos contrataci\xF3n p\xFAblica que est\xE1n en marcha. Desde un aviso de inicio de un nuevo procedimiento hasta la liga para consultar un contrato. Completa la informaci\xF3n correspondiente y comienza a recibir notificaciones.' }),
-        _react2.default.createElement(
-          'div',
-          { className: 'inner-row' },
-          content,
-          _react2.default.createElement('hr', null)
-        )
-      );
-    }
-  }]);
-
-  return Section;
-}(_react2.default.Component);
-
-exports.default = Section;
-
-},{"../base/Description.jsx":280,"./ChartWidget.jsx":292,"./Details.jsx":293,"react":276}],295:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Form = function (_React$Component) {
-  _inherits(Form, _React$Component);
-
-  function Form(props) {
-    _classCallCheck(this, Form);
-
-    return _possibleConstructorReturn(this, (Form.__proto__ || Object.getPrototypeOf(Form)).call(this, props));
-  }
-
-  _createClass(Form, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      var agencies = $('div.agency-grid div.item');
-      var selectedAgencies = $('div.agency-grid input#selectedAgencies');
-      agencies.click(function () {
-        // Toggle state
-        var a = $(this);
-        var lbl = a.find('span.label');
-        a.toggleClass('selected');
-        if (lbl.text().toLowerCase() == 'seguir') {
-          lbl.text('siguiendo');
-        } else {
-          lbl.text('seguir');
-        }
-
-        // Adjust result
-        var res = [];
-        agencies.each(function (i, v) {
-          if ($(v).hasClass('selected')) {
-            res.push($(v).data('value'));
-          }
-        });
-        selectedAgencies.val(JSON.stringify(res));
-      });
-
-      var projects = $('div.project-grid div.item');
-      var selectedProjects = $('div.project-grid input#selectedProjects');
-      projects.click(function () {
-        // Toggle state
-        var p = $(this);
-        var lbl = p.find('span.label');
-        p.toggleClass('selected');
-        if (lbl.text().toLowerCase() == 'seguir') {
-          lbl.text('siguiendo');
-        } else {
-          lbl.text('seguir');
-        }
-
-        // Adjust result
-        var res = [];
-        projects.each(function (i, v) {
-          if ($(v).hasClass('selected')) {
-            res.push($(v).data('value'));
-          }
-        });
-        selectedProjects.val(JSON.stringify(res));
-      });
-
-      var form = $('form#registerForm');
-      form.pixativeFormValidator({
-        msgHolder: 'title',
-        errorMessages: {
-          required: 'El campo es requerido',
-          minlength: 'El valor proporcionado debe ser de al menos %s caracteres',
-          maxlength: 'El valor proporcionado debe ser de máximo %s caracteres',
-          email: 'El valor porporcionado no parece ser una dirección de correo valida',
-          integer: 'El valor proporcionado debe ser un número',
-          phone: 'El valor porporcionado no parece ser un número telefonico valido'
-        },
-        onError: function onError() {
-          $('.validator-error').tooltip('destroy');
-          $('.validator-error').tooltip();
-        },
-        onSuccess: function onSuccess() {
-          // Prepare data
-          var data = {};
-          form.serializeArray().forEach(function (el) {
-            if (el.value == 'on') {
-              el.value = true;
-            }
-            if (el.value == 'off') {
-              el.value = false;
-            }
-            data[el.name] = el.value;
-          });
-          data.selectedAgencies = JSON.parse(data.selectedAgencies);
-          data.selectedProjects = JSON.parse(data.selectedProjects);
-          _this2.props.onSubmit(data);
-        }
-      });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { id: 'setup' },
-        _react2.default.createElement(
-          'form',
-          { id: 'registerForm' },
-          _react2.default.createElement(
-            'div',
-            { className: 'row' },
-            _react2.default.createElement(
-              'div',
-              { className: 'col-md-3' },
-              _react2.default.createElement(
-                'h2',
-                { className: 'number-title' },
-                _react2.default.createElement(
-                  'span',
-                  null,
-                  '1'
-                ),
-                'Registro'
-              ),
-              _react2.default.createElement(
-                'p',
-                { className: 'txt-italic' },
-                'Completa la siguiente informaci\xF3n'
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'col-md-9' },
-              _react2.default.createElement(
-                'table',
-                { className: 'table table-striped green' },
-                _react2.default.createElement(
-                  'tbody',
-                  null,
-                  _react2.default.createElement(
-                    'tr',
-                    null,
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'txt-upper col-md-2' },
-                      _react2.default.createElement(
-                        'label',
-                        null,
-                        'Correo Electr\xF3nico'
-                      )
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'col-md-4' },
-                      _react2.default.createElement('input', { type: 'email',
-                        className: 'form-control',
-                        id: 'user',
-                        name: 'user',
-                        placeholder: 'Email',
-                        'data-validator-required': 'true',
-                        'data-validator-email': 'true' })
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'txt-italic' },
-                      'La cuenta de correo electr\xF3nico registrada ser\xE1 tu nombre de usuario'
-                    )
-                  ),
-                  _react2.default.createElement(
-                    'tr',
-                    null,
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'txt-upper col-md-2' },
-                      _react2.default.createElement(
-                        'label',
-                        null,
-                        'Contrase\xF1a'
-                      )
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'col-md-4' },
-                      _react2.default.createElement('input', { type: 'password',
-                        className: 'form-control',
-                        id: 'password',
-                        name: 'password',
-                        placeholder: 'Contrase\xF1a',
-                        'data-validator-required': 'true',
-                        'data-validator-minlength': '6' })
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'txt-italic' },
-                      'La contrase\xF1a deber\xE1 tener una extensi\xF3n de al menos 6 caracteres y contener al menos un n\xFAmero'
-                    )
-                  ),
-                  _react2.default.createElement(
-                    'tr',
-                    null,
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'txt-upper col-md-2' },
-                      _react2.default.createElement(
-                        'label',
-                        null,
-                        'Tipo de Usuario'
-                      )
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'col-md-4' },
-                      _react2.default.createElement(
-                        'select',
-                        { id: 'userType', name: 'userType', className: 'form-control', 'data-validator-required': 'true' },
-                        _react2.default.createElement(
-                          'option',
-                          { value: '-', disabled: 'disaled' },
-                          'Selecciona una de las siguientes opciones'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: 'public' },
-                          'Ciudadano'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: 'legal' },
-                          'Legislador'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: 'gov' },
-                          'Funcionario P\xFAblico'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: 'media' },
-                          'Periodista'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: 'startup' },
-                          'Emprendedor'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: 'business' },
-                          'Empresario'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: 'other' },
-                          'Otro'
-                        )
-                      )
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'txt-italic' },
-                      'Selecciona una de las siguientes opciones'
-                    )
-                  ),
-                  _react2.default.createElement(
-                    'tr',
-                    null,
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'txt-upper col-md-2' },
-                      _react2.default.createElement(
-                        'label',
-                        null,
-                        'Edad'
-                      )
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'col-md-4' },
-                      _react2.default.createElement(
-                        'select',
-                        { id: 'age', name: 'age', className: 'form-control', 'data-validator-required': 'true' },
-                        _react2.default.createElement(
-                          'option',
-                          { value: '15' },
-                          '15'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '16' },
-                          '16'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '17' },
-                          '17'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '18' },
-                          '18'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '19' },
-                          '19'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '20' },
-                          '20'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '21' },
-                          '21'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '22' },
-                          '22'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '23' },
-                          '23'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '24' },
-                          '24'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '25' },
-                          '25'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '26' },
-                          '26'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '27' },
-                          '27'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '28' },
-                          '28'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '29' },
-                          '29'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '30' },
-                          '30'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '31' },
-                          '31'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '32' },
-                          '32'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '33' },
-                          '33'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '34' },
-                          '34'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '35' },
-                          '35'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '36' },
-                          '36'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '37' },
-                          '37'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '38' },
-                          '38'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '39' },
-                          '39'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '40' },
-                          '40'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '41' },
-                          '41'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '42' },
-                          '42'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '43' },
-                          '43'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '44' },
-                          '44'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '45' },
-                          '45'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '46' },
-                          '46'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '47' },
-                          '47'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '48' },
-                          '48'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '49' },
-                          '49'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '50' },
-                          '50'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '51' },
-                          '51'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '52' },
-                          '52'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '53' },
-                          '53'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '54' },
-                          '54'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '55' },
-                          '55'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '56' },
-                          '56'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '57' },
-                          '57'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '58' },
-                          '58'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '59' },
-                          '59'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '60' },
-                          '60'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '61' },
-                          '61'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '62' },
-                          '62'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '63' },
-                          '63'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '64' },
-                          '64'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '65' },
-                          '65'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '66' },
-                          '66'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '67' },
-                          '67'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '68' },
-                          '68'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '69' },
-                          '69'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '70' },
-                          '70'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '71' },
-                          '71'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '72' },
-                          '72'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '73' },
-                          '73'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '74' },
-                          '74'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '75' },
-                          '75'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '76' },
-                          '76'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '77' },
-                          '77'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '78' },
-                          '78'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '79' },
-                          '79'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '80' },
-                          '80'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '81' },
-                          '81'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '82' },
-                          '82'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '83' },
-                          '83'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '84' },
-                          '84'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '85' },
-                          '85'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '86' },
-                          '86'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '87' },
-                          '87'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '88' },
-                          '88'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '89' },
-                          '89'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '90' },
-                          '90'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '91' },
-                          '91'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '92' },
-                          '92'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '93' },
-                          '93'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '94' },
-                          '94'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '95' },
-                          '95'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '96' },
-                          '96'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '97' },
-                          '97'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '98' },
-                          '98'
-                        ),
-                        _react2.default.createElement(
-                          'option',
-                          { value: '99' },
-                          '99'
-                        )
-                      )
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'txt-italic' },
-                      'Selecciona tu edad (solo aplica para periodista, emprendedor, legislador, funcionario p\xFAblico, ciudadano)'
-                    )
-                  ),
-                  _react2.default.createElement(
-                    'tr',
-                    null,
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'txt-upper col-md-2' },
-                      _react2.default.createElement(
-                        'label',
-                        null,
-                        'C\xF3digo Postal'
-                      )
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'col-md-4' },
-                      _react2.default.createElement('input', { type: 'text',
-                        className: 'form-control',
-                        id: 'postalCode',
-                        name: 'postalCode',
-                        'data-validator-required': 'true',
-                        'data-validator-integer': 'true' })
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'txt-italic' },
-                      'Introduce tu c\xF3digo postal'
-                    )
-                  )
-                )
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'row' },
-            _react2.default.createElement(
-              'div',
-              { className: 'col-md-3' },
-              _react2.default.createElement(
-                'h2',
-                { className: 'number-title' },
-                _react2.default.createElement(
-                  'span',
-                  null,
-                  '2'
-                ),
-                'Proyectos'
-              ),
-              _react2.default.createElement(
-                'p',
-                { className: 'txt-italic' },
-                'Selecciona las agencias, proyectos o sectores que te interesan'
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'row' },
-              _react2.default.createElement(
-                'div',
-                { className: 'agency-grid col-md-4' },
-                _react2.default.createElement(
-                  'h4',
-                  { className: 'txt-upper' },
-                  'Agencias'
-                ),
-                _react2.default.createElement('input', { type: 'text', id: 'selectedAgencies', name: 'selectedAgencies', value: '[]', className: 'hidden' }),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'item', 'data-value': 'cdmx' },
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'logo' },
-                    _react2.default.createElement('img', { src: 'https://twitter.com/gobcdmx/profile_image?size=original' })
-                  ),
-                  _react2.default.createElement(
-                    'span',
-                    { className: 'label' },
-                    'Seguir'
-                  )
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'item', 'data-value': 'a2' },
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'logo' },
-                    _react2.default.createElement('img', { src: 'https://twitter.com/nvoaeropuertomx/profile_image?size=original' })
-                  ),
-                  _react2.default.createElement(
-                    'span',
-                    { className: 'label' },
-                    'Seguir'
-                  )
-                ),
-                _react2.default.createElement('div', { className: 'clear' })
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'project-grid col-md-3' },
-                _react2.default.createElement(
-                  'h4',
-                  { className: 'txt-upper' },
-                  'Proyectos'
-                ),
-                _react2.default.createElement('input', { type: 'text', id: 'selectedProjects', name: 'selectedProjects', value: '[]', className: 'hidden' }),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'item', 'data-value': 'p1' },
-                  _react2.default.createElement(
-                    'h5',
-                    null,
-                    'NAICM'
-                  ),
-                  _react2.default.createElement(
-                    'div',
-                    { className: 'img' },
-                    _react2.default.createElement('img', { src: 'https://twitter.com/nvoaeropuertomx/profile_image?size=original' })
-                  ),
-                  _react2.default.createElement(
-                    'span',
-                    { className: 'label' },
-                    'Seguir'
-                  ),
-                  _react2.default.createElement(
-                    'p',
-                    null,
-                    'Construcci\xF3n del nuevo aeropuerto internacional de la ciduad de M\xE9xico.'
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'col-md-2' },
-                _react2.default.createElement(
-                  'h4',
-                  { className: 'txt-upper' },
-                  'Sectores'
-                ),
-                _react2.default.createElement(
-                  'ul',
-                  null,
-                  _react2.default.createElement(
-                    'li',
-                    null,
-                    _react2.default.createElement('span', { className: 'glyphicon glyphicon-home', 'aria-hidden': 'true' }),
-                    'Infraestructura'
-                  )
-                )
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'row' },
-            _react2.default.createElement(
-              'div',
-              { className: 'col-md-3' },
-              _react2.default.createElement(
-                'h2',
-                { className: 'number-title' },
-                _react2.default.createElement(
-                  'span',
-                  null,
-                  '3'
-                ),
-                'Contacto'
-              ),
-              _react2.default.createElement(
-                'p',
-                { className: 'txt-italic' },
-                'Selecciona los canales por los que Testigo Social 2.0 puede enviarte notificaciones e informaci\xF3n.'
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'col-md-9' },
-              _react2.default.createElement(
-                'table',
-                { className: 'table table-striped blue' },
-                _react2.default.createElement(
-                  'tbody',
-                  null,
-                  _react2.default.createElement(
-                    'tr',
-                    null,
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'txt-upper col-md-2' },
-                      _react2.default.createElement(
-                        'label',
-                        null,
-                        'Correo Electr\xF3nico'
-                      )
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'col-md-4' },
-                      _react2.default.createElement('input', { type: 'email',
-                        className: 'form-control',
-                        id: 'notificationEmail',
-                        name: 'notificationEmail',
-                        'data-validator-email': 'true' })
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      null,
-                      _react2.default.createElement('input', { id: 'enableEmailNotifications',
-                        name: 'enableEmailNotifications',
-                        type: 'checkbox',
-                        checked: 'checked' })
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'txt-italic' },
-                      'Quiero recibir notificaciones a trav\xE9s de un correo electr\xF3nico'
-                    )
-                  ),
-                  _react2.default.createElement(
-                    'tr',
-                    null,
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'txt-upper col-md-2' },
-                      _react2.default.createElement(
-                        'label',
-                        null,
-                        'SMS'
-                      )
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'col-md-4' },
-                      _react2.default.createElement('input', { type: 'text',
-                        className: 'form-control',
-                        id: 'notificationSMS',
-                        name: 'notificationSMS',
-                        'data-validator-integer': 'true',
-                        'data-validator-minlength': '10',
-                        'data-validator-maxlength': '10' })
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      null,
-                      _react2.default.createElement('input', { id: 'enableSMSNotifications',
-                        name: 'enableSMSNotifications',
-                        type: 'checkbox',
-                        checked: 'checked' })
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'txt-italic' },
-                      'Quiero recibir notificaciones a trav\xE9s de mensajes a un n\xFAmero celular (sin costo)'
-                    )
-                  ),
-                  _react2.default.createElement(
-                    'tr',
-                    null,
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'txt-upper col-md-2' },
-                      _react2.default.createElement(
-                        'label',
-                        null,
-                        'Facebook'
-                      )
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'col-md-4' },
-                      _react2.default.createElement('input', { disabled: 'disabled', type: 'text', className: 'form-control', id: 'notificationFB' })
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      null,
-                      _react2.default.createElement('input', { disabled: 'disabled', id: 'enableFB', type: 'checkbox' })
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'txt-italic' },
-                      'Quiero recibir notificaciones e informaci\xF3n a trav\xE9s mensajes en Facebook Messenger'
-                    )
-                  ),
-                  _react2.default.createElement(
-                    'tr',
-                    null,
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'txt-upper col-md-2' },
-                      _react2.default.createElement(
-                        'label',
-                        null,
-                        'Twitter'
-                      )
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'col-md-4' },
-                      _react2.default.createElement('input', { disabled: 'disabled', type: 'text', className: 'form-control', id: 'notificationTW' })
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      null,
-                      _react2.default.createElement('input', { disabled: 'disabled', id: 'enableTW', type: 'checkbox' })
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'txt-italic' },
-                      'Quiero recibir notificaciones a trav\xE9s de mensajes directos y notificaciones en Twitter'
-                    )
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'p',
-                null,
-                'Consulta nuestro aviso de privacidad ',
-                _react2.default.createElement(
-                  'a',
-                  { href: '#', 'data-toggle': 'modal', 'data-target': '#privacyNotice' },
-                  'aqu\xED.'
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'checkbox' },
-                _react2.default.createElement(
-                  'label',
-                  null,
-                  _react2.default.createElement('input', { id: 'acceptPrivacyTerms', type: 'checkbox', checked: 'checked' }),
-                  ' Acepto las politicas de privacidad'
-                )
-              ),
-              _react2.default.createElement(
-                'button',
-                { type: 'submit', className: 'btn btn-black btn-lg' },
-                'Comienza a recibir notificaciones'
-              )
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return Form;
-}(_react2.default.Component);
-
-exports.default = Form;
-
-},{"react":276}],296:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _Description = require('../base/Description.jsx');
-
-var _Description2 = _interopRequireDefault(_Description);
-
-var _Form = require('./Form.jsx');
-
-var _Form2 = _interopRequireDefault(_Form);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Section = function (_React$Component) {
-  _inherits(Section, _React$Component);
-
-  function Section(props) {
-    _classCallCheck(this, Section);
-
-    return _possibleConstructorReturn(this, (Section.__proto__ || Object.getPrototypeOf(Section)).call(this, props));
-  }
-
-  _createClass(Section, [{
-    key: 'processRegister',
-    value: function processRegister(data) {
-      $.ajax({
-        type: "POST",
-        url: '/profile',
-        data: {
-          profile: JSON.stringify(data)
-        },
-        success: function success(res) {
-          alert('Tu usuario ha quedado registrado exitosamente en Testigo Social Virtual 2.0');
-        }
-      });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(_Description2.default, {
-          title: 'Notificaciones',
-          color: 'yellow',
-          content: 'Testigo Social 2.0 te puede hacer llegar datos e informaci\xF3n espec\xEDfica sobre procedimientos de contrataci\xF3n p\xFAblica que est\xE1n en marcha. Desde un aviso de inicio de un nuevo procedimiento hasta la liga para consultar un contrato. Completa la informaci\xF3n correspondiente y comienza a recibir notificaciones.' }),
-        _react2.default.createElement(_Form2.default, { onSubmit: this.processRegister })
-      );
-    }
-  }]);
-
-  return Section;
-}(_react2.default.Component);
-
-exports.default = Section;
-
-},{"../base/Description.jsx":280,"./Form.jsx":295,"react":276}],297:[function(require,module,exports){
+},{}],297:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -45630,4 +45630,4 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}]},{},[291]);
+},{}]},{},[13]);

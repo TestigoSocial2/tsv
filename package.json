@@ -5,7 +5,7 @@
   "author": "Ben Cessa <ben@pixative.com>",
   "license": "MIT",
   "scripts": {
-    "build": "NODE_ENV=production browserify -t [babelify] src/index.jsx -o build/tsv.js"
+    "build": "NODE_ENV=production browserify -t [babelify] htdocs/src/index.jsx -o htdocs/build/tsv.js"
   },
   "dependencies": {
     "babel-loader": "^6.2.10",
