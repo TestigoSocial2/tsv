@@ -101,7 +101,7 @@
 .datepicker table tr td.today:hover,
 .datepicker table tr td.today.disabled,
 .datepicker table tr td.today.disabled:hover {
-  background-color: #f8c674;
+  background-color: #fcf3e3;
   border-radius: 20px;
   color: #111; }
 
@@ -557,7 +557,7 @@ body {
   background-color: #d4fbfb; }
 
 .bg-yellow {
-  background-color: #f8c674; }
+  background-color: #fcf3e3; }
 
 .bg-gray {
   background-color: #eee; }
@@ -746,7 +746,7 @@ div.clear {
     #video a:hover {
       text-decoration: none; }
   #video a.yellow {
-    background-color: #f8c674;
+    background-color: #fcf3e3;
     border-radius: 40px;
     color: #111;
     margin: 0 auto;
