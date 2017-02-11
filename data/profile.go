@@ -27,6 +27,7 @@ type UserProfile struct {
 	UserType                 string   `json:"userType"`
 	Age                      string   `json:"age"`
 	PostalCode               string   `json:"postalCode"`
+	Country                  string   `json:"country"`
 	SelectedAgencies         []string `json:"selectedAgencies"`
 	SelectedProjects         []string `json:"selectedProjects"`
 	NotificationEmail        string   `json:"notificationEmail"`
