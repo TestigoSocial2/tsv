@@ -12,4 +12,4 @@ ADD tsv /
 
 EXPOSE 7788 7789
 
-ENTRYPOINT ["/tsv", "server"]
+ENTRYPOINT ["/tsv"]

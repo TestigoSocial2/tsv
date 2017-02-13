@@ -1,8 +1,13 @@
 default: build
 
+# Current version
+version = 0.2.0
+
 # Build for the default architecture in use
 build:
-	go build -v
+	go build -v -ldflags "\
+	-X github.com/transparenciamx/tsv/cmd.infoBuild=`git log --pretty=format:'%H' -n1` \
+	-X github.com/transparenciamx/tsv/cmd.infoVersion=$(version)"
 
 # Redownload all dependencies
 clean:
@@ -15,7 +20,9 @@ run:
 
 # Build server for Linux and pack it with the contents
 docker:
-	env GOOS=linux GOARCH=amd64 go build -v -o tsv
+	env GOOS=linux GOARCH=amd64 go build -v -o tsv -ldflags "\
+	-X github.com/transparenciamx/tsv/cmd.infoBuild=`git log --pretty=format:'%H' -n1` \
+	-X github.com/transparenciamx/tsv/cmd.infoVersion=$(version)"
 	docker build -t tm/tsv .
 	docker save -o tsv.tar tm/tsv
 	gzip tsv.tar
