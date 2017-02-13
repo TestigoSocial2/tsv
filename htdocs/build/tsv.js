@@ -250,6 +250,15 @@ var Menu = function (_React$Component) {
   }
 
   _createClass(Menu, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var links = $('#top ul a');
+      links.click(function (e) {
+        links.removeClass('active');
+        $(e.target).addClass('active');
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -3137,85 +3146,6 @@ var Home = function (_React$Component) {
         ),
         _react2.default.createElement(
           'div',
-          { id: 'facts', className: 'row inner-row' },
-          _react2.default.createElement(
-            'div',
-            { className: 'col-md-4' },
-            _react2.default.createElement(
-              'p',
-              { className: 'txt-centered' },
-              'N\xFAmero de ',
-              _react2.default.createElement(
-                'span',
-                { className: 'txt-bold' },
-                'procedimientos de contrataci\xF3n'
-              ),
-              ' registrados'
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'highlight txt-centered txt-mono' },
-              _react2.default.createElement(
-                'span',
-                { className: 'counter totalContracts' },
-                '0'
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'col-md-4' },
-            _react2.default.createElement(
-              'p',
-              { className: 'txt-centered' },
-              _react2.default.createElement(
-                'span',
-                { className: 'txt-bold' },
-                'Presupuesto asignado'
-              ),
-              ' de las contrataciones registradas'
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'highlight txt-centered txt-mono' },
-              '$',
-              _react2.default.createElement(
-                'span',
-                { id: 'totalBudget', className: 'counter' },
-                '0'
-              ),
-              'M'
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'col-md-4' },
-            _react2.default.createElement(
-              'p',
-              { className: 'txt-centered' },
-              'Monto total ',
-              _react2.default.createElement(
-                'span',
-                { className: 'txt-bold' },
-                'contratado'
-              ),
-              'a trav\xE9s de los procedimientos registrados'
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'highlight txt-centered txt-mono' },
-              '$',
-              _react2.default.createElement(
-                'span',
-                { id: 'totalAward', className: 'counter' },
-                '0'
-              ),
-              'M'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
           { id: 'highlights', className: 'row inner-row' },
           _react2.default.createElement(
             'div',
@@ -3415,6 +3345,85 @@ var Home = function (_React$Component) {
                   )
                 )
               )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { id: 'facts', className: 'row inner-row' },
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-4' },
+            _react2.default.createElement(
+              'p',
+              { className: 'txt-centered' },
+              'N\xFAmero de ',
+              _react2.default.createElement(
+                'span',
+                { className: 'txt-bold' },
+                'procedimientos de contrataci\xF3n'
+              ),
+              ' registrados'
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'highlight txt-centered txt-mono' },
+              _react2.default.createElement(
+                'span',
+                { className: 'counter totalContracts' },
+                '0'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-4' },
+            _react2.default.createElement(
+              'p',
+              { className: 'txt-centered' },
+              _react2.default.createElement(
+                'span',
+                { className: 'txt-bold' },
+                'Presupuesto asignado'
+              ),
+              ' de las contrataciones registradas'
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'highlight txt-centered txt-mono' },
+              '$',
+              _react2.default.createElement(
+                'span',
+                { id: 'totalBudget', className: 'counter' },
+                '0'
+              ),
+              'M'
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-md-4' },
+            _react2.default.createElement(
+              'p',
+              { className: 'txt-centered' },
+              'Monto total ',
+              _react2.default.createElement(
+                'span',
+                { className: 'txt-bold' },
+                'contratado'
+              ),
+              'a trav\xE9s de los procedimientos registrados'
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'highlight txt-centered txt-mono' },
+              '$',
+              _react2.default.createElement(
+                'span',
+                { id: 'totalAward', className: 'counter' },
+                '0'
+              ),
+              'M'
             )
           )
         ),
