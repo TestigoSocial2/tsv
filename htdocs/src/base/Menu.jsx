@@ -6,12 +6,12 @@ class Menu extends React.Component {
     return(
       <div id="top" className="row">
         <div className="col-md-12">
-          <a href="index.html" className="logo"></a>
+          <Link to={'/'} className="logo"></Link>
 
           <ul>
             <div className="clear"></div>
             <li>
-              <Link to={'/'}>¿Qué es TS 2.0?</Link>
+              <Link to={'/information'}>¿Qué es TS 2.0?</Link>
             </li>
             <li>
               <Link to={'/contracts'}>Contratos</Link>
