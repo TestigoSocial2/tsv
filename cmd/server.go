@@ -148,7 +148,7 @@ func profile(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 		smsID, err := notifications.SendSMS(&notifications.SMSOptions{
 			To:      fmt.Sprintf("+52%s", up.NotificationSMS),
 			Sender:  "TS2",
-			Message: "Bienvenido a Testigo Social Virtual 2.0 a partir de este momento comenzaras a recibir notificaciones relevantes",
+			Message: "Bienvenido a Testigo Social 2.0. Ahora recibirás información sobre contrataciones públicas. El dinero público también es tu dinero.",
 		})
 		if err != nil {
 			log.Println("SMS error:", err)
@@ -160,7 +160,7 @@ func profile(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	if up.EnableEmailNotifications {
 		content, _ := notifications.PrepareContent(notifications.TSVEmailTemplate, map[string]interface{}{
 			"Title":   "¡Gracias por tu interés!",
-			"Content": "Bienvenido a Testigo Social Virtual 2.0 a partir de este momento comenzaras a recibir notificaciones relevantes sobre los procesos de contratación pública de tu interes.",
+			"Content": "Bienvenido a Testigo Social 2.0. A partir de ahora recibirás información oportuna sobre los procedimientos de contratación pública que te interesan. El dinero público también es tu dinero.",
 		})
 		emailID, err := notifications.SendEmail(&notifications.EmailOptions{
 			To:      up.NotificationEmail,
