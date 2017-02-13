@@ -2,6 +2,14 @@ import React from 'react';
 import {Link} from 'react-router';
 
 class Menu extends React.Component {
+  componentDidMount() {
+    let links = $('#top ul a');
+    links.click((e) => {
+      links.removeClass('active');
+      $(e.target).addClass('active');
+    });
+  }
+
   render() {
     return(
       <div id="top" className="row">
