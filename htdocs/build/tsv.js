@@ -277,7 +277,7 @@ var Menu = function (_React$Component) {
               null,
               _react2.default.createElement(
                 _reactRouter.Link,
-                { to: '/information' },
+                { to: '/informacion' },
                 '\xBFQu\xE9 es TS 2.0?'
               )
             ),
@@ -286,7 +286,7 @@ var Menu = function (_React$Component) {
               null,
               _react2.default.createElement(
                 _reactRouter.Link,
-                { to: '/contracts' },
+                { to: '/contratos' },
                 'Contratos'
               )
             ),
@@ -295,7 +295,7 @@ var Menu = function (_React$Component) {
               null,
               _react2.default.createElement(
                 _reactRouter.Link,
-                { to: '/indicators' },
+                { to: '/indicadores' },
                 'Indicadores'
               )
             ),
@@ -304,7 +304,7 @@ var Menu = function (_React$Component) {
               null,
               _react2.default.createElement(
                 _reactRouter.Link,
-                { to: '/register' },
+                { to: '/registro' },
                 'Notificaciones'
               )
             ),
@@ -3608,10 +3608,10 @@ _reactDom2.default.render(_react2.default.createElement(
     _reactRouter.Route,
     { component: _Main2.default },
     _react2.default.createElement(_reactRouter.Route, { path: '/', component: _Section2.default }),
-    _react2.default.createElement(_reactRouter.Route, { path: '/information', component: _Section4.default }),
-    _react2.default.createElement(_reactRouter.Route, { path: '/contracts', component: _Section6.default }),
-    _react2.default.createElement(_reactRouter.Route, { path: '/indicators', component: _Section8.default }),
-    _react2.default.createElement(_reactRouter.Route, { path: '/register', component: _Section10.default })
+    _react2.default.createElement(_reactRouter.Route, { path: '/informacion', component: _Section4.default }),
+    _react2.default.createElement(_reactRouter.Route, { path: '/contratos', component: _Section6.default }),
+    _react2.default.createElement(_reactRouter.Route, { path: '/indicadores', component: _Section8.default }),
+    _react2.default.createElement(_reactRouter.Route, { path: '/registro', component: _Section10.default })
   )
 ), document.getElementById('root'));
 

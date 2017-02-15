@@ -14,10 +14,10 @@ ReactDOM.render(
   <Router history={browserHistory}>
     <Route component={Main}>
       <Route path="/" component={Home}/>
-      <Route path="/information" component={Info}/>
-      <Route path="/contracts" component={Contracts}/>
-      <Route path="/indicators" component={Indicators}/>
-      <Route path="/register" component={Register}/>
+      <Route path="/informacion" component={Info}/>
+      <Route path="/contratos" component={Contracts}/>
+      <Route path="/indicadores" component={Indicators}/>
+      <Route path="/registro" component={Register}/>
     </Route>
   </Router>,
   document.getElementById('root')

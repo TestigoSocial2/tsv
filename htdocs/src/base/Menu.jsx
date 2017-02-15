@@ -19,16 +19,16 @@ class Menu extends React.Component {
           <ul>
             <div className="clear"></div>
             <li>
-              <Link to={'/information'}>¿Qué es TS 2.0?</Link>
+              <Link to={'/informacion'}>¿Qué es TS 2.0?</Link>
             </li>
             <li>
-              <Link to={'/contracts'}>Contratos</Link>
+              <Link to={'/contratos'}>Contratos</Link>
             </li>
             <li>
-              <Link to={'/indicators'}>Indicadores</Link>
+              <Link to={'/indicadores'}>Indicadores</Link>
             </li>
             <li>
-              <Link to={'/register'}>Notificaciones</Link>
+              <Link to={'/registro'}>Notificaciones</Link>
             </li>
             <li><a href="http://www.tm.org.mx" target="_blank">Contrataciones Abiertas</a></li>
           </ul>
