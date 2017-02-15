@@ -28,14 +28,6 @@ docker:
 	gzip tsv.tar
 	rm tsv
 
-# Landing page build
-landing:
-	mv htdocs/index.html htdocs/backup.up
-	mv htdocs/landing.html htdocs/index.html
-	make docker
-	mv htdocs/index.html htdocs/landing.html
-	mv htdocs/backup.up htdocs/index.html
-
 # Run as a docker container
 run-docker:
 	docker run -it -p 7788:7788 --rm \
@@ -47,6 +39,6 @@ deploy:
 	docker cp tsv:/data/tsv.db /etc/tsv/data.db
 	systemctl stop tsv
 	gzip -d tsv.tar.gz
-	load -i tsv.tar
+	docker load -i tsv.tar
 	rm tsv.tar
 	systemctl start tsv
