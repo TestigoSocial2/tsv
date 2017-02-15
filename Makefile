@@ -41,3 +41,12 @@ run-docker:
 	docker run -it -p 7788:7788 --rm \
 	-v /var/run/tsv-pre-register:/data/pre-register \
 	tm/tsv server -s /data -c /var/www/htdocs
+
+# Perform a basic deploy on a local server (run as root)
+deploy:
+	docker cp tsv:/data/tsv.db /etc/tsv/data.db
+	systemctl stop tsv
+	gzip -d tsv.tar.gz
+	load -i tsv.tar
+	rm tsv.tar
+	systemctl start tsv
