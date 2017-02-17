@@ -193,7 +193,7 @@ func stats(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	org.Code = ps.ByName("bucket")
 	switch org.Code {
 	case "gacm":
-		org.Description = "Nuevo Aeropuerto Internacional de la Ciudad de México"
+		org.Description = "Construcción del Nuevo Aeropuerto Internacional de la Ciudad de México"
 	case "cdmx":
 		org.Description = "Contratación de Servicios y Obras de la Ciudad de México"
 	}
