@@ -16,6 +16,7 @@ class Home extends React.Component {
       totalContracts: $('span.totalContracts'),
       totalBudget: $('span#totalBudget'),
       totalAward: $('span#totalAward'),
+      totalAwardShort: $('span#totalAwardShort'),
       totalAmount: $('span#totalAmount'),
       firstDate: $('span#firstDate'),
       lastDate: $('span#lastDate'),
@@ -23,7 +24,7 @@ class Home extends React.Component {
     }
 
     // Random hero photo
-    let img = "url('images/hero_photo_"+ (Math.floor(Math.random() * 4) + 1) +".png')";
+    let img = "url('images/hero_photo_"+ (Math.floor(Math.random() * 5) + 1) +".jpg')";
     $('#hero > div.photo').css( 'background-image', img );
 
     // Slider
@@ -51,11 +52,14 @@ class Home extends React.Component {
       ui.lastDate.text( formatDate( data.lastDate, 'LL' ) );
       ui.description.text( data.description );
       ui.totalContracts.text( data.contracts.total );
+      ui.totalAward.text( data.contracts.awarded.toLocaleString(undefined, {
+        useGrouping: true
+      }));
       ui.totalBudget.text((data.contracts.budget / 1000000).toLocaleString(undefined, {
         minimumFractionDigits: 1,
         maximumFractionDigits: 1
       }));
-      ui.totalAward.text((data.contracts.awarded / 1000000).toLocaleString(undefined, {
+      ui.totalAwardShort.text((data.contracts.awarded / 1000000).toLocaleString(undefined, {
         minimumFractionDigits: 1,
         maximumFractionDigits: 1
       }));
@@ -171,9 +175,9 @@ class Home extends React.Component {
                 <p className="info">
                   <span className="bg-green">Entre el <span id="firstDate"></span> y el <span id="lastDate"></span>, se han adjudicado</span>
                 </p>
-                <h1 className="txt-mono">$<span id="totalAmount" className="counter">0</span> MXN</h1>
+                <h1>$<span id="totalAward" className="counter">0</span> MXN</h1>
                 <p className="info">
-                  <span className="bg-green">para <strong><span id="orgDescription"></span></strong>, mediante <span className="counter totalContracts">0</span> contratos.</span>
+                  <span className="bg-green">para la <strong><span id="orgDescription"></span></strong>, mediante <span className="counter totalContracts">0</span> contratos.</span>
                 </p>
               </div>
               <div className="item" data-section="limited">
@@ -217,20 +221,20 @@ class Home extends React.Component {
         <div id="facts" className="row inner-row">
           <div className="col-md-4">
             <p className="txt-centered">Número de <span className="txt-bold">procedimientos de contratación</span> registrados</p>
-            <p className="highlight txt-centered txt-mono">
+            <p className="highlight txt-centered">
               <span className="counter totalContracts">0</span>
             </p>
           </div>
           <div className="col-md-4">
             <p className="txt-centered"><span className="txt-bold">Presupuesto asignado</span> de las contrataciones registradas</p>
-            <p className="highlight txt-centered txt-mono">
+            <p className="highlight txt-centered">
               $<span id="totalBudget" className="counter">0</span>M
             </p>
           </div>
           <div className="col-md-4">
-            <p className="txt-centered">Monto total <span className="txt-bold">contratado</span>a través de los procedimientos registrados</p>
-            <p className="highlight txt-centered txt-mono">
-              $<span id="totalAward" className="counter">0</span>M
+            <p className="txt-centered">Monto total <span className="txt-bold">contratado</span> a través de los procedimientos registrados</p>
+            <p className="highlight txt-centered">
+              $<span id="totalAwardShort" className="counter">0</span>M
             </p>
           </div>
         </div>
@@ -264,14 +268,14 @@ class Home extends React.Component {
           <div className="col-md-12">
             <br />
             <br />
-            <span className="btn-black">Comienza a monitorear cómo se gasta tu dinero con TS 2.0</span>
+            <span className="btn-black large">Comienza a monitorear cómo se gasta tu dinero con TS 2.0</span>
           </div>
         </div>
 
         {/* Bottom text */}
         <div className="row info bg-blue">
           <div className="inner-row">
-            <p>La apertura y la participación de la ciudadanía en las compras públicas se traduce en mejores bienes y servicios públicos para las <strong>comunidades</strong>, más oportunidades de negocio para emprendedores y <strong>empresas</strong> y una mayor rendición de cuentas de los <strong>gobiernos.</strong></p>
+            <p className="txt-large txt-centered">La apertura y la participación de la ciudadanía en las compras públicas se traduce en mejores bienes y servicios públicos para las <strong>comunidades</strong>, más oportunidades de negocio para emprendedores y <strong>empresas</strong> y una mayor rendición de cuentas de los <strong>gobiernos.</strong></p>
           </div>
         </div>
       </div>

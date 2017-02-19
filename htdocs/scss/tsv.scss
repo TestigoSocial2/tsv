@@ -53,6 +53,10 @@ body {
   font-weight: bold;
 }
 
+.txt-large {
+  font-size: 1.7em;
+}
+
 .bg-blue {
   background-color: $tsv-light-blue;
 }
@@ -97,6 +101,10 @@ body {
   cursor: pointer;
   display: inline-block;
   padding: 10px 22px;
+
+  &.large {
+    font-size: 1.4em;
+  }
 
   &:hover {
     color: $tsv-white;

@@ -3013,6 +3013,7 @@ var Home = function (_React$Component) {
         totalContracts: $('span.totalContracts'),
         totalBudget: $('span#totalBudget'),
         totalAward: $('span#totalAward'),
+        totalAwardShort: $('span#totalAwardShort'),
         totalAmount: $('span#totalAmount'),
         firstDate: $('span#firstDate'),
         lastDate: $('span#lastDate'),
@@ -3020,7 +3021,7 @@ var Home = function (_React$Component) {
       };
 
       // Random hero photo
-      var img = "url('images/hero_photo_" + (Math.floor(Math.random() * 4) + 1) + ".png')";
+      var img = "url('images/hero_photo_" + (Math.floor(Math.random() * 5) + 1) + ".jpg')";
       $('#hero > div.photo').css('background-image', img);
 
       // Slider
@@ -3048,11 +3049,14 @@ var Home = function (_React$Component) {
         ui.lastDate.text((0, _helpers.formatDate)(data.lastDate, 'LL'));
         ui.description.text(data.description);
         ui.totalContracts.text(data.contracts.total);
+        ui.totalAward.text(data.contracts.awarded.toLocaleString(undefined, {
+          useGrouping: true
+        }));
         ui.totalBudget.text((data.contracts.budget / 1000000).toLocaleString(undefined, {
           minimumFractionDigits: 1,
           maximumFractionDigits: 1
         }));
-        ui.totalAward.text((data.contracts.awarded / 1000000).toLocaleString(undefined, {
+        ui.totalAwardShort.text((data.contracts.awarded / 1000000).toLocaleString(undefined, {
           minimumFractionDigits: 1,
           maximumFractionDigits: 1
         }));
@@ -3179,11 +3183,11 @@ var Home = function (_React$Component) {
                 ),
                 _react2.default.createElement(
                   'h1',
-                  { className: 'txt-mono' },
+                  null,
                   '$',
                   _react2.default.createElement(
                     'span',
-                    { id: 'totalAmount', className: 'counter' },
+                    { id: 'totalAward', className: 'counter' },
                     '0'
                   ),
                   ' MXN'
@@ -3194,7 +3198,7 @@ var Home = function (_React$Component) {
                   _react2.default.createElement(
                     'span',
                     { className: 'bg-green' },
-                    'para ',
+                    'para la ',
                     _react2.default.createElement(
                       'strong',
                       null,
@@ -3367,7 +3371,7 @@ var Home = function (_React$Component) {
             ),
             _react2.default.createElement(
               'p',
-              { className: 'highlight txt-centered txt-mono' },
+              { className: 'highlight txt-centered' },
               _react2.default.createElement(
                 'span',
                 { className: 'counter totalContracts' },
@@ -3390,7 +3394,7 @@ var Home = function (_React$Component) {
             ),
             _react2.default.createElement(
               'p',
-              { className: 'highlight txt-centered txt-mono' },
+              { className: 'highlight txt-centered' },
               '$',
               _react2.default.createElement(
                 'span',
@@ -3412,15 +3416,15 @@ var Home = function (_React$Component) {
                 { className: 'txt-bold' },
                 'contratado'
               ),
-              'a trav\xE9s de los procedimientos registrados'
+              ' a trav\xE9s de los procedimientos registrados'
             ),
             _react2.default.createElement(
               'p',
-              { className: 'highlight txt-centered txt-mono' },
+              { className: 'highlight txt-centered' },
               '$',
               _react2.default.createElement(
                 'span',
-                { id: 'totalAward', className: 'counter' },
+                { id: 'totalAwardShort', className: 'counter' },
                 '0'
               ),
               'M'
@@ -3517,7 +3521,7 @@ var Home = function (_React$Component) {
             _react2.default.createElement('br', null),
             _react2.default.createElement(
               'span',
-              { className: 'btn-black' },
+              { className: 'btn-black large' },
               'Comienza a monitorear c\xF3mo se gasta tu dinero con TS 2.0'
             )
           )
@@ -3530,7 +3534,7 @@ var Home = function (_React$Component) {
             { className: 'inner-row' },
             _react2.default.createElement(
               'p',
-              null,
+              { className: 'txt-large txt-centered' },
               'La apertura y la participaci\xF3n de la ciudadan\xEDa en las compras p\xFAblicas se traduce en mejores bienes y servicios p\xFAblicos para las ',
               _react2.default.createElement(
                 'strong',

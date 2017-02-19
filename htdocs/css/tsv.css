@@ -553,6 +553,9 @@ body {
 .txt-bold {
   font-weight: bold; }
 
+.txt-large {
+  font-size: 1.7em; }
+
 .bg-blue {
   background-color: #d4fbfb; }
 
@@ -588,6 +591,8 @@ body {
   cursor: pointer;
   display: inline-block;
   padding: 10px 22px; }
+  .btn-black.large {
+    font-size: 1.4em; }
   .btn-black:hover {
     color: #fff; }
   .btn-black.active {
