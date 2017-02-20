@@ -58,6 +58,10 @@ __Ejemplo:__
   __Tipo:__ `bool`  
   __Propósito:__ Campo binario para indicar si hubo o no un testigo social en el proceso de licitación
 
+- `tender.socialWitnessDesignationDate`  
+  __Tipo:__ `Date`  
+  __Propósito:__ Fecha de designación del testigo social
+
 - `tender.socialWitness`  
   __Tipo:__ `Organization`  
   __Propósito:__ Datos de la entidad que funge como testigo social durante el proceso de contratación
@@ -154,11 +158,8 @@ __Ejemplo:__
     "scope": "national",
     "procurementStyle": "multiple",
     "hasSocialWitness": true,
-    "socialWitness": {
-      "id": "RFC170219PK0",
-      "name": "Empresa S.A. de C.V.",
-      "designationDate": ""
-    },
+    "socialWitnessDesignationDate": "2017-01-18T20:08:17.937Z",
+    "socialWitness": {},
     "requiringEntity": {},
     "technicalEntity": {}
   },
@@ -176,7 +177,7 @@ __Ejemplo:__
     "hasAudits": true,
     "audits":[{
       "type": "external",
-      "auditorEntity": {},
+      "auditor": {},
       "observations": [""],
       "actions": [""]
     }]
