@@ -691,6 +691,11 @@ var Details = function (_React$Component) {
                   'p',
                   null,
                   release.tender.description
+                ),
+                _react2.default.createElement(
+                  'a',
+                  { onClick: this.onClose, className: 'btn-black' },
+                  'Volver al listado de Resultados'
                 )
               ),
               _react2.default.createElement(
@@ -725,11 +730,6 @@ var Details = function (_React$Component) {
                   { href: '#implementation',
                     className: release.implementation ? 'btn-black' : 'btn-black disabled' },
                   'Implementaci\xF3n'
-                ),
-                _react2.default.createElement(
-                  'a',
-                  { onClick: this.onClose },
-                  'Volver al listado de Resultados'
                 )
               )
             )

@@ -43,6 +43,7 @@ class Details extends React.Component {
                 <h2 className="block-title">{release.tender.title}</h2>
                 <h3>{formatAmount( release.tender.value.amount || 0 )}</h3>
                 <p>{release.tender.description}</p>
+                <a onClick={this.onClose} className='btn-black'>Volver al listado de Resultados</a>
               </div>
 
               {/* Section tabs */}
@@ -57,7 +58,6 @@ class Details extends React.Component {
                   className={release.contracts ? 'btn-black' : 'btn-black disabled'}>Contratación</a>
                 <a href="#implementation"
                   className={release.implementation ? 'btn-black' : 'btn-black disabled'}>Implementación</a>
-                <a onClick={this.onClose}>Volver al listado de Resultados</a>
               </div>
             </div>
           </div>

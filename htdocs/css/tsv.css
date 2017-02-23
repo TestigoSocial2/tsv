@@ -988,6 +988,9 @@ div.contract-details div.contract-header {
   margin-bottom: 40px; }
   div.contract-details div.contract-header h2.block-title {
     margin-bottom: 0; }
+  div.contract-details div.contract-header div.bg-gray {
+    margin-bottom: 10px;
+    padding-bottom: 10px; }
   div.contract-details div.contract-header div.bullets .btn-black {
     background-color: #fff;
     border: 2px solid #111;
@@ -1004,8 +1007,8 @@ div.contract-details div.contract-header {
       color: #fff; }
     div.contract-details div.contract-header div.bullets .btn-black.disabled {
       cursor: not-allowed;
-      opacity: .50;
-      text-decoration: line-through; }
+      opacity: .20;
+      text-decoration: none; }
 div.contract-details div.contract-highlights div[class^="col-md-"] {
   border-right: 1px solid #ccc; }
   div.contract-details div.contract-highlights div[class^="col-md-"]:last-child {

@@ -727,6 +727,11 @@ div.contract-details {
       margin-bottom: 0;
     }
 
+    div.bg-gray {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+    }
+
     div.bullets {
       .btn-black {
         background-color: $tsv-white;
@@ -749,8 +754,8 @@ div.contract-details {
 
         &.disabled {
           cursor: not-allowed;
-          opacity: .50;
-          text-decoration: line-through;
+          opacity: .20;
+          text-decoration: none;
         }
       }
     }
