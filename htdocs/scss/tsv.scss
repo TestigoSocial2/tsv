@@ -777,7 +777,6 @@ div.chart-widget {
   margin-top: 20px;
 
   h2 {
-    cursor: pointer;
     font-size: 20px;
     margin-bottom: 0;
     margin-top: 0;
@@ -789,10 +788,19 @@ div.chart-widget {
   }
 
   canvas {
-    // background-color: $tsv-yellow;
     margin: 10px 3%;
     min-height: 340px;
     width: 94%;
+  }
+
+  span.footer {
+    background: $tsv-blue;
+    color: $tsv-white;
+    cursor: pointer;
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    text-transform: uppercase;
   }
 }
 

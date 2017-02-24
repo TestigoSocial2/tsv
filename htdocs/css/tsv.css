@@ -1018,7 +1018,6 @@ div.chart-widget {
   border: 1px solid #ccc;
   margin-top: 20px; }
   div.chart-widget h2 {
-    cursor: pointer;
     font-size: 20px;
     margin-bottom: 0;
     margin-top: 0;
@@ -1029,6 +1028,14 @@ div.chart-widget {
     margin: 10px 3%;
     min-height: 340px;
     width: 94%; }
+  div.chart-widget span.footer {
+    background: #4990e2;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    text-transform: uppercase; }
 
 div.chart-main {
   margin-bottom: 20px; }

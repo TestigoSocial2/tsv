@@ -3695,9 +3695,7 @@ var ChartWidget = function (_React$Component) {
         { className: 'chart-widget' },
         this.props.title && _react2.default.createElement(
           'h2',
-          { className: 'block-title', onClick: function onClick() {
-              return _this2.props.onSelection(_this2.props.reducer);
-            } },
+          { className: 'block-title' },
           this.props.title
         ),
         this.props.description && _react2.default.createElement(
@@ -3716,6 +3714,15 @@ var ChartWidget = function (_React$Component) {
             className: 'dataChart',
             height: this.props.height,
             width: this.props.width })
+        ),
+        this.props.showOpenButton && _react2.default.createElement(
+          'span',
+          {
+            className: 'footer',
+            onClick: function onClick() {
+              return _this2.props.onSelection(_this2.props.reducer);
+            } },
+          'Ver Indicador'
         )
       );
     }
@@ -4130,6 +4137,7 @@ var Section = function (_React$Component) {
               data: this.state.data,
               reducer: procedureTypeData,
               onSelection: this.showDetails,
+              showOpenButton: 'true',
               width: '500',
               height: '340',
               description: 'La gr\xE1fica muestra la relaci\xF3n de contratos que se adjudicar\xF3n de acuerdo a los distintos mecanismos establecidos.' })
@@ -4143,6 +4151,7 @@ var Section = function (_React$Component) {
               data: this.state.data,
               reducer: publishYearData,
               onSelection: this.showDetails,
+              showOpenButton: 'true',
               width: '500',
               height: '340',
               description: 'La gr\xE1fica muestra la relaci\xF3n de los contratos registrados de acuerdo a su a\xF1o de publicaci\xF3n.' })
