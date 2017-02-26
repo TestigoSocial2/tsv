@@ -9,7 +9,31 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    let url = '/stats/gacm';
+    // Random hero photo
+    let img = "url('images/hero_photo_"+ (Math.floor(Math.random() * 5) + 1) +".jpg')";
+    $('#hero > div.photo').css( 'background-image', img );
+
+    // Slider
+    $('.carousel').carousel({
+      interval: 8000,
+      keyboard: false,
+      pause: "hover",
+    });
+
+    // Bucket selector
+    let bselectors = $('#bucketSelector button');
+    bselectors.click( (e) => {
+      bselectors.removeClass('active');
+      $( e.target ).addClass('active');
+      this.loadStats($(e.target).data('bucket'));
+    });
+
+    // Load default stats
+    this.loadStats('gacm');
+  }
+
+  // Load stats
+  loadStats( bucket ) {
     let data = {};
     let charts = {};
     let ui = {
@@ -23,26 +47,9 @@ class Home extends React.Component {
       description: $('span#orgDescription')
     }
 
-    // Random hero photo
-    let img = "url('images/hero_photo_"+ (Math.floor(Math.random() * 5) + 1) +".jpg')";
-    $('#hero > div.photo').css( 'background-image', img );
-
-    // Slider
-    $('.carousel').carousel({
-      interval: 8000,
-      keyboard: false,
-      pause: "hover",
-    });
-
-    // Dynamically set bucket used, default to 'gacm'
-    if( getParameter('bucket') ) {
-      url = '/stats/' + getParameter('bucket');
-    }
-
-    // Load stats
     $.ajax({
       type: "GET",
-      url: url,
+      url: '/stats/' + bucket,
       success: function( res ) {
         data = JSON.parse(res);
       }
@@ -133,7 +140,7 @@ class Home extends React.Component {
             useGrouping: true
           }));
 
-          if( !charts[method].c ) {
+          // if( !charts[method].c ) {
             charts[method].c = new Chart( active.find('canvas'), {
               type: "pie",
               data: charts[method].data,
@@ -143,7 +150,7 @@ class Home extends React.Component {
                 padding: 10
               }
             });
-          }
+          // }
         }
       });
     });
@@ -159,6 +166,14 @@ class Home extends React.Component {
             <h2>El dinero público también es tu dinero</h2>
           </div>
         </div>
+
+        <center id="bucketSelector" className="row inner-row">
+          <p>Seleccione los datos de contrataciones a consultar</p>
+          <div className="btn-group" role="group">
+            <button type="button" data-bucket="gacm" className="btn btn-default active">Nuevo Aeropuerto de la Ciudad de México</button>
+            <button type="button" data-bucket="cdmx" className="btn btn-default">Gobierno de la Ciudad de México</button>
+          </div>
+        </center>
 
         {/* Highlights */}
         <div id="highlights" className="row inner-row">

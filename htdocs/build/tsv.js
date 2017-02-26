@@ -3006,7 +3006,36 @@ var Home = function (_React$Component) {
   _createClass(Home, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var url = '/stats/gacm';
+      var _this2 = this;
+
+      // Random hero photo
+      var img = "url('images/hero_photo_" + (Math.floor(Math.random() * 5) + 1) + ".jpg')";
+      $('#hero > div.photo').css('background-image', img);
+
+      // Slider
+      $('.carousel').carousel({
+        interval: 8000,
+        keyboard: false,
+        pause: "hover"
+      });
+
+      // Bucket selector
+      var bselectors = $('#bucketSelector button');
+      bselectors.click(function (e) {
+        bselectors.removeClass('active');
+        $(e.target).addClass('active');
+        _this2.loadStats($(e.target).data('bucket'));
+      });
+
+      // Load default stats
+      this.loadStats('gacm');
+    }
+
+    // Load stats
+
+  }, {
+    key: 'loadStats',
+    value: function loadStats(bucket) {
       var data = {};
       var charts = {};
       var ui = {
@@ -3020,26 +3049,9 @@ var Home = function (_React$Component) {
         description: $('span#orgDescription')
       };
 
-      // Random hero photo
-      var img = "url('images/hero_photo_" + (Math.floor(Math.random() * 5) + 1) + ".jpg')";
-      $('#hero > div.photo').css('background-image', img);
-
-      // Slider
-      $('.carousel').carousel({
-        interval: 8000,
-        keyboard: false,
-        pause: "hover"
-      });
-
-      // Dynamically set bucket used, default to 'gacm'
-      if ((0, _helpers.getParameter)('bucket')) {
-        url = '/stats/' + (0, _helpers.getParameter)('bucket');
-      }
-
-      // Load stats
       $.ajax({
         type: "GET",
-        url: url,
+        url: '/stats/' + bucket,
         success: function success(res) {
           data = JSON.parse(res);
         }
@@ -3113,17 +3125,17 @@ var Home = function (_React$Component) {
               useGrouping: true
             }));
 
-            if (!charts[method].c) {
-              charts[method].c = new _chart2.default(active.find('canvas'), {
-                type: "pie",
-                data: charts[method].data,
-                options: {
-                  responsive: true,
-                  responsiveAnimationDuration: 500,
-                  padding: 10
-                }
-              });
-            }
+            // if( !charts[method].c ) {
+            charts[method].c = new _chart2.default(active.find('canvas'), {
+              type: "pie",
+              data: charts[method].data,
+              options: {
+                responsive: true,
+                responsiveAnimationDuration: 500,
+                padding: 10
+              }
+            });
+            // }
           }
         });
       });
@@ -3145,6 +3157,29 @@ var Home = function (_React$Component) {
               'h2',
               null,
               'El dinero p\xFAblico tambi\xE9n es tu dinero'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'center',
+          { id: 'bucketSelector', className: 'row inner-row' },
+          _react2.default.createElement(
+            'p',
+            null,
+            'Seleccione los datos de contrataciones a consultar'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'btn-group', role: 'group' },
+            _react2.default.createElement(
+              'button',
+              { type: 'button', 'data-bucket': 'gacm', className: 'btn btn-default active' },
+              'Nuevo Aeropuerto de la Ciudad de M\xE9xico'
+            ),
+            _react2.default.createElement(
+              'button',
+              { type: 'button', 'data-bucket': 'cdmx', className: 'btn btn-default' },
+              'Gobierno de la Ciudad de M\xE9xico'
             )
           )
         ),

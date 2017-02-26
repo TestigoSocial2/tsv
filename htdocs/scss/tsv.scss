@@ -256,6 +256,21 @@ div.clear {
   }
 }
 
+#bucketSelector {
+  margin-top: 20px;
+
+  button {
+    &.active {
+      background-color: $tsv-black;
+      color: $tsv-white;
+    }
+
+    &:hover {
+      background-color: $tsv-white;
+    }
+  }
+}
+
 #facts {
   border-bottom: 1px solid $tsv-light-gray;
   padding: 4em 0 2em;

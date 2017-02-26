@@ -687,6 +687,14 @@ div.clear {
   font-weight: 300;
   text-align: center; }
 
+#bucketSelector {
+  margin-top: 20px; }
+  #bucketSelector button.active {
+    background-color: #111;
+    color: #fff; }
+  #bucketSelector button:hover {
+    background-color: #fff; }
+
 #facts {
   border-bottom: 1px solid #ccc;
   padding: 4em 0 2em; }
