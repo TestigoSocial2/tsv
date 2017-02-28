@@ -55,6 +55,7 @@ var Main = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { id: 'route' },
+          'hola',
           this.props.children
         ),
         _react2.default.createElement(_Footer2.default, null),
@@ -68,7 +69,7 @@ var Main = function (_React$Component) {
 
 exports.default = Main;
 
-},{"./base/Footer.jsx":3,"./base/Menu.jsx":4,"./base/PrivacyNotice.jsx":5,"react":297}],2:[function(require,module,exports){
+},{"./base/Footer.jsx":3,"./base/Menu.jsx":4,"./base/PrivacyNotice.jsx":5,"react":299}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -128,7 +129,7 @@ var Description = function (_React$Component) {
 
 exports.default = Description;
 
-},{"react":297}],3:[function(require,module,exports){
+},{"react":299}],3:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -217,7 +218,7 @@ var Footer = function (_React$Component) {
 
 exports.default = Footer;
 
-},{"react":297}],4:[function(require,module,exports){
+},{"react":299}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -334,7 +335,7 @@ var Menu = function (_React$Component) {
 
 exports.default = Menu;
 
-},{"react":297,"react-router":266}],5:[function(require,module,exports){
+},{"react":299,"react-router":268}],5:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -602,7 +603,7 @@ var PrivacyNotice = function (_React$Component) {
 
 exports.default = PrivacyNotice;
 
-},{"react":297}],6:[function(require,module,exports){
+},{"react":299}],6:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1552,7 +1553,7 @@ var Details = function (_React$Component) {
 
 exports.default = Details;
 
-},{"../helpers.js":12,"react":297}],7:[function(require,module,exports){
+},{"../helpers.js":12,"react":299}],7:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1782,7 +1783,7 @@ var SearchBar = function (_React$Component) {
 
 exports.default = SearchBar;
 
-},{"../helpers.js":12,"react":297}],8:[function(require,module,exports){
+},{"../helpers.js":12,"react":299}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1891,7 +1892,7 @@ var SearchResults = function (_React$Component) {
 
 exports.default = SearchResults;
 
-},{"./TableItem.jsx":10,"react":297}],9:[function(require,module,exports){
+},{"./TableItem.jsx":10,"react":299}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2013,7 +2014,7 @@ var Section = function (_React$Component) {
 
 exports.default = Section;
 
-},{"../base/Description.jsx":2,"../helpers.js":12,"./Details.jsx":6,"./SearchBar.jsx":7,"./SearchResults.jsx":8,"./TableItem.jsx":10,"react":297}],10:[function(require,module,exports){
+},{"../base/Description.jsx":2,"../helpers.js":12,"./Details.jsx":6,"./SearchBar.jsx":7,"./SearchResults.jsx":8,"./TableItem.jsx":10,"react":299}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2131,7 +2132,7 @@ var TableItem = function (_React$Component) {
 
 exports.default = TableItem;
 
-},{"../helpers.js":12,"react":297}],11:[function(require,module,exports){
+},{"../helpers.js":12,"react":299}],11:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -2965,7 +2966,7 @@ exports.formatAmount = formatAmount;
 exports.formatDate = formatDate;
 exports.codeList = codeList;
 
-},{"moment":110,"moment/locale/es":109}],13:[function(require,module,exports){
+},{"moment":112,"moment/locale/es":111}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3565,7 +3566,7 @@ var Home = function (_React$Component) {
 
 exports.default = Home;
 
-},{"../helpers.js":12,"chart.js":22,"react":297,"react-router":266}],14:[function(require,module,exports){
+},{"../helpers.js":12,"chart.js":22,"react":299,"react-router":268}],14:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -3619,7 +3620,7 @@ _reactDom2.default.render(_react2.default.createElement(
   )
 ), document.getElementById('root'));
 
-},{"./Main.jsx":1,"./contracts/Section.jsx":9,"./home/Section.jsx":13,"./indicators/Section.jsx":17,"./info/Section.jsx":19,"./register/Section.jsx":21,"react":297,"react-dom":113,"react-router":266}],15:[function(require,module,exports){
+},{"./Main.jsx":1,"./contracts/Section.jsx":9,"./home/Section.jsx":13,"./indicators/Section.jsx":17,"./info/Section.jsx":19,"./register/Section.jsx":21,"react":299,"react-dom":115,"react-router":268}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3726,7 +3727,7 @@ var ChartWidget = function (_React$Component) {
 
 exports.default = ChartWidget;
 
-},{"chart.js":22,"react":297}],16:[function(require,module,exports){
+},{"chart.js":22,"react":299}],16:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3970,7 +3971,7 @@ var Details = function (_React$Component) {
 
 exports.default = Details;
 
-},{"./ChartWidget.jsx":15,"react":297}],17:[function(require,module,exports){
+},{"./ChartWidget.jsx":15,"react":299}],17:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -4171,7 +4172,7 @@ var Section = function (_React$Component) {
 
 exports.default = Section;
 
-},{"../base/Description.jsx":2,"./ChartWidget.jsx":15,"./Details.jsx":16,"react":297}],18:[function(require,module,exports){
+},{"../base/Description.jsx":2,"./ChartWidget.jsx":15,"./Details.jsx":16,"react":299}],18:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -4863,7 +4864,7 @@ var Glossary = function (_React$Component) {
 
 exports.default = Glossary;
 
-},{"react":297}],19:[function(require,module,exports){
+},{"react":299}],19:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -4921,7 +4922,7 @@ var Section = function (_React$Component) {
 
 exports.default = Section;
 
-},{"../base/Description.jsx":2,"./Glossary.jsx":18,"react":297}],20:[function(require,module,exports){
+},{"../base/Description.jsx":2,"./Glossary.jsx":18,"react":299}],20:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -5623,7 +5624,7 @@ var Form = function (_React$Component) {
 
 exports.default = Form;
 
-},{"../countries.js":11,"react":297}],21:[function(require,module,exports){
+},{"../countries.js":11,"react":299}],21:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -5695,21 +5696,22 @@ var Section = function (_React$Component) {
 
 exports.default = Section;
 
-},{"../base/Description.jsx":2,"./Form.jsx":20,"react":297}],22:[function(require,module,exports){
+},{"../base/Description.jsx":2,"./Form.jsx":20,"react":299}],22:[function(require,module,exports){
 /**
  * @namespace Chart
  */
 var Chart = require('./core/core.js')();
 
 require('./core/core.helpers')(Chart);
+require('./platforms/platform.js')(Chart);
 require('./core/core.canvasHelpers')(Chart);
+require('./core/core.plugin.js')(Chart);
 require('./core/core.element')(Chart);
 require('./core/core.animation')(Chart);
 require('./core/core.controller')(Chart);
 require('./core/core.datasetController')(Chart);
 require('./core/core.layoutService')(Chart);
 require('./core/core.scaleService')(Chart);
-require('./core/core.plugin.js')(Chart);
 require('./core/core.ticks.js')(Chart);
 require('./core/core.scale')(Chart);
 require('./core/core.title')(Chart);
@@ -5748,7 +5750,7 @@ require('./charts/Chart.Scatter')(Chart);
 
 window.Chart = module.exports = Chart;
 
-},{"./charts/Chart.Bar":23,"./charts/Chart.Bubble":24,"./charts/Chart.Doughnut":25,"./charts/Chart.Line":26,"./charts/Chart.PolarArea":27,"./charts/Chart.Radar":28,"./charts/Chart.Scatter":29,"./controllers/controller.bar":30,"./controllers/controller.bubble":31,"./controllers/controller.doughnut":32,"./controllers/controller.line":33,"./controllers/controller.polarArea":34,"./controllers/controller.radar":35,"./core/core.animation":36,"./core/core.canvasHelpers":37,"./core/core.controller":38,"./core/core.datasetController":39,"./core/core.element":40,"./core/core.helpers":41,"./core/core.interaction":42,"./core/core.js":43,"./core/core.layoutService":44,"./core/core.legend":45,"./core/core.plugin.js":46,"./core/core.scale":47,"./core/core.scaleService":48,"./core/core.ticks.js":49,"./core/core.title":50,"./core/core.tooltip":51,"./elements/element.arc":52,"./elements/element.line":53,"./elements/element.point":54,"./elements/element.rectangle":55,"./scales/scale.category":56,"./scales/scale.linear":57,"./scales/scale.linearbase.js":58,"./scales/scale.logarithmic":59,"./scales/scale.radialLinear":60,"./scales/scale.time":61}],23:[function(require,module,exports){
+},{"./charts/Chart.Bar":23,"./charts/Chart.Bubble":24,"./charts/Chart.Doughnut":25,"./charts/Chart.Line":26,"./charts/Chart.PolarArea":27,"./charts/Chart.Radar":28,"./charts/Chart.Scatter":29,"./controllers/controller.bar":30,"./controllers/controller.bubble":31,"./controllers/controller.doughnut":32,"./controllers/controller.line":33,"./controllers/controller.polarArea":34,"./controllers/controller.radar":35,"./core/core.animation":36,"./core/core.canvasHelpers":37,"./core/core.controller":38,"./core/core.datasetController":39,"./core/core.element":40,"./core/core.helpers":41,"./core/core.interaction":42,"./core/core.js":43,"./core/core.layoutService":44,"./core/core.legend":45,"./core/core.plugin.js":46,"./core/core.scale":47,"./core/core.scaleService":48,"./core/core.ticks.js":49,"./core/core.title":50,"./core/core.tooltip":51,"./elements/element.arc":52,"./elements/element.line":53,"./elements/element.point":54,"./elements/element.rectangle":55,"./platforms/platform.js":57,"./scales/scale.category":58,"./scales/scale.linear":59,"./scales/scale.linearbase.js":60,"./scales/scale.logarithmic":61,"./scales/scale.radialLinear":62,"./scales/scale.time":63}],23:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -5912,21 +5914,33 @@ module.exports = function(Chart) {
 		initialize: function(chart, datasetIndex) {
 			Chart.DatasetController.prototype.initialize.call(this, chart, datasetIndex);
 
+			var me = this;
+			var meta = me.getMeta();
+			var dataset = me.getDataset();
+
+			meta.stack = dataset.stack;
 			// Use this to indicate that this is a bar dataset.
-			this.getMeta().bar = true;
+			meta.bar = true;
 		},
 
-		// Get the number of datasets that display bars. We use this to correctly calculate the bar width
-		getBarCount: function() {
+		// Correctly calculate the bar width accounting for stacks and the fact that not all bars are visible
+		getStackCount: function() {
 			var me = this;
-			var barCount = 0;
+			var meta = me.getMeta();
+			var yScale = me.getScaleForId(meta.yAxisID);
+
+			var stacks = [];
 			helpers.each(me.chart.data.datasets, function(dataset, datasetIndex) {
-				var meta = me.chart.getDatasetMeta(datasetIndex);
-				if (meta.bar && me.chart.isDatasetVisible(datasetIndex)) {
-					++barCount;
+				var dsMeta = me.chart.getDatasetMeta(datasetIndex);
+				if (dsMeta.bar && me.chart.isDatasetVisible(datasetIndex) &&
+					(yScale.options.stacked === false ||
+					(yScale.options.stacked === true && stacks.indexOf(dsMeta.stack) === -1) ||
+					(yScale.options.stacked === undefined && (dsMeta.stack === undefined || stacks.indexOf(dsMeta.stack) === -1)))) {
+					stacks.push(dsMeta.stack);
 				}
 			}, me);
-			return barCount;
+
+			return stacks.length;
 		},
 
 		update: function(reset) {
@@ -5951,7 +5965,7 @@ module.exports = function(Chart) {
 			rectangle._datasetIndex = me.index;
 			rectangle._index = index;
 
-			var ruler = me.getRuler(index);
+			var ruler = me.getRuler(index); // The index argument for compatible
 			rectangle._model = {
 				x: me.calculateBarX(index, me.index, ruler),
 				y: reset ? scaleBase : me.calculateBarY(index, me.index),
@@ -5961,6 +5975,7 @@ module.exports = function(Chart) {
 				datasetLabel: dataset.label,
 
 				// Appearance
+				horizontal: false,
 				base: reset ? scaleBase : me.calculateBarBase(me.index, index),
 				width: me.calculateBarWidth(ruler),
 				backgroundColor: custom.backgroundColor ? custom.backgroundColor : helpers.getValueAtIndexOrDefault(dataset.backgroundColor, index, rectangleElementOptions.backgroundColor),
@@ -5976,9 +5991,11 @@ module.exports = function(Chart) {
 			var me = this;
 			var meta = me.getMeta();
 			var yScale = me.getScaleForId(meta.yAxisID);
-			var base = 0;
+			var base = yScale.getBaseValue();
+			var original = base;
 
-			if (yScale.options.stacked) {
+			if ((yScale.options.stacked === true) ||
+				(yScale.options.stacked === undefined && meta.stack !== undefined)) {
 				var chart = me.chart;
 				var datasets = chart.data.datasets;
 				var value = Number(datasets[datasetIndex].data[index]);
@@ -5986,9 +6003,10 @@ module.exports = function(Chart) {
 				for (var i = 0; i < datasetIndex; i++) {
 					var currentDs = datasets[i];
 					var currentDsMeta = chart.getDatasetMeta(i);
-					if (currentDsMeta.bar && currentDsMeta.yAxisID === yScale.id && chart.isDatasetVisible(i)) {
+					if (currentDsMeta.bar && currentDsMeta.yAxisID === yScale.id && chart.isDatasetVisible(i) &&
+						meta.stack === currentDsMeta.stack) {
 						var currentVal = Number(currentDs.data[index]);
-						base += value < 0 ? Math.min(currentVal, 0) : Math.max(currentVal, 0);
+						base += value < 0 ? Math.min(currentVal, original) : Math.max(currentVal, original);
 					}
 				}
 
@@ -5998,34 +6016,22 @@ module.exports = function(Chart) {
 			return yScale.getBasePixel();
 		},
 
-		getRuler: function(index) {
+		getRuler: function() {
 			var me = this;
 			var meta = me.getMeta();
 			var xScale = me.getScaleForId(meta.xAxisID);
-			var datasetCount = me.getBarCount();
+			var stackCount = me.getStackCount();
 
-			var tickWidth;
-
-			if (xScale.options.type === 'category') {
-				tickWidth = xScale.getPixelForTick(index + 1) - xScale.getPixelForTick(index);
-			} else {
-				// Average width
-				tickWidth = xScale.width / xScale.ticks.length;
-			}
+			var tickWidth = xScale.width / xScale.ticks.length;
 			var categoryWidth = tickWidth * xScale.options.categoryPercentage;
 			var categorySpacing = (tickWidth - (tickWidth * xScale.options.categoryPercentage)) / 2;
-			var fullBarWidth = categoryWidth / datasetCount;
-
-			if (xScale.ticks.length !== me.chart.data.labels.length) {
-				var perc = xScale.ticks.length / me.chart.data.labels.length;
-				fullBarWidth = fullBarWidth * perc;
-			}
+			var fullBarWidth = categoryWidth / stackCount;
 
 			var barWidth = fullBarWidth * xScale.options.barPercentage;
 			var barSpacing = fullBarWidth - (fullBarWidth * xScale.options.barPercentage);
 
 			return {
-				datasetCount: datasetCount,
+				stackCount: stackCount,
 				tickWidth: tickWidth,
 				categoryWidth: categoryWidth,
 				categorySpacing: categorySpacing,
@@ -6036,46 +6042,50 @@ module.exports = function(Chart) {
 		},
 
 		calculateBarWidth: function(ruler) {
-			var xScale = this.getScaleForId(this.getMeta().xAxisID);
+			var me = this;
+			var meta = me.getMeta();
+			var xScale = me.getScaleForId(meta.xAxisID);
 			if (xScale.options.barThickness) {
 				return xScale.options.barThickness;
 			}
-			return xScale.options.stacked ? ruler.categoryWidth : ruler.barWidth;
+			return ruler.barWidth;
 		},
 
-		// Get bar index from the given dataset index accounting for the fact that not all bars are visible
-		getBarIndex: function(datasetIndex) {
-			var barIndex = 0;
-			var meta, j;
+		// Get stack index from the given dataset index accounting for stacks and the fact that not all bars are visible
+		getStackIndex: function(datasetIndex) {
+			var me = this;
+			var meta = me.chart.getDatasetMeta(datasetIndex);
+			var yScale = me.getScaleForId(meta.yAxisID);
+			var dsMeta, j;
+			var stacks = [meta.stack];
 
 			for (j = 0; j < datasetIndex; ++j) {
-				meta = this.chart.getDatasetMeta(j);
-				if (meta.bar && this.chart.isDatasetVisible(j)) {
-					++barIndex;
+				dsMeta = this.chart.getDatasetMeta(j);
+				if (dsMeta.bar && this.chart.isDatasetVisible(j) &&
+					(yScale.options.stacked === false ||
+					(yScale.options.stacked === true && stacks.indexOf(dsMeta.stack) === -1) ||
+					(yScale.options.stacked === undefined && (dsMeta.stack === undefined || stacks.indexOf(dsMeta.stack) === -1)))) {
+					stacks.push(dsMeta.stack);
 				}
 			}
 
-			return barIndex;
+			return stacks.length - 1;
 		},
 
 		calculateBarX: function(index, datasetIndex, ruler) {
 			var me = this;
 			var meta = me.getMeta();
 			var xScale = me.getScaleForId(meta.xAxisID);
-			var barIndex = me.getBarIndex(datasetIndex);
+			var stackIndex = me.getStackIndex(datasetIndex);
 			var leftTick = xScale.getPixelForValue(null, index, datasetIndex, me.chart.isCombo);
 			leftTick -= me.chart.isCombo ? (ruler.tickWidth / 2) : 0;
-
-			if (xScale.options.stacked) {
-				return leftTick + (ruler.categoryWidth / 2) + ruler.categorySpacing;
-			}
 
 			return leftTick +
 				(ruler.barWidth / 2) +
 				ruler.categorySpacing +
-				(ruler.barWidth * barIndex) +
+				(ruler.barWidth * stackIndex) +
 				(ruler.barSpacing / 2) +
-				(ruler.barSpacing * barIndex);
+				(ruler.barSpacing * stackIndex);
 		},
 
 		calculateBarY: function(index, datasetIndex) {
@@ -6084,15 +6094,17 @@ module.exports = function(Chart) {
 			var yScale = me.getScaleForId(meta.yAxisID);
 			var value = Number(me.getDataset().data[index]);
 
-			if (yScale.options.stacked) {
-
-				var sumPos = 0,
-					sumNeg = 0;
+			if (yScale.options.stacked ||
+				(yScale.options.stacked === undefined && meta.stack !== undefined)) {
+				var base = yScale.getBaseValue();
+				var sumPos = base,
+					sumNeg = base;
 
 				for (var i = 0; i < datasetIndex; i++) {
 					var ds = me.chart.data.datasets[i];
 					var dsMeta = me.chart.getDatasetMeta(i);
-					if (dsMeta.bar && dsMeta.yAxisID === yScale.id && me.chart.isDatasetVisible(i)) {
+					if (dsMeta.bar && dsMeta.yAxisID === yScale.id && me.chart.isDatasetVisible(i) &&
+						meta.stack === dsMeta.stack) {
 						var stackedVal = Number(ds.data[index]);
 						if (stackedVal < 0) {
 							sumNeg += stackedVal || 0;
@@ -6118,12 +6130,14 @@ module.exports = function(Chart) {
 			var dataset = me.getDataset();
 			var i, len;
 
+			Chart.canvasHelpers.clipArea(me.chart.chart.ctx, me.chart.chartArea);
 			for (i = 0, len = metaData.length; i < len; ++i) {
 				var d = dataset.data[i];
 				if (d !== null && d !== undefined && !isNaN(d)) {
 					metaData[i].transition(easingDecimal).draw();
 				}
 			}
+			Chart.canvasHelpers.unclipArea(me.chart.chart.ctx);
 		},
 
 		setHoverStyle: function(rectangle) {
@@ -6208,6 +6222,27 @@ module.exports = function(Chart) {
 	};
 
 	Chart.controllers.horizontalBar = Chart.controllers.bar.extend({
+
+		// Correctly calculate the bar width accounting for stacks and the fact that not all bars are visible
+		getStackCount: function() {
+			var me = this;
+			var meta = me.getMeta();
+			var xScale = me.getScaleForId(meta.xAxisID);
+
+			var stacks = [];
+			helpers.each(me.chart.data.datasets, function(dataset, datasetIndex) {
+				var dsMeta = me.chart.getDatasetMeta(datasetIndex);
+				if (dsMeta.bar && me.chart.isDatasetVisible(datasetIndex) &&
+					(xScale.options.stacked === false ||
+					(xScale.options.stacked === true && stacks.indexOf(dsMeta.stack) === -1) ||
+					(xScale.options.stacked === undefined && (dsMeta.stack === undefined || stacks.indexOf(dsMeta.stack) === -1)))) {
+					stacks.push(dsMeta.stack);
+				}
+			}, me);
+
+			return stacks.length;
+		},
+
 		updateElement: function(rectangle, index, reset) {
 			var me = this;
 			var meta = me.getMeta();
@@ -6223,7 +6258,7 @@ module.exports = function(Chart) {
 			rectangle._datasetIndex = me.index;
 			rectangle._index = index;
 
-			var ruler = me.getRuler(index);
+			var ruler = me.getRuler(index); // The index argument for compatible
 			rectangle._model = {
 				x: reset ? scaleBase : me.calculateBarX(index, me.index),
 				y: me.calculateBarY(index, me.index, ruler),
@@ -6233,68 +6268,13 @@ module.exports = function(Chart) {
 				datasetLabel: dataset.label,
 
 				// Appearance
+				horizontal: true,
 				base: reset ? scaleBase : me.calculateBarBase(me.index, index),
 				height: me.calculateBarHeight(ruler),
 				backgroundColor: custom.backgroundColor ? custom.backgroundColor : helpers.getValueAtIndexOrDefault(dataset.backgroundColor, index, rectangleElementOptions.backgroundColor),
 				borderSkipped: custom.borderSkipped ? custom.borderSkipped : rectangleElementOptions.borderSkipped,
 				borderColor: custom.borderColor ? custom.borderColor : helpers.getValueAtIndexOrDefault(dataset.borderColor, index, rectangleElementOptions.borderColor),
 				borderWidth: custom.borderWidth ? custom.borderWidth : helpers.getValueAtIndexOrDefault(dataset.borderWidth, index, rectangleElementOptions.borderWidth)
-			};
-			rectangle.draw = function() {
-				var ctx = this._chart.ctx;
-				var vm = this._view;
-
-				var halfHeight = vm.height / 2,
-					topY = vm.y - halfHeight,
-					bottomY = vm.y + halfHeight,
-					right = vm.base - (vm.base - vm.x),
-					halfStroke = vm.borderWidth / 2;
-
-				// Canvas doesn't allow us to stroke inside the width so we can
-				// adjust the sizes to fit if we're setting a stroke on the line
-				if (vm.borderWidth) {
-					topY += halfStroke;
-					bottomY -= halfStroke;
-					right += halfStroke;
-				}
-
-				ctx.beginPath();
-
-				ctx.fillStyle = vm.backgroundColor;
-				ctx.strokeStyle = vm.borderColor;
-				ctx.lineWidth = vm.borderWidth;
-
-				// Corner points, from bottom-left to bottom-right clockwise
-				// | 1 2 |
-				// | 0 3 |
-				var corners = [
-					[vm.base, bottomY],
-					[vm.base, topY],
-					[right, topY],
-					[right, bottomY]
-				];
-
-				// Find first (starting) corner with fallback to 'bottom'
-				var borders = ['bottom', 'left', 'top', 'right'];
-				var startCorner = borders.indexOf(vm.borderSkipped, 0);
-				if (startCorner === -1) {
-					startCorner = 0;
-				}
-
-				function cornerAt(cornerIndex) {
-					return corners[(startCorner + cornerIndex) % 4];
-				}
-
-				// Draw rectangle from 'startCorner'
-				ctx.moveTo.apply(ctx, cornerAt(0));
-				for (var i = 1; i < 4; i++) {
-					ctx.lineTo.apply(ctx, cornerAt(i));
-				}
-
-				ctx.fill();
-				if (vm.borderWidth) {
-					ctx.stroke();
-				}
 			};
 
 			rectangle.pivot();
@@ -6304,9 +6284,11 @@ module.exports = function(Chart) {
 			var me = this;
 			var meta = me.getMeta();
 			var xScale = me.getScaleForId(meta.xAxisID);
-			var base = 0;
+			var base = xScale.getBaseValue();
+			var originalBase = base;
 
-			if (xScale.options.stacked) {
+			if (xScale.options.stacked ||
+				(xScale.options.stacked === undefined && meta.stack !== undefined)) {
 				var chart = me.chart;
 				var datasets = chart.data.datasets;
 				var value = Number(datasets[datasetIndex].data[index]);
@@ -6314,9 +6296,10 @@ module.exports = function(Chart) {
 				for (var i = 0; i < datasetIndex; i++) {
 					var currentDs = datasets[i];
 					var currentDsMeta = chart.getDatasetMeta(i);
-					if (currentDsMeta.bar && currentDsMeta.xAxisID === xScale.id && chart.isDatasetVisible(i)) {
+					if (currentDsMeta.bar && currentDsMeta.xAxisID === xScale.id && chart.isDatasetVisible(i) &&
+						meta.stack === currentDsMeta.stack) {
 						var currentVal = Number(currentDs.data[index]);
-						base += value < 0 ? Math.min(currentVal, 0) : Math.max(currentVal, 0);
+						base += value < 0 ? Math.min(currentVal, originalBase) : Math.max(currentVal, originalBase);
 					}
 				}
 
@@ -6326,33 +6309,22 @@ module.exports = function(Chart) {
 			return xScale.getBasePixel();
 		},
 
-		getRuler: function(index) {
+		getRuler: function() {
 			var me = this;
 			var meta = me.getMeta();
 			var yScale = me.getScaleForId(meta.yAxisID);
-			var datasetCount = me.getBarCount();
+			var stackCount = me.getStackCount();
 
-			var tickHeight;
-			if (yScale.options.type === 'category') {
-				tickHeight = yScale.getPixelForTick(index + 1) - yScale.getPixelForTick(index);
-			} else {
-				// Average width
-				tickHeight = yScale.width / yScale.ticks.length;
-			}
+			var tickHeight = yScale.height / yScale.ticks.length;
 			var categoryHeight = tickHeight * yScale.options.categoryPercentage;
 			var categorySpacing = (tickHeight - (tickHeight * yScale.options.categoryPercentage)) / 2;
-			var fullBarHeight = categoryHeight / datasetCount;
-
-			if (yScale.ticks.length !== me.chart.data.labels.length) {
-				var perc = yScale.ticks.length / me.chart.data.labels.length;
-				fullBarHeight = fullBarHeight * perc;
-			}
+			var fullBarHeight = categoryHeight / stackCount;
 
 			var barHeight = fullBarHeight * yScale.options.barPercentage;
 			var barSpacing = fullBarHeight - (fullBarHeight * yScale.options.barPercentage);
 
 			return {
-				datasetCount: datasetCount,
+				stackCount: stackCount,
 				tickHeight: tickHeight,
 				categoryHeight: categoryHeight,
 				categorySpacing: categorySpacing,
@@ -6364,11 +6336,33 @@ module.exports = function(Chart) {
 
 		calculateBarHeight: function(ruler) {
 			var me = this;
-			var yScale = me.getScaleForId(me.getMeta().yAxisID);
+			var meta = me.getMeta();
+			var yScale = me.getScaleForId(meta.yAxisID);
 			if (yScale.options.barThickness) {
 				return yScale.options.barThickness;
 			}
-			return yScale.options.stacked ? ruler.categoryHeight : ruler.barHeight;
+			return ruler.barHeight;
+		},
+
+		// Get stack index from the given dataset index accounting for stacks and the fact that not all bars are visible
+		getStackIndex: function(datasetIndex) {
+			var me = this;
+			var meta = me.chart.getDatasetMeta(datasetIndex);
+			var xScale = me.getScaleForId(meta.xAxisID);
+			var dsMeta, j;
+			var stacks = [meta.stack];
+
+			for (j = 0; j < datasetIndex; ++j) {
+				dsMeta = this.chart.getDatasetMeta(j);
+				if (dsMeta.bar && this.chart.isDatasetVisible(j) &&
+					(xScale.options.stacked === false ||
+					(xScale.options.stacked === true && stacks.indexOf(dsMeta.stack) === -1) ||
+					(xScale.options.stacked === undefined && (dsMeta.stack === undefined || stacks.indexOf(dsMeta.stack) === -1)))) {
+					stacks.push(dsMeta.stack);
+				}
+			}
+
+			return stacks.length - 1;
 		},
 
 		calculateBarX: function(index, datasetIndex) {
@@ -6377,15 +6371,17 @@ module.exports = function(Chart) {
 			var xScale = me.getScaleForId(meta.xAxisID);
 			var value = Number(me.getDataset().data[index]);
 
-			if (xScale.options.stacked) {
-
-				var sumPos = 0,
-					sumNeg = 0;
+			if (xScale.options.stacked ||
+				(xScale.options.stacked === undefined && meta.stack !== undefined)) {
+				var base = xScale.getBaseValue();
+				var sumPos = base,
+					sumNeg = base;
 
 				for (var i = 0; i < datasetIndex; i++) {
 					var ds = me.chart.data.datasets[i];
 					var dsMeta = me.chart.getDatasetMeta(i);
-					if (dsMeta.bar && dsMeta.xAxisID === xScale.id && me.chart.isDatasetVisible(i)) {
+					if (dsMeta.bar && dsMeta.xAxisID === xScale.id && me.chart.isDatasetVisible(i) &&
+						meta.stack === dsMeta.stack) {
 						var stackedVal = Number(ds.data[index]);
 						if (stackedVal < 0) {
 							sumNeg += stackedVal || 0;
@@ -6408,20 +6404,16 @@ module.exports = function(Chart) {
 			var me = this;
 			var meta = me.getMeta();
 			var yScale = me.getScaleForId(meta.yAxisID);
-			var barIndex = me.getBarIndex(datasetIndex);
+			var stackIndex = me.getStackIndex(datasetIndex);
 			var topTick = yScale.getPixelForValue(null, index, datasetIndex, me.chart.isCombo);
 			topTick -= me.chart.isCombo ? (ruler.tickHeight / 2) : 0;
-
-			if (yScale.options.stacked) {
-				return topTick + (ruler.categoryHeight / 2) + ruler.categorySpacing;
-			}
 
 			return topTick +
 				(ruler.barHeight / 2) +
 				ruler.categorySpacing +
-				(ruler.barHeight * barIndex) +
+				(ruler.barHeight * stackIndex) +
 				(ruler.barSpacing / 2) +
-				(ruler.barSpacing * barIndex);
+				(ruler.barSpacing * stackIndex);
 		}
 	});
 };
@@ -6736,7 +6728,7 @@ module.exports = function(Chart) {
 
 			chart.borderWidth = me.getMaxBorderWidth(meta.data);
 			chart.outerRadius = Math.max((minSize - chart.borderWidth) / 2, 0);
-			chart.innerRadius = Math.max(cutoutPercentage ? (chart.outerRadius / 100) * (cutoutPercentage) : 1, 0);
+			chart.innerRadius = Math.max(cutoutPercentage ? (chart.outerRadius / 100) * (cutoutPercentage) : 0, 0);
 			chart.radiusLength = (chart.outerRadius - chart.innerRadius) / chart.getVisibleDatasetCount();
 			chart.offsetX = offset.x * chart.outerRadius;
 			chart.offsetY = offset.y * chart.outerRadius;
@@ -6744,7 +6736,7 @@ module.exports = function(Chart) {
 			meta.total = me.calculateTotal();
 
 			me.outerRadius = chart.outerRadius - (chart.radiusLength * me.getRingIndex(me.index));
-			me.innerRadius = me.outerRadius - chart.radiusLength;
+			me.innerRadius = Math.max(me.outerRadius - chart.radiusLength, 0);
 
 			helpers.each(meta.data, function(arc, index) {
 				me.updateElement(arc, index, reset);
@@ -6997,11 +6989,11 @@ module.exports = function(Chart) {
 			var dataset = this.getDataset();
 			var custom = point.custom || {};
 
-			if (custom.borderWidth) {
+			if (!isNaN(custom.borderWidth)) {
 				borderWidth = custom.borderWidth;
-			} else if (dataset.pointBorderWidth) {
+			} else if (!isNaN(dataset.pointBorderWidth)) {
 				borderWidth = helpers.getValueAtIndexOrDefault(dataset.pointBorderWidth, index, borderWidth);
-			} else if (dataset.borderWidth) {
+			} else if (!isNaN(dataset.borderWidth)) {
 				borderWidth = dataset.borderWidth;
 			}
 
@@ -7150,14 +7142,16 @@ module.exports = function(Chart) {
 				points[i].transition(easingDecimal);
 			}
 
+			Chart.canvasHelpers.clipArea(me.chart.chart.ctx, me.chart.chartArea);
 			// Transition and Draw the line
 			if (lineEnabled(me.getDataset(), me.chart.options)) {
 				meta.dataset.transition(easingDecimal).draw();
 			}
+			Chart.canvasHelpers.unclipArea(me.chart.chart.ctx);
 
 			// Draw the points
 			for (i=0, ilen=points.length; i<ilen; ++i) {
-				points[i].draw();
+				points[i].draw(me.chart.chartArea);
 			}
 		},
 
@@ -7509,7 +7503,7 @@ module.exports = function(Chart) {
 					y: reset ? scale.yCenter : pointPosition.y,
 
 					// Appearance
-					tension: custom.tension ? custom.tension : helpers.getValueOrDefault(dataset.tension, me.chart.options.elements.line.tension),
+					tension: custom.tension ? custom.tension : helpers.getValueOrDefault(dataset.lineTension, me.chart.options.elements.line.tension),
 					radius: custom.radius ? custom.radius : helpers.getValueAtIndexOrDefault(dataset.pointRadius, index, pointElementOptions.radius),
 					backgroundColor: custom.backgroundColor ? custom.backgroundColor : helpers.getValueAtIndexOrDefault(dataset.pointBackgroundColor, index, pointElementOptions.backgroundColor),
 					borderColor: custom.borderColor ? custom.borderColor : helpers.getValueAtIndexOrDefault(dataset.pointBorderColor, index, pointElementOptions.borderColor),
@@ -7781,6 +7775,14 @@ module.exports = function(Chart) {
 			ctx.fillRect(x - size, y - size, 2 * size, 2 * size);
 			ctx.strokeRect(x - size, y - size, 2 * size, 2 * size);
 			break;
+		case 'rectRounded':
+			var offset = radius / Math.SQRT2;
+			var leftX = x - offset;
+			var topY = y - offset;
+			var sideSize = Math.SQRT2 * radius;
+			Chart.helpers.drawRoundedRectangle(ctx, leftX, topY, sideSize, sideSize, radius / 2);
+			ctx.fill();
+			break;
 		case 'rectRot':
 			size = 1 / Math.SQRT2 * radius;
 			ctx.beginPath();
@@ -7839,6 +7841,18 @@ module.exports = function(Chart) {
 
 		ctx.stroke();
 	};
+
+	helpers.clipArea = function(ctx, clipArea) {
+		ctx.save();
+		ctx.beginPath();
+		ctx.rect(clipArea.left, clipArea.top, clipArea.right - clipArea.left, clipArea.bottom - clipArea.top);
+		ctx.clip();
+	};
+
+	helpers.unclipArea = function(ctx) {
+		ctx.restore();
+	};
+
 };
 
 },{}],38:[function(require,module,exports){
@@ -7847,6 +7861,8 @@ module.exports = function(Chart) {
 module.exports = function(Chart) {
 
 	var helpers = Chart.helpers;
+	var plugins = Chart.plugins;
+	var platform = Chart.platform;
 
 	// Create a dictionary of chart types, to allow for extension of existing types
 	Chart.types = {};
@@ -7857,140 +7873,6 @@ module.exports = function(Chart) {
 
 	// Controllers available for dataset visualization eg. bar, line, slice, etc.
 	Chart.controllers = {};
-
-	/**
-	 * The "used" size is the final value of a dimension property after all calculations have
-	 * been performed. This method uses the computed style of `element` but returns undefined
-	 * if the computed style is not expressed in pixels. That can happen in some cases where
-	 * `element` has a size relative to its parent and this last one is not yet displayed,
-	 * for example because of `display: none` on a parent node.
-	 * TODO(SB) Move this method in the upcoming core.platform class.
-	 * @see https://developer.mozilla.org/en-US/docs/Web/CSS/used_value
-	 * @returns {Number} Size in pixels or undefined if unknown.
-	 */
-	function readUsedSize(element, property) {
-		var value = helpers.getStyle(element, property);
-		var matches = value && value.match(/(\d+)px/);
-		return matches? Number(matches[1]) : undefined;
-	}
-
-	/**
-	 * Initializes the canvas style and render size without modifying the canvas display size,
-	 * since responsiveness is handled by the controller.resize() method. The config is used
-	 * to determine the aspect ratio to apply in case no explicit height has been specified.
-	 * TODO(SB) Move this method in the upcoming core.platform class.
-	 */
-	function initCanvas(canvas, config) {
-		var style = canvas.style;
-
-		// NOTE(SB) canvas.getAttribute('width') !== canvas.width: in the first case it
-		// returns null or '' if no explicit value has been set to the canvas attribute.
-		var renderHeight = canvas.getAttribute('height');
-		var renderWidth = canvas.getAttribute('width');
-
-		// Chart.js modifies some canvas values that we want to restore on destroy
-		canvas._chartjs = {
-			initial: {
-				height: renderHeight,
-				width: renderWidth,
-				style: {
-					display: style.display,
-					height: style.height,
-					width: style.width
-				}
-			}
-		};
-
-		// Force canvas to display as block to avoid extra space caused by inline
-		// elements, which would interfere with the responsive resize process.
-		// https://github.com/chartjs/Chart.js/issues/2538
-		style.display = style.display || 'block';
-
-		if (renderWidth === null || renderWidth === '') {
-			var displayWidth = readUsedSize(canvas, 'width');
-			if (displayWidth !== undefined) {
-				canvas.width = displayWidth;
-			}
-		}
-
-		if (renderHeight === null || renderHeight === '') {
-			if (canvas.style.height === '') {
-				// If no explicit render height and style height, let's apply the aspect ratio,
-				// which one can be specified by the user but also by charts as default option
-				// (i.e. options.aspectRatio). If not specified, use canvas aspect ratio of 2.
-				canvas.height = canvas.width / (config.options.aspectRatio || 2);
-			} else {
-				var displayHeight = readUsedSize(canvas, 'height');
-				if (displayWidth !== undefined) {
-					canvas.height = displayHeight;
-				}
-			}
-		}
-
-		return canvas;
-	}
-
-	/**
-	 * Restores the canvas initial state, such as render/display sizes and style.
-	 * TODO(SB) Move this method in the upcoming core.platform class.
-	 */
-	function releaseCanvas(canvas) {
-		if (!canvas._chartjs) {
-			return;
-		}
-
-		var initial = canvas._chartjs.initial;
-		['height', 'width'].forEach(function(prop) {
-			var value = initial[prop];
-			if (value === undefined || value === null) {
-				canvas.removeAttribute(prop);
-			} else {
-				canvas.setAttribute(prop, value);
-			}
-		});
-
-		helpers.each(initial.style || {}, function(value, key) {
-			canvas.style[key] = value;
-		});
-
-		// The canvas render size might have been changed (and thus the state stack discarded),
-		// we can't use save() and restore() to restore the initial state. So make sure that at
-		// least the canvas context is reset to the default state by setting the canvas width.
-		// https://www.w3.org/TR/2011/WD-html5-20110525/the-canvas-element.html
-		canvas.width = canvas.width;
-
-		delete canvas._chartjs;
-	}
-
-	/**
-	 * TODO(SB) Move this method in the upcoming core.platform class.
-	 */
-	function acquireContext(item, config) {
-		if (typeof item === 'string') {
-			item = document.getElementById(item);
-		} else if (item.length) {
-			// Support for array based queries (such as jQuery)
-			item = item[0];
-		}
-
-		if (item && item.canvas) {
-			// Support for any object associated to a canvas (including a context2d)
-			item = item.canvas;
-		}
-
-		if (item instanceof HTMLCanvasElement) {
-			// To prevent canvas fingerprinting, some add-ons undefine the getContext
-			// method, for example: https://github.com/kkapsner/CanvasBlocker
-			// https://github.com/chartjs/Chart.js/issues/2807
-			var context = item.getContext && item.getContext('2d');
-			if (context instanceof CanvasRenderingContext2D) {
-				initCanvas(item, config);
-				return context;
-			}
-		}
-
-		return null;
-	}
 
 	/**
 	 * Initializes the given config with global and chart default values.
@@ -8013,6 +7895,26 @@ module.exports = function(Chart) {
 	}
 
 	/**
+	 * Updates the config of the chart
+	 * @param chart {Chart.Controller} chart to update the options for
+	 */
+	function updateConfig(chart) {
+		var newOptions = chart.options;
+
+		// Update Scale(s) with options
+		if (newOptions.scale) {
+			chart.scale.options = newOptions.scale;
+		} else if (newOptions.scales) {
+			newOptions.scales.xAxes.concat(newOptions.scales.yAxes).forEach(function(scaleOptions) {
+				chart.scales[scaleOptions.id].options = scaleOptions;
+			});
+		}
+
+		// Tooltip
+		chart.tooltip._options = newOptions.tooltips;
+	}
+
+	/**
 	 * @class Chart.Controller
 	 * The main controller of a chart.
 	 */
@@ -8021,7 +7923,7 @@ module.exports = function(Chart) {
 
 		config = initConfig(config);
 
-		var context = acquireContext(item, config);
+		var context = platform.acquireContext(item, config);
 		var canvas = context && context.canvas;
 		var height = canvas && canvas.height;
 		var width = canvas && canvas.width;
@@ -8057,47 +7959,35 @@ module.exports = function(Chart) {
 			return me;
 		}
 
-		helpers.retinaScale(instance);
-
-		// Responsiveness is currently based on the use of an iframe, however this method causes
-		// performance issues and could be troublesome when used with ad blockers. So make sure
-		// that the user is still able to create a chart without iframe when responsive is false.
-		// See https://github.com/chartjs/Chart.js/issues/2210
-		if (me.options.responsive) {
-			helpers.addResizeListener(canvas.parentNode, function() {
-				me.resize();
-			});
-
-			// Initial resize before chart draws (must be silent to preserve initial animations).
-			me.resize(true);
-		}
-
 		me.initialize();
+		me.update();
 
 		return me;
 	};
 
-	helpers.extend(Chart.Controller.prototype, /** @lends Chart.Controller */ {
+	helpers.extend(Chart.Controller.prototype, /** @lends Chart.Controller.prototype */ {
 		initialize: function() {
 			var me = this;
 
 			// Before init plugin notification
-			Chart.plugins.notify('beforeInit', [me]);
+			plugins.notify(me, 'beforeInit');
+
+			helpers.retinaScale(me.chart);
 
 			me.bindEvents();
 
-			// Make sure controllers are built first so that each dataset is bound to an axis before the scales
-			// are built
+			if (me.options.responsive) {
+				// Initial resize before chart draws (must be silent to preserve initial animations).
+				me.resize(true);
+			}
+
+			// Make sure scales have IDs and are built before we build any controllers.
 			me.ensureScalesHaveIDs();
-			me.buildOrUpdateControllers();
 			me.buildScales();
-			me.updateLayout();
-			me.resetElements();
 			me.initToolTip();
-			me.update();
 
 			// After init plugin notification
-			Chart.plugins.notify('afterInit', [me]);
+			plugins.notify(me, 'afterInit');
 
 			return me;
 		},
@@ -8136,16 +8026,16 @@ module.exports = function(Chart) {
 
 			helpers.retinaScale(chart);
 
-			// Notify any plugins about the resize
-			var newSize = {width: newWidth, height: newHeight};
-			Chart.plugins.notify('resize', [me, newSize]);
-
-			// Notify of resize
-			if (me.options.onResize) {
-				me.options.onResize(me, newSize);
-			}
-
 			if (!silent) {
+				// Notify any plugins about the resize
+				var newSize = {width: newWidth, height: newHeight};
+				plugins.notify(me, 'resize', [newSize]);
+
+				// Notify of resize
+				if (me.options.onResize) {
+					me.options.onResize(me, newSize);
+				}
+
 				me.stop();
 				me.update(me.options.responsiveAnimationDuration);
 			}
@@ -8221,10 +8111,6 @@ module.exports = function(Chart) {
 			Chart.scaleService.addScalesToLayout(this);
 		},
 
-		updateLayout: function() {
-			Chart.layoutService.update(this, this.chart.width, this.chart.height);
-		},
-
 		buildOrUpdateControllers: function() {
 			var me = this;
 			var types = [];
@@ -8260,7 +8146,6 @@ module.exports = function(Chart) {
 
 		/**
 		 * Reset the elements of all datasets
-		 * @method resetElements
 		 * @private
 		 */
 		resetElements: function() {
@@ -8272,7 +8157,6 @@ module.exports = function(Chart) {
 
 		/**
 		* Resets the chart back to it's state before the initial animation
-		* @method reset
 		*/
 		reset: function() {
 			this.resetElements();
@@ -8281,7 +8165,12 @@ module.exports = function(Chart) {
 
 		update: function(animationDuration, lazy) {
 			var me = this;
-			Chart.plugins.notify('beforeUpdate', [me]);
+
+			updateConfig(me);
+
+			if (plugins.notify(me, 'beforeUpdate') === false) {
+				return;
+			}
 
 			// In case the entire data object changed
 			me.tooltip._data = me.data;
@@ -8294,10 +8183,7 @@ module.exports = function(Chart) {
 				me.getDatasetMeta(datasetIndex).controller.buildOrUpdateElements();
 			}, me);
 
-			Chart.layoutService.update(me, me.chart.width, me.chart.height);
-
-			// Apply changes to the datasets that require the scales to have been calculated i.e BorderColor changes
-			Chart.plugins.notify('afterScaleUpdate', [me]);
+			me.updateLayout();
 
 			// Can only reset the new controllers after the scales have been updated
 			helpers.each(newControllers, function(controller) {
@@ -8307,7 +8193,7 @@ module.exports = function(Chart) {
 			me.updateDatasets();
 
 			// Do this before render so that any plugins that need final scale updates can use it
-			Chart.plugins.notify('afterUpdate', [me]);
+			plugins.notify(me, 'afterUpdate');
 
 			if (me._bufferedRender) {
 				me._bufferedRequest = {
@@ -8320,51 +8206,64 @@ module.exports = function(Chart) {
 		},
 
 		/**
-		 * @method beforeDatasetsUpdate
-		 * @description Called before all datasets are updated. If a plugin returns false,
-		 * the datasets update will be cancelled until another chart update is triggered.
-		 * @param {Object} instance the chart instance being updated.
-		 * @returns {Boolean} false to cancel the datasets update.
-		 * @memberof Chart.PluginBase
-		 * @since version 2.1.5
-		 * @instance
+		 * Updates the chart layout unless a plugin returns `false` to the `beforeLayout`
+		 * hook, in which case, plugins will not be called on `afterLayout`.
+		 * @private
 		 */
+		updateLayout: function() {
+			var me = this;
+
+			if (plugins.notify(me, 'beforeLayout') === false) {
+				return;
+			}
+
+			Chart.layoutService.update(this, this.chart.width, this.chart.height);
+
+			/**
+			 * Provided for backward compatibility, use `afterLayout` instead.
+			 * @method IPlugin#afterScaleUpdate
+			 * @deprecated since version 2.5.0
+			 * @todo remove at version 3
+			 */
+			plugins.notify(me, 'afterScaleUpdate');
+			plugins.notify(me, 'afterLayout');
+		},
 
 		/**
-		 * @method afterDatasetsUpdate
-		 * @description Called after all datasets have been updated. Note that this
-		 * extension will not be called if the datasets update has been cancelled.
-		 * @param {Object} instance the chart instance being updated.
-		 * @memberof Chart.PluginBase
-		 * @since version 2.1.5
-		 * @instance
-		 */
-
-		/**
-		 * Updates all datasets unless a plugin returns false to the beforeDatasetsUpdate
-		 * extension, in which case no datasets will be updated and the afterDatasetsUpdate
-		 * notification will be skipped.
-		 * @protected
-		 * @instance
+		 * Updates all datasets unless a plugin returns `false` to the `beforeDatasetsUpdate`
+		 * hook, in which case, plugins will not be called on `afterDatasetsUpdate`.
+		 * @private
 		 */
 		updateDatasets: function() {
 			var me = this;
-			var i, ilen;
 
-			if (Chart.plugins.notify('beforeDatasetsUpdate', [me])) {
-				for (i = 0, ilen = me.data.datasets.length; i < ilen; ++i) {
-					me.getDatasetMeta(i).controller.update();
-				}
-
-				Chart.plugins.notify('afterDatasetsUpdate', [me]);
+			if (plugins.notify(me, 'beforeDatasetsUpdate') === false) {
+				return;
 			}
+
+			for (var i = 0, ilen = me.data.datasets.length; i < ilen; ++i) {
+				me.getDatasetMeta(i).controller.update();
+			}
+
+			plugins.notify(me, 'afterDatasetsUpdate');
 		},
 
 		render: function(duration, lazy) {
 			var me = this;
-			Chart.plugins.notify('beforeRender', [me]);
+
+			if (plugins.notify(me, 'beforeRender') === false) {
+				return;
+			}
 
 			var animationOptions = me.options.animation;
+			var onComplete = function() {
+				plugins.notify(me, 'afterRender');
+				var callback = animationOptions && animationOptions.onComplete;
+				if (callback && callback.call) {
+					callback.call(me);
+				}
+			};
+
 			if (animationOptions && ((typeof duration !== 'undefined' && duration !== 0) || (typeof duration === 'undefined' && animationOptions.duration !== 0))) {
 				var animation = new Chart.Animation();
 				animation.numSteps = (duration || animationOptions.duration) / 16.66; // 60 fps
@@ -8381,48 +8280,67 @@ module.exports = function(Chart) {
 
 				// user events
 				animation.onAnimationProgress = animationOptions.onProgress;
-				animation.onAnimationComplete = animationOptions.onComplete;
+				animation.onAnimationComplete = onComplete;
 
 				Chart.animationService.addAnimation(me, animation, duration, lazy);
 			} else {
 				me.draw();
-				if (animationOptions && animationOptions.onComplete && animationOptions.onComplete.call) {
-					animationOptions.onComplete.call(me);
-				}
+				onComplete();
 			}
+
 			return me;
 		},
 
-		draw: function(ease) {
+		draw: function(easingValue) {
 			var me = this;
-			var easingDecimal = ease || 1;
+
 			me.clear();
 
-			Chart.plugins.notify('beforeDraw', [me, easingDecimal]);
+			if (easingValue === undefined || easingValue === null) {
+				easingValue = 1;
+			}
+
+			if (plugins.notify(me, 'beforeDraw', [easingValue]) === false) {
+				return;
+			}
 
 			// Draw all the scales
 			helpers.each(me.boxes, function(box) {
 				box.draw(me.chartArea);
 			}, me);
+
 			if (me.scale) {
 				me.scale.draw();
 			}
 
-			Chart.plugins.notify('beforeDatasetsDraw', [me, easingDecimal]);
+			me.drawDatasets(easingValue);
+
+			// Finally draw the tooltip
+			me.tooltip.transition(easingValue).draw();
+
+			plugins.notify(me, 'afterDraw', [easingValue]);
+		},
+
+		/**
+		 * Draws all datasets unless a plugin returns `false` to the `beforeDatasetsDraw`
+		 * hook, in which case, plugins will not be called on `afterDatasetsDraw`.
+		 * @private
+		 */
+		drawDatasets: function(easingValue) {
+			var me = this;
+
+			if (plugins.notify(me, 'beforeDatasetsDraw', [easingValue]) === false) {
+				return;
+			}
 
 			// Draw each dataset via its respective controller (reversed to support proper line stacking)
 			helpers.each(me.data.datasets, function(dataset, datasetIndex) {
 				if (me.isDatasetVisible(datasetIndex)) {
-					me.getDatasetMeta(datasetIndex).controller.draw(ease);
+					me.getDatasetMeta(datasetIndex).controller.draw(easingValue);
 				}
 			}, me, true);
 
-			Chart.plugins.notify('afterDatasetsDraw', [me, easingDecimal]);
-
-			// Finally draw the tooltip
-			me.tooltip.transition(easingDecimal).draw();
-
-			Chart.plugins.notify('afterDraw', [me, easingDecimal]);
+			plugins.notify(me, 'afterDatasetsDraw', [easingValue]);
 		},
 
 		// Get the single element that was clicked on
@@ -8449,7 +8367,7 @@ module.exports = function(Chart) {
 		},
 
 		getDatasetAtEvent: function(e) {
-			return Chart.Interaction.modes.dataset(this, e);
+			return Chart.Interaction.modes.dataset(this, e, {intersect: true});
 		},
 
 		getDatasetMeta: function(datasetIndex) {
@@ -8514,15 +8432,14 @@ module.exports = function(Chart) {
 			}
 
 			if (canvas) {
-				helpers.unbindEvents(me, me.events);
-				helpers.removeResizeListener(canvas.parentNode);
+				me.unbindEvents();
 				helpers.clear(me.chart);
-				releaseCanvas(canvas);
+				platform.releaseContext(me.chart.ctx);
 				me.chart.canvas = null;
 				me.chart.ctx = null;
 			}
 
-			Chart.plugins.notify('destroy', [me]);
+			plugins.notify(me, 'destroy');
 
 			delete Chart.instances[me.id];
 		},
@@ -8542,10 +8459,48 @@ module.exports = function(Chart) {
 			me.tooltip.initialize();
 		},
 
+		/**
+		 * @private
+		 */
 		bindEvents: function() {
 			var me = this;
-			helpers.bindEvents(me, me.options.events, function(evt) {
-				me.eventHandler(evt);
+			var listeners = me._listeners = {};
+			var listener = function() {
+				me.eventHandler.apply(me, arguments);
+			};
+
+			helpers.each(me.options.events, function(type) {
+				platform.addEventListener(me, type, listener);
+				listeners[type] = listener;
+			});
+
+			// Responsiveness is currently based on the use of an iframe, however this method causes
+			// performance issues and could be troublesome when used with ad blockers. So make sure
+			// that the user is still able to create a chart without iframe when responsive is false.
+			// See https://github.com/chartjs/Chart.js/issues/2210
+			if (me.options.responsive) {
+				listener = function() {
+					me.resize();
+				};
+
+				platform.addEventListener(me, 'resize', listener);
+				listeners.resize = listener;
+			}
+		},
+
+		/**
+		 * @private
+		 */
+		unbindEvents: function() {
+			var me = this;
+			var listeners = me._listeners;
+			if (!listeners) {
+				return;
+			}
+
+			delete me._listeners;
+			helpers.each(listeners, function(listener, type) {
+				platform.removeEventListener(me, type, listener);
 			});
 		},
 
@@ -8561,19 +8516,25 @@ module.exports = function(Chart) {
 			}
 		},
 
+		/**
+		 * @private
+		 */
 		eventHandler: function(e) {
 			var me = this;
-			var legend = me.legend;
 			var tooltip = me.tooltip;
-			var hoverOptions = me.options.hover;
+
+			if (plugins.notify(me, 'beforeEvent', [e]) === false) {
+				return;
+			}
 
 			// Buffer any update calls so that renders do not occur
 			me._bufferedRender = true;
 			me._bufferedRequest = null;
 
 			var changed = me.handleEvent(e);
-			changed |= legend && legend.handleEvent(e);
 			changed |= tooltip && tooltip.handleEvent(e);
+
+			plugins.notify(me, 'afterEvent', [e]);
 
 			var bufferedRequest = me._bufferedRequest;
 			if (bufferedRequest) {
@@ -8585,7 +8546,7 @@ module.exports = function(Chart) {
 
 				// We only need to render at this point. Updating will cause scales to be
 				// recomputed generating flicker & using more memory than necessary.
-				me.render(hoverOptions.animationDuration, true);
+				me.render(me.options.hover.animationDuration, true);
 			}
 
 			me._bufferedRender = false;
@@ -8597,7 +8558,7 @@ module.exports = function(Chart) {
 		/**
 		 * Handle an event
 		 * @private
-		 * param e {Event} the event to handle
+		 * @param {IEvent} event the event to handle
 		 * @return {Boolean} true if the chart needs to re-render
 		 */
 		handleEvent: function(e) {
@@ -8617,12 +8578,14 @@ module.exports = function(Chart) {
 
 			// On Hover hook
 			if (hoverOptions.onHover) {
-				hoverOptions.onHover.call(me, me.active);
+				// Need to call with native event here to not break backwards compatibility
+				hoverOptions.onHover.call(me, e.native, me.active);
 			}
 
 			if (e.type === 'mouseup' || e.type === 'click') {
 				if (options.onClick) {
-					options.onClick.call(me, e, me.active);
+					// Use e.native here for backwards compatibility
+					options.onClick.call(me, e.native, me.active);
 				}
 			}
 
@@ -9295,6 +9258,10 @@ module.exports = function(Chart) {
 	helpers.almostEquals = function(x, y, epsilon) {
 		return Math.abs(x - y) < epsilon;
 	};
+	helpers.almostWhole = function(x, epsilon) {
+		var rounded = Math.round(x);
+		return (((rounded - epsilon) < x) && ((rounded + epsilon) > x));
+	};
 	helpers.max = function(array) {
 		return array.reduce(function(max, value) {
 			if (!isNaN(value)) {
@@ -9419,7 +9386,10 @@ module.exports = function(Chart) {
 			pointBefore = i > 0 ? pointsWithTangents[i - 1] : null;
 			pointAfter = i < pointsLen - 1 ? pointsWithTangents[i + 1] : null;
 			if (pointAfter && !pointAfter.model.skip) {
-				pointCurrent.deltaK = (pointAfter.model.y - pointCurrent.model.y) / (pointAfter.model.x - pointCurrent.model.x);
+				var slopeDeltaX = (pointAfter.model.x - pointCurrent.model.x);
+
+				// In the case of two points that appear at the same x pixel, slopeDeltaX is 0
+				pointCurrent.deltaK = slopeDeltaX !== 0 ? (pointAfter.model.y - pointCurrent.model.y) / slopeDeltaX : 0;
 			}
 
 			if (!pointBefore || pointBefore.model.skip) {
@@ -9729,16 +9699,6 @@ module.exports = function(Chart) {
 				return window.setTimeout(callback, 1000 / 60);
 			};
 	}());
-	helpers.cancelAnimFrame = (function() {
-		return window.cancelAnimationFrame ||
-			window.webkitCancelAnimationFrame ||
-			window.mozCancelAnimationFrame ||
-			window.oCancelAnimationFrame ||
-			window.msCancelAnimationFrame ||
-			function(callback) {
-				return window.clearTimeout(callback, 1000 / 60);
-			};
-	}());
 	// -- DOM methods
 	helpers.getRelativePosition = function(evt, chart) {
 		var mouseX, mouseY;
@@ -9794,23 +9754,6 @@ module.exports = function(Chart) {
 		} else {
 			node['on' + eventType] = helpers.noop;
 		}
-	};
-	helpers.bindEvents = function(chartInstance, arrayOfEvents, handler) {
-		// Create the events object if it's not already present
-		var events = chartInstance.events = chartInstance.events || {};
-
-		helpers.each(arrayOfEvents, function(eventName) {
-			events[eventName] = function() {
-				handler.apply(chartInstance, arguments);
-			};
-			helpers.addEvent(chartInstance.chart.canvas, eventName, events[eventName]);
-		});
-	};
-	helpers.unbindEvents = function(chartInstance, arrayOfEvents) {
-		var canvas = chartInstance.chart.canvas;
-		helpers.each(arrayOfEvents, function(handler, eventName) {
-			helpers.removeEvent(canvas, eventName, handler);
-		});
 	};
 
 	// Private helper function to convert max-width/max-height values that may be percentages into a number
@@ -10002,73 +9945,6 @@ module.exports = function(Chart) {
 
 		return color(c);
 	};
-	helpers.addResizeListener = function(node, callback) {
-		var iframe = document.createElement('iframe');
-		iframe.className = 'chartjs-hidden-iframe';
-		iframe.style.cssText =
-			'display:block;'+
-			'overflow:hidden;'+
-			'border:0;'+
-			'margin:0;'+
-			'top:0;'+
-			'left:0;'+
-			'bottom:0;'+
-			'right:0;'+
-			'height:100%;'+
-			'width:100%;'+
-			'position:absolute;'+
-			'pointer-events:none;'+
-			'z-index:-1;';
-
-		// Prevent the iframe to gain focus on tab.
-		// https://github.com/chartjs/Chart.js/issues/3090
-		iframe.tabIndex = -1;
-
-		// Let's keep track of this added iframe and thus avoid DOM query when removing it.
-		var stub = node._chartjs = {
-			resizer: iframe,
-			ticking: false
-		};
-
-		// Throttle the callback notification until the next animation frame.
-		var notify = function() {
-			if (!stub.ticking) {
-				stub.ticking = true;
-				helpers.requestAnimFrame.call(window, function() {
-					if (stub.resizer) {
-						stub.ticking = false;
-						return callback();
-					}
-				});
-			}
-		};
-
-		// If the iframe is re-attached to the DOM, the resize listener is removed because the
-		// content is reloaded, so make sure to install the handler after the iframe is loaded.
-		// https://github.com/chartjs/Chart.js/issues/3521
-		helpers.addEvent(iframe, 'load', function() {
-			helpers.addEvent(iframe.contentWindow || iframe, 'resize', notify);
-
-			// The iframe size might have changed while loading, which can also
-			// happen if the size has been changed while detached from the DOM.
-			notify();
-		});
-
-		node.insertBefore(iframe, node.firstChild);
-	};
-	helpers.removeResizeListener = function(node) {
-		if (!node || !node._chartjs) {
-			return;
-		}
-
-		var iframe = node._chartjs.resizer;
-		if (iframe) {
-			iframe.parentNode.removeChild(iframe);
-			node._chartjs.resizer = null;
-		}
-
-		delete node._chartjs;
-	};
 	helpers.isArray = Array.isArray?
 		function(obj) {
 			return Array.isArray(obj);
@@ -10113,11 +9989,28 @@ module.exports = function(Chart) {
 	};
 };
 
-},{"chartjs-color":63}],42:[function(require,module,exports){
+},{"chartjs-color":65}],42:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
 	var helpers = Chart.helpers;
+
+	/**
+	 * Helper function to get relative position for an event
+	 * @param {Event|IEvent} event - The event to get the position for
+	 * @param {Chart} chart - The chart
+	 * @returns {Point} the event position
+	 */
+	function getRelativePosition(e, chart) {
+		if (e.native) {
+			return {
+				x: e.x,
+				y: e.y
+			};
+		}
+
+		return helpers.getRelativePosition(e, chart);
+	}
 
 	/**
 	 * Helper function to traverse all of the visible elements in the chart
@@ -10198,7 +10091,7 @@ module.exports = function(Chart) {
 	}
 
 	function indexMode(chart, e, options) {
-		var position = helpers.getRelativePosition(e, chart.chart);
+		var position = getRelativePosition(e, chart.chart);
 		var distanceMetric = function(pt1, pt2) {
 			return Math.abs(pt1.x - pt2.x);
 		};
@@ -10234,14 +10127,14 @@ module.exports = function(Chart) {
 	 */
 
 	/**
-	 * @namespace Chart.Interaction
 	 * Contains interaction related functions
+	 * @namespace Chart.Interaction
 	 */
 	Chart.Interaction = {
 		// Helper function for different modes
 		modes: {
 			single: function(chart, e) {
-				var position = helpers.getRelativePosition(e, chart.chart);
+				var position = getRelativePosition(e, chart.chart);
 				var elements = [];
 
 				parseVisibleItems(chart, function(element) {
@@ -10282,7 +10175,7 @@ module.exports = function(Chart) {
 			 * @return {Chart.Element[]} Array of elements that are under the point. If none are found, an empty array is returned
 			 */
 			dataset: function(chart, e, options) {
-				var position = helpers.getRelativePosition(e, chart.chart);
+				var position = getRelativePosition(e, chart.chart);
 				var items = options.intersect ? getIntersectItems(chart, position) : getNearestItems(chart, position, false);
 
 				if (items.length > 0) {
@@ -10309,7 +10202,7 @@ module.exports = function(Chart) {
 			 * @return {Chart.Element[]} Array of elements that are under the point. If none are found, an empty array is returned
 			 */
 			point: function(chart, e) {
-				var position = helpers.getRelativePosition(e, chart.chart);
+				var position = getRelativePosition(e, chart.chart);
 				return getIntersectItems(chart, position);
 			},
 
@@ -10322,7 +10215,7 @@ module.exports = function(Chart) {
 			 * @return {Chart.Element[]} Array of elements that are under the point. If none are found, an empty array is returned
 			 */
 			nearest: function(chart, e, options) {
-				var position = helpers.getRelativePosition(e, chart.chart);
+				var position = getRelativePosition(e, chart.chart);
 				var nearestItems = getNearestItems(chart, position, options.intersect);
 
 				// We have multiple items at the same distance from the event. Now sort by smallest
@@ -10354,7 +10247,7 @@ module.exports = function(Chart) {
 			 * @return {Chart.Element[]} Array of elements that are under the point. If none are found, an empty array is returned
 			 */
 			x: function(chart, e, options) {
-				var position = helpers.getRelativePosition(e, chart.chart);
+				var position = getRelativePosition(e, chart.chart);
 				var items = [];
 				var intersectsItem = false;
 
@@ -10385,7 +10278,7 @@ module.exports = function(Chart) {
 			 * @return {Chart.Element[]} Array of elements that are under the point. If none are found, an empty array is returned
 			 */
 			y: function(chart, e, options) {
-				var position = helpers.getRelativePosition(e, chart.chart);
+				var position = getRelativePosition(e, chart.chart);
 				var items = [];
 				var intersectsItem = false;
 
@@ -10619,15 +10512,36 @@ module.exports = function(Chart) {
 				minBoxSizes.push({
 					horizontal: isHorizontal,
 					minSize: minSize,
-					box: box
+					box: box,
 				});
 			}
 
 			helpers.each(leftBoxes.concat(rightBoxes, topBoxes, bottomBoxes), getMinimumBoxSize);
 
+			// If a horizontal box has padding, we move the left boxes over to avoid ugly charts (see issue #2478)
+			var maxHorizontalLeftPadding = 0;
+			var maxHorizontalRightPadding = 0;
+			var maxVerticalTopPadding = 0;
+			var maxVerticalBottomPadding = 0;
+
+			helpers.each(topBoxes.concat(bottomBoxes), function(horizontalBox) {
+				if (horizontalBox.getPadding) {
+					var boxPadding = horizontalBox.getPadding();
+					maxHorizontalLeftPadding = Math.max(maxHorizontalLeftPadding, boxPadding.left);
+					maxHorizontalRightPadding = Math.max(maxHorizontalRightPadding, boxPadding.right);
+				}
+			});
+
+			helpers.each(leftBoxes.concat(rightBoxes), function(verticalBox) {
+				if (verticalBox.getPadding) {
+					var boxPadding = verticalBox.getPadding();
+					maxVerticalTopPadding = Math.max(maxVerticalTopPadding, boxPadding.top);
+					maxVerticalBottomPadding = Math.max(maxVerticalBottomPadding, boxPadding.bottom);
+				}
+			});
+
 			// At this point, maxChartAreaHeight and maxChartAreaWidth are the size the chart area could
 			// be if the axes are drawn at their minimum sizes.
-
 			// Steps 5 & 6
 			var totalLeftBoxesWidth = leftPadding;
 			var totalRightBoxesWidth = rightPadding;
@@ -10643,8 +10557,8 @@ module.exports = function(Chart) {
 				if (minBoxSize) {
 					if (box.isHorizontal()) {
 						var scaleMargin = {
-							left: totalLeftBoxesWidth,
-							right: totalRightBoxesWidth,
+							left: Math.max(totalLeftBoxesWidth, maxHorizontalLeftPadding),
+							right: Math.max(totalRightBoxesWidth, maxHorizontalRightPadding),
 							top: 0,
 							bottom: 0
 						};
@@ -10722,6 +10636,15 @@ module.exports = function(Chart) {
 				totalBottomBoxesHeight += box.height;
 			});
 
+			// We may be adding some padding to account for rotated x axis labels
+			var leftPaddingAddition = Math.max(maxHorizontalLeftPadding - totalLeftBoxesWidth, 0);
+			totalLeftBoxesWidth += leftPaddingAddition;
+			totalRightBoxesWidth += Math.max(maxHorizontalRightPadding - totalRightBoxesWidth, 0);
+
+			var topPaddingAddition = Math.max(maxVerticalTopPadding - totalTopBoxesHeight, 0);
+			totalTopBoxesHeight += topPaddingAddition;
+			totalBottomBoxesHeight += Math.max(maxVerticalBottomPadding - totalBottomBoxesHeight, 0);
+
 			// Figure out if our chart area changed. This would occur if the dataset layout label rotation
 			// changed due to the application of the margins in step 6. Since we can only get bigger, this is safe to do
 			// without calling `fit` again
@@ -10754,8 +10677,8 @@ module.exports = function(Chart) {
 			}
 
 			// Step 7 - Position the boxes
-			var left = leftPadding;
-			var top = topPadding;
+			var left = leftPadding + leftPaddingAddition;
+			var top = topPadding + topPaddingAddition;
 
 			function placeBox(box) {
 				if (box.isHorizontal()) {
@@ -10974,10 +10897,20 @@ module.exports = function(Chart) {
 		beforeBuildLabels: noop,
 		buildLabels: function() {
 			var me = this;
-			me.legendItems = me.options.labels.generateLabels.call(me, me.chart);
-			if (me.options.reverse) {
-				me.legendItems.reverse();
+			var labelOpts = me.options.labels;
+			var legendItems = labelOpts.generateLabels.call(me, me.chart);
+
+			if (labelOpts.filter) {
+				legendItems = legendItems.filter(function(item) {
+					return labelOpts.filter(item, me.chart.data);
+				});
 			}
+
+			if (me.options.reverse) {
+				legendItems.reverse();
+			}
+
+			me.legendItems = legendItems;
 		},
 		afterBuildLabels: noop,
 
@@ -11216,7 +11149,7 @@ module.exports = function(Chart) {
 						}
 					} else if (y + itemHeight > me.bottom) {
 						x = cursor.x = x + me.columnWidths[cursor.line] + labelOpts.padding;
-						y = cursor.y = me.top;
+						y = cursor.y = me.top + labelOpts.padding;
 						cursor.line++;
 					}
 
@@ -11241,7 +11174,7 @@ module.exports = function(Chart) {
 		/**
 		 * Handle an event
 		 * @private
-		 * @param e {Event} the event to handle
+		 * @param {IEvent} event - The event to handle
 		 * @return {Boolean} true if a change occured
 		 */
 		handleEvent: function(e) {
@@ -11262,9 +11195,9 @@ module.exports = function(Chart) {
 				return;
 			}
 
-			var position = helpers.getRelativePosition(e, me.chart.chart),
-				x = position.x,
-				y = position.y;
+			// Chart event already has relative position in it
+			var x = e.x,
+				y = e.y;
 
 			if (x >= me.left && x <= me.right && y >= me.top && y <= me.bottom) {
 				// See if we are touching one of the dataset boxes
@@ -11275,11 +11208,13 @@ module.exports = function(Chart) {
 					if (x >= hitBox.left && x <= hitBox.left + hitBox.width && y >= hitBox.top && y <= hitBox.top + hitBox.height) {
 						// Touching an element
 						if (type === 'click') {
-							opts.onClick.call(me, e, me.legendItems[i]);
+							// use e.native for backwards compatibility
+							opts.onClick.call(me, e.native, me.legendItems[i]);
 							changed = true;
 							break;
 						} else if (type === 'mousemove') {
-							opts.onHover.call(me, e, me.legendItems[i]);
+							// use e.native for backwards compatibility
+							opts.onHover.call(me, e.native, me.legendItems[i]);
 							changed = true;
 							break;
 						}
@@ -11291,20 +11226,45 @@ module.exports = function(Chart) {
 		}
 	});
 
+	function createNewLegendAndAttach(chartInstance, legendOpts) {
+		var legend = new Chart.Legend({
+			ctx: chartInstance.chart.ctx,
+			options: legendOpts,
+			chart: chartInstance
+		});
+		chartInstance.legend = legend;
+		Chart.layoutService.addBox(chartInstance, legend);
+	}
+
 	// Register the legend plugin
 	Chart.plugins.register({
 		beforeInit: function(chartInstance) {
-			var opts = chartInstance.options;
-			var legendOpts = opts.legend;
+			var legendOpts = chartInstance.options.legend;
 
 			if (legendOpts) {
-				chartInstance.legend = new Chart.Legend({
-					ctx: chartInstance.chart.ctx,
-					options: legendOpts,
-					chart: chartInstance
-				});
+				createNewLegendAndAttach(chartInstance, legendOpts);
+			}
+		},
+		beforeUpdate: function(chartInstance) {
+			var legendOpts = chartInstance.options.legend;
 
-				Chart.layoutService.addBox(chartInstance, chartInstance.legend);
+			if (legendOpts) {
+				legendOpts = helpers.configMerge(Chart.defaults.global.legend, legendOpts);
+
+				if (chartInstance.legend) {
+					chartInstance.legend.options = legendOpts;
+				} else {
+					createNewLegendAndAttach(chartInstance, legendOpts);
+				}
+			} else {
+				Chart.layoutService.removeBox(chartInstance, chartInstance.legend);
+				delete chartInstance.legend;
+			}
+		},
+		afterEvent: function(chartInstance, e) {
+			var legend = chartInstance.legend;
+			if (legend) {
+				legend.handleEvent(e);
 			}
 		}
 	});
@@ -11315,7 +11275,9 @@ module.exports = function(Chart) {
 
 module.exports = function(Chart) {
 
-	var noop = Chart.helpers.noop;
+	var helpers = Chart.helpers;
+
+	Chart.defaults.global.plugins = {};
 
 	/**
 	 * The plugin service singleton
@@ -11323,7 +11285,19 @@ module.exports = function(Chart) {
 	 * @since 2.1.0
 	 */
 	Chart.plugins = {
+		/**
+		 * Globally registered plugins.
+		 * @private
+		 */
 		_plugins: [],
+
+		/**
+		 * This identifier is used to invalidate the descriptors cache attached to each chart
+		 * when a global plugin is registered or unregistered. In this case, the cache ID is
+		 * incremented and descriptors are regenerated during following API calls.
+		 * @private
+		 */
+		_cacheId: 0,
 
 		/**
 		 * Registers the given plugin(s) if not already registered.
@@ -11336,6 +11310,8 @@ module.exports = function(Chart) {
 					p.push(plugin);
 				}
 			});
+
+			this._cacheId++;
 		},
 
 		/**
@@ -11350,6 +11326,8 @@ module.exports = function(Chart) {
 					p.splice(idx, 1);
 				}
 			});
+
+			this._cacheId++;
 		},
 
 		/**
@@ -11358,6 +11336,7 @@ module.exports = function(Chart) {
 		 */
 		clear: function() {
 			this._plugins = [];
+			this._cacheId++;
 		},
 
 		/**
@@ -11379,66 +11358,243 @@ module.exports = function(Chart) {
 		},
 
 		/**
-		 * Calls registered plugins on the specified extension, with the given args. This
-		 * method immediately returns as soon as a plugin explicitly returns false. The
+		 * Calls enabled plugins for `chart` on the specified hook and with the given args.
+		 * This method immediately returns as soon as a plugin explicitly returns false. The
 		 * returned value can be used, for instance, to interrupt the current action.
-		 * @param {String} extension the name of the plugin method to call (e.g. 'beforeUpdate').
-		 * @param {Array} [args] extra arguments to apply to the extension call.
+		 * @param {Object} chart - The chart instance for which plugins should be called.
+		 * @param {String} hook - The name of the plugin method to call (e.g. 'beforeUpdate').
+		 * @param {Array} [args] - Extra arguments to apply to the hook call.
 		 * @returns {Boolean} false if any of the plugins return false, else returns true.
 		 */
-		notify: function(extension, args) {
-			var plugins = this._plugins;
-			var ilen = plugins.length;
-			var i, plugin;
+		notify: function(chart, hook, args) {
+			var descriptors = this.descriptors(chart);
+			var ilen = descriptors.length;
+			var i, descriptor, plugin, params, method;
 
 			for (i=0; i<ilen; ++i) {
-				plugin = plugins[i];
-				if (typeof plugin[extension] === 'function') {
-					if (plugin[extension].apply(plugin, args || []) === false) {
+				descriptor = descriptors[i];
+				plugin = descriptor.plugin;
+				method = plugin[hook];
+				if (typeof method === 'function') {
+					params = [chart].concat(args || []);
+					params.push(descriptor.options);
+					if (method.apply(plugin, params) === false) {
 						return false;
 					}
 				}
 			}
 
 			return true;
+		},
+
+		/**
+		 * Returns descriptors of enabled plugins for the given chart.
+		 * @returns {Array} [{ plugin, options }]
+		 * @private
+		 */
+		descriptors: function(chart) {
+			var cache = chart._plugins || (chart._plugins = {});
+			if (cache.id === this._cacheId) {
+				return cache.descriptors;
+			}
+
+			var plugins = [];
+			var descriptors = [];
+			var config = (chart && chart.config) || {};
+			var defaults = Chart.defaults.global.plugins;
+			var options = (config.options && config.options.plugins) || {};
+
+			this._plugins.concat(config.plugins || []).forEach(function(plugin) {
+				var idx = plugins.indexOf(plugin);
+				if (idx !== -1) {
+					return;
+				}
+
+				var id = plugin.id;
+				var opts = options[id];
+				if (opts === false) {
+					return;
+				}
+
+				if (opts === true) {
+					opts = helpers.clone(defaults[id]);
+				}
+
+				plugins.push(plugin);
+				descriptors.push({
+					plugin: plugin,
+					options: opts || {}
+				});
+			});
+
+			cache.descriptors = descriptors;
+			cache.id = this._cacheId;
+			return descriptors;
 		}
 	};
 
 	/**
-	 * Plugin extension methods.
-	 * @interface Chart.PluginBase
+	 * Plugin extension hooks.
+	 * @interface IPlugin
 	 * @since 2.1.0
 	 */
-	Chart.PluginBase = Chart.Element.extend({
-		// Called at start of chart init
-		beforeInit: noop,
-
-		// Called at end of chart init
-		afterInit: noop,
-
-		// Called at start of update
-		beforeUpdate: noop,
-
-		// Called at end of update
-		afterUpdate: noop,
-
-		// Called at start of draw
-		beforeDraw: noop,
-
-		// Called at end of draw
-		afterDraw: noop,
-
-		// Called during destroy
-		destroy: noop
-	});
+	/**
+	 * @method IPlugin#beforeInit
+	 * @desc Called before initializing `chart`.
+	 * @param {Chart.Controller} chart - The chart instance.
+	 * @param {Object} options - The plugin options.
+	 */
+	/**
+	 * @method IPlugin#afterInit
+	 * @desc Called after `chart` has been initialized and before the first update.
+	 * @param {Chart.Controller} chart - The chart instance.
+	 * @param {Object} options - The plugin options.
+	 */
+	/**
+	 * @method IPlugin#beforeUpdate
+	 * @desc Called before updating `chart`. If any plugin returns `false`, the update
+	 * is cancelled (and thus subsequent render(s)) until another `update` is triggered.
+	 * @param {Chart.Controller} chart - The chart instance.
+	 * @param {Object} options - The plugin options.
+	 * @returns {Boolean} `false` to cancel the chart update.
+	 */
+	/**
+	 * @method IPlugin#afterUpdate
+	 * @desc Called after `chart` has been updated and before rendering. Note that this
+	 * hook will not be called if the chart update has been previously cancelled.
+	 * @param {Chart.Controller} chart - The chart instance.
+	 * @param {Object} options - The plugin options.
+	 */
+	/**
+	 * @method IPlugin#beforeDatasetsUpdate
+ 	 * @desc Called before updating the `chart` datasets. If any plugin returns `false`,
+	 * the datasets update is cancelled until another `update` is triggered.
+	 * @param {Chart.Controller} chart - The chart instance.
+	 * @param {Object} options - The plugin options.
+	 * @returns {Boolean} false to cancel the datasets update.
+	 * @since version 2.1.5
+	 */
+	/**
+	 * @method IPlugin#afterDatasetsUpdate
+	 * @desc Called after the `chart` datasets have been updated. Note that this hook
+	 * will not be called if the datasets update has been previously cancelled.
+	 * @param {Chart.Controller} chart - The chart instance.
+	 * @param {Object} options - The plugin options.
+	 * @since version 2.1.5
+	 */
+	/**
+	 * @method IPlugin#beforeLayout
+	 * @desc Called before laying out `chart`. If any plugin returns `false`,
+	 * the layout update is cancelled until another `update` is triggered.
+	 * @param {Chart.Controller} chart - The chart instance.
+	 * @param {Object} options - The plugin options.
+	 * @returns {Boolean} `false` to cancel the chart layout.
+	 */
+	/**
+	 * @method IPlugin#afterLayout
+	 * @desc Called after the `chart` has been layed out. Note that this hook will not
+	 * be called if the layout update has been previously cancelled.
+	 * @param {Chart.Controller} chart - The chart instance.
+	 * @param {Object} options - The plugin options.
+	 */
+	/**
+	 * @method IPlugin#beforeRender
+	 * @desc Called before rendering `chart`. If any plugin returns `false`,
+	 * the rendering is cancelled until another `render` is triggered.
+	 * @param {Chart.Controller} chart - The chart instance.
+	 * @param {Object} options - The plugin options.
+	 * @returns {Boolean} `false` to cancel the chart rendering.
+	 */
+	/**
+	 * @method IPlugin#afterRender
+	 * @desc Called after the `chart` has been fully rendered (and animation completed). Note
+	 * that this hook will not be called if the rendering has been previously cancelled.
+	 * @param {Chart.Controller} chart - The chart instance.
+	 * @param {Object} options - The plugin options.
+	 */
+	/**
+	 * @method IPlugin#beforeDraw
+	 * @desc Called before drawing `chart` at every animation frame specified by the given
+	 * easing value. If any plugin returns `false`, the frame drawing is cancelled until
+	 * another `render` is triggered.
+	 * @param {Chart.Controller} chart - The chart instance.
+	 * @param {Number} easingValue - The current animation value, between 0.0 and 1.0.
+	 * @param {Object} options - The plugin options.
+	 * @returns {Boolean} `false` to cancel the chart drawing.
+	 */
+	/**
+	 * @method IPlugin#afterDraw
+	 * @desc Called after the `chart` has been drawn for the specific easing value. Note
+	 * that this hook will not be called if the drawing has been previously cancelled.
+	 * @param {Chart.Controller} chart - The chart instance.
+	 * @param {Number} easingValue - The current animation value, between 0.0 and 1.0.
+	 * @param {Object} options - The plugin options.
+	 */
+	/**
+	 * @method IPlugin#beforeDatasetsDraw
+ 	 * @desc Called before drawing the `chart` datasets. If any plugin returns `false`,
+	 * the datasets drawing is cancelled until another `render` is triggered.
+	 * @param {Chart.Controller} chart - The chart instance.
+	 * @param {Number} easingValue - The current animation value, between 0.0 and 1.0.
+	 * @param {Object} options - The plugin options.
+	 * @returns {Boolean} `false` to cancel the chart datasets drawing.
+	 */
+	/**
+	 * @method IPlugin#afterDatasetsDraw
+	 * @desc Called after the `chart` datasets have been drawn. Note that this hook
+	 * will not be called if the datasets drawing has been previously cancelled.
+	 * @param {Chart.Controller} chart - The chart instance.
+	 * @param {Number} easingValue - The current animation value, between 0.0 and 1.0.
+	 * @param {Object} options - The plugin options.
+	 */
+	/**
+	 * @method IPlugin#beforeEvent
+ 	 * @desc Called before processing the specified `event`. If any plugin returns `false`,
+	 * the event will be discarded.
+	 * @param {Chart.Controller} chart - The chart instance.
+	 * @param {IEvent} event - The event object.
+	 * @param {Object} options - The plugin options.
+	 */
+	/**
+	 * @method IPlugin#afterEvent
+	 * @desc Called after the `event` has been consumed. Note that this hook
+	 * will not be called if the `event` has been previously discarded.
+	 * @param {Chart.Controller} chart - The chart instance.
+	 * @param {IEvent} event - The event object.
+	 * @param {Object} options - The plugin options.
+	 */
+	/**
+	 * @method IPlugin#resize
+	 * @desc Called after the chart as been resized.
+	 * @param {Chart.Controller} chart - The chart instance.
+	 * @param {Number} size - The new canvas display size (eq. canvas.style width & height).
+	 * @param {Object} options - The plugin options.
+	 */
+	/**
+	 * @method IPlugin#destroy
+	 * @desc Called after the chart as been destroyed.
+	 * @param {Chart.Controller} chart - The chart instance.
+	 * @param {Object} options - The plugin options.
+	 */
 
 	/**
 	 * Provided for backward compatibility, use Chart.plugins instead
 	 * @namespace Chart.pluginService
 	 * @deprecated since version 2.1.5
-	 * @todo remove me at version 3
+	 * @todo remove at version 3
+	 * @private
 	 */
 	Chart.pluginService = Chart.plugins;
+
+	/**
+	 * Provided for backward compatibility, inheriting from Chart.PlugingBase has no
+	 * effect, instead simply create/register plugins via plain JavaScript objects.
+	 * @interface Chart.PluginBase
+	 * @deprecated since version 2.5.0
+	 * @todo remove at version 3
+	 * @private
+	 */
+	Chart.PluginBase = helpers.inherits({});
 };
 
 },{}],47:[function(require,module,exports){
@@ -11483,7 +11639,7 @@ module.exports = function(Chart) {
 			minRotation: 0,
 			maxRotation: 50,
 			mirror: false,
-			padding: 10,
+			padding: 0,
 			reverse: false,
 			display: true,
 			autoSkip: true,
@@ -11494,9 +11650,45 @@ module.exports = function(Chart) {
 		}
 	};
 
-	Chart.Scale = Chart.Element.extend({
+	function computeTextSize(context, tick, font) {
+		return helpers.isArray(tick) ?
+			helpers.longestText(context, font, tick) :
+			context.measureText(tick).width;
+	}
 
-		// These methods are ordered by lifecycle. Utilities then follow.
+	function parseFontOptions(options) {
+		var getValueOrDefault = helpers.getValueOrDefault;
+		var globalDefaults = Chart.defaults.global;
+		var size = getValueOrDefault(options.fontSize, globalDefaults.defaultFontSize);
+		var style = getValueOrDefault(options.fontStyle, globalDefaults.defaultFontStyle);
+		var family = getValueOrDefault(options.fontFamily, globalDefaults.defaultFontFamily);
+
+		return {
+			size: size,
+			style: style,
+			family: family,
+			font: helpers.fontString(size, style, family)
+		};
+	}
+
+	Chart.Scale = Chart.Element.extend({
+		/**
+		 * Get the padding needed for the scale
+		 * @method getPadding
+		 * @private
+		 * @returns {Padding} the necessary padding
+		 */
+		getPadding: function() {
+			var me = this;
+			return {
+				left: me.paddingLeft || 0,
+				top: me.paddingTop || 0,
+				right: me.paddingRight || 0,
+				bottom: me.paddingBottom || 0
+			};
+		},
+
+		// These methods are ordered by lifecyle. Utilities then follow.
 		// Any function defined here is inherited by all scale types.
 		// Any function can be extended by the scale type
 
@@ -11518,6 +11710,7 @@ module.exports = function(Chart) {
 				top: 0,
 				bottom: 0
 			}, margins);
+			me.longestTextCache = me.longestTextCache || {};
 
 			// Dimensions
 			me.beforeSetDimensions();
@@ -11626,72 +11819,42 @@ module.exports = function(Chart) {
 		calculateTickRotation: function() {
 			var me = this;
 			var context = me.ctx;
-			var globalDefaults = Chart.defaults.global;
-			var optionTicks = me.options.ticks;
+			var tickOpts = me.options.ticks;
 
 			// Get the width of each grid by calculating the difference
 			// between x offsets between 0 and 1.
-			var tickFontSize = helpers.getValueOrDefault(optionTicks.fontSize, globalDefaults.defaultFontSize);
-			var tickFontStyle = helpers.getValueOrDefault(optionTicks.fontStyle, globalDefaults.defaultFontStyle);
-			var tickFontFamily = helpers.getValueOrDefault(optionTicks.fontFamily, globalDefaults.defaultFontFamily);
-			var tickLabelFont = helpers.fontString(tickFontSize, tickFontStyle, tickFontFamily);
-			context.font = tickLabelFont;
+			var tickFont = parseFontOptions(tickOpts);
+			context.font = tickFont.font;
 
-			var firstWidth = context.measureText(me.ticks[0]).width;
-			var lastWidth = context.measureText(me.ticks[me.ticks.length - 1]).width;
-			var firstRotated;
+			var labelRotation = tickOpts.minRotation || 0;
 
-			me.labelRotation = optionTicks.minRotation || 0;
-			me.paddingRight = 0;
-			me.paddingLeft = 0;
+			if (me.options.display && me.isHorizontal()) {
+				var originalLabelWidth = helpers.longestText(context, tickFont.font, me.ticks, me.longestTextCache);
+				var labelWidth = originalLabelWidth;
+				var cosRotation;
+				var sinRotation;
 
-			if (me.options.display) {
-				if (me.isHorizontal()) {
-					me.paddingRight = lastWidth / 2 + 3;
-					me.paddingLeft = firstWidth / 2 + 3;
+				// Allow 3 pixels x2 padding either side for label readability
+				var tickWidth = me.getPixelForTick(1) - me.getPixelForTick(0) - 6;
 
-					if (!me.longestTextCache) {
-						me.longestTextCache = {};
+				// Max label rotation can be set or default to 90 - also act as a loop counter
+				while (labelWidth > tickWidth && labelRotation < tickOpts.maxRotation) {
+					var angleRadians = helpers.toRadians(labelRotation);
+					cosRotation = Math.cos(angleRadians);
+					sinRotation = Math.sin(angleRadians);
+
+					if (sinRotation * originalLabelWidth > me.maxHeight) {
+						// go back one step
+						labelRotation--;
+						break;
 					}
-					var originalLabelWidth = helpers.longestText(context, tickLabelFont, me.ticks, me.longestTextCache);
-					var labelWidth = originalLabelWidth;
-					var cosRotation;
-					var sinRotation;
 
-					// Allow 3 pixels x2 padding either side for label readability
-					// only the index matters for a dataset scale, but we want a consistent interface between scales
-					var tickWidth = me.getPixelForTick(1) - me.getPixelForTick(0) - 6;
-
-					// Max label rotation can be set or default to 90 - also act as a loop counter
-					while (labelWidth > tickWidth && me.labelRotation < optionTicks.maxRotation) {
-						cosRotation = Math.cos(helpers.toRadians(me.labelRotation));
-						sinRotation = Math.sin(helpers.toRadians(me.labelRotation));
-
-						firstRotated = cosRotation * firstWidth;
-
-						// We're right aligning the text now.
-						if (firstRotated + tickFontSize / 2 > me.yLabelWidth) {
-							me.paddingLeft = firstRotated + tickFontSize / 2;
-						}
-
-						me.paddingRight = tickFontSize / 2;
-
-						if (sinRotation * originalLabelWidth > me.maxHeight) {
-							// go back one step
-							me.labelRotation--;
-							break;
-						}
-
-						me.labelRotation++;
-						labelWidth = cosRotation * originalLabelWidth;
-					}
+					labelRotation++;
+					labelWidth = cosRotation * originalLabelWidth;
 				}
 			}
 
-			if (me.margins) {
-				me.paddingLeft = Math.max(me.paddingLeft - me.margins.left, 0);
-				me.paddingRight = Math.max(me.paddingRight - me.margins.right, 0);
-			}
+			me.labelRotation = labelRotation;
 		},
 		afterCalculateTickRotation: function() {
 			helpers.callCallback(this.options.afterCalculateTickRotation, [this]);
@@ -11711,20 +11874,14 @@ module.exports = function(Chart) {
 			};
 
 			var opts = me.options;
-			var globalDefaults = Chart.defaults.global;
 			var tickOpts = opts.ticks;
 			var scaleLabelOpts = opts.scaleLabel;
 			var gridLineOpts = opts.gridLines;
 			var display = opts.display;
 			var isHorizontal = me.isHorizontal();
 
-			var tickFontSize = helpers.getValueOrDefault(tickOpts.fontSize, globalDefaults.defaultFontSize);
-			var tickFontStyle = helpers.getValueOrDefault(tickOpts.fontStyle, globalDefaults.defaultFontStyle);
-			var tickFontFamily = helpers.getValueOrDefault(tickOpts.fontFamily, globalDefaults.defaultFontFamily);
-			var tickLabelFont = helpers.fontString(tickFontSize, tickFontStyle, tickFontFamily);
-
-			var scaleLabelFontSize = helpers.getValueOrDefault(scaleLabelOpts.fontSize, globalDefaults.defaultFontSize);
-
+			var tickFont = parseFontOptions(tickOpts);
+			var scaleLabelFontSize = parseFontOptions(scaleLabelOpts).size * 1.5;
 			var tickMarkLength = opts.gridLines.tickMarkLength;
 
 			// Width
@@ -11745,78 +11902,84 @@ module.exports = function(Chart) {
 			// Are we showing a title for the scale?
 			if (scaleLabelOpts.display && display) {
 				if (isHorizontal) {
-					minSize.height += (scaleLabelFontSize * 1.5);
+					minSize.height += scaleLabelFontSize;
 				} else {
-					minSize.width += (scaleLabelFontSize * 1.5);
+					minSize.width += scaleLabelFontSize;
 				}
 			}
 
+			// Don't bother fitting the ticks if we are not showing them
 			if (tickOpts.display && display) {
-				// Don't bother fitting the ticks if we are not showing them
-				if (!me.longestTextCache) {
-					me.longestTextCache = {};
-				}
-
-				var largestTextWidth = helpers.longestText(me.ctx, tickLabelFont, me.ticks, me.longestTextCache);
+				var largestTextWidth = helpers.longestText(me.ctx, tickFont.font, me.ticks, me.longestTextCache);
 				var tallestLabelHeightInLines = helpers.numberOfLabelLines(me.ticks);
-				var lineSpace = tickFontSize * 0.5;
+				var lineSpace = tickFont.size * 0.5;
 
 				if (isHorizontal) {
 					// A horizontal axis is more constrained by the height.
 					me.longestLabelWidth = largestTextWidth;
 
+					var angleRadians = helpers.toRadians(me.labelRotation);
+					var cosRotation = Math.cos(angleRadians);
+					var sinRotation = Math.sin(angleRadians);
+
 					// TODO - improve this calculation
-					var labelHeight = (Math.sin(helpers.toRadians(me.labelRotation)) * me.longestLabelWidth) + (tickFontSize * tallestLabelHeightInLines) + (lineSpace * tallestLabelHeightInLines);
+					var labelHeight = (sinRotation * largestTextWidth)
+						+ (tickFont.size * tallestLabelHeightInLines)
+						+ (lineSpace * tallestLabelHeightInLines);
 
 					minSize.height = Math.min(me.maxHeight, minSize.height + labelHeight);
-					me.ctx.font = tickLabelFont;
+					me.ctx.font = tickFont.font;
 
-					var firstLabelWidth = me.ctx.measureText(me.ticks[0]).width;
-					var lastLabelWidth = me.ctx.measureText(me.ticks[me.ticks.length - 1]).width;
+					var firstTick = me.ticks[0];
+					var firstLabelWidth = computeTextSize(me.ctx, firstTick, tickFont.font);
+
+					var lastTick = me.ticks[me.ticks.length - 1];
+					var lastLabelWidth = computeTextSize(me.ctx, lastTick, tickFont.font);
 
 					// Ensure that our ticks are always inside the canvas. When rotated, ticks are right aligned which means that the right padding is dominated
 					// by the font height
-					var cosRotation = Math.cos(helpers.toRadians(me.labelRotation));
-					var sinRotation = Math.sin(helpers.toRadians(me.labelRotation));
-					me.paddingLeft = me.labelRotation !== 0 ? (cosRotation * firstLabelWidth) + 3 : firstLabelWidth / 2 + 3; // add 3 px to move away from canvas edges
-					me.paddingRight = me.labelRotation !== 0 ? (sinRotation * (tickFontSize / 2)) + 3 : lastLabelWidth / 2 + 3; // when rotated
+					if (me.labelRotation !== 0) {
+						me.paddingLeft = opts.position === 'bottom'? (cosRotation * firstLabelWidth) + 3: (cosRotation * lineSpace) + 3; // add 3 px to move away from canvas edges
+						me.paddingRight = opts.position === 'bottom'? (cosRotation * lineSpace) + 3: (cosRotation * lastLabelWidth) + 3;
+					} else {
+						me.paddingLeft = firstLabelWidth / 2 + 3; // add 3 px to move away from canvas edges
+						me.paddingRight = lastLabelWidth / 2 + 3;
+					}
 				} else {
 					// A vertical axis is more constrained by the width. Labels are the dominant factor here, so get that length first
-					var maxLabelWidth = me.maxWidth - minSize.width;
-
 					// Account for padding
-					var mirror = tickOpts.mirror;
-					if (!mirror) {
-						largestTextWidth += me.options.ticks.padding;
-					} else {
-						// If mirrored text is on the inside so don't expand
+
+					if (tickOpts.mirror) {
 						largestTextWidth = 0;
-					}
-
-					if (largestTextWidth < maxLabelWidth) {
-						// We don't need all the room
-						minSize.width += largestTextWidth;
 					} else {
-						// Expand to max size
-						minSize.width = me.maxWidth;
+						largestTextWidth += me.options.ticks.padding;
 					}
-
-					me.paddingTop = tickFontSize / 2;
-					me.paddingBottom = tickFontSize / 2;
+					minSize.width += largestTextWidth;
+					me.paddingTop = tickFont.size / 2;
+					me.paddingBottom = tickFont.size / 2;
 				}
 			}
 
+			me.handleMargins();
+
+			me.width = minSize.width;
+			me.height = minSize.height;
+		},
+
+		/**
+		 * Handle margins and padding interactions
+		 * @private
+		 */
+		handleMargins: function() {
+			var me = this;
 			if (me.margins) {
 				me.paddingLeft = Math.max(me.paddingLeft - me.margins.left, 0);
 				me.paddingTop = Math.max(me.paddingTop - me.margins.top, 0);
 				me.paddingRight = Math.max(me.paddingRight - me.margins.right, 0);
 				me.paddingBottom = Math.max(me.paddingBottom - me.margins.bottom, 0);
 			}
-
-			me.width = minSize.width;
-			me.height = minSize.height;
-
 		},
+
 		afterFit: function() {
 			helpers.callCallback(this.options.afterFit, [this]);
 		},
@@ -11896,15 +12059,18 @@ module.exports = function(Chart) {
 		},
 
 		getBasePixel: function() {
+			return this.getPixelForValue(this.getBaseValue());
+		},
+
+		getBaseValue: function() {
 			var me = this;
 			var min = me.min;
 			var max = me.max;
 
-			return me.getPixelForValue(
-				me.beginAtZero? 0:
+			return me.beginAtZero ? 0:
 				min < 0 && max < 0? max :
 				min > 0 && max > 0? min :
-				0);
+				0;
 		},
 
 		// Actually draw the scale on the canvas
@@ -11934,19 +12100,14 @@ module.exports = function(Chart) {
 			}
 
 			var tickFontColor = helpers.getValueOrDefault(optionTicks.fontColor, globalDefaults.defaultFontColor);
-			var tickFontSize = helpers.getValueOrDefault(optionTicks.fontSize, globalDefaults.defaultFontSize);
-			var tickFontStyle = helpers.getValueOrDefault(optionTicks.fontStyle, globalDefaults.defaultFontStyle);
-			var tickFontFamily = helpers.getValueOrDefault(optionTicks.fontFamily, globalDefaults.defaultFontFamily);
-			var tickLabelFont = helpers.fontString(tickFontSize, tickFontStyle, tickFontFamily);
-			var tl = gridLines.tickMarkLength;
+			var tickFont = parseFontOptions(optionTicks);
+
+			var tl = gridLines.drawTicks ? gridLines.tickMarkLength : 0;
 			var borderDash = helpers.getValueOrDefault(gridLines.borderDash, globalDefaults.borderDash);
 			var borderDashOffset = helpers.getValueOrDefault(gridLines.borderDashOffset, globalDefaults.borderDashOffset);
 
 			var scaleLabelFontColor = helpers.getValueOrDefault(scaleLabel.fontColor, globalDefaults.defaultFontColor);
-			var scaleLabelFontSize = helpers.getValueOrDefault(scaleLabel.fontSize, globalDefaults.defaultFontSize);
-			var scaleLabelFontStyle = helpers.getValueOrDefault(scaleLabel.fontStyle, globalDefaults.defaultFontStyle);
-			var scaleLabelFontFamily = helpers.getValueOrDefault(scaleLabel.fontFamily, globalDefaults.defaultFontFamily);
-			var scaleLabelFont = helpers.fontString(scaleLabelFontSize, scaleLabelFontStyle, scaleLabelFontFamily);
+			var scaleLabelFont = parseFontOptions(scaleLabel);
 
 			var labelRotationRadians = helpers.toRadians(me.labelRotation);
 			var cosRotation = Math.cos(labelRotationRadians);
@@ -12022,15 +12183,21 @@ module.exports = function(Chart) {
 				var textBaseline = 'middle';
 
 				if (isHorizontal) {
-					if (!isRotated) {
-						textBaseline = options.position === 'top' ? 'bottom' : 'top';
-					}
 
-					textAlign = isRotated ? 'right' : 'center';
+					if (options.position === 'bottom') {
+						// bottom
+						textBaseline = !isRotated? 'top':'middle';
+						textAlign = !isRotated? 'center': 'right';
+						labelY = me.top + tl;
+					} else {
+						// top
+						textBaseline = !isRotated? 'bottom':'middle';
+						textAlign = !isRotated? 'center': 'left';
+						labelY = me.bottom - tl;
+					}
 
 					var xLineValue = me.getPixelForTick(index) + helpers.aliasPixel(lineWidth); // xvalues for grid lines
 					labelX = me.getPixelForTick(index, gridLines.offsetGridLines) + optionTicks.labelOffset; // x values for optionTicks (need to consider offsetLabel option)
-					labelY = (isRotated) ? me.top + 12 : options.position === 'top' ? me.bottom - tl : me.top + tl;
 
 					tx1 = tx2 = x1 = x2 = xLineValue;
 					ty1 = yTickStart;
@@ -12038,22 +12205,19 @@ module.exports = function(Chart) {
 					y1 = chartArea.top;
 					y2 = chartArea.bottom;
 				} else {
-					if (options.position === 'left') {
-						if (optionTicks.mirror) {
-							labelX = me.right + optionTicks.padding;
-							textAlign = 'left';
-						} else {
-							labelX = me.right - optionTicks.padding;
-							textAlign = 'right';
-						}
-					// right side
-					} else if (optionTicks.mirror) {
-						labelX = me.left - optionTicks.padding;
-						textAlign = 'right';
+					var isLeft = options.position === 'left';
+					var tickPadding = optionTicks.padding;
+					var labelXOffset;
+
+					if (optionTicks.mirror) {
+						textAlign = isLeft ? 'left' : 'right';
+						labelXOffset = tickPadding;
 					} else {
-						labelX = me.left + optionTicks.padding;
-						textAlign = 'left';
+						textAlign = isLeft ? 'right' : 'left';
+						labelXOffset = tl + tickPadding;
 					}
+
+					labelX = isLeft ? me.right - labelXOffset : me.left + labelXOffset;
 
 					var yLineValue = me.getPixelForTick(index); // xvalues for grid lines
 					yLineValue += helpers.aliasPixel(lineWidth);
@@ -12119,17 +12283,17 @@ module.exports = function(Chart) {
 					context.save();
 					context.translate(itemToDraw.labelX, itemToDraw.labelY);
 					context.rotate(itemToDraw.rotation);
-					context.font = tickLabelFont;
+					context.font = tickFont.font;
 					context.textBaseline = itemToDraw.textBaseline;
 					context.textAlign = itemToDraw.textAlign;
 
 					var label = itemToDraw.label;
 					if (helpers.isArray(label)) {
-						for (var i = 0, y = -(label.length - 1)*tickFontSize*0.75; i < label.length; ++i) {
+						for (var i = 0, y = 0; i < label.length; ++i) {
 							// We just make sure the multiline element is a string here..
 							context.fillText('' + label[i], 0, y);
 							// apply same lineSpacing as calculated @ L#320
-							y += (tickFontSize * 1.5);
+							y += (tickFont.size * 1.5);
 						}
 					} else {
 						context.fillText(label, 0, 0);
@@ -12146,10 +12310,10 @@ module.exports = function(Chart) {
 
 				if (isHorizontal) {
 					scaleLabelX = me.left + ((me.right - me.left) / 2); // midpoint of the width
-					scaleLabelY = options.position === 'bottom' ? me.bottom - (scaleLabelFontSize / 2) : me.top + (scaleLabelFontSize / 2);
+					scaleLabelY = options.position === 'bottom' ? me.bottom - (scaleLabelFont.size / 2) : me.top + (scaleLabelFont.size / 2);
 				} else {
 					var isLeft = options.position === 'left';
-					scaleLabelX = isLeft ? me.left + (scaleLabelFontSize / 2) : me.right - (scaleLabelFontSize / 2);
+					scaleLabelX = isLeft ? me.left + (scaleLabelFont.size / 2) : me.right - (scaleLabelFont.size / 2);
 					scaleLabelY = me.top + ((me.bottom - me.top) / 2);
 					rotation = isLeft ? -0.5 * Math.PI : 0.5 * Math.PI;
 				}
@@ -12160,7 +12324,7 @@ module.exports = function(Chart) {
 				context.textAlign = 'center';
 				context.textBaseline = 'middle';
 				context.fillStyle = scaleLabelFontColor; // render in correct colour
-				context.font = scaleLabelFont;
+				context.font = scaleLabelFont.font;
 				context.fillText(scaleLabel.labelString, 0, 0);
 				context.restore();
 			}
@@ -12306,8 +12470,8 @@ module.exports = function(Chart) {
 
 				// If min, max and stepSize is set and they make an evenly spaced scale use it.
 				if (generationOptions.min && generationOptions.max && generationOptions.stepSize) {
-					var minMaxDeltaDivisibleByStepSize = ((generationOptions.max - generationOptions.min) % generationOptions.stepSize) === 0;
-					if (minMaxDeltaDivisibleByStepSize) {
+					// If very close to our whole number, use it.
+					if (helpers.almostWhole((generationOptions.max - generationOptions.min) / generationOptions.stepSize, spacing / 1000)) {
 						niceMin = generationOptions.min;
 						niceMax = generationOptions.max;
 					}
@@ -12348,27 +12512,33 @@ module.exports = function(Chart) {
 				// the graph
 				var tickVal = getValueOrDefault(generationOptions.min, Math.pow(10, Math.floor(helpers.log10(dataRange.min))));
 
-				while (tickVal < dataRange.max) {
+				var endExp = Math.floor(helpers.log10(dataRange.max));
+				var endSignificand = Math.ceil(dataRange.max / Math.pow(10, endExp));
+				var exp;
+				var significand;
+
+				if (tickVal === 0) {
+					exp = Math.floor(helpers.log10(dataRange.minNotZero));
+					significand = Math.floor(dataRange.minNotZero / Math.pow(10, exp));
+
+					ticks.push(tickVal);
+					tickVal = significand * Math.pow(10, exp);
+				} else {
+					exp = Math.floor(helpers.log10(tickVal));
+					significand = Math.floor(tickVal / Math.pow(10, exp));
+				}
+
+				do {
 					ticks.push(tickVal);
 
-					var exp;
-					var significand;
-
-					if (tickVal === 0) {
-						exp = Math.floor(helpers.log10(dataRange.minNotZero));
-						significand = Math.round(dataRange.minNotZero / Math.pow(10, exp));
-					} else {
-						exp = Math.floor(helpers.log10(tickVal));
-						significand = Math.floor(tickVal / Math.pow(10, exp)) + 1;
-					}
-
+					++significand;
 					if (significand === 10) {
 						significand = 1;
 						++exp;
 					}
 
 					tickVal = significand * Math.pow(10, exp);
-				}
+				} while (exp < endExp || (exp === endExp && significand < endSignificand));
 
 				var lastTick = getValueOrDefault(generationOptions.max, tickVal);
 				ticks.push(lastTick);
@@ -12465,7 +12635,6 @@ module.exports = function(Chart) {
 		initialize: function(config) {
 			var me = this;
 			helpers.extend(me, config);
-			me.options = helpers.configMerge(Chart.defaults.global.title, config.options);
 
 			// Contains hit boxes for each dataset (in dataset order)
 			me.legendHitBoxes = [];
@@ -12473,12 +12642,7 @@ module.exports = function(Chart) {
 
 		// These methods are ordered by lifecycle. Utilities then follow.
 
-		beforeUpdate: function() {
-			var chartOpts = this.chart.options;
-			if (chartOpts && chartOpts.title) {
-				this.options = helpers.configMerge(Chart.defaults.global.title, chartOpts.title);
-			}
-		},
+		beforeUpdate: noop,
 		update: function(maxWidth, maxHeight, margins) {
 			var me = this;
 
@@ -12630,20 +12794,39 @@ module.exports = function(Chart) {
 		}
 	});
 
+	function createNewTitleBlockAndAttach(chartInstance, titleOpts) {
+		var title = new Chart.Title({
+			ctx: chartInstance.chart.ctx,
+			options: titleOpts,
+			chart: chartInstance
+		});
+		chartInstance.titleBlock = title;
+		Chart.layoutService.addBox(chartInstance, title);
+	}
+
 	// Register the title plugin
 	Chart.plugins.register({
 		beforeInit: function(chartInstance) {
-			var opts = chartInstance.options;
-			var titleOpts = opts.title;
+			var titleOpts = chartInstance.options.title;
 
 			if (titleOpts) {
-				chartInstance.titleBlock = new Chart.Title({
-					ctx: chartInstance.chart.ctx,
-					options: titleOpts,
-					chart: chartInstance
-				});
+				createNewTitleBlockAndAttach(chartInstance, titleOpts);
+			}
+		},
+		beforeUpdate: function(chartInstance) {
+			var titleOpts = chartInstance.options.title;
 
-				Chart.layoutService.addBox(chartInstance, chartInstance.titleBlock);
+			if (titleOpts) {
+				titleOpts = helpers.configMerge(Chart.defaults.global.title, titleOpts);
+
+				if (chartInstance.titleBlock) {
+					chartInstance.titleBlock.options = titleOpts;
+				} else {
+					createNewTitleBlockAndAttach(chartInstance, titleOpts);
+				}
+			} else {
+				Chart.layoutService.removeBox(chartInstance, chartInstance.titleBlock);
+				delete chartInstance.titleBlock;
 			}
 		}
 	});
@@ -13415,7 +13598,7 @@ module.exports = function(Chart) {
 		/**
 		 * Handle an event
 		 * @private
-		 * @param e {Event} the event to handle
+		 * @param {IEvent} event - The event to handle
 		 * @returns {Boolean} true if the tooltip changed
 		 */
 		handleEvent: function(e) {
@@ -13437,7 +13620,10 @@ module.exports = function(Chart) {
 			me._lastActive = me._active;
 
 			if (options.enabled || options.custom) {
-				me._eventPosition = helpers.getRelativePosition(e, me._chart);
+				me._eventPosition = {
+					x: e.x,
+					y: e.y
+				};
 
 				var model = me._model;
 				me.update(true);
@@ -13879,13 +14065,17 @@ module.exports = function(Chart) {
 				padding: vm.radius + vm.borderWidth
 			};
 		},
-		draw: function() {
+		draw: function(chartArea) {
 			var vm = this._view;
+			var model = this._model;
 			var ctx = this._chart.ctx;
 			var pointStyle = vm.pointStyle;
 			var radius = vm.radius;
 			var x = vm.x;
 			var y = vm.y;
+			var color = Chart.helpers.color;
+			var errMargin = 1.01; // 1.01 is margin for Accumulated error. (Especially Edge, IE.)
+			var ratio = 0;
 
 			if (vm.skip) {
 				return;
@@ -13894,6 +14084,24 @@ module.exports = function(Chart) {
 			ctx.strokeStyle = vm.borderColor || defaultColor;
 			ctx.lineWidth = helpers.getValueOrDefault(vm.borderWidth, globalOpts.elements.point.borderWidth);
 			ctx.fillStyle = vm.backgroundColor || defaultColor;
+
+			// Cliping for Points.
+			// going out from inner charArea?
+			if ((chartArea !== undefined) && ((model.x < chartArea.left) || (chartArea.right*errMargin < model.x) || (model.y < chartArea.top) || (chartArea.bottom*errMargin < model.y))) {
+				// Point fade out
+				if (model.x < chartArea.left) {
+					ratio = (x - model.x) / (chartArea.left - model.x);
+				} else if (chartArea.right*errMargin < model.x) {
+					ratio = (model.x - x) / (model.x - chartArea.right);
+				} else if (model.y < chartArea.top) {
+					ratio = (y - model.y) / (chartArea.top - model.y);
+				} else if (chartArea.bottom*errMargin < model.y) {
+					ratio = (model.y - y) / (model.y - chartArea.bottom);
+				}
+				ratio = Math.round(ratio*100) / 100;
+				ctx.strokeStyle = color(ctx.strokeStyle).alpha(ratio).rgbString();
+				ctx.fillStyle = color(ctx.fillStyle).alpha(ratio).rgbString();
+			}
 
 			Chart.canvasHelpers.drawPoint(ctx, pointStyle, radius, x, y);
 		}
@@ -13956,39 +14164,71 @@ module.exports = function(Chart) {
 		draw: function() {
 			var ctx = this._chart.ctx;
 			var vm = this._view;
+			var left, right, top, bottom, signX, signY, borderSkipped;
+			var borderWidth = vm.borderWidth;
 
-			var halfWidth = vm.width / 2,
-				leftX = vm.x - halfWidth,
-				rightX = vm.x + halfWidth,
-				top = vm.base - (vm.base - vm.y),
-				halfStroke = vm.borderWidth / 2;
+			if (!vm.horizontal) {
+				// bar
+				left = vm.x - vm.width / 2;
+				right = vm.x + vm.width / 2;
+				top = vm.y;
+				bottom = vm.base;
+				signX = 1;
+				signY = bottom > top? 1: -1;
+				borderSkipped = vm.borderSkipped || 'bottom';
+			} else {
+				// horizontal bar
+				left = vm.base;
+				right = vm.x;
+				top = vm.y - vm.height / 2;
+				bottom = vm.y + vm.height / 2;
+				signX = right > left? 1: -1;
+				signY = 1;
+				borderSkipped = vm.borderSkipped || 'left';
+			}
 
 			// Canvas doesn't allow us to stroke inside the width so we can
 			// adjust the sizes to fit if we're setting a stroke on the line
-			if (vm.borderWidth) {
-				leftX += halfStroke;
-				rightX -= halfStroke;
-				top += halfStroke;
+			if (borderWidth) {
+				// borderWidth shold be less than bar width and bar height.
+				var barSize = Math.min(Math.abs(left - right), Math.abs(top - bottom));
+				borderWidth = borderWidth > barSize? barSize: borderWidth;
+				var halfStroke = borderWidth / 2;
+				// Adjust borderWidth when bar top position is near vm.base(zero).
+				var borderLeft = left + (borderSkipped !== 'left'? halfStroke * signX: 0);
+				var borderRight = right + (borderSkipped !== 'right'? -halfStroke * signX: 0);
+				var borderTop = top + (borderSkipped !== 'top'? halfStroke * signY: 0);
+				var borderBottom = bottom + (borderSkipped !== 'bottom'? -halfStroke * signY: 0);
+				// not become a vertical line?
+				if (borderLeft !== borderRight) {
+					top = borderTop;
+					bottom = borderBottom;
+				}
+				// not become a horizontal line?
+				if (borderTop !== borderBottom) {
+					left = borderLeft;
+					right = borderRight;
+				}
 			}
 
 			ctx.beginPath();
 			ctx.fillStyle = vm.backgroundColor;
 			ctx.strokeStyle = vm.borderColor;
-			ctx.lineWidth = vm.borderWidth;
+			ctx.lineWidth = borderWidth;
 
 			// Corner points, from bottom-left to bottom-right clockwise
 			// | 1 2 |
 			// | 0 3 |
 			var corners = [
-				[leftX, vm.base],
-				[leftX, top],
-				[rightX, top],
-				[rightX, vm.base]
+				[left, bottom],
+				[left, top],
+				[right, top],
+				[right, bottom]
 			];
 
 			// Find first (starting) corner with fallback to 'bottom'
 			var borders = ['bottom', 'left', 'top', 'right'];
-			var startCorner = borders.indexOf(vm.borderSkipped, 0);
+			var startCorner = borders.indexOf(borderSkipped, 0);
 			if (startCorner === -1) {
 				startCorner = 0;
 			}
@@ -14007,7 +14247,7 @@ module.exports = function(Chart) {
 			}
 
 			ctx.fill();
-			if (vm.borderWidth) {
+			if (borderWidth) {
 				ctx.stroke();
 			}
 		},
@@ -14081,6 +14321,356 @@ module.exports = function(Chart) {
 },{}],56:[function(require,module,exports){
 'use strict';
 
+// Chart.Platform implementation for targeting a web browser
+module.exports = function(Chart) {
+	var helpers = Chart.helpers;
+
+	// DOM event types -> Chart.js event types.
+	// Note: only events with different types are mapped.
+	// https://developer.mozilla.org/en-US/docs/Web/Events
+	var eventTypeMap = {
+		// Touch events
+		touchstart: 'mousedown',
+		touchmove: 'mousemove',
+		touchend: 'mouseup',
+
+		// Pointer events
+		pointerenter: 'mouseenter',
+		pointerdown: 'mousedown',
+		pointermove: 'mousemove',
+		pointerup: 'mouseup',
+		pointerleave: 'mouseout',
+		pointerout: 'mouseout'
+	};
+
+	/**
+	 * The "used" size is the final value of a dimension property after all calculations have
+	 * been performed. This method uses the computed style of `element` but returns undefined
+	 * if the computed style is not expressed in pixels. That can happen in some cases where
+	 * `element` has a size relative to its parent and this last one is not yet displayed,
+	 * for example because of `display: none` on a parent node.
+	 * @see https://developer.mozilla.org/en-US/docs/Web/CSS/used_value
+	 * @returns {Number} Size in pixels or undefined if unknown.
+	 */
+	function readUsedSize(element, property) {
+		var value = helpers.getStyle(element, property);
+		var matches = value && value.match(/(\d+)px/);
+		return matches? Number(matches[1]) : undefined;
+	}
+
+	/**
+	 * Initializes the canvas style and render size without modifying the canvas display size,
+	 * since responsiveness is handled by the controller.resize() method. The config is used
+	 * to determine the aspect ratio to apply in case no explicit height has been specified.
+	 */
+	function initCanvas(canvas, config) {
+		var style = canvas.style;
+
+		// NOTE(SB) canvas.getAttribute('width') !== canvas.width: in the first case it
+		// returns null or '' if no explicit value has been set to the canvas attribute.
+		var renderHeight = canvas.getAttribute('height');
+		var renderWidth = canvas.getAttribute('width');
+
+		// Chart.js modifies some canvas values that we want to restore on destroy
+		canvas._chartjs = {
+			initial: {
+				height: renderHeight,
+				width: renderWidth,
+				style: {
+					display: style.display,
+					height: style.height,
+					width: style.width
+				}
+			}
+		};
+
+		// Force canvas to display as block to avoid extra space caused by inline
+		// elements, which would interfere with the responsive resize process.
+		// https://github.com/chartjs/Chart.js/issues/2538
+		style.display = style.display || 'block';
+
+		if (renderWidth === null || renderWidth === '') {
+			var displayWidth = readUsedSize(canvas, 'width');
+			if (displayWidth !== undefined) {
+				canvas.width = displayWidth;
+			}
+		}
+
+		if (renderHeight === null || renderHeight === '') {
+			if (canvas.style.height === '') {
+				// If no explicit render height and style height, let's apply the aspect ratio,
+				// which one can be specified by the user but also by charts as default option
+				// (i.e. options.aspectRatio). If not specified, use canvas aspect ratio of 2.
+				canvas.height = canvas.width / (config.options.aspectRatio || 2);
+			} else {
+				var displayHeight = readUsedSize(canvas, 'height');
+				if (displayWidth !== undefined) {
+					canvas.height = displayHeight;
+				}
+			}
+		}
+
+		return canvas;
+	}
+
+	function createEvent(type, chart, x, y, native) {
+		return {
+			type: type,
+			chart: chart,
+			native: native || null,
+			x: x !== undefined? x : null,
+			y: y !== undefined? y : null,
+		};
+	}
+
+	function fromNativeEvent(event, chart) {
+		var type = eventTypeMap[event.type] || event.type;
+		var pos = helpers.getRelativePosition(event, chart);
+		return createEvent(type, chart, pos.x, pos.y, event);
+	}
+
+	function createResizer(handler) {
+		var iframe = document.createElement('iframe');
+		iframe.className = 'chartjs-hidden-iframe';
+		iframe.style.cssText =
+			'display:block;'+
+			'overflow:hidden;'+
+			'border:0;'+
+			'margin:0;'+
+			'top:0;'+
+			'left:0;'+
+			'bottom:0;'+
+			'right:0;'+
+			'height:100%;'+
+			'width:100%;'+
+			'position:absolute;'+
+			'pointer-events:none;'+
+			'z-index:-1;';
+
+		// Prevent the iframe to gain focus on tab.
+		// https://github.com/chartjs/Chart.js/issues/3090
+		iframe.tabIndex = -1;
+
+		// If the iframe is re-attached to the DOM, the resize listener is removed because the
+		// content is reloaded, so make sure to install the handler after the iframe is loaded.
+		// https://github.com/chartjs/Chart.js/issues/3521
+		helpers.addEvent(iframe, 'load', function() {
+			helpers.addEvent(iframe.contentWindow || iframe, 'resize', handler);
+
+			// The iframe size might have changed while loading, which can also
+			// happen if the size has been changed while detached from the DOM.
+			handler();
+		});
+
+		return iframe;
+	}
+
+	function addResizeListener(node, listener, chart) {
+		var stub = node._chartjs = {
+			ticking: false
+		};
+
+		// Throttle the callback notification until the next animation frame.
+		var notify = function() {
+			if (!stub.ticking) {
+				stub.ticking = true;
+				helpers.requestAnimFrame.call(window, function() {
+					if (stub.resizer) {
+						stub.ticking = false;
+						return listener(createEvent('resize', chart));
+					}
+				});
+			}
+		};
+
+		// Let's keep track of this added iframe and thus avoid DOM query when removing it.
+		stub.resizer = createResizer(notify);
+
+		node.insertBefore(stub.resizer, node.firstChild);
+	}
+
+	function removeResizeListener(node) {
+		if (!node || !node._chartjs) {
+			return;
+		}
+
+		var resizer = node._chartjs.resizer;
+		if (resizer) {
+			resizer.parentNode.removeChild(resizer);
+			node._chartjs.resizer = null;
+		}
+
+		delete node._chartjs;
+	}
+
+	return {
+		acquireContext: function(item, config) {
+			if (typeof item === 'string') {
+				item = document.getElementById(item);
+			} else if (item.length) {
+				// Support for array based queries (such as jQuery)
+				item = item[0];
+			}
+
+			if (item && item.canvas) {
+				// Support for any object associated to a canvas (including a context2d)
+				item = item.canvas;
+			}
+
+			if (item instanceof HTMLCanvasElement) {
+				// To prevent canvas fingerprinting, some add-ons undefine the getContext
+				// method, for example: https://github.com/kkapsner/CanvasBlocker
+				// https://github.com/chartjs/Chart.js/issues/2807
+				var context = item.getContext && item.getContext('2d');
+				if (context instanceof CanvasRenderingContext2D) {
+					initCanvas(item, config);
+					return context;
+				}
+			}
+
+			return null;
+		},
+
+		releaseContext: function(context) {
+			var canvas = context.canvas;
+			if (!canvas._chartjs) {
+				return;
+			}
+
+			var initial = canvas._chartjs.initial;
+			['height', 'width'].forEach(function(prop) {
+				var value = initial[prop];
+				if (value === undefined || value === null) {
+					canvas.removeAttribute(prop);
+				} else {
+					canvas.setAttribute(prop, value);
+				}
+			});
+
+			helpers.each(initial.style || {}, function(value, key) {
+				canvas.style[key] = value;
+			});
+
+			// The canvas render size might have been changed (and thus the state stack discarded),
+			// we can't use save() and restore() to restore the initial state. So make sure that at
+			// least the canvas context is reset to the default state by setting the canvas width.
+			// https://www.w3.org/TR/2011/WD-html5-20110525/the-canvas-element.html
+			canvas.width = canvas.width;
+
+			delete canvas._chartjs;
+		},
+
+		addEventListener: function(chart, type, listener) {
+			var canvas = chart.chart.canvas;
+			if (type === 'resize') {
+				// Note: the resize event is not supported on all browsers.
+				addResizeListener(canvas.parentNode, listener, chart.chart);
+				return;
+			}
+
+			var stub = listener._chartjs || (listener._chartjs = {});
+			var proxies = stub.proxies || (stub.proxies = {});
+			var proxy = proxies[chart.id + '_' + type] = function(event) {
+				listener(fromNativeEvent(event, chart.chart));
+			};
+
+			helpers.addEvent(canvas, type, proxy);
+		},
+
+		removeEventListener: function(chart, type, listener) {
+			var canvas = chart.chart.canvas;
+			if (type === 'resize') {
+				// Note: the resize event is not supported on all browsers.
+				removeResizeListener(canvas.parentNode, listener);
+				return;
+			}
+
+			var stub = listener._chartjs || {};
+			var proxies = stub.proxies || {};
+			var proxy = proxies[chart.id + '_' + type];
+			if (!proxy) {
+				return;
+			}
+
+			helpers.removeEvent(canvas, type, proxy);
+		}
+	};
+};
+
+},{}],57:[function(require,module,exports){
+'use strict';
+
+// By default, select the browser (DOM) platform.
+// @TODO Make possible to select another platform at build time.
+var implementation = require('./platform.dom.js');
+
+module.exports = function(Chart) {
+	/**
+	 * @namespace Chart.platform
+	 * @see https://chartjs.gitbooks.io/proposals/content/Platform.html
+	 * @since 2.4.0
+	 */
+	Chart.platform = {
+		/**
+		 * Called at chart construction time, returns a context2d instance implementing
+		 * the [W3C Canvas 2D Context API standard]{@link https://www.w3.org/TR/2dcontext/}.
+		 * @param {*} item - The native item from which to acquire context (platform specific)
+		 * @param {Object} options - The chart options
+		 * @returns {CanvasRenderingContext2D} context2d instance
+		 */
+		acquireContext: function() {},
+
+		/**
+		 * Called at chart destruction time, releases any resources associated to the context
+		 * previously returned by the acquireContext() method.
+		 * @param {CanvasRenderingContext2D} context - The context2d instance
+		 * @returns {Boolean} true if the method succeeded, else false
+		 */
+		releaseContext: function() {},
+
+		/**
+		 * Registers the specified listener on the given chart.
+		 * @param {Chart} chart - Chart from which to listen for event
+		 * @param {String} type - The ({@link IEvent}) type to listen for
+		 * @param {Function} listener - Receives a notification (an object that implements
+		 * the {@link IEvent} interface) when an event of the specified type occurs.
+		 */
+		addEventListener: function() {},
+
+		/**
+		 * Removes the specified listener previously registered with addEventListener.
+		 * @param {Chart} chart -Chart from which to remove the listener
+		 * @param {String} type - The ({@link IEvent}) type to remove
+		 * @param {Function} listener - The listener function to remove from the event target.
+		 */
+		removeEventListener: function() {}
+	};
+
+	/**
+	 * @interface IPlatform
+	 * Allows abstracting platform dependencies away from the chart
+	 * @borrows Chart.platform.acquireContext as acquireContext
+	 * @borrows Chart.platform.releaseContext as releaseContext
+	 * @borrows Chart.platform.addEventListener as addEventListener
+	 * @borrows Chart.platform.removeEventListener as removeEventListener
+	 */
+
+	/**
+	 * @interface IEvent
+	 * @prop {String} type - The event type name, possible values are:
+	 * 'contextmenu', 'mouseenter', 'mousedown', 'mousemove', 'mouseup', 'mouseout',
+	 * 'click', 'dblclick', 'keydown', 'keypress', 'keyup' and 'resize'
+	 * @prop {*} native - The original native event (null for emulated events, e.g. 'resize')
+	 * @prop {Number} x - The mouse x position, relative to the canvas (null for incompatible events)
+	 * @prop {Number} y - The mouse y position, relative to the canvas (null for incompatible events)
+	 */
+
+	Chart.helpers.extend(Chart.platform, implementation(Chart));
+};
+
+},{"./platform.dom.js":56}],58:[function(require,module,exports){
+'use strict';
+
 module.exports = function(Chart) {
 
 	var helpers = Chart.helpers;
@@ -14135,10 +14725,10 @@ module.exports = function(Chart) {
 			var data = me.chart.data;
 			var isHorizontal = me.isHorizontal();
 
-			if ((data.xLabels && isHorizontal) || (data.yLabels && !isHorizontal)) {
+			if (data.yLabels && !isHorizontal) {
 				return me.getRightValue(data.datasets[datasetIndex].data[index]);
 			}
-			return me.ticks[index];
+			return me.ticks[index - me.minIndex];
 		},
 
 		// Used to get data value locations.  Value can either be an index or a numerical value
@@ -14154,9 +14744,8 @@ module.exports = function(Chart) {
 			}
 
 			if (me.isHorizontal()) {
-				var innerWidth = me.width - (me.paddingLeft + me.paddingRight);
-				var valueWidth = innerWidth / offsetAmt;
-				var widthOffset = (valueWidth * (index - me.minIndex)) + me.paddingLeft;
+				var valueWidth = me.width / offsetAmt;
+				var widthOffset = (valueWidth * (index - me.minIndex));
 
 				if (me.options.gridLines.offsetGridLines && includeOffset || me.maxIndex === me.minIndex && includeOffset) {
 					widthOffset += (valueWidth / 2);
@@ -14164,9 +14753,8 @@ module.exports = function(Chart) {
 
 				return me.left + Math.round(widthOffset);
 			}
-			var innerHeight = me.height - (me.paddingTop + me.paddingBottom);
-			var valueHeight = innerHeight / offsetAmt;
-			var heightOffset = (valueHeight * (index - me.minIndex)) + me.paddingTop;
+			var valueHeight = me.height / offsetAmt;
+			var heightOffset = (valueHeight * (index - me.minIndex));
 
 			if (me.options.gridLines.offsetGridLines && includeOffset) {
 				heightOffset += (valueHeight / 2);
@@ -14182,15 +14770,13 @@ module.exports = function(Chart) {
 			var value;
 			var offsetAmt = Math.max((me.ticks.length - ((me.options.gridLines.offsetGridLines) ? 0 : 1)), 1);
 			var horz = me.isHorizontal();
-			var innerDimension = horz ? me.width - (me.paddingLeft + me.paddingRight) : me.height - (me.paddingTop + me.paddingBottom);
-			var valueDimension = innerDimension / offsetAmt;
+			var valueDimension = (horz ? me.width : me.height) / offsetAmt;
 
 			pixel -= horz ? me.left : me.top;
 
 			if (me.options.gridLines.offsetGridLines) {
 				pixel -= (valueDimension / 2);
 			}
-			pixel -= horz ? me.paddingLeft : me.paddingTop;
 
 			if (pixel <= 0) {
 				value = 0;
@@ -14209,7 +14795,7 @@ module.exports = function(Chart) {
 
 };
 
-},{}],57:[function(require,module,exports){
+},{}],59:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -14240,21 +14826,43 @@ module.exports = function(Chart) {
 			me.min = null;
 			me.max = null;
 
-			if (opts.stacked) {
-				var valuesPerType = {};
+			var hasStacks = opts.stacked;
+			if (hasStacks === undefined) {
+				helpers.each(datasets, function(dataset, datasetIndex) {
+					if (hasStacks) {
+						return;
+					}
+
+					var meta = chart.getDatasetMeta(datasetIndex);
+					if (chart.isDatasetVisible(datasetIndex) && IDMatches(meta) &&
+						meta.stack !== undefined) {
+						hasStacks = true;
+					}
+				});
+			}
+
+			if (opts.stacked || hasStacks) {
+				var valuesPerStack = {};
 
 				helpers.each(datasets, function(dataset, datasetIndex) {
 					var meta = chart.getDatasetMeta(datasetIndex);
-					if (valuesPerType[meta.type] === undefined) {
-						valuesPerType[meta.type] = {
+					var key = [
+						meta.type,
+						// we have a separate stack for stack=undefined datasets when the opts.stacked is undefined
+						((opts.stacked === undefined && meta.stack === undefined) ? datasetIndex : ''),
+						meta.stack
+					].join('.');
+
+					if (valuesPerStack[key] === undefined) {
+						valuesPerStack[key] = {
 							positiveValues: [],
 							negativeValues: []
 						};
 					}
 
 					// Store these per type
-					var positiveValues = valuesPerType[meta.type].positiveValues;
-					var negativeValues = valuesPerType[meta.type].negativeValues;
+					var positiveValues = valuesPerStack[key].positiveValues;
+					var negativeValues = valuesPerStack[key].negativeValues;
 
 					if (chart.isDatasetVisible(datasetIndex) && IDMatches(meta)) {
 						helpers.each(dataset.data, function(rawValue, index) {
@@ -14277,7 +14885,7 @@ module.exports = function(Chart) {
 					}
 				});
 
-				helpers.each(valuesPerType, function(valuesForType) {
+				helpers.each(valuesPerStack, function(valuesForType) {
 					var values = valuesForType.positiveValues.concat(valuesForType.negativeValues);
 					var minVal = helpers.min(values);
 					var maxVal = helpers.max(values);
@@ -14344,31 +14952,25 @@ module.exports = function(Chart) {
 			// This must be called after fit has been run so that
 			// this.left, this.top, this.right, and this.bottom have been defined
 			var me = this;
-			var paddingLeft = me.paddingLeft;
-			var paddingBottom = me.paddingBottom;
 			var start = me.start;
 
 			var rightValue = +me.getRightValue(value);
 			var pixel;
-			var innerDimension;
 			var range = me.end - start;
 
 			if (me.isHorizontal()) {
-				innerDimension = me.width - (paddingLeft + me.paddingRight);
-				pixel = me.left + (innerDimension / range * (rightValue - start));
-				return Math.round(pixel + paddingLeft);
+				pixel = me.left + (me.width / range * (rightValue - start));
+				return Math.round(pixel);
 			}
-			innerDimension = me.height - (me.paddingTop + paddingBottom);
-			pixel = (me.bottom - paddingBottom) - (innerDimension / range * (rightValue - start));
+
+			pixel = me.bottom - (me.height / range * (rightValue - start));
 			return Math.round(pixel);
 		},
 		getValueForPixel: function(pixel) {
 			var me = this;
 			var isHorizontal = me.isHorizontal();
-			var paddingLeft = me.paddingLeft;
-			var paddingBottom = me.paddingBottom;
-			var innerDimension = isHorizontal ? me.width - (paddingLeft + me.paddingRight) : me.height - (me.paddingTop + paddingBottom);
-			var offset = (isHorizontal ? pixel - me.left - paddingLeft : me.bottom - paddingBottom - pixel) / innerDimension;
+			var innerDimension = isHorizontal ? me.width : me.height;
+			var offset = (isHorizontal ? pixel - me.left : me.bottom - pixel) / innerDimension;
 			return me.start + ((me.end - me.start) * offset);
 		},
 		getPixelForTick: function(index) {
@@ -14379,7 +14981,7 @@ module.exports = function(Chart) {
 
 };
 
-},{}],58:[function(require,module,exports){
+},{}],60:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -14479,7 +15081,7 @@ module.exports = function(Chart) {
 	});
 };
 
-},{}],59:[function(require,module,exports){
+},{}],61:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -14514,18 +15116,40 @@ module.exports = function(Chart) {
 			me.max = null;
 			me.minNotZero = null;
 
-			if (opts.stacked) {
-				var valuesPerType = {};
+			var hasStacks = opts.stacked;
+			if (hasStacks === undefined) {
+				helpers.each(datasets, function(dataset, datasetIndex) {
+					if (hasStacks) {
+						return;
+					}
+
+					var meta = chart.getDatasetMeta(datasetIndex);
+					if (chart.isDatasetVisible(datasetIndex) && IDMatches(meta) &&
+						meta.stack !== undefined) {
+						hasStacks = true;
+					}
+				});
+			}
+
+			if (opts.stacked || hasStacks) {
+				var valuesPerStack = {};
 
 				helpers.each(datasets, function(dataset, datasetIndex) {
 					var meta = chart.getDatasetMeta(datasetIndex);
+					var key = [
+						meta.type,
+						// we have a separate stack for stack=undefined datasets when the opts.stacked is undefined
+						((opts.stacked === undefined && meta.stack === undefined) ? datasetIndex : ''),
+						meta.stack
+					].join('.');
+
 					if (chart.isDatasetVisible(datasetIndex) && IDMatches(meta)) {
-						if (valuesPerType[meta.type] === undefined) {
-							valuesPerType[meta.type] = [];
+						if (valuesPerStack[key] === undefined) {
+							valuesPerStack[key] = [];
 						}
 
 						helpers.each(dataset.data, function(rawValue, index) {
-							var values = valuesPerType[meta.type];
+							var values = valuesPerStack[key];
 							var value = +me.getRightValue(rawValue);
 							if (isNaN(value) || meta.data[index].hidden) {
 								return;
@@ -14543,7 +15167,7 @@ module.exports = function(Chart) {
 					}
 				});
 
-				helpers.each(valuesPerType, function(valuesForType) {
+				helpers.each(valuesPerStack, function(valuesForType) {
 					var minVal = helpers.min(valuesForType);
 					var maxVal = helpers.max(valuesForType);
 					me.min = me.min === null ? minVal : Math.min(me.min, minVal);
@@ -14644,46 +15268,42 @@ module.exports = function(Chart) {
 			var start = me.start;
 			var newVal = +me.getRightValue(value);
 			var range;
-			var paddingTop = me.paddingTop;
-			var paddingBottom = me.paddingBottom;
-			var paddingLeft = me.paddingLeft;
 			var opts = me.options;
 			var tickOpts = opts.ticks;
 
 			if (me.isHorizontal()) {
 				range = helpers.log10(me.end) - helpers.log10(start); // todo: if start === 0
 				if (newVal === 0) {
-					pixel = me.left + paddingLeft;
+					pixel = me.left;
 				} else {
-					innerDimension = me.width - (paddingLeft + me.paddingRight);
+					innerDimension = me.width;
 					pixel = me.left + (innerDimension / range * (helpers.log10(newVal) - helpers.log10(start)));
-					pixel += paddingLeft;
 				}
 			} else {
 				// Bottom - top since pixels increase downward on a screen
-				innerDimension = me.height - (paddingTop + paddingBottom);
+				innerDimension = me.height;
 				if (start === 0 && !tickOpts.reverse) {
 					range = helpers.log10(me.end) - helpers.log10(me.minNotZero);
 					if (newVal === start) {
-						pixel = me.bottom - paddingBottom;
+						pixel = me.bottom;
 					} else if (newVal === me.minNotZero) {
-						pixel = me.bottom - paddingBottom - innerDimension * 0.02;
+						pixel = me.bottom - innerDimension * 0.02;
 					} else {
-						pixel = me.bottom - paddingBottom - innerDimension * 0.02 - (innerDimension * 0.98/ range * (helpers.log10(newVal)-helpers.log10(me.minNotZero)));
+						pixel = me.bottom - innerDimension * 0.02 - (innerDimension * 0.98/ range * (helpers.log10(newVal)-helpers.log10(me.minNotZero)));
 					}
 				} else if (me.end === 0 && tickOpts.reverse) {
 					range = helpers.log10(me.start) - helpers.log10(me.minNotZero);
 					if (newVal === me.end) {
-						pixel = me.top + paddingTop;
+						pixel = me.top;
 					} else if (newVal === me.minNotZero) {
-						pixel = me.top + paddingTop + innerDimension * 0.02;
+						pixel = me.top + innerDimension * 0.02;
 					} else {
-						pixel = me.top + paddingTop + innerDimension * 0.02 + (innerDimension * 0.98/ range * (helpers.log10(newVal)-helpers.log10(me.minNotZero)));
+						pixel = me.top + innerDimension * 0.02 + (innerDimension * 0.98/ range * (helpers.log10(newVal)-helpers.log10(me.minNotZero)));
 					}
 				} else {
 					range = helpers.log10(me.end) - helpers.log10(start);
-					innerDimension = me.height - (paddingTop + paddingBottom);
-					pixel = (me.bottom - paddingBottom) - (innerDimension / range * (helpers.log10(newVal) - helpers.log10(start)));
+					innerDimension = me.height;
+					pixel = me.bottom - (innerDimension / range * (helpers.log10(newVal) - helpers.log10(start)));
 				}
 			}
 			return pixel;
@@ -14694,11 +15314,11 @@ module.exports = function(Chart) {
 			var value, innerDimension;
 
 			if (me.isHorizontal()) {
-				innerDimension = me.width - (me.paddingLeft + me.paddingRight);
-				value = me.start * Math.pow(10, (pixel - me.left - me.paddingLeft) * range / innerDimension);
+				innerDimension = me.width;
+				value = me.start * Math.pow(10, (pixel - me.left) * range / innerDimension);
 			} else {  // todo: if start === 0
-				innerDimension = me.height - (me.paddingTop + me.paddingBottom);
-				value = Math.pow(10, (me.bottom - me.paddingBottom - pixel) * range / innerDimension) / me.start;
+				innerDimension = me.height;
+				value = Math.pow(10, (me.bottom - pixel) * range / innerDimension) / me.start;
 			}
 			return value;
 		}
@@ -14707,7 +15327,7 @@ module.exports = function(Chart) {
 
 };
 
-},{}],60:[function(require,module,exports){
+},{}],62:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -14757,10 +15377,266 @@ module.exports = function(Chart) {
 		}
 	};
 
+	function getValueCount(scale) {
+		return !scale.options.lineArc ? scale.chart.data.labels.length : 0;
+	}
+
+	function getPointLabelFontOptions(scale) {
+		var pointLabelOptions = scale.options.pointLabels;
+		var fontSize = helpers.getValueOrDefault(pointLabelOptions.fontSize, globalDefaults.defaultFontSize);
+		var fontStyle = helpers.getValueOrDefault(pointLabelOptions.fontStyle, globalDefaults.defaultFontStyle);
+		var fontFamily = helpers.getValueOrDefault(pointLabelOptions.fontFamily, globalDefaults.defaultFontFamily);
+		var font = helpers.fontString(fontSize, fontStyle, fontFamily);
+
+		return {
+			size: fontSize,
+			style: fontStyle,
+			family: fontFamily,
+			font: font
+		};
+	}
+
+	function measureLabelSize(ctx, fontSize, label) {
+		if (helpers.isArray(label)) {
+			return {
+				w: helpers.longestText(ctx, ctx.font, label),
+				h: (label.length * fontSize) + ((label.length - 1) * 1.5 * fontSize)
+			};
+		}
+
+		return {
+			w: ctx.measureText(label).width,
+			h: fontSize
+		};
+	}
+
+	function determineLimits(angle, pos, size, min, max) {
+		if (angle === min || angle === max) {
+			return {
+				start: pos - (size / 2),
+				end: pos + (size / 2)
+			};
+		} else if (angle < min || angle > max) {
+			return {
+				start: pos - size - 5,
+				end: pos
+			};
+		}
+
+		return {
+			start: pos,
+			end: pos + size + 5
+		};
+	}
+
+	/**
+	 * Helper function to fit a radial linear scale with point labels
+	 */
+	function fitWithPointLabels(scale) {
+		/*
+		 * Right, this is really confusing and there is a lot of maths going on here
+		 * The gist of the problem is here: https://gist.github.com/nnnick/696cc9c55f4b0beb8fe9
+		 *
+		 * Reaction: https://dl.dropboxusercontent.com/u/34601363/toomuchscience.gif
+		 *
+		 * Solution:
+		 *
+		 * We assume the radius of the polygon is half the size of the canvas at first
+		 * at each index we check if the text overlaps.
+		 *
+		 * Where it does, we store that angle and that index.
+		 *
+		 * After finding the largest index and angle we calculate how much we need to remove
+		 * from the shape radius to move the point inwards by that x.
+		 *
+		 * We average the left and right distances to get the maximum shape radius that can fit in the box
+		 * along with labels.
+		 *
+		 * Once we have that, we can find the centre point for the chart, by taking the x text protrusion
+		 * on each side, removing that from the size, halving it and adding the left x protrusion width.
+		 *
+		 * This will mean we have a shape fitted to the canvas, as large as it can be with the labels
+		 * and position it in the most space efficient manner
+		 *
+		 * https://dl.dropboxusercontent.com/u/34601363/yeahscience.gif
+		 */
+
+		var plFont = getPointLabelFontOptions(scale);
+
+		// Get maximum radius of the polygon. Either half the height (minus the text width) or half the width.
+		// Use this to calculate the offset + change. - Make sure L/R protrusion is at least 0 to stop issues with centre points
+		var largestPossibleRadius = Math.min(scale.height / 2, scale.width / 2);
+		var furthestLimits = {
+			l: scale.width,
+			r: 0,
+			t: scale.height,
+			b: 0
+		};
+		var furthestAngles = {};
+		var i;
+		var textSize;
+		var pointPosition;
+
+		scale.ctx.font = plFont.font;
+		scale._pointLabelSizes = [];
+
+		var valueCount = getValueCount(scale);
+		for (i = 0; i < valueCount; i++) {
+			pointPosition = scale.getPointPosition(i, largestPossibleRadius);
+			textSize = measureLabelSize(scale.ctx, plFont.size, scale.pointLabels[i] || '');
+			scale._pointLabelSizes[i] = textSize;
+
+			// Add quarter circle to make degree 0 mean top of circle
+			var angleRadians = scale.getIndexAngle(i);
+			var angle = helpers.toDegrees(angleRadians) % 360;
+			var hLimits = determineLimits(angle, pointPosition.x, textSize.w, 0, 180);
+			var vLimits = determineLimits(angle, pointPosition.y, textSize.h, 90, 270);
+
+			if (hLimits.start < furthestLimits.l) {
+				furthestLimits.l = hLimits.start;
+				furthestAngles.l = angleRadians;
+			}
+
+			if (hLimits.end > furthestLimits.r) {
+				furthestLimits.r = hLimits.end;
+				furthestAngles.r = angleRadians;
+			}
+
+			if (vLimits.start < furthestLimits.t) {
+				furthestLimits.t = vLimits.start;
+				furthestAngles.t = angleRadians;
+			}
+
+			if (vLimits.end > furthestLimits.b) {
+				furthestLimits.b = vLimits.end;
+				furthestAngles.b = angleRadians;
+			}
+		}
+
+		scale.setReductions(largestPossibleRadius, furthestLimits, furthestAngles);
+	}
+
+	/**
+	 * Helper function to fit a radial linear scale with no point labels
+	 */
+	function fit(scale) {
+		var largestPossibleRadius = Math.min(scale.height / 2, scale.width / 2);
+		scale.drawingArea = Math.round(largestPossibleRadius);
+		scale.setCenterPoint(0, 0, 0, 0);
+	}
+
+	function getTextAlignForAngle(angle) {
+		if (angle === 0 || angle === 180) {
+			return 'center';
+		} else if (angle < 180) {
+			return 'left';
+		}
+
+		return 'right';
+	}
+
+	function fillText(ctx, text, position, fontSize) {
+		if (helpers.isArray(text)) {
+			var y = position.y;
+			var spacing = 1.5 * fontSize;
+
+			for (var i = 0; i < text.length; ++i) {
+				ctx.fillText(text[i], position.x, y);
+				y+= spacing;
+			}
+		} else {
+			ctx.fillText(text, position.x, position.y);
+		}
+	}
+
+	function adjustPointPositionForLabelHeight(angle, textSize, position) {
+		if (angle === 90 || angle === 270) {
+			position.y -= (textSize.h / 2);
+		} else if (angle > 270 || angle < 90) {
+			position.y -= textSize.h;
+		}
+	}
+
+	function drawPointLabels(scale) {
+		var ctx = scale.ctx;
+		var getValueOrDefault = helpers.getValueOrDefault;
+		var opts = scale.options;
+		var angleLineOpts = opts.angleLines;
+		var pointLabelOpts = opts.pointLabels;
+
+		ctx.lineWidth = angleLineOpts.lineWidth;
+		ctx.strokeStyle = angleLineOpts.color;
+
+		var outerDistance = scale.getDistanceFromCenterForValue(opts.reverse ? scale.min : scale.max);
+
+		// Point Label Font
+		var plFont = getPointLabelFontOptions(scale);
+
+		ctx.textBaseline = 'top';
+
+		for (var i = getValueCount(scale) - 1; i >= 0; i--) {
+			if (angleLineOpts.display) {
+				var outerPosition = scale.getPointPosition(i, outerDistance);
+				ctx.beginPath();
+				ctx.moveTo(scale.xCenter, scale.yCenter);
+				ctx.lineTo(outerPosition.x, outerPosition.y);
+				ctx.stroke();
+				ctx.closePath();
+			}
+			// Extra 3px out for some label spacing
+			var pointLabelPosition = scale.getPointPosition(i, outerDistance + 5);
+
+			// Keep this in loop since we may support array properties here
+			var pointLabelFontColor = getValueOrDefault(pointLabelOpts.fontColor, globalDefaults.defaultFontColor);
+			ctx.font = plFont.font;
+			ctx.fillStyle = pointLabelFontColor;
+
+			var angleRadians = scale.getIndexAngle(i);
+			var angle = helpers.toDegrees(angleRadians);
+			ctx.textAlign = getTextAlignForAngle(angle);
+			adjustPointPositionForLabelHeight(angle, scale._pointLabelSizes[i], pointLabelPosition);
+			fillText(ctx, scale.pointLabels[i] || '', pointLabelPosition, plFont.size);
+		}
+	}
+
+	function drawRadiusLine(scale, gridLineOpts, radius, index) {
+		var ctx = scale.ctx;
+		ctx.strokeStyle = helpers.getValueAtIndexOrDefault(gridLineOpts.color, index - 1);
+		ctx.lineWidth = helpers.getValueAtIndexOrDefault(gridLineOpts.lineWidth, index - 1);
+
+		if (scale.options.lineArc) {
+			// Draw circular arcs between the points
+			ctx.beginPath();
+			ctx.arc(scale.xCenter, scale.yCenter, radius, 0, Math.PI * 2);
+			ctx.closePath();
+			ctx.stroke();
+		} else {
+			// Draw straight lines connecting each index
+			var valueCount = getValueCount(scale);
+
+			if (valueCount === 0) {
+				return;
+			}
+
+			ctx.beginPath();
+			var pointPosition = scale.getPointPosition(0, radius);
+			ctx.moveTo(pointPosition.x, pointPosition.y);
+
+			for (var i = 1; i < valueCount; i++) {
+				pointPosition = scale.getPointPosition(i, radius);
+				ctx.lineTo(pointPosition.x, pointPosition.y);
+			}
+
+			ctx.closePath();
+			ctx.stroke();
+		}
+	}
+
+	function numberOrZero(param) {
+		return helpers.isNumber(param) ? param : 0;
+	}
+
 	var LinearRadialScale = Chart.LinearScaleBase.extend({
-		getValueCount: function() {
-			return this.chart.data.labels.length;
-		},
 		setDimensions: function() {
 			var me = this;
 			var opts = me.options;
@@ -14778,9 +15654,8 @@ module.exports = function(Chart) {
 		determineDataLimits: function() {
 			var me = this;
 			var chart = me.chart;
-			me.min = null;
-			me.max = null;
-
+			var min = Number.POSITIVE_INFINITY;
+			var max = Number.NEGATIVE_INFINITY;
 
 			helpers.each(chart.data.datasets, function(dataset, datasetIndex) {
 				if (chart.isDatasetVisible(datasetIndex)) {
@@ -14792,20 +15667,14 @@ module.exports = function(Chart) {
 							return;
 						}
 
-						if (me.min === null) {
-							me.min = value;
-						} else if (value < me.min) {
-							me.min = value;
-						}
-
-						if (me.max === null) {
-							me.max = value;
-						} else if (value > me.max) {
-							me.max = value;
-						}
+						min = Math.min(value, min);
+						max = Math.max(value, max);
 					});
 				}
 			});
+
+			me.min = (min === Number.POSITIVE_INFINITY ? 0 : min);
+			me.max = (max === Number.NEGATIVE_INFINITY ? 0 : max);
 
 			// Common base implementation to handle ticks.min, ticks.max, ticks.beginAtZero
 			me.handleTickRangeOptions();
@@ -14826,122 +15695,46 @@ module.exports = function(Chart) {
 			return +this.getRightValue(this.chart.data.datasets[datasetIndex].data[index]);
 		},
 		fit: function() {
-			/*
-			 * Right, this is really confusing and there is a lot of maths going on here
-			 * The gist of the problem is here: https://gist.github.com/nnnick/696cc9c55f4b0beb8fe9
-			 *
-			 * Reaction: https://dl.dropboxusercontent.com/u/34601363/toomuchscience.gif
-			 *
-			 * Solution:
-			 *
-			 * We assume the radius of the polygon is half the size of the canvas at first
-			 * at each index we check if the text overlaps.
-			 *
-			 * Where it does, we store that angle and that index.
-			 *
-			 * After finding the largest index and angle we calculate how much we need to remove
-			 * from the shape radius to move the point inwards by that x.
-			 *
-			 * We average the left and right distances to get the maximum shape radius that can fit in the box
-			 * along with labels.
-			 *
-			 * Once we have that, we can find the centre point for the chart, by taking the x text protrusion
-			 * on each side, removing that from the size, halving it and adding the left x protrusion width.
-			 *
-			 * This will mean we have a shape fitted to the canvas, as large as it can be with the labels
-			 * and position it in the most space efficient manner
-			 *
-			 * https://dl.dropboxusercontent.com/u/34601363/yeahscience.gif
-			 */
-
-			var pointLabels = this.options.pointLabels;
-			var pointLabelFontSize = helpers.getValueOrDefault(pointLabels.fontSize, globalDefaults.defaultFontSize);
-			var pointLabeFontStyle = helpers.getValueOrDefault(pointLabels.fontStyle, globalDefaults.defaultFontStyle);
-			var pointLabeFontFamily = helpers.getValueOrDefault(pointLabels.fontFamily, globalDefaults.defaultFontFamily);
-			var pointLabeFont = helpers.fontString(pointLabelFontSize, pointLabeFontStyle, pointLabeFontFamily);
-
-			// Get maximum radius of the polygon. Either half the height (minus the text width) or half the width.
-			// Use this to calculate the offset + change. - Make sure L/R protrusion is at least 0 to stop issues with centre points
-			var largestPossibleRadius = helpers.min([(this.height / 2 - pointLabelFontSize - 5), this.width / 2]),
-				pointPosition,
-				i,
-				textWidth,
-				halfTextWidth,
-				furthestRight = this.width,
-				furthestRightIndex,
-				furthestRightAngle,
-				furthestLeft = 0,
-				furthestLeftIndex,
-				furthestLeftAngle,
-				xProtrusionLeft,
-				xProtrusionRight,
-				radiusReductionRight,
-				radiusReductionLeft;
-			this.ctx.font = pointLabeFont;
-
-			for (i = 0; i < this.getValueCount(); i++) {
-				// 5px to space the text slightly out - similar to what we do in the draw function.
-				pointPosition = this.getPointPosition(i, largestPossibleRadius);
-				textWidth = this.ctx.measureText(this.pointLabels[i] ? this.pointLabels[i] : '').width + 5;
-
-				// Add quarter circle to make degree 0 mean top of circle
-				var angleRadians = this.getIndexAngle(i) + (Math.PI / 2);
-				var angle = (angleRadians * 360 / (2 * Math.PI)) % 360;
-
-				if (angle === 0 || angle === 180) {
-					// At angle 0 and 180, we're at exactly the top/bottom
-					// of the radar chart, so text will be aligned centrally, so we'll half it and compare
-					// w/left and right text sizes
-					halfTextWidth = textWidth / 2;
-					if (pointPosition.x + halfTextWidth > furthestRight) {
-						furthestRight = pointPosition.x + halfTextWidth;
-						furthestRightIndex = i;
-					}
-					if (pointPosition.x - halfTextWidth < furthestLeft) {
-						furthestLeft = pointPosition.x - halfTextWidth;
-						furthestLeftIndex = i;
-					}
-				} else if (angle < 180) {
-					// Less than half the values means we'll left align the text
-					if (pointPosition.x + textWidth > furthestRight) {
-						furthestRight = pointPosition.x + textWidth;
-						furthestRightIndex = i;
-					}
-				// More than half the values means we'll right align the text
-				} else if (pointPosition.x - textWidth < furthestLeft) {
-					furthestLeft = pointPosition.x - textWidth;
-					furthestLeftIndex = i;
-				}
+			if (this.options.lineArc) {
+				fit(this);
+			} else {
+				fitWithPointLabels(this);
 			}
-
-			xProtrusionLeft = furthestLeft;
-			xProtrusionRight = Math.ceil(furthestRight - this.width);
-
-			furthestRightAngle = this.getIndexAngle(furthestRightIndex);
-			furthestLeftAngle = this.getIndexAngle(furthestLeftIndex);
-
-			radiusReductionRight = xProtrusionRight / Math.sin(furthestRightAngle + Math.PI / 2);
-			radiusReductionLeft = xProtrusionLeft / Math.sin(furthestLeftAngle + Math.PI / 2);
-
-			// Ensure we actually need to reduce the size of the chart
-			radiusReductionRight = (helpers.isNumber(radiusReductionRight)) ? radiusReductionRight : 0;
-			radiusReductionLeft = (helpers.isNumber(radiusReductionLeft)) ? radiusReductionLeft : 0;
-
-			this.drawingArea = Math.round(largestPossibleRadius - (radiusReductionLeft + radiusReductionRight) / 2);
-			this.setCenterPoint(radiusReductionLeft, radiusReductionRight);
 		},
-		setCenterPoint: function(leftMovement, rightMovement) {
+		/**
+		 * Set radius reductions and determine new radius and center point
+		 * @private
+		 */
+		setReductions: function(largestPossibleRadius, furthestLimits, furthestAngles) {
+			var me = this;
+			var radiusReductionLeft = furthestLimits.l / Math.sin(furthestAngles.l);
+			var radiusReductionRight = Math.max(furthestLimits.r - me.width, 0) / Math.sin(furthestAngles.r);
+			var radiusReductionTop = -furthestLimits.t / Math.cos(furthestAngles.t);
+			var radiusReductionBottom = -Math.max(furthestLimits.b - me.height, 0) / Math.cos(furthestAngles.b);
+
+			radiusReductionLeft = numberOrZero(radiusReductionLeft);
+			radiusReductionRight = numberOrZero(radiusReductionRight);
+			radiusReductionTop = numberOrZero(radiusReductionTop);
+			radiusReductionBottom = numberOrZero(radiusReductionBottom);
+
+			me.drawingArea = Math.min(
+				Math.round(largestPossibleRadius - (radiusReductionLeft + radiusReductionRight) / 2),
+				Math.round(largestPossibleRadius - (radiusReductionTop + radiusReductionBottom) / 2));
+			me.setCenterPoint(radiusReductionLeft, radiusReductionRight, radiusReductionTop, radiusReductionBottom);
+		},
+		setCenterPoint: function(leftMovement, rightMovement, topMovement, bottomMovement) {
 			var me = this;
 			var maxRight = me.width - rightMovement - me.drawingArea,
-				maxLeft = leftMovement + me.drawingArea;
+				maxLeft = leftMovement + me.drawingArea,
+				maxTop = topMovement + me.drawingArea,
+				maxBottom = me.height - bottomMovement - me.drawingArea;
 
 			me.xCenter = Math.round(((maxLeft + maxRight) / 2) + me.left);
-			// Always vertically in the centre as the text height doesn't change
-			me.yCenter = Math.round((me.height / 2) + me.top);
+			me.yCenter = Math.round(((maxTop + maxBottom) / 2) + me.top);
 		},
 
 		getIndexAngle: function(index) {
-			var angleMultiplier = (Math.PI * 2) / this.getValueCount();
+			var angleMultiplier = (Math.PI * 2) / getValueCount(this);
 			var startAngle = this.chart.options && this.chart.options.startAngle ?
 				this.chart.options.startAngle :
 				0;
@@ -14949,7 +15742,7 @@ module.exports = function(Chart) {
 			var startAngleRadians = startAngle * Math.PI * 2 / 360;
 
 			// Start from the top instead of right, so remove a quarter of the circle
-			return index * angleMultiplier - (Math.PI / 2) + startAngleRadians;
+			return index * angleMultiplier + startAngleRadians;
 		},
 		getDistanceFromCenterForValue: function(value) {
 			var me = this;
@@ -14967,7 +15760,7 @@ module.exports = function(Chart) {
 		},
 		getPointPosition: function(index, distanceFromCenter) {
 			var me = this;
-			var thisAngle = me.getIndexAngle(index);
+			var thisAngle = me.getIndexAngle(index) - (Math.PI / 2);
 			return {
 				x: Math.round(Math.cos(thisAngle) * distanceFromCenter) + me.xCenter,
 				y: Math.round(Math.sin(thisAngle) * distanceFromCenter) + me.yCenter
@@ -14994,8 +15787,6 @@ module.exports = function(Chart) {
 			var opts = me.options;
 			var gridLineOpts = opts.gridLines;
 			var tickOpts = opts.ticks;
-			var angleLineOpts = opts.angleLines;
-			var pointLabelOpts = opts.pointLabels;
 			var getValueOrDefault = helpers.getValueOrDefault;
 
 			if (opts.display) {
@@ -15015,29 +15806,7 @@ module.exports = function(Chart) {
 
 						// Draw circular lines around the scale
 						if (gridLineOpts.display && index !== 0) {
-							ctx.strokeStyle = helpers.getValueAtIndexOrDefault(gridLineOpts.color, index - 1);
-							ctx.lineWidth = helpers.getValueAtIndexOrDefault(gridLineOpts.lineWidth, index - 1);
-
-							if (opts.lineArc) {
-								// Draw circular arcs between the points
-								ctx.beginPath();
-								ctx.arc(me.xCenter, me.yCenter, yCenterOffset, 0, Math.PI * 2);
-								ctx.closePath();
-								ctx.stroke();
-							} else {
-								// Draw straight lines connecting each index
-								ctx.beginPath();
-								for (var i = 0; i < me.getValueCount(); i++) {
-									var pointPosition = me.getPointPosition(i, yCenterOffset);
-									if (i === 0) {
-										ctx.moveTo(pointPosition.x, pointPosition.y);
-									} else {
-										ctx.lineTo(pointPosition.x, pointPosition.y);
-									}
-								}
-								ctx.closePath();
-								ctx.stroke();
-							}
+							drawRadiusLine(me, gridLineOpts, yCenterOffset, index);
 						}
 
 						if (tickOpts.display) {
@@ -15064,59 +15833,7 @@ module.exports = function(Chart) {
 				});
 
 				if (!opts.lineArc) {
-					ctx.lineWidth = angleLineOpts.lineWidth;
-					ctx.strokeStyle = angleLineOpts.color;
-
-					var outerDistance = me.getDistanceFromCenterForValue(opts.reverse ? me.min : me.max);
-
-					// Point Label Font
-					var pointLabelFontSize = getValueOrDefault(pointLabelOpts.fontSize, globalDefaults.defaultFontSize);
-					var pointLabeFontStyle = getValueOrDefault(pointLabelOpts.fontStyle, globalDefaults.defaultFontStyle);
-					var pointLabeFontFamily = getValueOrDefault(pointLabelOpts.fontFamily, globalDefaults.defaultFontFamily);
-					var pointLabeFont = helpers.fontString(pointLabelFontSize, pointLabeFontStyle, pointLabeFontFamily);
-
-					for (var i = me.getValueCount() - 1; i >= 0; i--) {
-						if (angleLineOpts.display) {
-							var outerPosition = me.getPointPosition(i, outerDistance);
-							ctx.beginPath();
-							ctx.moveTo(me.xCenter, me.yCenter);
-							ctx.lineTo(outerPosition.x, outerPosition.y);
-							ctx.stroke();
-							ctx.closePath();
-						}
-						// Extra 3px out for some label spacing
-						var pointLabelPosition = me.getPointPosition(i, outerDistance + 5);
-
-						// Keep this in loop since we may support array properties here
-						var pointLabelFontColor = getValueOrDefault(pointLabelOpts.fontColor, globalDefaults.defaultFontColor);
-						ctx.font = pointLabeFont;
-						ctx.fillStyle = pointLabelFontColor;
-
-						var pointLabels = me.pointLabels;
-
-						// Add quarter circle to make degree 0 mean top of circle
-						var angleRadians = this.getIndexAngle(i) + (Math.PI / 2);
-						var angle = (angleRadians * 360 / (2 * Math.PI)) % 360;
-
-						if (angle === 0 || angle === 180) {
-							ctx.textAlign = 'center';
-						} else if (angle < 180) {
-							ctx.textAlign = 'left';
-						} else {
-							ctx.textAlign = 'right';
-						}
-
-						// Set the correct text baseline based on outer positioning
-						if (angle === 90 || angle === 270) {
-							ctx.textBaseline = 'middle';
-						} else if (angle > 270 || angle < 90) {
-							ctx.textBaseline = 'bottom';
-						} else {
-							ctx.textBaseline = 'top';
-						}
-
-						ctx.fillText(pointLabels[i] ? pointLabels[i] : '', pointLabelPosition.x, pointLabelPosition.y);
-					}
+					drawPointLabels(me);
 				}
 			}
 		}
@@ -15125,7 +15842,7 @@ module.exports = function(Chart) {
 
 };
 
-},{}],61:[function(require,module,exports){
+},{}],63:[function(require,module,exports){
 /* global window: false */
 'use strict';
 
@@ -15368,7 +16085,7 @@ module.exports = function(Chart) {
 				me.unitScale = helpers.getValueOrDefault(me.options.time.unitStepSize, 1);
 			} else {
 				// Determine the smallest needed unit of the time
-				var innerWidth = me.isHorizontal() ? me.width - (me.paddingLeft + me.paddingRight) : me.height - (me.paddingTop + me.paddingBottom);
+				var innerWidth = me.isHorizontal() ? me.width : me.height;
 
 				// Crude approximation of what the label length might be
 				var tempFirstLabel = me.tickFormatFunction(me.firstTick, 0, []);
@@ -15452,7 +16169,7 @@ module.exports = function(Chart) {
 			me.ticks.push(me.firstTick.clone());
 
 			// For every unit in between the first and last moment, create a moment and add it to the ticks tick
-			for (var i = 1; i <= me.scaleSizeInUnits; ++i) {
+			for (var i = me.unitScale; i <= me.scaleSizeInUnits; i += me.unitScale) {
 				var newTick = roundedStart.clone().add(i, me.tickUnit);
 
 				// Are we greater than the max time
@@ -15460,9 +16177,7 @@ module.exports = function(Chart) {
 					break;
 				}
 
-				if (i % me.unitScale === 0) {
-					me.ticks.push(newTick);
-				}
+				me.ticks.push(newTick);
 			}
 
 			// Always show the right tick
@@ -15488,9 +16203,10 @@ module.exports = function(Chart) {
 		getLabelForIndex: function(index, datasetIndex) {
 			var me = this;
 			var label = me.chart.data.labels && index < me.chart.data.labels.length ? me.chart.data.labels[index] : '';
+			var value = me.chart.data.datasets[datasetIndex].data[index];
 
-			if (typeof me.chart.data.datasets[datasetIndex].data[0] === 'object') {
-				label = me.getRightValue(me.chart.data.datasets[datasetIndex].data[index]);
+			if (value !== null && typeof value === 'object') {
+				label = me.getRightValue(value);
 			}
 
 			// Format nicely
@@ -15537,14 +16253,11 @@ module.exports = function(Chart) {
 				var decimal = offset !== 0 ? offset / me.scaleSizeInUnits : offset;
 
 				if (me.isHorizontal()) {
-					var innerWidth = me.width - (me.paddingLeft + me.paddingRight);
-					var valueOffset = (innerWidth * decimal) + me.paddingLeft;
-
+					var valueOffset = (me.width * decimal);
 					return me.left + Math.round(valueOffset);
 				}
-				var innerHeight = me.height - (me.paddingTop + me.paddingBottom);
-				var heightOffset = (innerHeight * decimal) + me.paddingTop;
 
+				var heightOffset = (me.height * decimal);
 				return me.top + Math.round(heightOffset);
 			}
 		},
@@ -15553,8 +16266,8 @@ module.exports = function(Chart) {
 		},
 		getValueForPixel: function(pixel) {
 			var me = this;
-			var innerDimension = me.isHorizontal() ? me.width - (me.paddingLeft + me.paddingRight) : me.height - (me.paddingTop + me.paddingBottom);
-			var offset = (pixel - (me.isHorizontal() ? me.left + me.paddingLeft : me.top + me.paddingTop)) / innerDimension;
+			var innerDimension = me.isHorizontal() ? me.width : me.height;
+			var offset = (pixel - (me.isHorizontal() ? me.left : me.top)) / innerDimension;
 			offset *= me.scaleSizeInUnits;
 			return me.firstTick.clone().add(moment.duration(offset, me.tickUnit).asSeconds(), 'seconds');
 		},
@@ -15587,7 +16300,7 @@ module.exports = function(Chart) {
 
 };
 
-},{"moment":110}],62:[function(require,module,exports){
+},{"moment":112}],64:[function(require,module,exports){
 /* MIT license */
 var colorNames = require('color-name');
 
@@ -15810,7 +16523,7 @@ for (var name in colorNames) {
    reverseNames[colorNames[name]] = name;
 }
 
-},{"color-name":66}],63:[function(require,module,exports){
+},{"color-name":68}],65:[function(require,module,exports){
 /* MIT license */
 var convert = require('color-convert');
 var string = require('chartjs-color-string');
@@ -15823,6 +16536,7 @@ var Color = function (obj) {
 		return new Color(obj);
 	}
 
+	this.valid = false;
 	this.values = {
 		rgb: [0, 0, 0],
 		hsl: [0, 0, 0],
@@ -15842,8 +16556,6 @@ var Color = function (obj) {
 			this.setValues('hsl', vals);
 		} else if (vals = string.getHwb(obj)) {
 			this.setValues('hwb', vals);
-		} else {
-			throw new Error('Unable to parse color from string "' + obj + '"');
 		}
 	} else if (typeof obj === 'object') {
 		vals = obj;
@@ -15857,13 +16569,14 @@ var Color = function (obj) {
 			this.setValues('hwb', vals);
 		} else if (vals.c !== undefined || vals.cyan !== undefined) {
 			this.setValues('cmyk', vals);
-		} else {
-			throw new Error('Unable to parse color from object ' + JSON.stringify(obj));
 		}
 	}
 };
 
 Color.prototype = {
+	isValid: function () {
+		return this.valid;
+	},
 	rgb: function () {
 		return this.setSpace('rgb', arguments);
 	},
@@ -16207,6 +16920,8 @@ Color.prototype.setValues = function (space, vals) {
 	var alpha = 1;
 	var i;
 
+	this.valid = true;
+
 	if (space === 'alpha') {
 		alpha = vals;
 	} else if (vals.length) {
@@ -16295,7 +17010,7 @@ if (typeof window !== 'undefined') {
 
 module.exports = Color;
 
-},{"chartjs-color-string":62,"color-convert":65}],64:[function(require,module,exports){
+},{"chartjs-color-string":64,"color-convert":67}],66:[function(require,module,exports){
 /* MIT license */
 
 module.exports = {
@@ -16995,7 +17710,7 @@ for (var key in cssKeywords) {
   reverseKeywords[JSON.stringify(cssKeywords[key])] = key;
 }
 
-},{}],65:[function(require,module,exports){
+},{}],67:[function(require,module,exports){
 var conversions = require("./conversions");
 
 var convert = function() {
@@ -17088,7 +17803,7 @@ Converter.prototype.getValues = function(space) {
 });
 
 module.exports = convert;
-},{"./conversions":64}],66:[function(require,module,exports){
+},{"./conversions":66}],68:[function(require,module,exports){
 module.exports = {
 	"aliceblue": [240, 248, 255],
 	"antiquewhite": [250, 235, 215],
@@ -17239,7 +17954,7 @@ module.exports = {
 	"yellow": [255, 255, 0],
 	"yellowgreen": [154, 205, 50]
 };
-},{}],67:[function(require,module,exports){
+},{}],69:[function(require,module,exports){
 'use strict';
 
 /**
@@ -17323,7 +18038,7 @@ var EventListener = {
 };
 
 module.exports = EventListener;
-},{"./emptyFunction":74}],68:[function(require,module,exports){
+},{"./emptyFunction":76}],70:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17359,7 +18074,7 @@ var ExecutionEnvironment = {
 };
 
 module.exports = ExecutionEnvironment;
-},{}],69:[function(require,module,exports){
+},{}],71:[function(require,module,exports){
 "use strict";
 
 /**
@@ -17391,7 +18106,7 @@ function camelize(string) {
 }
 
 module.exports = camelize;
-},{}],70:[function(require,module,exports){
+},{}],72:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17431,7 +18146,7 @@ function camelizeStyleName(string) {
 }
 
 module.exports = camelizeStyleName;
-},{"./camelize":69}],71:[function(require,module,exports){
+},{"./camelize":71}],73:[function(require,module,exports){
 'use strict';
 
 /**
@@ -17471,7 +18186,7 @@ function containsNode(outerNode, innerNode) {
 }
 
 module.exports = containsNode;
-},{"./isTextNode":84}],72:[function(require,module,exports){
+},{"./isTextNode":86}],74:[function(require,module,exports){
 'use strict';
 
 /**
@@ -17598,7 +18313,7 @@ function createArrayFromMixed(obj) {
 }
 
 module.exports = createArrayFromMixed;
-},{"./invariant":82}],73:[function(require,module,exports){
+},{"./invariant":84}],75:[function(require,module,exports){
 'use strict';
 
 /**
@@ -17682,7 +18397,7 @@ function createNodesFromMarkup(markup, handleScript) {
 }
 
 module.exports = createNodesFromMarkup;
-},{"./ExecutionEnvironment":68,"./createArrayFromMixed":72,"./getMarkupWrap":78,"./invariant":82}],74:[function(require,module,exports){
+},{"./ExecutionEnvironment":70,"./createArrayFromMixed":74,"./getMarkupWrap":80,"./invariant":84}],76:[function(require,module,exports){
 "use strict";
 
 /**
@@ -17721,7 +18436,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-},{}],75:[function(require,module,exports){
+},{}],77:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17741,7 +18456,7 @@ if ("production" !== 'production') {
 }
 
 module.exports = emptyObject;
-},{}],76:[function(require,module,exports){
+},{}],78:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17768,7 +18483,7 @@ function focusNode(node) {
 }
 
 module.exports = focusNode;
-},{}],77:[function(require,module,exports){
+},{}],79:[function(require,module,exports){
 'use strict';
 
 /**
@@ -17803,7 +18518,7 @@ function getActiveElement() /*?DOMElement*/{
 }
 
 module.exports = getActiveElement;
-},{}],78:[function(require,module,exports){
+},{}],80:[function(require,module,exports){
 'use strict';
 
 /**
@@ -17898,7 +18613,7 @@ function getMarkupWrap(nodeName) {
 }
 
 module.exports = getMarkupWrap;
-},{"./ExecutionEnvironment":68,"./invariant":82}],79:[function(require,module,exports){
+},{"./ExecutionEnvironment":70,"./invariant":84}],81:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -17937,7 +18652,7 @@ function getUnboundedScrollPosition(scrollable) {
 }
 
 module.exports = getUnboundedScrollPosition;
-},{}],80:[function(require,module,exports){
+},{}],82:[function(require,module,exports){
 'use strict';
 
 /**
@@ -17970,7 +18685,7 @@ function hyphenate(string) {
 }
 
 module.exports = hyphenate;
-},{}],81:[function(require,module,exports){
+},{}],83:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18009,7 +18724,7 @@ function hyphenateStyleName(string) {
 }
 
 module.exports = hyphenateStyleName;
-},{"./hyphenate":80}],82:[function(require,module,exports){
+},{"./hyphenate":82}],84:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18065,7 +18780,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 }
 
 module.exports = invariant;
-},{}],83:[function(require,module,exports){
+},{}],85:[function(require,module,exports){
 'use strict';
 
 /**
@@ -18088,7 +18803,7 @@ function isNode(object) {
 }
 
 module.exports = isNode;
-},{}],84:[function(require,module,exports){
+},{}],86:[function(require,module,exports){
 'use strict';
 
 /**
@@ -18113,7 +18828,7 @@ function isTextNode(object) {
 }
 
 module.exports = isTextNode;
-},{"./isNode":83}],85:[function(require,module,exports){
+},{"./isNode":85}],87:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18143,7 +18858,7 @@ function memoizeStringOnly(callback) {
 }
 
 module.exports = memoizeStringOnly;
-},{}],86:[function(require,module,exports){
+},{}],88:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18166,7 +18881,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = performance || {};
-},{"./ExecutionEnvironment":68}],87:[function(require,module,exports){
+},{"./ExecutionEnvironment":70}],89:[function(require,module,exports){
 'use strict';
 
 /**
@@ -18200,7 +18915,7 @@ if (performance.now) {
 }
 
 module.exports = performanceNow;
-},{"./performance":86}],88:[function(require,module,exports){
+},{"./performance":88}],90:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -18268,7 +18983,7 @@ function shallowEqual(objA, objB) {
 }
 
 module.exports = shallowEqual;
-},{}],89:[function(require,module,exports){
+},{}],91:[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -18335,7 +19050,7 @@ if ("production" !== 'production') {
 }
 
 module.exports = warning;
-},{"./emptyFunction":74}],90:[function(require,module,exports){
+},{"./emptyFunction":76}],92:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -18358,7 +19073,7 @@ var REPLACE = exports.REPLACE = 'REPLACE';
  * for more information.
  */
 var POP = exports.POP = 'POP';
-},{}],91:[function(require,module,exports){
+},{}],93:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -18415,7 +19130,7 @@ var loopAsync = exports.loopAsync = function loopAsync(turns, work, callback) {
 
   next();
 };
-},{}],92:[function(require,module,exports){
+},{}],94:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -18514,7 +19229,7 @@ var replaceLocation = exports.replaceLocation = function replaceLocation(locatio
 var go = exports.go = function go(n) {
   if (n) window.history.go(n);
 };
-},{"./DOMStateStorage":93,"./DOMUtils":94,"./ExecutionEnvironment":95,"./LocationUtils":97,"./PathUtils":98}],93:[function(require,module,exports){
+},{"./DOMStateStorage":95,"./DOMUtils":96,"./ExecutionEnvironment":97,"./LocationUtils":99,"./PathUtils":100}],95:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -18600,7 +19315,7 @@ var readState = exports.readState = function readState(key) {
 
   return undefined;
 };
-},{"warning":299}],94:[function(require,module,exports){
+},{"warning":301}],96:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -18641,12 +19356,12 @@ var supportsGoWithoutReloadUsingHash = exports.supportsGoWithoutReloadUsingHash 
 var supportsPopstateOnHashchange = exports.supportsPopstateOnHashchange = function supportsPopstateOnHashchange() {
   return window.navigator.userAgent.indexOf('Trident') === -1;
 };
-},{}],95:[function(require,module,exports){
+},{}],97:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
 var canUseDOM = exports.canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
-},{}],96:[function(require,module,exports){
+},{}],98:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -18783,7 +19498,7 @@ var replaceLocation = exports.replaceLocation = function replaceLocation(locatio
     if (getHashPath() !== path) replaceHashPath(path);
   });
 };
-},{"./BrowserProtocol":92,"./DOMStateStorage":93,"./DOMUtils":94,"./LocationUtils":97,"./PathUtils":98,"warning":299}],97:[function(require,module,exports){
+},{"./BrowserProtocol":94,"./DOMStateStorage":95,"./DOMUtils":96,"./LocationUtils":99,"./PathUtils":100,"warning":301}],99:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -18876,7 +19591,7 @@ var locationsAreEqual = exports.locationsAreEqual = function locationsAreEqual(a
   // a.action === b.action && // Different action !== location change.
   a.pathname === b.pathname && a.search === b.search && a.hash === b.hash && statesAreEqual(a.state, b.state);
 };
-},{"./Actions":90,"./PathUtils":98,"invariant":108,"warning":299}],98:[function(require,module,exports){
+},{"./Actions":92,"./PathUtils":100,"invariant":110,"warning":301}],100:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -18978,7 +19693,7 @@ var createPath = exports.createPath = function createPath(location) {
 
   return path;
 };
-},{"warning":299}],99:[function(require,module,exports){
+},{"warning":301}],101:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -19016,7 +19731,7 @@ var replaceLocation = exports.replaceLocation = function replaceLocation(locatio
   window.location.replace((0, _PathUtils.createPath)(location));
   return false; // Don't update location
 };
-},{"./BrowserProtocol":92,"./LocationUtils":97,"./PathUtils":98}],100:[function(require,module,exports){
+},{"./BrowserProtocol":94,"./LocationUtils":99,"./PathUtils":100}],102:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -19110,7 +19825,7 @@ var createBrowserHistory = function createBrowserHistory() {
 };
 
 exports.default = createBrowserHistory;
-},{"./BrowserProtocol":92,"./DOMUtils":94,"./ExecutionEnvironment":95,"./RefreshProtocol":99,"./createHistory":102,"invariant":108}],101:[function(require,module,exports){
+},{"./BrowserProtocol":94,"./DOMUtils":96,"./ExecutionEnvironment":97,"./RefreshProtocol":101,"./createHistory":104,"invariant":110}],103:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -19258,7 +19973,7 @@ var createHashHistory = function createHashHistory() {
 };
 
 exports.default = createHashHistory;
-},{"./DOMUtils":94,"./ExecutionEnvironment":95,"./HashProtocol":96,"./createHistory":102,"invariant":108,"warning":299}],102:[function(require,module,exports){
+},{"./DOMUtils":96,"./ExecutionEnvironment":97,"./HashProtocol":98,"./createHistory":104,"invariant":110,"warning":301}],104:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -19435,7 +20150,7 @@ var createHistory = function createHistory() {
 };
 
 exports.default = createHistory;
-},{"./Actions":90,"./AsyncUtils":91,"./LocationUtils":97,"./PathUtils":98,"./runTransitionHook":104}],103:[function(require,module,exports){
+},{"./Actions":92,"./AsyncUtils":93,"./LocationUtils":99,"./PathUtils":100,"./runTransitionHook":106}],105:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -19576,7 +20291,7 @@ var createMemoryHistory = function createMemoryHistory() {
 };
 
 exports.default = createMemoryHistory;
-},{"./Actions":90,"./LocationUtils":97,"./PathUtils":98,"./createHistory":102,"invariant":108,"warning":299}],104:[function(require,module,exports){
+},{"./Actions":92,"./LocationUtils":99,"./PathUtils":100,"./createHistory":104,"invariant":110,"warning":301}],106:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -19600,7 +20315,7 @@ var runTransitionHook = function runTransitionHook(hook, location, callback) {
 };
 
 exports.default = runTransitionHook;
-},{"warning":299}],105:[function(require,module,exports){
+},{"warning":301}],107:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -19710,7 +20425,7 @@ var useBasename = function useBasename(createHistory) {
 };
 
 exports.default = useBasename;
-},{"./PathUtils":98,"./runTransitionHook":104}],106:[function(require,module,exports){
+},{"./PathUtils":100,"./runTransitionHook":106}],108:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -19832,7 +20547,7 @@ var useQueries = function useQueries(createHistory) {
 };
 
 exports.default = useQueries;
-},{"./LocationUtils":97,"./PathUtils":98,"./runTransitionHook":104,"query-string":112}],107:[function(require,module,exports){
+},{"./LocationUtils":99,"./PathUtils":100,"./runTransitionHook":106,"query-string":114}],109:[function(require,module,exports){
 /**
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
@@ -19884,7 +20599,7 @@ module.exports = function hoistNonReactStatics(targetComponent, sourceComponent,
     return targetComponent;
 };
 
-},{}],108:[function(require,module,exports){
+},{}],110:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -19937,7 +20652,7 @@ var invariant = function(condition, format, a, b, c, d, e, f) {
 
 module.exports = invariant;
 
-},{}],109:[function(require,module,exports){
+},{}],111:[function(require,module,exports){
 //! moment.js locale configuration
 //! locale : Spanish [es]
 //! author : Julio Napurí : https://github.com/julionc
@@ -20020,7 +20735,7 @@ return es;
 
 })));
 
-},{"../moment":110}],110:[function(require,module,exports){
+},{"../moment":112}],112:[function(require,module,exports){
 //! moment.js
 //! version : 2.17.1
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
@@ -24323,7 +25038,7 @@ return hooks;
 
 })));
 
-},{}],111:[function(require,module,exports){
+},{}],113:[function(require,module,exports){
 /*
 object-assign
 (c) Sindre Sorhus
@@ -24415,7 +25130,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-},{}],112:[function(require,module,exports){
+},{}],114:[function(require,module,exports){
 'use strict';
 var strictUriEncode = require('strict-uri-encode');
 var objectAssign = require('object-assign');
@@ -24464,9 +25179,9 @@ function parserForArrayFormat(opts) {
 	switch (opts.arrayFormat) {
 		case 'index':
 			return function (key, value, accumulator) {
-				result = /\[(\d*)]$/.exec(key);
+				result = /\[(\d*)\]$/.exec(key);
 
-				key = key.replace(/\[\d*]$/, '');
+				key = key.replace(/\[\d*\]$/, '');
 
 				if (!result) {
 					accumulator[key] = value;
@@ -24482,9 +25197,9 @@ function parserForArrayFormat(opts) {
 
 		case 'bracket':
 			return function (key, value, accumulator) {
-				result = /(\[])$/.exec(key);
+				result = /(\[\])$/.exec(key);
 
-				key = key.replace(/\[]$/, '');
+				key = key.replace(/\[\]$/, '');
 
 				if (!result || accumulator[key] === undefined) {
 					accumulator[key] = value;
@@ -24620,12 +25335,12 @@ exports.stringify = function (obj, opts) {
 	}).join('&') : '';
 };
 
-},{"object-assign":111,"strict-uri-encode":298}],113:[function(require,module,exports){
+},{"object-assign":113,"strict-uri-encode":300}],115:[function(require,module,exports){
 'use strict';
 
 module.exports = require('./lib/ReactDOM');
 
-},{"./lib/ReactDOM":143}],114:[function(require,module,exports){
+},{"./lib/ReactDOM":145}],116:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -24699,7 +25414,7 @@ var ARIADOMPropertyConfig = {
 };
 
 module.exports = ARIADOMPropertyConfig;
-},{}],115:[function(require,module,exports){
+},{}],117:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -24723,7 +25438,7 @@ var AutoFocusUtils = {
 };
 
 module.exports = AutoFocusUtils;
-},{"./ReactDOMComponentTree":146,"fbjs/lib/focusNode":76}],116:[function(require,module,exports){
+},{"./ReactDOMComponentTree":148,"fbjs/lib/focusNode":78}],118:[function(require,module,exports){
 /**
  * Copyright 2013-present Facebook, Inc.
  * All rights reserved.
@@ -25108,7 +25823,7 @@ var BeforeInputEventPlugin = {
 };
 
 module.exports = BeforeInputEventPlugin;
-},{"./EventPropagators":132,"./FallbackCompositionState":133,"./SyntheticCompositionEvent":197,"./SyntheticInputEvent":201,"fbjs/lib/ExecutionEnvironment":68}],117:[function(require,module,exports){
+},{"./EventPropagators":134,"./FallbackCompositionState":135,"./SyntheticCompositionEvent":199,"./SyntheticInputEvent":203,"fbjs/lib/ExecutionEnvironment":70}],119:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -25256,7 +25971,7 @@ var CSSProperty = {
 };
 
 module.exports = CSSProperty;
-},{}],118:[function(require,module,exports){
+},{}],120:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -25465,7 +26180,7 @@ var CSSPropertyOperations = {
 };
 
 module.exports = CSSPropertyOperations;
-},{"./CSSProperty":117,"./ReactInstrumentation":175,"./dangerousStyleValue":214,"fbjs/lib/ExecutionEnvironment":68,"fbjs/lib/camelizeStyleName":70,"fbjs/lib/hyphenateStyleName":81,"fbjs/lib/memoizeStringOnly":85,"fbjs/lib/warning":89}],119:[function(require,module,exports){
+},{"./CSSProperty":119,"./ReactInstrumentation":177,"./dangerousStyleValue":216,"fbjs/lib/ExecutionEnvironment":70,"fbjs/lib/camelizeStyleName":72,"fbjs/lib/hyphenateStyleName":83,"fbjs/lib/memoizeStringOnly":87,"fbjs/lib/warning":91}],121:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -25584,7 +26299,7 @@ var CallbackQueue = function () {
 }();
 
 module.exports = PooledClass.addPoolingTo(CallbackQueue);
-},{"./PooledClass":137,"./reactProdInvariant":233,"fbjs/lib/invariant":82}],120:[function(require,module,exports){
+},{"./PooledClass":139,"./reactProdInvariant":235,"fbjs/lib/invariant":84}],122:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -25905,7 +26620,7 @@ var ChangeEventPlugin = {
 };
 
 module.exports = ChangeEventPlugin;
-},{"./EventPluginHub":129,"./EventPropagators":132,"./ReactDOMComponentTree":146,"./ReactUpdates":190,"./SyntheticEvent":199,"./getEventTarget":222,"./isEventSupported":230,"./isTextInputElement":231,"fbjs/lib/ExecutionEnvironment":68}],121:[function(require,module,exports){
+},{"./EventPluginHub":131,"./EventPropagators":134,"./ReactDOMComponentTree":148,"./ReactUpdates":192,"./SyntheticEvent":201,"./getEventTarget":224,"./isEventSupported":232,"./isTextInputElement":233,"fbjs/lib/ExecutionEnvironment":70}],123:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -26130,7 +26845,7 @@ var DOMChildrenOperations = {
 };
 
 module.exports = DOMChildrenOperations;
-},{"./DOMLazyTree":122,"./Danger":126,"./ReactDOMComponentTree":146,"./ReactInstrumentation":175,"./createMicrosoftUnsafeLocalFunction":213,"./setInnerHTML":235,"./setTextContent":236}],122:[function(require,module,exports){
+},{"./DOMLazyTree":124,"./Danger":128,"./ReactDOMComponentTree":148,"./ReactInstrumentation":177,"./createMicrosoftUnsafeLocalFunction":215,"./setInnerHTML":237,"./setTextContent":238}],124:[function(require,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -26248,7 +26963,7 @@ DOMLazyTree.queueHTML = queueHTML;
 DOMLazyTree.queueText = queueText;
 
 module.exports = DOMLazyTree;
-},{"./DOMNamespaces":123,"./createMicrosoftUnsafeLocalFunction":213,"./setInnerHTML":235,"./setTextContent":236}],123:[function(require,module,exports){
+},{"./DOMNamespaces":125,"./createMicrosoftUnsafeLocalFunction":215,"./setInnerHTML":237,"./setTextContent":238}],125:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -26268,7 +26983,7 @@ var DOMNamespaces = {
 };
 
 module.exports = DOMNamespaces;
-},{}],124:[function(require,module,exports){
+},{}],126:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -26478,7 +27193,7 @@ var DOMProperty = {
 };
 
 module.exports = DOMProperty;
-},{"./reactProdInvariant":233,"fbjs/lib/invariant":82}],125:[function(require,module,exports){
+},{"./reactProdInvariant":235,"fbjs/lib/invariant":84}],127:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -26715,7 +27430,7 @@ var DOMPropertyOperations = {
 };
 
 module.exports = DOMPropertyOperations;
-},{"./DOMProperty":124,"./ReactDOMComponentTree":146,"./ReactInstrumentation":175,"./quoteAttributeValueForBrowser":232,"fbjs/lib/warning":89}],126:[function(require,module,exports){
+},{"./DOMProperty":126,"./ReactDOMComponentTree":148,"./ReactInstrumentation":177,"./quoteAttributeValueForBrowser":234,"fbjs/lib/warning":91}],128:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -26763,7 +27478,7 @@ var Danger = {
 };
 
 module.exports = Danger;
-},{"./DOMLazyTree":122,"./reactProdInvariant":233,"fbjs/lib/ExecutionEnvironment":68,"fbjs/lib/createNodesFromMarkup":73,"fbjs/lib/emptyFunction":74,"fbjs/lib/invariant":82}],127:[function(require,module,exports){
+},{"./DOMLazyTree":124,"./reactProdInvariant":235,"fbjs/lib/ExecutionEnvironment":70,"fbjs/lib/createNodesFromMarkup":75,"fbjs/lib/emptyFunction":76,"fbjs/lib/invariant":84}],129:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -26789,7 +27504,7 @@ module.exports = Danger;
 var DefaultEventPluginOrder = ['ResponderEventPlugin', 'SimpleEventPlugin', 'TapEventPlugin', 'EnterLeaveEventPlugin', 'ChangeEventPlugin', 'SelectEventPlugin', 'BeforeInputEventPlugin'];
 
 module.exports = DefaultEventPluginOrder;
-},{}],128:[function(require,module,exports){
+},{}],130:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -26889,7 +27604,7 @@ var EnterLeaveEventPlugin = {
 };
 
 module.exports = EnterLeaveEventPlugin;
-},{"./EventPropagators":132,"./ReactDOMComponentTree":146,"./SyntheticMouseEvent":203}],129:[function(require,module,exports){
+},{"./EventPropagators":134,"./ReactDOMComponentTree":148,"./SyntheticMouseEvent":205}],131:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -27167,7 +27882,7 @@ var EventPluginHub = {
 };
 
 module.exports = EventPluginHub;
-},{"./EventPluginRegistry":130,"./EventPluginUtils":131,"./ReactErrorUtils":166,"./accumulateInto":210,"./forEachAccumulated":218,"./reactProdInvariant":233,"fbjs/lib/invariant":82}],130:[function(require,module,exports){
+},{"./EventPluginRegistry":132,"./EventPluginUtils":133,"./ReactErrorUtils":168,"./accumulateInto":212,"./forEachAccumulated":220,"./reactProdInvariant":235,"fbjs/lib/invariant":84}],132:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -27422,7 +28137,7 @@ var EventPluginRegistry = {
 };
 
 module.exports = EventPluginRegistry;
-},{"./reactProdInvariant":233,"fbjs/lib/invariant":82}],131:[function(require,module,exports){
+},{"./reactProdInvariant":235,"fbjs/lib/invariant":84}],133:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -27648,7 +28363,7 @@ var EventPluginUtils = {
 };
 
 module.exports = EventPluginUtils;
-},{"./ReactErrorUtils":166,"./reactProdInvariant":233,"fbjs/lib/invariant":82,"fbjs/lib/warning":89}],132:[function(require,module,exports){
+},{"./ReactErrorUtils":168,"./reactProdInvariant":235,"fbjs/lib/invariant":84,"fbjs/lib/warning":91}],134:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -27782,7 +28497,7 @@ var EventPropagators = {
 };
 
 module.exports = EventPropagators;
-},{"./EventPluginHub":129,"./EventPluginUtils":131,"./accumulateInto":210,"./forEachAccumulated":218,"fbjs/lib/warning":89}],133:[function(require,module,exports){
+},{"./EventPluginHub":131,"./EventPluginUtils":133,"./accumulateInto":212,"./forEachAccumulated":220,"fbjs/lib/warning":91}],135:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -27877,7 +28592,7 @@ _assign(FallbackCompositionState.prototype, {
 PooledClass.addPoolingTo(FallbackCompositionState);
 
 module.exports = FallbackCompositionState;
-},{"./PooledClass":137,"./getTextContentAccessor":227,"object-assign":111}],134:[function(require,module,exports){
+},{"./PooledClass":139,"./getTextContentAccessor":229,"object-assign":113}],136:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -28089,7 +28804,7 @@ var HTMLDOMPropertyConfig = {
 };
 
 module.exports = HTMLDOMPropertyConfig;
-},{"./DOMProperty":124}],135:[function(require,module,exports){
+},{"./DOMProperty":126}],137:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -28148,7 +28863,7 @@ var KeyEscapeUtils = {
 };
 
 module.exports = KeyEscapeUtils;
-},{}],136:[function(require,module,exports){
+},{}],138:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -28283,7 +28998,7 @@ var LinkedValueUtils = {
 };
 
 module.exports = LinkedValueUtils;
-},{"./ReactPropTypesSecret":183,"./reactProdInvariant":233,"fbjs/lib/invariant":82,"fbjs/lib/warning":89,"react/lib/React":275}],137:[function(require,module,exports){
+},{"./ReactPropTypesSecret":185,"./reactProdInvariant":235,"fbjs/lib/invariant":84,"fbjs/lib/warning":91,"react/lib/React":277}],139:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -28395,7 +29110,7 @@ var PooledClass = {
 };
 
 module.exports = PooledClass;
-},{"./reactProdInvariant":233,"fbjs/lib/invariant":82}],138:[function(require,module,exports){
+},{"./reactProdInvariant":235,"fbjs/lib/invariant":84}],140:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -28723,7 +29438,7 @@ var ReactBrowserEventEmitter = _assign({}, ReactEventEmitterMixin, {
 });
 
 module.exports = ReactBrowserEventEmitter;
-},{"./EventPluginRegistry":130,"./ReactEventEmitterMixin":167,"./ViewportMetrics":209,"./getVendorPrefixedEventName":228,"./isEventSupported":230,"object-assign":111}],139:[function(require,module,exports){
+},{"./EventPluginRegistry":132,"./ReactEventEmitterMixin":169,"./ViewportMetrics":211,"./getVendorPrefixedEventName":230,"./isEventSupported":232,"object-assign":113}],141:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-present, Facebook, Inc.
@@ -28879,7 +29594,7 @@ var ReactChildReconciler = {
 
 module.exports = ReactChildReconciler;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":135,"./ReactReconciler":185,"./instantiateReactComponent":229,"./shouldUpdateReactComponent":237,"./traverseAllChildren":238,"_process":300,"fbjs/lib/warning":89,"react/lib/ReactComponentTreeHook":279}],140:[function(require,module,exports){
+},{"./KeyEscapeUtils":137,"./ReactReconciler":187,"./instantiateReactComponent":231,"./shouldUpdateReactComponent":239,"./traverseAllChildren":240,"_process":302,"fbjs/lib/warning":91,"react/lib/ReactComponentTreeHook":281}],142:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -28909,7 +29624,7 @@ var ReactComponentBrowserEnvironment = {
 };
 
 module.exports = ReactComponentBrowserEnvironment;
-},{"./DOMChildrenOperations":121,"./ReactDOMIDOperations":150}],141:[function(require,module,exports){
+},{"./DOMChildrenOperations":123,"./ReactDOMIDOperations":152}],143:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -28955,7 +29670,7 @@ var ReactComponentEnvironment = {
 };
 
 module.exports = ReactComponentEnvironment;
-},{"./reactProdInvariant":233,"fbjs/lib/invariant":82}],142:[function(require,module,exports){
+},{"./reactProdInvariant":235,"fbjs/lib/invariant":84}],144:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -29857,7 +30572,7 @@ var ReactCompositeComponent = {
 };
 
 module.exports = ReactCompositeComponent;
-},{"./ReactComponentEnvironment":141,"./ReactErrorUtils":166,"./ReactInstanceMap":174,"./ReactInstrumentation":175,"./ReactNodeTypes":180,"./ReactReconciler":185,"./checkReactTypeSpec":212,"./reactProdInvariant":233,"./shouldUpdateReactComponent":237,"fbjs/lib/emptyObject":75,"fbjs/lib/invariant":82,"fbjs/lib/shallowEqual":88,"fbjs/lib/warning":89,"object-assign":111,"react/lib/React":275,"react/lib/ReactCurrentOwner":280}],143:[function(require,module,exports){
+},{"./ReactComponentEnvironment":143,"./ReactErrorUtils":168,"./ReactInstanceMap":176,"./ReactInstrumentation":177,"./ReactNodeTypes":182,"./ReactReconciler":187,"./checkReactTypeSpec":214,"./reactProdInvariant":235,"./shouldUpdateReactComponent":239,"fbjs/lib/emptyObject":77,"fbjs/lib/invariant":84,"fbjs/lib/shallowEqual":90,"fbjs/lib/warning":91,"object-assign":113,"react/lib/React":277,"react/lib/ReactCurrentOwner":282}],145:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -29968,7 +30683,7 @@ if ("production" !== 'production') {
 }
 
 module.exports = ReactDOM;
-},{"./ReactDOMComponentTree":146,"./ReactDOMInvalidARIAHook":152,"./ReactDOMNullInputValuePropHook":153,"./ReactDOMUnknownPropertyHook":160,"./ReactDefaultInjection":163,"./ReactInstrumentation":175,"./ReactMount":178,"./ReactReconciler":185,"./ReactUpdates":190,"./ReactVersion":191,"./findDOMNode":216,"./getHostComponentFromComposite":223,"./renderSubtreeIntoContainer":234,"fbjs/lib/ExecutionEnvironment":68,"fbjs/lib/warning":89}],144:[function(require,module,exports){
+},{"./ReactDOMComponentTree":148,"./ReactDOMInvalidARIAHook":154,"./ReactDOMNullInputValuePropHook":155,"./ReactDOMUnknownPropertyHook":162,"./ReactDefaultInjection":165,"./ReactInstrumentation":177,"./ReactMount":180,"./ReactReconciler":187,"./ReactUpdates":192,"./ReactVersion":193,"./findDOMNode":218,"./getHostComponentFromComposite":225,"./renderSubtreeIntoContainer":236,"fbjs/lib/ExecutionEnvironment":70,"fbjs/lib/warning":91}],146:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -30969,7 +31684,7 @@ ReactDOMComponent.Mixin = {
 _assign(ReactDOMComponent.prototype, ReactDOMComponent.Mixin, ReactMultiChild.Mixin);
 
 module.exports = ReactDOMComponent;
-},{"./AutoFocusUtils":115,"./CSSPropertyOperations":118,"./DOMLazyTree":122,"./DOMNamespaces":123,"./DOMProperty":124,"./DOMPropertyOperations":125,"./EventPluginHub":129,"./EventPluginRegistry":130,"./ReactBrowserEventEmitter":138,"./ReactDOMComponentFlags":145,"./ReactDOMComponentTree":146,"./ReactDOMInput":151,"./ReactDOMOption":154,"./ReactDOMSelect":155,"./ReactDOMTextarea":158,"./ReactInstrumentation":175,"./ReactMultiChild":179,"./ReactServerRenderingTransaction":187,"./escapeTextContentForBrowser":215,"./isEventSupported":230,"./reactProdInvariant":233,"./validateDOMNesting":239,"fbjs/lib/emptyFunction":74,"fbjs/lib/invariant":82,"fbjs/lib/shallowEqual":88,"fbjs/lib/warning":89,"object-assign":111}],145:[function(require,module,exports){
+},{"./AutoFocusUtils":117,"./CSSPropertyOperations":120,"./DOMLazyTree":124,"./DOMNamespaces":125,"./DOMProperty":126,"./DOMPropertyOperations":127,"./EventPluginHub":131,"./EventPluginRegistry":132,"./ReactBrowserEventEmitter":140,"./ReactDOMComponentFlags":147,"./ReactDOMComponentTree":148,"./ReactDOMInput":153,"./ReactDOMOption":156,"./ReactDOMSelect":157,"./ReactDOMTextarea":160,"./ReactInstrumentation":177,"./ReactMultiChild":181,"./ReactServerRenderingTransaction":189,"./escapeTextContentForBrowser":217,"./isEventSupported":232,"./reactProdInvariant":235,"./validateDOMNesting":241,"fbjs/lib/emptyFunction":76,"fbjs/lib/invariant":84,"fbjs/lib/shallowEqual":90,"fbjs/lib/warning":91,"object-assign":113}],147:[function(require,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -30987,7 +31702,7 @@ var ReactDOMComponentFlags = {
 };
 
 module.exports = ReactDOMComponentFlags;
-},{}],146:[function(require,module,exports){
+},{}],148:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -31182,7 +31897,7 @@ var ReactDOMComponentTree = {
 };
 
 module.exports = ReactDOMComponentTree;
-},{"./DOMProperty":124,"./ReactDOMComponentFlags":145,"./reactProdInvariant":233,"fbjs/lib/invariant":82}],147:[function(require,module,exports){
+},{"./DOMProperty":126,"./ReactDOMComponentFlags":147,"./reactProdInvariant":235,"fbjs/lib/invariant":84}],149:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -31215,7 +31930,7 @@ function ReactDOMContainerInfo(topLevelWrapper, node) {
 }
 
 module.exports = ReactDOMContainerInfo;
-},{"./validateDOMNesting":239}],148:[function(require,module,exports){
+},{"./validateDOMNesting":241}],150:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -31275,7 +31990,7 @@ _assign(ReactDOMEmptyComponent.prototype, {
 });
 
 module.exports = ReactDOMEmptyComponent;
-},{"./DOMLazyTree":122,"./ReactDOMComponentTree":146,"object-assign":111}],149:[function(require,module,exports){
+},{"./DOMLazyTree":124,"./ReactDOMComponentTree":148,"object-assign":113}],151:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -31294,7 +32009,7 @@ var ReactDOMFeatureFlags = {
 };
 
 module.exports = ReactDOMFeatureFlags;
-},{}],150:[function(require,module,exports){
+},{}],152:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -31328,7 +32043,7 @@ var ReactDOMIDOperations = {
 };
 
 module.exports = ReactDOMIDOperations;
-},{"./DOMChildrenOperations":121,"./ReactDOMComponentTree":146}],151:[function(require,module,exports){
+},{"./DOMChildrenOperations":123,"./ReactDOMComponentTree":148}],153:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -31606,7 +32321,7 @@ function _handleChange(event) {
 }
 
 module.exports = ReactDOMInput;
-},{"./DOMPropertyOperations":125,"./LinkedValueUtils":136,"./ReactDOMComponentTree":146,"./ReactUpdates":190,"./reactProdInvariant":233,"fbjs/lib/invariant":82,"fbjs/lib/warning":89,"object-assign":111}],152:[function(require,module,exports){
+},{"./DOMPropertyOperations":127,"./LinkedValueUtils":138,"./ReactDOMComponentTree":148,"./ReactUpdates":192,"./reactProdInvariant":235,"fbjs/lib/invariant":84,"fbjs/lib/warning":91,"object-assign":113}],154:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -31699,7 +32414,7 @@ var ReactDOMInvalidARIAHook = {
 };
 
 module.exports = ReactDOMInvalidARIAHook;
-},{"./DOMProperty":124,"fbjs/lib/warning":89,"react/lib/ReactComponentTreeHook":279}],153:[function(require,module,exports){
+},{"./DOMProperty":126,"fbjs/lib/warning":91,"react/lib/ReactComponentTreeHook":281}],155:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -31742,7 +32457,7 @@ var ReactDOMNullInputValuePropHook = {
 };
 
 module.exports = ReactDOMNullInputValuePropHook;
-},{"fbjs/lib/warning":89,"react/lib/ReactComponentTreeHook":279}],154:[function(require,module,exports){
+},{"fbjs/lib/warning":91,"react/lib/ReactComponentTreeHook":281}],156:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -31865,7 +32580,7 @@ var ReactDOMOption = {
 };
 
 module.exports = ReactDOMOption;
-},{"./ReactDOMComponentTree":146,"./ReactDOMSelect":155,"fbjs/lib/warning":89,"object-assign":111,"react/lib/React":275}],155:[function(require,module,exports){
+},{"./ReactDOMComponentTree":148,"./ReactDOMSelect":157,"fbjs/lib/warning":91,"object-assign":113,"react/lib/React":277}],157:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -32065,7 +32780,7 @@ function _handleChange(event) {
 }
 
 module.exports = ReactDOMSelect;
-},{"./LinkedValueUtils":136,"./ReactDOMComponentTree":146,"./ReactUpdates":190,"fbjs/lib/warning":89,"object-assign":111}],156:[function(require,module,exports){
+},{"./LinkedValueUtils":138,"./ReactDOMComponentTree":148,"./ReactUpdates":192,"fbjs/lib/warning":91,"object-assign":113}],158:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -32277,7 +32992,7 @@ var ReactDOMSelection = {
 };
 
 module.exports = ReactDOMSelection;
-},{"./getNodeForCharacterOffset":226,"./getTextContentAccessor":227,"fbjs/lib/ExecutionEnvironment":68}],157:[function(require,module,exports){
+},{"./getNodeForCharacterOffset":228,"./getTextContentAccessor":229,"fbjs/lib/ExecutionEnvironment":70}],159:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -32441,7 +33156,7 @@ _assign(ReactDOMTextComponent.prototype, {
 });
 
 module.exports = ReactDOMTextComponent;
-},{"./DOMChildrenOperations":121,"./DOMLazyTree":122,"./ReactDOMComponentTree":146,"./escapeTextContentForBrowser":215,"./reactProdInvariant":233,"./validateDOMNesting":239,"fbjs/lib/invariant":82,"object-assign":111}],158:[function(require,module,exports){
+},{"./DOMChildrenOperations":123,"./DOMLazyTree":124,"./ReactDOMComponentTree":148,"./escapeTextContentForBrowser":217,"./reactProdInvariant":235,"./validateDOMNesting":241,"fbjs/lib/invariant":84,"object-assign":113}],160:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -32601,7 +33316,7 @@ function _handleChange(event) {
 }
 
 module.exports = ReactDOMTextarea;
-},{"./LinkedValueUtils":136,"./ReactDOMComponentTree":146,"./ReactUpdates":190,"./reactProdInvariant":233,"fbjs/lib/invariant":82,"fbjs/lib/warning":89,"object-assign":111}],159:[function(require,module,exports){
+},{"./LinkedValueUtils":138,"./ReactDOMComponentTree":148,"./ReactUpdates":192,"./reactProdInvariant":235,"fbjs/lib/invariant":84,"fbjs/lib/warning":91,"object-assign":113}],161:[function(require,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -32737,7 +33452,7 @@ module.exports = {
   traverseTwoPhase: traverseTwoPhase,
   traverseEnterLeave: traverseEnterLeave
 };
-},{"./reactProdInvariant":233,"fbjs/lib/invariant":82}],160:[function(require,module,exports){
+},{"./reactProdInvariant":235,"fbjs/lib/invariant":84}],162:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -32849,7 +33564,7 @@ var ReactDOMUnknownPropertyHook = {
 };
 
 module.exports = ReactDOMUnknownPropertyHook;
-},{"./DOMProperty":124,"./EventPluginRegistry":130,"fbjs/lib/warning":89,"react/lib/ReactComponentTreeHook":279}],161:[function(require,module,exports){
+},{"./DOMProperty":126,"./EventPluginRegistry":132,"fbjs/lib/warning":91,"react/lib/ReactComponentTreeHook":281}],163:[function(require,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -33210,7 +33925,7 @@ if (/[?&]react_perf\b/.test(url)) {
 }
 
 module.exports = ReactDebugTool;
-},{"./ReactHostOperationHistoryHook":171,"./ReactInvalidSetStateWarningHook":176,"fbjs/lib/ExecutionEnvironment":68,"fbjs/lib/performanceNow":87,"fbjs/lib/warning":89,"react/lib/ReactComponentTreeHook":279}],162:[function(require,module,exports){
+},{"./ReactHostOperationHistoryHook":173,"./ReactInvalidSetStateWarningHook":178,"fbjs/lib/ExecutionEnvironment":70,"fbjs/lib/performanceNow":89,"fbjs/lib/warning":91,"react/lib/ReactComponentTreeHook":281}],164:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33278,7 +33993,7 @@ var ReactDefaultBatchingStrategy = {
 };
 
 module.exports = ReactDefaultBatchingStrategy;
-},{"./ReactUpdates":190,"./Transaction":208,"fbjs/lib/emptyFunction":74,"object-assign":111}],163:[function(require,module,exports){
+},{"./ReactUpdates":192,"./Transaction":210,"fbjs/lib/emptyFunction":76,"object-assign":113}],165:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33364,7 +34079,7 @@ function inject() {
 module.exports = {
   inject: inject
 };
-},{"./ARIADOMPropertyConfig":114,"./BeforeInputEventPlugin":116,"./ChangeEventPlugin":120,"./DefaultEventPluginOrder":127,"./EnterLeaveEventPlugin":128,"./HTMLDOMPropertyConfig":134,"./ReactComponentBrowserEnvironment":140,"./ReactDOMComponent":144,"./ReactDOMComponentTree":146,"./ReactDOMEmptyComponent":148,"./ReactDOMTextComponent":157,"./ReactDOMTreeTraversal":159,"./ReactDefaultBatchingStrategy":162,"./ReactEventListener":168,"./ReactInjection":172,"./ReactReconcileTransaction":184,"./SVGDOMPropertyConfig":192,"./SelectEventPlugin":193,"./SimpleEventPlugin":194}],164:[function(require,module,exports){
+},{"./ARIADOMPropertyConfig":116,"./BeforeInputEventPlugin":118,"./ChangeEventPlugin":122,"./DefaultEventPluginOrder":129,"./EnterLeaveEventPlugin":130,"./HTMLDOMPropertyConfig":136,"./ReactComponentBrowserEnvironment":142,"./ReactDOMComponent":146,"./ReactDOMComponentTree":148,"./ReactDOMEmptyComponent":150,"./ReactDOMTextComponent":159,"./ReactDOMTreeTraversal":161,"./ReactDefaultBatchingStrategy":164,"./ReactEventListener":170,"./ReactInjection":174,"./ReactReconcileTransaction":186,"./SVGDOMPropertyConfig":194,"./SelectEventPlugin":195,"./SimpleEventPlugin":196}],166:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -33384,7 +34099,7 @@ module.exports = {
 var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol['for'] && Symbol['for']('react.element') || 0xeac7;
 
 module.exports = REACT_ELEMENT_TYPE;
-},{}],165:[function(require,module,exports){
+},{}],167:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -33414,7 +34129,7 @@ var ReactEmptyComponent = {
 ReactEmptyComponent.injection = ReactEmptyComponentInjection;
 
 module.exports = ReactEmptyComponent;
-},{}],166:[function(require,module,exports){
+},{}],168:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33491,7 +34206,7 @@ if ("production" !== 'production') {
 }
 
 module.exports = ReactErrorUtils;
-},{}],167:[function(require,module,exports){
+},{}],169:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33524,7 +34239,7 @@ var ReactEventEmitterMixin = {
 };
 
 module.exports = ReactEventEmitterMixin;
-},{"./EventPluginHub":129}],168:[function(require,module,exports){
+},{"./EventPluginHub":131}],170:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33679,7 +34394,7 @@ var ReactEventListener = {
 };
 
 module.exports = ReactEventListener;
-},{"./PooledClass":137,"./ReactDOMComponentTree":146,"./ReactUpdates":190,"./getEventTarget":222,"fbjs/lib/EventListener":67,"fbjs/lib/ExecutionEnvironment":68,"fbjs/lib/getUnboundedScrollPosition":79,"object-assign":111}],169:[function(require,module,exports){
+},{"./PooledClass":139,"./ReactDOMComponentTree":148,"./ReactUpdates":192,"./getEventTarget":224,"fbjs/lib/EventListener":69,"fbjs/lib/ExecutionEnvironment":70,"fbjs/lib/getUnboundedScrollPosition":81,"object-assign":113}],171:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33701,7 +34416,7 @@ var ReactFeatureFlags = {
 };
 
 module.exports = ReactFeatureFlags;
-},{}],170:[function(require,module,exports){
+},{}],172:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -33769,7 +34484,7 @@ var ReactHostComponent = {
 };
 
 module.exports = ReactHostComponent;
-},{"./reactProdInvariant":233,"fbjs/lib/invariant":82}],171:[function(require,module,exports){
+},{"./reactProdInvariant":235,"fbjs/lib/invariant":84}],173:[function(require,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -33803,7 +34518,7 @@ var ReactHostOperationHistoryHook = {
 };
 
 module.exports = ReactHostOperationHistoryHook;
-},{}],172:[function(require,module,exports){
+},{}],174:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33837,7 +34552,7 @@ var ReactInjection = {
 };
 
 module.exports = ReactInjection;
-},{"./DOMProperty":124,"./EventPluginHub":129,"./EventPluginUtils":131,"./ReactBrowserEventEmitter":138,"./ReactComponentEnvironment":141,"./ReactEmptyComponent":165,"./ReactHostComponent":170,"./ReactUpdates":190}],173:[function(require,module,exports){
+},{"./DOMProperty":126,"./EventPluginHub":131,"./EventPluginUtils":133,"./ReactBrowserEventEmitter":140,"./ReactComponentEnvironment":143,"./ReactEmptyComponent":167,"./ReactHostComponent":172,"./ReactUpdates":192}],175:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -33961,7 +34676,7 @@ var ReactInputSelection = {
 };
 
 module.exports = ReactInputSelection;
-},{"./ReactDOMSelection":156,"fbjs/lib/containsNode":71,"fbjs/lib/focusNode":76,"fbjs/lib/getActiveElement":77}],174:[function(require,module,exports){
+},{"./ReactDOMSelection":158,"fbjs/lib/containsNode":73,"fbjs/lib/focusNode":78,"fbjs/lib/getActiveElement":79}],176:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -34009,7 +34724,7 @@ var ReactInstanceMap = {
 };
 
 module.exports = ReactInstanceMap;
-},{}],175:[function(require,module,exports){
+},{}],177:[function(require,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -34033,7 +34748,7 @@ if ("production" !== 'production') {
 }
 
 module.exports = { debugTool: debugTool };
-},{"./ReactDebugTool":161}],176:[function(require,module,exports){
+},{"./ReactDebugTool":163}],178:[function(require,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -34070,7 +34785,7 @@ var ReactInvalidSetStateWarningHook = {
 };
 
 module.exports = ReactInvalidSetStateWarningHook;
-},{"fbjs/lib/warning":89}],177:[function(require,module,exports){
+},{"fbjs/lib/warning":91}],179:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -34120,7 +34835,7 @@ var ReactMarkupChecksum = {
 };
 
 module.exports = ReactMarkupChecksum;
-},{"./adler32":211}],178:[function(require,module,exports){
+},{"./adler32":213}],180:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -34658,7 +35373,7 @@ var ReactMount = {
 };
 
 module.exports = ReactMount;
-},{"./DOMLazyTree":122,"./DOMProperty":124,"./ReactBrowserEventEmitter":138,"./ReactDOMComponentTree":146,"./ReactDOMContainerInfo":147,"./ReactDOMFeatureFlags":149,"./ReactFeatureFlags":169,"./ReactInstanceMap":174,"./ReactInstrumentation":175,"./ReactMarkupChecksum":177,"./ReactReconciler":185,"./ReactUpdateQueue":189,"./ReactUpdates":190,"./instantiateReactComponent":229,"./reactProdInvariant":233,"./setInnerHTML":235,"./shouldUpdateReactComponent":237,"fbjs/lib/emptyObject":75,"fbjs/lib/invariant":82,"fbjs/lib/warning":89,"react/lib/React":275,"react/lib/ReactCurrentOwner":280}],179:[function(require,module,exports){
+},{"./DOMLazyTree":124,"./DOMProperty":126,"./ReactBrowserEventEmitter":140,"./ReactDOMComponentTree":148,"./ReactDOMContainerInfo":149,"./ReactDOMFeatureFlags":151,"./ReactFeatureFlags":171,"./ReactInstanceMap":176,"./ReactInstrumentation":177,"./ReactMarkupChecksum":179,"./ReactReconciler":187,"./ReactUpdateQueue":191,"./ReactUpdates":192,"./instantiateReactComponent":231,"./reactProdInvariant":235,"./setInnerHTML":237,"./shouldUpdateReactComponent":239,"fbjs/lib/emptyObject":77,"fbjs/lib/invariant":84,"fbjs/lib/warning":91,"react/lib/React":277,"react/lib/ReactCurrentOwner":282}],181:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -35108,7 +35823,7 @@ var ReactMultiChild = {
 };
 
 module.exports = ReactMultiChild;
-},{"./ReactChildReconciler":139,"./ReactComponentEnvironment":141,"./ReactInstanceMap":174,"./ReactInstrumentation":175,"./ReactReconciler":185,"./flattenChildren":217,"./reactProdInvariant":233,"fbjs/lib/emptyFunction":74,"fbjs/lib/invariant":82,"react/lib/ReactCurrentOwner":280}],180:[function(require,module,exports){
+},{"./ReactChildReconciler":141,"./ReactComponentEnvironment":143,"./ReactInstanceMap":176,"./ReactInstrumentation":177,"./ReactReconciler":187,"./flattenChildren":219,"./reactProdInvariant":235,"fbjs/lib/emptyFunction":76,"fbjs/lib/invariant":84,"react/lib/ReactCurrentOwner":282}],182:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -35148,7 +35863,7 @@ var ReactNodeTypes = {
 };
 
 module.exports = ReactNodeTypes;
-},{"./reactProdInvariant":233,"fbjs/lib/invariant":82,"react/lib/React":275}],181:[function(require,module,exports){
+},{"./reactProdInvariant":235,"fbjs/lib/invariant":84,"react/lib/React":277}],183:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -35242,7 +35957,7 @@ var ReactOwner = {
 };
 
 module.exports = ReactOwner;
-},{"./reactProdInvariant":233,"fbjs/lib/invariant":82}],182:[function(require,module,exports){
+},{"./reactProdInvariant":235,"fbjs/lib/invariant":84}],184:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -35267,7 +35982,7 @@ if ("production" !== 'production') {
 }
 
 module.exports = ReactPropTypeLocationNames;
-},{}],183:[function(require,module,exports){
+},{}],185:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -35284,7 +35999,7 @@ module.exports = ReactPropTypeLocationNames;
 var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
-},{}],184:[function(require,module,exports){
+},{}],186:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -35462,7 +36177,7 @@ _assign(ReactReconcileTransaction.prototype, Transaction, Mixin);
 PooledClass.addPoolingTo(ReactReconcileTransaction);
 
 module.exports = ReactReconcileTransaction;
-},{"./CallbackQueue":119,"./PooledClass":137,"./ReactBrowserEventEmitter":138,"./ReactInputSelection":173,"./ReactInstrumentation":175,"./ReactUpdateQueue":189,"./Transaction":208,"object-assign":111}],185:[function(require,module,exports){
+},{"./CallbackQueue":121,"./PooledClass":139,"./ReactBrowserEventEmitter":140,"./ReactInputSelection":175,"./ReactInstrumentation":177,"./ReactUpdateQueue":191,"./Transaction":210,"object-assign":113}],187:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -35630,7 +36345,7 @@ var ReactReconciler = {
 };
 
 module.exports = ReactReconciler;
-},{"./ReactInstrumentation":175,"./ReactRef":186,"fbjs/lib/warning":89}],186:[function(require,module,exports){
+},{"./ReactInstrumentation":177,"./ReactRef":188,"fbjs/lib/warning":91}],188:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -35719,7 +36434,7 @@ ReactRef.detachRefs = function (instance, element) {
 };
 
 module.exports = ReactRef;
-},{"./ReactOwner":181}],187:[function(require,module,exports){
+},{"./ReactOwner":183}],189:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -35809,7 +36524,7 @@ _assign(ReactServerRenderingTransaction.prototype, Transaction, Mixin);
 PooledClass.addPoolingTo(ReactServerRenderingTransaction);
 
 module.exports = ReactServerRenderingTransaction;
-},{"./PooledClass":137,"./ReactInstrumentation":175,"./ReactServerUpdateQueue":188,"./Transaction":208,"object-assign":111}],188:[function(require,module,exports){
+},{"./PooledClass":139,"./ReactInstrumentation":177,"./ReactServerUpdateQueue":190,"./Transaction":210,"object-assign":113}],190:[function(require,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -35948,7 +36663,7 @@ var ReactServerUpdateQueue = function () {
 }();
 
 module.exports = ReactServerUpdateQueue;
-},{"./ReactUpdateQueue":189,"fbjs/lib/warning":89}],189:[function(require,module,exports){
+},{"./ReactUpdateQueue":191,"fbjs/lib/warning":91}],191:[function(require,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -36174,7 +36889,7 @@ var ReactUpdateQueue = {
 };
 
 module.exports = ReactUpdateQueue;
-},{"./ReactInstanceMap":174,"./ReactInstrumentation":175,"./ReactUpdates":190,"./reactProdInvariant":233,"fbjs/lib/invariant":82,"fbjs/lib/warning":89,"react/lib/ReactCurrentOwner":280}],190:[function(require,module,exports){
+},{"./ReactInstanceMap":176,"./ReactInstrumentation":177,"./ReactUpdates":192,"./reactProdInvariant":235,"fbjs/lib/invariant":84,"fbjs/lib/warning":91,"react/lib/ReactCurrentOwner":282}],192:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -36425,7 +37140,7 @@ var ReactUpdates = {
 };
 
 module.exports = ReactUpdates;
-},{"./CallbackQueue":119,"./PooledClass":137,"./ReactFeatureFlags":169,"./ReactReconciler":185,"./Transaction":208,"./reactProdInvariant":233,"fbjs/lib/invariant":82,"object-assign":111}],191:[function(require,module,exports){
+},{"./CallbackQueue":121,"./PooledClass":139,"./ReactFeatureFlags":171,"./ReactReconciler":187,"./Transaction":210,"./reactProdInvariant":235,"fbjs/lib/invariant":84,"object-assign":113}],193:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -36439,7 +37154,7 @@ module.exports = ReactUpdates;
 'use strict';
 
 module.exports = '15.4.2';
-},{}],192:[function(require,module,exports){
+},{}],194:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -36741,7 +37456,7 @@ Object.keys(ATTRS).forEach(function (key) {
 });
 
 module.exports = SVGDOMPropertyConfig;
-},{}],193:[function(require,module,exports){
+},{}],195:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -36932,7 +37647,7 @@ var SelectEventPlugin = {
 };
 
 module.exports = SelectEventPlugin;
-},{"./EventPropagators":132,"./ReactDOMComponentTree":146,"./ReactInputSelection":173,"./SyntheticEvent":199,"./isTextInputElement":231,"fbjs/lib/ExecutionEnvironment":68,"fbjs/lib/getActiveElement":77,"fbjs/lib/shallowEqual":88}],194:[function(require,module,exports){
+},{"./EventPropagators":134,"./ReactDOMComponentTree":148,"./ReactInputSelection":175,"./SyntheticEvent":201,"./isTextInputElement":233,"fbjs/lib/ExecutionEnvironment":70,"fbjs/lib/getActiveElement":79,"fbjs/lib/shallowEqual":90}],196:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -37160,7 +37875,7 @@ var SimpleEventPlugin = {
 };
 
 module.exports = SimpleEventPlugin;
-},{"./EventPropagators":132,"./ReactDOMComponentTree":146,"./SyntheticAnimationEvent":195,"./SyntheticClipboardEvent":196,"./SyntheticDragEvent":198,"./SyntheticEvent":199,"./SyntheticFocusEvent":200,"./SyntheticKeyboardEvent":202,"./SyntheticMouseEvent":203,"./SyntheticTouchEvent":204,"./SyntheticTransitionEvent":205,"./SyntheticUIEvent":206,"./SyntheticWheelEvent":207,"./getEventCharCode":219,"./reactProdInvariant":233,"fbjs/lib/EventListener":67,"fbjs/lib/emptyFunction":74,"fbjs/lib/invariant":82}],195:[function(require,module,exports){
+},{"./EventPropagators":134,"./ReactDOMComponentTree":148,"./SyntheticAnimationEvent":197,"./SyntheticClipboardEvent":198,"./SyntheticDragEvent":200,"./SyntheticEvent":201,"./SyntheticFocusEvent":202,"./SyntheticKeyboardEvent":204,"./SyntheticMouseEvent":205,"./SyntheticTouchEvent":206,"./SyntheticTransitionEvent":207,"./SyntheticUIEvent":208,"./SyntheticWheelEvent":209,"./getEventCharCode":221,"./reactProdInvariant":235,"fbjs/lib/EventListener":69,"fbjs/lib/emptyFunction":76,"fbjs/lib/invariant":84}],197:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -37199,7 +37914,7 @@ function SyntheticAnimationEvent(dispatchConfig, dispatchMarker, nativeEvent, na
 SyntheticEvent.augmentClass(SyntheticAnimationEvent, AnimationEventInterface);
 
 module.exports = SyntheticAnimationEvent;
-},{"./SyntheticEvent":199}],196:[function(require,module,exports){
+},{"./SyntheticEvent":201}],198:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -37237,7 +37952,7 @@ function SyntheticClipboardEvent(dispatchConfig, dispatchMarker, nativeEvent, na
 SyntheticEvent.augmentClass(SyntheticClipboardEvent, ClipboardEventInterface);
 
 module.exports = SyntheticClipboardEvent;
-},{"./SyntheticEvent":199}],197:[function(require,module,exports){
+},{"./SyntheticEvent":201}],199:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -37273,7 +37988,7 @@ function SyntheticCompositionEvent(dispatchConfig, dispatchMarker, nativeEvent, 
 SyntheticEvent.augmentClass(SyntheticCompositionEvent, CompositionEventInterface);
 
 module.exports = SyntheticCompositionEvent;
-},{"./SyntheticEvent":199}],198:[function(require,module,exports){
+},{"./SyntheticEvent":201}],200:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -37309,7 +38024,7 @@ function SyntheticDragEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeE
 SyntheticMouseEvent.augmentClass(SyntheticDragEvent, DragEventInterface);
 
 module.exports = SyntheticDragEvent;
-},{"./SyntheticMouseEvent":203}],199:[function(require,module,exports){
+},{"./SyntheticMouseEvent":205}],201:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -37577,7 +38292,7 @@ function getPooledWarningPropertyDefinition(propName, getVal) {
     "production" !== 'production' ? warning(warningCondition, 'This synthetic event is reused for performance reasons. If you\'re seeing this, ' + 'you\'re %s `%s` on a released/nullified synthetic event. %s. ' + 'If you must keep the original synthetic event around, use event.persist(). ' + 'See https://fb.me/react-event-pooling for more information.', action, propName, result) : void 0;
   }
 }
-},{"./PooledClass":137,"fbjs/lib/emptyFunction":74,"fbjs/lib/warning":89,"object-assign":111}],200:[function(require,module,exports){
+},{"./PooledClass":139,"fbjs/lib/emptyFunction":76,"fbjs/lib/warning":91,"object-assign":113}],202:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -37613,7 +38328,7 @@ function SyntheticFocusEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticFocusEvent, FocusEventInterface);
 
 module.exports = SyntheticFocusEvent;
-},{"./SyntheticUIEvent":206}],201:[function(require,module,exports){
+},{"./SyntheticUIEvent":208}],203:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -37650,7 +38365,7 @@ function SyntheticInputEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticEvent.augmentClass(SyntheticInputEvent, InputEventInterface);
 
 module.exports = SyntheticInputEvent;
-},{"./SyntheticEvent":199}],202:[function(require,module,exports){
+},{"./SyntheticEvent":201}],204:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -37734,7 +38449,7 @@ function SyntheticKeyboardEvent(dispatchConfig, dispatchMarker, nativeEvent, nat
 SyntheticUIEvent.augmentClass(SyntheticKeyboardEvent, KeyboardEventInterface);
 
 module.exports = SyntheticKeyboardEvent;
-},{"./SyntheticUIEvent":206,"./getEventCharCode":219,"./getEventKey":220,"./getEventModifierState":221}],203:[function(require,module,exports){
+},{"./SyntheticUIEvent":208,"./getEventCharCode":221,"./getEventKey":222,"./getEventModifierState":223}],205:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -37806,7 +38521,7 @@ function SyntheticMouseEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticMouseEvent, MouseEventInterface);
 
 module.exports = SyntheticMouseEvent;
-},{"./SyntheticUIEvent":206,"./ViewportMetrics":209,"./getEventModifierState":221}],204:[function(require,module,exports){
+},{"./SyntheticUIEvent":208,"./ViewportMetrics":211,"./getEventModifierState":223}],206:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -37851,7 +38566,7 @@ function SyntheticTouchEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticUIEvent.augmentClass(SyntheticTouchEvent, TouchEventInterface);
 
 module.exports = SyntheticTouchEvent;
-},{"./SyntheticUIEvent":206,"./getEventModifierState":221}],205:[function(require,module,exports){
+},{"./SyntheticUIEvent":208,"./getEventModifierState":223}],207:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -37890,7 +38605,7 @@ function SyntheticTransitionEvent(dispatchConfig, dispatchMarker, nativeEvent, n
 SyntheticEvent.augmentClass(SyntheticTransitionEvent, TransitionEventInterface);
 
 module.exports = SyntheticTransitionEvent;
-},{"./SyntheticEvent":199}],206:[function(require,module,exports){
+},{"./SyntheticEvent":201}],208:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -37949,7 +38664,7 @@ function SyntheticUIEvent(dispatchConfig, dispatchMarker, nativeEvent, nativeEve
 SyntheticEvent.augmentClass(SyntheticUIEvent, UIEventInterface);
 
 module.exports = SyntheticUIEvent;
-},{"./SyntheticEvent":199,"./getEventTarget":222}],207:[function(require,module,exports){
+},{"./SyntheticEvent":201,"./getEventTarget":224}],209:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -38003,7 +38718,7 @@ function SyntheticWheelEvent(dispatchConfig, dispatchMarker, nativeEvent, native
 SyntheticMouseEvent.augmentClass(SyntheticWheelEvent, WheelEventInterface);
 
 module.exports = SyntheticWheelEvent;
-},{"./SyntheticMouseEvent":203}],208:[function(require,module,exports){
+},{"./SyntheticMouseEvent":205}],210:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -38228,7 +38943,7 @@ var TransactionImpl = {
 };
 
 module.exports = TransactionImpl;
-},{"./reactProdInvariant":233,"fbjs/lib/invariant":82}],209:[function(require,module,exports){
+},{"./reactProdInvariant":235,"fbjs/lib/invariant":84}],211:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -38255,7 +38970,7 @@ var ViewportMetrics = {
 };
 
 module.exports = ViewportMetrics;
-},{}],210:[function(require,module,exports){
+},{}],212:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -38313,7 +39028,7 @@ function accumulateInto(current, next) {
 }
 
 module.exports = accumulateInto;
-},{"./reactProdInvariant":233,"fbjs/lib/invariant":82}],211:[function(require,module,exports){
+},{"./reactProdInvariant":235,"fbjs/lib/invariant":84}],213:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -38357,7 +39072,7 @@ function adler32(data) {
 }
 
 module.exports = adler32;
-},{}],212:[function(require,module,exports){
+},{}],214:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -38446,7 +39161,7 @@ function checkReactTypeSpec(typeSpecs, values, location, componentName, element,
 
 module.exports = checkReactTypeSpec;
 }).call(this,require('_process'))
-},{"./ReactPropTypeLocationNames":182,"./ReactPropTypesSecret":183,"./reactProdInvariant":233,"_process":300,"fbjs/lib/invariant":82,"fbjs/lib/warning":89,"react/lib/ReactComponentTreeHook":279}],213:[function(require,module,exports){
+},{"./ReactPropTypeLocationNames":184,"./ReactPropTypesSecret":185,"./reactProdInvariant":235,"_process":302,"fbjs/lib/invariant":84,"fbjs/lib/warning":91,"react/lib/ReactComponentTreeHook":281}],215:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -38478,7 +39193,7 @@ var createMicrosoftUnsafeLocalFunction = function (func) {
 };
 
 module.exports = createMicrosoftUnsafeLocalFunction;
-},{}],214:[function(require,module,exports){
+},{}],216:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -38557,7 +39272,7 @@ function dangerousStyleValue(name, value, component) {
 }
 
 module.exports = dangerousStyleValue;
-},{"./CSSProperty":117,"fbjs/lib/warning":89}],215:[function(require,module,exports){
+},{"./CSSProperty":119,"fbjs/lib/warning":91}],217:[function(require,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -38680,7 +39395,7 @@ function escapeTextContentForBrowser(text) {
 }
 
 module.exports = escapeTextContentForBrowser;
-},{}],216:[function(require,module,exports){
+},{}],218:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -38740,7 +39455,7 @@ function findDOMNode(componentOrElement) {
 }
 
 module.exports = findDOMNode;
-},{"./ReactDOMComponentTree":146,"./ReactInstanceMap":174,"./getHostComponentFromComposite":223,"./reactProdInvariant":233,"fbjs/lib/invariant":82,"fbjs/lib/warning":89,"react/lib/ReactCurrentOwner":280}],217:[function(require,module,exports){
+},{"./ReactDOMComponentTree":148,"./ReactInstanceMap":176,"./getHostComponentFromComposite":225,"./reactProdInvariant":235,"fbjs/lib/invariant":84,"fbjs/lib/warning":91,"react/lib/ReactCurrentOwner":282}],219:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -38818,7 +39533,7 @@ function flattenChildren(children, selfDebugID) {
 
 module.exports = flattenChildren;
 }).call(this,require('_process'))
-},{"./KeyEscapeUtils":135,"./traverseAllChildren":238,"_process":300,"fbjs/lib/warning":89,"react/lib/ReactComponentTreeHook":279}],218:[function(require,module,exports){
+},{"./KeyEscapeUtils":137,"./traverseAllChildren":240,"_process":302,"fbjs/lib/warning":91,"react/lib/ReactComponentTreeHook":281}],220:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -38849,7 +39564,7 @@ function forEachAccumulated(arr, cb, scope) {
 }
 
 module.exports = forEachAccumulated;
-},{}],219:[function(require,module,exports){
+},{}],221:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -38899,7 +39614,7 @@ function getEventCharCode(nativeEvent) {
 }
 
 module.exports = getEventCharCode;
-},{}],220:[function(require,module,exports){
+},{}],222:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -39001,7 +39716,7 @@ function getEventKey(nativeEvent) {
 }
 
 module.exports = getEventKey;
-},{"./getEventCharCode":219}],221:[function(require,module,exports){
+},{"./getEventCharCode":221}],223:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -39044,7 +39759,7 @@ function getEventModifierState(nativeEvent) {
 }
 
 module.exports = getEventModifierState;
-},{}],222:[function(require,module,exports){
+},{}],224:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -39079,7 +39794,7 @@ function getEventTarget(nativeEvent) {
 }
 
 module.exports = getEventTarget;
-},{}],223:[function(require,module,exports){
+},{}],225:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -39109,7 +39824,7 @@ function getHostComponentFromComposite(inst) {
 }
 
 module.exports = getHostComponentFromComposite;
-},{"./ReactNodeTypes":180}],224:[function(require,module,exports){
+},{"./ReactNodeTypes":182}],226:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -39150,7 +39865,7 @@ function getIteratorFn(maybeIterable) {
 }
 
 module.exports = getIteratorFn;
-},{}],225:[function(require,module,exports){
+},{}],227:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -39171,7 +39886,7 @@ function getNextDebugID() {
 }
 
 module.exports = getNextDebugID;
-},{}],226:[function(require,module,exports){
+},{}],228:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -39245,7 +39960,7 @@ function getNodeForCharacterOffset(root, offset) {
 }
 
 module.exports = getNodeForCharacterOffset;
-},{}],227:[function(require,module,exports){
+},{}],229:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -39278,7 +39993,7 @@ function getTextContentAccessor() {
 }
 
 module.exports = getTextContentAccessor;
-},{"fbjs/lib/ExecutionEnvironment":68}],228:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":70}],230:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -39379,7 +40094,7 @@ function getVendorPrefixedEventName(eventName) {
 }
 
 module.exports = getVendorPrefixedEventName;
-},{"fbjs/lib/ExecutionEnvironment":68}],229:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":70}],231:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -39507,7 +40222,7 @@ function instantiateReactComponent(node, shouldHaveDebugID) {
 }
 
 module.exports = instantiateReactComponent;
-},{"./ReactCompositeComponent":142,"./ReactEmptyComponent":165,"./ReactHostComponent":170,"./getNextDebugID":225,"./reactProdInvariant":233,"fbjs/lib/invariant":82,"fbjs/lib/warning":89,"object-assign":111}],230:[function(require,module,exports){
+},{"./ReactCompositeComponent":144,"./ReactEmptyComponent":167,"./ReactHostComponent":172,"./getNextDebugID":227,"./reactProdInvariant":235,"fbjs/lib/invariant":84,"fbjs/lib/warning":91,"object-assign":113}],232:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -39567,7 +40282,7 @@ function isEventSupported(eventNameSuffix, capture) {
 }
 
 module.exports = isEventSupported;
-},{"fbjs/lib/ExecutionEnvironment":68}],231:[function(require,module,exports){
+},{"fbjs/lib/ExecutionEnvironment":70}],233:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -39618,7 +40333,7 @@ function isTextInputElement(elem) {
 }
 
 module.exports = isTextInputElement;
-},{}],232:[function(require,module,exports){
+},{}],234:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -39644,7 +40359,7 @@ function quoteAttributeValueForBrowser(value) {
 }
 
 module.exports = quoteAttributeValueForBrowser;
-},{"./escapeTextContentForBrowser":215}],233:[function(require,module,exports){
+},{"./escapeTextContentForBrowser":217}],235:[function(require,module,exports){
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -39683,7 +40398,7 @@ function reactProdInvariant(code) {
 }
 
 module.exports = reactProdInvariant;
-},{}],234:[function(require,module,exports){
+},{}],236:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -39699,7 +40414,7 @@ module.exports = reactProdInvariant;
 var ReactMount = require('./ReactMount');
 
 module.exports = ReactMount.renderSubtreeIntoContainer;
-},{"./ReactMount":178}],235:[function(require,module,exports){
+},{"./ReactMount":180}],237:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -39797,7 +40512,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = setInnerHTML;
-},{"./DOMNamespaces":123,"./createMicrosoftUnsafeLocalFunction":213,"fbjs/lib/ExecutionEnvironment":68}],236:[function(require,module,exports){
+},{"./DOMNamespaces":125,"./createMicrosoftUnsafeLocalFunction":215,"fbjs/lib/ExecutionEnvironment":70}],238:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -39849,7 +40564,7 @@ if (ExecutionEnvironment.canUseDOM) {
 }
 
 module.exports = setTextContent;
-},{"./escapeTextContentForBrowser":215,"./setInnerHTML":235,"fbjs/lib/ExecutionEnvironment":68}],237:[function(require,module,exports){
+},{"./escapeTextContentForBrowser":217,"./setInnerHTML":237,"fbjs/lib/ExecutionEnvironment":70}],239:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -39891,7 +40606,7 @@ function shouldUpdateReactComponent(prevElement, nextElement) {
 }
 
 module.exports = shouldUpdateReactComponent;
-},{}],238:[function(require,module,exports){
+},{}],240:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -40067,7 +40782,7 @@ function traverseAllChildren(children, callback, traverseContext) {
 }
 
 module.exports = traverseAllChildren;
-},{"./KeyEscapeUtils":135,"./ReactElementSymbol":164,"./getIteratorFn":224,"./reactProdInvariant":233,"fbjs/lib/invariant":82,"fbjs/lib/warning":89,"react/lib/ReactCurrentOwner":280}],239:[function(require,module,exports){
+},{"./KeyEscapeUtils":137,"./ReactElementSymbol":166,"./getIteratorFn":226,"./reactProdInvariant":235,"fbjs/lib/invariant":84,"fbjs/lib/warning":91,"react/lib/ReactCurrentOwner":282}],241:[function(require,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -40449,7 +41164,7 @@ if ("production" !== 'production') {
 }
 
 module.exports = validateDOMNesting;
-},{"fbjs/lib/emptyFunction":74,"fbjs/lib/warning":89,"object-assign":111}],240:[function(require,module,exports){
+},{"fbjs/lib/emptyFunction":76,"fbjs/lib/warning":91,"object-assign":113}],242:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -40538,7 +41253,7 @@ function mapAsync(array, work, callback) {
     });
   });
 }
-},{}],241:[function(require,module,exports){
+},{}],243:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -40660,7 +41375,7 @@ function ContextSubscriber(name) {
     }
   }, _ref4;
 }
-},{"react":297}],242:[function(require,module,exports){
+},{"react":299}],244:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -40689,7 +41404,7 @@ var IndexLink = _react2.default.createClass({
 
 exports.default = IndexLink;
 module.exports = exports['default'];
-},{"./Link":246,"react":297}],243:[function(require,module,exports){
+},{"./Link":248,"react":299}],245:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -40754,7 +41469,7 @@ var IndexRedirect = _react2.default.createClass({
 
 exports.default = IndexRedirect;
 module.exports = exports['default'];
-},{"./InternalPropTypes":245,"./Redirect":250,"./routerWarning":270,"invariant":108,"react":297}],244:[function(require,module,exports){
+},{"./InternalPropTypes":247,"./Redirect":252,"./routerWarning":272,"invariant":110,"react":299}],246:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -40816,7 +41531,7 @@ var IndexRoute = _react2.default.createClass({
 
 exports.default = IndexRoute;
 module.exports = exports['default'];
-},{"./InternalPropTypes":245,"./RouteUtils":252,"./routerWarning":270,"invariant":108,"react":297}],245:[function(require,module,exports){
+},{"./InternalPropTypes":247,"./RouteUtils":254,"./routerWarning":272,"invariant":110,"react":299}],247:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -40849,7 +41564,7 @@ var component = exports.component = oneOfType([func, string]);
 var components = exports.components = oneOfType([component, object]);
 var route = exports.route = oneOfType([object, element]);
 var routes = exports.routes = oneOfType([route, arrayOf(route)]);
-},{"react":297}],246:[function(require,module,exports){
+},{"react":299}],248:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -41008,7 +41723,7 @@ var Link = _react2.default.createClass({
 
 exports.default = Link;
 module.exports = exports['default'];
-},{"./ContextUtils":241,"./PropTypes":249,"invariant":108,"react":297}],247:[function(require,module,exports){
+},{"./ContextUtils":243,"./PropTypes":251,"invariant":110,"react":299}],249:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -41253,7 +41968,7 @@ function formatPattern(pattern, params) {
 
   return pathname.replace(/\/+/g, '/');
 }
-},{"invariant":108}],248:[function(require,module,exports){
+},{"invariant":110}],250:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -41261,7 +41976,7 @@ exports.isPromise = isPromise;
 function isPromise(obj) {
   return obj && typeof obj.then === 'function';
 }
-},{}],249:[function(require,module,exports){
+},{}],251:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -41290,7 +42005,7 @@ var locationShape = exports.locationShape = shape({
   action: string.isRequired,
   key: string
 });
-},{"react":297}],250:[function(require,module,exports){
+},{"react":299}],252:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -41394,7 +42109,7 @@ var Redirect = _react2.default.createClass({
 
 exports.default = Redirect;
 module.exports = exports['default'];
-},{"./InternalPropTypes":245,"./PatternUtils":247,"./RouteUtils":252,"invariant":108,"react":297}],251:[function(require,module,exports){
+},{"./InternalPropTypes":247,"./PatternUtils":249,"./RouteUtils":254,"invariant":110,"react":299}],253:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -41453,7 +42168,7 @@ var Route = _react2.default.createClass({
 
 exports.default = Route;
 module.exports = exports['default'];
-},{"./InternalPropTypes":245,"./RouteUtils":252,"invariant":108,"react":297}],252:[function(require,module,exports){
+},{"./InternalPropTypes":247,"./RouteUtils":254,"invariant":110,"react":299}],254:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -41547,7 +42262,7 @@ function createRoutes(routes) {
 
   return routes;
 }
-},{"react":297}],253:[function(require,module,exports){
+},{"react":299}],255:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -41723,7 +42438,7 @@ var Router = _react2.default.createClass({
 
 exports.default = Router;
 module.exports = exports['default'];
-},{"./InternalPropTypes":245,"./RouteUtils":252,"./RouterContext":254,"./RouterUtils":255,"./createTransitionManager":262,"./routerWarning":270,"invariant":108,"react":297}],254:[function(require,module,exports){
+},{"./InternalPropTypes":247,"./RouteUtils":254,"./RouterContext":256,"./RouterUtils":257,"./createTransitionManager":264,"./routerWarning":272,"invariant":110,"react":299}],256:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -41857,7 +42572,7 @@ var RouterContext = _react2.default.createClass({
 
 exports.default = RouterContext;
 module.exports = exports['default'];
-},{"./ContextUtils":241,"./RouteUtils":252,"./getRouteParams":264,"invariant":108,"react":297}],255:[function(require,module,exports){
+},{"./ContextUtils":243,"./RouteUtils":254,"./getRouteParams":266,"invariant":110,"react":299}],257:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -41886,7 +42601,7 @@ function assignRouterState(router, _ref) {
 
   return router;
 }
-},{}],256:[function(require,module,exports){
+},{}],258:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -42042,7 +42757,7 @@ function runLeaveHooks(routes, prevState) {
     if (routes[i].onLeave) routes[i].onLeave.call(routes[i], prevState);
   }
 }
-},{"./AsyncUtils":240}],257:[function(require,module,exports){
+},{"./AsyncUtils":242}],259:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -42100,7 +42815,7 @@ exports.default = function () {
 };
 
 module.exports = exports['default'];
-},{"./RouterContext":254,"./routerWarning":270,"react":297}],258:[function(require,module,exports){
+},{"./RouterContext":256,"./routerWarning":272,"react":299}],260:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -42117,7 +42832,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = (0, _createRouterHistory2.default)(_createBrowserHistory2.default);
 module.exports = exports['default'];
-},{"./createRouterHistory":261,"history/lib/createBrowserHistory":100}],259:[function(require,module,exports){
+},{"./createRouterHistory":263,"history/lib/createBrowserHistory":102}],261:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -42195,7 +42910,7 @@ function computeChangedRoutes(prevState, nextState) {
 
 exports.default = computeChangedRoutes;
 module.exports = exports['default'];
-},{"./PatternUtils":247}],260:[function(require,module,exports){
+},{"./PatternUtils":249}],262:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -42227,7 +42942,7 @@ function createMemoryHistory(options) {
   return history;
 }
 module.exports = exports['default'];
-},{"history/lib/createMemoryHistory":103,"history/lib/useBasename":105,"history/lib/useQueries":106}],261:[function(require,module,exports){
+},{"history/lib/createMemoryHistory":105,"history/lib/useBasename":107,"history/lib/useQueries":108}],263:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -42247,7 +42962,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
 
 module.exports = exports['default'];
-},{"./useRouterHistory":271}],262:[function(require,module,exports){
+},{"./useRouterHistory":273}],264:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -42523,7 +43238,7 @@ function createTransitionManager(history, routes) {
   };
 }
 module.exports = exports['default'];
-},{"./TransitionUtils":256,"./computeChangedRoutes":259,"./getComponents":263,"./isActive":267,"./matchRoutes":269,"./routerWarning":270}],263:[function(require,module,exports){
+},{"./TransitionUtils":258,"./computeChangedRoutes":261,"./getComponents":265,"./isActive":269,"./matchRoutes":271,"./routerWarning":272}],265:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -42564,7 +43279,7 @@ function getComponents(nextState, callback) {
 
 exports.default = getComponents;
 module.exports = exports['default'];
-},{"./AsyncUtils":240,"./PromiseUtils":248}],264:[function(require,module,exports){
+},{"./AsyncUtils":242,"./PromiseUtils":250}],266:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -42591,7 +43306,7 @@ function getRouteParams(route, params) {
 
 exports.default = getRouteParams;
 module.exports = exports['default'];
-},{"./PatternUtils":247}],265:[function(require,module,exports){
+},{"./PatternUtils":249}],267:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -42608,7 +43323,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = (0, _createRouterHistory2.default)(_createHashHistory2.default);
 module.exports = exports['default'];
-},{"./createRouterHistory":261,"history/lib/createHashHistory":101}],266:[function(require,module,exports){
+},{"./createRouterHistory":263,"history/lib/createHashHistory":103}],268:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -42734,7 +43449,7 @@ exports.applyRouterMiddleware = _applyRouterMiddleware3.default;
 exports.browserHistory = _browserHistory3.default;
 exports.hashHistory = _hashHistory3.default;
 exports.createMemoryHistory = _createMemoryHistory3.default;
-},{"./IndexLink":242,"./IndexRedirect":243,"./IndexRoute":244,"./Link":246,"./PatternUtils":247,"./PropTypes":249,"./Redirect":250,"./Route":251,"./RouteUtils":252,"./Router":253,"./RouterContext":254,"./applyRouterMiddleware":257,"./browserHistory":258,"./createMemoryHistory":260,"./hashHistory":265,"./match":268,"./useRouterHistory":271,"./withRouter":272}],267:[function(require,module,exports){
+},{"./IndexLink":244,"./IndexRedirect":245,"./IndexRoute":246,"./Link":248,"./PatternUtils":249,"./PropTypes":251,"./Redirect":252,"./Route":253,"./RouteUtils":254,"./Router":255,"./RouterContext":256,"./applyRouterMiddleware":259,"./browserHistory":260,"./createMemoryHistory":262,"./hashHistory":267,"./match":270,"./useRouterHistory":273,"./withRouter":274}],269:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -42887,7 +43602,7 @@ function isActive(_ref, indexOnly, currentLocation, routes, params) {
   return queryIsActive(query, currentLocation.query);
 }
 module.exports = exports['default'];
-},{"./PatternUtils":247}],268:[function(require,module,exports){
+},{"./PatternUtils":249}],270:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -42960,7 +43675,7 @@ function match(_ref, callback) {
 
 exports.default = match;
 module.exports = exports['default'];
-},{"./RouteUtils":252,"./RouterUtils":255,"./createMemoryHistory":260,"./createTransitionManager":262,"history/lib/Actions":90,"invariant":108}],269:[function(require,module,exports){
+},{"./RouteUtils":254,"./RouterUtils":257,"./createMemoryHistory":262,"./createTransitionManager":264,"history/lib/Actions":92,"invariant":110}],271:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -43224,7 +43939,7 @@ function matchRoutes(routes, location, callback, remainingPathname) {
   }, callback);
 }
 module.exports = exports['default'];
-},{"./AsyncUtils":240,"./PatternUtils":247,"./PromiseUtils":248,"./RouteUtils":252,"./routerWarning":270}],270:[function(require,module,exports){
+},{"./AsyncUtils":242,"./PatternUtils":249,"./PromiseUtils":250,"./RouteUtils":254,"./routerWarning":272}],272:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -43261,7 +43976,7 @@ function routerWarning(falseToWarn, message) {
 function _resetWarned() {
   warned = {};
 }
-},{"warning":299}],271:[function(require,module,exports){
+},{"warning":301}],273:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -43284,7 +43999,7 @@ function useRouterHistory(createHistory) {
   };
 }
 module.exports = exports['default'];
-},{"history/lib/useBasename":105,"history/lib/useQueries":106}],272:[function(require,module,exports){
+},{"history/lib/useBasename":107,"history/lib/useQueries":108}],274:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -43361,11 +44076,11 @@ function withRouter(WrappedComponent, options) {
   return (0, _hoistNonReactStatics2.default)(WithRouter, WrappedComponent);
 }
 module.exports = exports['default'];
-},{"./ContextUtils":241,"./PropTypes":249,"hoist-non-react-statics":107,"invariant":108,"react":297}],273:[function(require,module,exports){
-arguments[4][135][0].apply(exports,arguments)
-},{"dup":135}],274:[function(require,module,exports){
+},{"./ContextUtils":243,"./PropTypes":251,"hoist-non-react-statics":109,"invariant":110,"react":299}],275:[function(require,module,exports){
 arguments[4][137][0].apply(exports,arguments)
-},{"./reactProdInvariant":295,"dup":137,"fbjs/lib/invariant":82}],275:[function(require,module,exports){
+},{"dup":137}],276:[function(require,module,exports){
+arguments[4][139][0].apply(exports,arguments)
+},{"./reactProdInvariant":297,"dup":139,"fbjs/lib/invariant":84}],277:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -43454,7 +44169,7 @@ var React = {
 };
 
 module.exports = React;
-},{"./ReactChildren":276,"./ReactClass":277,"./ReactComponent":278,"./ReactDOMFactories":281,"./ReactElement":282,"./ReactElementValidator":284,"./ReactPropTypes":287,"./ReactPureComponent":289,"./ReactVersion":290,"./onlyChild":294,"fbjs/lib/warning":89,"object-assign":111}],276:[function(require,module,exports){
+},{"./ReactChildren":278,"./ReactClass":279,"./ReactComponent":280,"./ReactDOMFactories":283,"./ReactElement":284,"./ReactElementValidator":286,"./ReactPropTypes":289,"./ReactPureComponent":291,"./ReactVersion":292,"./onlyChild":296,"fbjs/lib/warning":91,"object-assign":113}],278:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -43645,7 +44360,7 @@ var ReactChildren = {
 };
 
 module.exports = ReactChildren;
-},{"./PooledClass":274,"./ReactElement":282,"./traverseAllChildren":296,"fbjs/lib/emptyFunction":74}],277:[function(require,module,exports){
+},{"./PooledClass":276,"./ReactElement":284,"./traverseAllChildren":298,"fbjs/lib/emptyFunction":76}],279:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -44362,7 +45077,7 @@ var ReactClass = {
 };
 
 module.exports = ReactClass;
-},{"./ReactComponent":278,"./ReactElement":282,"./ReactNoopUpdateQueue":285,"./ReactPropTypeLocationNames":286,"./reactProdInvariant":295,"fbjs/lib/emptyObject":75,"fbjs/lib/invariant":82,"fbjs/lib/warning":89,"object-assign":111}],278:[function(require,module,exports){
+},{"./ReactComponent":280,"./ReactElement":284,"./ReactNoopUpdateQueue":287,"./ReactPropTypeLocationNames":288,"./reactProdInvariant":297,"fbjs/lib/emptyObject":77,"fbjs/lib/invariant":84,"fbjs/lib/warning":91,"object-assign":113}],280:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -44480,7 +45195,7 @@ if ("production" !== 'production') {
 }
 
 module.exports = ReactComponent;
-},{"./ReactNoopUpdateQueue":285,"./canDefineProperty":291,"./reactProdInvariant":295,"fbjs/lib/emptyObject":75,"fbjs/lib/invariant":82,"fbjs/lib/warning":89}],279:[function(require,module,exports){
+},{"./ReactNoopUpdateQueue":287,"./canDefineProperty":293,"./reactProdInvariant":297,"fbjs/lib/emptyObject":77,"fbjs/lib/invariant":84,"fbjs/lib/warning":91}],281:[function(require,module,exports){
 /**
  * Copyright 2016-present, Facebook, Inc.
  * All rights reserved.
@@ -44814,7 +45529,7 @@ var ReactComponentTreeHook = {
 };
 
 module.exports = ReactComponentTreeHook;
-},{"./ReactCurrentOwner":280,"./reactProdInvariant":295,"fbjs/lib/invariant":82,"fbjs/lib/warning":89}],280:[function(require,module,exports){
+},{"./ReactCurrentOwner":282,"./reactProdInvariant":297,"fbjs/lib/invariant":84,"fbjs/lib/warning":91}],282:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -44845,7 +45560,7 @@ var ReactCurrentOwner = {
 };
 
 module.exports = ReactCurrentOwner;
-},{}],281:[function(require,module,exports){
+},{}],283:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -45015,7 +45730,7 @@ var ReactDOMFactories = {
 };
 
 module.exports = ReactDOMFactories;
-},{"./ReactElement":282,"./ReactElementValidator":284}],282:[function(require,module,exports){
+},{"./ReactElement":284,"./ReactElementValidator":286}],284:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -45356,9 +46071,9 @@ ReactElement.isValidElement = function (object) {
 };
 
 module.exports = ReactElement;
-},{"./ReactCurrentOwner":280,"./ReactElementSymbol":283,"./canDefineProperty":291,"fbjs/lib/warning":89,"object-assign":111}],283:[function(require,module,exports){
-arguments[4][164][0].apply(exports,arguments)
-},{"dup":164}],284:[function(require,module,exports){
+},{"./ReactCurrentOwner":282,"./ReactElementSymbol":285,"./canDefineProperty":293,"fbjs/lib/warning":91,"object-assign":113}],285:[function(require,module,exports){
+arguments[4][166][0].apply(exports,arguments)
+},{"dup":166}],286:[function(require,module,exports){
 /**
  * Copyright 2014-present, Facebook, Inc.
  * All rights reserved.
@@ -45592,7 +46307,7 @@ var ReactElementValidator = {
 };
 
 module.exports = ReactElementValidator;
-},{"./ReactComponentTreeHook":279,"./ReactCurrentOwner":280,"./ReactElement":282,"./canDefineProperty":291,"./checkReactTypeSpec":292,"./getIteratorFn":293,"fbjs/lib/warning":89}],285:[function(require,module,exports){
+},{"./ReactComponentTreeHook":281,"./ReactCurrentOwner":282,"./ReactElement":284,"./canDefineProperty":293,"./checkReactTypeSpec":294,"./getIteratorFn":295,"fbjs/lib/warning":91}],287:[function(require,module,exports){
 /**
  * Copyright 2015-present, Facebook, Inc.
  * All rights reserved.
@@ -45688,9 +46403,9 @@ var ReactNoopUpdateQueue = {
 };
 
 module.exports = ReactNoopUpdateQueue;
-},{"fbjs/lib/warning":89}],286:[function(require,module,exports){
-arguments[4][182][0].apply(exports,arguments)
-},{"dup":182}],287:[function(require,module,exports){
+},{"fbjs/lib/warning":91}],288:[function(require,module,exports){
+arguments[4][184][0].apply(exports,arguments)
+},{"dup":184}],289:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -46124,9 +46839,9 @@ function getClassName(propValue) {
 }
 
 module.exports = ReactPropTypes;
-},{"./ReactElement":282,"./ReactPropTypeLocationNames":286,"./ReactPropTypesSecret":288,"./getIteratorFn":293,"fbjs/lib/emptyFunction":74,"fbjs/lib/warning":89}],288:[function(require,module,exports){
-arguments[4][183][0].apply(exports,arguments)
-},{"dup":183}],289:[function(require,module,exports){
+},{"./ReactElement":284,"./ReactPropTypeLocationNames":288,"./ReactPropTypesSecret":290,"./getIteratorFn":295,"fbjs/lib/emptyFunction":76,"fbjs/lib/warning":91}],290:[function(require,module,exports){
+arguments[4][185][0].apply(exports,arguments)
+},{"dup":185}],291:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -46168,9 +46883,9 @@ _assign(ReactPureComponent.prototype, ReactComponent.prototype);
 ReactPureComponent.prototype.isPureReactComponent = true;
 
 module.exports = ReactPureComponent;
-},{"./ReactComponent":278,"./ReactNoopUpdateQueue":285,"fbjs/lib/emptyObject":75,"object-assign":111}],290:[function(require,module,exports){
-arguments[4][191][0].apply(exports,arguments)
-},{"dup":191}],291:[function(require,module,exports){
+},{"./ReactComponent":280,"./ReactNoopUpdateQueue":287,"fbjs/lib/emptyObject":77,"object-assign":113}],292:[function(require,module,exports){
+arguments[4][193][0].apply(exports,arguments)
+},{"dup":193}],293:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -46196,7 +46911,7 @@ if ("production" !== 'production') {
 }
 
 module.exports = canDefineProperty;
-},{}],292:[function(require,module,exports){
+},{}],294:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-present, Facebook, Inc.
@@ -46285,9 +47000,9 @@ function checkReactTypeSpec(typeSpecs, values, location, componentName, element,
 
 module.exports = checkReactTypeSpec;
 }).call(this,require('_process'))
-},{"./ReactComponentTreeHook":279,"./ReactPropTypeLocationNames":286,"./ReactPropTypesSecret":288,"./reactProdInvariant":295,"_process":300,"fbjs/lib/invariant":82,"fbjs/lib/warning":89}],293:[function(require,module,exports){
-arguments[4][224][0].apply(exports,arguments)
-},{"dup":224}],294:[function(require,module,exports){
+},{"./ReactComponentTreeHook":281,"./ReactPropTypeLocationNames":288,"./ReactPropTypesSecret":290,"./reactProdInvariant":297,"_process":302,"fbjs/lib/invariant":84,"fbjs/lib/warning":91}],295:[function(require,module,exports){
+arguments[4][226][0].apply(exports,arguments)
+},{"dup":226}],296:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -46325,9 +47040,9 @@ function onlyChild(children) {
 }
 
 module.exports = onlyChild;
-},{"./ReactElement":282,"./reactProdInvariant":295,"fbjs/lib/invariant":82}],295:[function(require,module,exports){
-arguments[4][233][0].apply(exports,arguments)
-},{"dup":233}],296:[function(require,module,exports){
+},{"./ReactElement":284,"./reactProdInvariant":297,"fbjs/lib/invariant":84}],297:[function(require,module,exports){
+arguments[4][235][0].apply(exports,arguments)
+},{"dup":235}],298:[function(require,module,exports){
 /**
  * Copyright 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -46503,12 +47218,12 @@ function traverseAllChildren(children, callback, traverseContext) {
 }
 
 module.exports = traverseAllChildren;
-},{"./KeyEscapeUtils":273,"./ReactCurrentOwner":280,"./ReactElementSymbol":283,"./getIteratorFn":293,"./reactProdInvariant":295,"fbjs/lib/invariant":82,"fbjs/lib/warning":89}],297:[function(require,module,exports){
+},{"./KeyEscapeUtils":275,"./ReactCurrentOwner":282,"./ReactElementSymbol":285,"./getIteratorFn":295,"./reactProdInvariant":297,"fbjs/lib/invariant":84,"fbjs/lib/warning":91}],299:[function(require,module,exports){
 'use strict';
 
 module.exports = require('./lib/React');
 
-},{"./lib/React":275}],298:[function(require,module,exports){
+},{"./lib/React":277}],300:[function(require,module,exports){
 'use strict';
 module.exports = function (str) {
 	return encodeURIComponent(str).replace(/[!'()*]/g, function (c) {
@@ -46516,7 +47231,7 @@ module.exports = function (str) {
 	});
 };
 
-},{}],299:[function(require,module,exports){
+},{}],301:[function(require,module,exports){
 /**
  * Copyright 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -46578,7 +47293,7 @@ if ("production" !== 'production') {
 
 module.exports = warning;
 
-},{}],300:[function(require,module,exports){
+},{}],302:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
