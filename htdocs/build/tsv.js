@@ -55,7 +55,6 @@ var Main = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { id: 'route' },
-          'hola',
           this.props.children
         ),
         _react2.default.createElement(_Footer2.default, null),
@@ -5071,7 +5070,7 @@ var Form = function (_React$Component) {
             { className: 'row' },
             _react2.default.createElement(
               'div',
-              { className: 'col-md-3' },
+              { className: 'col-md-3 col-xs-12 steep' },
               _react2.default.createElement(
                 'h2',
                 { className: 'number-title' },
@@ -5090,7 +5089,7 @@ var Form = function (_React$Component) {
             ),
             _react2.default.createElement(
               'div',
-              { className: 'col-md-9' },
+              { className: 'col-md-9 col-xs-12' },
               _react2.default.createElement(
                 'table',
                 { className: 'table table-striped green' },
@@ -5312,7 +5311,7 @@ var Form = function (_React$Component) {
             { className: 'row' },
             _react2.default.createElement(
               'div',
-              { className: 'col-md-3' },
+              { className: 'col-md-3 col-xs-12 steep' },
               _react2.default.createElement(
                 'h2',
                 { className: 'number-title' },
@@ -5431,7 +5430,7 @@ var Form = function (_React$Component) {
             { className: 'row' },
             _react2.default.createElement(
               'div',
-              { className: 'col-md-3' },
+              { className: 'col-md-3 col-xs-12 steep' },
               _react2.default.createElement(
                 'h2',
                 { className: 'number-title' },
@@ -5450,7 +5449,7 @@ var Form = function (_React$Component) {
             ),
             _react2.default.createElement(
               'div',
-              { className: 'col-md-9' },
+              { className: 'col-md-9 col-xs-12' },
               _react2.default.createElement(
                 'table',
                 { className: 'table table-striped blue' },
@@ -5610,7 +5609,7 @@ var Form = function (_React$Component) {
               _react2.default.createElement(
                 'button',
                 { type: 'submit', className: 'btn btn-black btn-lg' },
-                'Comienza a recibir notificaciones'
+                'Comienza'
               )
             )
           )
@@ -5681,7 +5680,7 @@ var Section = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'register-description' },
         _react2.default.createElement(_Description2.default, {
           title: 'Notificaciones',
           color: 'yellow',

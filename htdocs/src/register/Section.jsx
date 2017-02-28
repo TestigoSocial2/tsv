@@ -22,7 +22,7 @@ class Section extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="register-description">
         <Description
           title="Notificaciones"
           color="yellow"

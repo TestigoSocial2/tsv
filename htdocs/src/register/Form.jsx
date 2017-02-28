@@ -101,11 +101,11 @@ class Form extends React.Component {
       <div id="setup">
         <form id="registerForm">
           <div className="row">
-            <div className="col-md-3">
+            <div className="col-md-3 col-xs-12 steep">
               <h2 className="number-title"><span>1</span>Registro</h2>
               <p className="txt-italic">Completa la siguiente información</p>
             </div>
-            <div className="col-md-9">
+            <div className="col-md-9 col-xs-12">
               <table className="table table-striped green">
                 <tbody>
                   <tr>
@@ -185,7 +185,7 @@ class Form extends React.Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-3">
+            <div className="col-md-3 col-xs-12 steep">
               <h2 className="number-title"><span>2</span>Proyectos</h2>
               <p className="txt-italic">Selecciona las agencias, proyectos o sectores que te interesan</p>
             </div>
@@ -230,11 +230,11 @@ class Form extends React.Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-3">
+            <div className="col-md-3 col-xs-12 steep">
               <h2 className="number-title"><span>3</span>Contacto</h2>
               <p className="txt-italic">Selecciona los canales por los que Testigo Social 2.0 puede enviarte notificaciones e información.</p>
             </div>
-            <div className="col-md-9">
+            <div className="col-md-9 col-xs-12">
               <table className="table table-striped blue">
                 <tbody>
                   <tr>
@@ -303,7 +303,7 @@ class Form extends React.Component {
                   <input id="acceptPrivacyTerms" type="checkbox" checked="checked" /> Acepto las politicas de privacidad
                 </label>
               </div>
-              <button type="submit" className="btn btn-black btn-lg">Comienza a recibir notificaciones</button>
+              <button type="submit" className="btn btn-black btn-lg">Comienza</button>
             </div>
           </div>
         </form>
