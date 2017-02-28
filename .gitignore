@@ -6,3 +6,4 @@ tsv
 tsv.db
 tsv.tar.gz
 node_modules
+.env
