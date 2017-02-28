@@ -30,7 +30,7 @@ class Menu extends React.Component {
             <li>
               <Link to={'/registro'}>Notificaciones</Link>
             </li>
-            <li><a href="http://www.tm.org.mx" target="_blank">Contrataciones Abiertas</a></li>
+            <li><a href="/alianza.html" target="_blank">Contrataciones Abiertas</a></li>
           </ul>
 
           <div className="social">
