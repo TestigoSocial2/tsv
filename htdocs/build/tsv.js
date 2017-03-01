@@ -104,7 +104,7 @@ var Description = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'row info bg-' + this.props.color },
+        { className: 'description-container row info bg-' + this.props.color },
         _react2.default.createElement(
           'div',
           { className: 'inner-row' },
