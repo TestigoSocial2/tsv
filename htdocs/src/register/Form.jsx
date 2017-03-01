@@ -246,13 +246,10 @@ class Form extends React.Component {
                              name="notificationEmail"
                              data-validator-email="true" />
                     </td>
-                    <td>
-                      <input id="enableEmailNotifications"
-                             name="enableEmailNotifications"
-                             type="checkbox"
-                             checked="checked" />
+                    <td className="txt-italic checkbox">
+                      <input id="enableEmailNotifications" name="enableEmailNotifications" type="checkbox" checked="checked" />
+                      <label for="enableEmailNotifications">Quiero recibir notificaciones a través de un correo electrónico</label>
                     </td>
-                    <td className="txt-italic">Quiero recibir notificaciones a través de un correo electrónico</td>
                   </tr>
                   <tr>
                     <td className="txt-upper col-md-2"><label>SMS</label></td>
@@ -265,33 +262,30 @@ class Form extends React.Component {
                              data-validator-minlength="10"
                              data-validator-maxlength="10" />
                     </td>
-                    <td>
-                      <input id="enableSMSNotifications"
-                             name="enableSMSNotifications"
-                             type="checkbox"
-                             checked="checked" />
+                    <td className="txt-italic checkbox">
+                      <input id="enableSMSNotifications" name="enableSMSNotifications" type="checkbox" checked="checked" />
+                      <label>Quiero recibir notificaciones a través de mensajes a un número celular (sin costo)</label>
                     </td>
-                    <td className="txt-italic">Quiero recibir notificaciones a través de mensajes a un número celular (sin costo)</td>
                   </tr>
                   <tr>
                     <td className="txt-upper col-md-2"><label>Facebook</label></td>
                     <td className="col-md-4">
                       <input disabled="disabled" type="text" className="form-control" id="notificationFB" />
                     </td>
-                    <td>
+                    <td className="txt-italic checkbox">
                       <input disabled="disabled" id="enableFB" type="checkbox" />
+                      <label>Quiero recibir notificaciones e información a través mensajes en Facebook Messenger</label>
                     </td>
-                    <td className="txt-italic">Quiero recibir notificaciones e información a través mensajes en Facebook Messenger</td>
                   </tr>
                   <tr>
                     <td className="txt-upper col-md-2"><label>Twitter</label></td>
                     <td className="col-md-4">
                       <input disabled="disabled" type="text" className="form-control" id="notificationTW" />
                     </td>
-                    <td>
+                    <td className="txt-italic checkbox">
                       <input disabled="disabled" id="enableTW" type="checkbox" />
+                      <label>Quiero recibir notificaciones a través de mensajes directos y notificaciones en Twitter</label>
                     </td>
-                    <td className="txt-italic">Quiero recibir notificaciones a través de mensajes directos y notificaciones en Twitter</td>
                   </tr>
                 </tbody>
               </table>
