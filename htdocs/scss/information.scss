@@ -1,0 +1,20 @@
+@media all and (max-width: 768px) {
+	#glossaryContents p {
+		font-size: 13px;
+		font-family: 'Avenir next';
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	#glossaryContents td h4{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.inner-row{
+		width: 100% !important;
+	}
+	.inner-row h1{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
