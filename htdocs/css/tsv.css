@@ -605,7 +605,12 @@
     align-items: center;
     display: block;
     margin: 0px auto !important;
-    margin-bottom: 30px !important; } }
+    margin-bottom: 30px !important; }
+
+  td.checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center; } }
 @media all and (max-width: 768px) {
   #top {
     padding-top: 0px !important;
