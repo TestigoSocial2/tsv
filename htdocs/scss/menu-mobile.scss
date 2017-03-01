@@ -48,12 +48,18 @@
       margin: 0px !important;
       width: auto !important;
     }
+    div.photo{
+      height: 500px !important;
+    }
 
     h2 {
       color: $tsv-white;
       font-family: 'Circular Std Book' !important;
       font-size: 28px !important;
       text-align: center !important;
+      position: absolute !important;
+      top: 220px;
+      padding-right: 15px !important;
     }
   }
     #video {
@@ -142,6 +148,76 @@
       }
     }
   }
+
+  #bottom {
+  padding-top: 0px !important;
+
+  div.hide-row{
+    display: none;
+  }
+  div.mobile-row{
+    display: initial !important;
+  }
+  div.mobile-logo{
+    display: flex;
+    justify-content: space-between;
+  }
+  span{
+    font-size: 10px;
+    text-align: center;
+    margin-top: 60px;
+  }
+  div.logo {
+    float: left;
+    margin-right: 0px !important;
+    width: auto !important;
+    margin-left: 10px !important;
+
+    p {
+      margin-bottom: 0px !important;
+      font-family: 'Circular Std Book' !important;
+      font-size: 10px !important;
+      margin-top: 15px !important;
+    }
+
+    a.tm {
+      background: url('../images/bottom_tm.png') no-repeat top left;
+      background-size: contain;
+      display: block;
+      height: 45px;
+      margin-top: 5px !important;
+    }
+
+    a.uk {
+      background: url('../images/bottom_uk.png') no-repeat top left;
+      background-size: contain;
+      display: block;
+      height: 32px !important; 
+    }
+  }
+
+  div.links {
+    display: flex !important;
+    justify-content: center !important;
+
+    span {
+      cursor: pointer;
+      display: inline-block;
+      margin: 54px -15px 0 0;
+      text-decoration: underline;
+    }
+    div.space-social{
+      width: 40px;
+    }
+
+    div.social {
+      margin-top: 10px;
+      position: relative !important;
+      right: 0;
+      width: auto !important;
+    }
+  }
+}
 
   }
 div.bg-blue{

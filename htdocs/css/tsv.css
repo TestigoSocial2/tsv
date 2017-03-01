@@ -647,11 +647,16 @@
   #hero div.logo {
     margin: 0px !important;
     width: auto !important; }
+  #hero div.photo {
+    height: 500px !important; }
   #hero h2 {
     color: white;
     font-family: "Circular Std Book" !important;
     font-size: 28px !important;
-    text-align: center !important; }
+    text-align: center !important;
+    position: absolute !important;
+    top: 220px;
+    padding-right: 15px !important; }
 
   #video {
     padding: 2em 0; }
@@ -714,7 +719,57 @@
           margin-top: 30px !important;
           margin-bottom: 30px !important;
           height: 78px;
-          background-image: url("../images/icon_notifications.png"); } }
+          background-image: url("../images/icon_notifications.png"); }
+
+  #bottom {
+    padding-top: 0px !important; }
+    #bottom div.hide-row {
+      display: none; }
+    #bottom div.mobile-row {
+      display: initial !important; }
+    #bottom div.mobile-logo {
+      display: flex;
+      justify-content: space-between; }
+    #bottom span {
+      font-size: 10px;
+      text-align: center;
+      margin-top: 60px; }
+    #bottom div.logo {
+      float: left;
+      margin-right: 0px !important;
+      width: auto !important;
+      margin-left: 10px !important; }
+      #bottom div.logo p {
+        margin-bottom: 0px !important;
+        font-family: 'Circular Std Book' !important;
+        font-size: 10px !important;
+        margin-top: 15px !important; }
+      #bottom div.logo a.tm {
+        background: url("../images/bottom_tm.png") no-repeat top left;
+        background-size: contain;
+        display: block;
+        height: 45px;
+        margin-top: 5px !important; }
+      #bottom div.logo a.uk {
+        background: url("../images/bottom_uk.png") no-repeat top left;
+        background-size: contain;
+        display: block;
+        height: 32px !important; }
+    #bottom div.links {
+      display: flex !important;
+      justify-content: center !important; }
+      #bottom div.links span {
+        cursor: pointer;
+        display: inline-block;
+        margin: 54px -15px 0 0;
+        text-decoration: underline; }
+      #bottom div.links div.space-social {
+        width: 40px; }
+      #bottom div.links div.social {
+        margin-top: 10px;
+        position: relative !important;
+        right: 0;
+        width: auto !important; } }
 div.bg-blue {
   background-color: #9dcafe !important; }
 
@@ -1009,6 +1064,8 @@ div.clear {
   padding-top: 30px;
   position: absolute;
   width: 100%; }
+  #bottom div.mobile-row {
+    display: none; }
   #bottom div.logo {
     float: left;
     margin-right: 30px;
