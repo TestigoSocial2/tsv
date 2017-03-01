@@ -268,7 +268,7 @@ class Home extends React.Component {
           <div className="col-md-12">
             <br />
             <br />
-            <span className="btn-black large">Comienza a monitorear cómo se gasta tu dinero con TS 2.0</span>
+            <span className="btn-black large redtangle">Comienza a monitorear cómo se gasta tu dinero con TS 2.0</span>
           </div>
         </div>
 

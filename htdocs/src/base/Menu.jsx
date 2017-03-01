@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
+var FontAwesome = require('react-fontawesome');
 
 class Menu extends React.Component {
   componentDidMount() {
@@ -32,12 +33,37 @@ class Menu extends React.Component {
             </li>
             <li><a href="http://www.tm.org.mx" target="_blank">Contrataciones Abiertas</a></li>
           </ul>
-
           <div className="social">
             <a href="https://www.twitter.com/testigo_social" className="tw"></a>
             <a href="https://www.facebook.com/testigosocial" className="fb"></a>
           </div>
         </div>
+        <nav className="navbar navbar-default">
+            <div className="container-fluid">
+              <div className="navbar-header">
+                <Link to={'/'}><h2>2.0 </h2></Link>
+                <FontAwesome name='bars' class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"/>
+              </div>
+              <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul className="nav navbar-nav">
+                  <li>
+                    <Link to={'/informacion'}>¿Qué es TS 2.0?</Link>
+                  </li>
+                  <li>
+                    <Link to={'/contratos'}>Contratos</Link>
+                  </li>
+                  <li>
+                    <Link to={'/indicadores'}>Indicadores</Link>
+                  </li>
+                  <li>
+                    <Link to={'/registro'}>Notificaciones</Link>
+                  </li>
+                  <li><a href="http://www.tm.org.mx" target="_blank">Contrataciones Abiertas</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
       </div>
     );
   }
