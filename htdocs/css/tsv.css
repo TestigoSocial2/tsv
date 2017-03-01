@@ -647,11 +647,16 @@
   #hero div.logo {
     margin: 0px !important;
     width: auto !important; }
+  #hero div.photo {
+    height: 500px !important; }
   #hero h2 {
     color: #fff;
     font-family: 'Circular Std Book' !important;
     font-size: 28px !important;
-    text-align: center !important; }
+    text-align: center !important;
+    position: absolute !important;
+    top: 220px;
+    padding-right: 15px !important; }
 
   #video {
     padding: 2em 0; }
@@ -717,13 +722,7 @@
           background-image: url("../images/icon_notifications.png"); }
 
   #bottom {
-    background-color: #111;
-    bottom: 0;
-    color: #fff;
-    height: 120px;
-    padding-top: 0px !important;
-    position: absolute;
-    width: 100%; }
+    padding-top: 0px !important; }
     #bottom div.hide-row {
       display: none; }
     #bottom div.mobile-row {
@@ -756,13 +755,6 @@
         background-size: contain;
         display: block;
         height: 32px !important; }
-    #bottom ul {
-      float: right;
-      list-style: none;
-      padding: 0 20px; }
-      #bottom ul a {
-        color: #fff;
-        font-size: 11px; }
     #bottom div.links {
       display: flex !important;
       justify-content: center !important; }
@@ -777,20 +769,7 @@
         margin-top: 10px;
         position: relative !important;
         right: 0;
-        width: auto !important; }
-        #bottom div.links div.social a {
-          background-position: top center;
-          background-repeat: no-repeat;
-          background-size: contain;
-          display: block;
-          float: none;
-          height: 34px;
-          margin-left: 0px;
-          width: 34px; }
-          #bottom div.links div.social a.tw {
-            background-image: url("../images/bottom_tw.png"); }
-          #bottom div.links div.social a.fb {
-            background-image: url("../images/bottom_fb.png"); } }
+        width: auto !important; } }
 div.bg-blue {
   background-color: #9DCAFE !important; }
 

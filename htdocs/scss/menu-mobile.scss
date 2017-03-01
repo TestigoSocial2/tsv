@@ -48,12 +48,18 @@
       margin: 0px !important;
       width: auto !important;
     }
+    div.photo{
+      height: 500px !important;
+    }
 
     h2 {
       color: $tsv-white;
       font-family: 'Circular Std Book' !important;
       font-size: 28px !important;
       text-align: center !important;
+      position: absolute !important;
+      top: 220px;
+      padding-right: 15px !important;
     }
   }
     #video {
@@ -144,13 +150,7 @@
   }
 
   #bottom {
-  background-color: $tsv-black;
-  bottom: 0;
-  color: $tsv-white;
-  height: 120px;
   padding-top: 0px !important;
-  position: absolute;
-  width: 100%;
 
   div.hide-row{
     display: none;
@@ -196,17 +196,6 @@
     }
   }
 
-  ul {
-    float: right;
-    list-style: none;
-    padding: 0 20px;
-
-    a {
-      color: $tsv-white;
-      font-size: 11px;
-    }
-  }
-
   div.links {
     display: flex !important;
     justify-content: center !important;
@@ -226,25 +215,6 @@
       position: relative !important;
       right: 0;
       width: auto !important;
-
-      a {
-        background-position: top center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        display: block;
-        float: none;
-        height: 34px;
-        margin-left: 0px;
-        width: 34px;
-
-        &.tw {
-          background-image: url('../images/bottom_tw.png');
-        }
-
-        &.fb {
-          background-image: url('../images/bottom_fb.png');
-        }
-      }
     }
   }
 }
