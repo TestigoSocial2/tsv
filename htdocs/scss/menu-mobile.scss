@@ -143,6 +143,112 @@
     }
   }
 
+  #bottom {
+  background-color: $tsv-black;
+  bottom: 0;
+  color: $tsv-white;
+  height: 120px;
+  padding-top: 0px !important;
+  position: absolute;
+  width: 100%;
+
+  div.hide-row{
+    display: none;
+  }
+  div.mobile-row{
+    display: initial !important;
+  }
+  div.mobile-logo{
+    display: flex;
+    justify-content: space-between;
+  }
+  span{
+    font-size: 10px;
+    text-align: center;
+    margin-top: 60px;
+  }
+  div.logo {
+    float: left;
+    margin-right: 0px !important;
+    width: auto !important;
+    margin-left: 10px !important;
+
+    p {
+      margin-bottom: 0px !important;
+      font-family: 'Circular Std Book' !important;
+      font-size: 10px !important;
+      margin-top: 15px !important;
+    }
+
+    a.tm {
+      background: url('../images/bottom_tm.png') no-repeat top left;
+      background-size: contain;
+      display: block;
+      height: 45px;
+      margin-top: 5px !important;
+    }
+
+    a.uk {
+      background: url('../images/bottom_uk.png') no-repeat top left;
+      background-size: contain;
+      display: block;
+      height: 32px !important; 
+    }
+  }
+
+  ul {
+    float: right;
+    list-style: none;
+    padding: 0 20px;
+
+    a {
+      color: $tsv-white;
+      font-size: 11px;
+    }
+  }
+
+  div.links {
+    display: flex !important;
+    justify-content: center !important;
+
+    span {
+      cursor: pointer;
+      display: inline-block;
+      margin: 54px -15px 0 0;
+      text-decoration: underline;
+    }
+    div.space-social{
+      width: 40px;
+    }
+
+    div.social {
+      margin-top: 10px;
+      position: relative !important;
+      right: 0;
+      width: auto !important;
+
+      a {
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: block;
+        float: none;
+        height: 34px;
+        margin-left: 0px;
+        width: 34px;
+
+        &.tw {
+          background-image: url('../images/bottom_tw.png');
+        }
+
+        &.fb {
+          background-image: url('../images/bottom_fb.png');
+        }
+      }
+    }
+  }
+}
+
   }
 div.bg-blue{
   background-color: #9DCAFE !important;

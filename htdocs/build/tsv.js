@@ -166,7 +166,7 @@ var Footer = function (_React$Component) {
         { id: "bottom", className: "row" },
         _react2.default.createElement(
           "div",
-          { className: "inner-row" },
+          { className: "inner-row hide-row" },
           _react2.default.createElement(
             "div",
             { className: "col-md-6" },
@@ -205,6 +205,54 @@ var Footer = function (_React$Component) {
               "span",
               { "data-toggle": "modal", "data-target": "#privacyNotice" },
               "Aviso de Privacidad"
+            )
+          )
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "inner-row mobile-row" },
+          _react2.default.createElement(
+            "div",
+            { className: "col-md-6 links" },
+            _react2.default.createElement(
+              "div",
+              { className: "social" },
+              _react2.default.createElement("a", { href: "https://www.facebook.com/testigosocial", className: "fb" })
+            ),
+            _react2.default.createElement("div", { className: "space-social" }),
+            _react2.default.createElement(
+              "div",
+              { className: "social" },
+              _react2.default.createElement("a", { href: "https://www.twitter.com/testigo_social", className: "tw" })
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "col-md-6 mobile-logo" },
+            _react2.default.createElement(
+              "div",
+              { className: "logo" },
+              _react2.default.createElement(
+                "p",
+                null,
+                "Una iniciativa de:"
+              ),
+              _react2.default.createElement("a", { href: "http://www.tm.org.mx", target: "_blank", className: "tm" })
+            ),
+            _react2.default.createElement(
+              "span",
+              { "data-toggle": "modal", "data-target": "#privacyNotice" },
+              "Aviso de Privacidad"
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "logo" },
+              _react2.default.createElement(
+                "p",
+                null,
+                "Con el apoyo de:"
+              ),
+              _react2.default.createElement("a", { href: "https://www.gov.uk/government/world/organisations/british-embassy-mexico-city.es-419", target: "_blank", className: "uk" })
             )
           )
         )
