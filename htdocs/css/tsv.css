@@ -538,6 +538,8 @@
   .description-container p {
     text-align: center;
     font-size: 13px;
+    padding-left: 15px;
+    padding-right: 15px;
     font-family: 'Avenir next'; }
 
   #registerForm table tr {
@@ -559,7 +561,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    text-align: left !important; }
+    text-align: left !important;
+    font-size: 16px !important; }
 
   #setup div.row h2.number-title span {
     width: 20px !important;
@@ -572,7 +575,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    display: flex; }
+    display: flex;
+    font-size: 14px !important; }
 
   #setup div.row p.txt-italic {
     font-family: 'Circular Std';
@@ -605,12 +609,16 @@
     align-items: center;
     display: block;
     margin: 0px auto !important;
-    margin-bottom: 30px !important; }
+    margin-bottom: 30px !important; } }
+td.checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
 
-  td.checkbox {
-    display: flex;
-    flex-direction: row;
-    align-items: center; } }
+td.checkbox input {
+  margin: 0px !important;
+  padding: 0px !important; }
+
 @media all and (max-width: 768px) {
   #top {
     padding-top: 0px !important;
@@ -741,7 +749,7 @@
       margin-left: 10px !important; }
       #bottom div.logo p {
         margin-bottom: 0px !important;
-        font-family: 'Circular Std Book' !important;
+        font-family: "Circular Std Book" !important;
         font-size: 10px !important;
         margin-top: 15px !important; }
       #bottom div.logo a.tm {
