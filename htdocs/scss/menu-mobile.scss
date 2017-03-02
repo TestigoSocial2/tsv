@@ -263,6 +263,7 @@
       font-family: 'Decima Mono' !important;
       font-size: 18px !important;
       font-weight: 300 !important;
+      letter-spacing: -1px !important;
     }
   }
   div.carousel-inner{
@@ -295,16 +296,23 @@
         font-family: 'Circular Std' !important;
         font-size: 13px !important;
         font-weight: bold !important;
+        width: 180px !important;
+        margin-left: auto;
+        margin-right: auto;
       }
-      span{
+      span.amount{
         font-family: 'Decima Mono' !important;
-        font-size: 18px !important;
+        font-size: 16px !important;
         font-weight: 300 !important;
+        letter-spacing: -1px;
       }
       h3{
         font-family: 'Decima Mono' !important;
-        font-size: 18px !important;
+        font-size: 16px !important;
         font-weight: 300 !important;
+        letter-spacing: -1px;
+        margin-bottom: 20px;
+        margin-top: 20px;
       }
       p{
       font-family: 'Circular Std Book' !important;
@@ -327,6 +335,10 @@
     font-family: 'Circular Std Book' !important;
     font-size: 12px !important;
     background-color: #B4F8C9;
+    span{
+      font-family: 'Circular Std Book' !important;
+      font-size: 12px !important;
+    }
     strong {
       font-size: 12px !important;
     }
