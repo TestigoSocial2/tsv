@@ -23,8 +23,8 @@ class SearchResults extends React.Component {
       <div className="inner-row">
         <div className="row">
           <div className="col-md-12">
-            <h2>Resultados de la busqueda</h2>
-            <p>Estos son los procedimientos de contratación registrados en Testigo Social 2.0 que satisfacen los creiterios de selección proporcionados</p>
+            <h2 className="mobile-result">Resultados de la busqueda</h2>
+            <p className="mobile-result">Estos son los procedimientos de contratación registrados en Testigo Social 2.0 que satisfacen los creiterios de selección proporcionados</p>
             <table className="table table-striped latest-contracts">
               <tbody>
                 {content}

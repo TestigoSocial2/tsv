@@ -116,8 +116,8 @@ class SearchBar extends React.Component {
       <div className="inner-row">
         <div className="row">
           <div className="col-md-12">
-            <h2>Buscador de Contratos</h2>
-            <p>Encuentra contratos o procedimientos de contratación registrados en Testigo Social 2.0 haciendo uso de los distintos filtros de búsqueda disponibles.</p>
+            <h2 className="mobile-search">Buscador de Contratos</h2>
+            <p className="mobile-search">Encuentra contratos o procedimientos de contratación registrados en Testigo Social 2.0 haciendo uso de los distintos filtros de búsqueda disponibles.</p>
             <form id="queryForm">
               <div className="input-group">
                 <input type="text" className="form-control" id="query" name="query" placeholder="Buscar..." />

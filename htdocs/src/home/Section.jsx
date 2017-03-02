@@ -220,19 +220,19 @@ class Home extends React.Component {
         {/* Facts */}
         <div id="facts" className="row inner-row">
           <div className="col-md-4">
-            <p className="txt-centered">Número de <span className="txt-bold">procedimientos de contratación</span> registrados</p>
+            <p className="txt-centered txt-mobile">Número de <span className="txt-bold">procedimientos de contratación</span> registrados</p>
             <p className="highlight txt-centered">
               <span className="counter totalContracts">0</span>
             </p>
           </div>
           <div className="col-md-4">
-            <p className="txt-centered"><span className="txt-bold">Presupuesto asignado</span> de las contrataciones registradas</p>
+            <p className="txt-centered txt-mobile"><span className="txt-bold">Presupuesto asignado</span> de las contrataciones registradas</p>
             <p className="highlight txt-centered">
               $<span id="totalBudget" className="counter">0</span>M
             </p>
           </div>
           <div className="col-md-4">
-            <p className="txt-centered">Monto total <span className="txt-bold">contratado</span> a través de los procedimientos registrados</p>
+            <p className="txt-centered txt-mobile">Monto total <span className="txt-bold">contratado</span> a través de los procedimientos registrados</p>
             <p className="highlight txt-centered">
               $<span id="totalAwardShort" className="counter">0</span>M
             </p>
