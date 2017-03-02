@@ -1831,12 +1831,12 @@ var SearchBar = function (_React$Component) {
             { className: 'col-md-12' },
             _react2.default.createElement(
               'h2',
-              null,
+              { className: 'mobile-search' },
               'Buscador de Contratos'
             ),
             _react2.default.createElement(
               'p',
-              null,
+              { className: 'mobile-search' },
               'Encuentra contratos o procedimientos de contrataci\xF3n registrados en Testigo Social 2.0 haciendo uso de los distintos filtros de b\xFAsqueda disponibles.'
             ),
             _react2.default.createElement(
@@ -1844,7 +1844,7 @@ var SearchBar = function (_React$Component) {
               { id: 'queryForm' },
               _react2.default.createElement(
                 'div',
-                { className: 'input-group' },
+                { className: 'input-group hide-contracts' },
                 _react2.default.createElement('input', { type: 'text', className: 'form-control', id: 'query', name: 'query', placeholder: 'Buscar...' }),
                 _react2.default.createElement(
                   'span',
@@ -1893,6 +1893,16 @@ var SearchBar = function (_React$Component) {
                   'span',
                   { className: 'btn-black', 'data-filter': 'contractNumber' },
                   'No. de Contrato'
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'input-group mobile-contracts' },
+                _react2.default.createElement('input', { type: 'text', className: 'form-control', id: 'query', name: 'query', placeholder: 'Buscar' }),
+                _react2.default.createElement(
+                  'button',
+                  { className: 'btn btn-primary btn-mobile', type: 'submit' },
+                  'Buscar'
                 )
               )
             )
@@ -1988,12 +1998,12 @@ var SearchResults = function (_React$Component) {
             { className: 'col-md-12' },
             _react2.default.createElement(
               'h2',
-              null,
+              { className: 'mobile-result' },
               'Resultados de la busqueda'
             ),
             _react2.default.createElement(
               'p',
-              null,
+              { className: 'mobile-result' },
               'Estos son los procedimientos de contrataci\xF3n registrados en Testigo Social 2.0 que satisfacen los creiterios de selecci\xF3n proporcionados'
             ),
             _react2.default.createElement(
@@ -2110,7 +2120,7 @@ var Section = function (_React$Component) {
           null,
           _react2.default.createElement(_Description2.default, {
             title: 'Contratos',
-            color: 'blue',
+            color: 'blue aquablue',
             content: 'Consulta cada contrato que est\xE1 registrado en Testigo Social 2.0. Podr\xE1s encontrar informaci\xF3n para cada una de las etapas del procedimiento de contrataci\xF3n, desde su planeaci\xF3n hasta su implementaci\xF3n.' }),
           _react2.default.createElement(_SearchBar2.default, { onSubmit: this.runQuery }),
           _react2.default.createElement(_SearchResults2.default, { items: this.state.items, onSelection: function onSelection(c) {
@@ -3485,7 +3495,7 @@ var Home = function (_React$Component) {
             { className: 'col-md-4' },
             _react2.default.createElement(
               'p',
-              { className: 'txt-centered' },
+              { className: 'txt-centered txt-mobile' },
               'N\xFAmero de ',
               _react2.default.createElement(
                 'span',
@@ -3509,7 +3519,7 @@ var Home = function (_React$Component) {
             { className: 'col-md-4' },
             _react2.default.createElement(
               'p',
-              { className: 'txt-centered' },
+              { className: 'txt-centered txt-mobile' },
               _react2.default.createElement(
                 'span',
                 { className: 'txt-bold' },
@@ -3534,7 +3544,7 @@ var Home = function (_React$Component) {
             { className: 'col-md-4' },
             _react2.default.createElement(
               'p',
-              { className: 'txt-centered' },
+              { className: 'txt-centered txt-mobile' },
               'Monto total ',
               _react2.default.createElement(
                 'span',
@@ -3653,7 +3663,7 @@ var Home = function (_React$Component) {
         ),
         _react2.default.createElement(
           'div',
-          { className: 'row info bg-blue' },
+          { className: 'row info bg-blue mobile-blue' },
           _react2.default.createElement(
             'div',
             { className: 'inner-row' },

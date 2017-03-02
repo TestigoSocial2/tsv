@@ -116,10 +116,10 @@ class SearchBar extends React.Component {
       <div className="inner-row">
         <div className="row">
           <div className="col-md-12">
-            <h2>Buscador de Contratos</h2>
-            <p>Encuentra contratos o procedimientos de contratación registrados en Testigo Social 2.0 haciendo uso de los distintos filtros de búsqueda disponibles.</p>
+            <h2 className="mobile-search">Buscador de Contratos</h2>
+            <p className="mobile-search">Encuentra contratos o procedimientos de contratación registrados en Testigo Social 2.0 haciendo uso de los distintos filtros de búsqueda disponibles.</p>
             <form id="queryForm">
-              <div className="input-group">
+              <div className="input-group hide-contracts">
                 <input type="text" className="form-control" id="query" name="query" placeholder="Buscar..." />
                 <span className="input-group-btn">
                   <button className="btn btn-primary" type="submit">Buscar</button>
@@ -133,6 +133,10 @@ class SearchBar extends React.Component {
                 <span className="btn-black" data-filter="procedureType">Tipo de Procedimiento</span>
                 <span className="btn-black" data-filter="procedureNumber">No. de Procedimiento</span>
                 <span className="btn-black" data-filter="contractNumber">No. de Contrato</span>
+              </div>
+              <div className="input-group mobile-contracts">
+                <input type="text" className="form-control" id="query" name="query" placeholder="Buscar" />
+                  <button className="btn btn-primary btn-mobile" type="submit">Buscar</button>
               </div>
             </form>
           </div>
