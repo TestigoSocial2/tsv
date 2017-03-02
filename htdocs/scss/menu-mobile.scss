@@ -248,7 +248,7 @@
     height: 36px !important;
     border-bottom-right-radius: 4px !important;
     border-top-right-radius: 4px !important;
-    box-shadow: inset 0 1px 7px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.3);
     font-style: italic;
     font-family: 'Circular Std Book' !important;
     font-size: 12px !important;
@@ -314,6 +314,17 @@ div.inner-row{
   }
   i{
     font-family: 'Circular Std' !important;
+  }
+}
+div.chart-widget{
+  h2{
+    font-family: 'Circular Std Book' !important;
+    font-size: 15px !important;
+    font-weight: bold !important;
+  }
+  p{
+    font-family: 'Circular Std' !important;
+    font-size: 11px !important;
   }
 }
 div.description-container{
