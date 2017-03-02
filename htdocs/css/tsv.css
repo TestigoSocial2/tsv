@@ -830,17 +830,21 @@
   div.inner-row h2.mobile-search {
     font-family: 'Circular Std' !important;
     font-weight: bold !important;
-    font-size: 15px !important; }
+    font-size: 15px !important;
+    margin-top: 45px !important; }
   div.inner-row p.mobile-search {
     font-family: 'Circular Std Book' !important;
-    font-size: 11px !important; }
+    font-size: 11px !important;
+    margin-bottom: 30px !important; }
   div.inner-row h2.mobile-result {
     font-family: 'Circular Std' !important;
     font-weight: bold !important;
-    font-size: 15px !important; }
+    font-size: 15px !important;
+    margin-top: 30px !important; }
   div.inner-row p.mobile-result {
     font-family: 'Circular Std Book' !important;
-    font-size: 11px !important; }
+    font-size: 11px !important;
+    margin-bottom: 30px !important; }
   div.inner-row i {
     font-family: 'Circular Std' !important; }
 
