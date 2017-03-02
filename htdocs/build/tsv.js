@@ -406,7 +406,7 @@ var Menu = function (_React$Component) {
                   null,
                   _react2.default.createElement(
                     _reactRouter.Link,
-                    { to: '/informacion' },
+                    { to: '/informacion', 'data-toggle': 'collapse', 'data-target': '#bs-example-navbar-collapse-1' },
                     '\xBFQu\xE9 es TS 2.0?'
                   )
                 ),
@@ -415,7 +415,7 @@ var Menu = function (_React$Component) {
                   null,
                   _react2.default.createElement(
                     _reactRouter.Link,
-                    { to: '/contratos' },
+                    { to: '/contratos', 'data-toggle': 'collapse', 'data-target': '#bs-example-navbar-collapse-1' },
                     'Contratos'
                   )
                 ),
@@ -424,7 +424,7 @@ var Menu = function (_React$Component) {
                   null,
                   _react2.default.createElement(
                     _reactRouter.Link,
-                    { to: '/indicadores' },
+                    { to: '/indicadores', 'data-toggle': 'collapse', 'data-target': '#bs-example-navbar-collapse-1' },
                     'Indicadores'
                   )
                 ),
@@ -433,7 +433,7 @@ var Menu = function (_React$Component) {
                   null,
                   _react2.default.createElement(
                     _reactRouter.Link,
-                    { to: '/registro' },
+                    { to: '/registro', 'data-toggle': 'collapse', 'data-target': '#bs-example-navbar-collapse-1' },
                     'Notificaciones'
                   )
                 ),
@@ -442,7 +442,7 @@ var Menu = function (_React$Component) {
                   null,
                   _react2.default.createElement(
                     'a',
-                    { href: 'http://www.tm.org.mx', target: '_blank' },
+                    { href: 'http://www.tm.org.mx', target: '_blank', 'data-toggle': 'collapse', 'data-target': '#bs-example-navbar-collapse-1' },
                     'Contrataciones Abiertas'
                   )
                 )
