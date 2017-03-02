@@ -227,8 +227,112 @@
     font-family: 'Decima Mono' !important;
     font-size: 40px !important;
     font-weight: 300 !important;
+    span{
+      font-family: 'Decima Mono' !important;
+      font-size: 40px !important;
+      font-weight: 300 !important;
+    }
   }
 }
+#highlights {
+  border-bottom: 1px solid $tsv-light-gray;
+
+  ol.carousel-indicators {
+    bottom: 0;
+
+    li {
+      border-color: $tsv-gray;
+
+      &.active {
+        background-color: $tsv-black;
+      }
+    }
+  }
+
+  p.info {
+    font-size: 2em;
+    margin: 20px 0;
+    padding: 20px;
+  }
+
+  h1 {
+    font-family: 'Decima Mono' !important;
+    font-size: 18px !important;
+    font-weight: 300 !important;
+    span#totalAward{
+      font-family: 'Decima Mono' !important;
+      font-size: 18px !important;
+      font-weight: 300 !important;
+    }
+  }
+  div.carousel-inner{
+    height: 530px !important;
+  }
+  div.item {
+    height: 510px !important;
+
+    p.mobile{
+      margin-top: 70px
+    }
+
+    h2 {
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+
+    div.chart {
+      border-right: 0px !important;
+      float: none !important;
+      height: auto !important;
+      margin: 20px 0 !important;
+      width: auto !important;
+    }
+
+    div.info {
+      width: auto !important;
+      text-align: center !important;
+      h2{
+        font-family: 'Circular Std' !important;
+        font-size: 13px !important;
+        font-weight: bold !important;
+      }
+      span{
+        font-family: 'Decima Mono' !important;
+        font-size: 18px !important;
+        font-weight: 300 !important;
+      }
+      h3{
+        font-family: 'Decima Mono' !important;
+        font-size: 18px !important;
+        font-weight: 300 !important;
+      }
+      p{
+      font-family: 'Circular Std Book' !important;
+      font-size: 13px !important;
+
+      span.contracts{
+        font-family: 'Circular Std Book' !important;
+        font-size: 13px !important;
+        font-weight: 300 !important;
+      }
+     }
+     p.details{
+      font-family: 'Circular Std Book' !important;
+      font-size: 10px !important;
+    }
+    }
+  }
+
+  span.bg-green {
+    font-family: 'Circular Std Book' !important;
+    font-size: 12px !important;
+    background-color: #B4F8C9;
+    strong {
+      font-size: 12px !important;
+    }
+  }
+}
+
 #queryForm {
   button.btn-primary {
     background-color: $tsv-blue;
@@ -271,6 +375,11 @@
     align-items: center;
     display: flex;
     flex-direction: column;
+    .popover{
+      margin-left: 20px !important; 
+      margin-right: 20px;
+      left: 0px !important;
+    }
 
     span {
       margin: 0 4px;

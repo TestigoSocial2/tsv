@@ -172,7 +172,7 @@ class Home extends React.Component {
 
             <div className="carousel-inner" role="listbox">
               <div className="item active">
-                <p className="info">
+                <p className="info mobile">
                   <span className="bg-green">Entre el <span id="firstDate"></span> y el <span id="lastDate"></span>, se han adjudicado</span>
                 </p>
                 <h1>$<span id="totalAward" className="counter">0</span> MXN</h1>
