@@ -3,8 +3,7 @@ vendor/**
 .sass-cache
 glide.lock
 tsv
-tsv.db
-tsv.tar.gz
+
 node_modules
 htdocs/build/tsv.js
 .env
