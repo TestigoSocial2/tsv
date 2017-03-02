@@ -273,7 +273,7 @@ class Home extends React.Component {
         </div>
 
         {/* Bottom text */}
-        <div className="row info bg-blue">
+        <div className="row info bg-blue mobile-blue">
           <div className="inner-row">
             <p className="txt-large txt-centered">La apertura y la participación de la ciudadanía en las compras públicas se traduce en mejores bienes y servicios públicos para las <strong>comunidades</strong>, más oportunidades de negocio para emprendedores y <strong>empresas</strong> y una mayor rendición de cuentas de los <strong>gobiernos.</strong></p>
           </div>

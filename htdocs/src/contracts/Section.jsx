@@ -39,7 +39,7 @@ class Section extends React.Component {
         <div>
           <Description
             title="Contratos"
-            color="blue"
+            color="blue aquablue"
             content="Consulta cada contrato que está registrado en Testigo Social 2.0. Podrás encontrar información para cada una de las etapas del procedimiento de contratación, desde su planeación hasta su implementación." />
           <SearchBar onSubmit={this.runQuery} />
           <SearchResults items={this.state.items} onSelection={(c) => this.setState({details:c})} />
