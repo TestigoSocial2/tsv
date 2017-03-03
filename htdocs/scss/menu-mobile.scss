@@ -45,11 +45,14 @@
   #hero {
 
     div.logo {
-      margin: 0px !important;
-      width: auto !important;
+      height: 108px !important;
+      margin-top: 150px !important;
+      width: 280px !important;
     }
     div.photo{
-      height: 500px !important;
+      height: 510px !important;
+      display: flex;
+      flex-direction: column;
     }
 
     h2 {
@@ -57,16 +60,12 @@
       font-family: 'Circular Std Book' !important;
       font-size: 28px !important;
       text-align: center !important;
-      position: absolute !important;
-      top: 220px;
-      padding-right: 15px !important;
     }
   }
     #video {
     padding: 2em 0;
 
     div.col-md-12 {
-      padding-left: 0px !important;
       margin-bottom: 20px !important;
       text-align: center;
     }
@@ -75,9 +74,10 @@
     div.holder {
       background: url('../images/video_holder.png') no-repeat center center;
       background-size: contain;
-      margin-left: 15px !important;
-      height: 120px !important;
+      height: 126px !important;
       margin-bottom: 30px !important;
+      border: 1px solid black !important;
+      width: 100% !important;
     }
 
     a {
@@ -87,11 +87,12 @@
         text-decoration: none;
       }
     }
-    span.btn-black {
+    span.txt-upper {
       padding: 12px 0px !important;
       font-family: 'Circular Std' !important;
       font-size: 12px !important;
       font-weight: 700;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
       text-align: center !important;
       width: 160px;
       height: 40px;
@@ -100,9 +101,12 @@
       border-radius: 0px !important;
       width: 255px !important;
       height: 65px;
-      font-size: 13px !important;  
+      font-family: 'Circular Std' !important;
+      font-size: 14px !important;
+      font-weight: 700;
       padding-left: 20px !important;
       padding-right: 20px !important;
+      padding-top: 12px!important;
     }
     br{
       display: none;
@@ -116,6 +120,11 @@
         font-family: 'Circular Std Book' !important;
         font-size: 13px !important;
         text-align: center !important;
+        strong{
+          font-family: 'Circular Std' !important;
+          font-size: 13px !important;
+          font-weight: bold;
+        }
       }
 
       span.icon {
@@ -163,6 +172,7 @@
     font-size: 10px;
     text-align: center;
     margin-top: 60px;
+    font-family: 'Circular Std' !important;
   }
   div.logo {
     float: left;
@@ -475,6 +485,11 @@ p.txt-large{
   font-size: 15px !important;
   text-align: center !important;
   margin: 20px;
+  strong{
+    font-family: 'Circular Std' !important;
+    font-size: 15px !important;
+    font-weight: bold;
+  }
 }
 }
 
