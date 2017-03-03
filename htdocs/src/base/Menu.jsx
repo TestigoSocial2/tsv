@@ -45,7 +45,6 @@ class Menu extends React.Component {
                 <Link to={'#bs-example-navbar-collapse-1'} class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                   <FontAwesome name='bars' aria-expanded="false"/>
                 </Link>
-                
               </div>
               <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul className="nav navbar-nav">
