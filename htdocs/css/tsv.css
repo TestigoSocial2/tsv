@@ -652,7 +652,7 @@ td.checkbox input {
   padding: 0px !important; }
 
 @media all and (max-width: 768px) {
-  .menu-bars {
+  #menu-bars {
     margin: 0px !important; }
 
   #top {

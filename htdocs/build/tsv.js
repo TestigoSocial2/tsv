@@ -395,7 +395,7 @@ var Menu = function (_React$Component) {
               ),
               _react2.default.createElement(
                 'a',
-                { 'class': 'navbar-toggle collapsed menu-bars', 'data-toggle': 'collapse', 'data-target': '#bs-example-navbar-collapse-1', 'aria-expanded': 'false' },
+                { 'class': 'navbar-toggle collapsed menu-bars', id: 'menu-bars', 'data-toggle': 'collapse', 'data-target': '#bs-example-navbar-collapse-1', 'aria-expanded': 'false' },
                 _react2.default.createElement(FontAwesome, { name: 'bars' })
               )
             ),
