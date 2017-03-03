@@ -393,7 +393,7 @@ var Menu = function (_React$Component) {
                   '2.0 '
                 )
               ),
-              _react2.default.createElement(FontAwesome, { name: 'bars', 'class': 'navbar-toggle collapsed', 'data-toggle': 'collapse', 'data-target': '#bs-example-navbar-collapse-1', 'aria-expanded': 'false' })
+              _react2.default.createElement(FontAwesome, { name: 'bars', 'class': 'navbar-toggle collapsed', 'data-toggle': 'collapse', href: '#bs-example-navbar-collapse-1', 'data-target': '#bs-example-navbar-collapse-1', 'aria-expanded': 'false' })
             ),
             _react2.default.createElement(
               'div',
@@ -3848,12 +3848,19 @@ var ChartWidget = function (_React$Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       if (!this.chart) {
+        var d = true;
+        if ($(window).width() < 768) {
+          d = false;
+        }
         this.chart = new _chart2.default(document.getElementById(this.props.id), {
           type: "pie",
           options: {
             responsive: true,
             responsiveAnimationDuration: 500,
-            padding: 10
+            padding: 10,
+            legend: {
+              display: d
+            }
           }
         });
         this.forceUpdate();
@@ -3876,8 +3883,9 @@ var ChartWidget = function (_React$Component) {
         this.chart.data.datasets = newData.datasets;
         this.chart.data.labels = newData.labels;
         this.chart.update();
+        $("#legend_" + this.props.id).html(this.chart.generateLegend());
       }
-
+      var idl = "legend_" + this.props.id;
       return _react2.default.createElement(
         'div',
         { className: 'chart-widget' },
@@ -3903,7 +3911,8 @@ var ChartWidget = function (_React$Component) {
           _react2.default.createElement('canvas', { id: this.props.id,
             className: 'dataChart',
             height: this.props.height,
-            width: this.props.width })
+            width: this.props.width }),
+          _react2.default.createElement('div', { id: idl, className: 'dataChartLegend hidden-md hidden-lg' })
         )
       );
     }
