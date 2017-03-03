@@ -2206,7 +2206,7 @@ var TableItem = function (_React$Component) {
           ),
           _react2.default.createElement(
             'a',
-            { onClick: this.handleClick },
+            { className: 'descriptionMobile', onClick: this.handleClick },
             release.tender.description
           )
         ),
@@ -2250,7 +2250,7 @@ var TableItem = function (_React$Component) {
         ),
         _react2.default.createElement(
           'td',
-          { width: '15%' },
+          { className: 'mobileBtn', width: '15%' },
           _react2.default.createElement(
             'a',
             { className: 'btn-black active mobileA', onClick: this.handleClick },
@@ -3249,15 +3249,27 @@ var Home = function (_React$Component) {
             }));
 
             if (!charts[method].c) {
+              var d = true;
+              if ($(window).width() < 768) {
+                d = false;
+              }
               charts[method].c = new _chart2.default(active.find('canvas'), {
                 type: "pie",
                 data: charts[method].data,
                 options: {
+                  title: {
+                    display: true,
+                    text: "¿Cómo se ha gastado tu dinero?"
+                  },
                   responsive: true,
                   responsiveAnimationDuration: 500,
-                  padding: 10
+                  padding: 10,
+                  legend: {
+                    display: d
+                  }
                 }
               });
+              active.find(".dataChartLegend").html(charts[method].c.generateLegend());
             }
           }
         });
@@ -3355,7 +3367,9 @@ var Home = function (_React$Component) {
                 _react2.default.createElement(
                   'div',
                   { className: 'chart' },
-                  _react2.default.createElement('canvas', { className: 'dataChart', width: '460', height: '320' })
+                  _react2.default.createElement('canvas', { className: 'dataChart', width: '460', height: '320' }),
+                  _react2.default.createElement('div', { className: 'dataChartLegend hidden-md hidden-lg' }),
+                  _react2.default.createElement('div', { className: 'line hidden-md hidden-lg' })
                 ),
                 _react2.default.createElement(
                   'div',
@@ -3400,7 +3414,9 @@ var Home = function (_React$Component) {
                 _react2.default.createElement(
                   'div',
                   { className: 'chart' },
-                  _react2.default.createElement('canvas', { className: 'dataChart', width: '460', height: '320' })
+                  _react2.default.createElement('canvas', { className: 'dataChart', width: '460', height: '320' }),
+                  _react2.default.createElement('div', { className: 'dataChartLegend hidden-md hidden-lg' }),
+                  _react2.default.createElement('div', { className: 'line hidden-md hidden-lg' })
                 ),
                 _react2.default.createElement(
                   'div',
@@ -3445,7 +3461,9 @@ var Home = function (_React$Component) {
                 _react2.default.createElement(
                   'div',
                   { className: 'chart' },
-                  _react2.default.createElement('canvas', { className: 'dataChart', width: '460', height: '320' })
+                  _react2.default.createElement('canvas', { className: 'dataChart', width: '460', height: '320' }),
+                  _react2.default.createElement('div', { className: 'dataChartLegend hidden-md hidden-lg' }),
+                  _react2.default.createElement('div', { className: 'line hidden-md hidden-lg' })
                 ),
                 _react2.default.createElement(
                   'div',
@@ -3495,7 +3513,7 @@ var Home = function (_React$Component) {
             { className: 'col-md-4' },
             _react2.default.createElement(
               'p',
-              { className: 'txt-centered txt-mobile' },
+              { className: 'txt-centered txt-mobile hidden-sm hidden-xs' },
               'N\xFAmero de ',
               _react2.default.createElement(
                 'span',
@@ -3512,14 +3530,26 @@ var Home = function (_React$Component) {
                 { className: 'counter totalContracts' },
                 '0'
               )
-            )
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'txt-centered hidden-md hidden-lg' },
+              'N\xFAmero de ',
+              _react2.default.createElement(
+                'span',
+                { className: 'txt-bold' },
+                'procedimientos de contrataci\xF3n'
+              ),
+              ' registrados'
+            ),
+            _react2.default.createElement('div', { className: 'line hidden-md hidden-lg' })
           ),
           _react2.default.createElement(
             'div',
             { className: 'col-md-4' },
             _react2.default.createElement(
               'p',
-              { className: 'txt-centered txt-mobile' },
+              { className: 'txt-centered txt-mobile hidden-sm hidden-xs' },
               _react2.default.createElement(
                 'span',
                 { className: 'txt-bold' },
@@ -3537,14 +3567,25 @@ var Home = function (_React$Component) {
                 '0'
               ),
               'M'
-            )
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'txt-centered hidden-md hidden-lg' },
+              _react2.default.createElement(
+                'span',
+                { className: 'txt-bold' },
+                'Presupuesto asignado'
+              ),
+              ' de las contrataciones registradas'
+            ),
+            _react2.default.createElement('div', { className: 'line hidden-md hidden-lg' })
           ),
           _react2.default.createElement(
             'div',
             { className: 'col-md-4' },
             _react2.default.createElement(
               'p',
-              { className: 'txt-centered txt-mobile' },
+              { className: 'txt-centered txt-mobile hidden-xs hidden-sm' },
               'Monto total ',
               _react2.default.createElement(
                 'span',
@@ -3563,7 +3604,19 @@ var Home = function (_React$Component) {
                 '0'
               ),
               'M'
-            )
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'txt-centered hidden-md hidden-lg' },
+              'Monto total ',
+              _react2.default.createElement(
+                'span',
+                { className: 'txt-bold' },
+                'contratado'
+              ),
+              ' a trav\xE9s de los procedimientos registrados'
+            ),
+            _react2.default.createElement('div', { className: 'line hidden-md hidden-lg' })
           )
         ),
         _react2.default.createElement(

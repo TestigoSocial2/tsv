@@ -18,7 +18,7 @@ class TableItem extends React.Component {
       <tr className="mobileTable">
         <td width="50%">
           <p className="lbl">{release.tender.id}</p>
-          <a onClick={this.handleClick}>{release.tender.description}</a>
+          <a className="descriptionMobile" onClick={this.handleClick}>{release.tender.description}</a>
         </td>
         <td>
           <p className="lbl">Monto</p>
@@ -30,7 +30,7 @@ class TableItem extends React.Component {
           <p className="lbl">Comprador</p>
           <p className="mobileP">{release.buyer.name}</p>
         </td>
-        <td width="15%">
+        <td className="mobileBtn" width="15%">
           <a className="btn-black active mobileA" onClick={this.handleClick}>Ver Contrato</a>
         </td>
       </tr>

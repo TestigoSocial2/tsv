@@ -134,15 +134,27 @@ class Home extends React.Component {
           }));
 
           if( !charts[method].c ) {
+            var d = true;
+            if($(window).width() < 768){
+              d = false;
+            }
             charts[method].c = new Chart( active.find('canvas'), {
               type: "pie",
               data: charts[method].data,
               options: {
+                title:{
+                  display:true,
+                  text:"¿Cómo se ha gastado tu dinero?"
+                },
                 responsive: true,
                 responsiveAnimationDuration: 500,
-                padding: 10
+                padding: 10,
+                legend: {
+                    display: d,
+                }
               }
             });
+            active.find(".dataChartLegend").html(charts[method].c.generateLegend());
           }
         }
       });
@@ -183,6 +195,8 @@ class Home extends React.Component {
               <div className="item" data-section="limited">
                 <div className="chart">
                   <canvas className="dataChart" width="460" height="320"></canvas>
+                  <div className="dataChartLegend hidden-md hidden-lg"></div>
+                  <div className="line hidden-md hidden-lg"></div>
                 </div>
                 <div className="info">
                   <h2>Adjudicación Directa</h2>
@@ -194,6 +208,8 @@ class Home extends React.Component {
               <div className="item" data-section="selective">
                 <div className="chart">
                   <canvas className="dataChart" width="460" height="320"></canvas>
+                  <div className="dataChartLegend hidden-md hidden-lg"></div>
+                  <div className="line hidden-md hidden-lg"></div>
                 </div>
                 <div className="info">
                   <h2>Invitación a cuado menos 3 personas</h2>
@@ -205,6 +221,8 @@ class Home extends React.Component {
               <div className="item" data-section="open">
                 <div className="chart">
                   <canvas className="dataChart" width="460" height="320"></canvas>
+                  <div className="dataChartLegend hidden-md hidden-lg"></div>
+                  <div className="line hidden-md hidden-lg"></div>
                 </div>
                 <div className="info">
                   <h2>Licitación Pública</h2>
@@ -220,22 +238,28 @@ class Home extends React.Component {
         {/* Facts */}
         <div id="facts" className="row inner-row">
           <div className="col-md-4">
-            <p className="txt-centered txt-mobile">Número de <span className="txt-bold">procedimientos de contratación</span> registrados</p>
+            <p className="txt-centered txt-mobile hidden-sm hidden-xs">Número de <span className="txt-bold">procedimientos de contratación</span> registrados</p>
             <p className="highlight txt-centered">
               <span className="counter totalContracts">0</span>
             </p>
+            <p className="txt-centered hidden-md hidden-lg">Número de <span className="txt-bold">procedimientos de contratación</span> registrados</p>
+            <div className="line hidden-md hidden-lg"></div>
           </div>
           <div className="col-md-4">
-            <p className="txt-centered txt-mobile"><span className="txt-bold">Presupuesto asignado</span> de las contrataciones registradas</p>
+            <p className="txt-centered txt-mobile hidden-sm hidden-xs"><span className="txt-bold">Presupuesto asignado</span> de las contrataciones registradas</p>
             <p className="highlight txt-centered">
               $<span id="totalBudget" className="counter">0</span>M
             </p>
+            <p className="txt-centered hidden-md hidden-lg"><span className="txt-bold">Presupuesto asignado</span> de las contrataciones registradas</p>
+            <div className="line hidden-md hidden-lg"></div>
           </div>
           <div className="col-md-4">
-            <p className="txt-centered txt-mobile">Monto total <span className="txt-bold">contratado</span> a través de los procedimientos registrados</p>
+            <p className="txt-centered txt-mobile hidden-xs hidden-sm">Monto total <span className="txt-bold">contratado</span> a través de los procedimientos registrados</p>
             <p className="highlight txt-centered">
               $<span id="totalAwardShort" className="counter">0</span>M
             </p>
+            <p className="txt-centered hidden-md hidden-lg">Monto total <span className="txt-bold">contratado</span> a través de los procedimientos registrados</p>
+            <div className="line hidden-md hidden-lg"></div>
           </div>
         </div>
 
