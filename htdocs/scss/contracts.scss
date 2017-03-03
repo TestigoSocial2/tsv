@@ -3,11 +3,56 @@
 		display: flex;
 		flex-direction: column;
 		background-color: white !important;
+        margin-top: 20px !important;
 		border-bottom: 2px solid gray;
 	}
 	.mobileTable td{
 		background-color: white !important;
 		width: 100% !important;
+		border-top: none !important;
+		padding-left: 0px !important;
+		a.mobileA{
+		  	color: white !important; 
+		  	font-family: 'Circular Std';
+		    font-weight: bold;
+	        font-size: 12px;
+	        text-transform: uppercase;
+	        margin-bottom: 12px !important;
+		  }
+	}
+	.mobileTable td.mobileBtn{
+		text-align: center;
+	}
+	table.latest-contracts {
+	  h4 {
+		font-family: 'Circular Std';
+	    font-weight: bold;
+	    margin-bottom: 20px;
+        font-size: 15px;
+	  }
+	  a{
+	    font-family: 'Circular Std';
+	    font-weight: bold;
+        font-size: 15px;
+        color: #4990E2;	  	
+	  }
+	  a.descriptionMobile{
+	  	margin-bottom: 15px;
+	  }
+
+
+	  p.lbl {
+	    font-family: 'Circular Std' !important;
+	    font-weight: bold !important;
+        font-size: 11px !important;
+        color: #4A4A4A !important;
+        margin-bottom: 0px !important;
+	  }
+	  p.mobileP {
+	    font-family: 'Circular Std Book';
+        font-size: 15px;
+        color: black;
+	  }
 	}
 
 	h2.block-title{

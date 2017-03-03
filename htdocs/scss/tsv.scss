@@ -826,4 +826,8 @@ div.chart-main {
   #highlights, #facts{
     border-bottom: 1px solid #000;
   }
+
+  div.chart-widget canvas{
+    min-height:auto !important
+  }
 }
