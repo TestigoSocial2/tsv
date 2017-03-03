@@ -18,6 +18,7 @@ $tsv-dark-red: #a94442;
 @import 'register';
 @import 'menu-mobile';
 @import 'information';
+@import 'Charts';
 
 
 
@@ -817,5 +818,11 @@ div.chart-main {
       min-height: 440px;
       width: 94%;
     }
+  }
+}
+
+@media all and (max-width: 768px) {
+  #highlights, #facts{
+    border-bottom: 1px solid #000;
   }
 }

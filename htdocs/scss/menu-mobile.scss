@@ -230,13 +230,16 @@
   p.highlight{
     font-family: 'Decima Mono Lt' !important;
     font-size: 40px !important;
-    margin-bottom: 30px !important;
+    margin-bottom: 0px !important;
     letter-spacing: -2px;
     span{
       font-family: 'Decima Mono Lt' !important;
       font-size: 40px !important;
       letter-spacing: -2px;
     }
+  }
+  .line{
+    margin:20px auto !important;
   }
 }
 #highlights {

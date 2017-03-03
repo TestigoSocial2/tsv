@@ -798,12 +798,14 @@ td.checkbox input {
     #facts p.highlight {
       font-family: 'Decima Mono Lt' !important;
       font-size: 40px !important;
-      margin-bottom: 30px !important;
+      margin-bottom: 0px !important;
       letter-spacing: -2px; }
       #facts p.highlight span {
         font-family: 'Decima Mono Lt' !important;
         font-size: 40px !important;
         letter-spacing: -2px; }
+    #facts .line {
+      margin: 20px auto !important; }
 
   #highlights {
     border-bottom: 1px solid #ccc; }
@@ -1003,6 +1005,23 @@ td.checkbox input {
   .inner-row h1 {
     padding-left: 15px;
     padding-right: 15px; } }
+.dataChartLegend ul li {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-top: 10px;
+  font-size: 10px; }
+
+.dataChartLegend ul li span {
+  width: 10px;
+  height: 10px;
+  margin-right: 15px; }
+
+.item .chart .line, #facts .line {
+  width: 70%;
+  border-top: 1px #CCC solid;
+  margin: 0px auto; }
+
 html {
   min-height: 100%;
   position: relative; }
@@ -1518,5 +1537,9 @@ div.chart-main {
     margin: 10px 3%;
     min-height: 440px;
     width: 94%; }
+
+@media all and (max-width: 768px) {
+  #highlights, #facts {
+    border-bottom: 1px solid #000; } }
 
 /*# sourceMappingURL=tsv.css.map */
