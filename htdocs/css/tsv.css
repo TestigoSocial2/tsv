@@ -791,15 +791,19 @@ td.checkbox input {
     padding: 4em 0 2em; }
     #facts p.txt-mobile {
       font-family: 'Circular Std Book' !important;
-      font-size: 13px !important; }
+      font-size: 13px !important;
+      margin-bottom: 40px !important; }
+      #facts p.txt-mobile span.txt-bold {
+        font-family: 'Circular Std Book' !important; }
     #facts p.highlight {
-      font-family: 'Decima Mono' !important;
+      font-family: 'Decima Mono Lt' !important;
       font-size: 40px !important;
-      font-weight: lighter !important; }
+      margin-bottom: 30px !important;
+      letter-spacing: -2px; }
       #facts p.highlight span {
-        font-family: 'Decima Mono' !important;
+        font-family: 'Decima Mono Lt' !important;
         font-size: 40px !important;
-        font-weight: lighter !important; }
+        letter-spacing: -2px; }
 
   #highlights {
     border-bottom: 1px solid #ccc; }
@@ -816,11 +820,12 @@ td.checkbox input {
     #highlights h1 {
       font-family: 'Decima Mono' !important;
       font-size: 18px !important;
-      font-weight: lighter !important; }
+      letter-spacing: -2px !important;
+      font-weight: 300 !important; }
       #highlights h1 span#totalAward {
         font-family: 'Decima Mono' !important;
         font-size: 18px !important;
-        font-weight: lighter !important;
+        font-weight: 300 !important;
         letter-spacing: -1px !important; }
     #highlights div.item p.mobile {
       margin-top: 70px; }
@@ -844,36 +849,39 @@ td.checkbox input {
         margin-left: auto;
         margin-right: auto; }
       #highlights div.item div.info span.amount {
-        font-family: 'Decima Mono' !important;
-        font-size: 16px !important;
-        font-weight: lighter !important;
-        letter-spacing: -1px; }
+        font-family: 'Decima Mono Lt' !important;
+        font-size: 20px !important;
+        letter-spacing: -2px; }
       #highlights div.item div.info h3 {
-        font-family: 'Decima Mono' !important;
-        font-size: 16px !important;
-        font-weight: lighter !important;
-        letter-spacing: -1px;
+        font-family: 'Decima Mono Lt' !important;
+        font-size: 20px !important;
+        letter-spacing: -2px;
         margin-bottom: 20px;
         margin-top: 20px; }
       #highlights div.item div.info p {
         font-family: 'Circular Std Book' !important;
-        font-size: 13px !important; }
+        font-size: 13px !important;
+        margin-bottom: 20px !important; }
         #highlights div.item div.info p span.contracts {
-          font-family: 'Circular Std Book' !important;
+          font-family: 'Circular Std' !important;
           font-size: 13px !important;
-          font-weight: 300 !important; }
+          font-weight: bold !important; }
       #highlights div.item div.info p.details {
         font-family: 'Circular Std Book' !important;
         font-size: 10px !important;
-        margin-bottom: 40px !important; }
+        margin-bottom: 40px !important;
+        color: #9B9B9B; }
     #highlights span.bg-green {
       font-family: 'Circular Std Book' !important;
       font-size: 12px !important;
       background-color: #B4F8C9; }
       #highlights span.bg-green span {
-        font-family: 'Circular Std Book' !important;
-        font-size: 12px !important; }
+        font-family: 'Circular Std' !important;
+        font-size: 12px !important;
+        font-weight: bold !important; }
       #highlights span.bg-green strong {
+        font-size: 12px !important;
+        font-family: 'Circular Std' !important;
         font-size: 12px !important; }
 
   #queryForm button.btn-primary {

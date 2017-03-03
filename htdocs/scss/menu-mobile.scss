@@ -222,15 +222,20 @@
   p.txt-mobile {
     font-family: 'Circular Std Book' !important;
     font-size: 13px !important;
+    margin-bottom: 40px !important;
+    span.txt-bold{
+      font-family: 'Circular Std Book' !important;
+    }
   }
   p.highlight{
-    font-family: 'Decima Mono' !important;
+    font-family: 'Decima Mono Lt' !important;
     font-size: 40px !important;
-    font-weight: lighter !important;
+    margin-bottom: 30px !important;
+    letter-spacing: -2px;
     span{
-      font-family: 'Decima Mono' !important;
+      font-family: 'Decima Mono Lt' !important;
       font-size: 40px !important;
-      font-weight: lighter !important;
+      letter-spacing: -2px;
     }
   }
 }
@@ -258,11 +263,12 @@
   h1 {
     font-family: 'Decima Mono' !important;
     font-size: 18px !important;
-    font-weight: lighter !important;
+    letter-spacing: -2px !important;
+    font-weight: 300 !important;
     span#totalAward{
       font-family: 'Decima Mono' !important;
       font-size: 18px !important;
-      font-weight: lighter !important;
+      font-weight: 300 !important;
       letter-spacing: -1px !important;
     }
   }
@@ -297,33 +303,33 @@
         margin-right: auto;
       }
       span.amount{
-        font-family: 'Decima Mono' !important;
-        font-size: 16px !important;
-        font-weight: lighter !important;
-        letter-spacing: -1px;
+        font-family: 'Decima Mono Lt' !important;
+        font-size: 20px !important;
+        letter-spacing: -2px;
       }
       h3{
-        font-family: 'Decima Mono' !important;
-        font-size: 16px !important;
-        font-weight: lighter !important;
-        letter-spacing: -1px;
+        font-family: 'Decima Mono Lt' !important;
+        font-size: 20px !important;
+        letter-spacing: -2px;
         margin-bottom: 20px;
         margin-top: 20px;
       }
       p{
       font-family: 'Circular Std Book' !important;
       font-size: 13px !important;
+      margin-bottom: 20px !important;
 
       span.contracts{
-        font-family: 'Circular Std Book' !important;
+        font-family: 'Circular Std' !important;
         font-size: 13px !important;
-        font-weight: 300 !important;
+        font-weight: bold !important;
       }
      }
      p.details{
       font-family: 'Circular Std Book' !important;
       font-size: 10px !important;
       margin-bottom: 40px !important;
+      color: #9B9B9B;
     }
     }
   }
@@ -333,10 +339,13 @@
     font-size: 12px !important;
     background-color: #B4F8C9;
     span{
-      font-family: 'Circular Std Book' !important;
+      font-family: 'Circular Std' !important;
       font-size: 12px !important;
+      font-weight: bold !important;
     }
     strong {
+      font-size: 12px !important;
+      font-family: 'Circular Std' !important;
       font-size: 12px !important;
     }
   }
