@@ -63,8 +63,14 @@
 	div.contract-details div.border-bottom:after{
 		background-color: #979797;
 		height: 2px;
-		left:  15px;
-		bottom : 0px;
+		left: 15px;
+		bottom: 0px;
 		width: 100px;
+		content: '';
+		position: absolute;
+	}
+	div.contract-details a{
+		word-break: break-all;
+		color: #4A90E2;
 	}
 }
