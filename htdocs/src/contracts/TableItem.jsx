@@ -15,7 +15,7 @@ class TableItem extends React.Component {
   render() {
     let release = this.props.contract.releases[0];
     return (
-      <tr>
+      <tr className="mobileTable">
         <td width="50%">
           <p className="lbl">{release.tender.id}</p>
           <a onClick={this.handleClick}>{release.tender.description}</a>

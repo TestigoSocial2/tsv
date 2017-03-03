@@ -2195,7 +2195,7 @@ var TableItem = function (_React$Component) {
       var release = this.props.contract.releases[0];
       return _react2.default.createElement(
         'tr',
-        null,
+        { className: 'mobileTable' },
         _react2.default.createElement(
           'td',
           { width: '50%' },
@@ -5236,12 +5236,17 @@ var Form = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                       'td',
-                      { className: 'txt-upper col-md-2' },
+                      { className: 'txt-upper col-md-2 description-top' },
                       _react2.default.createElement(
                         'label',
                         null,
                         'Correo Electr\xF3nico'
                       )
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'txt-italic visible-xs description' },
+                      'La cuenta de correo electr\xF3nico registrada ser\xE1 tu nombre de usuario'
                     ),
                     _react2.default.createElement(
                       'td',
@@ -5256,7 +5261,7 @@ var Form = function (_React$Component) {
                     ),
                     _react2.default.createElement(
                       'td',
-                      { className: 'txt-italic' },
+                      { className: 'txt-italic hidden-xs' },
                       'La cuenta de correo electr\xF3nico registrada ser\xE1 tu nombre de usuario'
                     )
                   ),
@@ -5265,12 +5270,17 @@ var Form = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                       'td',
-                      { className: 'txt-upper col-md-2' },
+                      { className: 'txt-upper col-md-2 description-top' },
                       _react2.default.createElement(
                         'label',
                         null,
                         'Contrase\xF1a'
                       )
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'txt-italic visible-xs description' },
+                      'La contrase\xF1a deber\xE1 tener una extensi\xF3n de al menos 6 caracteres y contener al menos un n\xFAmero'
                     ),
                     _react2.default.createElement(
                       'td',
@@ -5285,7 +5295,7 @@ var Form = function (_React$Component) {
                     ),
                     _react2.default.createElement(
                       'td',
-                      { className: 'txt-italic' },
+                      { className: 'txt-italic hidden-xs' },
                       'La contrase\xF1a deber\xE1 tener una extensi\xF3n de al menos 6 caracteres y contener al menos un n\xFAmero'
                     )
                   ),
@@ -5294,12 +5304,17 @@ var Form = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                       'td',
-                      { className: 'txt-upper col-md-2' },
+                      { className: 'txt-upper col-md-2 description-top' },
                       _react2.default.createElement(
                         'label',
                         null,
                         'Tipo de Usuario'
                       )
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'txt-italic visible-xs description' },
+                      'Selecciona una de las siguientes opciones'
                     ),
                     _react2.default.createElement(
                       'td',
@@ -5351,7 +5366,7 @@ var Form = function (_React$Component) {
                     ),
                     _react2.default.createElement(
                       'td',
-                      { className: 'txt-italic' },
+                      { className: 'txt-italic hidden-xs' },
                       'Selecciona una de las siguientes opciones'
                     )
                   ),
@@ -5360,12 +5375,17 @@ var Form = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                       'td',
-                      { className: 'txt-upper col-md-2' },
+                      { className: 'txt-upper col-md-2 description-top' },
                       _react2.default.createElement(
                         'label',
                         null,
                         'Edad'
                       )
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'txt-italic visible-xs description' },
+                      'Selecciona tu edad (solo aplica para periodista, emprendedor, legislador, funcionario p\xFAblico, ciudadano)'
                     ),
                     _react2.default.createElement(
                       'td',
@@ -5378,7 +5398,7 @@ var Form = function (_React$Component) {
                     ),
                     _react2.default.createElement(
                       'td',
-                      { className: 'txt-italic' },
+                      { className: 'txt-italic hidden-xs' },
                       'Selecciona tu edad (solo aplica para periodista, emprendedor, legislador, funcionario p\xFAblico, ciudadano)'
                     )
                   ),
@@ -5387,12 +5407,17 @@ var Form = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                       'td',
-                      { className: 'txt-upper col-md-2' },
+                      { className: 'txt-upper col-md-2 description-top' },
                       _react2.default.createElement(
                         'label',
                         null,
                         'C\xF3digo Postal'
                       )
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'txt-italic description visible-xs' },
+                      'Introduce tu c\xF3digo postal'
                     ),
                     _react2.default.createElement(
                       'td',
@@ -5406,7 +5431,7 @@ var Form = function (_React$Component) {
                     ),
                     _react2.default.createElement(
                       'td',
-                      { className: 'txt-italic' },
+                      { className: 'txt-italic hidden-xs' },
                       'Introduce tu c\xF3digo postal'
                     )
                   ),
@@ -5415,12 +5440,17 @@ var Form = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                       'td',
-                      { className: 'txt-upper col-md-2' },
+                      { className: 'txt-upper col-md-2 description-top ' },
                       _react2.default.createElement(
                         'label',
                         null,
                         'Pa\xEDs'
                       )
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'txt-italic visible-xs description' },
+                      'Selecciona tu pa\xEDs de residencia'
                     ),
                     _react2.default.createElement(
                       'td',
@@ -5433,7 +5463,7 @@ var Form = function (_React$Component) {
                     ),
                     _react2.default.createElement(
                       'td',
-                      { className: 'txt-italic' },
+                      { className: 'txt-italic hidden-xs' },
                       'Selecciona tu pa\xEDs de residencia'
                     )
                   )
@@ -5717,7 +5747,7 @@ var Form = function (_React$Component) {
               ),
               _react2.default.createElement(
                 'p',
-                null,
+                { className: 'aviso-privacidad' },
                 'Consulta nuestro aviso de privacidad ',
                 _react2.default.createElement(
                   'a',
@@ -5727,7 +5757,7 @@ var Form = function (_React$Component) {
               ),
               _react2.default.createElement(
                 'div',
-                { className: 'checkbox' },
+                { className: 'checkbox aviso-privacidad' },
                 _react2.default.createElement(
                   'label',
                   null,
@@ -5738,7 +5768,7 @@ var Form = function (_React$Component) {
               _react2.default.createElement(
                 'button',
                 { type: 'submit', className: 'btn btn-black btn-lg' },
-                'Comienza'
+                'COMENZAR'
               )
             )
           )
