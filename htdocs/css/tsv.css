@@ -663,6 +663,8 @@ td.checkbox input {
       #top nav a {
         margin-right: auto;
         text-decoration: none; }
+      #top nav a:last-child {
+        margin: 0px !important; }
       #top nav h2 {
         font-family: 'Circular Std Book';
         font-size: 18px;

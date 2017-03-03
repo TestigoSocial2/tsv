@@ -393,7 +393,11 @@ var Menu = function (_React$Component) {
                   '2.0 '
                 )
               ),
-              _react2.default.createElement(FontAwesome, { name: 'bars', 'class': 'navbar-toggle collapsed', 'data-toggle': 'collapse', 'data-target': '#bs-example-navbar-collapse-1', 'aria-expanded': 'false' })
+              _react2.default.createElement(
+                _reactRouter.Link,
+                { to: '#bs-example-navbar-collapse-1', 'class': 'navbar-toggle collapsed', 'data-toggle': 'collapse', 'data-target': '#bs-example-navbar-collapse-1' },
+                _react2.default.createElement(FontAwesome, { name: 'bars', 'aria-expanded': 'false' })
+              )
             ),
             _react2.default.createElement(
               'div',
