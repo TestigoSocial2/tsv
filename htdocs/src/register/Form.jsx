@@ -109,7 +109,8 @@ class Form extends React.Component {
               <table className="table table-striped green">
                 <tbody>
                   <tr>
-                    <td className="txt-upper col-md-2"><label>Correo Electrónico</label></td>
+                    <td className="txt-upper col-md-2 description-top"><label>Correo Electrónico</label></td>
+                    <td className="txt-italic visible-xs description">La cuenta de correo electrónico registrada será tu nombre de usuario</td>
                     <td className="col-md-4">
                       <input type="email"
                              className="form-control"
@@ -119,10 +120,12 @@ class Form extends React.Component {
                              data-validator-required="true"
                              data-validator-email="true" />
                     </td>
-                    <td className="txt-italic">La cuenta de correo electrónico registrada será tu nombre de usuario</td>
+                    <td className="txt-italic hidden-xs">La cuenta de correo electrónico registrada será tu nombre de usuario</td>
                   </tr>
                   <tr>
-                    <td className="txt-upper col-md-2"><label>Contraseña</label></td>
+                    <td className="txt-upper col-md-2 description-top"><label>Contraseña</label></td>
+                    <td className="txt-italic visible-xs description">La contraseña deberá tener una extensión de al menos 6 caracteres y contener al menos un número</td>
+                    
                     <td className="col-md-4">
                       <input type="password"
                              className="form-control"
@@ -132,10 +135,11 @@ class Form extends React.Component {
                              data-validator-required="true"
                              data-validator-minlength="6" />
                     </td>
-                    <td className="txt-italic">La contraseña deberá tener una extensión de al menos 6 caracteres y contener al menos un número</td>
+                    <td className="txt-italic hidden-xs">La contraseña deberá tener una extensión de al menos 6 caracteres y contener al menos un número</td>
                   </tr>
                   <tr>
-                    <td className="txt-upper col-md-2"><label>Tipo de Usuario</label></td>
+                    <td className="txt-upper col-md-2 description-top"><label>Tipo de Usuario</label></td>
+                    <td className="txt-italic visible-xs description">Selecciona una de las siguientes opciones</td>
                     <td className="col-md-4">
                       <select id="userType" name="userType" className="form-control" data-validator-required="true">
                         <option value="-" disabled="disaled">Selecciona una de las siguientes opciones</option>
@@ -148,19 +152,21 @@ class Form extends React.Component {
                         <option value="other">Otro</option>
                       </select>
                     </td>
-                    <td className="txt-italic">Selecciona una de las siguientes opciones</td>
+                    <td className="txt-italic hidden-xs">Selecciona una de las siguientes opciones</td>
                   </tr>
                   <tr>
-                    <td className="txt-upper col-md-2"><label>Edad</label></td>
+                    <td className="txt-upper col-md-2 description-top"><label>Edad</label></td>
+                     <td className="txt-italic visible-xs description">Selecciona tu edad (solo aplica para periodista, emprendedor, legislador, funcionario público, ciudadano)</td>
                     <td className="col-md-4">
                       <select id="age" name="age" className="form-control" data-validator-required="true">
                         {ages}
                       </select>
                     </td>
-                    <td className="txt-italic">Selecciona tu edad (solo aplica para periodista, emprendedor, legislador, funcionario público, ciudadano)</td>
+                    <td className="txt-italic hidden-xs">Selecciona tu edad (solo aplica para periodista, emprendedor, legislador, funcionario público, ciudadano)</td>
                   </tr>
                   <tr>
-                    <td className="txt-upper col-md-2"><label>Código Postal</label></td>
+                    <td className="txt-upper col-md-2 description-top"><label>Código Postal</label></td>
+                    <td className="txt-italic description visible-xs">Introduce tu código postal</td>
                     <td className="col-md-4">
                       <input type="text"
                              className="form-control"
@@ -169,16 +175,17 @@ class Form extends React.Component {
                              data-validator-required="true"
                              data-validator-integer="true" />
                     </td>
-                    <td className="txt-italic">Introduce tu código postal</td>
+                    <td className="txt-italic hidden-xs">Introduce tu código postal</td>
                   </tr>
                   <tr>
-                    <td className="txt-upper col-md-2"><label>País</label></td>
+                    <td className="txt-upper col-md-2 description-top "><label>País</label></td>
+                    <td className="txt-italic visible-xs description">Selecciona tu país de residencia</td>
                     <td className="col-md-4">
                       <select id="country" name="country" className="form-control" data-validator-required="true">
                         {countries}
                       </select>
                     </td>
-                    <td className="txt-italic">Selecciona tu país de residencia</td>
+                    <td className="txt-italic hidden-xs">Selecciona tu país de residencia</td>
                   </tr>
                 </tbody>
               </table>
@@ -289,15 +296,15 @@ class Form extends React.Component {
                   </tr>
                 </tbody>
               </table>
-              <p>
+              <p className="aviso-privacidad">
                 Consulta nuestro aviso de privacidad <a href="#" data-toggle="modal" data-target="#privacyNotice">aquí.</a>
               </p>
-              <div className="checkbox">
+              <div className="checkbox aviso-privacidad" >
                 <label>
                   <input id="acceptPrivacyTerms" type="checkbox" checked="checked" /> Acepto las politicas de privacidad
                 </label>
               </div>
-              <button type="submit" className="btn btn-black btn-lg">Comienza</button>
+              <button type="submit" className="btn btn-black btn-lg">COMENZAR</button>
             </div>
           </div>
         </form>
