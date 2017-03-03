@@ -986,7 +986,7 @@ td.checkbox input {
   div.inner-row p.mobile-result {
     font-family: 'Circular Std Book' !important;
     font-size: 11px !important;
-    margin-bottom: 30px !important; }
+    margin-bottom: 0px !important; }
   div.inner-row i {
     font-family: 'Circular Std' !important; }
 
@@ -1062,11 +1062,108 @@ td.checkbox input {
     display: flex;
     flex-direction: column;
     background-color: white !important;
+    margin-top: 20px !important;
     border-bottom: 2px solid gray; }
 
   .mobileTable td {
     background-color: white !important;
-    width: 100% !important; } }
+    width: 100% !important;
+    border-top: none !important;
+    padding-left: 0px !important; }
+    .mobileTable td a.mobileA {
+      color: white !important;
+      font-family: 'Circular Std';
+      font-weight: bold;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 12px !important; }
+
+  .mobileTable td.mobileBtn {
+    text-align: center; }
+
+  table.latest-contracts h4 {
+    font-family: 'Circular Std';
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 15px; }
+  table.latest-contracts a {
+    font-family: 'Circular Std';
+    font-weight: bold;
+    font-size: 15px;
+    color: #4990E2; }
+  table.latest-contracts a.descriptionMobile {
+    margin-bottom: 15px; }
+  table.latest-contracts p.lbl {
+    font-family: 'Circular Std' !important;
+    font-weight: bold !important;
+    font-size: 11px !important;
+    color: #4A4A4A !important;
+    margin-bottom: 0px !important; }
+  table.latest-contracts p.mobileP {
+    font-family: 'Circular Std Book';
+    font-size: 15px;
+    color: black; }
+
+  h2.block-title {
+    font-size: 15px !important;
+    font-family: 'Circular Std Bold' !important;
+    padding-left: 15px;
+    padding-right: 15px; }
+
+  .contract-details h3 {
+    font-size: 15px !important;
+    font-family: 'Circular Std Bold' !important;
+    padding-left: 15px;
+    padding-right: 15px; }
+
+  .contract-header p {
+    font-family: 'Circular Std Book';
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    font-size: 11px; }
+
+  div.bullets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+
+  div.bullets a {
+    width: 200px;
+    height: 40px;
+    margin-bottom: 15px !important;
+    text-align: center; }
+
+  div.contract-details div.contract-highlights div[class^="col-md-"] {
+    border: 0px !important; }
+
+  p.lbl {
+    color: #4A4A4A !important;
+    font-size: 11px !important;
+    font-family: 'Circular Std Bold' !important; }
+
+  div.contract-details h4 {
+    font-size: 15px;
+    color: black;
+    font-family: 'Circular Std Bold'; }
+
+  div.contract-details div.border-bottom {
+    border: 0px !important;
+    position: relative; }
+
+  div.contract-details div.border-bottom:after {
+    background-color: #979797;
+    height: 2px;
+    left: 15px;
+    bottom: 0px;
+    width: 100px;
+    content: '';
+    position: absolute; }
+
+  div.contract-details a {
+    word-break: break-all;
+    color: #4A90E2; } }
 html {
   min-height: 100%;
   position: relative; }

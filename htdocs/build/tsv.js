@@ -2206,7 +2206,7 @@ var TableItem = function (_React$Component) {
           ),
           _react2.default.createElement(
             'a',
-            { onClick: this.handleClick },
+            { className: 'descriptionMobile', onClick: this.handleClick },
             release.tender.description
           )
         ),
@@ -2230,7 +2230,7 @@ var TableItem = function (_React$Component) {
           ),
           _react2.default.createElement(
             'p',
-            null,
+            { className: 'mobileP' },
             release.awards[0].suppliers[0].name
           )
         ),
@@ -2244,16 +2244,16 @@ var TableItem = function (_React$Component) {
           ),
           _react2.default.createElement(
             'p',
-            null,
+            { className: 'mobileP' },
             release.buyer.name
           )
         ),
         _react2.default.createElement(
           'td',
-          { width: '15%' },
+          { className: 'mobileBtn', width: '15%' },
           _react2.default.createElement(
             'a',
-            { className: 'btn-black active', onClick: this.handleClick },
+            { className: 'btn-black active mobileA', onClick: this.handleClick },
             'Ver Contrato'
           )
         )
