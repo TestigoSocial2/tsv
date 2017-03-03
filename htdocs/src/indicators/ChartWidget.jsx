@@ -9,12 +9,19 @@ class ChartWidget extends React.Component {
 
   componentDidMount() {
     if( ! this.chart ) {
+      var d = true;
+      if($(window).width() < 768){
+        d = false;
+      }
       this.chart = new Chart( document.getElementById(this.props.id), {
         type: "pie",
         options: {
           responsive: true,
           responsiveAnimationDuration: 500,
-          padding: 10
+          padding: 10,
+          legend: {
+            display: d,
+          }
         }
       });
       this.forceUpdate();
@@ -33,8 +40,9 @@ class ChartWidget extends React.Component {
       this.chart.data.datasets = newData.datasets;
       this.chart.data.labels = newData.labels;
       this.chart.update();
+      $("#legend_"+this.props.id).html(this.chart.generateLegend());
     }
-
+    var idl = "legend_"+this.props.id;
     return (
       <div className="chart-widget">
         {/* Set title if any */}
@@ -58,6 +66,7 @@ class ChartWidget extends React.Component {
             height={this.props.height}
             width={this.props.width}>
           </canvas>
+          <div id={idl} className="dataChartLegend hidden-md hidden-lg"></div>
         </div>
       </div>
     );
