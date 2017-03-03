@@ -81,14 +81,34 @@
 }
 
 @font-face {
-    font-family: 'Circular Std Black';
-    src: url('CircularStd-BlackItalic.eot');
-    src: local('Circular Std Black Italic'), local('CircularStd-BlackItalic'),
-        url('CircularStd-BlackItalic.eot?#iefix') format('embedded-opentype'),
-        url('CircularStd-BlackItalic.woff') format('woff'),
-        url('CircularStd-BlackItalic.ttf') format('truetype');
-    font-weight: 900;
-    font-style: italic;
+    font-family: 'Decima Mono';
+    src: url('DecimaMono.eot');
+    src: local('Decima Mono'), local('DecimaMono'),
+        url('DecimaMono.eot?#iefix') format('embedded-opentype'),
+        url('DecimaMono.woff') format('woff'),
+        url('DecimaMono.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
+@font-face {
+    font-family: 'Decima Mono Lt';
+    src: url('DecimaMono-Light.eot');
+    src: local('Decima Mono Light'), local('DecimaMono-Light'),
+        url('DecimaMono-Light.eot?#iefix') format('embedded-opentype'),
+        url('DecimaMono-Light.woff') format('woff'),
+        url('DecimaMono-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
 
+@font-face {
+    font-family: 'Decima Mono';
+    src: url('DecimaMono-Bold.eot');
+    src: local('Decima Mono Bold'), local('DecimaMono-Bold'),
+        url('DecimaMono-Bold.eot?#iefix') format('embedded-opentype'),
+        url('DecimaMono-Bold.woff') format('woff'),
+        url('DecimaMono-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}

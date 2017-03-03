@@ -795,11 +795,11 @@ td.checkbox input {
     #facts p.highlight {
       font-family: 'Decima Mono' !important;
       font-size: 40px !important;
-      font-weight: 300 !important; }
+      font-weight: lighter !important; }
       #facts p.highlight span {
         font-family: 'Decima Mono' !important;
         font-size: 40px !important;
-        font-weight: 300 !important; }
+        font-weight: lighter !important; }
 
   #highlights {
     border-bottom: 1px solid #ccc; }
@@ -816,59 +816,56 @@ td.checkbox input {
     #highlights h1 {
       font-family: 'Decima Mono' !important;
       font-size: 18px !important;
-      font-weight: 300 !important; }
+      font-weight: lighter !important; }
       #highlights h1 span#totalAward {
         font-family: 'Decima Mono' !important;
         font-size: 18px !important;
-        font-weight: 300 !important;
+        font-weight: lighter !important;
         letter-spacing: -1px !important; }
-    #highlights div.carousel-inner {
-      height: 530px !important; }
-    #highlights div.item {
-      height: 510px !important; }
-      #highlights div.item p.mobile {
-        margin-top: 70px; }
-      #highlights div.item h2 {
-        font-weight: 300;
-        text-transform: uppercase; }
-      #highlights div.item div.chart {
-        border-right: 0px !important;
-        float: none !important;
-        height: auto !important;
-        margin: 20px 0 !important;
-        width: auto !important; }
-      #highlights div.item div.info {
-        width: auto !important;
-        text-align: center !important; }
-        #highlights div.item div.info h2 {
-          font-family: 'Circular Std' !important;
+    #highlights div.item p.mobile {
+      margin-top: 70px; }
+    #highlights div.item h2 {
+      font-weight: 300;
+      text-transform: uppercase; }
+    #highlights div.item div.chart {
+      border-right: 0px !important;
+      float: none !important;
+      height: auto !important;
+      margin: 20px 0 !important;
+      width: auto !important; }
+    #highlights div.item div.info {
+      width: auto !important;
+      text-align: center !important; }
+      #highlights div.item div.info h2 {
+        font-family: 'Circular Std' !important;
+        font-size: 13px !important;
+        font-weight: bold !important;
+        width: 180px !important;
+        margin-left: auto;
+        margin-right: auto; }
+      #highlights div.item div.info span.amount {
+        font-family: 'Decima Mono' !important;
+        font-size: 16px !important;
+        font-weight: lighter !important;
+        letter-spacing: -1px; }
+      #highlights div.item div.info h3 {
+        font-family: 'Decima Mono' !important;
+        font-size: 16px !important;
+        font-weight: lighter !important;
+        letter-spacing: -1px;
+        margin-bottom: 20px;
+        margin-top: 20px; }
+      #highlights div.item div.info p {
+        font-family: 'Circular Std Book' !important;
+        font-size: 13px !important; }
+        #highlights div.item div.info p span.contracts {
+          font-family: 'Circular Std Book' !important;
           font-size: 13px !important;
-          font-weight: bold !important;
-          width: 180px !important;
-          margin-left: auto;
-          margin-right: auto; }
-        #highlights div.item div.info span.amount {
-          font-family: 'Decima Mono' !important;
-          font-size: 16px !important;
-          font-weight: 300 !important;
-          letter-spacing: -1px; }
-        #highlights div.item div.info h3 {
-          font-family: 'Decima Mono' !important;
-          font-size: 16px !important;
-          font-weight: 300 !important;
-          letter-spacing: -1px;
-          margin-bottom: 20px;
-          margin-top: 20px; }
-        #highlights div.item div.info p {
-          font-family: 'Circular Std Book' !important;
-          font-size: 13px !important; }
-          #highlights div.item div.info p span.contracts {
-            font-family: 'Circular Std Book' !important;
-            font-size: 13px !important;
-            font-weight: 300 !important; }
-        #highlights div.item div.info p.details {
-          font-family: 'Circular Std Book' !important;
-          font-size: 10px !important; }
+          font-weight: 300 !important; }
+      #highlights div.item div.info p.details {
+        font-family: 'Circular Std Book' !important;
+        font-size: 10px !important;
+        margin-bottom: 40px !important; }
     #highlights span.bg-green {
       font-family: 'Circular Std Book' !important;
       font-size: 12px !important;
