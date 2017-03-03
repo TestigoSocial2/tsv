@@ -728,12 +728,12 @@ td.checkbox input {
       border-radius: 0px !important;
       width: 255px !important;
       height: 65px;
-      font-family: 'Circular Std' !important;
+      font-family: "Circular Std" !important;
       font-size: 14px !important;
       font-weight: 700;
       padding-left: 20px !important;
       padding-right: 20px !important;
-      padding-top: 12px !important; }
+      padding-top: 12px!important; }
     #video br {
       display: none; }
     #video div.item {
@@ -744,7 +744,7 @@ td.checkbox input {
         font-size: 13px !important;
         text-align: center !important; }
         #video div.item p strong {
-          font-family: 'Circular Std' !important;
+          font-family: "Circular Std" !important;
           font-size: 13px !important;
           font-weight: bold; }
       #video div.item span.icon {
@@ -779,7 +779,7 @@ td.checkbox input {
       font-size: 10px;
       text-align: center;
       margin-top: 60px;
-      font-family: 'Circular Std' !important; }
+      font-family: "Circular Std" !important; }
     #bottom div.logo {
       float: left;
       margin-right: 0px !important;
@@ -1012,7 +1012,7 @@ td.checkbox input {
     text-align: center !important;
     margin: 20px; }
     p.txt-large strong {
-      font-family: 'Circular Std' !important;
+      font-family: "Circular Std" !important;
       font-size: 15px !important;
       font-weight: bold; } }
 #queryForm div.mobile-contracts {
@@ -1038,6 +1038,16 @@ td.checkbox input {
   .inner-row h1 {
     padding-left: 15px;
     padding-right: 15px; } }
+@media all and (max-width: 768px) {
+  .mobileTable {
+    display: flex;
+    flex-direction: column;
+    background-color: white !important;
+    border-bottom: 2px solid gray; }
+
+  .mobileTable td {
+    background-color: white !important;
+    width: 100% !important; } }
 html {
   min-height: 100%;
   position: relative; }

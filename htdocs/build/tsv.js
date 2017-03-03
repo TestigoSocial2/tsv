@@ -2195,7 +2195,7 @@ var TableItem = function (_React$Component) {
       var release = this.props.contract.releases[0];
       return _react2.default.createElement(
         'tr',
-        null,
+        { className: 'mobileTable' },
         _react2.default.createElement(
           'td',
           { width: '50%' },

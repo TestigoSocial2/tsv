@@ -1,0 +1,12 @@
+@media all and (max-width: 768px){
+	.mobileTable{	
+		display: flex;
+		flex-direction: column;
+		background-color: white !important;
+		border-bottom: 2px solid gray;
+	}
+	.mobileTable td{
+		background-color: white !important;
+		width: 100% !important;
+	}
+}
