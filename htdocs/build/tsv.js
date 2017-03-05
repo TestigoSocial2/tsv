@@ -313,7 +313,7 @@ var Menu = function (_React$Component) {
               null,
               _react2.default.createElement(
                 'a',
-                { href: '/alianza.html', target: '_blank' },
+                { href: 'http://www.contratacionesabiertas.mx', target: '_blank' },
                 'Contrataciones Abiertas'
               )
             )
