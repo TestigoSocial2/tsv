@@ -1950,10 +1950,24 @@ var Section = function (_React$Component) {
     return _this;
   }
 
-  // Submit query and update component state with results
-
-
   _createClass(Section, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      // Get 10 latest contracts by default
+      if (this.state.items.length == 0) {
+        this.runQuery({
+          filter: null,
+          value: null,
+          bucket: 'gacm',
+          limit: 10,
+          command: 'latest'
+        });
+      }
+    }
+
+    // Submit query and update component state with results
+
+  }, {
     key: 'runQuery',
     value: function runQuery(query) {
       var _this2 = this;
