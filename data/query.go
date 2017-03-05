@@ -38,10 +38,11 @@ type IndicatorsQueryResult struct {
 
 // Query contract information
 type Query struct {
-	Value  string `json:"value"`
-	Filter string `json:"filter"`
-	Bucket string `json:"bucket"`
-	Limit  int    `json:"limit"`
+	Value   string `json:"value"`
+	Filter  string `json:"filter"`
+	Bucket  string `json:"bucket"`
+	Limit   int    `json:"limit"`
+	Command string `json:"command"`
 }
 
 // Remove UNICODE diacritics
@@ -49,8 +50,50 @@ func isMn(r rune) bool {
 	return unicode.Is(unicode.Mn, r) // Mn: nonspacing marks
 }
 
+// Perform a 'command' query
+func (q *Query) execCommand() []map[string]interface{} {
+	// Open storage
+	store, err := OpenStorage()
+	if err != nil {
+		log.Println("Storage error:", err)
+		return nil
+	}
+	defer store.Close()
+
+	// Final result is an array of map interfaces
+	list := []map[string]interface{}{}
+
+	// Iterate bucket
+	cursor := make(chan *storage.Record)
+	cancel := make(chan bool)
+	go store.Cursor(q.Bucket, cursor, cancel)
+	for rec := range cursor {
+		// Skip faulty records
+		_, err := gabs.ParseJSON(rec.Value)
+		if err != nil {
+			continue
+		}
+
+		// Unmarshal the contract document as a generic map interface
+		m := make(map[string]interface{})
+		json.Unmarshal(rec.Value, &m)
+		list = append(list, m)
+	}
+
+	switch q.Command {
+	case "latest":
+		list = list[0:q.Limit]
+	}
+	return list
+}
+
 // Run the query and return results
 func (q *Query) Run() []map[string]interface{} {
+	// Execute query by commands
+	if q.Command != "" {
+		return q.execCommand()
+	}
+
 	// Open storage
 	store, err := OpenStorage()
 	if err != nil {
