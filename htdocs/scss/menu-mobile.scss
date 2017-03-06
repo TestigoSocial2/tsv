@@ -275,12 +275,12 @@
 }
 #highlights {
   border-bottom: 1px solid $tsv-light-gray;
-
   ol.carousel-indicators {
     bottom: 0;
 
     li {
       border-color: $tsv-gray;
+      margin-left: 15px !important;
 
       &.active {
         background-color: $tsv-black;
