@@ -9,6 +9,7 @@ class Details extends React.Component {
   constructor(props) {
     super(props);
     this.onClose = this.onClose.bind(this);
+    window.scrollTo(0, 0);
   }
 
   componentDidMount() {
