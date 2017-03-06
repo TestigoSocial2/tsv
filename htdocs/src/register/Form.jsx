@@ -304,7 +304,7 @@ class Form extends React.Component {
                   <input id="acceptPrivacyTerms" type="checkbox" checked="checked" /> Acepto las politicas de privacidad
                 </label>
               </div>
-              <button type="submit" className="btn btn-black btn-lg">COMENZAR</button>
+              <button type="submit" className="btn btn-black btn-lg run-notifications">COMENZAR</button>
             </div>
           </div>
         </form>
