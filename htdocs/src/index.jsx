@@ -11,7 +11,7 @@ import Indicators from './indicators/Section.jsx';
 import Register from './register/Section.jsx';
 
 ReactDOM.render(
-  <Router history={browserHistory}>
+  <Router onUpdate={() => window.scrollTo(0, 0)} history={browserHistory}>
     <Route component={Main}>
       <Route path="/" component={Home}/>
       <Route path="/informacion" component={Info}/>
