@@ -16,6 +16,19 @@ class Section extends React.Component {
     };
   }
 
+  componentDidMount() {
+    // Get 10 latest contracts by default
+    if( this.state.items.length == 0 ) {
+      this.runQuery({
+        filter: null,
+        value: null,
+        bucket: 'gacm',
+        limit: 10,
+        command: 'latest'
+      });
+    }
+  }
+
   // Submit query and update component state with results
   runQuery(query) {
     let url = '/query/gacm';

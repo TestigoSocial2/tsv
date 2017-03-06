@@ -47,7 +47,7 @@ class ChartWidget extends React.Component {
       <div className="chart-widget">
         {/* Set title if any */}
         {this.props.title &&
-          <h2 className="block-title" onClick={() => this.props.onSelection(this.props.reducer)}>
+          <h2 className="block-title">
             {this.props.title}
           </h2>
         }
@@ -68,6 +68,13 @@ class ChartWidget extends React.Component {
           </canvas>
           <div id={idl} className="dataChartLegend hidden-md hidden-lg"></div>
         </div>
+
+        {/* Show 'open' button if required */}
+        {this.props.showOpenButton &&
+          <span
+            className="footer"
+            onClick={() => this.props.onSelection(this.props.reducer)}>Ver Indicador</span>
+        }
       </div>
     );
   }

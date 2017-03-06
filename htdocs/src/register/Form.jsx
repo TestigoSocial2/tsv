@@ -287,7 +287,7 @@ class Form extends React.Component {
                   <tr>
                     <td className="txt-upper col-md-2 no-padding-bottom"><label>Twitter</label></td>
                     <td className="col-md-4 no-padding">
-                      <input disabled="disabled" type="text" className="form-control" id="notificationTW" />
+                     <input value="Próximamente" disabled="disabled" type="text" className="form-control" id="notificationTW" />
                     </td>
                     <td className="txt-italic checkbox">
                       <input disabled="disabled" id="enableTW" type="checkbox" />

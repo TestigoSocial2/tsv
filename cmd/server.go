@@ -37,6 +37,7 @@ import (
 	"github.com/ranveerkunal/memfs"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
+	"github.com/transparenciamx/tsv/bot"
 	"github.com/transparenciamx/tsv/data"
 	"github.com/transparenciamx/tsv/notifications"
 	"github.com/transparenciamx/tsv/storage"
@@ -274,19 +275,6 @@ func ws(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	}(c)
 }
 
-// Facebook messenger webhooks
-func fb(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
-	w.Header().Add("Strict-Transport-Security", "max-age=63072000; includeSubDomains")
-	mode := r.FormValue("hub.mode")
-	token := r.FormValue("hub.verify_token")
-	if mode == "subscribe" && token == os.Getenv("TSV_FB_VERIFY_TOKEN") {
-		fmt.Fprintf(w, fmt.Sprintf("%s", r.FormValue("hub.challenge")))
-		return
-	}
-
-	fmt.Fprintf(w, fmt.Sprintf("%s - %s", mode, "INVALID_VERIFICATION_TOKEN"))
-}
-
 // Redirect HTTP to HTTPS
 func redirect(w http.ResponseWriter, req *http.Request) {
 	host := strings.Split(req.Host, ":")[0]
@@ -316,6 +304,12 @@ func runServer(cmd *cobra.Command, args []string) error {
 		log.Fatalf("Cache filesystem error: %+v", err)
 	}
 
+	// Start facebook bot
+	tsvBot := bot.New(&bot.Config{
+		VerificationToken: os.Getenv("TSV_FB_VERIFY_TOKEN"),
+		PageToken:         os.Getenv("TSV_FB_PAGE_TOKEN"),
+	})
+
 	// Configure router
 	router := httprouter.New()
 	router.NotFound = http.FileServer(cacheFS)
@@ -325,7 +319,16 @@ func runServer(cmd *cobra.Command, args []string) error {
 	router.POST("/preregister", preregister)
 	router.GET("/stats/:bucket", stats)
 	router.GET("/ws", ws)
-	router.GET("/fb", fb)
+	router.GET("/fb", tsvBot.Verify)
+	router.POST("/fb", tsvBot.ReceiveMessage)
+
+	// Handle incoming FB messages
+	go func() {
+		for msg := range tsvBot.IncomingMessages {
+			log.Printf("%+v", msg)
+			tsvBot.DispatchMessage(msg.User, "Tu mensaje es muy importante para nosotros, en breve nos comunicaremos contigo!")
+		}
+	}()
 
 	// Start server
 	go func() {

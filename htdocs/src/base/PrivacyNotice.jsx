@@ -12,11 +12,9 @@ class PrivacyNotice extends React.Component {
             <div className="modal-body">
               <h1>Testigo Social</h1>
               <p>En cumplimiento de la Ley Federal de Protección de Datos Personales en Posesión de Particulares (en lo sucesivo la “Ley”), publicada el 5 de julio de 2010 en el Diario Oficial de la Federación, Transparencia Mexicana, A.C.  publica el siguiente aviso de privacidad.</p>
-
               <h4>I. RESPONSABLE</h4>
               <p>Transparencia Mexicana, A.C. con domicilio en Dulce Olivia, no. 73, colonia Villa Coyoacán, delegación Coyoacán, C.P. 04000, México, Distrito Federal. Para mayor información consultar www.tm.org.mx con télefonos 52-[55] 56594714, 56594095 / 56599991</p>
               <p>Como Responsable se señala a la propia persona moral (Transparencia Mexicana, A. C.). Para cualquier aclaración o contacto: contacto@testigosocial.mx en atención al Lic. Rafael García Aceves.</p>
-
               <h4>II. DEFINICIONES</h4>
               <p>Para efectos del presente aviso de privacidad se entenderá por:</p>
               <ol>

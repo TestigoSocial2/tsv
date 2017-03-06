@@ -1376,6 +1376,14 @@ div.clear {
   font-weight: 300;
   text-align: center; }
 
+#bucketSelector {
+  margin-top: 20px; }
+  #bucketSelector button.active {
+    background-color: #111;
+    color: #fff; }
+  #bucketSelector button:hover {
+    background-color: #fff; }
+
 #facts {
   border-bottom: 1px solid #ccc;
   padding: 4em 0 2em; }
@@ -1679,6 +1687,9 @@ div.contract-details div.contract-header {
   margin-bottom: 40px; }
   div.contract-details div.contract-header h2.block-title {
     margin-bottom: 0; }
+  div.contract-details div.contract-header div.bg-gray {
+    margin-bottom: 10px;
+    padding-bottom: 10px; }
   div.contract-details div.contract-header div.bullets .btn-black {
     background-color: #fff;
     border: 2px solid #111;
@@ -1695,8 +1706,8 @@ div.contract-details div.contract-header {
       color: #fff; }
     div.contract-details div.contract-header div.bullets .btn-black.disabled {
       cursor: not-allowed;
-      opacity: .50;
-      text-decoration: line-through; }
+      opacity: .20;
+      text-decoration: none; }
 div.contract-details div.contract-highlights div[class^="col-md-"] {
   border-right: 1px solid #ccc; }
   div.contract-details div.contract-highlights div[class^="col-md-"]:last-child {
@@ -1706,7 +1717,6 @@ div.chart-widget {
   border: 1px solid #ccc;
   margin-top: 20px; }
   div.chart-widget h2 {
-    cursor: pointer;
     font-size: 20px;
     margin-bottom: 0;
     margin-top: 0;
@@ -1717,6 +1727,14 @@ div.chart-widget {
     margin: 10px 3%;
     min-height: 340px;
     width: 94%; }
+  div.chart-widget span.footer {
+    background: #4990e2;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    padding: 10px 0;
+    text-align: center;
+    text-transform: uppercase; }
 
 div.chart-main {
   margin-bottom: 20px; }

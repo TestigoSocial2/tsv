@@ -363,7 +363,7 @@ var Menu = function (_React$Component) {
               null,
               _react2.default.createElement(
                 'a',
-                { href: 'http://www.tm.org.mx', target: '_blank' },
+                { href: 'http://www.contratacionesabiertas.mx', target: '_blank' },
                 'Contrataciones Abiertas'
               )
             )
@@ -813,6 +813,11 @@ var Details = function (_React$Component) {
                   'p',
                   null,
                   release.tender.description
+                ),
+                _react2.default.createElement(
+                  'a',
+                  { onClick: this.onClose, className: 'btn-black' },
+                  'Volver al listado de Resultados'
                 )
               ),
               _react2.default.createElement(
@@ -847,11 +852,6 @@ var Details = function (_React$Component) {
                   { href: '#implementation',
                     className: release.implementation ? 'btn-black' : 'btn-black disabled' },
                   'Implementaci\xF3n'
-                ),
-                _react2.default.createElement(
-                  'a',
-                  { onClick: this.onClose },
-                  'Volver al listado de Resultados'
                 )
               )
             )
@@ -2082,10 +2082,24 @@ var Section = function (_React$Component) {
     return _this;
   }
 
-  // Submit query and update component state with results
-
-
   _createClass(Section, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      // Get 10 latest contracts by default
+      if (this.state.items.length == 0) {
+        this.runQuery({
+          filter: null,
+          value: null,
+          bucket: 'gacm',
+          limit: 10,
+          command: 'latest'
+        });
+      }
+    }
+
+    // Submit query and update component state with results
+
+  }, {
     key: 'runQuery',
     value: function runQuery(query) {
       var _this2 = this;
@@ -3138,7 +3152,36 @@ var Home = function (_React$Component) {
   _createClass(Home, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      var url = '/stats/gacm';
+      var _this2 = this;
+
+      // Random hero photo
+      var img = "url('images/hero_photo_" + (Math.floor(Math.random() * 5) + 1) + ".jpg')";
+      $('#hero > div.photo').css('background-image', img);
+
+      // Slider
+      $('.carousel').carousel({
+        interval: 8000,
+        keyboard: false,
+        pause: "hover"
+      });
+
+      // Bucket selector
+      var bselectors = $('#bucketSelector button');
+      bselectors.click(function (e) {
+        bselectors.removeClass('active');
+        $(e.target).addClass('active');
+        _this2.loadStats($(e.target).data('bucket'));
+      });
+
+      // Load default stats
+      this.loadStats('gacm');
+    }
+
+    // Load stats
+
+  }, {
+    key: 'loadStats',
+    value: function loadStats(bucket) {
       var data = {};
       var charts = {};
       var ui = {
@@ -3152,26 +3195,9 @@ var Home = function (_React$Component) {
         description: $('span#orgDescription')
       };
 
-      // Random hero photo
-      var img = "url('images/hero_photo_" + (Math.floor(Math.random() * 5) + 1) + ".jpg')";
-      $('#hero > div.photo').css('background-image', img);
-
-      // Slider
-      $('.carousel').carousel({
-        interval: 8000,
-        keyboard: false,
-        pause: "hover"
-      });
-
-      // Dynamically set bucket used, default to 'gacm'
-      if ((0, _helpers.getParameter)('bucket')) {
-        url = '/stats/' + (0, _helpers.getParameter)('bucket');
-      }
-
-      // Load stats
       $.ajax({
         type: "GET",
-        url: url,
+        url: '/stats/' + bucket,
         success: function success(res) {
           data = JSON.parse(res);
         }
@@ -3245,6 +3271,7 @@ var Home = function (_React$Component) {
               useGrouping: true
             }));
 
+<<<<<<< HEAD
             if (!charts[method].c) {
               var d = true;
               if ($(window).width() < 768) {
@@ -3268,6 +3295,19 @@ var Home = function (_React$Component) {
               });
               active.find(".dataChartLegend").html(charts[method].c.generateLegend());
             }
+=======
+            // if( !charts[method].c ) {
+            charts[method].c = new _chart2.default(active.find('canvas'), {
+              type: "pie",
+              data: charts[method].data,
+              options: {
+                responsive: true,
+                responsiveAnimationDuration: 500,
+                padding: 10
+              }
+            });
+            // }
+>>>>>>> 76bc94b43a90d698e5c8e15d7ed52d7a123fcc15
           }
         });
       });
@@ -3289,6 +3329,29 @@ var Home = function (_React$Component) {
               'h2',
               null,
               'El dinero p\xFAblico tambi\xE9n es tu dinero'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'center',
+          { id: 'bucketSelector', className: 'row inner-row' },
+          _react2.default.createElement(
+            'p',
+            null,
+            'Seleccione los datos de contrataciones a consultar'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'btn-group', role: 'group' },
+            _react2.default.createElement(
+              'button',
+              { type: 'button', 'data-bucket': 'gacm', className: 'btn btn-default active' },
+              'Nuevo Aeropuerto de la Ciudad de M\xE9xico'
+            ),
+            _react2.default.createElement(
+              'button',
+              { type: 'button', 'data-bucket': 'cdmx', className: 'btn btn-default' },
+              'Gobierno de la Ciudad de M\xE9xico'
             )
           )
         ),
@@ -3890,9 +3953,7 @@ var ChartWidget = function (_React$Component) {
         { className: 'chart-widget' },
         this.props.title && _react2.default.createElement(
           'h2',
-          { className: 'block-title', onClick: function onClick() {
-              return _this2.props.onSelection(_this2.props.reducer);
-            } },
+          { className: 'block-title' },
           this.props.title
         ),
         this.props.description && _react2.default.createElement(
@@ -3910,8 +3971,21 @@ var ChartWidget = function (_React$Component) {
           _react2.default.createElement('canvas', { id: this.props.id,
             className: 'dataChart',
             height: this.props.height,
+<<<<<<< HEAD
             width: this.props.width }),
           _react2.default.createElement('div', { id: idl, className: 'dataChartLegend hidden-md hidden-lg' })
+=======
+            width: this.props.width })
+        ),
+        this.props.showOpenButton && _react2.default.createElement(
+          'span',
+          {
+            className: 'footer',
+            onClick: function onClick() {
+              return _this2.props.onSelection(_this2.props.reducer);
+            } },
+          'Ver Indicador'
+>>>>>>> 76bc94b43a90d698e5c8e15d7ed52d7a123fcc15
         )
       );
     }
@@ -4326,6 +4400,7 @@ var Section = function (_React$Component) {
               data: this.state.data,
               reducer: procedureTypeData,
               onSelection: this.showDetails,
+              showOpenButton: 'true',
               width: '500',
               height: '340',
               description: 'La gr\xE1fica muestra la relaci\xF3n de contratos que se adjudicar\xF3n de acuerdo a los distintos mecanismos establecidos.' })
@@ -4339,6 +4414,7 @@ var Section = function (_React$Component) {
               data: this.state.data,
               reducer: publishYearData,
               onSelection: this.showDetails,
+              showOpenButton: 'true',
               width: '500',
               height: '340',
               description: 'La gr\xE1fica muestra la relaci\xF3n de los contratos registrados de acuerdo a su a\xF1o de publicaci\xF3n.' })
@@ -5762,8 +5838,13 @@ var Form = function (_React$Component) {
                     ),
                     _react2.default.createElement(
                       'td',
+<<<<<<< HEAD
                       { className: 'col-md-4 no-padding' },
                       _react2.default.createElement('input', { disabled: 'disabled', type: 'text', className: 'form-control', id: 'notificationFB' })
+=======
+                      { className: 'col-md-4' },
+                      _react2.default.createElement('input', { value: 'Pr\xF3ximamente', disabled: 'disabled', type: 'text', className: 'form-control', id: 'notificationFB' })
+>>>>>>> 76bc94b43a90d698e5c8e15d7ed52d7a123fcc15
                     ),
                     _react2.default.createElement(
                       'td',
@@ -5790,8 +5871,13 @@ var Form = function (_React$Component) {
                     ),
                     _react2.default.createElement(
                       'td',
+<<<<<<< HEAD
                       { className: 'col-md-4 no-padding' },
                       _react2.default.createElement('input', { disabled: 'disabled', type: 'text', className: 'form-control', id: 'notificationTW' })
+=======
+                      { className: 'col-md-4' },
+                      _react2.default.createElement('input', { value: 'Pr\xF3ximamente', disabled: 'disabled', type: 'text', className: 'form-control', id: 'notificationTW' })
+>>>>>>> 76bc94b43a90d698e5c8e15d7ed52d7a123fcc15
                     ),
                     _react2.default.createElement(
                       'td',

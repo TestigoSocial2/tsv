@@ -120,6 +120,7 @@ class Section extends React.Component {
               data={this.state.data}
               reducer={procedureTypeData}
               onSelection={this.showDetails}
+              showOpenButton="true"
               width="500"
               height="340"
               description="La gráfica muestra la relación de contratos que se adjudicarón de acuerdo a los distintos mecanismos establecidos." />
@@ -131,6 +132,7 @@ class Section extends React.Component {
               data={this.state.data}
               reducer={publishYearData}
               onSelection={this.showDetails}
+              showOpenButton="true"
               width="500"
               height="340"
               description="La gráfica muestra la relación de los contratos registrados de acuerdo a su año de publicación." />
