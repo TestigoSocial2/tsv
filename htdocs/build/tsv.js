@@ -755,6 +755,7 @@ var Details = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Details.__proto__ || Object.getPrototypeOf(Details)).call(this, props));
 
     _this.onClose = _this.onClose.bind(_this);
+    window.scrollTo(0, 0);
     return _this;
   }
 
