@@ -269,21 +269,21 @@ class Home extends React.Component {
             <div className="holder"></div>
           </div>
           <div className="col-md-4 item">
-            <Link to={'/contracts'}>
+            <Link to={'/contratos'}>
               <span className="btn-black txt-upper">Contratos</span>
               <p>Consulta la información alrededor de una <strong>contratación pública</strong>, desde su planeación hasta su ejecución y pago</p>
               <span className="icon contracts"></span>
             </Link>
           </div>
           <div className="col-md-4 item">
-            <Link to={'/indicators'}>
+            <Link to={'/indicadores'}>
               <span className="btn-black txt-upper">Indicadores</span>
               <p>Revisa <strong>estadísticas</strong> sobre el sistema de contrataciones de México y analiza cómo está funcionando</p>
               <span className="icon markers"></span>
             </Link>
           </div>
           <div className="col-md-4 item">
-            <Link to={'/register'}>
+            <Link to={'/registro'}>
               <span className="btn-black txt-upper">Notificaciones</span>
               <p>Recibe <strong>alertas e información</strong> oportuna sobre lo que ocurre en los procedimientos de contratación que te interesan</p>
               <span className="icon notifications"></span>
