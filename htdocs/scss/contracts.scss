@@ -1,4 +1,11 @@
 @media all and (max-width: 768px){
+	.no-padding-bottom{
+		padding-bottom : 0px;
+	}
+	.no-padding{
+		padding-bottom: 0px;
+    	padding-top: 0px;
+	}
 	.project-grid{
 		margin-top:30px;
 		margin-bottom: 30px;
