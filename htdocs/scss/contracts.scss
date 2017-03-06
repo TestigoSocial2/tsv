@@ -1,4 +1,8 @@
 @media all and (max-width: 768px){
+	.project-grid{
+		margin-top:30px;
+		margin-bottom: 30px;
+	}
 	.mobileTable{	
 		display: flex;
 		flex-direction: column;
@@ -82,7 +86,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		margin-top: 50px;
+		margin-top: 80px;
 	}
 	div.bullets a {
 		width:  230px;
