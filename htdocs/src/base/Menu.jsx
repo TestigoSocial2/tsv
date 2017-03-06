@@ -41,10 +41,10 @@ class Menu extends React.Component {
         <nav className="navbar navbar-default">
             <div className="container-fluid">
               <div className="navbar-header">
-                <Link to={'/'}><h2>2.0 </h2></Link>
-                <a class="navbar-toggle collapsed menu-bars" id="menu-bars" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                  <FontAwesome name='bars' />
-                </a>
+                <Link to={'/'} className="logo2"></Link>
+                <Link to={'#bs-example-navbar-collapse-1'} class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <FontAwesome name='bars' aria-expanded="false"/>
+                </Link>
               </div>
               <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul className="nav navbar-nav">
