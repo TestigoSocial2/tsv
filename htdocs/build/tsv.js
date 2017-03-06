@@ -5601,7 +5601,7 @@ var Form = function (_React$Component) {
                     _react2.default.createElement(
                       'td',
                       { className: 'col-md-4' },
-                      _react2.default.createElement('input', { disabled: 'disabled', type: 'text', className: 'form-control', id: 'notificationFB' })
+                      _react2.default.createElement('input', { value: 'Pr\xF3ximamente', disabled: 'disabled', type: 'text', className: 'form-control', id: 'notificationFB' })
                     ),
                     _react2.default.createElement(
                       'td',
@@ -5629,7 +5629,7 @@ var Form = function (_React$Component) {
                     _react2.default.createElement(
                       'td',
                       { className: 'col-md-4' },
-                      _react2.default.createElement('input', { disabled: 'disabled', type: 'text', className: 'form-control', id: 'notificationTW' })
+                      _react2.default.createElement('input', { value: 'Pr\xF3ximamente', disabled: 'disabled', type: 'text', className: 'form-control', id: 'notificationTW' })
                     ),
                     _react2.default.createElement(
                       'td',

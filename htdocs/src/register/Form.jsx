@@ -276,7 +276,7 @@ class Form extends React.Component {
                   <tr>
                     <td className="txt-upper col-md-2"><label>Facebook</label></td>
                     <td className="col-md-4">
-                      <input disabled="disabled" type="text" className="form-control" id="notificationFB" />
+                      <input value="Próximamente" disabled="disabled" type="text" className="form-control" id="notificationFB" />
                     </td>
                     <td>
                       <input disabled="disabled" id="enableFB" type="checkbox" />
@@ -286,7 +286,7 @@ class Form extends React.Component {
                   <tr>
                     <td className="txt-upper col-md-2"><label>Twitter</label></td>
                     <td className="col-md-4">
-                      <input disabled="disabled" type="text" className="form-control" id="notificationTW" />
+                      <input value="Próximamente" disabled="disabled" type="text" className="form-control" id="notificationTW" />
                     </td>
                     <td>
                       <input disabled="disabled" id="enableTW" type="checkbox" />
