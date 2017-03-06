@@ -281,7 +281,8 @@
 
     li {
       border-color: $tsv-gray;
-      margin-left: 15px !important;
+      margin-right: 10px !important;
+      margin-left: 10px;
 
       &.active {
         background-color: $tsv-black;

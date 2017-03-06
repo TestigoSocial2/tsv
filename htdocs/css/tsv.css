@@ -866,7 +866,8 @@ td.checkbox input {
       bottom: 0; }
       #highlights ol.carousel-indicators li {
         border-color: #333;
-        margin-left: 15px !important; }
+        margin-right: 10px !important;
+        margin-left: 10px; }
         #highlights ol.carousel-indicators li.active {
           background-color: #111; }
     #highlights p.info {
