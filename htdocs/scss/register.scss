@@ -1,4 +1,7 @@
 @media all and (max-width: 768px) {
+	.run-notifications{
+		margin-top: 20px !important;
+	}
 	.register-description .info{
 		background-color:  #FBE2B9;
 	}
@@ -85,6 +88,7 @@
 		display: block;
 		margin : 0px auto !important; 
 		margin-bottom: 30px !important;
+		margin-top: 30px !important;
 	}
 	td.description{
 		padding-top :4px !important;
