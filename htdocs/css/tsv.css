@@ -613,7 +613,8 @@
     align-items: center;
     display: block;
     margin: 0px auto !important;
-    margin-bottom: 30px !important; }
+    margin-bottom: 30px !important;
+    margin-top: 30px !important; }
 
   td.description {
     padding-top: 4px !important;
