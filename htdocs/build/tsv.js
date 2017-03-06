@@ -384,16 +384,12 @@ var Menu = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'navbar-header' },
+              _react2.default.createElement(_reactRouter.Link, { to: '/', className: 'logo2' }),
               _react2.default.createElement(
                 _reactRouter.Link,
-                { to: '/' },
-                _react2.default.createElement(
-                  'h2',
-                  null,
-                  '2.0 '
-                )
-              ),
-              _react2.default.createElement(FontAwesome, { name: 'bars', 'class': 'navbar-toggle collapsed', 'data-toggle': 'collapse', href: '#bs-example-navbar-collapse-1', 'data-target': '#bs-example-navbar-collapse-1', 'aria-expanded': 'false' })
+                { to: '#bs-example-navbar-collapse-1', 'class': 'navbar-toggle collapsed', 'data-toggle': 'collapse', 'data-target': '#bs-example-navbar-collapse-1' },
+                _react2.default.createElement(FontAwesome, { name: 'bars', 'aria-expanded': 'false' })
+              )
             ),
             _react2.default.createElement(
               'div',
