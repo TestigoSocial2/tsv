@@ -14,4 +14,4 @@ __Compilar como una imagen Docker:__ `make docker`
 
 __Ejecutar como un contenedor Docker:__ `make docker-run`
 
-sass --watch scss/tsv.scss:css/tsv.css
+sass --watch htdocs/scss/tsv.scss:css/tsv.css

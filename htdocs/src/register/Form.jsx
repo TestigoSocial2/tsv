@@ -245,8 +245,8 @@ class Form extends React.Component {
               <table className="table table-striped blue">
                 <tbody>
                   <tr>
-                    <td className="txt-upper col-md-2"><label>Correo Electrónico</label></td>
-                    <td className="col-md-4">
+                    <td className="txt-upper col-md-2 no-padding-bottom"><label>Correo Electrónico</label></td>
+                    <td className="col-md-4 no-padding">
                       <input type="email"
                              className="form-control"
                              id="notificationEmail"
@@ -259,8 +259,8 @@ class Form extends React.Component {
                     </td>
                   </tr>
                   <tr>
-                    <td className="txt-upper col-md-2"><label>SMS</label></td>
-                    <td className="col-md-4">
+                    <td className="txt-upper col-md-2 no-padding-bottom"><label>SMS</label></td>
+                    <td className="col-md-4 no-padding">
                       <input type="text"
                              className="form-control"
                              id="notificationSMS"
@@ -275,8 +275,8 @@ class Form extends React.Component {
                     </td>
                   </tr>
                   <tr>
-                    <td className="txt-upper col-md-2"><label>Facebook</label></td>
-                    <td className="col-md-4">
+                    <td className="txt-upper col-md-2 no-padding-bottom"><label>Facebook</label></td>
+                    <td className="col-md-4 no-padding">
                       <input disabled="disabled" type="text" className="form-control" id="notificationFB" />
                     </td>
                     <td className="txt-italic checkbox">
@@ -285,8 +285,8 @@ class Form extends React.Component {
                     </td>
                   </tr>
                   <tr>
-                    <td className="txt-upper col-md-2"><label>Twitter</label></td>
-                    <td className="col-md-4">
+                    <td className="txt-upper col-md-2 no-padding-bottom"><label>Twitter</label></td>
+                    <td className="col-md-4 no-padding">
                       <input disabled="disabled" type="text" className="form-control" id="notificationTW" />
                     </td>
                     <td className="txt-italic checkbox">
