@@ -788,7 +788,8 @@ td.checkbox input {
           background-image: url("../images/icon_notifications.png"); }
 
   #bottom {
-    padding-top: 0px !important; }
+    padding-top: 0px !important;
+    height: auto !important; }
     #bottom div.hide-row {
       display: none; }
     #bottom div.mobile-row {
