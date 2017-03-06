@@ -3791,7 +3791,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // Import top-level components
 _reactDom2.default.render(_react2.default.createElement(
   _reactRouter.Router,
-  { history: _reactRouter.browserHistory },
+  { onUpdate: function onUpdate() {
+      return window.scrollTo(0, 0);
+    }, history: _reactRouter.browserHistory },
   _react2.default.createElement(
     _reactRouter.Route,
     { component: _Main2.default },
