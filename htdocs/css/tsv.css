@@ -1082,11 +1082,11 @@ td.checkbox input {
 
 @media all and (max-width: 768px) {
   .no-padding-bottom {
-    padding-bottom: 0px; }
+    padding-bottom: 0px !important; }
 
   .no-padding {
-    padding-bottom: 0px;
-    padding-top: 0px; }
+    padding-bottom: 0px !important;
+    padding-top: 0px !important; }
 
   .project-grid {
     margin-top: 30px;
