@@ -1,6 +1,7 @@
 package: github.com/transparenciamx/tsv
 import:
 - package: github.com/julienschmidt/httprouter
+  version: 0ba7dad1b3b47a021ff3353220924eba650c36f4
 - package: github.com/gorilla/websocket
   version: v1.0.0
 - package: github.com/golang/snappy
