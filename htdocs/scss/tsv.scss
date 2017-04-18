@@ -114,6 +114,7 @@ body {
   }
 
   &:hover {
+    background-color: $tsv-blue;
     color: $tsv-white;
   }
 
@@ -270,10 +271,13 @@ div.clear {
     &.active {
       background-color: $tsv-black;
       color: $tsv-white;
+      outline: none;
     }
 
     &:hover {
       background-color: $tsv-white;
+      color: $tsv-black;
+      outline: none;
     }
   }
 }

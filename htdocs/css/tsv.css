@@ -1283,6 +1283,7 @@ body {
   .btn-black.large {
     font-size: 1.4em; }
   .btn-black:hover {
+    background-color: #4990e2;
     color: #fff; }
   .btn-black.active {
     background-color: #4990e2; }
@@ -1380,9 +1381,12 @@ div.clear {
   margin-top: 20px; }
   #bucketSelector button.active {
     background-color: #111;
-    color: #fff; }
+    color: #fff;
+    outline: none; }
   #bucketSelector button:hover {
-    background-color: #fff; }
+    background-color: #fff;
+    color: #111;
+    outline: none; }
 
 #facts {
   border-bottom: 1px solid #ccc;

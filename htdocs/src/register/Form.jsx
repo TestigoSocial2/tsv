@@ -95,7 +95,11 @@ class Form extends React.Component {
 
     let countries = [];
     countriesList.forEach((c)=>{
-      countries.push(<option value={c.code}>{c.name}</option>);
+      if(c.code == 'MX') {
+        countries.push(<option value={c.code} selected>{c.name}</option>);
+      } else {
+        countries.push(<option value={c.code}>{c.name}</option>);
+      }
     });
     return(
       <div id="setup">
@@ -125,7 +129,7 @@ class Form extends React.Component {
                   <tr>
                     <td className="txt-upper col-md-2 description-top"><label>Contraseña</label></td>
                     <td className="txt-italic visible-xs description">La contraseña deberá tener una extensión de al menos 6 caracteres y contener al menos un número</td>
-                    
+
                     <td className="col-md-4">
                       <input type="password"
                              className="form-control"

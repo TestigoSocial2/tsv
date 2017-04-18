@@ -204,7 +204,7 @@ class Home extends React.Component {
                 </p>
                 <h1>$<span id="totalAward" className="counter">0</span> MXN</h1>
                 <p className="info">
-                  <span className="bg-green">para la <strong><span id="orgDescription"></span></strong>, mediante <span className="counter totalContracts">0</span> contratos.</span>
+                  <span className="bg-green">para <strong><span id="orgDescription"></span></strong>, mediante <span className="counter totalContracts">0</span> contratos.</span>
                 </p>
               </div>
               <div className="item" data-section="limited">

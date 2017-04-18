@@ -198,9 +198,9 @@ func stats(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	org.Code = ps.ByName("bucket")
 	switch org.Code {
 	case "gacm":
-		org.Description = "Construcción del Nuevo Aeropuerto Internacional de la Ciudad de México"
+		org.Description = "la construcción del Nuevo Aeropuerto Internacional de la Ciudad de México"
 	case "cdmx":
-		org.Description = "Contratación de Servicios y Obras de la Ciudad de México"
+		org.Description = "la contratación de servicios y obras públicas de la Ciudad de México"
 	}
 
 	cursor := make(chan *storage.Record)

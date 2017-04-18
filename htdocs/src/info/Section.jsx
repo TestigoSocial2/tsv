@@ -9,8 +9,7 @@ class Section extends React.Component {
         <Description
           title="¿Qué es Testigo Social 2.0?"
           color="purple"
-          content="Testigo Social 2.0 es una nueva plataforma para que los ciudadanos transformemos la forma en que el gobierno compra con nuestro dinero, el dinero público. Infórmate sobre cómo está comprando el gobierno y organízate con otros ciudadanos para cambiar cómo compra el gobierno en los proyectos que te importan." />
-
+          content="Testigo Social 2.0 es una nueva plataforma para que los ciudadanos mejoremos la forma en que el gobierno compra con nuestro dinero, el dinero público. Accede a información sobre los procesos de compra del gobierno y organízate con otros ciudadanos para proponer ajustes en los proyectos que te importan o revisar que los recursos asignados se gasten de forma correcta. En esta sección encontrarás distintos recursos e información para hacer un mejor uso de las herramientas disponibles en Testigo Social 2.0." />
         <Glossary />
       </div>
     );
