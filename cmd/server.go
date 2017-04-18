@@ -24,6 +24,7 @@ import (
 	"crypto/tls"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -56,6 +57,9 @@ var wsu = websocket.Upgrader{
 	ReadBufferSize:  1024,
 	WriteBufferSize: 1024,
 }
+
+// Hold index file content
+var indexFile []byte
 
 // Setup
 func init() {
@@ -286,6 +290,11 @@ func redirect(w http.ResponseWriter, req *http.Request) {
 	http.Redirect(w, req, target, http.StatusTemporaryRedirect)
 }
 
+// Redirect ReactRouter paths to the 'index.hmtl' file
+func serveIndex(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+	fmt.Fprintf(w, fmt.Sprintf("%s", indexFile))
+}
+
 func runServer(cmd *cobra.Command, args []string) error {
 	// Set storage config variable
 	sp, err := filepath.Abs(path.Join(viper.GetString("server.store"), "tsv.db"))
@@ -310,6 +319,9 @@ func runServer(cmd *cobra.Command, args []string) error {
 		PageToken:         os.Getenv("TSV_FB_PAGE_TOKEN"),
 	})
 
+	// Load index.html contents
+	indexFile, _ = ioutil.ReadFile(path.Join(viper.GetString("server.docs"), "index.html"))
+
 	// Configure router
 	router := httprouter.New()
 	router.NotFound = http.FileServer(cacheFS)
@@ -321,6 +333,12 @@ func runServer(cmd *cobra.Command, args []string) error {
 	router.GET("/ws", ws)
 	router.GET("/fb", tsvBot.Verify)
 	router.POST("/fb", tsvBot.ReceiveMessage)
+
+	// Redirect ReactRouter paths to the 'index.hmtl' file
+	router.GET("/informacion", serveIndex)
+	router.GET("/contratos", serveIndex)
+	router.GET("/indicadores", serveIndex)
+	router.GET("/registro", serveIndex)
 
 	// Handle incoming FB messages
 	go func() {
