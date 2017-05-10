@@ -1501,6 +1501,58 @@ div.clear {
   border-top: 1px solid #ccc;
   padding: 2em 0; }
 
+#about div.img {
+  float: left;
+  width: 54%; }
+  #about div.img img {
+    height: auto;
+    width: 100%; }
+#about div.desc {
+  float: right;
+  width: 40%; }
+  #about div.desc h4 {
+    color: #999; }
+#about #news-slides {
+  border-bottom: 1px solid #999;
+  margin-bottom: 40px;
+  padding-bottom: 40px; }
+  #about #news-slides ol.carousel-indicators {
+    bottom: 0;
+    left: 94%; }
+    #about #news-slides ol.carousel-indicators li {
+      border-color: #999;
+      margin-left: 2px;
+      margin-right: 2px; }
+      #about #news-slides ol.carousel-indicators li.active {
+        background-color: #999; }
+#about div.grid {
+  margin-bottom: 30px; }
+  #about div.grid div.item {
+    float: left;
+    height: 280px;
+    margin: 10px 1%;
+    padding: 15px;
+    position: relative;
+    width: 30%; }
+    #about div.grid div.item h1 {
+      color: #fff;
+      font-size: 2em; }
+    #about div.grid div.item div.overlay {
+      background-color: #111;
+      display: none;
+      position: absolute;
+      left: 0;
+      height: 100%;
+      top: 0;
+      opacity: 0.9;
+      padding: 20px;
+      width: 100%;
+      z-index: 100; }
+      #about div.grid div.item div.overlay p {
+        color: #fff;
+        line-height: 1.5em;
+        text-align: center; }
+
 #bottom {
   background-color: #111;
   bottom: 0;
