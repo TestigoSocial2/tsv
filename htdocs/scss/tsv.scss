@@ -280,6 +280,18 @@ div.clear {
       outline: none;
     }
   }
+
+  p.info {
+    font-size: 2em;
+    margin: 20px 0;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 5em;
+    font-weight: 300;
+    text-align: center;
+  }
 }
 
 #facts {
@@ -300,6 +312,8 @@ div.clear {
 
     li {
       border-color: $tsv-gray;
+      margin-left: 2px;
+      margin-right: 2px;
 
       &.active {
         background-color: $tsv-black;

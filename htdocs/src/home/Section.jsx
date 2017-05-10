@@ -32,7 +32,6 @@ class Home extends React.Component {
     this.loadStats('gacm');
   }
 
-  // Load stats
   loadStats( bucket ) {
     let data = {};
     let charts = {};
@@ -129,9 +128,8 @@ class Home extends React.Component {
         }
       }
 
-      // Configure data slider
-      let slides = $('#content-slides');
-      slides.on('slid.bs.carousel', function() {
+      // Show chart
+      function showChart() {
         let active = slides.find('div.active');
         let method = active.data('section');
         if( method ) {
@@ -157,14 +155,19 @@ class Home extends React.Component {
                 responsiveAnimationDuration: 500,
                 padding: 10,
                 legend: {
-                    display: d,
+                  display: d,
                 }
               }
             });
             active.find(".dataChartLegend").html(charts[method].c.generateLegend());
           }
         }
-      });
+      }
+
+      // Configure data slider
+      let slides = $('#content-slides');
+      slides.on('slid.bs.carousel', showChart);
+      showChart();
     });
   }
 
@@ -185,6 +188,15 @@ class Home extends React.Component {
             <button type="button" data-bucket="gacm" className="btn btn-default active">Nuevo Aeropuerto de la Ciudad de México</button>
             <button type="button" data-bucket="cdmx" className="btn btn-default">Gobierno de la Ciudad de México</button>
           </div>
+          <div className="item">
+            <p className="info mobile">
+              <span className="bg-green">Entre el <span id="firstDate"></span> y el <span id="lastDate"></span>, se han adjudicado</span>
+            </p>
+            <h1>$<span id="totalAward" className="counter">0</span> MXN</h1>
+            <p className="info">
+              <span className="bg-green">para <strong><span id="orgDescription"></span></strong>, mediante <span className="counter totalContracts">0</span> contratos.</span>
+            </p>
+          </div>
         </center>
 
         {/* Highlights */}
@@ -194,20 +206,10 @@ class Home extends React.Component {
               <li data-target="#content-slides" data-slide-to="0" className="active"></li>
               <li data-target="#content-slides" data-slide-to="1"></li>
               <li data-target="#content-slides" data-slide-to="2"></li>
-              <li data-target="#content-slides" data-slide-to="3"></li>
             </ol>
 
             <div className="carousel-inner" role="listbox">
-              <div className="item active">
-                <p className="info mobile">
-                  <span className="bg-green">Entre el <span id="firstDate"></span> y el <span id="lastDate"></span>, se han adjudicado</span>
-                </p>
-                <h1>$<span id="totalAward" className="counter">0</span> MXN</h1>
-                <p className="info">
-                  <span className="bg-green">para <strong><span id="orgDescription"></span></strong>, mediante <span className="counter totalContracts">0</span> contratos.</span>
-                </p>
-              </div>
-              <div className="item" data-section="limited">
+              <div className="item active" data-section="limited">
                 <div className="chart">
                   <canvas className="dataChart" width="460" height="320"></canvas>
                   <div className="dataChartLegend hidden-md hidden-lg"></div>

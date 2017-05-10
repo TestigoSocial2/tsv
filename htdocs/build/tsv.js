@@ -3396,9 +3396,6 @@ var Home = function (_React$Component) {
       // Load default stats
       this.loadStats('gacm');
     }
-
-    // Load stats
-
   }, {
     key: 'loadStats',
     value: function loadStats(bucket) {
@@ -3480,9 +3477,8 @@ var Home = function (_React$Component) {
           }
         };
 
-        // Configure data slider
-        var slides = $('#content-slides');
-        slides.on('slid.bs.carousel', function () {
+        // Show chart
+        function showChart() {
           var active = slides.find('div.active');
           var method = active.data('section');
           if (method) {
@@ -3515,7 +3511,12 @@ var Home = function (_React$Component) {
               active.find(".dataChartLegend").html(charts[method].c.generateLegend());
             }
           }
-        });
+        }
+
+        // Configure data slider
+        var slides = $('#content-slides');
+        slides.on('slid.bs.carousel', showChart);
+        showChart();
       });
     }
   }, {
@@ -3559,6 +3560,55 @@ var Home = function (_React$Component) {
               { type: 'button', 'data-bucket': 'cdmx', className: 'btn btn-default' },
               'Gobierno de la Ciudad de M\xE9xico'
             )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'item' },
+            _react2.default.createElement(
+              'p',
+              { className: 'info mobile' },
+              _react2.default.createElement(
+                'span',
+                { className: 'bg-green' },
+                'Entre el ',
+                _react2.default.createElement('span', { id: 'firstDate' }),
+                ' y el ',
+                _react2.default.createElement('span', { id: 'lastDate' }),
+                ', se han adjudicado'
+              )
+            ),
+            _react2.default.createElement(
+              'h1',
+              null,
+              '$',
+              _react2.default.createElement(
+                'span',
+                { id: 'totalAward', className: 'counter' },
+                '0'
+              ),
+              ' MXN'
+            ),
+            _react2.default.createElement(
+              'p',
+              { className: 'info' },
+              _react2.default.createElement(
+                'span',
+                { className: 'bg-green' },
+                'para ',
+                _react2.default.createElement(
+                  'strong',
+                  null,
+                  _react2.default.createElement('span', { id: 'orgDescription' })
+                ),
+                ', mediante ',
+                _react2.default.createElement(
+                  'span',
+                  { className: 'counter totalContracts' },
+                  '0'
+                ),
+                ' contratos.'
+              )
+            )
           )
         ),
         _react2.default.createElement(
@@ -3572,64 +3622,14 @@ var Home = function (_React$Component) {
               { className: 'carousel-indicators' },
               _react2.default.createElement('li', { 'data-target': '#content-slides', 'data-slide-to': '0', className: 'active' }),
               _react2.default.createElement('li', { 'data-target': '#content-slides', 'data-slide-to': '1' }),
-              _react2.default.createElement('li', { 'data-target': '#content-slides', 'data-slide-to': '2' }),
-              _react2.default.createElement('li', { 'data-target': '#content-slides', 'data-slide-to': '3' })
+              _react2.default.createElement('li', { 'data-target': '#content-slides', 'data-slide-to': '2' })
             ),
             _react2.default.createElement(
               'div',
               { className: 'carousel-inner', role: 'listbox' },
               _react2.default.createElement(
                 'div',
-                { className: 'item active' },
-                _react2.default.createElement(
-                  'p',
-                  { className: 'info mobile' },
-                  _react2.default.createElement(
-                    'span',
-                    { className: 'bg-green' },
-                    'Entre el ',
-                    _react2.default.createElement('span', { id: 'firstDate' }),
-                    ' y el ',
-                    _react2.default.createElement('span', { id: 'lastDate' }),
-                    ', se han adjudicado'
-                  )
-                ),
-                _react2.default.createElement(
-                  'h1',
-                  null,
-                  '$',
-                  _react2.default.createElement(
-                    'span',
-                    { id: 'totalAward', className: 'counter' },
-                    '0'
-                  ),
-                  ' MXN'
-                ),
-                _react2.default.createElement(
-                  'p',
-                  { className: 'info' },
-                  _react2.default.createElement(
-                    'span',
-                    { className: 'bg-green' },
-                    'para ',
-                    _react2.default.createElement(
-                      'strong',
-                      null,
-                      _react2.default.createElement('span', { id: 'orgDescription' })
-                    ),
-                    ', mediante ',
-                    _react2.default.createElement(
-                      'span',
-                      { className: 'counter totalContracts' },
-                      '0'
-                    ),
-                    ' contratos.'
-                  )
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'item', 'data-section': 'limited' },
+                { className: 'item active', 'data-section': 'limited' },
                 _react2.default.createElement(
                   'div',
                   { className: 'chart' },

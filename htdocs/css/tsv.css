@@ -1394,6 +1394,14 @@ div.clear {
     background-color: #fff;
     color: #111;
     outline: none; }
+  #bucketSelector p.info {
+    font-size: 2em;
+    margin: 20px 0;
+    padding: 20px; }
+  #bucketSelector h1 {
+    font-size: 5em;
+    font-weight: 300;
+    text-align: center; }
 
 #facts {
   border-bottom: 1px solid #ccc;
@@ -1407,7 +1415,9 @@ div.clear {
   #highlights ol.carousel-indicators {
     bottom: 0; }
     #highlights ol.carousel-indicators li {
-      border-color: #333; }
+      border-color: #333;
+      margin-left: 2px;
+      margin-right: 2px; }
       #highlights ol.carousel-indicators li.active {
         background-color: #111; }
   #highlights p.info {
