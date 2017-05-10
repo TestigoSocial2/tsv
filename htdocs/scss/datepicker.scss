@@ -141,13 +141,13 @@
   color: $tsv-white;
 }
 
-// .datepicker table tr td.range,
-// .datepicker table tr td.range:hover,
-// .datepicker table tr td.range.disabled,
-// .datepicker table tr td.range.disabled:hover {
-//   background: $tsv-bg-gray;
-//   border-radius: 0;
-// }
+ .datepicker table tr td.range,
+ .datepicker table tr td.range:hover,
+ .datepicker table tr td.range.disabled,
+ .datepicker table tr td.range.disabled:hover {
+   background: $tsv-bg-gray;
+   border-radius: 0;
+ }
 //
 // .datepicker table tr td.range.today,
 // .datepicker table tr td.range.today:hover,

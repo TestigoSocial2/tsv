@@ -564,7 +564,7 @@ var list = [
     "code": "YT"
   },
   {
-    "name": "Mexico",
+    "name": "México",
     "code": "MX"
   },
   {

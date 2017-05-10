@@ -559,9 +559,12 @@ div.clear {
 }
 
 #queryForm {
-  button.btn-primary {
-    background-color: $tsv-blue;
+  button {
     padding: 6px 30px;
+
+    &.btn-primary {
+      background-color: $tsv-blue;
+    }
   }
 
   div.bullets {
@@ -761,6 +764,19 @@ div.contract-details {
     }
 
     div.bullets {
+      //position: relative;
+      //
+      //&:before {
+      //  border-bottom: 2px $tsv-black solid;
+      //  content: '';
+      //  height: 100%;
+      //  left: 0;
+      //  position: absolute;
+      //  transform: translateY(-50%);
+      //  width: 100%;
+      //  z-index: 0;
+      //}
+
       .btn-black {
         background-color: $tsv-white;
         border: 2px solid $tsv-black;
@@ -768,8 +784,9 @@ div.contract-details {
         color: $tsv-black;
         cursor: pointer;
         display: inline-block;
-        margin: 0 4px;
-        padding: 10px 22px;
+        margin: 0 1%;
+        text-align: center;
+        width: 18%;
 
         &:hover {
           color: inherit;

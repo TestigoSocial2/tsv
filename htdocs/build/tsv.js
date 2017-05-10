@@ -998,7 +998,7 @@ var Details = function (_React$Component) {
                 ),
                 _react2.default.createElement(
                   'a',
-                  { onClick: this.onClose, className: 'btn-black' },
+                  { onClick: this.onClose, className: 'btn-black active' },
                   'Volver al listado de Resultados'
                 )
               ),
@@ -1898,6 +1898,8 @@ var SearchBar = function (_React$Component) {
   _createClass(SearchBar, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      var _this2 = this;
+
       this.ui = {};
       this.ui.form = $('form#queryForm');
       this.ui.bullets = this.ui.form.find('div.bullets span');
@@ -1912,26 +1914,46 @@ var SearchBar = function (_React$Component) {
         maxViewMode: 2,
         multidate: 2,
         todayHighlight: true
-      }).on('hide', function (e) {
-        e.dates.sort(function (a, b) {
-          return new Date(a).getTime() - new Date(b).getTime();
-        });
-        var lbl = (0, _helpers.formatDate)(e.dates[0], 'MMMM Do YYYY');
-        var val = (0, _helpers.formatDate)(e.dates[0], 'MM-DD-YYYY');
-        if (e.dates.length > 1) {
-          lbl += ' a ' + (0, _helpers.formatDate)(e.dates[1], 'MMMM Do YYYY');
-          val += '|' + (0, _helpers.formatDate)(e.dates[1], 'MM-DD-YYYY');
+      }).on({
+        'hide': function hide(e) {
+          e.dates.sort(function (a, b) {
+            return new Date(a).getTime() - new Date(b).getTime();
+          });
+          var lbl = (0, _helpers.formatDate)(e.dates[0], 'MMMM Do YYYY');
+          var val = (0, _helpers.formatDate)(e.dates[0], 'MM-DD-YYYY');
+          if (e.dates.length > 1) {
+            lbl += ' a ' + (0, _helpers.formatDate)(e.dates[1], 'MMMM Do YYYY');
+            val += '|' + (0, _helpers.formatDate)(e.dates[1], 'MM-DD-YYYY');
+          }
+
+          // Update state
+          _this2.setState({
+            value: val
+          });
+
+          // Update UI
+          _this2.ui.input.val(lbl);
+          _this2.ui.input.focus();
+        },
+        'changeDate': function changeDate() {
+          // Visually mark the selected range
+          if ($('div.datepicker-days tbody tr td.active').length == 2) {
+            var mark = false;
+            var days = $('div.datepicker-days tbody td.active');
+            $('div.datepicker-days tbody td').each(function (i, d) {
+              if (d == days[0]) {
+                mark = true;
+              }
+              if (mark) {
+                $(d).addClass('range');
+              }
+              if (d == days[1]) {
+                mark = false;
+              }
+            });
+          }
         }
-
-        // Update state
-        this.setState({
-          value: val
-        });
-
-        // Update UI
-        this.ui.input.val(lbl);
-        this.ui.input.focus();
-      }.bind(this));
+      });
 
       // Setup slider
       this.ui.form.find("span[data-filter='amount']").popover({
@@ -1954,19 +1976,19 @@ var SearchBar = function (_React$Component) {
             return '';
           }
         }).on('slide', function (e) {
-          this.setState({
+          _this2.setState({
             value: e.value.join('|')
           });
-          this.ui.input.val('$' + e.value[0].toLocaleString() + ' a ' + '$' + e.value[1].toLocaleString());
-        }.bind(this));
-      }.bind(this));
+          _this2.ui.input.val('$' + e.value[0].toLocaleString() + ' a ' + '$' + e.value[1].toLocaleString());
+        });
+      });
 
       // Update state when filter value changes
       this.ui.input.on('keyup', function () {
-        this.setState({
-          value: this.ui.input.val()
+        _this2.setState({
+          value: _this2.ui.input.val()
         });
-      }.bind(this));
+      });
 
       // Handle filter selection
       this.ui.bullets.on('click', function (e) {
@@ -1995,6 +2017,17 @@ var SearchBar = function (_React$Component) {
         e.preventDefault();
         this.props.onSubmit(this.state);
       }.bind(this));
+
+      // Clear filters
+      this.ui.form.on('reset', function (e) {
+        e.preventDefault();
+        _this2.setState({
+          filter: null,
+          value: null,
+          limit: 30
+        });
+        _this2.ui.input.val('');
+      });
     }
   }, {
     key: 'render',
@@ -2028,6 +2061,11 @@ var SearchBar = function (_React$Component) {
                 _react2.default.createElement(
                   'span',
                   { className: 'input-group-btn' },
+                  _react2.default.createElement(
+                    'button',
+                    { className: 'btn', type: 'reset' },
+                    'Limpiar'
+                  ),
                   _react2.default.createElement(
                     'button',
                     { className: 'btn btn-primary', type: 'submit' },
@@ -2889,7 +2927,7 @@ var list = [{
   "name": "Mayotte",
   "code": "YT"
 }, {
-  "name": "Mexico",
+  "name": "México",
   "code": "MX"
 }, {
   "name": "Micronesia, Federated States of",
@@ -3853,7 +3891,7 @@ var Home = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'col-md-12' },
-            _react2.default.createElement('div', { className: 'holder' })
+            _react2.default.createElement('iframe', { width: '853', height: '480', src: 'https://www.youtube.com/embed/sU3qKB6oO7U?rel=0&controls=0&showinfo=0', frameborder: '0', allowfullscreen: true })
           ),
           _react2.default.createElement(
             'div',

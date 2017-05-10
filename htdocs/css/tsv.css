@@ -111,6 +111,13 @@
 .datepicker table tr td.today.active:hover {
   color: #fff; }
 
+.datepicker table tr td.range,
+.datepicker table tr td.range:hover,
+.datepicker table tr td.range.disabled,
+.datepicker table tr td.range.disabled:hover {
+  background: #eee;
+  border-radius: 0; }
+
 .datepicker table tr td.active,
 .datepicker table tr td.active:hover,
 .datepicker table tr td.active.disabled,
@@ -1565,9 +1572,10 @@ div.clear {
 #setup table td {
   vertical-align: middle; }
 
-#queryForm button.btn-primary {
-  background-color: #4990e2;
+#queryForm button {
   padding: 6px 30px; }
+  #queryForm button.btn-primary {
+    background-color: #4990e2; }
 #queryForm div.bullets {
   margin: 14px 0; }
   #queryForm div.bullets span {
@@ -1701,8 +1709,9 @@ div.contract-details div.contract-header {
     color: #111;
     cursor: pointer;
     display: inline-block;
-    margin: 0 4px;
-    padding: 10px 22px; }
+    margin: 0 1%;
+    text-align: center;
+    width: 18%; }
     div.contract-details div.contract-header div.bullets .btn-black:hover {
       color: inherit; }
     div.contract-details div.contract-header div.bullets .btn-black.active {

@@ -26,26 +26,46 @@ class SearchBar extends React.Component {
       maxViewMode: 2,
       multidate: 2,
       todayHighlight: true
-    }).on( 'hide', (function( e ) {
-      e.dates.sort(function(a, b) {
-        return new Date(a).getTime() - new Date(b).getTime();
-      });
-      let lbl = formatDate(e.dates[0], 'MMMM Do YYYY');
-      let val = formatDate(e.dates[0], 'MM-DD-YYYY');
-      if( e.dates.length > 1 ) {
-        lbl += ' a ' + formatDate(e.dates[1], 'MMMM Do YYYY')
-        val += '|' + formatDate(e.dates[1], 'MM-DD-YYYY');
+    }).on({
+      'hide': (e) => {
+        e.dates.sort(function(a, b) {
+          return new Date(a).getTime() - new Date(b).getTime();
+        });
+        let lbl = formatDate(e.dates[0], 'MMMM Do YYYY');
+        let val = formatDate(e.dates[0], 'MM-DD-YYYY');
+        if( e.dates.length > 1 ) {
+          lbl += ' a ' + formatDate(e.dates[1], 'MMMM Do YYYY')
+          val += '|' + formatDate(e.dates[1], 'MM-DD-YYYY');
+        }
+
+        // Update state
+        this.setState({
+          value: val
+        });
+
+        // Update UI
+        this.ui.input.val( lbl );
+        this.ui.input.focus();
+      },
+      'changeDate': () => {
+        // Visually mark the selected range
+        if( $('div.datepicker-days tbody tr td.active').length == 2 ) {
+          let mark = false;
+          let days = $('div.datepicker-days tbody td.active');
+          $('div.datepicker-days tbody td').each(function(i, d) {
+            if( d == days[0] ) {
+              mark = true;
+            }
+            if( mark ) {
+              $(d).addClass('range');
+            }
+            if( d == days[1] ) {
+              mark = false;
+            }
+          });
+        }
       }
-
-      // Update state
-      this.setState({
-        value: val
-      });
-
-      // Update UI
-      this.ui.input.val( lbl );
-      this.ui.input.focus();
-    }).bind(this));
+    });
 
     // Setup slider
     this.ui.form.find("span[data-filter='amount']").popover({
@@ -54,7 +74,7 @@ class SearchBar extends React.Component {
       content: '<b>$0</b><input id="amountSlider" type="text" /><b>$100,000,000</b>',
       placement: 'bottom',
       trigger: 'focus'
-    }).on( 'shown.bs.popover', (function() {
+    }).on( 'shown.bs.popover', () => {
       $("#amountSlider").slider({
         step: 50000,
         min: 0,
@@ -67,20 +87,20 @@ class SearchBar extends React.Component {
           }
           return '';
         }
-      }).on( 'slide', (function( e ) {
+      }).on( 'slide', (e) => {
         this.setState({
           value: e.value.join('|')
         });
         this.ui.input.val( '$' + e.value[0].toLocaleString() + ' a ' + '$' + e.value[1].toLocaleString() );
-      }).bind(this));
-    }).bind(this));
+      });
+    });
 
     // Update state when filter value changes
-    this.ui.input.on( 'keyup', (function() {
+    this.ui.input.on( 'keyup', () => {
       this.setState({
         value: this.ui.input.val()
       })
-    }).bind(this));
+    });
 
     // Handle filter selection
     this.ui.bullets.on( 'click', (function( e ) {
@@ -109,6 +129,17 @@ class SearchBar extends React.Component {
       e.preventDefault();
       this.props.onSubmit(this.state);
     }).bind(this));
+
+    // Clear filters
+    this.ui.form.on( 'reset', (e) => {
+      e.preventDefault();
+      this.setState({
+        filter: null,
+        value: null,
+        limit: 30
+      });
+      this.ui.input.val( '' );
+    });
   }
 
   render() {
@@ -122,6 +153,7 @@ class SearchBar extends React.Component {
               <div className="input-group hide-contracts">
                 <input type="text" className="form-control" id="query" name="query" placeholder="Buscar..." />
                 <span className="input-group-btn">
+                  <button className="btn" type="reset">Limpiar</button>
                   <button className="btn btn-primary" type="submit">Buscar</button>
                 </span>
               </div>
@@ -134,9 +166,10 @@ class SearchBar extends React.Component {
                 <span className="btn-black" data-filter="procedureNumber">No. de Procedimiento</span>
                 <span className="btn-black" data-filter="contractNumber">No. de Contrato</span>
               </div>
+
               <div className="input-group mobile-contracts">
                 <input type="text" className="form-control" id="query" name="query" placeholder="Buscar" />
-                  <button className="btn btn-primary btn-mobile" type="submit">Buscar</button>
+                <button className="btn btn-primary btn-mobile" type="submit">Buscar</button>
               </div>
             </form>
           </div>
