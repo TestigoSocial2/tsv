@@ -1252,6 +1252,11 @@ body {
 .txt-large {
   font-size: 1.7em; }
 
+.vertical-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); }
+
 .bg-blue {
   background-color: #d4fbfb; }
 
@@ -1528,6 +1533,7 @@ div.clear {
 #about div.grid {
   margin-bottom: 30px; }
   #about div.grid div.item {
+    box-shadow: 0px 1px 4px #333;
     float: left;
     height: 280px;
     margin: 10px 1%;
