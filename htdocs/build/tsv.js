@@ -6043,34 +6043,6 @@ var Form = function (_React$Component) {
                       _react2.default.createElement(
                         'label',
                         null,
-                        'Facebook'
-                      )
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'col-md-4 no-padding' },
-                      _react2.default.createElement('input', { disabled: 'disabled', type: 'text', className: 'form-control', id: 'notificationFB' })
-                    ),
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'txt-italic checkbox' },
-                      _react2.default.createElement('input', { disabled: 'disabled', id: 'enableFB', type: 'checkbox' }),
-                      _react2.default.createElement(
-                        'label',
-                        null,
-                        'Quiero recibir notificaciones e informaci\xF3n a trav\xE9s mensajes en Facebook Messenger'
-                      )
-                    )
-                  ),
-                  _react2.default.createElement(
-                    'tr',
-                    null,
-                    _react2.default.createElement(
-                      'td',
-                      { className: 'txt-upper col-md-2 no-padding-bottom' },
-                      _react2.default.createElement(
-                        'label',
-                        null,
                         'Twitter'
                       )
                     ),
@@ -6087,6 +6059,33 @@ var Form = function (_React$Component) {
                         'label',
                         null,
                         'Quiero recibir notificaciones a trav\xE9s de mensajes directos y notificaciones en Twitter'
+                      )
+                    )
+                  ),
+                  _react2.default.createElement(
+                    'tr',
+                    null,
+                    _react2.default.createElement(
+                      'td',
+                      { className: 'txt-upper col-md-2 no-padding-bottom' },
+                      _react2.default.createElement(
+                        'label',
+                        null,
+                        'Facebook'
+                      )
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      { colSpan: '2', className: 'col-md-4 no-padding' },
+                      _react2.default.createElement(
+                        'label',
+                        null,
+                        'Utiliza nuestro servicio de notificaciones via FB Messenger ',
+                        _react2.default.createElement(
+                          'a',
+                          { className: 'btn btn-black', target: '_blank', href: 'http://m.me/TestigoSocial' },
+                          'Facebook Messenger Bot'
+                        )
                       )
                     )
                   )

@@ -279,16 +279,6 @@ class Form extends React.Component {
                     </td>
                   </tr>
                   <tr>
-                    <td className="txt-upper col-md-2 no-padding-bottom"><label>Facebook</label></td>
-                    <td className="col-md-4 no-padding">
-                      <input disabled="disabled" type="text" className="form-control" id="notificationFB" />
-                    </td>
-                    <td className="txt-italic checkbox">
-                      <input disabled="disabled" id="enableFB" type="checkbox" />
-                      <label>Quiero recibir notificaciones e información a través mensajes en Facebook Messenger</label>
-                    </td>
-                  </tr>
-                  <tr>
                     <td className="txt-upper col-md-2 no-padding-bottom"><label>Twitter</label></td>
                     <td className="col-md-4 no-padding">
                      <input value="Próximamente" disabled="disabled" type="text" className="form-control" id="notificationTW" />
@@ -296,6 +286,12 @@ class Form extends React.Component {
                     <td className="txt-italic checkbox">
                       <input disabled="disabled" id="enableTW" type="checkbox" />
                       <label>Quiero recibir notificaciones a través de mensajes directos y notificaciones en Twitter</label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="txt-upper col-md-2 no-padding-bottom"><label>Facebook</label></td>
+                    <td colSpan="2" className="col-md-4 no-padding">
+                      <label>Utiliza nuestro servicio de notificaciones via FB Messenger <a className="btn btn-black" target="_blank" href="http://m.me/TestigoSocial">Facebook Messenger Bot</a></label>
                     </td>
                   </tr>
                 </tbody>
