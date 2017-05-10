@@ -90,6 +90,14 @@ body {
   background-color: $tsv-light-purple;
 }
 
+.fleft {
+  float: left;
+}
+
+.fright {
+  float: right;
+}
+
 .block-title {
   background-color: $tsv-black;
   color: $tsv-white;
@@ -499,12 +507,14 @@ div.clear {
 
     div.item {
       box-shadow: 0px 1px 4px $tsv-gray;
+      display: block;
+      cursor: pointer;
       float: left;
       height: 280px;
       margin: 10px 1%;
       padding: 15px;
       position: relative;
-      width: 30%;
+      width: 31%;
 
       h1 {
         color: $tsv-white;
@@ -529,6 +539,27 @@ div.clear {
           text-align: center;
         }
       }
+    }
+  }
+}
+
+#single-post {
+  border-bottom: 1px solid $tsv-mid-gray;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+
+  h1 {
+    text-align: center;
+  }
+
+  div.img {
+    height: 300px;
+    margin: 20px auto;
+    width: 90%;
+
+    img {
+      height: auto;
+      width: 100%;
     }
   }
 }

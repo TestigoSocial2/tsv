@@ -1272,6 +1272,12 @@ body {
 .bg-purple {
   background-color: #f5f0fe; }
 
+.fleft {
+  float: left; }
+
+.fright {
+  float: right; }
+
 .block-title {
   background-color: #111;
   color: #fff;
@@ -1534,12 +1540,14 @@ div.clear {
   margin-bottom: 30px; }
   #about div.grid div.item {
     box-shadow: 0px 1px 4px #333;
+    display: block;
+    cursor: pointer;
     float: left;
     height: 280px;
     margin: 10px 1%;
     padding: 15px;
     position: relative;
-    width: 30%; }
+    width: 31%; }
     #about div.grid div.item h1 {
       color: #fff;
       font-size: 2em; }
@@ -1558,6 +1566,20 @@ div.clear {
         color: #fff;
         line-height: 1.5em;
         text-align: center; }
+
+#single-post {
+  border-bottom: 1px solid #999;
+  margin-bottom: 40px;
+  padding-bottom: 40px; }
+  #single-post h1 {
+    text-align: center; }
+  #single-post div.img {
+    height: 300px;
+    margin: 20px auto;
+    width: 90%; }
+    #single-post div.img img {
+      height: auto;
+      width: 100%; }
 
 #bottom {
   background-color: #111;
