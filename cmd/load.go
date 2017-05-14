@@ -27,9 +27,9 @@ import (
 	"path"
 	"strings"
 
-	"github.com/transparenciamx/tsv/storage"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
+	"github.com/transparenciamx/tsv/storage"
 )
 
 // loadCmd represents the load command
