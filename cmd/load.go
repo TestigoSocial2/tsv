@@ -21,112 +21,135 @@
 package cmd
 
 import (
-	"fmt"
-	"io/ioutil"
-	"os"
-	"path"
-	"strings"
-
-	"github.com/spf13/cobra"
-	"github.com/spf13/viper"
-	"github.com/transparenciamx/tsv/storage"
+  "os"
+  
+  "log"
+  
+  "github.com/spf13/cobra"
+  "github.com/spf13/viper"
+  "io/ioutil"
+  "strings"
+  "fmt"
+  "encoding/json"
+  "path"
 )
 
 // loadCmd represents the load command
 var loadCmd = &cobra.Command{
-	Use:     "load",
-	Short:   "Load contract information",
-	Aliases: []string{"store"},
-	RunE:    runLoadCmd,
+  Use:     "load",
+  Short:   "Load contract information",
+  Aliases: []string{"add", "save", "store"},
+  RunE:    runLoadCmd,
 }
 
 func init() {
-	var (
-		loadPath   string
-		loadBucket string
-		loadStore  string
-	)
-	viper.SetDefault("load.path", ".")
-	viper.SetDefault("load.bucket", "main")
-	viper.SetDefault("load.store", os.TempDir())
-	loadCmd.Flags().StringVarP(
-		&loadPath,
-		"path",
-		"p",
-		".",
-		"Full path for the contents to load, can be a file or a directory to scan")
-	loadCmd.Flags().StringVarP(
-		&loadBucket,
-		"bucket",
-		"b",
-		"main",
-		"Bucket to use for information storage")
-	loadCmd.Flags().StringVarP(
-		&loadStore,
-		"store",
-		"s",
-		os.TempDir(),
-		"Full path to use as data store location")
-	viper.BindPFlag("load.path", loadCmd.Flags().Lookup("path"))
-	viper.BindPFlag("load.bucket", loadCmd.Flags().Lookup("bucket"))
-	viper.BindPFlag("load.store", loadCmd.Flags().Lookup("store"))
-	RootCmd.AddCommand(loadCmd)
+  var (
+    loadPath    string
+    storageHost string
+    storageDB   string
+  )
+  
+  loadCmd.Flags().StringVar(
+    &loadPath,
+    "path",
+    "",
+    "Path to process")
+  viper.SetDefault("load.path", "")
+  viper.BindPFlag("load.path", loadCmd.Flags().Lookup("path"))
+  
+  loadCmd.Flags().StringVar(
+    &storageHost,
+    "storage-host",
+    "localhost:27017",
+    "MongoDB instance used as storage component")
+  viper.SetDefault("load.storage.host", "localhost:27017")
+  viper.BindPFlag("load.storage.host", loadCmd.Flags().Lookup("storage-host"))
+  
+  loadCmd.Flags().StringVar(&storageDB,
+    "storage-db",
+    "tsv",
+    "MongoDB database used")
+  viper.SetDefault("load.storage.db", "tsv")
+  viper.BindPFlag("load.storage.db", loadCmd.Flags().Lookup("storage-db"))
+  
+  loadCmd.Flags().StringVar(&storageDB,
+    "project-id",
+    "",
+    "Project identifier")
+  viper.SetDefault("load.project.id", "")
+  viper.BindPFlag("load.project.id", loadCmd.Flags().Lookup("project-id"))
+  
+  RootCmd.AddCommand(loadCmd)
 }
 
 // Command execution
 func runLoadCmd(cmd *cobra.Command, args []string) error {
-	// Prepare storage provider
-	conf := storage.DefaultConfig()
-	conf.Path = path.Join(viper.GetString("load.store"), "tsv.db")
-	store, err := storage.New(conf)
-	if err != nil {
-		return err
-	}
-	defer store.Close()
+  // Get storage handler
+  db, err := connectStorage(viper.GetString("load.storage.host"), viper.GetString("load.storage.db"))
+  if err != nil {
+    log.Printf("Storage error: %s\n", err)
+    return err
+  }
+  defer db.Close()
+  
+  src, err := os.Stat(viper.GetString("load.path"))
+  if err != nil {
+    return err
+  }
+  mode := src.Mode()
+  
+  // Iterate directory
+  if mode.IsDir() {
+    files, err := ioutil.ReadDir(viper.GetString("load.path"))
+    if err != nil {
+      return err
+    }
 
-	src, err := os.Stat(viper.GetString("load.path"))
-	if err != nil {
-		return err
-	}
-	mode := src.Mode()
+    // Iterate files and store
+    var item map[string]interface{}
+    pid := viper.GetString("load.project.id")
+    counter := 0
+    for _, f := range files {
+      name := f.Name()
+      if strings.Contains(name, ".json") {
+        b, err := ioutil.ReadFile(path.Join(viper.GetString("load.path"), name))
+        if err == nil {
+          err = json.Unmarshal(b, &item)
+          if err == nil {
+            if pid != "" {
+              item["project"] = pid
+            }
+            db.Insert("contracts", item)
+            counter++
+          }
+        }
+      }
+    }
+    fmt.Printf("Files stored: %d\n", counter)
+    return nil
+  }
 
-	// Iterate directory
-	if mode.IsDir() {
-		files, err := ioutil.ReadDir(viper.GetString("load.path"))
-		if err != nil {
-			return err
-		}
-
-		// Iterate files and store
-		counter := 0
-		bucket := viper.GetString("load.bucket")
-		for _, f := range files {
-			name := f.Name()
-			if strings.Contains(name, ".json") {
-				b, err := ioutil.ReadFile(path.Join(viper.GetString("load.path"), name))
-				if err == nil {
-					store.Write(bucket, []byte(strings.Split(name, ".json")[0]), b)
-					counter++
-				}
-			}
-		}
-		fmt.Printf("Files stored: %d in bucket: %s\n", counter, bucket)
-		return nil
-	}
-
-	// Use regular file
-	if mode.IsRegular() {
-		name := src.Name()
-		if !strings.Contains(name, ".json") {
-			return fmt.Errorf("Invalid file format, expecting a '.json' file")
-		}
-		b, err := ioutil.ReadFile(viper.GetString("load.path"))
-		if err != nil {
-			return err
-		}
-		bucket := viper.GetString("load.bucket")
-		store.Write(bucket, []byte(strings.Split(name, ".json")[0]), b)
-		fmt.Printf("File stored: %s in bucket: %s\n", name, bucket)
-	}
-	return nil
+  // Use regular file
+  if mode.IsRegular() {
+    name := src.Name()
+    if !strings.Contains(name, ".json") {
+      return fmt.Errorf("Invalid file format, expecting a '.json' file")
+    }
+    b, err := ioutil.ReadFile(viper.GetString("load.path"))
+    if err != nil {
+      return err
+    }
+    var item map[string]interface{}
+    err = json.Unmarshal(b, &item)
+    if err != nil {
+      return nil
+    }
+    
+    // Attach project id, if provided
+    if pid := viper.GetString("load.project.id"); pid != "" {
+      item["project"] = pid
+    }
+    db.Insert("contracts", item)
+  }
+  return nil
 }
