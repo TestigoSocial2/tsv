@@ -21,42 +21,42 @@
 package cmd
 
 import (
-	"fmt"
-	"os"
-	"strings"
-
-	"github.com/spf13/cobra"
-	"github.com/spf13/viper"
+  "fmt"
+  "os"
+  "strings"
+  
+  "github.com/spf13/cobra"
+  "github.com/spf13/viper"
 )
 
 var cfgFile string
 
 // RootCmd represents the base command when called without any subcommands
 var RootCmd = &cobra.Command{
-	Use:   "tsv",
-	Short: "Testigo Social Virtual 2.0",
-	Long: `
+  Use:   "tsv",
+  Short: "Testigo Social Virtual 2.0",
+  Long: `
 Testigo Social Virtual 2.0
-Complete documentation is available at: https://tm.org.mx/tsv`,
+Complete documentation is available at: https://testigosocial.mx`,
 }
 
 // Execute adds all child commands to the root command sets flags appropriately.
 // This is called by main.main(). It only needs to happen once to the rootCmd.
 func Execute() {
-	if err := RootCmd.Execute(); err != nil {
-		fmt.Println(err)
-		os.Exit(-1)
-	}
+  if err := RootCmd.Execute(); err != nil {
+    fmt.Println(err)
+    os.Exit(-1)
+  }
 }
 
 func init() {
-	cobra.OnInitialize(initConfig)
+  cobra.OnInitialize(initConfig)
 }
 
 // initConfig reads in config file and ENV variables if set.
 func initConfig() {
-	// ENV
-	viper.SetEnvPrefix("tsv")
-	viper.SetEnvKeyReplacer(strings.NewReplacer(".", "_"))
-	viper.AutomaticEnv()
+  // ENV
+  viper.SetEnvPrefix("tsv")
+  viper.SetEnvKeyReplacer(strings.NewReplacer(".", "_"))
+  viper.AutomaticEnv()
 }

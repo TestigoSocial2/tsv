@@ -21,29 +21,24 @@
 package cmd
 
 import (
-  "fmt"
-  "runtime"
+  "os"
+  "log"
+  "github.com/transparenciamx/tsv/storage"
+)
+
+// Utility method to open a storage handler
+func connectStorage(host, database string) (*storage.Handler, error ) {
+  // Use linked storage if available
+  linked := os.Getenv("STORAGE_PORT")
+  if linked != "" {
+    host = linked[6:]
+  }
   
-  "github.com/spf13/cobra"
-)
-
-var (
-  infoBuild   string
-  infoVersion string
-)
-
-var infoCmd = &cobra.Command{
-  Use:   "info",
-  Short: "Display information about the CLI",
-  Run: func(cmd *cobra.Command, args []string) {
-    fmt.Printf("Architecture: %s\n", runtime.GOARCH)
-    fmt.Printf("Platform: %s\n", runtime.GOOS)
-    fmt.Printf("Runtime: %s\n", runtime.Version())
-    fmt.Printf("Version: %s\n", infoVersion)
-    fmt.Printf("Build: %s\n", infoBuild)
-  },
-}
-
-func init() {
-  RootCmd.AddCommand(infoCmd)
+  // Connect to storage instance
+  db, err := storage.NewHandler(host, database)
+  if err != nil {
+    return nil, err
+  }
+  log.Printf("Using storage: %s/%s", host, database)
+  return db, nil
 }
