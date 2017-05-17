@@ -1888,8 +1888,7 @@ var SearchBar = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (SearchBar.__proto__ || Object.getPrototypeOf(SearchBar)).call(this, props));
 
     _this.state = {
-      filter: null,
-      value: null,
+      query: {},
       limit: 30
     };
     return _this;
@@ -1920,16 +1919,18 @@ var SearchBar = function (_React$Component) {
             return new Date(a).getTime() - new Date(b).getTime();
           });
           var lbl = (0, _helpers.formatDate)(e.dates[0], 'MMMM Do YYYY');
-          var val = (0, _helpers.formatDate)(e.dates[0], 'MM-DD-YYYY');
+          var q = {
+            'releases.date': {
+              '$gte': e.dates[0]
+            }
+          };
           if (e.dates.length > 1) {
             lbl += ' a ' + (0, _helpers.formatDate)(e.dates[1], 'MMMM Do YYYY');
-            val += '|' + (0, _helpers.formatDate)(e.dates[1], 'MM-DD-YYYY');
+            q['releases.date']['$lte'] = e.dates[1];
           }
 
           // Update state
-          _this2.setState({
-            value: val
-          });
+          _this2.setState({ query: q });
 
           // Update UI
           _this2.ui.input.val(lbl);
@@ -1977,16 +1978,14 @@ var SearchBar = function (_React$Component) {
           }
         }).on('slide', function (e) {
           _this2.setState({
-            value: e.value.join('|')
+            query: {
+              'releases.planning.budget.amount.amount': {
+                '$gte': e.value[0],
+                '$lte': e.value[1]
+              }
+            }
           });
           _this2.ui.input.val('$' + e.value[0].toLocaleString() + ' a ' + '$' + e.value[1].toLocaleString());
-        });
-      });
-
-      // Update state when filter value changes
-      this.ui.input.on('keyup', function () {
-        _this2.setState({
-          value: _this2.ui.input.val()
         });
       });
 
@@ -1996,11 +1995,6 @@ var SearchBar = function (_React$Component) {
         var target = $(e.target);
         this.ui.bullets.removeClass('active');
         target.addClass('active');
-
-        // Update state
-        this.setState({
-          filter: target.data('filter')
-        });
 
         switch (target.data('filter')) {
           case 'date':
@@ -2015,6 +2009,33 @@ var SearchBar = function (_React$Component) {
       // Handle form submit
       this.ui.form.on('submit', function (e) {
         e.preventDefault();
+        var q = this.state.query;
+        var target = $(this.ui.form.find('div.bullets span.active'));
+        switch (target.data('filter')) {
+          case 'provider':
+            q = {
+              'releases.awards.suppliers.identifier.legalName': {
+                '$regex': '.*' + this.ui.input.val() + '.*'
+              }
+            };
+            break;
+          case 'buyer':
+            q = {
+              'releases.buyer.identifier.legalName': {
+                '$regex': '.*' + this.ui.input.val() + '.*'
+              }
+            };
+            break;
+          case 'procedureType':
+            break;
+          case 'procedureNumber':
+            q = { 'releases.ocid': this.ui.input.val() };
+            break;
+          case 'contractNumber':
+            q = { 'releases.contracts.id': this.ui.input.val() };
+            break;
+        }
+        this.setState({ query: q });
         this.props.onSubmit(this.state);
       }.bind(this));
 
@@ -2260,10 +2281,6 @@ var _Description = require('../base/Description.jsx');
 
 var _Description2 = _interopRequireDefault(_Description);
 
-var _TableItem = require('./TableItem.jsx');
-
-var _TableItem2 = _interopRequireDefault(_TableItem);
-
 var _SearchResults = require('./SearchResults.jsx');
 
 var _SearchResults2 = _interopRequireDefault(_SearchResults);
@@ -2304,39 +2321,26 @@ var Section = function (_React$Component) {
 
   _createClass(Section, [{
     key: 'componentDidMount',
-    value: function componentDidMount() {
-      // Get 10 latest contracts by default
-      if (this.state.items.length == 0) {
-        this.runQuery({
-          filter: null,
-          value: null,
-          bucket: 'gacm',
-          limit: 10,
-          command: 'latest'
-        });
-      }
-    }
+    value: function componentDidMount() {}
+    // Get 10 latest contracts by default
+
 
     // Submit query and update component state with results
 
   }, {
     key: 'runQuery',
-    value: function runQuery(query) {
+    value: function runQuery(q) {
       var _this2 = this;
-
-      var url = '/query/gacm';
-      if ((0, _helpers.getParameter)('bucket')) {
-        url = '/query/' + (0, _helpers.getParameter)('bucket');
-      }
 
       $.ajax({
         type: "POST",
-        url: url,
+        url: "/query",
         data: {
-          query: JSON.stringify(query)
+          query: JSON.stringify(q.query),
+          limit: q.limit
         },
         success: function success(res) {
-          return _this2.setState({ items: JSON.parse(res) });
+          return _this2.setState({ items: res });
         }
       });
     }
@@ -2379,7 +2383,7 @@ var Section = function (_React$Component) {
 
 exports.default = Section;
 
-},{"../base/Description.jsx":3,"../helpers.js":13,"./Details.jsx":7,"./SearchBar.jsx":8,"./SearchResults.jsx":9,"./TableItem.jsx":11,"react":302}],11:[function(require,module,exports){
+},{"../base/Description.jsx":3,"../helpers.js":13,"./Details.jsx":7,"./SearchBar.jsx":8,"./SearchResults.jsx":9,"react":302}],11:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

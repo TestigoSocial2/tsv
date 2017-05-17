@@ -1,6 +1,5 @@
 import React from 'react';
 import Description from '../base/Description.jsx';
-import TableItem from './TableItem.jsx';
 import SearchResults from './SearchResults.jsx';
 import SearchBar from './SearchBar.jsx';
 import Details from './Details.jsx';
@@ -18,31 +17,18 @@ class Section extends React.Component {
 
   componentDidMount() {
     // Get 10 latest contracts by default
-    if( this.state.items.length == 0 ) {
-      this.runQuery({
-        filter: null,
-        value: null,
-        bucket: 'gacm',
-        limit: 10,
-        command: 'latest'
-      });
-    }
   }
 
   // Submit query and update component state with results
-  runQuery(query) {
-    let url = '/query/gacm';
-    if( getParameter('bucket') ) {
-      url = '/query/' + getParameter('bucket');
-    }
-
+  runQuery(q) {
     $.ajax({
       type: "POST",
-      url: url,
+      url: "/query",
       data: {
-        query: JSON.stringify(query)
+        query: JSON.stringify(q.query),
+        limit: q.limit
       },
-      success: (res) => this.setState({ items: JSON.parse( res ) })
+      success: (res) => this.setState({ items: res })
     });
   }
 

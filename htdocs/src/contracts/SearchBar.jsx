@@ -5,14 +5,13 @@ class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      filter: null,
-      value: null,
+      query: {},
       limit: 30
     }
   }
 
   componentDidMount() {
-    this.ui = {}
+    this.ui = {};
     this.ui.form = $('form#queryForm');
     this.ui.bullets = this.ui.form.find('div.bullets span');
     this.ui.input = this.ui.form.find( 'input#query' );
@@ -32,16 +31,18 @@ class SearchBar extends React.Component {
           return new Date(a).getTime() - new Date(b).getTime();
         });
         let lbl = formatDate(e.dates[0], 'MMMM Do YYYY');
-        let val = formatDate(e.dates[0], 'MM-DD-YYYY');
+        let q = {
+          'releases.date':{
+            '$gte': e.dates[0]
+          }
+        };
         if( e.dates.length > 1 ) {
-          lbl += ' a ' + formatDate(e.dates[1], 'MMMM Do YYYY')
-          val += '|' + formatDate(e.dates[1], 'MM-DD-YYYY');
+          lbl += ' a ' + formatDate(e.dates[1], 'MMMM Do YYYY');
+          q['releases.date']['$lte'] = e.dates[1];
         }
 
         // Update state
-        this.setState({
-          value: val
-        });
+        this.setState({query: q});
 
         // Update UI
         this.ui.input.val( lbl );
@@ -89,17 +90,15 @@ class SearchBar extends React.Component {
         }
       }).on( 'slide', (e) => {
         this.setState({
-          value: e.value.join('|')
+          query: {
+            'releases.planning.budget.amount.amount': {
+              '$gte': e.value[0],
+              '$lte': e.value[1]
+            }
+          }
         });
         this.ui.input.val( '$' + e.value[0].toLocaleString() + ' a ' + '$' + e.value[1].toLocaleString() );
       });
-    });
-
-    // Update state when filter value changes
-    this.ui.input.on( 'keyup', () => {
-      this.setState({
-        value: this.ui.input.val()
-      })
     });
 
     // Handle filter selection
@@ -109,11 +108,6 @@ class SearchBar extends React.Component {
       this.ui.bullets.removeClass( 'active' );
       target.addClass( 'active' );
 
-      // Update state
-      this.setState({
-        filter: target.data('filter')
-      });
-
       switch (target.data( 'filter' )) {
         case 'date':
           target.datepicker( 'show' );
@@ -122,11 +116,38 @@ class SearchBar extends React.Component {
           target.popover( 'toggle' );
           break;
       }
-    }).bind(this) );
+    }).bind(this));
 
     // Handle form submit
     this.ui.form.on( 'submit', (function( e ) {
       e.preventDefault();
+      let q = this.state.query;
+      let target = $( this.ui.form.find('div.bullets span.active') );
+      switch (target.data( 'filter' )) {
+        case 'provider':
+          q = {
+            'releases.awards.suppliers.identifier.legalName': {
+              '$regex': '.*' + this.ui.input.val() + '.*'
+            }
+          };
+          break;
+        case 'buyer':
+          q = {
+            'releases.buyer.identifier.legalName': {
+              '$regex': '.*' + this.ui.input.val() + '.*'
+            }
+          };
+          break;
+        case 'procedureType':
+          break;
+        case 'procedureNumber':
+          q = { 'releases.ocid': this.ui.input.val() };
+          break;
+        case 'contractNumber':
+          q = { 'releases.contracts.id': this.ui.input.val() };
+          break;
+      }
+      this.setState({query: q});
       this.props.onSubmit(this.state);
     }).bind(this));
 
