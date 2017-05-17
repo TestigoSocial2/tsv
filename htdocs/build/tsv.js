@@ -4486,16 +4486,14 @@ function procedureTypeData(data) {
   var limitedP = (data.selective.count * 100 / total).toFixed(2);
   var publicP = (data.open.count * 100 / total).toFixed(2);
 
-  // Assamble chart data
-  var chartData = {
+  // Assemble chart data
+  return {
     labels: ['Adjudicación Directa (%)', 'Invitación a cuando menos 3 personas (%)', 'Licitación Pública (%)'],
     datasets: [{
       data: [directP, limitedP, publicP],
       backgroundColor: ["#CCB3FF", "#FF6384", "#EEEEEE"]
     }]
   };
-
-  return chartData;
 }
 
 function publishYearData(data) {
@@ -4572,12 +4570,18 @@ var Section = function (_React$Component) {
         type: "POST",
         url: "/indicators",
         data: {
-          query: JSON.stringify(filters)
+          query: JSON.stringify({
+            'project': filters.bucket,
+            'releases.planning.budget.amount.amount': {
+              '$gte': filters.amount[0],
+              '$lte': filters.amount[1]
+            }
+          })
         },
         success: function success(res) {
           var newState = Object.assign({}, _this2.state);
           newState.filters = filters;
-          newState.data = JSON.parse(res);
+          newState.data = res;
           _this2.setState(newState);
         }
       });

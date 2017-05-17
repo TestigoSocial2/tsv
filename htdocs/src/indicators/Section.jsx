@@ -10,8 +10,8 @@ function procedureTypeData( data ) {
   let limitedP = ((data.selective.count * 100) / total).toFixed(2);
   let publicP = ((data.open.count * 100) / total).toFixed(2);
 
-  // Assamble chart data
-  let chartData = {
+  // Assemble chart data
+  return {
     labels: [
       'Adjudicación Directa (%)',
       'Invitación a cuando menos 3 personas (%)',
@@ -23,9 +23,7 @@ function procedureTypeData( data ) {
         backgroundColor: ["#CCB3FF", "#FF6384", "#EEEEEE"],
       }
     ]
-  }
-
-  return chartData;
+  };
 }
 
 function publishYearData( data ) {
@@ -88,12 +86,18 @@ class Section extends React.Component {
       type: "POST",
       url: "/indicators",
       data: {
-        query: JSON.stringify(filters)
+        query: JSON.stringify({
+          'project': filters.bucket,
+          'releases.planning.budget.amount.amount': {
+            '$gte': filters.amount[0],
+            '$lte': filters.amount[1]
+          }
+        })
       },
       success: (res) => {
         let newState = Object.assign({}, this.state);
         newState.filters = filters;
-        newState.data = JSON.parse( res );
+        newState.data = res;
         this.setState(newState);
       }
     });
