@@ -22,7 +22,6 @@ package cmd
 
 import (
   "crypto/tls"
-  "encoding/json"
   "fmt"
   "io/ioutil"
   "log"
@@ -30,7 +29,6 @@ import (
   "os"
   "os/signal"
   "path"
-  "path/filepath"
   "strings"
   
   "github.com/gorilla/websocket"
@@ -39,16 +37,17 @@ import (
   "github.com/spf13/cobra"
   "github.com/spf13/viper"
   "github.com/transparenciamx/tsv/bot"
-  "github.com/transparenciamx/tsv/data"
   "github.com/transparenciamx/tsv/notifications"
-  "github.com/transparenciamx/tsv/storage"
+  "github.com/transparenciamx/tsv/data"
+  "encoding/json"
+  "strconv"
 )
 
 // serverCmd represents the serve command
 var serverCmd = &cobra.Command{
   Use:     "server",
   Short:   "Starts a TSV server instance",
-  Aliases: []string{"serve"},
+  Aliases: []string{"serve", "start"},
   RunE:    runServer,
 }
 
@@ -68,17 +67,19 @@ func init() {
     serverPortHTTPS    int
     serverRedirectHTTP bool
     serverDocs         string
-    serverStore        string
     serverSSLCert      string
     serverSSLKey       string
+    storageHost        string
+    storageDB          string
   )
   viper.SetDefault("server.port.http", 7788)
   viper.SetDefault("server.port.https", 7789)
   viper.SetDefault("server.redirect.http", true)
   viper.SetDefault("server.docs", "htdocs")
-  viper.SetDefault("server.store", "htdocs")
   viper.SetDefault("server.cert", "")
   viper.SetDefault("server.priv", "")
+  viper.SetDefault("server.storage.host", "localhost:27017")
+  viper.SetDefault("server.storage.db", "tsv")
   
   serverCmd.Flags().IntVar(
     &serverPortHTTP,
@@ -101,12 +102,6 @@ func init() {
     "c",
     "htdocs",
     "Full path for the content to serve")
-  serverCmd.Flags().StringVarP(
-    &serverStore,
-    "store",
-    "s",
-    "htdocs",
-    "Full path to use as data store location")
   serverCmd.Flags().StringVar(
     &serverSSLCert,
     "cert",
@@ -117,6 +112,16 @@ func init() {
     "priv-key",
     "",
     "SSL certificate's private key")
+  serverCmd.Flags().StringVar(
+    &storageHost,
+    "storage-host",
+    "localhost:27017",
+    "MongoDB instance used as storage component")
+  serverCmd.Flags().StringVar(
+    &storageDB,
+    "storage-db",
+    "tsv",
+    "MongoDB database used")
   viper.BindPFlag("server.port.http", serverCmd.Flags().Lookup("http-port"))
   viper.BindPFlag("server.port.https", serverCmd.Flags().Lookup("https-port"))
   viper.BindPFlag("server.redirect.http", serverCmd.Flags().Lookup("redirect-http"))
@@ -124,124 +129,16 @@ func init() {
   viper.BindPFlag("server.store", serverCmd.Flags().Lookup("store"))
   viper.BindPFlag("server.cert", serverCmd.Flags().Lookup("cert"))
   viper.BindPFlag("server.priv", serverCmd.Flags().Lookup("priv-key"))
+  viper.BindPFlag("server.storage.host", serverCmd.Flags().Lookup("storage-host"))
+  viper.BindPFlag("server.storage.db", serverCmd.Flags().Lookup("storage-db"))
   RootCmd.AddCommand(serverCmd)
 }
 
-// Create or update a user profile
-func profile(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
-  // Open storage
-  store, err := data.OpenStorage()
-  if err != nil {
-    log.Println("Storage error:", err)
-    fmt.Fprintf(w, fmt.Sprintf("{\"error\":\"%s\"}", err.Error()))
-    return
-  }
-  defer store.Close()
-  
-  up := data.UserProfile{}
-  err = json.Unmarshal([]byte(r.FormValue("profile")), &up)
-  if err != nil {
-    log.Println("Decoding error:", err)
-    fmt.Fprintf(w, fmt.Sprintf("{\"error\":\"%s\"}", err.Error()))
-    return
-  }
-  log.Printf("Store user profile: %s\n", up.User)
-  store.Write("profile", []byte(up.User), []byte(r.FormValue("profile")))
-  
-  // Dispatch SMS notification
-  if up.EnableSMSNotifications {
-    smsID, err := notifications.SendSMS(&notifications.SMSOptions{
-      To:      fmt.Sprintf("+52%s", up.NotificationSMS),
-      Sender:  "TS2",
-      Message: "Bienvenido a Testigo Social 2.0. Ahora recibirás información sobre contrataciones públicas. El dinero público también es tu dinero.",
-    })
-    if err != nil {
-      log.Println("SMS error:", err)
-    }
-    log.Println("SMS notifications dipatched with ID:", smsID)
-  }
-  
-  // Dispatch email notification
-  if up.EnableEmailNotifications {
-    content, _ := notifications.PrepareContent(notifications.TSVEmailTemplate, map[string]interface{}{
-      "Title":   "¡Gracias por tu interés!",
-      "Content": "Bienvenido a Testigo Social 2.0. A partir de ahora recibirás información oportuna sobre los procedimientos de contratación pública que te interesan. El dinero público también es tu dinero.",
-    })
-    emailID, err := notifications.SendEmail(&notifications.EmailOptions{
-      To:      up.NotificationEmail,
-      From:    "notificaciones@testigosocial.mx",
-      Subject: "TS 2.0",
-      Body:    content,
-    })
-    if err != nil {
-      log.Println("Email error:", err)
-    }
-    log.Println("Email notifications dipatched with ID:", emailID)
-  }
-  
-  fmt.Fprintf(w, fmt.Sprintf("{\"ok\":true}"))
-}
-
-// Calculate and return stats about the contracts on a specific storage bucket
-func stats(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-  // Open storage
-  store, err := data.OpenStorage()
-  if err != nil {
-    log.Println("Storage error:", err)
-    fmt.Fprintf(w, fmt.Sprintf("{\"error\":\"%s\"}", err.Error()))
-    return
-  }
-  defer store.Close()
-  
-  log.Printf("Calculating stats for: %s\n", ps.ByName("bucket"))
-  org := data.NewOrganization()
-  org.Code = ps.ByName("bucket")
-  switch org.Code {
-  case "gacm":
-    org.Description = "la construcción del Nuevo Aeropuerto Internacional de la Ciudad de México"
-  case "cdmx":
-    org.Description = "la contratación de servicios y obras públicas de la Ciudad de México"
-  }
-  
-  cursor := make(chan *storage.Record)
-  go store.Cursor(ps.ByName("bucket"), cursor, nil)
-  for rec := range cursor {
-    org.AddRecord(rec.Value)
-  }
-  
-  res, _ := json.Marshal(org)
-  fmt.Fprintf(w, string(res))
-}
-
-// Contracts list query
-func query(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-  query := data.Query{}
-  err := json.Unmarshal([]byte(r.FormValue("query")), &query)
-  if err != nil {
-    log.Println("Decoding error:", err)
-    fmt.Fprintf(w, fmt.Sprintf("{\"error\":\"%s\"}", err.Error()))
-    return
-  }
-  query.Bucket = ps.ByName("bucket")
-  
-  log.Printf("Running query: %+v\n", query)
-  res, _ := json.Marshal(query.Run())
-  fmt.Fprintf(w, fmt.Sprintf("%s", res))
-}
-
-// Statistics query
-func indicators(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
-  query := data.IndicatorsQuery{}
-  err := json.Unmarshal([]byte(r.FormValue("query")), &query)
-  if err != nil {
-    log.Println("Decoding error:", err)
-    fmt.Fprintf(w, fmt.Sprintf("{\"error\":\"%s\"}", err.Error()))
-    return
-  }
-  
-  log.Printf("Running indicators query: %+v\n", query)
-  res, _ := json.Marshal(query.Run())
-  fmt.Fprintf(w, fmt.Sprintf("%s", res))
+// Utility method to properly return JSON content
+func sendJSON(w http.ResponseWriter, data interface{}) {
+  js, _ := json.Marshal(data)
+  w.Header().Set("Content-Type", "application/json")
+  fmt.Fprintf(w, "%s", js)
 }
 
 // Handle websockets
@@ -284,13 +181,15 @@ func serveIndex(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
   fmt.Fprintf(w, fmt.Sprintf("%s", indexFile))
 }
 
+// Start server
 func runServer(_ *cobra.Command, _ []string) error {
-  // Set storage config variable
-  sp, err := filepath.Abs(path.Join(viper.GetString("server.store"), "tsv.db"))
+  // Get storage handler
+  db, err := connectStorage(viper.GetString("server.storage.host"), viper.GetString("server.storage.db"))
   if err != nil {
+    log.Printf("Storage error: %s\n", err)
     return err
   }
-  os.Setenv("TSV_STORAGE", sp)
+  defer db.Close()
   
   // Subscribe to SIGINT signals
   stopChan := make(chan os.Signal)
@@ -314,15 +213,88 @@ func runServer(_ *cobra.Command, _ []string) error {
   // Configure router
   router := httprouter.New()
   router.NotFound = http.FileServer(cacheFS)
-  router.POST("/profile", profile)
-  router.POST("/query/:bucket", query)
-  router.POST("/indicators", indicators)
-  router.GET("/stats/:bucket", stats)
+  router.POST("/profile", func(w http.ResponseWriter, r *http.Request, _ httprouter.Params){
+    up := data.UserProfile{}
+    err := json.Unmarshal([]byte(r.FormValue("profile")), &up)
+    if err != nil {
+      log.Println("Decoding error:", err)
+      fmt.Fprintf(w, fmt.Sprintf("{\"error\":\"%s\"}", err.Error()))
+      return
+    }
+    log.Printf("Store user profile: %s\n", up.User)
+    db.Insert("user", up)
+  
+    // Dispatch SMS notification
+    if up.EnableSMSNotifications {
+      notifications.SendSMS(&notifications.SMSOptions{
+        To:      fmt.Sprintf("+52%s", up.NotificationSMS),
+        Sender:  "TS2",
+        Message: "Bienvenido a Testigo Social 2.0. Ahora recibirás información sobre contrataciones públicas. El dinero público también es tu dinero.",
+      })
+    }
+  
+    // Dispatch email notification
+    if up.EnableEmailNotifications {
+      content, _ := notifications.PrepareContent(notifications.TSVEmailTemplate, map[string]interface{}{
+        "Title":   "¡Gracias por tu interés!",
+        "Content": "Bienvenido a Testigo Social 2.0. A partir de ahora recibirás información oportuna sobre los procedimientos de contratación pública que te interesan. El dinero público también es tu dinero.",
+      })
+      notifications.SendEmail(&notifications.EmailOptions{
+        To:      up.NotificationEmail,
+        From:    "notificaciones@testigosocial.mx",
+        Subject: "TS 2.0",
+        Body:    content,
+      })
+    }
+    sendJSON(w, map[string]interface{}{"ok": true})
+  })
+  router.POST("/query", func(w http.ResponseWriter, r *http.Request, _ httprouter.Params){
+    result := make([]interface{}, 0)
+    query, err := db.Query("contracts",r.FormValue("query"))
+    if err != nil {
+      log.Println("Decoding error:", err)
+      fmt.Fprintf(w, fmt.Sprintf("{\"error\":\"%s\"}", err.Error()))
+      return
+    }
+    
+    l, _ := strconv.Atoi(r.FormValue("limit"))
+    query.Limit(l).All(&result)
+    sendJSON(w, result)
+  })
+  router.POST("/indicators", func(w http.ResponseWriter, r *http.Request, _ httprouter.Params){
+    list := make([]interface{}, 0)
+    query, err := db.Query("contracts",r.FormValue("query"))
+    if err != nil {
+      log.Println("Decoding error:", err)
+      fmt.Fprintf(w, fmt.Sprintf("{\"error\":\"%s\"}", err.Error()))
+      return
+    }
+    query.All(&list)
+    sendJSON(w, data.FormatIndicatorsResult(list))
+  })
+  router.GET("/stats/:bucket", func(w http.ResponseWriter, r *http.Request, ps httprouter.Params){
+    // Get result structure
+    org := data.NewOrganization()
+    org.Code = ps.ByName("bucket")
+    switch org.Code {
+    case "gacm":
+      org.Description = "la construcción del Nuevo Aeropuerto Internacional de la Ciudad de México"
+    case "cdmx":
+      org.Description = "la contratación de servicios y obras públicas de la Ciudad de México"
+    }
+  
+    // Get contract list
+    list := make([]interface{}, 0)
+    query, _ := db.Query("contracts", fmt.Sprintf("{\"project\":\"%s\"}", org.Code))
+    query.All(&list)
+    org.AddRecords(list)
+    sendJSON(w, org)
+  })
   router.GET("/ws", ws)
   router.GET("/fb", tsvBot.Verify)
   router.POST("/fb", tsvBot.ReceiveMessage)
   
-  // Redirect ReactRouter paths to the 'index.hmtl' file
+  // Redirect ReactRouter paths to the 'index.html' file
   router.GET("/informacion", serveIndex)
   router.GET("/contratos", serveIndex)
   router.GET("/indicadores", serveIndex)

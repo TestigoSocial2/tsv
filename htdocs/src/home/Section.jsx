@@ -44,13 +44,13 @@ class Home extends React.Component {
       firstDate: $('span#firstDate'),
       lastDate: $('span#lastDate'),
       description: $('span#orgDescription')
-    }
+    };
 
     $.ajax({
       type: "GET",
       url: '/stats/' + bucket,
       success: function( res ) {
-        data = JSON.parse(res);
+        data = res;
       }
     }).done(function() {
       // Adjust labels

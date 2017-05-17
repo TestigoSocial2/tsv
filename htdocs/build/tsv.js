@@ -3420,7 +3420,7 @@ var Home = function (_React$Component) {
         type: "GET",
         url: '/stats/' + bucket,
         success: function success(res) {
-          data = JSON.parse(res);
+          data = res;
         }
       }).done(function () {
         // Adjust labels

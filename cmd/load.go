@@ -47,6 +47,7 @@ func init() {
     loadPath    string
     storageHost string
     storageDB   string
+    projectID   string
   )
   
   loadCmd.Flags().StringVar(
@@ -65,20 +66,21 @@ func init() {
   viper.SetDefault("load.storage.host", "localhost:27017")
   viper.BindPFlag("load.storage.host", loadCmd.Flags().Lookup("storage-host"))
   
-  loadCmd.Flags().StringVar(&storageDB,
+  loadCmd.Flags().StringVar(
+    &storageDB,
     "storage-db",
     "tsv",
     "MongoDB database used")
   viper.SetDefault("load.storage.db", "tsv")
   viper.BindPFlag("load.storage.db", loadCmd.Flags().Lookup("storage-db"))
   
-  loadCmd.Flags().StringVar(&storageDB,
+  loadCmd.Flags().StringVar(
+    &projectID,
     "project-id",
     "",
     "Project identifier")
   viper.SetDefault("load.project.id", "")
   viper.BindPFlag("load.project.id", loadCmd.Flags().Lookup("project-id"))
-  
   RootCmd.AddCommand(loadCmd)
 }
 

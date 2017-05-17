@@ -1,7 +1,7 @@
 default: build
 
 # Current version
-version = 0.2.0
+version = 0.3.0
 
 # Build for the default architecture in use
 build:
