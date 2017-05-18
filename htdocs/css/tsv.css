@@ -1445,9 +1445,8 @@ div.clear {
       font-weight: 300;
       text-transform: uppercase; }
     #highlights div.item div.chart {
-      border-right: 1px solid #ccc;
       float: left;
-      height: 340px;
+      height: 90%;
       margin: 20px 0;
       width: 50%; }
     #highlights div.item div.info {
