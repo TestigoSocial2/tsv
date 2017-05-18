@@ -24,5 +24,5 @@ ExecStart=/usr/bin/docker run --name=tsv \
   -e AWS_REGION=us-east-1 \
   -e TSV_FB_VERIFY_TOKEN=... \
   -e TSV_FB_PAGE_TOKEN=... \
-  tm/tsv server -s /data -c /var/www/htdocs --cert=/data/site.cer --priv-key=/data/site.pem
+  tm/tsv server -c /var/www/htdocs --cert=/data/site.cer --priv-key=/data/site.pem
 ExecStop=/usr/bin/docker stop tsv
