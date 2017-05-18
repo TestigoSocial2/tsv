@@ -1,0 +1,22 @@
+[Unit]
+Description=TSV Storage - Use MongoDB + RocksDB for data storage
+Documentation=http://blog.parse.com/announcements/mongodb-rocksdb-parse/
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+RestartSec=5
+TimeoutStartSec=0
+KillMode=none
+
+ExecStartPre=/bin/sh -c "echo never > /sys/kernel/mm/transparent_hugepage/enabled"
+ExecStartPre=/bin/sh -c "echo never > /sys/kernel/mm/transparent_hugepage/defrag"
+ExecStartPre=-/usr/bin/docker kill tsv-storage
+ExecStartPre=-/usr/bin/docker rm tsv-storage
+ExecStartPre=-/usr/bin/docker pull mxabierto/mongodb-rocks
+ExecStart=/usr/bin/docker run \
+  --name=tsv-storage \
+  -v /home/ubuntu/data/tsv:/data/db \
+  mxabierto/mongodb-rocks
+ExecStop=/usr/bin/docker stop tsv-storage

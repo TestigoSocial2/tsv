@@ -1,8 +1,8 @@
 [Unit]
 Description=Testigo Social Virtual 2.0
 Documentation=https://github.com/transparenciamx/tsv
-Requires=docker.service
-After=docker.service
+Requires=tsv-storage.service
+After=tsv-storage.service
 
 [Service]
 Restart=always
@@ -13,6 +13,7 @@ ExecStartPre=-/usr/bin/docker kill tsv
 ExecStartPre=-/usr/bin/docker rm tsv
 ExecStartPre=-/usr/bin/touch /var/run/tsv-pre-register
 ExecStart=/usr/bin/docker run --name=tsv \
+  --link tsv-storage:storage \
   -p 80:7788 -p 443:7789 \
   -v /etc/tsv/pre-register:/data/pre-register \
   -v /etc/tsv/cert:/data/site.cer \
