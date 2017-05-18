@@ -835,7 +835,7 @@ table.latest-contracts {
 div.item-cell {
   border-bottom: 1px solid $tsv-light-gray;
   margin-bottom: 12px;
-  padding-top: 20px;
+  padding: 20px 0;
 
   span.index {
     border: 2px solid $tsv-black;
@@ -847,6 +847,10 @@ div.item-cell {
     padding: 4px 10px;
   }
 
+  h4 {
+    color: $tsv-blue;
+  }
+
   p.lbl {
     color: $tsv-mid-gray;
     font-size: 12px;
@@ -856,10 +860,12 @@ div.item-cell {
 
   div.left {
     float: left;
+    width: 50%;
   }
 
   div.right {
     float: right;
+    width: 50%;
   }
 }
 
@@ -895,19 +901,6 @@ div.contract-details {
     }
 
     div.bullets {
-      //position: relative;
-      //
-      //&:before {
-      //  border-bottom: 2px $tsv-black solid;
-      //  content: '';
-      //  height: 100%;
-      //  left: 0;
-      //  position: absolute;
-      //  transform: translateY(-50%);
-      //  width: 100%;
-      //  z-index: 0;
-      //}
-
       .btn-black {
         background-color: $tsv-white;
         border: 2px solid $tsv-black;

@@ -257,8 +257,22 @@ func runServer(_ *cobra.Command, _ []string) error {
       return
     }
     
-    l, _ := strconv.Atoi(r.FormValue("limit"))
-    query.Limit(l).All(&result)
+    // Apply limit value
+    if r.FormValue("limit") != "" {
+      l, _ := strconv.Atoi(r.FormValue("limit"))
+      query = query.Limit(l)
+    }
+  
+    // Apply sort config
+    if r.FormValue("sort") != "" {
+      fields := []string{}
+      err := json.Unmarshal([]byte(r.FormValue("sort")), &fields)
+      if err == nil {
+        query = query.Sort(fields...)
+      }
+    }
+    
+    query.All(&result)
     sendJSON(w, result)
   })
   router.POST("/indicators", func(w http.ResponseWriter, r *http.Request, _ httprouter.Params){

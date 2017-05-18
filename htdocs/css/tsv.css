@@ -659,7 +659,7 @@ td.checkbox {
   align-items: center; }
 
 td.checkbox input {
-  margin: 0px  !important;
+  margin: 0px !important;
   padding: 0px !important; }
 
 @media all and (max-width: 768px) {
@@ -1754,7 +1754,7 @@ table.latest-contracts p.lbl {
 div.item-cell {
   border-bottom: 1px solid #ccc;
   margin-bottom: 12px;
-  padding-top: 20px; }
+  padding: 20px 0; }
   div.item-cell span.index {
     border: 2px solid #111;
     border-radius: 40px;
@@ -1763,15 +1763,19 @@ div.item-cell {
     font-weight: 400;
     margin-right: 6px;
     padding: 4px 10px; }
+  div.item-cell h4 {
+    color: #4990e2; }
   div.item-cell p.lbl {
     color: #999;
     font-size: 12px;
     font-weight: bold;
     text-transform: uppercase; }
   div.item-cell div.left {
-    float: left; }
+    float: left;
+    width: 50%; }
   div.item-cell div.right {
-    float: right; }
+    float: right;
+    width: 50%; }
 
 div.contract-details h4 {
   font-weight: 500;

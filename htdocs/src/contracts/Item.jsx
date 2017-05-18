@@ -14,23 +14,28 @@ class Item extends React.Component {
 
   render() {
     let release = this.props.contract.releases[0];
+    let supplier = '-';
+    if( release.awards[0].supplier ) {
+      supplier = release.awards[0].supplier.name;
+    }
+
     return (
-      <div class="item-cell">
-        <p class="lbl"><span class="index">{this.props.index}</span> {release.tender.id}</p>
+      <div className="item-cell">
+        <p className="lbl"><span className="index">{this.props.index}</span> {release.tender.id}</p>
         <p><a onClick={this.handleClick}>{release.tender.description}</a></p>
         <div>
-          <div class="left">
-            <p class="lbl">Monto</p>
-            <p><strong>{formatAmount( release.tender.value.amount || 0 )}</strong></p>
-            <p class="lbl">Proveedor</p>
-            <p>{release.awards[0].suppliers[0].name}</p>
+          <div className="left">
+            <p className="lbl">Monto</p>
+            <p><strong>{formatAmount( release.planning.budget.amount.amount || 0 )}</strong></p>
+            <p className="lbl">Proveedor</p>
+            <p>{supplier}</p>
           </div>
-          <div class="right">
-            <p class="lbl">Comprador</p>
+          <div className="right">
+            <p className="lbl">Comprador</p>
             <p>{release.buyer.name}</p>
-            <span class="btn-black active" onClick={this.handleClick}>Ver contrato</span>
+            <span className="btn-black active" onClick={this.handleClick}>Ver contrato</span>
           </div>
-          <div class="clear"></div>
+          <div className="clear"></div>
         </div>
       </div>
     );
