@@ -201,12 +201,6 @@ func runServer(_ *cobra.Command, _ []string) error {
     log.Fatalf("Cache filesystem error: %+v", err)
   }
   
-  // Start facebook bot
-  tsvBot := bot.New(&bot.Config{
-    VerificationToken: os.Getenv("TSV_FB_VERIFY_TOKEN"),
-    PageToken:         os.Getenv("TSV_FB_PAGE_TOKEN"),
-  })
-  
   // Load index.html contents
   indexFile, _ = ioutil.ReadFile(path.Join(viper.GetString("server.docs"), "index.html"))
   
@@ -304,9 +298,21 @@ func runServer(_ *cobra.Command, _ []string) error {
     org.AddRecords(list)
     sendJSON(w, org)
   })
+  
+  // WebSocket
   router.GET("/ws", ws)
-  router.GET("/fb", tsvBot.Verify)
-  router.POST("/fb", tsvBot.ReceiveMessage)
+  
+  // Facebook bot
+  tsvBot := bot.New(&bot.Config{
+    PageToken:         os.Getenv("TSV_FB_PAGE_TOKEN"),
+    VerificationToken: os.Getenv("TSV_FB_VERIFY_TOKEN"),
+  })
+  router.GET("/fb", func(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+    tsvBot.Verify(w, r)
+  })
+  router.POST("/fb", func(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+    tsvBot.ReceiveMessage(w, r)
+  })
   
   // Redirect ReactRouter paths to the 'index.html' file
   router.GET("/informacion", serveIndex)
@@ -316,9 +322,55 @@ func runServer(_ *cobra.Command, _ []string) error {
   
   // Handle incoming FB messages
   go func() {
-    for msg := range tsvBot.IncomingMessages {
-      log.Printf("%+v", msg)
-      tsvBot.DispatchMessage(msg.User, "Tu mensaje es muy importante para nosotros, en breve nos comunicaremos contigo!")
+    for {
+      select {
+      case msg := <- tsvBot.IncomingMessages:
+        // Handle postbacks
+        if pb := msg.Entry[0].Messaging[0].Postback.Payload; pb != "" {
+          log.Printf("Handling postback: %s", pb)
+          user := msg.Entry[0].Messaging[0].Sender.ID
+          switch pb {
+          case "NEW_QUERY":
+            tsvBot.SendMessage(GetQueryMenu(user))
+          case "NEW_THREAD":
+            tsvBot.SendMessage(GetWelcomeMessage(user))
+          }
+        }
+        
+        // Handle quick replies
+        if qr := msg.Entry[0].Messaging[0].Message.QuickReply.Payload; qr != "" {
+          log.Printf("Handling quick reply: %s", qr)
+          user := msg.Entry[0].Messaging[0].Sender.ID
+          switch qr {
+          case "RECENT":
+            result := make([]interface{}, 0)
+            query, _ := db.Query("contracts","{}")
+            query = query.Limit(4).Sort("-releases.date")
+            query.All(&result)
+            tsvBot.SendMessage(GetContractListMessage(user, result))
+          case "AMOUNT":
+            result := make([]interface{}, 0)
+            query, _ := db.Query("contracts","{}")
+            query = query.Limit(4).Sort("-releases.planning.budget.amount.amount")
+            query.All(&result)
+            tsvBot.SendMessage(GetContractListMessage(user, result))
+          case "GACM":
+            result := make([]interface{}, 0)
+            query, _ := db.Query("contracts","{\"project\":\"gacm\"}")
+            query = query.Limit(4).Sort("-releases.planning.budget.amount.amount")
+            query.All(&result)
+            tsvBot.SendMessage(GetContractListMessage(user, result))
+          case "CDMX":
+            result := make([]interface{}, 0)
+            query, _ := db.Query("contracts","{\"project\":\"cdmx\"}")
+            query = query.Limit(4).Sort("-releases.planning.budget.amount.amount")
+            query.All(&result)
+            tsvBot.SendMessage(GetContractListMessage(user, result))
+          }
+        }
+      case err := <- tsvBot.Errors:
+        log.Printf("error: %+v", err)
+      }
     }
   }()
   
