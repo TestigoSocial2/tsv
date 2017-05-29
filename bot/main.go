@@ -25,8 +25,6 @@ import (
   "fmt"
   "io/ioutil"
   "net/http"
-  
-  "github.com/julienschmidt/httprouter"
   "encoding/json"
 )
 
@@ -35,7 +33,7 @@ type Instance struct {
   verificationToken string
   pageToken         string
   IncomingMessages  chan *Callback
-  ReceptionErrors   chan error
+  Errors            chan error
 }
 
 // Config defines the required parameters to start the bot
@@ -44,21 +42,27 @@ type Config struct {
   PageToken         string
 }
 
+type dispatchOptions struct {
+  method   string
+  endpoint string
+  data     []byte
+}
+
 // New will create and return a bot instance
 func New(c *Config) *Instance {
   return &Instance{
     verificationToken: c.VerificationToken,
     pageToken:         c.PageToken,
     IncomingMessages:  make(chan *Callback, 10),
-    ReceptionErrors:   make(chan error),
+    Errors:            make(chan error),
   }
 }
 
 // Utility method to properly dispatch a request to FB's API
-func (b *Instance) dispatch(content []byte) ([]byte, error) {
+func (b *Instance) dispatch(opts *dispatchOptions) ([]byte, error) {
   // Build request
-  url := fmt.Sprintf("%s=%s", "https://graph.facebook.com/v2.6/me/messages?access_token", b.pageToken)
-  req, _ := http.NewRequest("POST", url, bytes.NewBuffer(content))
+  url := fmt.Sprintf("https://graph.facebook.com/v2.6/me/%s?access_token=%s", opts.endpoint, b.pageToken)
+  req, _ := http.NewRequest(opts.method, url, bytes.NewBuffer(opts.data))
   req.Header.Set("Content-Type", "application/json")
   
   // Send request
@@ -86,24 +90,160 @@ func (b *Instance) Verify(w http.ResponseWriter, r *http.Request) {
   fmt.Fprintf(w, fmt.Sprintf("%s", "INVALID_VERIFICATION_TOKEN"))
 }
 
-// ReceiveMessage handle the message delivery endpoint
-func (b *Instance) ReceiveMessage(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+// ReceiveMessage handle the MessageBody delivery endpoint
+func (b *Instance) ReceiveMessage(w http.ResponseWriter, r *http.Request) {
   // Get request body and return response
   body, err := ioutil.ReadAll(r.Body)
   if err != nil {
-    b.ReceptionErrors <- err
+    b.Errors <- err
   }
   
   var cb Callback
   err = json.Unmarshal(body, &cb)
   if err != nil {
-    b.ReceptionErrors <- err
+    b.Errors <- err
   }
   
   b.IncomingMessages <- &cb
 }
 
-// DispatchMessage use Facebook's Messenger to reach users
-func (b *Instance) DispatchMessage(msg string) ([]byte, error) {
-  return b.dispatch([]byte(msg))
+// SendMessage use Facebook's Messenger to dispatch a message
+func (b *Instance) SendMessage(msg *Message) ([]byte, error) {
+  content, _ := json.Marshal(msg)
+  return b.dispatch(&dispatchOptions{
+    method:   "post",
+    endpoint: "messages",
+    data:     []byte(content),
+  })
+}
+
+// SendTextMessage use Facebook's Messenger to send a basic text MessageBody
+func (b *Instance) SendTextMessage(user, text string) ([]byte, error) {
+  return b.SendMessage(&Message{
+    Recipient: Recipient{
+      ID: user,
+    },
+    Message: MessageBody{
+      Text: text,
+    },
+  })
+}
+
+// SendImageMessage use Facebook's Messenger to send an image
+func (b *Instance) SendImageMessage(user, url string) ([]byte, error) {
+  return b.SendMessage(&Message{
+    Recipient: Recipient{
+      ID: user,
+    },
+    Message: MessageBody{
+      Attachment: attachment{
+        Type: "image",
+        Payload: payload{
+          URL: url,
+        },
+      },
+    },
+  })
+}
+
+// SendAudioMessage use Facebook's Messenger to send an audio MessageBody
+func (b *Instance) SendAudioMessage(user, url string) ([]byte, error) {
+  return b.SendMessage(&Message{
+    Recipient: Recipient{
+      ID: user,
+    },
+    Message: MessageBody{
+      Attachment: attachment{
+        Type: "audio",
+        Payload: payload{
+          URL: url,
+        },
+      },
+    },
+  })
+}
+
+// SendVideoMessage use Facebook's Messenger to send a video
+func (b *Instance) SendVideoMessage(user, url string) ([]byte, error) {
+  return b.SendMessage(&Message{
+    Recipient: Recipient{
+      ID: user,
+    },
+    Message: MessageBody{
+      Attachment: attachment{
+        Type: "video",
+        Payload: payload{
+          URL: url,
+        },
+      },
+    },
+  })
+}
+
+// SendFileMessage use Facebook's Messenger to send a file
+func (b *Instance) SendFileMessage(user, url string) ([]byte, error) {
+  return b.SendMessage(&Message{
+    Recipient: Recipient{
+      ID: user,
+    },
+    Message: MessageBody{
+      Attachment: attachment{
+        Type: "file",
+        Payload: payload{
+          URL: url,
+        },
+      },
+    },
+  })
+}
+
+// SetGetStartedButton will set the postback value used on the 'Get Started' button
+func (b *Instance) SetGetStartedButton(payload string) ([]byte, error) {
+  msg := settingsMessage{
+    SettingType: "call_to_actions",
+    ThreadState: "new_thread",
+    CallToActions: []QuickReply{
+      {Payload: payload },
+    },
+  }
+  content, _ := json.Marshal(msg)
+  return b.dispatch(&dispatchOptions{
+    method:   "post",
+    endpoint: "thread_settings",
+    data:     content,
+  })
+}
+
+// RemoveGetStartedButton will clear any previously set value for the 'Get Started' button
+func (b *Instance) RemoveGetStartedButton() ([]byte, error) {
+  msg := settingsMessage{
+    SettingType: "call_to_actions",
+    ThreadState: "new_thread",
+  }
+  content, _ := json.Marshal(msg)
+  return b.dispatch(&dispatchOptions{
+    method:   "post",
+    endpoint: "thread_settings",
+    data:     content,
+  })
+}
+
+// SetPersistentMenu will configure the persistent menu used by the bot
+func (b *Instance) SetPersistentMenu(menu *Menu) ([]byte, error) {
+  content, _ := json.Marshal(menu)
+  return b.dispatch(&dispatchOptions{
+    method:   "post",
+    endpoint: "messenger_profile",
+    data:     content,
+  })
+}
+
+// RemovePersistentMenu will clear any previously set persistent menu configuration
+func (b *Instance) RemovePersistentMenu(menu *Menu) ([]byte, error) {
+  content := []byte("{\"fields\":[\"persistent_menu\"]}")
+  return b.dispatch(&dispatchOptions{
+    method:   "delete",
+    endpoint: "messenger_profile",
+    data:     content,
+  })
 }

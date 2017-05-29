@@ -20,54 +20,33 @@
 
 package bot
 
-type recipient struct {
-  ID          string `json:"id,omitempty"`
-  PhoneNumber string `json:"phone_number,omitempty"`
-  Name struct {
-    FirstName string `json:"first_name,omitempty"`
-    LastName  string `json:"last_name,omitempty"`
-  } `json:"name,omitempty"`
-}
-
 type sender struct {
   ID string `json:"id,omitempty"`
 }
 
-type quickReply struct {
-  Payload string `json:"payload,omitempty"`
+type coordinates struct {
+  Lat  float64 `json:"lat,omitempty"`
+  Long float64 `json:"long,omitempty"`
 }
 
 type location struct {
-  Coordinates struct {
-    Lat  float64 `json:"lat,omitempty"`
-    Long float64 `json:"long,omitempty"`
-  } `json:"coordinates,omitempty"`
-}
-
-type urlButton struct {
-  Type                string `json:"type,omitempty"`
-  Title               string `json:"title,omitempty"`
-  URL                 string `json:"url,omitempty"`
-  MessengerExtensions bool   `json:"messenger_extensions,omitempty"`
-  FallbackURL         string `json:"fallback_url,omitempty"`
-  WebviewHeightRatio  string `json:"webview_height_ratio,omitempty"`
-  WebviewShareButton  string `json:"webview_share_button,omitempty"`
+  Coordinates coordinates `json:"coordinates,omitempty"`
 }
 
 type element struct {
   Title         string      `json:"title,omitempty"`
   Subtitle      string      `json:"subtitle,omitempty"`
-  DefaultAction urlButton   `json:"default_action,omitempty"`
-  Buttons       []urlButton `json:"buttons,omitempty"`
+  DefaultAction URLButton   `json:"default_action,omitempty"`
+  Buttons       []URLButton `json:"buttons,omitempty"`
 }
 
 type payload struct {
   URL              string      `json:"url,omitempty"`
   Type             string      `json:"type,omitempty"`
   Text             string      `json:"text,omitempty"`
-  Buttons          []urlButton `json:"buttons,omitempty"`
+  Buttons          []URLButton `json:"buttons,omitempty"`
   Title            string      `json:"title,omitempty"`
-  Location         location    `json:"location,omitempty"`
+  Location         interface{} `json:"location,omitempty"`
   TemplateType     string      `json:"template_type,omitempty"`
   Sharable         bool        `json:"sharable,omitempty"`
   ImageAspectRatio string      `json:"image_aspect_ratio,omitempty"`
@@ -81,15 +60,21 @@ type attachment struct {
   Payload payload `json:"payload,omitempty"`
 }
 
+type settingsMessage struct {
+  SettingType   string       `json:"setting_type,omitempty"`
+  ThreadState   string       `json:"thread_state,omitempty"`
+  CallToActions []QuickReply `json:"call_to_actions,omitempty"`
+}
+
 type messaging struct {
-  Recipient recipient `json:"recipient,omitempty"`
+  Recipient Recipient `json:"recipient,omitempty"`
   Sender    sender    `json:"sender,omitempty"`
   Timestamp int64     `json:"timestamp,omitempty"`
   Message struct {
     Mid         string       `json:"mid,omitempty"`
     Seq         int64        `json:"seq,omitempty"`
     Text        string       `json:"text,omitempty"`
-    QuickReply  quickReply   `json:"quick_reply,omitempty"`
+    QuickReply  QuickReply   `json:"quick_reply,omitempty"`
     Attachments []attachment `json:"attachments,omitempty"`
     IsEcho      bool         `json:"is_echo,omitempty"`
     AppID       string       `json:"app_id,omitempty"`
@@ -128,19 +113,62 @@ type entry struct {
   Messaging []messaging `json:"messaging,omitempty"`
 }
 
+// Recipient represents the entity receiving the message
+type Recipient struct {
+  ID          string `json:"id,omitempty"`
+  PhoneNumber string `json:"phone_number,omitempty"`
+  Name struct {
+    FirstName string `json:"first_name,omitempty"`
+    LastName  string `json:"last_name,omitempty"`
+  } `json:"name,omitempty"`
+}
+
+// QuickReply is used to present different actions to the user
+type QuickReply struct {
+  Title       string `json:"title,omitempty"`
+  ContentType string `json:"content_type,omitempty"`
+  ImageURL    string `json:"image_url,omitempty"`
+  Payload     string `json:"payload,omitempty"`
+}
+
+// URLButton is used to present different paths to the user
+type URLButton struct {
+  Type                string      `json:"type,omitempty"`
+  Title               string      `json:"title,omitempty"`
+  URL                 string      `json:"url,omitempty"`
+  FallbackURL         string      `json:"fallback_url,omitempty"`
+  Payload             string      `json:"payload,omitempty"`
+  MessengerExtensions bool        `json:"messenger_extensions,omitempty"`
+  WebviewHeightRatio  string      `json:"webview_height_ratio,omitempty"`
+  WebviewShareButton  string      `json:"webview_share_button,omitempty"`
+  CallToActions       []URLButton `json:"call_to_actions,omitempty"`
+}
+
+// Persistent menu main structure
+type Menu struct {
+  Locale                string      `json:"locale,omitempty"`
+  ComposerInputDisabled bool        `json:"composer_input_disabled,omitempty"`
+  CallToActions         []URLButton `json:"call_to_actions,omitempty"`
+}
+
+// Messages received from the messenger platform
 type Callback struct {
   Object string  `json:"object,omitempty"`
   Entry  []entry `json:"entry,omitempty"`
 }
 
-type Msg struct {
-  Recipient        recipient `json:"recipient,omitempty"`
-  SenderAction     string    `json:"sender_action,omitempty"`
-  NotificationType string    `json:"notification_type,omitempty"`
-  Message struct {
-    Text         string       `json:"text,omitempty"`
-    Metadata     string       `json:"metadata,omitempty"`
-    QuickReplies []quickReply `json:"quick_replies,omitempty"`
-    Attachment   attachment   `json:"attachment,omitempty"`
-  } `json:"message,omitempty"`
+// MessageBody defines the main content section of a dispatched message
+type MessageBody struct {
+  Text         string       `json:"text,omitempty"`
+  Metadata     string       `json:"metadata,omitempty"`
+  QuickReplies []QuickReply `json:"quick_replies,omitempty"`
+  Attachment   interface{}  `json:"attachment,omitempty"`
+}
+
+// Message dispatched to the messenger platform
+type Message struct {
+  Recipient        Recipient   `json:"recipient,omitempty"`
+  SenderAction     string      `json:"sender_action,omitempty"`
+  NotificationType string      `json:"notification_type,omitempty"`
+  Message          interface{} `json:"message,omitempty"`
 }
