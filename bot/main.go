@@ -136,9 +136,9 @@ func (b *Instance) SendImageMessage(user, url string) ([]byte, error) {
       ID: user,
     },
     Message: MessageBody{
-      Attachment: attachment{
+      Attachment: Attachment{
         Type: "image",
-        Payload: payload{
+        Payload: Payload{
           URL: url,
         },
       },
@@ -153,9 +153,9 @@ func (b *Instance) SendAudioMessage(user, url string) ([]byte, error) {
       ID: user,
     },
     Message: MessageBody{
-      Attachment: attachment{
+      Attachment: Attachment{
         Type: "audio",
-        Payload: payload{
+        Payload: Payload{
           URL: url,
         },
       },
@@ -170,9 +170,9 @@ func (b *Instance) SendVideoMessage(user, url string) ([]byte, error) {
       ID: user,
     },
     Message: MessageBody{
-      Attachment: attachment{
+      Attachment: Attachment{
         Type: "video",
-        Payload: payload{
+        Payload: Payload{
           URL: url,
         },
       },
@@ -187,9 +187,9 @@ func (b *Instance) SendFileMessage(user, url string) ([]byte, error) {
       ID: user,
     },
     Message: MessageBody{
-      Attachment: attachment{
+      Attachment: Attachment{
         Type: "file",
-        Payload: payload{
+        Payload: Payload{
           URL: url,
         },
       },

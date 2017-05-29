@@ -33,31 +33,32 @@ type location struct {
   Coordinates coordinates `json:"coordinates,omitempty"`
 }
 
-type element struct {
+type ListElement struct {
   Title         string      `json:"title,omitempty"`
   Subtitle      string      `json:"subtitle,omitempty"`
   DefaultAction URLButton   `json:"default_action,omitempty"`
   Buttons       []URLButton `json:"buttons,omitempty"`
 }
 
-type payload struct {
-  URL              string      `json:"url,omitempty"`
-  Type             string      `json:"type,omitempty"`
-  Text             string      `json:"text,omitempty"`
-  Buttons          []URLButton `json:"buttons,omitempty"`
-  Title            string      `json:"title,omitempty"`
-  Location         interface{} `json:"location,omitempty"`
-  TemplateType     string      `json:"template_type,omitempty"`
-  Sharable         bool        `json:"sharable,omitempty"`
-  ImageAspectRatio string      `json:"image_aspect_ratio,omitempty"`
-  Elements         []element   `json:"elements,omitempty"`
+type Payload struct {
+  URL              string        `json:"url,omitempty"`
+  Type             string        `json:"type,omitempty"`
+  Text             string        `json:"text,omitempty"`
+  Buttons          []URLButton   `json:"buttons,omitempty"`
+  Title            string        `json:"title,omitempty"`
+  Location         interface{}   `json:"location,omitempty"`
+  TemplateType     string        `json:"template_type,omitempty"`
+  TopElementStyle  string        `json:"top_element_style,omitempty"`
+  Sharable         bool          `json:"sharable,omitempty"`
+  ImageAspectRatio string        `json:"image_aspect_ratio,omitempty"`
+  Elements         []ListElement `json:"elements,omitempty"`
 }
 
-type attachment struct {
+type Attachment struct {
   Type    string  `json:"type,omitempty"`
   Title   string  `json:"title,omitempty"`
   URL     string  `json:"url,omitempty"`
-  Payload payload `json:"payload,omitempty"`
+  Payload Payload `json:"payload,omitempty"`
 }
 
 type settingsMessage struct {
@@ -75,7 +76,7 @@ type messaging struct {
     Seq         int64        `json:"seq,omitempty"`
     Text        string       `json:"text,omitempty"`
     QuickReply  QuickReply   `json:"quick_reply,omitempty"`
-    Attachments []attachment `json:"attachments,omitempty"`
+    Attachments []Attachment `json:"attachments,omitempty"`
     IsEcho      bool         `json:"is_echo,omitempty"`
     AppID       string       `json:"app_id,omitempty"`
     Metadata    string       `json:"metadata,omitempty"`
