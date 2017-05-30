@@ -23,6 +23,7 @@ package storage
 import (
   "gopkg.in/mgo.v2"
   "gopkg.in/mgo.v2/bson"
+  "fmt"
 )
 
 // Handler provides a storage usage point
@@ -101,6 +102,19 @@ func(h *Handler) Remove(collection string, uuid string) error {
 func(h *Handler) Get(collection string, uuid string) (interface{}, error) {
   var r interface{}
   err := h.db.C(collection).Find(bson.M{"uuid":uuid}).One(&r)
+  if err != nil {
+    return nil, err
+  }
+  return r, nil
+}
+
+// Retrieve an entry based on it's "_id" field
+func(h *Handler) GetByID(collection string, id string) (interface{}, error) {
+  var r interface{}
+  if ! bson.IsObjectIdHex(id) {
+    return nil, fmt.Errorf("invalid id: %s", id)
+  }
+  err := h.db.C(collection).FindId(bson.ObjectIdHex(id)).One(&r)
   if err != nil {
     return nil, err
   }
