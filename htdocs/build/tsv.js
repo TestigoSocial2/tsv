@@ -3965,7 +3965,7 @@ var Home = function (_React$Component) {
                   _react2.default.createElement(
                     'h2',
                     null,
-                    'Invitaci\xF3n a cuado menos 3 personas'
+                    'Invitaci\xF3n a cuando menos 3 personas'
                   ),
                   _react2.default.createElement(
                     'h3',

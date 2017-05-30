@@ -229,7 +229,7 @@ class Home extends React.Component {
                   <div className="line hidden-md hidden-lg"></div>
                 </div>
                 <div className="info">
-                  <h2>Invitación a cuado menos 3 personas</h2>
+                  <h2>Invitación a cuando menos 3 personas</h2>
                   <h3>$ <span className="amount">0</span> MXN</h3>
                   <p>Han sido adjudicados por invitación a cuando menos tres personas, mediante <span className="contracts">0</span> contratos.</p>
                   <p className="details">En una invitación a cuando menos tres personas se entrega un contrato mediante un concurso en el que solo participan un número restringido de personas o empresas, seleccionadas por la dependencia gubernamental que realiza la contratación.</p>
