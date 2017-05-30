@@ -298,6 +298,14 @@ func runServer(_ *cobra.Command, _ []string) error {
     org.AddRecords(list)
     sendJSON(w, org)
   })
+  router.GET("/contract/:id", func(w http.ResponseWriter, r *http.Request, ps httprouter.Params){
+    res, err := db.GetByID("contracts", ps.ByName("id"))
+    if err != nil {
+      sendJSON(w, "")
+      return
+    }
+    sendJSON(w,res)
+  })
   
   // WebSocket
   router.GET("/ws", ws)
@@ -317,6 +325,7 @@ func runServer(_ *cobra.Command, _ []string) error {
   // Redirect ReactRouter paths to the 'index.html' file
   router.GET("/informacion", serveIndex)
   router.GET("/contratos", serveIndex)
+  router.GET("/contratos/:id", serveIndex)
   router.GET("/indicadores", serveIndex)
   router.GET("/registro", serveIndex)
   
