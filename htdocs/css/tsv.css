@@ -1536,20 +1536,43 @@ div.clear {
       #about #news-slides ol.carousel-indicators li.active {
         background-color: #999; }
 #about div.grid {
-  margin-bottom: 30px; }
+  margin: 30px 0; }
   #about div.grid div.item {
     box-shadow: 0px 1px 4px #333;
     display: block;
     cursor: pointer;
     float: left;
-    height: 280px;
-    margin: 10px 1%;
+    height: 370px;
     padding: 15px;
     position: relative;
-    width: 31%; }
+    width: 33%; }
     #about div.grid div.item h1 {
-      color: #fff;
-      font-size: 2em; }
+      color: #4a4a4a;
+      font-size: 2.2em;
+      line-height: 1.3em; }
+    #about div.grid div.item span.icon {
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      bottom: 10px;
+      display: block;
+      height: 160px;
+      opacity: 0.7;
+      position: absolute;
+      right: 10px;
+      width: 160px; }
+      #about div.grid div.item span.icon.history {
+        background-image: url("../images/flag_history.png"); }
+      #about div.grid div.item span.icon.law {
+        background-image: url("../images/flag_law.png"); }
+      #about div.grid div.item span.icon.wave {
+        background-image: url("../images/flag_wave.png"); }
+      #about div.grid div.item span.icon.standard {
+        background-image: url("../images/flag_standard.png"); }
+      #about div.grid div.item span.icon.terms {
+        background-image: url("../images/flag_terms.png"); }
+      #about div.grid div.item span.icon.faq {
+        background-image: url("../images/flag_faq.png"); }
     #about div.grid div.item div.overlay {
       background-color: #111;
       display: none;

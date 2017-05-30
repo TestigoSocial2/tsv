@@ -1,6 +1,7 @@
 $tsv-black: #111;
 $tsv-white: #fff;
 $tsv-gray: #333;
+$tsv-title-gray: #4a4a4a;
 $tsv-blue: #4990e2;
 $tsv-purple: #c3a9f5;
 $tsv-bright-green: #50e3c2;
@@ -503,22 +504,59 @@ div.clear {
   }
 
   div.grid {
-    margin-bottom: 30px;
+    margin: 30px 0;
 
     div.item {
       box-shadow: 0px 1px 4px $tsv-gray;
       display: block;
       cursor: pointer;
       float: left;
-      height: 280px;
-      margin: 10px 1%;
+      height: 370px;
       padding: 15px;
       position: relative;
-      width: 31%;
+      width: 33%;
 
       h1 {
-        color: $tsv-white;
-        font-size: 2em;
+        color: $tsv-title-gray;
+        font-size: 2.2em;
+        line-height: 1.3em;
+      }
+
+      span.icon {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        bottom: 10px;
+        display: block;
+        height: 160px;
+        opacity: 0.7;
+        position: absolute;
+        right: 10px;
+        width: 160px;
+
+        &.history {
+          background-image: url("../images/flag_history.png");
+        }
+
+        &.law {
+          background-image: url("../images/flag_law.png");
+        }
+
+        &.wave {
+          background-image: url("../images/flag_wave.png");
+        }
+
+        &.standard {
+          background-image: url("../images/flag_standard.png");
+        }
+
+        &.terms {
+          background-image: url("../images/flag_terms.png");
+        }
+
+        &.faq {
+          background-image: url("../images/flag_faq.png");
+        }
       }
 
       div.overlay {
