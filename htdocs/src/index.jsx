@@ -16,6 +16,7 @@ ReactDOM.render(
       <Route path="/" component={Home}/>
       <Route path="/informacion" component={Info}/>
       <Route path="/contratos" component={Contracts}/>
+      <Route path="/contratos/:id" component={Contracts}/>
       <Route path="/indicadores" component={Indicators}/>
       <Route path="/registro" component={Register}/>
     </Route>

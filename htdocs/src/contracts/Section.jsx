@@ -28,7 +28,23 @@ class Section extends React.Component {
     });
   }
 
+  showDetails( c ) {
+    this.setState({details:c});
+  }
+
   render() {
+    if( this.props.params.id && !this.state.details) {
+      $.ajax({
+        type: "GET",
+        url: "/contract/" + this.props.params.id ,
+        success: (res) => {
+          if( Object.keys(res).length > 0 ) {
+            this.showDetails(res);
+          }
+        }
+      });
+    }
+
     if( !this.state.details ) {
       return (
         <div>
@@ -37,13 +53,13 @@ class Section extends React.Component {
             color="blue aquablue"
             content="Consulta cada contrato que está registrado en Testigo Social 2.0. Podrás encontrar información para cada una de las etapas del procedimiento de contratación, desde su planeación hasta su implementación." />
           <SearchBar onSubmit={this.runQuery} />
-          <SearchResults items={this.state.items} onSelection={(c) => this.setState({details:c})} />
+          <SearchResults items={this.state.items} onSelection={(c) => this.showDetails(c)} />
           <div className="inner-row">
             <div className="row">
               <Widget
                 title="Los 10 contratos más recientes"
                 description="Ultimos contratos registrados"
-                onSelection={(c) => this.setState({details:c})}
+                onSelection={(c) => this.showDetails(c)}
                 query={{
                   query: JSON.stringify({}),
                   limit: 10,
@@ -52,7 +68,7 @@ class Section extends React.Component {
               <Widget
                 title="Los 10 contratos de mayor valor"
                 description="Contratos adjudicados de mayor valor"
-                onSelection={(c) => this.setState({details:c})}
+                onSelection={(c) => this.showDetails(c)}
                 query={{
                   query: JSON.stringify({}),
                   limit: 10,

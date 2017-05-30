@@ -2476,9 +2476,26 @@ var Section = function (_React$Component) {
       });
     }
   }, {
+    key: 'showDetails',
+    value: function showDetails(c) {
+      this.setState({ details: c });
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _this3 = this;
+
+      if (this.props.params.id && !this.state.details) {
+        $.ajax({
+          type: "GET",
+          url: "/contract/" + this.props.params.id,
+          success: function success(res) {
+            if (Object.keys(res).length > 0) {
+              _this3.showDetails(res);
+            }
+          }
+        });
+      }
 
       if (!this.state.details) {
         return _react2.default.createElement(
@@ -2490,7 +2507,7 @@ var Section = function (_React$Component) {
             content: 'Consulta cada contrato que est\xE1 registrado en Testigo Social 2.0. Podr\xE1s encontrar informaci\xF3n para cada una de las etapas del procedimiento de contrataci\xF3n, desde su planeaci\xF3n hasta su implementaci\xF3n.' }),
           _react2.default.createElement(_SearchBar2.default, { onSubmit: this.runQuery }),
           _react2.default.createElement(_SearchResults2.default, { items: this.state.items, onSelection: function onSelection(c) {
-              return _this3.setState({ details: c });
+              return _this3.showDetails(c);
             } }),
           _react2.default.createElement(
             'div',
@@ -2502,7 +2519,7 @@ var Section = function (_React$Component) {
                 title: 'Los 10 contratos m\xE1s recientes',
                 description: 'Ultimos contratos registrados',
                 onSelection: function onSelection(c) {
-                  return _this3.setState({ details: c });
+                  return _this3.showDetails(c);
                 },
                 query: {
                   query: JSON.stringify({}),
@@ -2513,7 +2530,7 @@ var Section = function (_React$Component) {
                 title: 'Los 10 contratos de mayor valor',
                 description: 'Contratos adjudicados de mayor valor',
                 onSelection: function onSelection(c) {
-                  return _this3.setState({ details: c });
+                  return _this3.showDetails(c);
                 },
                 query: {
                   query: JSON.stringify({}),
@@ -4328,6 +4345,7 @@ _reactDom2.default.render(_react2.default.createElement(
     _react2.default.createElement(_reactRouter.Route, { path: '/', component: _Section2.default }),
     _react2.default.createElement(_reactRouter.Route, { path: '/informacion', component: _Section4.default }),
     _react2.default.createElement(_reactRouter.Route, { path: '/contratos', component: _Section6.default }),
+    _react2.default.createElement(_reactRouter.Route, { path: '/contratos/:id', component: _Section6.default }),
     _react2.default.createElement(_reactRouter.Route, { path: '/indicadores', component: _Section8.default }),
     _react2.default.createElement(_reactRouter.Route, { path: '/registro', component: _Section10.default })
   )
