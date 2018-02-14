@@ -66,6 +66,7 @@ func init() {
     serverPortHTTP     int
     serverPortHTTPS    int
     serverRedirectHTTP bool
+    useCache           bool
     serverDocs         string
     serverSSLCert      string
     serverSSLKey       string
@@ -75,6 +76,7 @@ func init() {
   viper.SetDefault("server.port.http", 7788)
   viper.SetDefault("server.port.https", 7789)
   viper.SetDefault("server.redirect.http", true)
+  viper.SetDefault("server.cache", false)
   viper.SetDefault("server.docs", "htdocs")
   viper.SetDefault("server.cert", "")
   viper.SetDefault("server.priv", "")
@@ -96,6 +98,11 @@ func init() {
     "redirect-http",
     true,
     "Redirect all HTTP traffic if a secure channel is available")
+  serverCmd.Flags().BoolVar(
+    &useCache,
+    "use-cache",
+    false,
+    "Use memory cache for statis files")
   serverCmd.Flags().StringVarP(
     &serverDocs,
     "htdocs",
@@ -125,6 +132,7 @@ func init() {
   viper.BindPFlag("server.port.http", serverCmd.Flags().Lookup("http-port"))
   viper.BindPFlag("server.port.https", serverCmd.Flags().Lookup("https-port"))
   viper.BindPFlag("server.redirect.http", serverCmd.Flags().Lookup("redirect-http"))
+  viper.BindPFlag("server.cache", serverCmd.Flags().Lookup("use-cache"))
   viper.BindPFlag("server.docs", serverCmd.Flags().Lookup("htdocs"))
   viper.BindPFlag("server.store", serverCmd.Flags().Lookup("store"))
   viper.BindPFlag("server.cert", serverCmd.Flags().Lookup("cert"))
@@ -196,9 +204,15 @@ func runServer(_ *cobra.Command, _ []string) error {
   signal.Notify(stopChan, os.Interrupt)
   
   // Create in-memory cache filesystem for static files
-  cacheFS, err := memfs.New(viper.GetString("server.docs"))
-  if err != nil {
-    log.Fatalf("Cache filesystem error: %+v", err)
+  var httpFS http.FileSystem
+  if viper.GetBool("server.cache") {
+    log.Println("Using memory cache")
+    httpFS, err = memfs.New(viper.GetString("server.docs"))
+    if err != nil {
+      log.Fatalf("Cache filesystem error: %+v", err)
+    }
+  } else {
+    httpFS = http.Dir(viper.GetString("server.docs"))
   }
   
   // Load index.html contents
@@ -206,7 +220,7 @@ func runServer(_ *cobra.Command, _ []string) error {
   
   // Configure router
   router := httprouter.New()
-  router.NotFound = http.FileServer(cacheFS)
+  router.NotFound = http.FileServer(httpFS)
   router.POST("/profile", func(w http.ResponseWriter, r *http.Request, _ httprouter.Params){
     up := data.UserProfile{}
     err := json.Unmarshal([]byte(r.FormValue("profile")), &up)
