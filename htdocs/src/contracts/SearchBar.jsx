@@ -72,7 +72,7 @@ class SearchBar extends React.Component {
     this.ui.form.find("span[data-filter='amount']").popover({
       html: true,
       title: 'Seleccione el rango a utilizar como filtro (MXN)',
-      content: '<b>$0</b><input id="amountSlider" type="text" /><b>$100,000,000</b>',
+      content: '<b>$0 - $100,000,000</b><input id="amountSlider" type="text" />',
       placement: 'bottom',
       trigger: 'focus'
     }).on( 'shown.bs.popover', () => {
@@ -178,7 +178,7 @@ class SearchBar extends React.Component {
                   <button className="btn btn-primary" type="submit">Buscar</button>
                 </span>
               </div>
-              <div className="bullets">
+              <div className="bullets hidden-sm hidden-xs" >
                 <span className="btn-black active" data-filter="date">Fecha</span>
                 <span className="btn-black" data-filter="amount">Monto</span>
                 <span className="btn-black" data-filter="buyer">Comprador</span>
@@ -186,6 +186,21 @@ class SearchBar extends React.Component {
                 <span className="btn-black" data-filter="procedureType">Tipo de Procedimiento</span>
                 <span className="btn-black" data-filter="procedureNumber">No. de Procedimiento</span>
                 <span className="btn-black" data-filter="contractNumber">No. de Contrato</span>
+              </div>
+              <div className="bullets visible-sm visible-xs">
+                <div className="col-sm-6 col-xs-6">
+                  <span className="btn-black active" data-filter="date">Fecha</span>
+                  <span className="btn-black" data-filter="buyer">Comprador</span>
+                  <span className="btn-black" data-filter="procedureType">Tipo de Procedimiento</span>
+                </div>
+                <div className="col-sm-6 col-xs-6">
+                  <span className="btn-black" data-filter="amount">Monto</span>
+                  <span className="btn-black" data-filter="provider">Proveedor</span>
+                  <span className="btn-black" data-filter="procedureNumber">No. de Procedimiento</span>
+                </div>
+                <div className="col-sm-12 col-xs-12 center-black">
+                  <span className="btn-black" data-filter="contractNumber">No. de Contrato</span>
+                </div>
               </div>
 
               <div className="input-group mobile-contracts">

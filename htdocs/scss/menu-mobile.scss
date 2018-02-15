@@ -310,9 +310,11 @@
     }
   }
   div.item {
-
+    h1{
+      font-size: 26px;
+    }
     p.mobile{
-      margin-top: 70px
+      margin-top: 70px;
     }
 
     h2 {
@@ -502,8 +504,8 @@ div.description-container{
 }
 div.mobile-blue{
   background-color: #9DCAFE !important;
+  margin-bottom: 28px;
 }
-
 p.txt-large{
   font-family: 'Circular Std Book' !important;
   font-size: 15px !important;

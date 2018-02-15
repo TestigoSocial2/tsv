@@ -206,13 +206,13 @@ class Form extends React.Component {
                 <input type="text" id="selectedAgencies" name="selectedAgencies" value="[]" className="hidden" />
                 <div className="item" data-value="cdmx">
                   <div className="logo">
-                    <img src="https://twitter.com/gobcdmx/profile_image?size=original" />
+                    <img src="https://twitter.com/gobcdmx/profile_image?size=original" crossorigin="anonymous" />
                   </div>
                   <span className="label">Seguir</span>
                 </div>
                 <div className="item" data-value="a2">
                   <div className="logo">
-                    <img src="https://twitter.com/nvoaeropuertomx/profile_image?size=original" />
+                    <img src="https://twitter.com/nvoaeropuertomx/profile_image?size=original" crossorigin="anonymous" />
                   </div>
                   <span className="label">Seguir</span>
                 </div>
@@ -224,7 +224,7 @@ class Form extends React.Component {
                 <div className="item" data-value="p1">
                   <h5>NAICM</h5>
                   <div className="img">
-                    <img src="https://twitter.com/nvoaeropuertomx/profile_image?size=original" />
+                    <img src="https://twitter.com/nvoaeropuertomx/profile_image?size=original" crossorigin="anonymous" />
                   </div>
                   <span className="label">Seguir</span>
                   <p>Construcción del nuevo aeropuerto internacional de la ciduad de México.</p>
@@ -304,7 +304,8 @@ class Form extends React.Component {
                   <input id="acceptPrivacyTerms" type="checkbox" checked="checked" /> Acepto las politicas de privacidad
                 </label>
               </div>
-              <button type="submit" className="btn btn-black btn-lg run-notifications">COMENZAR</button>
+              <button type="submit" className="btn btn-black btn-black-mobile btn-lg run-notifications">COMENZAR</button>
+              <div className="btn-black-mobile"></div>
             </div>
           </div>
         </form>

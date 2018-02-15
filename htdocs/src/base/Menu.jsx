@@ -42,25 +42,25 @@ class Menu extends React.Component {
             <div className="container-fluid">
               <div className="navbar-header">
                 <Link to={'/'} className="logo2"></Link>
-                <Link to={'#bs-example-navbar-collapse-1'} class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <Link  class="navbar-toggle collapsed" data-toggle="collapse" data-target="#Menu">
                   <FontAwesome name='bars' aria-expanded="false"/>
                 </Link>
               </div>
-              <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <div className="collapse navbar-collapse" id="Menu">
                 <ul className="nav navbar-nav">
                   <li>
-                    <Link to={'/informacion'} data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">¿Qué es TS 2.0?</Link>
+                    <Link to={'/informacion'} data-toggle="collapse" data-target="#Menu">¿Qué es TS 2.0?</Link>
                   </li>
                   <li>
-                    <Link to={'/contratos'} data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Contratos</Link>
+                    <Link to={'/contratos'} data-toggle="collapse" data-target="#Menu">Contratos</Link>
                   </li>
                   <li>
-                    <Link to={'/indicadores'} data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Indicadores</Link>
+                    <Link to={'/indicadores'} data-toggle="collapse" data-target="#Menu">Indicadores</Link>
                   </li>
                   <li>
-                    <Link to={'/registro'} data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Notificaciones</Link>
+                    <Link to={'/registro'} data-toggle="collapse" data-target="#Menu">Notificaciones</Link>
                   </li>
-                  <li><a href="http://www.tm.org.mx" target="_blank" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">Contrataciones Abiertas</a>
+                  <li><a href="http://www.tm.org.mx" target="_blank" data-toggle="collapse" data-target="#Menu">Contrataciones Abiertas</a>
                   </li>
                 </ul>
               </div>

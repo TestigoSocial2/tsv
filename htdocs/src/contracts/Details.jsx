@@ -44,7 +44,7 @@ class Details extends React.Component {
                 <h2 className="block-title">{release.tender.title}</h2>
                 <h3>{formatAmount( release.tender.value.amount || 0 )}</h3>
                 <p>{release.tender.description}</p>
-                <a onClick={this.onClose} className='btn-black active'>Volver al listado de Resultados</a>
+                <a onClick={this.onClose} className='btn-black active a-bg-gray'>Volver al listado de Resultados</a>
               </div>
 
               {/* Section tabs */}
