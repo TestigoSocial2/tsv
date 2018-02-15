@@ -2,7 +2,7 @@
 
 Instrucciones para desarrollo local de la aplicación.
 
-__Instalar dependencias:__ `glide install`
+__Instalar dependencias:__ `dep ensure -v`
 
 __Compilar aplicación ReactJS:__ `yarn run build`
 
