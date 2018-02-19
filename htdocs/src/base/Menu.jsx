@@ -42,7 +42,7 @@ class Menu extends React.Component {
             <div className="container-fluid">
               <div className="navbar-header">
                 <Link to={'/'} className="logo2"></Link>
-                <Link  class="navbar-toggle collapsed" data-toggle="collapse" data-target="#Menu">
+                <Link to="#" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#Menu">
                   <FontAwesome name='bars' aria-expanded="false"/>
                 </Link>
               </div>
