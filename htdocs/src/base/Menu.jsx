@@ -5,6 +5,7 @@ var FontAwesome = require('react-fontawesome');
 class Menu extends React.Component {
 
   componentDidMount() {
+    $('.navbar-collapse').collapse('hide')
     let links = $('#top ul a');
     links.click((e) => {
       links.removeClass('active');
