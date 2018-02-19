@@ -44,9 +44,9 @@ class Menu extends React.Component {
             <div className="container-fluid">
               <div className="navbar-header">
                 <Link to={'/'} className="logo2"></Link>
-                <Link class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <a to="#" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
                   <FontAwesome name='bars' aria-expanded="false"/>
-                </Link>
+                </a>
               </div>
               <div className="collapse navbar-collapse" id="menu">
                 <ul className="nav navbar-nav">
