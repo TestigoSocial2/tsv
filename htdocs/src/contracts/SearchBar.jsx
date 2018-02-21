@@ -26,6 +26,9 @@ class SearchBar extends React.Component {
       multidate: 2,
       todayHighlight: true
     }).on({
+      'show' : (e) => {
+        this.ui.form.find("span[data-filter='amount']").popover('hide');
+      },
       'hide': (e) => {
         e.dates.sort(function(a, b) {
           return new Date(a).getTime() - new Date(b).getTime();
@@ -76,6 +79,7 @@ class SearchBar extends React.Component {
       placement: 'bottom',
       trigger: 'focus'
     }).on( 'shown.bs.popover', () => {
+      this.ui.form.find("span[data-filter='date']").datepicker('hide');
       $("#amountSlider").slider({
         step: 50000,
         min: 0,
