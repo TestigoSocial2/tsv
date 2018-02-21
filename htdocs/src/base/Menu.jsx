@@ -62,7 +62,7 @@ class Menu extends React.Component {
                   <li>
                     <Link to={'/registro'} data-toggle="collapse" data-target=".navbar-collapse">Notificaciones</Link>
                   </li>
-                  <li><a href="http://www.tm.org.mx" target="_blank" data-toggle="collapse" data-target=".navbar-collapse">Contrataciones Abiertas</a>
+                  <li><a href="http://www.contratacionesabiertas.mx/" target="_blank" data-toggle="collapse" data-target=".navbar-collapse">Contrataciones Abiertas</a>
                   </li>
                 </ul>
               </div>

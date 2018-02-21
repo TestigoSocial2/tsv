@@ -603,7 +603,7 @@
     padding-right: 15px !important; }
 
   #setup div.row .txt-upper label {
-    font-family: 'Circular Std Bold';
+    font-family: 'Circular Std Bold', montserrat;
     font-size: 13px; }
 
   #setup div.row td.txt-italic {
