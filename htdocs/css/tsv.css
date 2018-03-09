@@ -1453,8 +1453,8 @@ div.clear {
     color: #fff;
     outline: none; }
   #bucketSelector button:hover {
-    background-color: #fff;
-    color: #111;
+    background-color: #111;
+    color: #fff;
     outline: none; }
   #bucketSelector p.info {
     font-size: 2em;
