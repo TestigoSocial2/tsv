@@ -1030,7 +1030,7 @@ td.checkbox input {
     font-weight: bold !important; }
   div.chart-widget p {
     font-family: 'Circular Std' !important;
-    font-size: 11px !important; }
+    font-size: 14px !important; }
 
   div.description-container p {
     margin-left: 20px !important;
@@ -1080,7 +1080,7 @@ td.checkbox input {
   align-items: center;
   list-style: none;
   margin-top: 10px;
-  font-size: 10px; }
+  font-size: 12px; }
 
 .dataChartLegend ul li span {
   width: 10px;
