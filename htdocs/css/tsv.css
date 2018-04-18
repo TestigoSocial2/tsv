@@ -603,7 +603,7 @@
     padding-right: 15px !important; }
 
   #setup div.row .txt-upper label {
-    font-family: 'Circular Std Bold';
+    font-family: 'Circular Std Bold', montserrat;
     font-size: 13px; }
 
   #setup div.row td.txt-italic {
@@ -675,7 +675,7 @@ td.checkbox input {
       #top div.navbar-collapse ul {
         float: none !important; }
     #top a.logo2 {
-      background: url(../../images/TS2.svg) no-repeat top center;
+      background: url(../../images/TS2-outline.svg) no-repeat top center;
       background-size: contain;
       display: block;
       float: left;
@@ -892,6 +892,8 @@ td.checkbox input {
         font-size: 18px !important;
         font-weight: 300 !important;
         letter-spacing: -1px !important; }
+    #highlights div.item h1 {
+      font-size: 26px; }
     #highlights div.item p.mobile {
       margin-top: 70px; }
     #highlights div.item h2 {
@@ -1028,7 +1030,7 @@ td.checkbox input {
     font-weight: bold !important; }
   div.chart-widget p {
     font-family: 'Circular Std' !important;
-    font-size: 11px !important; }
+    font-size: 14px !important; }
 
   div.description-container p {
     margin-left: 20px !important;
@@ -1038,7 +1040,8 @@ td.checkbox input {
     background-color: #d4fbfb !important; }
 
   div.mobile-blue {
-    background-color: #9DCAFE !important; }
+    background-color: #9DCAFE !important;
+    margin-bottom: 28px; }
 
   p.txt-large {
     font-family: 'Circular Std Book' !important;
@@ -1077,7 +1080,7 @@ td.checkbox input {
   align-items: center;
   list-style: none;
   margin-top: 10px;
-  font-size: 10px; }
+  font-size: 12px; }
 
 .dataChartLegend ul li span {
   width: 10px;
@@ -1222,6 +1225,54 @@ td.checkbox input {
     word-break: break-all;
     color: #4A90E2;
     font-family: 'Circular Std' !important; } }
+@media all and (max-width: 768px) {
+  .inner-row h1 {
+    font-size: 26px !important; }
+
+  div.description-container p.content {
+    padding-left: 0px !important; }
+
+  #queryForm div.bullets span {
+    text-transform: none !important;
+    width: 150px !important;
+    height: 39px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px; }
+
+  #queryForm {
+    display: flex;
+    flex-direction: column; }
+
+  #queryForm div.bullets div.center-black {
+    justify-content: center;
+    display: flex; }
+
+  #queryForm input {
+    font-style: normal !important;
+    font-weight: bold !important; }
+
+  div.contract-details a.a-bg-gray {
+    color: white !important; }
+
+  div.contract-details div.contract-header div.bullets .btn-black {
+    width: 200px !important; }
+
+  #queryForm div.bullets .popover {
+    left: -144.5px !important; }
+
+  .btn-black-mobile {
+    margin-bottom: 60px !important; }
+
+  .modal-header-xs {
+    display: flex !important; }
+
+  .modal-header-xs h5 {
+    margin-left: auto;
+    padding-top: 0px;
+    margin-top: 0px;
+    font-size: 18px; } }
 html {
   min-height: 100%;
   position: relative; }
@@ -1402,8 +1453,8 @@ div.clear {
     color: #fff;
     outline: none; }
   #bucketSelector button:hover {
-    background-color: #fff;
-    color: #111;
+    background-color: #111;
+    color: #fff;
     outline: none; }
   #bucketSelector p.info {
     font-size: 2em;

@@ -185,8 +185,8 @@ class Home extends React.Component {
         <center id="bucketSelector" className="row inner-row">
           <p>Seleccione los datos de contrataciones a consultar</p>
           <div className="btn-group" role="group">
-            <button type="button" data-bucket="gacm" className="btn btn-default active">Nuevo Aeropuerto de la Ciudad de México</button>
-            <button type="button" data-bucket="cdmx" className="btn btn-default">Gobierno de la Ciudad de México</button>
+            <button type="button" data-bucket="gacm" className="btn btn-default active btn-default-contain"><span>Nuevo Aeropuerto de la</span><span> Ciudad de México</span></button>
+            <button type="button" data-bucket="cdmx" className="btn btn-default btn-default-contain">Gobierno de la Ciudad de México</button>
           </div>
           <div className="item">
             <p className="info mobile">
@@ -282,7 +282,7 @@ class Home extends React.Component {
 
         {/* Main video */}
         <div id="video" className="row inner-row">
-          <div className="col-md-12">
+          <div className="col-md-12 embed-responsive embed-responsive-16by9">
             <iframe width="853" height="480" src="https://www.youtube.com/embed/sU3qKB6oO7U?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
           </div>
           <div className="col-md-4 item">
@@ -314,7 +314,7 @@ class Home extends React.Component {
         </div>
 
         {/* Bottom text */}
-        <div className="row info bg-blue mobile-blue">
+        <div className="row info bg-blue mobile-blue mobile-blue-margin">
           <div className="inner-row">
             <p className="txt-large txt-centered">La apertura y la participación de la ciudadanía en las compras públicas se traduce en mejores bienes y servicios públicos para las <strong>comunidades</strong>, más oportunidades de negocio para emprendedores y <strong>empresas</strong> y una mayor rendición de cuentas de los <strong>gobiernos.</strong></p>
           </div>

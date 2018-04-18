@@ -21,7 +21,7 @@ $tsv-dark-red: #a94442;
 @import 'information';
 @import 'Charts';
 @import 'contracts';
-
+@import 'mobile';
 
 
 html {
@@ -290,8 +290,8 @@ div.clear {
     }
 
     &:hover {
-      background-color: $tsv-white;
-      color: $tsv-black;
+      background-color: $tsv-black;
+      color: $tsv-white;
       outline: none;
     }
   }

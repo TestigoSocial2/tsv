@@ -1,0 +1,50 @@
+@media all and (max-width: 768px) {
+  .inner-row h1 {
+    font-size: 26px !important;
+  }
+  div.description-container p.content {
+    padding-left: 0px !important;
+  }
+  #queryForm div.bullets span {
+    text-transform: none !important;
+    width: 150px !important;
+    height: 39px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+  }
+  #queryForm {
+    display: flex;
+    flex-direction: column;
+  }
+  #queryForm div.bullets div.center-black{
+    justify-content: center;
+    display: flex;
+  }
+  #queryForm input{
+    font-style: normal !important;
+    font-weight: bold !important;
+  }
+  div.contract-details a.a-bg-gray{
+    color: white !important;
+  }
+  div.contract-details div.contract-header div.bullets .btn-black{
+    width: 200px !important;
+  }
+  #queryForm div.bullets .popover{
+    left: -144.5px !important;
+  }
+  .btn-black-mobile{
+    margin-bottom : 60px !important;
+  }
+  .modal-header-xs{
+    display: flex !important;
+  }
+  .modal-header-xs h5{
+    margin-left: auto;
+    padding-top: 0px;
+    margin-top: 0px;
+    font-size: 18px;
+  }
+}

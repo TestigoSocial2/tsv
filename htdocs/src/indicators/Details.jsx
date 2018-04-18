@@ -104,7 +104,7 @@ class Details extends React.Component {
         </div>
         <div className="col-md-8 content">
           <h2>
-            <button onClick={this.close} type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>  Detalles del Indicador
+            <button onClick={this.close} style={{ backgroundColor : 'transparent', border: 0}} type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>  Detalles del Indicador
           </h2>
 
           <ChartWidget

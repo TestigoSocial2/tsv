@@ -27,11 +27,11 @@ class Footer extends React.Component {
         <div className="inner-row mobile-row">
           <div className="col-md-6 links">
             <div className="social">
-              <a href="https://www.facebook.com/testigosocial" className="fb"></a>
+              <a href="https://www.facebook.com/testigosocial" target="_blank" className="fb"></a>
             </div>
             <div className="space-social"></div>
             <div className="social">
-              <a href="https://www.twitter.com/testigo_social" className="tw"></a>
+              <a href="https://www.twitter.com/testigo_social" target="_blank" className="tw"></a>
             </div>
           </div>
           <div className="col-md-6 mobile-logo">

@@ -13,7 +13,7 @@
       }
     }
     a.logo2{
-      background: url(../../images/TS2.svg) no-repeat top center;
+      background: url(../../images/TS2-outline.svg) no-repeat top center;
       background-size: contain;
       display: block;
       float: left;
@@ -310,9 +310,11 @@
     }
   }
   div.item {
-
+    h1{
+      font-size: 26px;
+    }
     p.mobile{
-      margin-top: 70px
+      margin-top: 70px;
     }
 
     h2 {
@@ -488,7 +490,7 @@ div.chart-widget{
   }
   p{
     font-family: 'Circular Std' !important;
-    font-size: 11px !important;
+    font-size: 14px !important;
   }
 }
 div.description-container{
@@ -502,8 +504,8 @@ div.description-container{
 }
 div.mobile-blue{
   background-color: #9DCAFE !important;
+  margin-bottom: 28px;
 }
-
 p.txt-large{
   font-family: 'Circular Std Book' !important;
   font-size: 15px !important;

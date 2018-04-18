@@ -7,7 +7,7 @@ class Description extends React.Component {
       <div className={'description-container row info bg-' + this.props.color}>
         <div className="inner-row">
           <h2>{this.props.title}</h2>
-          <p>{this.props.content}</p>
+          <p className="content">{this.props.content}</p>
         </div>
       </div>
     );

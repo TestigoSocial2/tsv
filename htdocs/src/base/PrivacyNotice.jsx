@@ -1,13 +1,24 @@
 import React from 'react';
-
 class PrivacyNotice extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onClose = this.onClose.bind(this);
+  }
+
+  onClose(e) {
+    $('#privacyNotice').modal('hide');
+  }
   render() {
     return(
       <div className="modal fade" id="privacyNotice" tabindex="-1" role="dialog">
         <div className="modal-dialog modal-lg" role="document">
           <div className="modal-content">
-            <div className="modal-header">
+            <div className="modal-header hidden-xs hidden-sm">
               <h4 className="modal-title">Aviso de Privacidad</h4>
+            </div>
+            <div className="modal-header modal-header-xs visible-sm visible-xs">
+              <h4 className="modal-title">Aviso de Privacidad</h4>
+              <h5 className="close-modal " onClick={this.onClose}>X</h5>
             </div>
             <div className="modal-body">
               <h1>Testigo Social</h1>
