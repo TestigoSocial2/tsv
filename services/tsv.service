@@ -17,9 +17,9 @@ ExecStart=/usr/bin/docker run --name=tsv \
   -p 80:7788 -p 443:7789 \
   -v /etc/tsv/cert:/data/site.cer \
   -v /etc/tsv/priv:/data/site.pem \
+  -e AWS_REGION=us-east-1 \
   -e AWS_ACCESS_KEY_ID=... \
   -e AWS_SECRET_ACCESS_KEY=... \
-  -e AWS_REGION=us-east-1 \
   -e TSV_FB_VERIFY_TOKEN=... \
   -e TSV_FB_PAGE_TOKEN=... \
   tm/tsv server -c /var/www/htdocs --cert=/data/site.cer --priv-key=/data/site.pem --use-cache

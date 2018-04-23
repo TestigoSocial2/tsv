@@ -283,7 +283,7 @@ class Home extends React.Component {
         {/* Main video */}
         <div id="video" className="row inner-row">
           <div className="col-md-12 embed-responsive embed-responsive-16by9">
-            <iframe width="853" height="480" src="https://www.youtube.com/embed/sU3qKB6oO7U?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+            <iframe width="853" height="480" src="https://www.youtube.com/embed/8DIF0Mh3zfM?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
           </div>
           <div className="col-md-4 item">
             <Link to={'/contratos'}>
